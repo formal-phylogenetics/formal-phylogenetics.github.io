@@ -1171,13 +1171,14 @@ function createTimeline(els, m, links) {
 const card = { el: null, entry: null, pinned: null, timer: 0, place: () => {} };
 
 let worksFile = null;
-function readWork(e) {
+function readWorks() {
   if (!worksFile)
     worksFile = fetch(HERE("works.json"))
       .then((r) => (r.ok ? r.json() : {}))
       .catch(() => ({}));
-  return worksFile.then((all) => all[e.key] || {});
+  return worksFile;
 }
+const readWork = (e) => readWorks().then((all) => all[e.key] || {});
 
 function cardHtml(e, work, waiting) {
   const list =
@@ -1747,7 +1748,24 @@ async function main() {
     else if (els.note.textContent === "No entry matches the search.")
       els.note.textContent = "";
   };
-  q.addEventListener("input", filter);
+  // the catalogs often shorten the authors to "et al.": the full lists in works.json join what
+  // the search reads, once it is first used
+  let widened = null;
+  const widen = () => {
+    widened ??= readWorks().then((all) => {
+      for (const h of m.hubs)
+        for (const e of h.entries) {
+          const names = (all[e.key] || {}).authors;
+          if (names && names.length) e.hay += ` ${fold(names.join(" "))}`;
+        }
+      if (q.value.trim()) filter();
+    });
+  };
+  q.addEventListener("focus", widen);
+  q.addEventListener("input", () => {
+    widen();
+    filter();
+  });
 
   // a selection in the address is restored
   const key = decodeURIComponent(location.hash.slice(1));
