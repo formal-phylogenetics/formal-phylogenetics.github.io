@@ -774,148 +774,471 @@ async function readCitations(m, progress) {
   return edges;
 }
 
-// The timeline: every entry of the catalogs, in the column of its hub and the row of its year
-// (of its decade before 1990), oldest at the top; a citation is a curve from the citing entry up
-// to the entry it cites.
+// The timeline: every entry of the catalogs, in the row of its hub, at its year; time runs from
+// left to right, and a citation is a curve from the citing entry back to the entry it cites. Below
+// it, a slider chooses the years shown; the scale gives each year the same width, or a width that
+// grows with its papers. A row per hub, so that a new hub is a new row.
 const yearOf = (e) => {
   const m = String(e.year).match(/\d{4}/);
   return m ? +m[0] : null;
 };
-const binOf = (y) => (y < 1990 ? Math.floor(y / 10) * 10 : y);
-const binName = (b) => (b < 1990 ? `${b}s` : String(b));
 
-function drawTimeline(svg, m, links) {
-  const W = 1180;
-  const AXIS = 54;
-  const TOP = 58;
-  const PAD = 6;
+function moveGlyph(e) {
+  if (e.kind === "method") {
+    e.node.setAttribute("cx", fmt(e.px));
+    e.node.setAttribute("cy", fmt(e.py));
+  } else {
+    const s = e.r * 1.7;
+    e.node.setAttribute("x", fmt(e.px - s / 2));
+    e.node.setAttribute("y", fmt(e.py - s / 2));
+  }
+}
 
-  // the columns: the hubs in the order of the fan, a sub-hub next to its hub, wider for more entries
+function createTimeline(els, m, links) {
+  const svg = els.graph;
+  const nodes = m.entries.filter((e) => yearOf(e) !== null);
+  for (const e of nodes) {
+    e.y4 = yearOf(e);
+    e.r = Math.min(6.5, 2.8 + 0.9 * Math.sqrt(e.cited || 0));
+  }
+  const Y0 = Math.min(...nodes.map((e) => e.y4));
+  const Y1 = Math.max(...nodes.map((e) => e.y4)) + 1;
+  const count = new Map();
+  for (const e of nodes) count.set(e.y4, (count.get(e.y4) || 0) + 1);
+  const most = Math.max(...count.values());
+  const STEP = 13;
+  // a narrow screen opens on the recent years; the trim bar reaches the others
+  const narrow = els.stage.clientWidth < 600;
+  const st = { a: narrow ? Math.max(Y0, Y1 - 18) : Y0, b: Y1, scale: "papers" };
   const lanes = [];
-  m.groups.forEach((g, gi) => {
+  m.groups.forEach((g) => {
     const walk = (h) => {
-      lanes.push({ hub: h, group: gi });
+      lanes.push(h);
       h.subhubs.forEach(walk);
     };
     g.hubs.forEach(walk);
   });
-  const groupGap = 22;
-  const weight = (lane) => Math.sqrt(lane.hub.entries.length) + 2.5;
-  const free = W - AXIS - groupGap * (m.groups.length - 1);
-  const total = lanes.reduce((s, l) => s + weight(l), 0);
-  let x = AXIS;
-  lanes.forEach((l, k) => {
-    if (k && l.group !== lanes[k - 1].group) x += groupGap;
-    l.x0 = x;
-    l.x1 = x + (free * weight(l)) / total;
-    x = l.x1;
-  });
-
-  // the rows: each bin of years as tall as its fullest column needs
-  const nodes = m.entries.filter((e) => yearOf(e) !== null);
-  for (const e of nodes) e.r = Math.min(10, 3.2 + 1.3 * Math.sqrt(e.cited));
-  const bins = [...new Set(nodes.map((e) => binOf(yearOf(e))))].sort(
-    (a, b) => a - b,
+  const byLane = new Map(
+    lanes.map((h) => [
+      h,
+      nodes
+        .filter((e) => e.hub === h)
+        .sort((a, b) => a.y4 - b.y4 || (b.cited || 0) - (a.cited || 0)),
+    ]),
   );
-  const cell = new Map(); // `${lane}|${bin}` -> entries
-  const laneOf = new Map(lanes.map((l) => [l.hub, l]));
-  for (const e of nodes) {
-    const k = `${lanes.indexOf(laneOf.get(e.hub))}|${binOf(yearOf(e))}`;
-    if (!cell.has(k)) cell.set(k, []);
-    cell.get(k).push(e);
-  }
-  let y = TOP;
-  const rows = [];
-  for (const b of bins) {
-    let height = 0;
-    lanes.forEach((l, li) => {
-      const mine = cell.get(`${li}|${b}`) || [];
-      let cx = l.x0 + PAD;
-      let line = 0;
-      let lineH = 0;
-      let used = 0;
-      for (const e of mine) {
-        const d = 2 * e.r + 3;
-        if (cx + d > l.x1 - PAD && cx > l.x0 + PAD) {
-          line += lineH;
-          cx = l.x0 + PAD;
-          lineH = 0;
-        }
-        e.x = cx + e.r;
-        e.dy = line + e.r;
-        cx += d;
-        lineH = Math.max(lineH, d);
-        used = line + lineH;
-      }
-      height = Math.max(height, used);
-    });
-    rows.push({ b, y, height });
-    for (const e of nodes) if (binOf(yearOf(e)) === b) e.y = y + 4 + e.dy;
-    y += Math.max(height, 6) + 8;
-  }
-  const H = y + 10;
-  svg.setAttribute("viewBox", `0 0 ${W + 70} ${H}`); // room for the names of the last columns
 
-  // the grid: a line and a label for each decade and each fifth year
-  const grid = svgEl("g", { class: "grid" }, svg);
-  for (const r of rows) {
-    if (!(r.b < 1990 || r.b % 5 === 0)) continue;
-    svgEl(
-      "line",
-      { x1: AXIS - 6, y1: fmt(r.y), x2: W, y2: fmt(r.y), class: "gridline" },
-      grid,
-    );
-    const t = svgEl(
-      "text",
-      { x: AXIS - 10, y: fmt(r.y + 4), "text-anchor": "end", class: "year" },
-      grid,
-    );
-    t.textContent = binName(r.b);
-  }
-  for (const l of lanes) {
-    const g = svgEl("g", { class: "hub-c lane", style: hubStyle(l.hub) }, svg);
-    svgEl(
-      "rect",
-      {
-        x: fmt(l.x0 + 1),
-        y: TOP - 6,
-        width: fmt(l.x1 - l.x0 - 2),
-        height: fmt(H - TOP - 4),
-        class: "lanebg",
-      },
-      g,
-    );
-    const t = svgEl(
-      "text",
-      {
-        transform: `translate(${fmt((l.x0 + l.x1) / 2)} ${TOP - 12}) rotate(-40)`,
-        class: `lanename${l.hub.depth ? " subname" : ""}`,
-      },
-      g,
-    );
-    t.textContent = short(l.hub.name);
-  }
-
+  // the elements, made once and moved by the layout
+  svg.innerHTML = "";
+  const gGrid = svgEl("g", { class: "grid" }, svg);
+  const gLanes = svgEl("g", {}, svg);
+  const laneEls = new Map(
+    lanes.map((h) => {
+      const g = svgEl("g", { class: "hub-c lane", style: hubStyle(h) }, gLanes);
+      const bg = svgEl("rect", { class: "lanebg", rx: 4 }, g);
+      const name = svgEl(
+        "text",
+        { class: `lanename${h.depth ? " subname" : ""}` },
+        g,
+      );
+      name.textContent = short(h.name);
+      return [h, { bg, name }];
+    }),
+  );
   const gEdges = svgEl("g", { class: "edges" }, svg);
-  for (const l of links) {
-    const { source: a, target: b } = l;
-    const mid = (a.y + b.y) / 2;
-    l.el = svgEl(
-      "path",
-      {
-        d: `M${fmt(a.x)} ${fmt(a.y)}C${fmt(a.x)} ${fmt(mid)} ${fmt(b.x)} ${fmt(mid)} ${fmt(b.x)} ${fmt(b.y)}`,
-        class: "edge",
-      },
-      gEdges,
-    );
-  }
+  for (const l of links) l.el = svgEl("path", { class: "edge" }, gEdges);
   const gNodes = svgEl("g", { class: "nodes" }, svg);
   for (const e of nodes) {
     const g = svgEl("g", { class: "hub-c", style: hubStyle(e.hub) }, gNodes);
-    e.node = glyph(e, e.x, e.y, e.r, g);
+    e.node = glyph(e, 0, 0, e.r, g);
     e.node.dataset.key = e.key;
   }
-  return { nodes };
+
+  // the trim bar: a track with the papers of each year, the shade outside the range shown, a frame
+  // round it, a handle at each end, and the first and last years above the handles
+  const ov = els.overview;
+  ov.innerHTML = "";
+  const track = svgEl("rect", { class: "ov-track", rx: 6 }, ov);
+  const gBars = svgEl("g", { class: "ov-bars" }, ov);
+  const bars = [];
+  for (let y = Y0; y < Y1; y++)
+    bars.push([y, svgEl("rect", { class: "ov-bar" }, gBars)]);
+  const gLabels = svgEl("g", { class: "ov-labels" }, ov);
+  const shadeL = svgEl("rect", { class: "ov-shade" }, ov);
+  const shadeR = svgEl("rect", { class: "ov-shade" }, ov);
+  const win = svgEl("rect", { class: "ov-win" }, ov);
+  const outline = svgEl("rect", { class: "ov-frame", rx: 2 }, ov);
+  const handle = (name, side) => {
+    const h = svgEl(
+      "rect",
+      {
+        class: `ov-handle ${side}`,
+        rx: 5,
+        width: 13,
+        tabindex: 0,
+        role: "slider",
+        "aria-label": name,
+        "aria-valuemin": Y0,
+        "aria-valuemax": Y1 - 1,
+      },
+      ov,
+    );
+    const grip = svgEl("path", { class: "ov-grip" }, ov);
+    return { h, grip };
+  };
+  const { h: hA, grip: gripA } = handle("First year shown", "start");
+  const { h: hB, grip: gripB } = handle("Last year shown", "end");
+  const tagA = svgEl("g", { class: "ov-tag" }, ov);
+  const tagB = svgEl("g", { class: "ov-tag" }, ov);
+  for (const g of [tagA, tagB]) {
+    svgEl("rect", { rx: 4, height: 17 }, g);
+    svgEl("text", { y: 12.5, "text-anchor": "middle" }, g);
+  }
+
+  const PADY = 6;
+  const GAP = 3;
+  const OVH = 74;
+  const dims = () => {
+    const W = Math.max(300, Math.round(els.stage.clientWidth));
+    const L = W < 560 ? 92 : 122;
+    return { W, L, PW: W - L - 14 };
+  };
+  const weights = () => {
+    const w = [];
+    for (let y = st.a; y < st.b; y++)
+      w.push(st.scale === "linear" ? 1 : 0.5 + Math.sqrt(count.get(y) || 0));
+    return w;
+  };
+  const scaleX = (d) => {
+    const w = weights();
+    // by papers, a year with papers is never narrower than one of them
+    for (let pass = 0; st.scale === "papers" && pass < 4; pass++) {
+      const unit = d.PW / w.reduce((s, x) => s + x, 0);
+      let grew = false;
+      w.forEach((x, i) => {
+        if (count.get(st.a + i) && x * unit < STEP + 1) {
+          w[i] = (STEP + 1) / unit;
+          grew = true;
+        }
+      });
+      if (!grew) break;
+    }
+    const cum = [0];
+    w.forEach((x, i) => cum.push(cum[i] + x));
+    const tot = cum[cum.length - 1];
+    return (y) => {
+      const k = Math.min(Math.max(Math.floor(y) - st.a, 0), w.length - 1);
+      return d.L + ((cum[k] + (y - st.a - k) * w[k]) / tot) * d.PW;
+    };
+  };
+  const xo = (d, y) => d.L + ((y - Y0) / (Y1 - Y0)) * d.PW;
+  const yo = (d, x) => Y0 + ((x - d.L) / d.PW) * (Y1 - Y0);
+
+  function ticks(d, X) {
+    const out = [];
+    const room = (x) => out.every(([, p]) => Math.abs(p - x) >= 36);
+    for (const every of [10, 5, 1]) {
+      for (let y = Math.ceil(st.a / every) * every; y < st.b; y += every) {
+        const x = X(y + 0.5);
+        if (every === 1 && X(y + 1) - X(y) < 26) continue;
+        if (!out.some(([v]) => v === y) && room(x)) out.push([y, x]);
+      }
+    }
+    return out.sort((p, q) => p[0] - q[0]);
+  }
+
+  function layout() {
+    const d = dims();
+    const X = scaleX(d);
+    let top = 4;
+    for (const h of lanes) {
+      const cells = new Map();
+      for (const e of byLane.get(h)) {
+        e.vis = e.y4 >= st.a && e.y4 < st.b;
+        if (!e.vis) continue;
+        if (!cells.has(e.y4)) cells.set(e.y4, []);
+        cells.get(e.y4).push(e);
+      }
+      let rows = 1;
+      for (const [y, cell] of cells) {
+        const x0 = X(y);
+        const w = Math.max(0, X(y + 1) - x0);
+        const cols = Math.max(1, Math.floor((w - 1) / STEP));
+        const used = Math.min(cell.length, cols);
+        cell.forEach((e, i) => {
+          e.px = x0 + w / 2 + ((i % cols) - (used - 1) / 2) * STEP;
+          e.row = Math.floor(i / cols);
+        });
+        rows = Math.max(rows, Math.ceil(cell.length / cols));
+      }
+      const height = rows * STEP + 2 * PADY;
+      for (const cell of cells.values())
+        for (const e of cell) e.py = top + PADY + e.row * STEP + STEP / 2;
+      const { bg, name } = laneEls.get(h);
+      for (const [k, v] of Object.entries({
+        x: 2,
+        y: top,
+        width: d.W - 4,
+        height,
+      }))
+        bg.setAttribute(k, fmt(v));
+      name.setAttribute("x", h.depth ? 20 : 10);
+      name.setAttribute("y", fmt(top + Math.min(height / 2, STEP) + 4));
+      top += height + GAP;
+    }
+    const H = top + 2;
+    svg.setAttribute("viewBox", `0 0 ${d.W} ${fmt(H)}`);
+    svg.setAttribute("height", fmt(H));
+    for (const e of nodes) {
+      e.node.style.display = e.vis ? "" : "none";
+      if (e.vis) moveGlyph(e);
+    }
+    for (const l of links) {
+      const p = l.source;
+      const q = l.target;
+      if (!p.vis || !q.vis) {
+        l.el.style.display = "none";
+        continue;
+      }
+      l.el.style.display = "";
+      const mid = (p.px + q.px) / 2;
+      l.el.setAttribute(
+        "d",
+        `M${fmt(p.px)} ${fmt(p.py)}C${fmt(mid)} ${fmt(p.py)} ${fmt(mid)} ${fmt(q.py)} ${fmt(q.px)} ${fmt(q.py)}`,
+      );
+    }
+
+    // the years: labels above the rows, lines across them
+    const marks = ticks(d, X);
+    els.axis.setAttribute("viewBox", `0 0 ${d.W} 22`);
+    els.axis.innerHTML = marks
+      .map(
+        ([y, x]) =>
+          `<text class="tick" x="${fmt(x)}" y="15" text-anchor="middle">${y}</text>`,
+      )
+      .join("");
+    gGrid.innerHTML = marks
+      .map(
+        ([, x]) =>
+          `<line class="gridline" x1="${fmt(x)}" x2="${fmt(x)}" y1="0" y2="${fmt(H)}"/>`,
+      )
+      .join("");
+
+    // the trim bar
+    const TY = 22;
+    const TH = 36;
+    ov.setAttribute("viewBox", `0 0 ${d.W} ${OVH}`);
+    for (const [k, v] of Object.entries({
+      x: d.L,
+      y: TY,
+      width: d.PW,
+      height: TH,
+    }))
+      track.setAttribute(k, fmt(v));
+    const bw = d.PW / (Y1 - Y0);
+    for (const [y, r] of bars) {
+      const h = ((count.get(y) || 0) / most) * (TH - 8);
+      for (const [k, v] of Object.entries({
+        x: xo(d, y) + 0.5,
+        y: TY + TH - 4 - h,
+        width: Math.max(1, bw - 1),
+        height: h,
+      }))
+        r.setAttribute(k, fmt(v));
+    }
+    let labels = "";
+    for (let y = Math.ceil(Y0 / 10) * 10; y < Y1; y += 10)
+      labels += `<text class="ov-label" x="${fmt(xo(d, y))}" y="${TY + TH + 14}">${y}</text>`;
+    gLabels.innerHTML = labels;
+    const xa = xo(d, st.a);
+    const xb = xo(d, st.b);
+    for (const [r, x0, x1] of [
+      [shadeL, d.L, xa],
+      [shadeR, xb, d.L + d.PW],
+    ])
+      for (const [k, v] of Object.entries({
+        x: x0,
+        y: TY,
+        width: Math.max(0, x1 - x0),
+        height: TH,
+      }))
+        r.setAttribute(k, fmt(v));
+    for (const [k, v] of Object.entries({
+      x: xa,
+      y: TY,
+      width: Math.max(1, xb - xa),
+      height: TH,
+    }))
+      win.setAttribute(k, fmt(v));
+    for (const [k, v] of Object.entries({
+      x: xa - 1,
+      y: TY - 2,
+      width: Math.max(2, xb - xa + 2),
+      height: TH + 4,
+    }))
+      outline.setAttribute(k, fmt(v));
+    for (const [h, grip, x, v] of [
+      [hA, gripA, xa - 13, st.a],
+      [hB, gripB, xb, st.b - 1],
+    ]) {
+      h.setAttribute("x", fmt(x));
+      h.setAttribute("y", TY - 2);
+      h.setAttribute("height", TH + 4);
+      h.setAttribute("aria-valuenow", v);
+      h.setAttribute("aria-valuetext", String(v));
+      const gx = x + 6.5;
+      grip.setAttribute(
+        "d",
+        `M${fmt(gx - 2)} ${TY + 11}V${TY + TH - 11}M${fmt(gx + 2)} ${TY + 11}V${TY + TH - 11}`,
+      );
+    }
+    const tag = (g, x, text) => {
+      const w = text.length * 7 + 12;
+      g.setAttribute(
+        "transform",
+        `translate(${fmt(Math.min(Math.max(x, d.L + w / 2), d.L + d.PW - w / 2))} 0)`,
+      );
+      g.firstChild.setAttribute("x", fmt(-w / 2));
+      g.firstChild.setAttribute("width", fmt(w));
+      g.lastChild.textContent = text;
+    };
+    if (xb - xa < 64) {
+      tag(
+        tagA,
+        (xa + xb) / 2,
+        st.b - st.a === 1 ? String(st.a) : `${st.a}–${st.b - 1}`,
+      );
+      tagB.style.display = "none";
+    } else {
+      tag(tagA, xa - 6, String(st.a));
+      tag(tagB, xb + 6, String(st.b - 1));
+      tagB.style.display = "";
+    }
+    for (const b of els.scales)
+      b.setAttribute("aria-pressed", String(b.dataset.scale === st.scale));
+    els.allYears.disabled = st.a === Y0 && st.b === Y1;
+  }
+
+  let frame = 0;
+  const schedule = () => {
+    if (!frame)
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        layout();
+      });
+  };
+  const setWindow = (a, b) => {
+    const w = Math.max(1, Math.min(b - a, Y1 - Y0));
+    a = Math.max(Y0, Math.min(a, Y1 - w));
+    st.a = Math.round(a);
+    st.b = Math.round(a + w);
+    schedule();
+  };
+
+  // dragging: a handle moves its end, the window moves as a whole, elsewhere centres the window
+  let drag = null;
+  ov.addEventListener("pointerdown", (ev) => {
+    const d = dims();
+    const x = ev.clientX - ov.getBoundingClientRect().left;
+    const y = yo(d, x);
+    const kind =
+      ev.target === hA
+        ? "a"
+        : ev.target === hB
+          ? "b"
+          : ev.target === win
+            ? "move"
+            : "jump";
+    if (kind === "jump")
+      setWindow(
+        Math.round(y - (st.b - st.a) / 2),
+        Math.round(y - (st.b - st.a) / 2) + (st.b - st.a),
+      );
+    drag = { kind: kind === "jump" ? "move" : kind, y0: y, a0: st.a, b0: st.b };
+    ov.setPointerCapture(ev.pointerId);
+    ev.preventDefault();
+  });
+  ov.addEventListener("pointermove", (ev) => {
+    if (!drag) return;
+    const d = dims();
+    const y = yo(d, ev.clientX - ov.getBoundingClientRect().left);
+    if (drag.kind === "a") {
+      st.a = Math.max(Y0, Math.min(Math.round(y), st.b - 1));
+      schedule();
+    } else if (drag.kind === "b") {
+      st.b = Math.min(Y1, Math.max(Math.round(y), st.a + 1));
+      schedule();
+    } else {
+      const dy = Math.round(y - drag.y0);
+      setWindow(drag.a0 + dy, drag.b0 + dy);
+    }
+  });
+  const stop = () => (drag = null);
+  ov.addEventListener("pointerup", stop);
+  ov.addEventListener("pointercancel", stop);
+  ov.addEventListener(
+    "wheel",
+    (ev) => {
+      ev.preventDefault();
+      const d = dims();
+      const at = yo(d, ev.clientX - ov.getBoundingClientRect().left);
+      const w = st.b - st.a;
+      const next = Math.max(
+        2,
+        Math.min(Y1 - Y0, Math.round(w * (ev.deltaY > 0 ? 1.2 : 1 / 1.2))),
+      );
+      const f = (at - st.a) / w;
+      setWindow(at - f * next, at - f * next + next);
+    },
+    { passive: false },
+  );
+  const keys = (end) => (ev) => {
+    const step = {
+      ArrowLeft: -1,
+      ArrowRight: 1,
+      ArrowDown: -1,
+      ArrowUp: 1,
+      PageDown: -5,
+      PageUp: 5,
+    }[ev.key];
+    if (step == null && ev.key !== "Home" && ev.key !== "End") return;
+    ev.preventDefault();
+    if (end === "a")
+      st.a =
+        ev.key === "Home"
+          ? Y0
+          : ev.key === "End"
+            ? st.b - 1
+            : Math.max(Y0, Math.min(st.a + step, st.b - 1));
+    else
+      st.b =
+        ev.key === "End"
+          ? Y1
+          : ev.key === "Home"
+            ? st.a + 1
+            : Math.min(Y1, Math.max(st.b + step, st.a + 1));
+    schedule();
+  };
+  hA.addEventListener("keydown", keys("a"));
+  hB.addEventListener("keydown", keys("b"));
+  for (const b of els.scales)
+    b.addEventListener("click", () => {
+      st.scale = b.dataset.scale;
+      schedule();
+    });
+  els.allYears.addEventListener("click", () => setWindow(Y0, Y1));
+  new ResizeObserver(schedule).observe(els.stage);
+
+  return {
+    layout,
+    ensure(e) {
+      if (e.y4 == null || (e.y4 >= st.a && e.y4 < st.b)) return;
+      const w = st.b - st.a;
+      const a = Math.max(Y0, Math.min(e.y4 - Math.floor(w / 2), Y1 - w));
+      st.a = a;
+      st.b = a + w;
+      layout();
+    },
+  };
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -1065,8 +1388,8 @@ function placeBy(rect) {
 
 // ---------------------------------------------------------------------------------------------
 // The page: the list of the hubs beside the views and the panel of the selected entry. Pointing at
-// an entry anywhere marks it everywhere; the first click selects it and shows what it cites (ink)
-// and what cites it (amber); a second click opens its formalization, or the paper.
+// an entry anywhere marks it everywhere; a click pins it and shows what it cites (ink) and what
+// cites it (amber), and a click on the pinned entry unpins it. The panel's links open it.
 
 const SUN =
   '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 1.5v1.6M8 12.9v1.6M1.5 8h1.6M12.9 8h1.6M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M3.4 12.6l1.1-1.1M11.5 4.5l1.1-1.1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>';
@@ -1134,9 +1457,21 @@ function shell(app) {
             <span class="k-group"><span class="k-item"><i class="ln out"></i>cites</span><span class="k-item"><i class="ln in"></i>cited by</span></span>
           </span>
         </div>
+        <svg id="axis" class="axis" aria-hidden="true"></svg>
         <div class="stage" id="stage">
-          <svg id="graph" class="view" role="img" aria-label="The entries of the catalogs along time, and the citations between them"></svg>
+          <svg id="graph" class="view" role="img" aria-label="The entries of the catalogs along time, a row for each hub, and the citations between them"></svg>
           <p class="note" id="note" aria-live="polite"></p>
+        </div>
+        <div class="slider">
+          <svg id="overview" class="overview" role="group" aria-label="The years shown: drag the window or its ends, or scroll to zoom"></svg>
+          <div class="s-controls">
+            <span class="s-group" role="group" aria-label="Scale">
+              <span class="s-cap">scale</span>
+              <button type="button" data-scale="linear" aria-pressed="false">Linear</button>
+              <button type="button" data-scale="papers" aria-pressed="true">By papers</button>
+            </span>
+            <button type="button" class="s-all" id="all-years">All years</button>
+          </div>
         </div>
         <section class="panel" id="panel" aria-live="polite" aria-label="The selected entry"></section>
       </aside>
@@ -1176,7 +1511,7 @@ function renderPanel(ui) {
   const p = ui.els.panel;
   const e = ui.selected;
   if (!e) {
-    p.innerHTML = `<p class="p-hint">Select an entry in a view or in the list to follow its citations. Select it again to open it.</p>`;
+    p.innerHTML = `<p class="p-hint">Click an entry in the cover, the list or the timeline to pin it and follow its citations. Click it again to unpin it.</p>`;
     return;
   }
   const FIRST = 12;
@@ -1303,11 +1638,7 @@ function makeUi(m, els) {
     ui.mark(e || ui.selected);
   };
   ui.pick = (e, from) => {
-    if (e && ui.selected === e) {
-      if (e.url) window.open(e.url, "_blank", "noopener");
-      return;
-    }
-    ui.select(e, from);
+    ui.select(e && ui.selected === e ? null : e, from);
   };
   ui.select = (e, from) => {
     ui.selected = e;
@@ -1329,6 +1660,8 @@ function makeUi(m, els) {
     if (e.node && from !== "view") ui.reveal(e);
   };
   ui.reveal = (e) => {
+    if (ui.timeline) ui.timeline.ensure(e);
+    if (!e.node || e.node.style.display === "none") return;
     const st = els.stage;
     const r = e.node.getBoundingClientRect();
     const s = st.getBoundingClientRect();
@@ -1400,10 +1733,8 @@ function wireList(ui) {
       ev.altKey
     )
       return;
-    if (ui.selected !== e) {
-      ev.preventDefault();
-      ui.select(e, t.closest(".panel") ? "panel" : "list");
-    }
+    ev.preventDefault();
+    ui.pick(e, t.closest(".panel") ? "panel" : "list");
   });
   addEventListener(
     "scroll",
@@ -1433,6 +1764,10 @@ async function main() {
     hubs: document.getElementById("hubs"),
     note: document.getElementById("note"),
     bar: document.getElementById("bar"),
+    axis: document.getElementById("axis"),
+    overview: document.getElementById("overview"),
+    scales: [...document.querySelectorAll(".s-group button")],
+    allYears: document.getElementById("all-years"),
   };
   wireTheme(document.getElementById("theme"));
   const barHeight = () =>
@@ -1483,7 +1818,8 @@ async function main() {
   readCitations(m, () => {})
     .then((raw) => {
       ui.useCitations(raw);
-      drawTimeline(els.graph, m, ui.links);
+      ui.timeline = createTimeline(els, m, ui.links);
+      ui.timeline.layout();
       els.note.textContent = ui.links.length
         ? ""
         : "No citations could be read.";
