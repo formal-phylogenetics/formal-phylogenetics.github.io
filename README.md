@@ -20,11 +20,11 @@ the catalog of each hub (`catalog/papers.toml`) from GitHub each time it opens, 
 entry appears as soon as it is pushed. The citations and the abstracts are not read at each visit:
 `snapshot.py` reads them from [OpenAlex](https://openalex.org), and from
 [Semantic Scholar](https://www.semanticscholar.org) where OpenAlex has no abstract, in a few batched
-requests, and stores them in `citations.json` and `works.json`. A workflow runs it every Monday,
-with the repository secret `OPENALEX_API_KEY`, and commits what changed; to take a change of the
-catalogs sooner, run the workflow from the Actions tab, or the script here. With `OPENALEX_API_KEY`
-set, OpenAlex counts its requests against that key instead of the small budget shared by everyone on
-the same address.
+requests, and stores them in `citations.json` and `works.json`. Once entries are added to the
+catalogs, run the Snapshot workflow from the Actions tab: it runs the script with the repository
+secret `OPENALEX_API_KEY` and commits what changed. The script also runs here; with
+`OPENALEX_API_KEY` set, OpenAlex counts its requests against that key instead of the small budget
+shared by everyone on the same address.
 
 - `index.html`, `style.css`, `app.js`: the page, with no build step; `app.js` draws into `#app`, so
   another site can show the catalogue with its own `index.html` that loads `style.css` and `app.js`
@@ -33,7 +33,7 @@ the same address.
   `citations.json`, the citations between the entries; `works.json`, the authors, venue and abstract
   of each entry: all written by `python3 snapshot.py`;
 - `catalogue.png`: the image shown when the page is shared, the tree of the collection.
-- `.github/workflows/snapshot.yml`: the weekly run of `snapshot.py`.
+- `.github/workflows/snapshot.yml`: the Snapshot workflow, which runs `snapshot.py`.
 
 To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>.
 

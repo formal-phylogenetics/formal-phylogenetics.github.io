@@ -1,10 +1,8 @@
-# Every Monday, and on demand: rewrites the data the page reads (snapshot.py) and commits what
-# changed, which publishes it.
+# Run from the Actions tab once entries are added to the catalogs: rewrites the data the page reads
+# (snapshot.py) and commits what changed, which publishes it.
 name: Snapshot
 
 on:
-  schedule:
-    - cron: "17 4 * * 1"
   workflow_dispatch:
 
 permissions:

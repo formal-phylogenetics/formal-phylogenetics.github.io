@@ -12,8 +12,8 @@ The requests go in batches (fifty works to a request to OpenAlex, five hundred t
 Scholar), with a pause between them. OpenAlex gives requests without a key a small daily budget,
 shared by everyone on the same address: set OPENALEX_API_KEY to a key of your own (they are free,
 https://help.openalex.org/api/authentication/). When OpenAlex refuses, the citations and the works
-already stored are kept, and Semantic Scholar still fills in what it can. A workflow of this
-repository runs the script every week.
+already stored are kept, and Semantic Scholar still fills in what it can. The Snapshot workflow of
+this repository runs the script, with the key as a secret, from the Actions tab.
 """
 
 import json
