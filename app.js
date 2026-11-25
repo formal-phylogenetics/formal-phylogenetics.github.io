@@ -1408,8 +1408,11 @@ function shell(app) {
       <div class="intro">
         <h1>Formal Phylogenetics</h1>
         <p class="sub">Phylogenetic methods and theory, formalized in Lean.</p>
-        <p class="by">Maintained by <a href="https://vltanh.me">The-Anh Vu-Le</a>, with the help of Claude and ChatGPT.</p>
-        <p class="by">With the skills <a href="https://github.com/vltanh/formalize-math-paper">formalize-math-paper</a> and <a href="https://impeccable.style">impeccable</a><span id="updated"></span>.</p>
+        <dl class="meta">
+          <div><dt>Maintainer</dt><dd><a href="https://vltanh.me">The-Anh Vu-Le</a>, with the help of Claude and ChatGPT</dd></div>
+          <div><dt>Skills</dt><dd><a href="https://github.com/vltanh/formalize-math-paper">formalize-math-paper</a>, <a href="https://impeccable.style">impeccable</a></dd></div>
+          <div id="updated-row" hidden><dt>Updated</dt><dd id="updated"></dd></div>
+        </dl>
       </div>
       <figure class="cover">
         <svg id="fan" class="view" role="img" aria-label="The tree of the collection: the root, the hubs, their families and their entries"></svg>
@@ -1733,7 +1736,8 @@ async function main() {
         timeStyle: "short",
       }).format(new Date(at));
       document.getElementById("updated").innerHTML =
-        ` · updated <time datetime="${esc(at)}">${esc(shown)}</time>`;
+        `<time datetime="${esc(at)}">${esc(shown)}</time>`;
+      document.getElementById("updated-row").hidden = false;
     })
     .catch(() => {});
   const themeBtn = document.getElementById("theme");

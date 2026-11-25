@@ -207,10 +207,28 @@ a:hover {
   margin: var(--s2) 0 0;
   color: var(--ink-3);
 }
-.hero .by {
-  margin: var(--s1) 0 0;
+/* The credits: a label and its value on each line. */
+.meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px var(--s4);
+  margin: var(--s5) 0 0;
   font-size: 0.85rem;
+  line-height: 1.45;
+}
+.meta > div {
+  display: contents;
+}
+.meta dt {
+  padding-top: 0.18em;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--ink-3);
+}
+.meta dd {
+  margin: 0;
+  color: var(--ink-2);
 }
 
 /* The bar: the views, the search and the key, always at hand. */
