@@ -743,9 +743,9 @@ async function readCitations(m, progress) {
 }
 
 // The timeline: every entry of the catalogs, in the row of its hub, at its year; time runs from
-// left to right, and a citation is a curve from the citing entry back to the entry it cites. Below
-// it, a slider chooses the years shown; the scale gives each year the same width, or a width that
-// grows with its papers. A row per hub, so that a new hub is a new row.
+// left to right, and a citation is a curve from the citing entry back to the entry it cites. Above
+// it, a trim bar chooses the years shown; a year's width grows with its papers. A row per hub, so
+// that a new hub is a new row.
 const yearOf = (e) => {
   const m = String(e.year).match(/\d{4}/);
   return m ? +m[0] : null;
@@ -777,7 +777,7 @@ function createTimeline(els, m, links) {
   const STEP = 13;
   // a narrow screen opens on the recent years; the trim bar reaches the others
   const narrow = els.stage.clientWidth < 600;
-  const st = { a: narrow ? Math.max(Y0, Y1 - 18) : Y0, b: Y1, scale: "papers" };
+  const st = { a: narrow ? Math.max(Y0, Y1 - 18) : Y0, b: Y1 };
   const lanes = [];
   m.groups.forEach((g) => {
     const walk = (h) => {
@@ -834,7 +834,6 @@ function createTimeline(els, m, links) {
   const bars = [];
   for (let y = Y0; y < Y1; y++)
     bars.push([y, svgEl("rect", { class: "ov-bar" }, gBars)]);
-  const gLabels = svgEl("g", { class: "ov-labels" }, ov);
   const shadeL = svgEl("rect", { class: "ov-shade" }, ov);
   const shadeR = svgEl("rect", { class: "ov-shade" }, ov);
   const win = svgEl("rect", { class: "ov-win" }, ov);
@@ -868,7 +867,7 @@ function createTimeline(els, m, links) {
 
   const PADY = 6;
   const GAP = 3;
-  const OVH = 74;
+  const OVH = 62;
   const dims = () => {
     const W = Math.max(300, Math.round(els.stage.clientWidth));
     const L = W < 560 ? 92 : 122;
@@ -877,13 +876,13 @@ function createTimeline(els, m, links) {
   const weights = () => {
     const w = [];
     for (let y = st.a; y < st.b; y++)
-      w.push(st.scale === "linear" ? 1 : 0.5 + Math.sqrt(count.get(y) || 0));
+      w.push(0.5 + Math.sqrt(count.get(y) || 0));
     return w;
   };
   const scaleX = (d) => {
     const w = weights();
-    // by papers, a year with papers is never narrower than one of them
-    for (let pass = 0; st.scale === "papers" && pass < 4; pass++) {
+    // a year with papers is never narrower than one of them
+    for (let pass = 0; pass < 4; pass++) {
       const unit = d.PW / w.reduce((s, x) => s + x, 0);
       let grew = false;
       w.forEach((x, i) => {
@@ -1017,10 +1016,6 @@ function createTimeline(els, m, links) {
       }))
         r.setAttribute(k, fmt(v));
     }
-    let labels = "";
-    for (let y = Math.ceil(Y0 / 10) * 10; y < Y1; y += 10)
-      labels += `<text class="ov-label" x="${fmt(xo(d, y))}" y="${TY + TH + 14}">${y}</text>`;
-    gLabels.innerHTML = labels;
     const xa = xo(d, st.a);
     const xb = xo(d, st.b);
     for (const [r, x0, x1] of [
@@ -1085,9 +1080,7 @@ function createTimeline(els, m, links) {
       tag(tagB, xb + 6, String(st.b - 1));
       tagB.style.display = "";
     }
-    for (const b of els.scales)
-      b.setAttribute("aria-pressed", String(b.dataset.scale === st.scale));
-    els.allYears.hidden = st.a === Y0 && st.b === Y1;
+    els.allYears.disabled = st.a === Y0 && st.b === Y1;
   }
 
   let frame = 0;
@@ -1192,11 +1185,6 @@ function createTimeline(els, m, links) {
   };
   hA.addEventListener("keydown", keys("a"));
   hB.addEventListener("keydown", keys("b"));
-  for (const b of els.scales)
-    b.addEventListener("click", () => {
-      st.scale = b.dataset.scale;
-      schedule();
-    });
   els.allYears.addEventListener("click", () => setWindow(Y0, Y1));
   new ResizeObserver(schedule).observe(els.stage);
 
@@ -1428,41 +1416,33 @@ function shell(app) {
         <svg id="fan" class="view" role="img" aria-label="The tree of the collection: the root, the hubs, their families and their entries"></svg>
       </figure>
     </section>
-    <div class="bar" id="bar">
-      <input id="q" type="search" placeholder="Search a method, a title or an author" aria-label="Search the catalogue" autocomplete="off" />
-      <button type="button" class="theme" id="theme"></button>
-      <span class="key" aria-label="Legend">
-        <span class="k-item"><i class="sw k-method"></i>method</span>
-        <span class="k-item"><i class="sw k-theory"></i>theory</span>
-        <span class="k-item"><i class="sw s-formalized"></i>formalized</span>
-        <span class="k-item"><i class="ln out"></i>cites</span>
-        <span class="k-item"><i class="ln in"></i>cited by</span>
-      </span>
-    </div>
     <div class="explorer">
       <section class="timeline" aria-label="The entries along time, and the citations between them">
         <div class="side-top">
+          <span class="key" aria-label="Legend">
+            <span class="k-item"><i class="sw k-method"></i>method</span>
+            <span class="k-item"><i class="sw k-theory"></i>theory</span>
+            <span class="k-item"><i class="sw s-formalized"></i>formalized</span>
+            <span class="k-item"><i class="ln out"></i>cites</span>
+            <span class="k-item"><i class="ln in"></i>cited by</span>
+          </span>
+          <div class="slider">
+            <button type="button" class="s-all" id="all-years" disabled>All years</button>
+            <svg id="overview" class="overview" role="group" aria-label="The years shown: drag the window or its ends, or scroll to zoom"></svg>
+          </div>
           <svg id="axis" class="axis" aria-hidden="true"></svg>
         </div>
         <div class="stage" id="stage">
           <svg id="graph" class="view" role="img" aria-label="The entries of the catalogs along time, a row for each hub, and the citations between them"></svg>
           <p class="note" id="note" aria-live="polite"></p>
         </div>
-        <div class="slider">
-          <svg id="overview" class="overview" role="group" aria-label="The years shown: drag the window or its ends, or scroll to zoom"></svg>
-          <div class="s-controls">
-            <span class="s-group" role="group" aria-label="Scale">
-              <button type="button" data-scale="linear" aria-pressed="false">Linear</button>
-              <button type="button" data-scale="papers" aria-pressed="true">By papers</button>
-            </span>
-            <button type="button" class="s-all" id="all-years" hidden>All years</button>
-          </div>
-        </div>
       </section>
-      <section class="hubs" id="hubs" aria-label="The hubs"></section>
-      <div class="dock">
-        <section class="panel" id="panel" aria-live="polite" aria-label="The selected entry"></section>
+      <section class="panel" id="panel" aria-live="polite" aria-label="The selected entry"></section>
+      <div class="find">
+        <input id="q" type="search" placeholder="Search a method, a title or an author" aria-label="Search the catalogue" autocomplete="off" />
+        <button type="button" class="fold-all" id="fold-all"></button>
       </div>
+      <section class="hubs" id="hubs" aria-label="The hubs"></section>
     </div>`;
 }
 
@@ -1476,7 +1456,7 @@ function themeNow() {
 function wireTheme(btn) {
   const paint = () => {
     const dark = themeNow() === "dark";
-    btn.innerHTML = dark ? SUN : MOON;
+    btn.innerHTML = `${dark ? SUN : MOON}<span>${dark ? "Light" : "Dark"}</span>`;
     const label = dark ? "Switch to light mode" : "Switch to dark mode";
     btn.setAttribute("aria-label", label);
     btn.title = label;
@@ -1644,16 +1624,15 @@ function makeUi(m, els) {
     if (!e) return;
     if (e.hub.el) e.hub.el.open = true;
     if (ui.timeline) ui.timeline.ensure(e);
-    if (e.node && from !== "view" && from !== "list") ui.reveal(e);
+    if (e.node && (from === "cover" || from === "hash")) ui.reveal(e);
   };
   ui.reveal = (e) => {
     if (ui.timeline) ui.timeline.ensure(e);
     if (!e.node || e.node.style.display === "none") return;
-    // the node, in the middle of what the bar above and the dock below leave visible
+    // the node, in the middle of what the sticky years above leave visible
     const r = e.node.getBoundingClientRect();
-    const top = els.bar.offsetHeight + els.sideTop.offsetHeight;
-    const bottom =
-      innerHeight - els.dock.offsetHeight - els.slider.offsetHeight;
+    const top = els.sideTop.offsetHeight;
+    const bottom = innerHeight;
     scrollTo({ top: scrollY + r.top - (top + bottom) / 2, behavior: smooth() });
   };
   ui.openHub = (h) => {
@@ -1749,30 +1728,13 @@ async function main() {
     panel: document.getElementById("panel"),
     hubs: document.getElementById("hubs"),
     note: document.getElementById("note"),
-    bar: document.getElementById("bar"),
     sideTop: document.querySelector(".side-top"),
-    dock: document.querySelector(".dock"),
-    slider: document.querySelector(".slider"),
     axis: document.getElementById("axis"),
     overview: document.getElementById("overview"),
-    scales: [...document.querySelectorAll(".s-group button")],
     allYears: document.getElementById("all-years"),
   };
-  wireTheme(document.getElementById("theme"));
-  // the trim bar rests on the panel of the pinned entry, both at the bottom of the window
-  new ResizeObserver(() =>
-    document.documentElement.style.setProperty(
-      "--dock-h",
-      `${els.dock.offsetHeight}px`,
-    ),
-  ).observe(els.dock);
-  const barHeight = () =>
-    document.documentElement.style.setProperty(
-      "--bar-h",
-      `${els.bar.offsetHeight}px`,
-    );
-  barHeight();
-  addEventListener("resize", barHeight);
+  const themeBtn = document.getElementById("theme");
+  if (themeBtn) wireTheme(themeBtn);
   els.note.textContent = "Reading the catalogs…";
   let data;
   try {
@@ -1797,6 +1759,20 @@ async function main() {
     const tags = h.el.querySelectorAll(":scope > .h-body .tag");
     h.entries.forEach((e, i) => (e.tag = tags[i]));
   }
+  // one button opens every hub, or closes them all once one is open
+  const foldAll = document.getElementById("fold-all");
+  const paintFold = () => {
+    const any = m.hubs.some((h) => h.el.open);
+    foldAll.textContent = any ? "Collapse all" : "Expand all";
+    foldAll.setAttribute("aria-expanded", String(any));
+  };
+  foldAll.addEventListener("click", () => {
+    const open = !m.hubs.some((h) => h.el.open);
+    for (const h of m.hubs) h.el.open = open;
+    paintFold();
+  });
+  for (const h of m.hubs) h.el.addEventListener("toggle", paintFold);
+  paintFold();
   const ui = makeUi(m, els);
   els.fan.classList.add("grow");
   ui.fan = drawFan(els.fan, m);
@@ -1860,6 +1836,11 @@ async function main() {
       }
     }
     if (!on) opened.clear();
+    // a citation stays when one of its ends matches
+    const hit = (e) => !on || words.every((w) => e.hay.includes(w));
+    for (const l of ui.links)
+      if (l.el)
+        l.el.classList.toggle("off", on && !hit(l.source) && !hit(l.target));
     if (on && !any) els.note.textContent = "No entry matches the search.";
     else if (els.note.textContent === "No entry matches the search.")
       els.note.textContent = "";
