@@ -660,8 +660,8 @@ function wireTimeline(svg, ui) {
 }
 
 // ---------------------------------------------------------------------------------------------
-// The citations and the works, read from OpenAlex and Semantic Scholar by snapshot.py and stored
-// with the site, so that a visit asks those services nothing.
+// The citations and the works, read from OpenAlex, Semantic Scholar, Europe PMC and Crossref by
+// snapshot.py and stored with the site, so that a visit asks those services nothing.
 async function readCitations() {
   const r = await fetch(HERE("citations.json"));
   if (!r.ok) throw new Error("no citations");

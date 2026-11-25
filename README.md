@@ -18,9 +18,11 @@ click on the pinned entry unpins it. The header switches between light and dark.
 The page reads the registry of the collection (`collection/repos.toml` in lean4-phylogenetics) and
 the catalog of each hub (`catalog/papers.toml`) from GitHub each time it opens, so a hub, family or
 entry appears as soon as it is pushed. The citations and the abstracts are not read at each visit:
-`snapshot.py` reads them from [OpenAlex](https://openalex.org), and from
-[Semantic Scholar](https://www.semanticscholar.org) where OpenAlex has no abstract, in a few batched
-requests, and stores them in `citations.json` and `works.json`. Once entries are added to the
+`snapshot.py` reads them in a few batched requests and stores them in `citations.json` and
+`works.json`: the citations from the reference lists of [OpenAlex](https://openalex.org),
+[Crossref](https://www.crossref.org) and [Semantic Scholar](https://www.semanticscholar.org); the
+authors, venue and abstract of each entry from OpenAlex, and where it has no abstract, from Semantic
+Scholar, [Europe PMC](https://europepmc.org) (the abstracts of PubMed) or Crossref. Once entries are added to the
 catalogs, run the Snapshot workflow from the Actions tab: it runs the script with the repository
 secret `OPENALEX_API_KEY` and commits what changed. The script also runs here; with
 `OPENALEX_API_KEY` set, OpenAlex counts its requests against that key instead of the small budget
