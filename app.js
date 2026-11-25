@@ -1449,6 +1449,7 @@ function shell(app) {
     <div class="explorer">
       <section class="hubs" id="hubs" aria-label="The hubs"></section>
       <aside class="side">
+        <div class="side-top">
         <div class="side-head">
           <h2>Citations along time</h2>
           <span class="key" aria-label="Legend">
@@ -1458,10 +1459,12 @@ function shell(app) {
           </span>
         </div>
         <svg id="axis" class="axis" aria-hidden="true"></svg>
+        </div>
         <div class="stage" id="stage">
           <svg id="graph" class="view" role="img" aria-label="The entries of the catalogs along time, a row for each hub, and the citations between them"></svg>
           <p class="note" id="note" aria-live="polite"></p>
         </div>
+        <div class="dock">
         <div class="slider">
           <svg id="overview" class="overview" role="group" aria-label="The years shown: drag the window or its ends, or scroll to zoom"></svg>
           <div class="s-controls">
@@ -1470,10 +1473,12 @@ function shell(app) {
               <button type="button" data-scale="linear" aria-pressed="false">Linear</button>
               <button type="button" data-scale="papers" aria-pressed="true">By papers</button>
             </span>
+            <span class="s-hint">Click an entry to pin it; click again to unpin.</span>
             <button type="button" class="s-all" id="all-years">All years</button>
           </div>
         </div>
         <section class="panel" id="panel" aria-live="polite" aria-label="The selected entry"></section>
+        </div>
       </aside>
     </div>`;
 }
@@ -1510,8 +1515,9 @@ function wireTheme(btn) {
 function renderPanel(ui) {
   const p = ui.els.panel;
   const e = ui.selected;
+  p.hidden = !e;
   if (!e) {
-    p.innerHTML = `<p class="p-hint">Click an entry in the cover, the list or the timeline to pin it and follow its citations. Click it again to unpin it.</p>`;
+    p.innerHTML = "";
     return;
   }
   const FIRST = 12;
@@ -1653,22 +1659,17 @@ function makeUi(m, els) {
     );
     if (!e) return;
     if (e.hub.el) e.hub.el.open = true;
-    if (from === "cover")
-      els.bar.scrollIntoView({ block: "start", behavior: smooth() });
-    else if (from !== "list" && e.tag && wide())
-      e.tag.scrollIntoView({ block: "nearest", behavior: smooth() });
-    if (e.node && from !== "view") ui.reveal(e);
+    if (ui.timeline) ui.timeline.ensure(e);
+    if (e.node && from !== "view" && from !== "list") ui.reveal(e);
   };
   ui.reveal = (e) => {
     if (ui.timeline) ui.timeline.ensure(e);
     if (!e.node || e.node.style.display === "none") return;
-    const st = els.stage;
+    // the node, in the middle of what the bar above and the dock below leave visible
     const r = e.node.getBoundingClientRect();
-    const s = st.getBoundingClientRect();
-    st.scrollTo({
-      top: st.scrollTop + (r.top - s.top) - st.clientHeight / 2,
-      behavior: smooth(),
-    });
+    const top = els.bar.offsetHeight + els.sideTop.offsetHeight;
+    const bottom = innerHeight - els.dock.offsetHeight;
+    scrollTo({ top: scrollY + r.top - (top + bottom) / 2, behavior: smooth() });
   };
   ui.openHub = (h) => {
     h.el.open = true;
@@ -1764,6 +1765,8 @@ async function main() {
     hubs: document.getElementById("hubs"),
     note: document.getElementById("note"),
     bar: document.getElementById("bar"),
+    sideTop: document.querySelector(".side-top"),
+    dock: document.querySelector(".dock"),
     axis: document.getElementById("axis"),
     overview: document.getElementById("overview"),
     scales: [...document.querySelectorAll(".s-group button")],

@@ -175,13 +175,13 @@ a:hover {
   max-width: 760px;
 }
 .cover {
-  margin: var(--s5) 0 var(--s2);
+  margin: var(--s3) 0 0;
 }
 .cover #fan {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 66vh;
+  max-height: min(42vh, 380px);
   margin: 0 auto;
 }
 .hero h1 {
@@ -351,20 +351,28 @@ a:hover {
 }
 .side {
   grid-area: side;
+  min-width: 0;
+}
+.side-top {
   position: sticky;
-  top: calc(var(--bar-h) + var(--s3));
-  height: calc(100vh - var(--bar-h) - var(--s5));
+  top: var(--bar-h);
+  z-index: 6;
+  padding-top: var(--s2);
+  background: var(--paper);
+}
+.dock {
+  position: sticky;
+  bottom: 0;
+  z-index: 6;
   display: flex;
   flex-direction: column;
-  gap: var(--s3);
-  min-width: 0;
+  gap: var(--s2);
+  padding: var(--s2) 0 var(--s3);
+  background: var(--paper);
+  box-shadow: 0 -14px 18px -14px rgba(0, 0, 0, 0.18);
 }
 .stage {
   position: relative;
-  flex: 1 1 0;
-  min-height: 0;
-  overflow-y: auto;
-  overscroll-behavior: contain;
   border-top: 1px solid var(--rule);
 }
 .view {
@@ -388,8 +396,7 @@ a:hover {
 
 /* The panel of the selected entry. */
 .panel {
-  flex: 0 1 auto;
-  max-height: 40%;
+  max-height: 36vh;
   overflow-y: auto;
   padding: var(--s4) var(--s4) var(--s3);
   border: 1px solid var(--rule);
@@ -836,8 +843,12 @@ a:hover {
   border-color: var(--ink);
   color: var(--paper);
 }
-.s-all {
+.s-hint {
   margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.s-all {
   border-radius: 999px;
 }
 .s-all:hover:not(:disabled),
@@ -1265,7 +1276,7 @@ a.tag:hover {
   color: var(--ink-3);
 }
 
-/* Below a wide screen: the timeline and the panel, then the list. */
+/* Below a wide screen: the timeline, its trim bar and the panel, then the list. */
 @media (max-width: 1099px) {
   .explorer {
     display: flex;
@@ -1274,18 +1285,6 @@ a.tag:hover {
   }
   .side {
     order: -1;
-  }
-  .side {
-    position: static;
-    height: auto;
-  }
-  .stage {
-    flex: none;
-    max-height: 72vh;
-    overflow: auto;
-  }
-  .panel {
-    max-height: none;
   }
   .hubs {
     margin-top: var(--s6);
@@ -1299,6 +1298,12 @@ a.tag:hover {
   }
   .bar {
     position: static;
+  }
+  .side-top {
+    top: 0;
+  }
+  .panel {
+    max-height: 30vh;
   }
   .side-head {
     display: block;
