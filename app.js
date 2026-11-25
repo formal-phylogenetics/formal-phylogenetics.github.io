@@ -396,38 +396,6 @@ function drawFan(svg, m) {
     return { g, as, a: (Math.max(...as) + Math.min(...as)) / 2 };
   });
 
-  // The rings of the levels, named on the left.
-  svgEl(
-    "line",
-    {
-      x1: G.cx - G.wedge - 30,
-      y1: G.cy,
-      x2: G.cx + G.wedge + 30,
-      y2: G.cy,
-      class: "baseline",
-    },
-    layer.rings,
-  );
-  for (const [r, name] of [
-    [G.hub, "hubs"],
-    [G.fam, "families"],
-    [(G.leaf.todo + G.leaf.formalized) / 2, "entries"],
-  ]) {
-    svgEl("path", { d: arcD(r, 180, 0), class: "ring" }, layer.rings);
-    const t = svgEl(
-      "text",
-      {
-        x: fmt(G.cx - r),
-        y: G.cy + 22,
-        "text-anchor": "middle",
-        class: "ringname fade",
-        style: "--d:1500ms",
-      },
-      layer.rings,
-    );
-    t.textContent = name;
-  }
-
   for (const h of m.hubs) {
     const g = svgEl(
       "g",
@@ -834,7 +802,11 @@ function createTimeline(els, m, links) {
   const laneEls = new Map(
     lanes.map((h) => {
       const g = svgEl("g", { class: "hub-c lane", style: hubStyle(h) }, gLanes);
-      const bg = svgEl("rect", { class: "lanebg", rx: 4 }, g);
+      const bg = svgEl(
+        "rect",
+        { class: `lanebg${lanes.indexOf(h) % 2 ? " alt" : ""}` },
+        g,
+      );
       const name = svgEl(
         "text",
         { class: `lanename${h.depth ? " subname" : ""}` },
@@ -1115,7 +1087,7 @@ function createTimeline(els, m, links) {
     }
     for (const b of els.scales)
       b.setAttribute("aria-pressed", String(b.dataset.scale === st.scale));
-    els.allYears.disabled = st.a === Y0 && st.b === Y1;
+    els.allYears.hidden = st.a === Y0 && st.b === Y1;
   }
 
   let frame = 0;
@@ -1246,7 +1218,7 @@ function createTimeline(els, m, links) {
 // abstract from OpenAlex, or from Semantic Scholar when OpenAlex has no abstract.
 
 const works = new Map();
-const card = { el: null, entry: null, timer: 0, place: () => {} };
+const card = { el: null, entry: null, pinned: null, timer: 0, place: () => {} };
 
 function invert(index) {
   const words = [];
@@ -1348,7 +1320,8 @@ function cardHtml(e, work, waiting) {
     <div class="t-title">${esc(e.title)}</div>
     <div class="t-by">${esc(who)}${e.year ? ` (${esc(e.year)})` : ""}${esc(venue)}</div>
     ${body}
-    <div class="t-foot"><span class="t-status">${esc(STATUS[e.status])}</span><span>${esc(short(e.hub.name))} › ${esc(e.family.title)}${esc(cited)}</span></div>`;
+    <div class="t-foot"><span class="t-status">${esc(STATUS[e.status])}</span><span>${esc(short(e.hub.name))} › ${esc(e.family.title)}${esc(cited)}</span></div>
+    <div class="t-hint">${card.pinned === e ? "Click to unpin" : "Click to pin"}</div>`;
 }
 
 function showCard(e, place) {
@@ -1433,7 +1406,6 @@ function hubRow(h) {
   return `<details class="hub hub-c${h.depth ? " sub" : ""}" id="${esc(h.name)}" style="${hubStyle(h)}">
       <summary>
         <span class="h-name">${esc(h.title || short(h.name))}</span>
-        <span class="h-bar" aria-hidden="true"><i style="width:${pct(done)}%"></i><b style="width:${pct(going)}%"></b></span>
         <span class="h-count" title="formalized of the catalog's entries">${done}/${n}</span>
         ${CHEVRON}
       </summary>
@@ -1465,11 +1437,12 @@ function shell(app) {
       <aside class="side">
         <div class="side-top">
         <div class="side-head">
-          <h2>Citations along time</h2>
           <span class="key" aria-label="Legend">
-            <span class="k-group"><span class="k-item"><i class="sw k-method kind"></i>method</span><span class="k-item"><i class="sw k-theory kind"></i>theory</span></span>
-            <span class="k-group"><span class="k-item"><i class="sw s-formalized"></i>formalized</span><span class="k-item"><i class="sw s-in-progress"></i>in progress</span><span class="k-item"><i class="sw s-todo"></i>to do</span></span>
-            <span class="k-group"><span class="k-item"><i class="ln out"></i>cites</span><span class="k-item"><i class="ln in"></i>cited by</span></span>
+            <span class="k-item"><i class="sw k-method"></i>method</span>
+            <span class="k-item"><i class="sw k-theory"></i>theory</span>
+            <span class="k-item"><i class="sw s-formalized"></i>formalized</span>
+            <span class="k-item"><i class="ln out"></i>cites</span>
+            <span class="k-item"><i class="ln in"></i>cited by</span>
           </span>
         </div>
         <svg id="axis" class="axis" aria-hidden="true"></svg>
@@ -1483,12 +1456,10 @@ function shell(app) {
           <svg id="overview" class="overview" role="group" aria-label="The years shown: drag the window or its ends, or scroll to zoom"></svg>
           <div class="s-controls">
             <span class="s-group" role="group" aria-label="Scale">
-              <span class="s-cap">scale</span>
               <button type="button" data-scale="linear" aria-pressed="false">Linear</button>
               <button type="button" data-scale="papers" aria-pressed="true">By papers</button>
             </span>
-            <span class="s-hint">Click an entry to pin it; click again to unpin.</span>
-            <button type="button" class="s-all" id="all-years">All years</button>
+            <button type="button" class="s-all" id="all-years" hidden>All years</button>
           </div>
         </div>
         <section class="panel" id="panel" aria-live="polite" aria-label="The selected entry"></section>
@@ -1662,6 +1633,7 @@ function makeUi(m, els) {
   };
   ui.select = (e, from) => {
     ui.selected = e;
+    card.pinned = e;
     ui.hovered = null;
     hideCard();
     ui.mark(e);
