@@ -52,6 +52,10 @@ const KIND = {
 };
 const GROUP = { inference: "inference", theory: "theory" };
 
+const ARROW =
+  '<svg class="ico" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const CHEVRON =
+  '<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const esc = (s) =>
   String(s ?? "").replace(
     /[&<>"]/g,
@@ -1127,7 +1131,7 @@ function placeBy(rect) {
 // The page
 
 function tagHtml(e) {
-  return `<a class="tag k-${e.kind} s-${e.status}" href="${esc(e.url || "#")}" target="_blank" rel="noopener" aria-label="${esc(`${e.name}: ${e.title}`)}">${esc(e.name)}</a>`;
+  return `<a class="tag k-${e.kind} ${e.named ? "named" : "cite"} s-${e.status}" href="${esc(e.url || "#")}" target="_blank" rel="noopener" aria-label="${esc(`${e.name}: ${e.title}`)}">${esc(e.name)}</a>`;
 }
 
 function hubRow(h) {
@@ -1148,10 +1152,11 @@ function hubRow(h) {
       <summary>
         <span class="h-name">${esc(h.title || short(h.name))}</span>
         <span class="h-bar" aria-hidden="true"><i style="width:${pct(done)}%"></i><b style="width:${pct(going)}%"></b></span>
-        <span class="h-count">${done}/${n}</span>
+        <span class="h-count" title="formalized of the catalog's entries">${done}/${n}</span>
+        ${CHEVRON}
       </summary>
       <div class="h-body">
-        <a class="h-repo" href="https://github.com/${ORG}/${esc(h.name)}">${esc(h.name)} ↗</a>
+        <a class="h-repo" href="https://github.com/${ORG}/${esc(h.name)}">${esc(h.name)}${ARROW}</a>
         ${fams}
       </div>
     </details>${h.subhubs.map(hubRow).join("")}`;
@@ -1164,17 +1169,21 @@ function shell(app) {
       <p class="sub">Phylogenetic methods and theory, as the tree of a collection of Lean&nbsp;4 formalizations.</p>
     </section>
     <div class="bar">
-      <div class="seg" role="tablist" aria-label="View">
-        <button type="button" role="tab" data-view="tree" aria-selected="true">Tree</button>
-        <button type="button" role="tab" data-view="graph" aria-selected="false">Citations</button>
+      <div class="seg" role="group" aria-label="View">
+        <button type="button" data-view="tree" aria-pressed="true">Tree</button>
+        <button type="button" data-view="graph" aria-pressed="false">Citations</button>
       </div>
       <input id="q" type="search" placeholder="Search" aria-label="Search the catalogue" autocomplete="off" />
       <span class="key" aria-label="Legend">
-        <span class="k-item"><i class="sw k-method"></i>method</span>
-        <span class="k-item"><i class="sw k-theory"></i>theory</span>
-        <span class="k-item"><i class="sw k-method s-formalized"></i>formalized</span>
-        <span class="k-item"><i class="sw k-method s-in-progress"></i>in progress</span>
-        <span class="k-item"><i class="sw k-method s-todo"></i>to do</span>
+        <span class="k-group"><span class="k-cap">shape</span>
+          <span class="k-item"><i class="sw k-method kind"></i>method</span>
+          <span class="k-item"><i class="sw k-theory kind"></i>theory</span>
+        </span>
+        <span class="k-group"><span class="k-cap">fill</span>
+          <span class="k-item"><i class="sw s-formalized"></i>formalized</span>
+          <span class="k-item"><i class="sw s-in-progress"></i>in progress</span>
+          <span class="k-item"><i class="sw s-todo"></i>to do</span>
+        </span>
       </span>
     </div>
     <div class="stage">
@@ -1264,6 +1273,8 @@ async function main() {
   fanSvg.classList.add("grow");
   const fan = drawFan(fanSvg, m);
   wireFan(fanSvg, fan, m, ui);
+  const stage = app.querySelector(".stage");
+  stage.scrollLeft = (stage.scrollWidth - stage.clientWidth) / 2;
   wireTags(hubsEl);
   note.textContent =
     data.source === "snapshot"
@@ -1275,11 +1286,15 @@ async function main() {
   for (const b of app.querySelectorAll(".seg button")) {
     b.addEventListener("click", async () => {
       for (const x of app.querySelectorAll(".seg button"))
-        x.setAttribute("aria-selected", String(x === b));
+        x.setAttribute("aria-pressed", String(x === b));
       const view = b.dataset.view;
       fanSvg.toggleAttribute("hidden", view !== "tree");
       graphSvg.toggleAttribute("hidden", view !== "graph");
-      app.querySelector(".stage").classList.toggle("scroll", view === "graph");
+      const stage = app.querySelector(".stage");
+      stage.classList.toggle("scroll", view === "graph");
+      stage.scrollLeft =
+        view === "graph" ? 0 : (stage.scrollWidth - stage.clientWidth) / 2;
+      stage.scrollTop = 0;
       hideCard();
       if (view === "graph" && !graph) {
         graph = drawTimeline(graphSvg, m, note).catch(
@@ -1321,6 +1336,11 @@ async function main() {
       }
     }
     if (!on) opened.clear();
+    const none =
+      on && !m.entries.some((e) => words.every((w) => e.hay.includes(w)));
+    if (none) note.textContent = "No entry matches the search.";
+    else if (note.textContent === "No entry matches the search.")
+      note.textContent = "";
   };
   q.addEventListener("input", filter);
 }

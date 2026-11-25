@@ -7,8 +7,8 @@
   --card: #fffdf8;
   --ink: #22201b;
   --ink-2: #55514a;
-  --ink-3: #85807a;
-  --ink-4: #b0aba2;
+  --ink-3: #6b665e;
+  --ink-4: #a8a297;
   --rule: #e2dccf;
   --faint: rgba(34, 32, 27, 0.1);
   --glow-1: #fde68a;
@@ -17,6 +17,13 @@
   --shadow: 0 12px 32px -18px rgba(34, 32, 27, 0.45);
   --wash: 0.09;
   --c: var(--ink-3);
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -66,6 +73,24 @@
 * {
   box-sizing: border-box;
 }
+::selection {
+  background: color-mix(in oklab, var(--glow-2) 32%, transparent);
+  color: var(--ink);
+}
+html {
+  caret-color: var(--ink);
+  accent-color: var(--ink);
+  scrollbar-color: var(--ink-4) transparent;
+}
+.ico {
+  width: 0.78em;
+  height: 0.78em;
+  margin-left: 0.2em;
+  vertical-align: -0.04em;
+}
+.ico.back {
+  margin: 0 0.3em 0 0;
+}
 html {
   background: var(--paper);
 }
@@ -110,6 +135,9 @@ a:hover {
   color: var(--ink-3);
 }
 .top a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
   text-decoration: none;
 }
 .top a:hover {
@@ -117,7 +145,7 @@ a:hover {
 }
 
 .hero {
-  margin: 34px 0 0;
+  margin: var(--s6) 0 0;
 }
 .hero h1 {
   margin: 0;
@@ -138,8 +166,8 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   gap: 12px 22px;
-  margin: 26px 0 0;
-  padding: 10px 0;
+  margin: var(--s5) 0 0;
+  padding: var(--s2) 0;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
   position: sticky;
@@ -163,9 +191,15 @@ a:hover {
     sans-serif;
   cursor: pointer;
 }
-.seg button[aria-selected="true"] {
+.seg button:hover {
+  color: var(--ink);
+}
+.seg button[aria-pressed="true"] {
   background: var(--ink);
   color: var(--paper);
+}
+#q::placeholder {
+  color: var(--ink-3);
 }
 #q {
   flex: 0 1 240px;
@@ -189,16 +223,39 @@ a:hover {
   font-size: 0.78rem;
   color: var(--ink-3);
 }
+.k-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+}
+.k-group + .k-group {
+  padding-left: 14px;
+  border-left: 1px solid var(--rule);
+}
+.k-cap {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
 .k-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  color: var(--ink-2);
 }
 .sw {
   display: inline-block;
   width: 9px;
   height: 9px;
   border: 1.5px solid var(--ink-3);
+}
+.sw {
+  border-radius: 50%;
+}
+.sw.kind {
+  background: var(--ink-3);
 }
 .sw.k-method {
   border-radius: 50%;
@@ -454,7 +511,7 @@ a:hover {
 
 /* The hubs: a row each, opening to the families and their tags. */
 .hubs {
-  margin-top: 30px;
+  margin-top: var(--s6);
 }
 .hubs h2 {
   margin: 26px 0 4px;
@@ -473,15 +530,30 @@ a:hover {
 }
 .hub > summary {
   display: grid;
-  grid-template-columns: 1fr minmax(80px, 180px) 64px;
+  grid-template-columns: 1fr minmax(80px, 180px) 64px 14px;
   align-items: center;
-  gap: 16px;
-  padding: 11px 2px;
+  gap: var(--s4);
+  padding: var(--s3) var(--s1);
   cursor: pointer;
   list-style: none;
 }
 .hub > summary::-webkit-details-marker {
   display: none;
+}
+.hub > summary:hover {
+  background: color-mix(in oklab, var(--c) 6%, transparent);
+}
+.hub > summary:focus-visible {
+  outline-offset: -2px;
+}
+.chev {
+  width: 12px;
+  height: 12px;
+  color: var(--ink-3);
+  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.hub[open] > summary .chev {
+  transform: rotate(90deg);
 }
 .h-name {
   display: flex;
@@ -576,26 +648,32 @@ a:hover {
 
 /* Tags: a pill for a method, a block for theory. */
 .tag {
-  display: inline-block;
-  padding: 2px 9px;
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
   border: 1px solid color-mix(in oklab, var(--c) 40%, var(--rule));
   background: var(--card);
   color: var(--ink-2);
   text-decoration: none;
   white-space: nowrap;
-  line-height: 1.45;
   transition:
     transform 0.12s,
     box-shadow 0.12s;
 }
+/* shape is the kind; type is the name: software in monospace, a citation in the serif */
 .tag.k-method {
   border-radius: 999px;
+}
+.tag.k-theory {
+  border-radius: 2px;
+}
+.tag.named {
   font:
     500 0.78rem/1.6 "IBM Plex Mono",
     monospace;
 }
-.tag.k-theory {
-  border-radius: 2px;
+.tag.cite {
   font:
     400 0.84rem/1.5 "Literata",
     Georgia,
@@ -632,9 +710,8 @@ a.tag:hover {
   width: min(420px, calc(100vw - 24px));
   padding: 12px 15px;
   background: var(--card);
-  border: 1px solid var(--rule);
-  border-top: 3px solid var(--c);
-  border-radius: 5px;
+  border: 1px solid color-mix(in oklab, var(--c) 38%, var(--rule));
+  border-radius: 6px;
   box-shadow: var(--shadow);
   font-size: 0.9rem;
   line-height: 1.4;
@@ -695,7 +772,7 @@ a.tag:hover {
 .card .t-wait {
   margin: 8px 0 0;
   font-size: 0.8rem;
-  color: var(--ink-4);
+  color: var(--ink-3);
 }
 .card .t-foot {
   display: flex;
@@ -708,9 +785,9 @@ a.tag:hover {
 }
 
 .foot {
-  margin-top: 46px;
-  padding-top: 14px;
-  padding-bottom: 40px;
+  margin-top: var(--s7);
+  padding-top: var(--s4);
+  padding-bottom: var(--s7);
   border-top: 1px solid var(--rule);
   font-size: 0.8rem;
   color: var(--ink-3);
@@ -722,6 +799,31 @@ a.tag:hover {
   .foot {
     padding: 0 14px;
   }
+  .bar {
+    position: static;
+  }
+  .stage {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 18px,
+      #000 calc(100% - 18px),
+      transparent
+    );
+  }
+  #fan {
+    width: 760px;
+    max-height: none;
+  }
+  #graph {
+    width: 900px;
+  }
+  .k-group + .k-group {
+    padding-left: 0;
+    border-left: 0;
+  }
   .key {
     margin-left: 0;
   }
@@ -729,7 +831,8 @@ a.tag:hover {
     grid-template-columns: 1fr;
   }
   .hub > summary {
-    grid-template-columns: 1fr 70px 54px;
+    grid-template-columns: 1fr 64px 48px 12px;
+    gap: var(--s3);
   }
 }
 @media (prefers-reduced-motion: reduce) {
