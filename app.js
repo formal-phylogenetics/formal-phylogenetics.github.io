@@ -1484,7 +1484,7 @@ function renderPanel(ui) {
   const e = ui.selected;
   p.classList.toggle("empty", !e);
   if (!e) {
-    p.innerHTML = `<p class="p-hint">Click an entry to pin it here, with what it cites and what cites it.</p>`;
+    p.innerHTML = "";
     return;
   }
   const FIRST = 12;

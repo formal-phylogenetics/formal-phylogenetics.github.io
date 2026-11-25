@@ -6,8 +6,8 @@ fan from the root, [lean4-phylogenetics](https://github.com/formal-phylogenetics
 through the hubs and their families to a tip for each entry of the hubs' catalogs. Below come, in
 order: a trim bar, which chooses the years shown by dragging its ends or the range between them,
 each year as wide as its papers need; a timeline of the entries, where time runs from left to
-right, each hub is a row, and the citations between the entries are drawn between them, with the
-panel of the pinned entry in a column at its top right; the search; and the list of the hubs, which open to their families, one at a
+right, each hub is a row, and the citations between the entries are drawn between them; the panel
+of the pinned entry; the search; and the list of the hubs, which open to their families, one at a
 time or all at once. Colour is the hub, shape the kind of paper (round for a method, square for
 theory) and fill the status. Pointing at an entry, in the tree, the timeline or the list, marks it
 in all of them and shows its card, with its authors, venue and abstract. A click pins it: the panel

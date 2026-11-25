@@ -321,18 +321,12 @@ a:hover {
 .explorer {
   margin-top: var(--s5);
 }
-/* The timeline, and the pinned entry in its own column at its top right. */
-.work {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 340px);
-  gap: var(--s5);
-  align-items: start;
-}
+/* The timeline, and the pinned entry below it. */
 .timeline {
   min-width: 0;
 }
 .detail {
-  padding-top: var(--s3);
+  margin-top: var(--s5);
 }
 .side-top {
   position: sticky;
@@ -375,8 +369,7 @@ a:hover {
   background: var(--raise);
 }
 .panel.empty {
-  border-style: dashed;
-  background: none;
+  display: none;
 }
 .p-hint {
   margin: 0;
@@ -464,7 +457,7 @@ a:hover {
   color: var(--paper);
 }
 .p-where {
-  flex-basis: 100%;
+  margin-left: auto;
   font-size: 0.76rem;
   color: var(--ink-3);
 }
@@ -1185,23 +1178,6 @@ a.tag:hover {
   }
   .cover {
     margin-top: var(--s3);
-  }
-}
-@media (max-width: 1099px) {
-  .work {
-    display: block;
-  }
-  .detail {
-    position: static;
-    padding-top: 0;
-    margin-top: var(--s5);
-  }
-  .panel {
-    max-height: none;
-    overflow: visible;
-  }
-  .panel.empty {
-    display: none;
   }
 }
 @media (max-width: 760px) {
