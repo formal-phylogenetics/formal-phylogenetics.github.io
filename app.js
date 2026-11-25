@@ -815,7 +815,8 @@ function createTimeline(els, m, links) {
     }),
   );
   const gEdges = svgEl("g", { class: "edges" }, svg);
-  for (const l of links) l.el = svgEl("path", { class: "edge" }, gEdges);
+  for (const l of links)
+    l.el = svgEl("path", { class: "edge", pathLength: 1 }, gEdges);
   const gNodes = svgEl("g", { class: "nodes" }, svg);
   for (const e of nodes) {
     const g = svgEl("g", { class: "hub-c", style: hubStyle(e.hub) }, gNodes);
@@ -1089,9 +1090,18 @@ function createTimeline(els, m, links) {
         layout();
       });
   };
-  const setWindow = (a, b) => {
+  const still = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let glideTimer = 0;
+  const glide = () => {
+    if (still()) return;
+    svg.classList.add("glide");
+    clearTimeout(glideTimer);
+    glideTimer = setTimeout(() => svg.classList.remove("glide"), 420);
+  };
+  const setWindow = (a, b, smooth = false) => {
     const w = Math.max(1, Math.min(b - a, Y1 - Y0));
     a = Math.max(Y0, Math.min(a, Y1 - w));
+    if (smooth) glide();
     st.a = Math.round(a);
     st.b = Math.round(a + w);
     schedule();
@@ -1115,6 +1125,7 @@ function createTimeline(els, m, links) {
       setWindow(
         Math.round(y - (st.b - st.a) / 2),
         Math.round(y - (st.b - st.a) / 2) + (st.b - st.a),
+        true,
       );
     drag = { kind: kind === "jump" ? "move" : kind, y0: y, a0: st.a, b0: st.b };
     ov.setPointerCapture(ev.pointerId);
@@ -1165,6 +1176,7 @@ function createTimeline(els, m, links) {
     }[ev.key];
     if (step == null && ev.key !== "Home" && ev.key !== "End") return;
     ev.preventDefault();
+    glide();
     if (end === "a")
       st.a =
         ev.key === "Home"
@@ -1183,7 +1195,7 @@ function createTimeline(els, m, links) {
   };
   hA.addEventListener("keydown", keys("a"));
   hB.addEventListener("keydown", keys("b"));
-  els.allYears.addEventListener("click", () => setWindow(Y0, Y1));
+  els.allYears.addEventListener("click", () => setWindow(Y0, Y1, true));
   new ResizeObserver(schedule).observe(els.stage);
 
   return {
@@ -1192,9 +1204,34 @@ function createTimeline(els, m, links) {
       if (e.y4 == null || (e.y4 >= st.a && e.y4 < st.b)) return;
       const w = st.b - st.a;
       const a = Math.max(Y0, Math.min(e.y4 - Math.floor(w / 2), Y1 - w));
+      glide();
       st.a = a;
       st.b = a + w;
       layout();
+    },
+    // the entrance: once the timeline comes into view, its papers appear year by year from the
+    // left, and the citations behind them
+    enter() {
+      if (still() || !("IntersectionObserver" in window)) return;
+      const d = dims();
+      for (const e of nodes)
+        if (e.vis)
+          e.node.style.setProperty(
+            "--d",
+            `${Math.round(((e.px - d.L) / d.PW) * 1100)}ms`,
+          );
+      svg.classList.add("pending");
+      const io = new IntersectionObserver(
+        (seen) => {
+          if (!seen.some((x) => x.isIntersecting)) return;
+          io.disconnect();
+          svg.classList.remove("pending");
+          svg.classList.add("enter");
+          setTimeout(() => svg.classList.remove("enter"), 2200);
+        },
+        { threshold: 0.12 },
+      );
+      io.observe(svg);
     },
   };
 }
@@ -1798,6 +1835,7 @@ async function main() {
       ui.useCitations(raw);
       ui.timeline = createTimeline(els, m, ui.links);
       ui.timeline.layout();
+      ui.timeline.enter();
       els.note.textContent = ui.links.length
         ? ""
         : "No citations could be read.";

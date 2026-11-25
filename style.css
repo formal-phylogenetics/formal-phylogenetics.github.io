@@ -802,7 +802,45 @@ a:hover {
   stroke-width: 2;
 }
 
+/* The timeline in motion: a highlighted citation draws out from the selected paper; a change of the
+   range lets the papers glide while the citations step aside. */
+#graph .glyph {
+  transform-box: fill-box;
+  transform-origin: center;
+}
 @media (prefers-reduced-motion: no-preference) {
+  #graph .edge.out,
+  #graph .edge.in {
+    stroke-dasharray: 1;
+    animation: draw 0.5s cubic-bezier(0.25, 0.7, 0.2, 1) both;
+  }
+  #graph .edge.in {
+    animation-name: draw-back;
+  }
+  #graph.glide .glyph {
+    transition:
+      cx 0.38s cubic-bezier(0.25, 0.7, 0.2, 1),
+      cy 0.38s cubic-bezier(0.25, 0.7, 0.2, 1),
+      x 0.38s cubic-bezier(0.25, 0.7, 0.2, 1),
+      y 0.38s cubic-bezier(0.25, 0.7, 0.2, 1),
+      opacity 0.2s;
+  }
+  #graph.glide .edges {
+    opacity: 0;
+  }
+  #graph .edges {
+    transition: opacity 0.3s ease;
+  }
+  #graph.pending .glyph,
+  #graph.pending .edges {
+    opacity: 0;
+  }
+  #graph.enter .glyph {
+    animation: pop 0.5s cubic-bezier(0.3, 1.5, 0.5, 1) var(--d, 0ms) both;
+  }
+  #graph.enter .edges {
+    animation: fade 0.9s ease 0.9s both;
+  }
   #fan.grow .anim {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
@@ -838,6 +876,22 @@ a:hover {
 @keyframes pop {
   from {
     transform: scale(0);
+  }
+}
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes draw-back {
+  from {
+    stroke-dashoffset: -1;
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }
 @keyframes pulse {
