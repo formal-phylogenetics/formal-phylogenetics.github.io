@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formal Phylogenetics</title>
+    <meta
+      name="description"
+      content="The methods, software and theorems of phylogenetics that the collection of Lean 4 formalizations catalogs, arranged as its tree: the root library, the hubs of inference and of theory, their sub-hubs and their families."
+    />
+    <meta property="og:title" content="Formal Phylogenetics" />
+    <meta
+      property="og:description"
+      content="Phylogenetic methods, software and theorems, arranged as the tree of the collection that formalizes them in Lean 4."
+    />
+    <meta property="og:image" content="https://formal-phylogenetics.github.io/catalogue.png" />
+    <meta property="og:url" content="https://formal-phylogenetics.github.io/" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 29V19M16 19L8 11M16 19l8-8M8 11L4 4M8 11l4-7M24 11l-4-7M24 11l4-7' fill='none' stroke='%2322201b' stroke-width='2.2' stroke-linecap='round'/%3E%3Ccircle cx='4' cy='4' r='2.4' fill='%232563eb'/%3E%3Ccircle cx='12' cy='4' r='2.4' fill='%2315803d'/%3E%3Ccircle cx='20' cy='4' r='2.4' fill='%23b45309'/%3E%3Ccircle cx='28' cy='4' r='2.4' fill='%23b91c1c'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Literata:opsz,wght@7..72,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <a href="https://github.com/formal-phylogenetics/lean4-phylogenetics">The root, lean4-phylogenetics &nearr;</a>
+        <a href="https://github.com/formal-phylogenetics">The repositories on GitHub &nearr;</a>
+      </header>
+
+      <section class="hero">
+        <h1>Formal Phylogenetics</h1>
+        <p class="sub">
+          A catalogue of the methods, software and theorems of phylogenetics, arranged as the tree of the collection that formalizes them in
+          Lean&nbsp;4
+        </p>
+        <p class="lede">
+          The collection grows as a tree. At its root, <a href="https://github.com/formal-phylogenetics/lean4-phylogenetics">lean4-phylogenetics</a>
+          holds the library that every formalization shares. Hubs of inference and of theory branch from the root, a sub-hub branches from a hub, and
+          each hub sorts its catalog into families. Every tip below is an entry of a catalog. Point at a tip to name it, and at a hub to open its
+          drawer.
+        </p>
+      </section>
+
+      <figure class="fan-wrap">
+        <svg id="fan" role="img" aria-labelledby="fan-title"><title id="fan-title">The tree of the collection</title></svg>
+        <p id="status-line" class="status-line" aria-live="polite">Reading the catalogs&hellip;</p>
+      </figure>
+
+      <section class="legend" aria-label="Legend">
+        <span class="tag named s-formalized" style="--c: var(--ink-2)">FORMALIZED</span>
+        <span class="tag named s-in-progress" style="--c: var(--ink-2)">IN PROGRESS</span>
+        <span class="tag named s-partial" style="--c: var(--ink-2)">PARTLY COVERED</span>
+        <span class="tag named s-todo" style="--c: var(--ink-2)">TO DO</span>
+        <span class="legend-note">Monospaced tags name a technique or a piece of software; tags in a serif name a result by its authors.</span>
+      </section>
+
+      <nav class="tools" aria-label="Filter the catalogue">
+        <label class="search">
+          <span class="visually-hidden">Search</span>
+          <input id="q" type="search" placeholder="Search a name, a title or an author" autocomplete="off" />
+        </label>
+        <div class="seg" role="group" aria-label="Status">
+          <button type="button" data-status="all" aria-pressed="true">All</button>
+          <button type="button" data-status="formalized" aria-pressed="false">Formalized</button>
+          <button type="button" data-status="in-progress" aria-pressed="false">In progress</button>
+          <button type="button" data-status="todo" aria-pressed="false">To do</button>
+        </div>
+        <label class="toggle"><input id="named" type="checkbox" /> <span>Named techniques only</span></label>
+        <span id="shown" class="shown" aria-live="polite"></span>
+      </nav>
+
+      <main id="catalogue" class="catalogue"></main>
+
+      <footer class="foot">
+        <p>
+          The page reads the registry of <a href="https://github.com/formal-phylogenetics/lean4-phylogenetics">lean4-phylogenetics</a> and the catalog
+          of each hub, <code>catalog/papers.toml</code>, from GitHub each time it opens<span id="source-note"></span>. Each formalized entry links to
+          its repository, where the formalization and its audit are; the others link to the paper. More on the project:
+          <a href="https://vltanh.me/projects/formal-phylogenetics/">Phylogenetics in Lean&nbsp;4</a>.
+        </p>
+      </footer>
+    </div>
+    <div id="tip" class="tooltip" role="tooltip" hidden></div>
+  </body>
+</html>
