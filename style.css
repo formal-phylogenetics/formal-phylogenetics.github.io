@@ -582,10 +582,6 @@ a:hover {
     Georgia,
     serif;
   fill: var(--c);
-  cursor: pointer;
-}
-#fan .hubname.subname {
-  font-size: 16px;
 }
 #fan .groupname {
   font:
@@ -614,46 +610,6 @@ a:hover {
 #fan .leaf.s-todo,
 #fan .leaf.s-partial {
   opacity: var(--leaf-dim);
-}
-#fan .hub-c.dim .wedge {
-  fill-opacity: calc(var(--wash) * 0.35);
-}
-#fan .hub-c.dim .leaf,
-#fan .hub-c.dim .bud {
-  opacity: 0.18;
-}
-#fan .hub-c.lit .wedge {
-  fill-opacity: calc(var(--wash) * 2.2);
-}
-#fan.focus .leaf {
-  opacity: 0.1;
-}
-#fan.focus .bud {
-  opacity: 0.25;
-}
-#fan .leaf.sel,
-#fan .leaf.out,
-#fan .leaf.in,
-#fan .bud.sel,
-#fan .bud.out,
-#fan .bud.in {
-  opacity: 1;
-}
-#fan .leaf.out,
-#fan .leaf.in {
-  stroke-width: 2.4;
-}
-#fan .leaf.out {
-  stroke: var(--ink);
-}
-#fan .leaf.in {
-  stroke: var(--amber);
-}
-#fan .pick {
-  stroke: var(--ink);
-  stroke-width: 4;
-  stroke-linecap: round;
-  pointer-events: none;
 }
 .off {
   opacity: 0.08 !important;
@@ -709,14 +665,14 @@ a:hover {
   user-select: none;
 }
 .ov-track {
-  fill: color-mix(in oklab, var(--ink) 4%, transparent);
+  fill: color-mix(in oklab, var(--ink) 3%, transparent);
 }
 .ov-bar {
-  fill: color-mix(in oklab, var(--ink) 28%, transparent);
+  fill: color-mix(in oklab, var(--ink) 20%, transparent);
 }
 .ov-shade {
   fill: var(--paper);
-  fill-opacity: 0.72;
+  fill-opacity: 0.6;
   pointer-events: none;
 }
 .ov-win {
@@ -728,22 +684,24 @@ a:hover {
 }
 .ov-frame {
   fill: none;
-  stroke: var(--ink);
-  stroke-width: 3;
+  stroke: var(--ink-3);
+  stroke-width: 1;
   pointer-events: none;
 }
 .ov-handle {
-  fill: var(--ink);
+  fill: var(--paper);
+  stroke: var(--ink-3);
+  stroke-width: 1;
   cursor: ew-resize;
 }
+.ov-handle:hover,
 .ov-handle:focus-visible {
+  stroke: var(--ink);
   outline: none;
-  stroke: var(--focus);
-  stroke-width: 2;
 }
 .ov-grip {
-  stroke: var(--paper);
-  stroke-width: 1.3;
+  stroke: var(--ink-3);
+  stroke-width: 1;
   stroke-linecap: round;
   pointer-events: none;
 }
@@ -751,13 +709,13 @@ a:hover {
   pointer-events: none;
 }
 .ov-tag rect {
-  fill: var(--ink);
+  fill: none;
 }
 .ov-tag text {
   font:
-    600 10.5px "IBM Plex Sans",
+    500 11px "IBM Plex Sans",
     sans-serif;
-  fill: var(--paper);
+  fill: var(--ink-2);
 }
 #graph .gridline {
   stroke: var(--faint);
@@ -1168,6 +1126,13 @@ a.tag:hover {
   }
 }
 @media (max-width: 760px) {
+  #fan .hubname {
+    font-size: 34px;
+  }
+  #fan .groupname,
+  #fan .rootname {
+    font-size: 24px;
+  }
   .top,
   #app,
   .foot {

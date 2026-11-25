@@ -294,49 +294,115 @@ function arc(r, a0, a1, cls, delay, parent, width) {
 // Each group of hubs takes an equal part of the fan; inside it, one step per entry, a wider step
 // between families and between hubs, and a sub-hub follows its hub as a family would.
 function layout(m) {
-  const GAP = { family: 0.9, hub: 3.2 };
-  const groupGap = 7;
+  const famGap = 0.9; // in steps between tips
+  const hubGap = 2.6; // in degrees
+  const subGap = 1.4;
+  const groupGap = 8;
   const span =
     (G.a0 - G.a1 - groupGap * (m.groups.length - 1)) / m.groups.length;
+  const weight = (h) => Math.sqrt(Math.max(1, h.entries.length));
   const slots = [];
   m.groups.forEach((g, gi) => {
-    const mine = [];
-    let extra = 0;
     const order = [];
     const walk = (h) => {
       order.push(h);
       h.subhubs.forEach(walk);
     };
     g.hubs.forEach(walk);
+    const gaps = order.reduce(
+      (s, h, i) => s + (i ? (h.depth ? subGap : hubGap) : 0),
+      0,
+    );
+    const total = order.reduce((s, h) => s + weight(h), 0);
+    let a = G.a0 - gi * (span + groupGap);
     order.forEach((h, hi) => {
-      if (hi) extra += h.depth ? GAP.family : GAP.hub;
+      if (hi) a -= h.depth ? subGap : hubGap;
+      const hubSpan = ((span - gaps) * weight(h)) / total;
       const fams = h.families.filter((f) => f.entries.length);
-      if (!fams.length) {
-        mine.push({ extra, hub: h });
-        extra = 0;
+      const n = fams.reduce((s, f) => s + f.entries.length, 0);
+      if (!n) {
+        h.unit = hubSpan;
+        slots.push({ hub: h, a: a - hubSpan / 2, unit: hubSpan });
+        a -= hubSpan;
         return;
       }
-      fams.forEach((f, fi) => {
-        if (fi) extra += GAP.family;
+      // the tips sit half a step inside the hub's span, a family's first tip a little further on
+      const unit = hubSpan / (n + famGap * (fams.length - 1));
+      h.unit = unit;
+      let b = a - unit / 2;
+      let first = true;
+      for (const f of fams) {
+        if (!first) b -= famGap * unit;
         for (const e of f.entries) {
-          mine.push({ extra, entry: e, hub: h, family: f });
-          extra = 0;
+          if (!first) b -= unit;
+          first = false;
+          e.a = b;
+          slots.push({ entry: e, hub: h, family: f, a: b, unit });
         }
-      });
+      }
+      a -= hubSpan;
     });
-    const total = mine.reduce((s, x, i) => s + (i ? 1 + x.extra : 0), 0);
-    const unit = total ? span / total : span;
-    let a = G.a0 - gi * (span + groupGap) - (total ? 0 : span / 2);
-    mine.forEach((s, i) => {
-      if (i) a -= (1 + s.extra) * unit;
-      s.a = a;
-      s.unit = unit;
-      s.hub.unit = unit;
-      if (s.entry) s.entry.a = a;
-    });
-    slots.push(...mine);
   });
   return slots;
+}
+
+// The cover: the groups of hubs, theory on the left and inference on the right; a sub-hub is drawn
+// as part of its hub.
+function coverModel(m) {
+  const flat = (h) => [h, ...h.subhubs.flatMap(flat)];
+  const groups = [...m.groups]
+    .sort(
+      (p, q) => (p.group === "theory" ? 0 : 1) - (q.group === "theory" ? 0 : 1),
+    )
+    .map((g) => ({
+      group: g.group,
+      hubs: g.hubs.map((h) => {
+        const all = flat(h);
+        return {
+          ...h,
+          depth: 0,
+          parent: null,
+          subhubs: [],
+          families: all.flatMap((x) => x.families),
+          entries: all.flatMap((x) => x.entries),
+        };
+      }),
+    }));
+  return { groups, hubs: groups.flatMap((g) => g.hubs) };
+}
+
+// The names of the hubs, level: on the left of the fan they end at their wedge, on the right they
+// start there, at the top they are centred on it. A name that would cover one placed before it
+// moves outward along its wedge's direction until it does not.
+function placeNames(names) {
+  const placed = [];
+  const gap = 4;
+  const hits = (b) =>
+    placed.some(
+      (q) =>
+        b.x < q.x + q.width + gap &&
+        q.x < b.x + b.width + gap &&
+        b.y < q.y + q.height + gap &&
+        q.y < b.y + b.height + gap,
+    );
+  for (const n of [...names].sort(
+    (p, q) => Math.abs(p.a - 90) - Math.abs(q.a - 90),
+  )) {
+    const anchor = n.a > 96 ? "end" : n.a < 84 ? "start" : "middle";
+    n.t.setAttribute("text-anchor", anchor);
+    let box;
+    for (let r = G.label; r < G.label + 160; r += 6) {
+      const [x, y] = P(r, n.a);
+      n.t.setAttribute(
+        "x",
+        fmt(x + (anchor === "end" ? -2 : anchor === "start" ? 2 : 0)),
+      );
+      n.t.setAttribute("y", fmt(y));
+      box = n.t.getBBox();
+      if (!hits(box)) break;
+    }
+    placed.push(box);
+  }
 }
 
 function drawFan(svg, m) {
@@ -396,6 +462,7 @@ function drawFan(svg, m) {
     return { g, as, a: (Math.max(...as) + Math.min(...as)) / 2 };
   });
 
+  const names = [];
   for (const h of m.hubs) {
     const g = svgEl(
       "g",
@@ -404,7 +471,7 @@ function drawFan(svg, m) {
     );
     h.g = g;
     const all = hubRange.get(h);
-    const half = (h.unit || 1) * 0.75;
+    const half = (h.unit || 1) * 0.5;
     const r = hubRadius(h);
     if (!h.depth)
       svgEl(
@@ -465,7 +532,7 @@ function drawFan(svg, m) {
         1.6,
       );
       for (const e of f.entries) {
-        e.leaf = radial(
+        radial(
           G.fam,
           G.leaf[e.status],
           e.a,
@@ -476,10 +543,10 @@ function drawFan(svg, m) {
         );
         if (e.status === "formalized" || e.status === "in-progress") {
           const [x, y] = P(G.leaf[e.status] + 5, e.a);
-          e.bud = glyph(e, x, y, e.status === "formalized" ? 4.6 : 3.4, g, {
+          const bud = glyph(e, x, y, e.status === "formalized" ? 4.6 : 3.4, g, {
             style: `--d:${Math.round(1500 + sweep(e.a))}ms`,
           });
-          e.bud.classList.add("bud");
+          bud.classList.add("bud");
         }
       }
     }
@@ -493,15 +560,11 @@ function drawFan(svg, m) {
         g,
         2.2,
       );
-    // the name, radially beyond the rim: a hub over all its tips, a sub-hub over its own, smaller
-    const la = h.depth ? mid(hubRange.get(h)) : mid(ownRange.get(h));
-    const [lx, ly] = P(G.label + (h.depth ? 6 : 0), la);
-    const left = la > 90;
+    // the name, level, beyond the rim, over the hub's tips
+    const la = mid(hubRange.get(h));
     const t = svgEl(
       "text",
       {
-        transform: `translate(${fmt(lx)} ${fmt(ly)}) rotate(${fmt(left ? 180 - la : -la)})`,
-        "text-anchor": left ? "end" : "start",
         "dominant-baseline": "central",
         class: `hubname fade${h.depth ? " subname" : ""}`,
         style: `--d:${Math.round(1300 + sweep(la) * 0.5)}ms`,
@@ -509,6 +572,7 @@ function drawFan(svg, m) {
       g,
     );
     t.textContent = short(h.name);
+    names.push({ t, a: la });
   }
 
   for (const { g, as, a } of groups) {
@@ -528,8 +592,8 @@ function drawFan(svg, m) {
     const t = svgEl(
       "text",
       {
-        x: G.cx + (a > 90 ? -1 : 1) * 104,
-        y: G.cy - 14,
+        x: G.cx + (a > 90 ? -1 : 1) * ((G.hub + G.wedge) / 2),
+        y: G.cy + 30,
         "text-anchor": "middle",
         class: "groupname fade",
         style: "--d:1100ms",
@@ -563,90 +627,24 @@ function drawFan(svg, m) {
   );
   rn.textContent = ROOT;
 
-  const pick = svgEl("line", { class: "pick", visibility: "hidden" }, svg);
-  return { tips: slots.filter((s) => s.entry), hubRange, pick };
-}
-
-function wireFan(svg, fan, m, ui) {
-  const tips = fan.tips; // by decreasing angle
-  let lit = null;
-  const toSvg = (ev) => {
-    const p = svg.createSVGPoint();
-    p.x = ev.clientX;
-    p.y = ev.clientY;
-    return p.matrixTransform(svg.getScreenCTM().inverse());
-  };
-  const nearest = (a) => {
-    let lo = 0;
-    let hi = tips.length - 1;
-    while (lo < hi) {
-      const mid = (lo + hi) >> 1;
-      if (tips[mid].a > a) lo = mid + 1;
-      else hi = mid;
-    }
-    const c = [tips[lo], tips[lo - 1]].filter(Boolean);
-    return c.reduce(
-      (b, s) => (Math.abs(s.a - a) < Math.abs(b.a - a) ? s : b),
-      c[0],
+  const fit = () => {
+    placeNames(names);
+    const boxes = [...svg.children]
+      .filter((c) => c.tagName === "g")
+      .map((c) => c.getBBox())
+      .filter((b) => b.width || b.height);
+    const x0 = Math.min(...boxes.map((b) => b.x)) - 10;
+    const y0 = Math.min(...boxes.map((b) => b.y)) - 10;
+    const x1 = Math.max(...boxes.map((b) => b.x + b.width)) + 10;
+    const y1 = Math.max(...boxes.map((b) => b.y + b.height)) + 10;
+    svg.setAttribute(
+      "viewBox",
+      `${fmt(x0)} ${fmt(y0)} ${fmt(x1 - x0)} ${fmt(y1 - y0)}`,
     );
   };
-  const related = (x, h) => {
-    for (let p = h; p; p = p.parent) if (p === x) return true;
-    for (let p = x; p; p = p.parent) if (p === h) return true;
-    return false;
-  };
-  const light = (h) => {
-    if (h === lit) return;
-    lit = h;
-    for (const x of m.hubs) {
-      x.g.classList.toggle("lit", x === h);
-      x.g.classList.toggle("dim", Boolean(h) && !related(x, h));
-    }
-  };
-  const hubAt = (a) => {
-    let best = null;
-    for (const h of m.hubs) {
-      const r = fan.hubRange.get(h);
-      const pad = (h.unit || 0.3) * 0.8;
-      if (
-        r &&
-        a <= r.a0 + pad &&
-        a >= r.a1 - pad &&
-        (!best || h.depth > best.depth)
-      )
-        best = h;
-    }
-    return best;
-  };
-  svg.addEventListener("pointermove", (ev) => {
-    const p = toSvg(ev);
-    const dx = p.x - G.cx;
-    const dy = G.cy - p.y;
-    const r = Math.hypot(dx, dy);
-    const a = (Math.atan2(dy, dx) * 180) / Math.PI;
-    if (dy < -8 || r < G.hub - 14 || r > G.label + 140) {
-      ui.hover(null);
-      light(null);
-      svg.style.cursor = "";
-      return;
-    }
-    const s = r >= G.fam - 8 && r <= G.wedge + 26 ? nearest(a) : null;
-    const hit =
-      s &&
-      Math.abs(s.a - a) <= Math.max(s.unit * 0.8, 0.35) &&
-      !s.entry.leaf.classList.contains("off");
-    light(hit || ui.selected ? null : hubAt(a));
-    svg.style.cursor = hit || hubAt(a) ? "pointer" : "";
-    ui.hover(hit ? s.entry : null, () => placeAt(ev.clientX, ev.clientY));
-  });
-  svg.addEventListener("pointerleave", () => {
-    ui.hover(null);
-    light(null);
-  });
-  svg.addEventListener("click", () => {
-    if (ui.hovered) ui.pick(ui.hovered, "cover");
-    else if (lit) ui.openHub(lit);
-  });
+  fit();
+  if (document.fonts) document.fonts.ready.then(fit);
+  return {};
 }
 
 function wireTimeline(svg, ui) {
@@ -843,8 +841,8 @@ function createTimeline(els, m, links) {
       "rect",
       {
         class: `ov-handle ${side}`,
-        rx: 5,
-        width: 13,
+        rx: 3,
+        width: 8,
         tabindex: 0,
         role: "slider",
         "aria-label": name,
@@ -1044,7 +1042,7 @@ function createTimeline(els, m, links) {
     }))
       outline.setAttribute(k, fmt(v));
     for (const [h, grip, x, v] of [
-      [hA, gripA, xa - 13, st.a],
+      [hA, gripA, xa - 8, st.a],
       [hB, gripB, xb, st.b - 1],
     ]) {
       h.setAttribute("x", fmt(x));
@@ -1052,7 +1050,7 @@ function createTimeline(els, m, links) {
       h.setAttribute("height", TH + 4);
       h.setAttribute("aria-valuenow", v);
       h.setAttribute("aria-valuetext", String(v));
-      const gx = x + 6.5;
+      const gx = x + 4;
       grip.setAttribute(
         "d",
         `M${fmt(gx - 2)} ${TY + 11}V${TY + TH - 11}M${fmt(gx + 2)} ${TY + 11}V${TY + TH - 11}`,
@@ -1409,8 +1407,9 @@ function shell(app) {
     <section class="hero">
       <div class="intro">
         <h1>Formal Phylogenetics</h1>
-        <p class="sub">Phylogenetic methods and theory, as the tree of a collection of Lean&nbsp;4 formalizations.</p>
+        <p class="sub">Phylogenetic methods and theory, formalized in Lean.</p>
         <p class="by">Maintained by <a href="https://vltanh.me">The-Anh Vu-Le</a>, with the help of Claude and ChatGPT.</p>
+        <p class="by">With the skills <a href="https://github.com/vltanh/formalize-math-paper">formalize-math-paper</a> and <a href="https://impeccable.style">impeccable</a><span id="updated"></span>.</p>
       </div>
       <figure class="cover">
         <svg id="fan" class="view" role="img" aria-label="The tree of the collection: the root, the hubs, their families and their entries"></svg>
@@ -1560,7 +1559,6 @@ function makeUi(m, els) {
     citedBy: new Map(),
     edgesOf: new Map(),
     links: [],
-    fan: null,
   };
   const smooth = () =>
     matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
@@ -1575,27 +1573,15 @@ function makeUi(m, els) {
         marked.push([el, cls]);
       }
     };
-    for (const el of [els.fan, els.graph])
-      el.classList.toggle("focus", Boolean(e));
-    const pick = ui.fan && ui.fan.pick;
-    if (!e) {
-      if (pick) pick.setAttribute("visibility", "hidden");
-      return;
-    }
-    for (const el of [e.leaf, e.bud, e.node, e.tag]) add(el, "sel");
+    els.graph.classList.toggle("focus", Boolean(e));
+    if (!e) return;
+    for (const el of [e.node, e.tag]) add(el, "sel");
     for (const x of ui.cites.get(e) || [])
-      for (const el of [x.leaf, x.bud, x.node, x.tag]) add(el, "out");
+      for (const el of [x.node, x.tag]) add(el, "out");
     for (const x of ui.citedBy.get(e) || [])
-      for (const el of [x.leaf, x.bud, x.node, x.tag]) add(el, "in");
+      for (const el of [x.node, x.tag]) add(el, "in");
     for (const l of ui.edgesOf.get(e) || [])
       add(l.el, l.source === e ? "out" : "in");
-    if (pick && e.a != null) {
-      const [x0, y0] = P(G.fam, e.a);
-      const [x1, y1] = P(G.leaf[e.status] + 6, e.a);
-      for (const [k, v] of Object.entries({ x1: x0, y1: y0, x2: x1, y2: y1 }))
-        pick.setAttribute(k, fmt(v));
-      pick.setAttribute("visibility", "visible");
-    }
   };
   ui.hover = (e, place) => {
     if (e === ui.hovered) {
@@ -1628,7 +1614,7 @@ function makeUi(m, els) {
     if (!e) return;
     if (e.hub.el) e.hub.el.open = true;
     if (ui.timeline) ui.timeline.ensure(e);
-    if (e.node && (from === "cover" || from === "hash")) ui.reveal(e);
+    if (e.node && from === "hash") ui.reveal(e);
   };
   ui.reveal = (e) => {
     if (ui.timeline) ui.timeline.ensure(e);
@@ -1734,6 +1720,22 @@ async function main() {
     overview: document.getElementById("overview"),
     allYears: document.getElementById("all-years"),
   };
+  // when the collection last changed: the last push to one of its public repositories
+  fetch(
+    `https://api.github.com/orgs/${ORG}/repos?sort=pushed&direction=desc&per_page=1`,
+  )
+    .then((r) => (r.ok ? r.json() : []))
+    .then((repos) => {
+      const at = repos[0] && repos[0].pushed_at;
+      if (!at) return;
+      const shown = new Intl.DateTimeFormat(undefined, {
+        dateStyle: "medium",
+        timeStyle: "short",
+      }).format(new Date(at));
+      document.getElementById("updated").innerHTML =
+        ` · updated <time datetime="${esc(at)}">${esc(shown)}</time>`;
+    })
+    .catch(() => {});
   const themeBtn = document.getElementById("theme");
   if (themeBtn) wireTheme(themeBtn);
   els.note.textContent = "Reading the catalogs…";
@@ -1776,8 +1778,7 @@ async function main() {
   paintFold();
   const ui = makeUi(m, els);
   els.fan.classList.add("grow");
-  ui.fan = drawFan(els.fan, m);
-  wireFan(els.fan, ui.fan, m, ui);
+  drawFan(els.fan, coverModel(m));
   wireTimeline(els.graph, ui);
   wireList(ui);
   renderPanel(ui);
@@ -1819,8 +1820,7 @@ async function main() {
         const ok = !on || words.every((w) => e.hay.includes(w));
         hits += ok;
         if (e.tag) e.tag.hidden = !ok;
-        for (const el of [e.leaf, e.bud, e.node])
-          if (el) el.classList.toggle("off", !ok);
+        for (const el of [e.node]) if (el) el.classList.toggle("off", !ok);
       }
       any = any || hits > 0;
       for (const f of h.el.querySelectorAll(":scope > .h-body .family"))
