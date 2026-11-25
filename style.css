@@ -329,11 +329,7 @@ a:hover {
   margin-top: var(--s5);
 }
 .side-top {
-  position: sticky;
-  top: 0;
-  z-index: 6;
   padding-top: var(--s3);
-  background: var(--paper);
 }
 .side-top .key {
   margin-bottom: var(--s1);

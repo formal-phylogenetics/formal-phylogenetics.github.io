@@ -1633,11 +1633,9 @@ function makeUi(m, els) {
   ui.reveal = (e) => {
     if (ui.timeline) ui.timeline.ensure(e);
     if (!e.node || e.node.style.display === "none") return;
-    // the node, in the middle of what the sticky years above leave visible
+    // the node, in the middle of the window
     const r = e.node.getBoundingClientRect();
-    const top = els.sideTop.offsetHeight;
-    const bottom = innerHeight;
-    scrollTo({ top: scrollY + r.top - (top + bottom) / 2, behavior: smooth() });
+    scrollTo({ top: scrollY + r.top - innerHeight / 2, behavior: smooth() });
   };
   ui.openHub = (h) => {
     h.el.open = true;
@@ -1732,7 +1730,6 @@ async function main() {
     panel: document.getElementById("panel"),
     hubs: document.getElementById("hubs"),
     note: document.getElementById("note"),
-    sideTop: document.querySelector(".side-top"),
     axis: document.getElementById("axis"),
     overview: document.getElementById("overview"),
     allYears: document.getElementById("all-years"),
