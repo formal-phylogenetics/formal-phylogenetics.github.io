@@ -56,7 +56,7 @@ async function loadLive() {
 }
 
 async function loadSnapshot() {
-  const r = await fetch("catalogue.json");
+  const r = await fetch(new URL("catalogue.json", import.meta.url));
   if (!r.ok) throw new Error("no snapshot");
   return { ...(await r.json()), source: "snapshot" };
 }

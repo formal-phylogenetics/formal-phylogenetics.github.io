@@ -17,7 +17,9 @@ and from [Semantic Scholar](https://www.semanticscholar.org) when OpenAlex has n
   `python3 snapshot.py`;
 - `catalogue.png`: the image shown when the page is shared.
 
-To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>.
+To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>. Another site can
+show the catalogue with its own `index.html` that loads `style.css` and `app.js` from here: the
+script finds `catalogue.json` next to itself.
 
 ## License
 
