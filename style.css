@@ -169,19 +169,23 @@ a:hover {
 }
 
 .hero {
-  margin: var(--s6) 0 0;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.5fr);
+  align-items: center;
+  gap: var(--s6);
+  margin: var(--s4) 0 0;
 }
 .intro {
-  max-width: 760px;
+  max-width: 520px;
 }
 .cover {
-  margin: var(--s3) 0 0;
+  margin: 0;
 }
 .cover #fan {
   display: block;
   width: 100%;
   height: auto;
-  max-height: min(42vh, 380px);
+  max-height: min(48vh, 420px);
   margin: 0 auto;
 }
 .hero h1 {
@@ -1262,6 +1266,14 @@ a.tag:hover {
   color: var(--ink-3);
 }
 
+@media (max-width: 899px) {
+  .hero {
+    display: block;
+  }
+  .cover {
+    margin-top: var(--s3);
+  }
+}
 /* Below a wide screen: the timeline, its trim bar and the panel, then the list. */
 @media (max-width: 1099px) {
   .explorer {
