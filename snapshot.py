@@ -29,7 +29,7 @@ from pathlib import Path
 ORG, ROOT = 'formal-phylogenetics', 'lean4-phylogenetics'
 HUB_KEYS = ('name', 'role', 'parent', 'kind', 'title', 'package', 'url')
 PAPER_KEYS = ('id', 'family', 'order', 'short', 'kind', 'authors', 'year', 'title', 'url', 'status', 'repo', 'commit')
-UA = {'User-Agent': 'formal-phylogenetics-snapshot (+https://formal-phylogenetics.github.io)'}
+UA = {'User-Agent': 'formal-phylogenetics-snapshot (+https://formal-phylogenetics.vltanh.me)'}
 HERE = Path(__file__).parent
 KEY = os.environ.get('OPENALEX_API_KEY', '')
 

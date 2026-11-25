@@ -1,7 +1,7 @@
 # formal-phylogenetics.github.io
 
 The site of the collection of Lean 4 formalizations of phylogenetics, at
-<https://formal-phylogenetics.github.io/>. Beside the title, the tree of the collection is drawn as a
+<https://formal-phylogenetics.vltanh.me/>. Beside the title, the tree of the collection is drawn as a
 fan from the root, [lean4-phylogenetics](https://github.com/formal-phylogenetics/lean4-phylogenetics),
 the hubs of theory on the left and of inference on the right, each hub a wedge whose width grows with
 its catalog, through its families to a tip for each entry. Below come, in order: a trim bar, which
