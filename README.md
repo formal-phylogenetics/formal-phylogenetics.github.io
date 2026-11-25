@@ -30,7 +30,7 @@ budget shared by everyone on the same address.
 - `catalogue.json`, the catalogs the page falls back on when GitHub cannot be reached;
   `citations.json`, the citations between the entries; `works.json`, the authors, venue and abstract
   of each entry: all written by `python3 snapshot.py`;
-- `catalogue.png`: the image shown when the page is shared.
+- `catalogue.png`: the image shown when the page is shared, the tree of the collection.
 
 To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>.
 
