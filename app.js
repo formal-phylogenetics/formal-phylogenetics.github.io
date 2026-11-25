@@ -1431,8 +1431,8 @@ function shell(app) {
             <button type="button" class="s-all" id="all-years" disabled>All years</button>
             <svg id="overview" class="overview" role="group" aria-label="The years shown: drag the window or its ends, or scroll to zoom"></svg>
           </div>
-          <svg id="axis" class="axis" aria-hidden="true"></svg>
         </div>
+        <svg id="axis" class="axis" aria-hidden="true"></svg>
         <div class="stage" id="stage">
           <svg id="graph" class="view" role="img" aria-label="The entries of the catalogs along time, a row for each hub, and the citations between them"></svg>
           <p class="note" id="note" aria-live="polite"></p>
@@ -1633,9 +1633,9 @@ function makeUi(m, els) {
   ui.reveal = (e) => {
     if (ui.timeline) ui.timeline.ensure(e);
     if (!e.node || e.node.style.display === "none") return;
-    // the node, in the middle of what the sticky years above leave visible
+    // the node, in the middle of what the sticky years leave visible
     const r = e.node.getBoundingClientRect();
-    const top = els.sideTop.offsetHeight;
+    const top = els.axis.offsetHeight;
     const bottom = innerHeight;
     scrollTo({ top: scrollY + r.top - (top + bottom) / 2, behavior: smooth() });
   };
