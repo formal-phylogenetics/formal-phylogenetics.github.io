@@ -1417,6 +1417,7 @@ function shell(app) {
       </figure>
     </section>
     <div class="explorer">
+      <div class="work">
       <section class="timeline" aria-label="The entries along time, and the citations between them">
         <div class="side-top">
           <span class="key" aria-label="Legend">
@@ -1437,7 +1438,10 @@ function shell(app) {
           <p class="note" id="note" aria-live="polite"></p>
         </div>
       </section>
-      <section class="panel" id="panel" aria-live="polite" aria-label="The selected entry"></section>
+      <aside class="detail">
+        <section class="panel" id="panel" aria-live="polite" aria-label="The pinned entry"></section>
+      </aside>
+      </div>
       <div class="find">
         <input id="q" type="search" placeholder="Search a method, a title or an author" aria-label="Search the catalogue" autocomplete="off" />
         <button type="button" class="fold-all" id="fold-all"></button>
@@ -1478,9 +1482,9 @@ function wireTheme(btn) {
 function renderPanel(ui) {
   const p = ui.els.panel;
   const e = ui.selected;
-  p.hidden = !e;
+  p.classList.toggle("empty", !e);
   if (!e) {
-    p.innerHTML = "";
+    p.innerHTML = `<p class="p-hint">Click an entry to pin it here, with what it cites and what cites it.</p>`;
     return;
   }
   const FIRST = 12;
