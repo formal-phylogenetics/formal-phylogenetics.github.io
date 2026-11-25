@@ -420,11 +420,6 @@ a:hover {
     serif;
   color: var(--c);
 }
-.p-name.named {
-  font:
-    600 1.05rem "IBM Plex Sans",
-    sans-serif;
-}
 .p-meta {
   font-size: 0.72rem;
   letter-spacing: 0.08em;
@@ -1138,10 +1133,6 @@ a:hover {
     box-shadow 0.15s,
     background 0.15s;
 }
-.tag.cite {
-  font-weight: 400;
-  color: var(--ink-2);
-}
 .tag::before {
   content: "";
   flex: none;
@@ -1211,11 +1202,6 @@ a.tag:hover {
     600 1rem "Literata",
     Georgia,
     serif;
-}
-.card .t-name.k-method {
-  font:
-    600 0.98rem "IBM Plex Sans",
-    sans-serif;
 }
 .card .t-kind,
 .card .t-status {

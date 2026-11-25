@@ -1261,6 +1261,11 @@ const tidy = (s) =>
     .replace(/^\s*(abstract|summary)\b[\s.:]*/i, "")
     .trim();
 
+// Text that came through a broken encoding upstream: a replacement character, or a question mark
+// where a letter was. A name has no question mark at all; in an abstract one ends a question.
+const garbledName = (s) => /\uFFFD|\?/.test(String(s || ""));
+const garbledText = (s) => /\uFFFD|\p{L}\?\p{L}/u.test(String(s || ""));
+
 function readWork(e) {
   const id = workId(e.paperUrl);
   if (!id) return Promise.resolve({});
@@ -1283,21 +1288,30 @@ function readWork(e) {
                 ? w.primary_location.source.display_name
                 : "";
             out.abstract = tidy(invert(w.abstract_inverted_index));
+            if (out.authors.some(garbledName)) out.authors = [];
+            if (garbledText(out.abstract)) out.abstract = "";
           }
         } catch (err) {
           /* the card keeps what the catalog says */
         }
-        if (!out.abstract) {
+        if (!out.abstract || !out.authors || !out.authors.length) {
           try {
             const r = await fetch(
               `${S2}${encodeURI(id.s2)}?fields=abstract,venue,authors`,
             );
             if (r.ok) {
               const p = await r.json();
-              out.abstract = tidy(p.abstract);
+              const abstract = tidy(p.abstract);
+              if (!out.abstract && !garbledText(abstract))
+                out.abstract = abstract;
               out.venue = out.venue || p.venue || "";
-              if (!(out.authors && out.authors.length))
-                out.authors = (p.authors || []).map((a) => a.name);
+              const names = (p.authors || []).map((a) => a.name);
+              if (
+                !(out.authors && out.authors.length) &&
+                names.length &&
+                !names.some(garbledName)
+              )
+                out.authors = names;
             }
           } catch (err) {
             /* idem */
