@@ -220,8 +220,6 @@ a:hover {
   justify-content: space-between;
   gap: var(--s4);
   margin-top: var(--s6);
-  padding-bottom: var(--s2);
-  border-bottom: 1px solid var(--rule);
 }
 .fold-all {
   flex: none;
@@ -875,7 +873,7 @@ a:hover {
 
 /* The list of the hubs: a row each, opening to its families. */
 .hubs h2 {
-  margin: var(--s5) 0 var(--s1);
+  margin: var(--s6) 0 var(--s2);
   font:
     600 0.7rem "IBM Plex Sans",
     sans-serif;
@@ -884,13 +882,7 @@ a:hover {
   color: var(--ink-3);
 }
 .hubs h2:first-child {
-  margin-top: var(--s2);
-}
-.hub {
-  border-top: 1px solid var(--rule);
-}
-.hub:last-child {
-  border-bottom: 1px solid var(--rule);
+  margin-top: var(--s5);
 }
 .hub > summary {
   display: grid;
@@ -1161,9 +1153,8 @@ a.tag:hover {
 
 .foot {
   margin-top: var(--s7);
-  padding-top: var(--s4);
+  padding-top: var(--s5);
   padding-bottom: var(--s6);
-  border-top: 1px solid var(--rule);
   font-size: 0.8rem;
   color: var(--ink-3);
 }
