@@ -1,21 +1,26 @@
-/* Formal Phylogenetics. Paper by day and green-black by night, little text, one visual language:
-   colour is the hub (--c, from --c-light and --c-dark), shape is the kind of paper (round for a
-   method, square for theory), fill is the status. */
+/* Formal Phylogenetics. Paper by day and green-black by night, little text, one visual language in
+   every view, chip and card: colour is the hub (--c, from --c-light and --c-dark), shape is the kind
+   of paper (round for a method, square for theory), fill is the status (solid once formalized, half
+   while in progress, hollow to do). What an entry cites is drawn in ink, what cites it in amber. */
 :root {
   color-scheme: light;
   --paper: #f6f3ec;
   --card: #fffdf8;
+  --raise: #fbf8f1;
   --ink: #22201b;
-  --ink-2: #55514a;
+  --ink-2: #4f4b44;
   --ink-3: #6b665e;
   --ink-4: #a8a297;
   --rule: #e2dccf;
   --faint: rgba(34, 32, 27, 0.1);
+  --amber: #c2700c;
   --glow-1: #fde68a;
   --glow-2: #f59e0b;
   --focus: #2563eb;
   --shadow: 0 12px 32px -18px rgba(34, 32, 27, 0.45);
   --wash: 0.09;
+  --leaf-dim: 0.42;
+  --edge: 0.05;
   --c: var(--ink-3);
   --s1: 4px;
   --s2: 8px;
@@ -24,42 +29,51 @@
   --s5: 24px;
   --s6: 32px;
   --s7: 48px;
+  --bar-h: 56px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --paper: #0f1412;
-    --card: #161d1a;
-    --ink: #ebe6d8;
-    --ink-2: #bab3a4;
-    --ink-3: #8a857a;
-    --ink-4: #5f5b54;
-    --rule: #28302c;
-    --faint: rgba(235, 230, 216, 0.1);
-    --glow-2: #d97706;
-    --focus: #7aa7ff;
-    --shadow: 0 14px 34px -20px rgba(0, 0, 0, 0.85);
-    --wash: 0.14;
+    --paper: #121816;
+    --card: #1a221e;
+    --raise: #1e2723;
+    --ink: #eee9dc;
+    --ink-2: #d0c9ba;
+    --ink-3: #aaa395;
+    --ink-4: #6f6a61;
+    --rule: #34403a;
+    --faint: rgba(238, 233, 220, 0.16);
+    --amber: #f5a524;
+    --glow-2: #e08a10;
+    --focus: #8ab4ff;
+    --shadow: 0 16px 36px -18px rgba(0, 0, 0, 0.9);
+    --wash: 0.2;
+    --leaf-dim: 0.62;
+    --edge: 0.09;
   }
   :root:not([data-theme="light"]) .hub-c,
   :root:not([data-theme="light"]) .card {
-    --c: var(--c-dark);
+    --c: var(--c-dark, var(--ink-3));
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --paper: #0f1412;
-  --card: #161d1a;
-  --ink: #ebe6d8;
-  --ink-2: #bab3a4;
-  --ink-3: #8a857a;
-  --ink-4: #5f5b54;
-  --rule: #28302c;
-  --faint: rgba(235, 230, 216, 0.1);
-  --glow-2: #d97706;
-  --focus: #7aa7ff;
-  --shadow: 0 14px 34px -20px rgba(0, 0, 0, 0.85);
-  --wash: 0.14;
+  --paper: #121816;
+  --card: #1a221e;
+  --raise: #1e2723;
+  --ink: #eee9dc;
+  --ink-2: #d0c9ba;
+  --ink-3: #aaa395;
+  --ink-4: #6f6a61;
+  --rule: #34403a;
+  --faint: rgba(238, 233, 220, 0.16);
+  --amber: #f5a524;
+  --glow-2: #e08a10;
+  --focus: #8ab4ff;
+  --shadow: 0 16px 36px -18px rgba(0, 0, 0, 0.9);
+  --wash: 0.2;
+  --leaf-dim: 0.62;
+  --edge: 0.09;
 }
 .hub-c,
 .card {
@@ -78,21 +92,10 @@
   color: var(--ink);
 }
 html {
+  background: var(--paper);
   caret-color: var(--ink);
   accent-color: var(--ink);
-  scrollbar-color: var(--ink-4) transparent;
-}
-.ico {
-  width: 0.78em;
-  height: 0.78em;
-  margin-left: 0.2em;
-  vertical-align: -0.04em;
-}
-.ico.back {
-  margin: 0 0.3em 0 0;
-}
-html {
-  background: var(--paper);
+  scrollbar-color: color-mix(in oklab, var(--ink) 22%, transparent) transparent;
 }
 body {
   margin: 0;
@@ -119,18 +122,39 @@ a:hover {
 [hidden] {
   display: none !important;
 }
+.ico {
+  width: 0.78em;
+  height: 0.78em;
+  margin-left: 0.25em;
+  vertical-align: -0.04em;
+  flex: none;
+}
+.ico.back {
+  margin: 0 0.3em 0 0;
+}
+
+/* Scrollbars: a thin thumb in the ink, no track. */
+.stage,
+.panel {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--ink) 18%, transparent) transparent;
+}
+.stage:hover,
+.panel:hover {
+  scrollbar-color: color-mix(in oklab, var(--ink) 34%, transparent) transparent;
+}
 
 .top,
 #app,
 .foot {
-  max-width: 1180px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 32px;
 }
 .top {
   display: flex;
   justify-content: space-between;
-  padding-top: 18px;
+  padding-top: var(--s3);
   font-size: 0.85rem;
   color: var(--ink-3);
 }
@@ -145,71 +169,76 @@ a:hover {
 }
 
 .hero {
-  margin: var(--s6) 0 0;
+  margin: var(--s5) 0 0;
 }
 .hero h1 {
   margin: 0;
   font:
-    500 clamp(2rem, 4vw, 2.7rem) / 1.1 "Literata",
+    500 clamp(1.9rem, 3.4vw, 2.5rem) / 1.1 "Literata",
     Georgia,
     serif;
   letter-spacing: -0.01em;
 }
 .hero .sub {
-  margin: 8px 0 0;
+  margin: var(--s2) 0 0;
   color: var(--ink-3);
 }
 
-/* The bar: the views, the search and the key. */
+/* The bar: the views, the search and the key, always at hand. */
 .bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 22px;
-  margin: var(--s5) 0 0;
-  padding: var(--s2) 0;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
   position: sticky;
   top: 0;
   z-index: 20;
-  background: color-mix(in oklab, var(--paper) 92%, transparent);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3) var(--s5);
+  margin: var(--s5) 0 0;
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--rule);
+  background: color-mix(in oklab, var(--paper) 94%, transparent);
   backdrop-filter: blur(6px);
 }
 .seg {
   display: inline-flex;
-  gap: 4px;
+  padding: 3px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--ink) 7%, transparent);
 }
 .seg button {
-  padding: 4px 10px;
+  padding: 5px 14px;
   border: 0;
   border-radius: 999px;
   background: none;
   color: var(--ink-3);
   font:
-    500 0.9rem "IBM Plex Sans",
+    500 0.88rem "IBM Plex Sans",
     sans-serif;
   cursor: pointer;
+  transition:
+    color 0.15s,
+    background 0.15s;
 }
 .seg button:hover {
   color: var(--ink);
 }
 .seg button[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--paper);
-}
-#q::placeholder {
-  color: var(--ink-3);
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 #q {
-  flex: 0 1 240px;
-  padding: 5px 2px;
+  flex: 0 1 260px;
+  padding: 6px 2px;
   border: 0;
   border-bottom: 1px solid var(--ink-4);
   background: none;
   color: var(--ink);
   font: inherit;
   font-size: 0.92rem;
+}
+#q::placeholder {
+  color: var(--ink-3);
 }
 #q:focus {
   outline: none;
@@ -220,24 +249,23 @@ a:hover {
   flex-wrap: wrap;
   gap: 4px 14px;
   margin-left: auto;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--ink-3);
 }
 .k-group {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px 12px;
+  gap: 4px 11px;
 }
 .k-group + .k-group {
   padding-left: 14px;
   border-left: 1px solid var(--rule);
 }
 .k-cap {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-3);
 }
 .k-item {
   display: inline-flex;
@@ -250,45 +278,232 @@ a:hover {
   width: 9px;
   height: 9px;
   border: 1.5px solid var(--ink-3);
-}
-.sw {
-  border-radius: 50%;
-}
-.sw.kind {
-  background: var(--ink-3);
-}
-.sw.k-method {
   border-radius: 50%;
 }
 .sw.k-theory {
-  border-radius: 1px;
+  border-radius: 1.5px;
 }
+.sw.kind,
 .sw.s-formalized {
   background: var(--ink-3);
 }
 .sw.s-in-progress {
   background: linear-gradient(90deg, var(--ink-3) 50%, transparent 50%);
 }
+.ln {
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  border-radius: 1px;
+}
+.ln.out {
+  background: var(--ink);
+}
+.ln.in {
+  background: var(--amber);
+}
 
-/* The stage: one view at a time. */
+/* The explorer: the list beside the views; the views and the panel stay in sight. */
+.explorer {
+  display: grid;
+  grid-template-columns: minmax(360px, 5fr) minmax(0, 8fr);
+  grid-template-areas: "list side";
+  gap: var(--s6);
+  align-items: start;
+  margin-top: var(--s4);
+}
+.hubs {
+  grid-area: list;
+  min-width: 0;
+}
+.side {
+  grid-area: side;
+  position: sticky;
+  top: calc(var(--bar-h) + var(--s3));
+  height: calc(100vh - var(--bar-h) - var(--s5));
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  min-width: 0;
+}
 .stage {
   position: relative;
-  margin-top: 8px;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.stage.timeline {
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .view {
   display: block;
   width: 100%;
+}
+#fan {
+  height: 100%;
+}
+#graph {
   height: auto;
-  overflow: visible;
-  max-height: 78vh;
 }
 .note {
   position: absolute;
   right: 0;
   bottom: 0;
   margin: 0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: color-mix(in oklab, var(--paper) 85%, transparent);
   font-size: 0.8rem;
   color: var(--ink-3);
+}
+
+/* The panel of the selected entry. */
+.panel {
+  flex: 0 1 auto;
+  max-height: 46%;
+  overflow-y: auto;
+  padding: var(--s4) var(--s4) var(--s3);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--raise);
+}
+.p-hint {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--ink-3);
+}
+.p-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s3);
+}
+.p-name {
+  font:
+    600 1.15rem "Literata",
+    Georgia,
+    serif;
+  color: var(--c);
+}
+.p-name.named {
+  font:
+    600 1.05rem "IBM Plex Sans",
+    sans-serif;
+}
+.p-meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.p-close {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  align-self: center;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--ink-3);
+  cursor: pointer;
+}
+.p-close:hover {
+  background: color-mix(in oklab, var(--ink) 8%, transparent);
+  color: var(--ink);
+}
+.ico-x {
+  width: 12px;
+  height: 12px;
+}
+.p-title {
+  margin-top: 2px;
+  font:
+    500 1rem/1.35 "Literata",
+    Georgia,
+    serif;
+}
+.p-by {
+  margin-top: 3px;
+  font-size: 0.82rem;
+  color: var(--ink-3);
+}
+.p-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2);
+  margin-top: var(--s3);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.btn:hover {
+  border-color: var(--ink-3);
+}
+.btn.primary {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.p-where {
+  margin-left: auto;
+  font-size: 0.76rem;
+  color: var(--ink-3);
+}
+.p-rel {
+  margin-top: var(--s3);
+}
+.p-rel h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin: 0 0 var(--s2);
+  font:
+    600 0.7rem "IBM Plex Sans",
+    sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.p-rel h3::before {
+  content: "";
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--ink);
+}
+.p-rel.in h3::before {
+  background: var(--amber);
+}
+.p-rel h3 span {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0;
+}
+.p-none {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-3);
+}
+.p-abstract {
+  margin: var(--s3) 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.p-abstract:empty {
+  display: none;
 }
 
 /* Glyphs: shape is the kind, fill the status. */
@@ -308,7 +523,7 @@ a:hover {
   stroke-dasharray: 2 1.5;
 }
 
-/* The fan. */
+/* The fan; its type is set in the units of the drawing, which renders smaller beside the list. */
 #fan .branch {
   fill: none;
   stroke: var(--ink);
@@ -343,24 +558,24 @@ a:hover {
 }
 #fan .ringname {
   font:
-    12px "IBM Plex Sans",
+    15px "IBM Plex Sans",
     sans-serif;
-  fill: var(--ink-4);
+  fill: var(--ink-3);
 }
 #fan .hubname {
   font:
-    500 15px "Literata",
+    500 20px "Literata",
     Georgia,
     serif;
   fill: var(--c);
   cursor: pointer;
 }
 #fan .hubname.subname {
-  font-size: 12.5px;
+  font-size: 16px;
 }
 #fan .groupname {
   font:
-    600 10.5px "IBM Plex Sans",
+    600 13px "IBM Plex Sans",
     sans-serif;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -368,7 +583,7 @@ a:hover {
 }
 #fan .rootname {
   font:
-    500 14px "IBM Plex Mono",
+    500 17px "IBM Plex Mono",
     monospace;
   fill: var(--ink-2);
 }
@@ -378,11 +593,13 @@ a:hover {
 #fan .leaf {
   stroke: var(--c);
   stroke-linecap: round;
-  transition: opacity 0.25s;
+  transition:
+    opacity 0.2s,
+    stroke 0.2s;
 }
 #fan .leaf.s-todo,
 #fan .leaf.s-partial {
-  opacity: 0.42;
+  opacity: var(--leaf-dim);
 }
 #fan .hub-c.dim .wedge {
   fill-opacity: calc(var(--wash) * 0.35);
@@ -394,9 +611,33 @@ a:hover {
 #fan .hub-c.lit .wedge {
   fill-opacity: calc(var(--wash) * 2.2);
 }
+#fan.focus .leaf {
+  opacity: 0.1;
+}
+#fan.focus .bud {
+  opacity: 0.25;
+}
+#fan .leaf.sel,
+#fan .leaf.out,
+#fan .leaf.in,
+#fan .bud.sel,
+#fan .bud.out,
+#fan .bud.in {
+  opacity: 1;
+}
+#fan .leaf.out,
+#fan .leaf.in {
+  stroke-width: 2.4;
+}
+#fan .leaf.out {
+  stroke: var(--ink);
+}
+#fan .leaf.in {
+  stroke: var(--amber);
+}
 #fan .pick {
   stroke: var(--ink);
-  stroke-width: 3.4;
+  stroke-width: 4;
   stroke-linecap: round;
   pointer-events: none;
 }
@@ -405,21 +646,12 @@ a:hover {
 }
 
 /* The timeline of citations. */
-#graph {
-  max-height: none;
-}
-.stage.scroll {
-  max-height: 80vh;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  border-bottom: 1px solid var(--rule);
-}
 #graph .gridline {
   stroke: var(--faint);
 }
 #graph .year {
   font:
-    11px "IBM Plex Mono",
+    13px "IBM Plex Mono",
     monospace;
   fill: var(--ink-3);
 }
@@ -430,38 +662,54 @@ a:hover {
 }
 #graph .lanename {
   font:
-    500 13px "Literata",
+    500 16px "Literata",
     Georgia,
     serif;
   fill: var(--c);
 }
 #graph .lanename.subname {
-  font-size: 11.5px;
+  font-size: 13.5px;
 }
 #graph .edge {
   fill: none;
   stroke: var(--ink);
-  stroke-opacity: 0.05;
-  stroke-width: 0.7;
+  stroke-opacity: var(--edge);
+  stroke-width: 0.8;
   transition: stroke-opacity 0.2s;
 }
 #graph.focus .edge {
   stroke-opacity: 0.02;
 }
-#graph .edge.out {
-  stroke-opacity: 0.75;
-  stroke-width: 1.2;
+#graph .edge.out,
+#graph .edge.in {
+  stroke-opacity: 0.85;
+  stroke-width: 1.4;
 }
 #graph .edge.in {
-  stroke: var(--glow-2);
-  stroke-opacity: 0.9;
-  stroke-width: 1.2;
+  stroke: var(--amber);
 }
 #graph .glyph {
   cursor: pointer;
 }
-#graph.focus .glyph:not(.near) {
-  opacity: 0.22;
+#graph.focus .glyph {
+  opacity: 0.16;
+}
+#graph .glyph.sel,
+#graph .glyph.out,
+#graph .glyph.in {
+  opacity: 1;
+}
+#graph .glyph.sel {
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+#graph .glyph.out {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+#graph .glyph.in {
+  stroke: var(--amber);
+  stroke-width: 2;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -509,18 +757,18 @@ a:hover {
   }
 }
 
-/* The hubs: a row each, opening to the families and their tags. */
-.hubs {
-  margin-top: var(--s6);
-}
+/* The list of the hubs: a row each, opening to its families. */
 .hubs h2 {
-  margin: 26px 0 4px;
+  margin: var(--s5) 0 var(--s1);
   font:
-    600 0.72rem "IBM Plex Sans",
+    600 0.7rem "IBM Plex Sans",
     sans-serif;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-3);
+}
+.hubs h2:first-child {
+  margin-top: var(--s2);
 }
 .hub {
   border-top: 1px solid var(--rule);
@@ -530,10 +778,11 @@ a:hover {
 }
 .hub > summary {
   display: grid;
-  grid-template-columns: 1fr minmax(80px, 180px) 64px 14px;
+  grid-template-columns: 1fr minmax(48px, 96px) 52px 12px;
   align-items: center;
-  gap: var(--s4);
-  padding: var(--s3) var(--s1);
+  gap: var(--s3);
+  padding: var(--s3) var(--s2);
+  border-radius: 6px;
   cursor: pointer;
   list-style: none;
 }
@@ -541,49 +790,33 @@ a:hover {
   display: none;
 }
 .hub > summary:hover {
-  background: color-mix(in oklab, var(--c) 6%, transparent);
+  background: color-mix(in oklab, var(--c) 7%, transparent);
 }
 .hub > summary:focus-visible {
   outline-offset: -2px;
-}
-.chev {
-  width: 12px;
-  height: 12px;
-  color: var(--ink-3);
-  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-.hub[open] > summary .chev {
-  transform: rotate(90deg);
 }
 .h-name {
   display: flex;
   align-items: center;
   gap: 10px;
   font:
-    500 1.02rem "Literata",
+    500 0.98rem/1.3 "Literata",
     Georgia,
     serif;
 }
 .h-name::before {
   content: "";
+  flex: none;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--c);
-  transition: transform 0.2s;
-}
-.hub[open] > summary .h-name::before {
-  transform: scale(1.4);
 }
 .hub.sub > summary .h-name {
-  padding-left: 22px;
-  font-size: 0.95rem;
-}
-.hub.sub > summary .h-name::before {
-  border-radius: 1px;
+  padding-left: 20px;
+  font-size: 0.92rem;
 }
 .h-bar {
-  position: relative;
   display: flex;
   height: 5px;
   border-radius: 3px;
@@ -599,39 +832,48 @@ a:hover {
 .h-count {
   text-align: right;
   font:
-    0.8rem "IBM Plex Mono",
+    0.78rem "IBM Plex Mono",
     monospace;
   color: var(--ink-3);
+}
+.chev {
+  width: 12px;
+  height: 12px;
+  color: var(--ink-3);
+  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.hub[open] > summary .chev {
+  transform: rotate(90deg);
 }
 .hub.miss {
   opacity: 0.4;
 }
 .h-body {
-  padding: 2px 2px 18px;
+  padding: var(--s1) var(--s2) var(--s4);
 }
 .hub.sub .h-body {
-  padding-left: 24px;
+  padding-left: 28px;
 }
 .h-repo {
-  display: inline-block;
-  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: var(--s2);
   font:
-    0.78rem "IBM Plex Mono",
+    0.76rem "IBM Plex Mono",
     monospace;
   color: var(--ink-3);
   text-decoration: none;
 }
+.h-repo:hover {
+  color: var(--ink);
+}
 .family {
-  display: grid;
-  grid-template-columns: minmax(150px, 230px) 1fr;
-  gap: 6px 20px;
-  padding: 8px 0;
+  padding: var(--s2) 0;
 }
 .family h4 {
-  margin: 0;
-  padding-top: 3px;
+  margin: 0 0 6px;
   font:
-    400 0.8rem/1.35 "IBM Plex Sans",
+    400 0.78rem/1.35 "IBM Plex Sans",
     sans-serif;
   color: var(--ink-3);
 }
@@ -646,63 +888,76 @@ a:hover {
   font-size: 0.9rem;
 }
 
-/* Tags: a pill for a method, a block for theory. */
+/* Chips: one shape for every entry; the glyph inside carries the kind and the status, as in the
+   views; a formalized entry is tinted with its hub. */
 .tag {
   display: inline-flex;
   align-items: center;
+  gap: 7px;
   height: 26px;
-  padding: 0 10px;
-  border: 1px solid color-mix(in oklab, var(--c) 40%, var(--rule));
+  padding: 0 10px 0 9px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
   background: var(--card);
-  color: var(--ink-2);
+  color: var(--ink);
+  font:
+    500 0.8rem/1 "IBM Plex Sans",
+    sans-serif;
   text-decoration: none;
   white-space: nowrap;
   transition:
-    transform 0.12s,
-    box-shadow 0.12s;
-}
-/* shape is the kind; type is the name: software in monospace, a citation in the serif */
-.tag.k-method {
-  border-radius: 999px;
-}
-.tag.k-theory {
-  border-radius: 2px;
-}
-.tag.named {
-  font:
-    500 0.78rem/1.6 "IBM Plex Mono",
-    monospace;
+    border-color 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
 }
 .tag.cite {
-  font:
-    400 0.84rem/1.5 "Literata",
-    Georgia,
-    serif;
+  font-weight: 400;
+  color: var(--ink-2);
+}
+.tag::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  border: 1.5px solid var(--c);
+  border-radius: 50%;
+}
+.tag.k-theory::before {
+  border-radius: 1.5px;
 }
 .tag.s-formalized {
+  border-color: color-mix(in oklab, var(--c) 45%, var(--rule));
+  background: color-mix(in oklab, var(--c) 11%, var(--card));
+}
+.tag.s-formalized::before {
   background: var(--c);
-  border-color: var(--c);
-  color: var(--card);
 }
-.tag.s-in-progress {
-  border-color: var(--c);
-  background: linear-gradient(
-    90deg,
-    color-mix(in oklab, var(--c) 30%, var(--card)) 50%,
-    var(--card) 50%
-  );
-  color: var(--ink);
+.tag.s-in-progress::before {
+  background: linear-gradient(90deg, var(--c) 50%, transparent 50%);
 }
-.tag.s-partial {
-  border-style: dashed;
-  border-color: var(--c);
+.tag.s-partial::before {
+  border-style: dotted;
 }
 a.tag:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow);
+  border-color: var(--c);
+}
+.tag.sel {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 1.5px var(--ink);
+}
+.tag.out {
+  box-shadow: 0 0 0 1.5px color-mix(in oklab, var(--ink) 70%, transparent);
+}
+.tag.in {
+  box-shadow: 0 0 0 1.5px var(--amber);
+}
+.tag.mini {
+  height: 24px;
+  font-size: 0.76rem;
 }
 
-/* The card of an entry. */
+/* The card of an entry, under the pointer. */
 .card {
   position: fixed;
   z-index: 60;
@@ -711,7 +966,7 @@ a.tag:hover {
   padding: 12px 15px;
   background: var(--card);
   border: 1px solid color-mix(in oklab, var(--c) 38%, var(--rule));
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: var(--shadow);
   font-size: 0.9rem;
   line-height: 1.4;
@@ -731,8 +986,8 @@ a.tag:hover {
 }
 .card .t-name.k-method {
   font:
-    600 0.98rem "IBM Plex Mono",
-    monospace;
+    600 0.98rem "IBM Plex Sans",
+    sans-serif;
 }
 .card .t-kind,
 .card .t-status {
@@ -787,12 +1042,40 @@ a.tag:hover {
 .foot {
   margin-top: var(--s7);
   padding-top: var(--s4);
-  padding-bottom: var(--s7);
+  padding-bottom: var(--s6);
   border-top: 1px solid var(--rule);
   font-size: 0.8rem;
   color: var(--ink-3);
 }
 
+/* Below a wide screen: the views first, then the panel, then the list. */
+@media (max-width: 1099px) {
+  .explorer {
+    display: block;
+  }
+  .side {
+    position: static;
+    height: auto;
+  }
+  .stage {
+    flex: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .stage.timeline {
+    max-height: 72vh;
+    overflow-y: auto;
+  }
+  #fan {
+    height: auto;
+  }
+  .panel {
+    max-height: none;
+  }
+  .hubs {
+    margin-top: var(--s5);
+  }
+}
 @media (max-width: 760px) {
   .top,
   #app,
@@ -802,37 +1085,31 @@ a.tag:hover {
   .bar {
     position: static;
   }
-  .stage {
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    mask-image: linear-gradient(
-      90deg,
-      transparent,
-      #000 18px,
-      #000 calc(100% - 18px),
-      transparent
-    );
-  }
-  #fan {
-    width: 760px;
-    max-height: none;
-  }
-  #graph {
-    width: 900px;
+  .key {
+    margin-left: 0;
   }
   .k-group + .k-group {
     padding-left: 0;
     border-left: 0;
   }
-  .key {
-    margin-left: 0;
-  }
-  .family {
-    grid-template-columns: 1fr;
-  }
   .hub > summary {
-    grid-template-columns: 1fr 64px 48px 12px;
-    gap: var(--s3);
+    grid-template-columns: 1fr 52px 46px 12px;
+    gap: var(--s2);
+  }
+  .stage {
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 16px,
+      #000 calc(100% - 16px),
+      transparent
+    );
+  }
+  #fan {
+    width: 760px;
+  }
+  #graph {
+    width: 900px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

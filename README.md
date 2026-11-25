@@ -7,7 +7,10 @@ the tree of the collection, drawn as a fan from the root,
 and their families to a tip for each entry; and a timeline, with a column for each hub, a row for
 each year and the citations between the entries. Below the views, each hub opens to its families.
 Colour is the hub, shape the kind of paper (round for a method, square for theory) and fill the
-status. Pointing at an entry shows its card, with its authors, venue and abstract.
+status. Pointing at an entry, in a view or in the list, marks it in all of them and shows its card,
+with its authors, venue and abstract. A first click selects it: the panel beside the views shows
+what it cites and what cites it, marked in every view, and the address keeps the selection; a
+second click opens its formalization, or the paper.
 
 The page reads the registry of the collection (`collection/repos.toml` in lean4-phylogenetics) and
 the catalog of each hub (`catalog/papers.toml`) from GitHub each time it opens, so a hub, family or
