@@ -147,9 +147,9 @@ a:hover {
 .top,
 #app,
 .foot {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 40px;
 }
 .top {
   display: flex;
@@ -169,7 +169,20 @@ a:hover {
 }
 
 .hero {
-  margin: var(--s5) 0 0;
+  margin: var(--s6) 0 0;
+}
+.intro {
+  max-width: 760px;
+}
+.cover {
+  margin: var(--s5) 0 var(--s2);
+}
+.cover #fan {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 66vh;
+  margin: 0 auto;
 }
 .hero h1 {
   margin: 0;
@@ -181,6 +194,11 @@ a:hover {
 }
 .hero .sub {
   margin: var(--s2) 0 0;
+  color: var(--ink-3);
+}
+.hero .by {
+  margin: var(--s1) 0 0;
+  font-size: 0.85rem;
   color: var(--ink-3);
 }
 
@@ -199,43 +217,17 @@ a:hover {
   background: color-mix(in oklab, var(--paper) 94%, transparent);
   backdrop-filter: blur(6px);
 }
-.seg {
-  display: inline-flex;
-  padding: 3px;
-  border-radius: 999px;
-  background: color-mix(in oklab, var(--ink) 7%, transparent);
-}
-.seg button {
-  padding: 5px 14px;
-  border: 0;
-  border-radius: 999px;
-  background: none;
-  color: var(--ink-3);
-  font:
-    500 0.88rem "IBM Plex Sans",
-    sans-serif;
-  cursor: pointer;
-  transition:
-    color 0.15s,
-    background 0.15s;
-}
-.seg button:hover {
-  color: var(--ink);
-}
-.seg button[aria-pressed="true"] {
-  background: var(--card);
-  color: var(--ink);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-}
 #q {
-  flex: 0 1 260px;
-  padding: 6px 2px;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 560px;
+  padding: 8px 2px;
   border: 0;
   border-bottom: 1px solid var(--ink-4);
   background: none;
   color: var(--ink);
   font: inherit;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
 }
 #q::placeholder {
   color: var(--ink-3);
@@ -247,9 +239,9 @@ a:hover {
 .key {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 4px 14px;
-  margin-left: auto;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--ink-3);
 }
 .k-group {
@@ -290,6 +282,31 @@ a:hover {
 .sw.s-in-progress {
   background: linear-gradient(90deg, var(--ink-3) 50%, transparent 50%);
 }
+.theme {
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+.theme:hover {
+  color: var(--ink);
+  border-color: var(--ink-3);
+}
+.theme svg {
+  width: 16px;
+  height: 16px;
+}
 .ln {
   display: inline-block;
   width: 16px;
@@ -306,11 +323,27 @@ a:hover {
 /* The explorer: the list beside the views; the views and the panel stay in sight. */
 .explorer {
   display: grid;
-  grid-template-columns: minmax(360px, 5fr) minmax(0, 8fr);
+  grid-template-columns: minmax(400px, 5fr) minmax(0, 8fr);
   grid-template-areas: "list side";
-  gap: var(--s6);
+  gap: var(--s7);
   align-items: start;
-  margin-top: var(--s4);
+  margin-top: var(--s5);
+}
+.side-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s2) var(--s4);
+}
+.side-head h2 {
+  margin: 0;
+  font:
+    600 0.7rem "IBM Plex Sans",
+    sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
 }
 .hubs {
   grid-area: list;
@@ -330,18 +363,13 @@ a:hover {
   position: relative;
   flex: 1 1 0;
   min-height: 0;
-  overflow: hidden;
-}
-.stage.timeline {
   overflow-y: auto;
   overscroll-behavior: contain;
+  border-top: 1px solid var(--rule);
 }
 .view {
   display: block;
   width: 100%;
-}
-#fan {
-  height: 100%;
 }
 #graph {
   height: auto;
@@ -361,7 +389,7 @@ a:hover {
 /* The panel of the selected entry. */
 .panel {
   flex: 0 1 auto;
-  max-height: 46%;
+  max-height: 40%;
   overflow-y: auto;
   padding: var(--s4) var(--s4) var(--s3);
   border: 1px solid var(--rule);
@@ -504,6 +532,41 @@ a:hover {
 }
 .p-abstract:empty {
   display: none;
+}
+.p-more {
+  height: 24px;
+  padding: 0 10px;
+  border: 1px dashed var(--ink-4);
+  border-radius: 6px;
+  background: none;
+  color: var(--ink-2);
+  font:
+    500 0.76rem "IBM Plex Sans",
+    sans-serif;
+  cursor: pointer;
+}
+.p-more:hover {
+  border-color: var(--ink-3);
+  color: var(--ink);
+}
+.p-abs {
+  margin-top: var(--s3);
+}
+.p-abs > summary {
+  width: fit-content;
+  font:
+    600 0.7rem "IBM Plex Sans",
+    sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  cursor: pointer;
+}
+.p-abs > summary:hover {
+  color: var(--ink);
+}
+.p-abs .p-abstract {
+  margin-top: var(--s2);
 }
 
 /* Glyphs: shape is the kind, fill the status. */
@@ -1048,10 +1111,15 @@ a.tag:hover {
   color: var(--ink-3);
 }
 
-/* Below a wide screen: the views first, then the panel, then the list. */
+/* Below a wide screen: the timeline and the panel, then the list. */
 @media (max-width: 1099px) {
   .explorer {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .side {
+    order: -1;
   }
   .side {
     position: static;
@@ -1059,21 +1127,14 @@ a.tag:hover {
   }
   .stage {
     flex: none;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-  .stage.timeline {
     max-height: 72vh;
-    overflow-y: auto;
-  }
-  #fan {
-    height: auto;
+    overflow: auto;
   }
   .panel {
     max-height: none;
   }
   .hubs {
-    margin-top: var(--s5);
+    margin-top: var(--s6);
   }
 }
 @media (max-width: 760px) {
@@ -1085,8 +1146,12 @@ a.tag:hover {
   .bar {
     position: static;
   }
+  .side-head {
+    display: block;
+  }
   .key {
-    margin-left: 0;
+    justify-content: flex-start;
+    margin-top: var(--s2);
   }
   .k-group + .k-group {
     padding-left: 0;
@@ -1095,18 +1160,6 @@ a.tag:hover {
   .hub > summary {
     grid-template-columns: 1fr 52px 46px 12px;
     gap: var(--s2);
-  }
-  .stage {
-    mask-image: linear-gradient(
-      90deg,
-      transparent,
-      #000 16px,
-      #000 calc(100% - 16px),
-      transparent
-    );
-  }
-  #fan {
-    width: 760px;
   }
   #graph {
     width: 900px;

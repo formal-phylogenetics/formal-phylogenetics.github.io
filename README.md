@@ -1,16 +1,16 @@
 # formal-phylogenetics.github.io
 
 The site of the collection of Lean 4 formalizations of phylogenetics, at
-<https://formal-phylogenetics.github.io/>. It shows every entry of the hubs' catalogs in two views:
-the tree of the collection, drawn as a fan from the root,
-[lean4-phylogenetics](https://github.com/formal-phylogenetics/lean4-phylogenetics), through the hubs
-and their families to a tip for each entry; and a timeline, with a column for each hub, a row for
-each year and the citations between the entries. Below the views, each hub opens to its families.
-Colour is the hub, shape the kind of paper (round for a method, square for theory) and fill the
-status. Pointing at an entry, in a view or in the list, marks it in all of them and shows its card,
-with its authors, venue and abstract. A first click selects it: the panel beside the views shows
-what it cites and what cites it, marked in every view, and the address keeps the selection; a
-second click opens its formalization, or the paper.
+<https://formal-phylogenetics.github.io/>. Its cover is the tree of the collection, drawn as a fan
+from the root, [lean4-phylogenetics](https://github.com/formal-phylogenetics/lean4-phylogenetics),
+through the hubs and their families to a tip for each entry of the hubs' catalogs. Below it, the
+list of the hubs, which open to their families, sits beside a timeline of the entries, with a
+column for each hub, a row for each year and the citations between the entries. Colour is the hub,
+shape the kind of paper (round for a method, square for theory) and fill the status. Pointing at an
+entry, in the cover, the list or the timeline, marks it in all of them and shows its card, with its
+authors, venue and abstract. A first click selects it: the panel beside the timeline shows what it
+cites and what cites it, marked everywhere, and the address keeps the selection; a second click
+opens its formalization, or the paper. A button switches between light and dark.
 
 The page reads the registry of the collection (`collection/repos.toml` in lean4-phylogenetics) and
 the catalog of each hub (`catalog/papers.toml`) from GitHub each time it opens, so a hub, family or
@@ -26,6 +26,10 @@ when OpenAlex has none.
 - `catalogue.png`: the image shown when the page is shared.
 
 To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>.
+
+## Credits
+
+Maintained by The-Anh Vu-Le, with the help of Claude and ChatGPT.
 
 ## License
 

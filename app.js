@@ -676,7 +676,7 @@ function wireFan(svg, fan, m, ui) {
     light(null);
   });
   svg.addEventListener("click", () => {
-    if (ui.hovered) ui.pick(ui.hovered, "view");
+    if (ui.hovered) ui.pick(ui.hovered, "cover");
     else if (lit) ui.openHub(lit);
   });
 }
@@ -1068,6 +1068,10 @@ function placeBy(rect) {
 // an entry anywhere marks it everywhere; the first click selects it and shows what it cites (ink)
 // and what cites it (amber); a second click opens its formalization, or the paper.
 
+const SUN =
+  '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 1.5v1.6M8 12.9v1.6M1.5 8h1.6M12.9 8h1.6M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M3.4 12.6l1.1-1.1M11.5 4.5l1.1-1.1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>';
+const MOON =
+  '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 10.1A5.6 5.6 0 0 1 5.9 2.8a5.6 5.6 0 1 0 7.3 7.3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>';
 const CROSS =
   '<svg class="ico-x" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 3l6 6M9 3L3 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
 
@@ -1106,42 +1110,66 @@ function hubRow(h) {
 function shell(app) {
   app.innerHTML = `
     <section class="hero">
-      <h1>Formal Phylogenetics</h1>
-      <p class="sub">Phylogenetic methods and theory, as the tree of a collection of Lean&nbsp;4 formalizations.</p>
+      <div class="intro">
+        <h1>Formal Phylogenetics</h1>
+        <p class="sub">Phylogenetic methods and theory, as the tree of a collection of Lean&nbsp;4 formalizations.</p>
+        <p class="by">Maintained by <a href="https://vltanh.me">The-Anh Vu-Le</a>, with the help of Claude and ChatGPT.</p>
+      </div>
+      <figure class="cover">
+        <svg id="fan" class="view" role="img" aria-label="The tree of the collection: the root, the hubs, their families and their entries"></svg>
+      </figure>
     </section>
     <div class="bar" id="bar">
-      <div class="seg" role="group" aria-label="View">
-        <button type="button" data-view="tree" aria-pressed="true">Tree</button>
-        <button type="button" data-view="graph" aria-pressed="false">Citations</button>
-      </div>
-      <input id="q" type="search" placeholder="Search" aria-label="Search the catalogue" autocomplete="off" />
-      <span class="key" aria-label="Legend">
-        <span class="k-group"><span class="k-cap">shape</span>
-          <span class="k-item"><i class="sw k-method kind"></i>method</span>
-          <span class="k-item"><i class="sw k-theory kind"></i>theory</span>
-        </span>
-        <span class="k-group"><span class="k-cap">fill</span>
-          <span class="k-item"><i class="sw s-formalized"></i>formalized</span>
-          <span class="k-item"><i class="sw s-in-progress"></i>in progress</span>
-          <span class="k-item"><i class="sw s-todo"></i>to do</span>
-        </span>
-        <span class="k-group"><span class="k-cap">links</span>
-          <span class="k-item"><i class="ln out"></i>cites</span>
-          <span class="k-item"><i class="ln in"></i>cited by</span>
-        </span>
-      </span>
+      <input id="q" type="search" placeholder="Search a method, a title or an author" aria-label="Search the catalogue" autocomplete="off" />
+      <button type="button" class="theme" id="theme"></button>
     </div>
     <div class="explorer">
+      <section class="hubs" id="hubs" aria-label="The hubs"></section>
       <aside class="side">
+        <div class="side-head">
+          <h2>Citations along time</h2>
+          <span class="key" aria-label="Legend">
+            <span class="k-group"><span class="k-item"><i class="sw k-method kind"></i>method</span><span class="k-item"><i class="sw k-theory kind"></i>theory</span></span>
+            <span class="k-group"><span class="k-item"><i class="sw s-formalized"></i>formalized</span><span class="k-item"><i class="sw s-in-progress"></i>in progress</span><span class="k-item"><i class="sw s-todo"></i>to do</span></span>
+            <span class="k-group"><span class="k-item"><i class="ln out"></i>cites</span><span class="k-item"><i class="ln in"></i>cited by</span></span>
+          </span>
+        </div>
         <div class="stage" id="stage">
-          <svg id="fan" class="view" role="img" aria-label="The tree of the collection: the root, the hubs, their families and their entries"></svg>
-          <svg id="graph" class="view" role="img" aria-label="The entries of the catalogs along time, and the citations between them" hidden></svg>
+          <svg id="graph" class="view" role="img" aria-label="The entries of the catalogs along time, and the citations between them"></svg>
           <p class="note" id="note" aria-live="polite"></p>
         </div>
         <section class="panel" id="panel" aria-live="polite" aria-label="The selected entry"></section>
       </aside>
-      <section class="hubs" id="hubs" aria-label="The hubs"></section>
     </div>`;
+}
+
+// The theme: the system's, until the reader chooses; the choice is kept as vltanh.me keeps it.
+function themeNow() {
+  const t = document.documentElement.dataset.theme;
+  if (t === "light" || t === "dark") return t;
+  return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function wireTheme(btn) {
+  const paint = () => {
+    const dark = themeNow() === "dark";
+    btn.innerHTML = dark ? SUN : MOON;
+    const label = dark ? "Switch to light mode" : "Switch to dark mode";
+    btn.setAttribute("aria-label", label);
+    btn.title = label;
+  };
+  btn.addEventListener("click", () => {
+    const next = themeNow() === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem("theme", next);
+    } catch (err) {
+      /* the choice lasts for this visit */
+    }
+    paint();
+  });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+  paint();
 }
 
 function renderPanel(ui) {
@@ -1151,14 +1179,22 @@ function renderPanel(ui) {
     p.innerHTML = `<p class="p-hint">Select an entry in a view or in the list to follow its citations. Select it again to open it.</p>`;
     return;
   }
-  const rel = (label, list, cls) =>
-    `<div class="p-rel ${cls}"><h3>${label}${list ? ` <span>${list.length}</span>` : ""}</h3>${
-      !list
-        ? `<p class="p-none">${ui.citations === "failed" ? "The citations could not be read." : "Reading the citations…"}</p>`
-        : list.length
-          ? `<div class="tags">${list.map((x) => tagHtml(x, " mini")).join("")}</div>`
-          : `<p class="p-none">None in the catalogs.</p>`
-    }</div>`;
+  const FIRST = 12;
+  const rel = (label, list, cls) => {
+    const head = `<h3>${label}${list ? ` <span>${list.length}</span>` : ""}</h3>`;
+    if (!list)
+      return `<div class="p-rel ${cls}">${head}<p class="p-none">${ui.citations === "failed" ? "The citations could not be read." : "Reading the citations…"}</p></div>`;
+    if (!list.length)
+      return `<div class="p-rel ${cls}">${head}<p class="p-none">None in the catalogs.</p></div>`;
+    const more =
+      list.length > FIRST
+        ? `<button type="button" class="p-more" data-rel="${cls}">+${list.length - FIRST} more</button>`
+        : "";
+    return `<div class="p-rel ${cls}">${head}<div class="tags">${list
+      .slice(0, FIRST)
+      .map((x) => tagHtml(x, " mini"))
+      .join("")}${more}</div></div>`;
+  };
   const ready = ui.citations === true;
   p.innerHTML = `<div class="p-head hub-c" style="${hubStyle(e.hub)}">
       <span class="p-name ${e.named ? "named" : "cite"}">${esc(e.name)}</span>
@@ -1174,8 +1210,15 @@ function renderPanel(ui) {
     </div>
     ${rel("Cites", ready ? ui.cites.get(e) || [] : null, "out")}
     ${rel("Cited by", ready ? ui.citedBy.get(e) || [] : null, "in")}
-    <p class="p-abstract" id="p-abstract"></p>`;
+    <details class="p-abs" id="p-abs" hidden><summary>Abstract</summary><p class="p-abstract" id="p-abstract"></p></details>`;
   p.querySelector(".p-close").addEventListener("click", () => ui.select(null));
+  for (const b of p.querySelectorAll(".p-more")) {
+    b.addEventListener("click", () => {
+      const list =
+        (b.dataset.rel === "out" ? ui.cites : ui.citedBy).get(e) || [];
+      b.parentElement.innerHTML = list.map((x) => tagHtml(x, " mini")).join("");
+    });
+  }
   p.scrollTop = 0;
   readWork(e).then((w) => {
     if (ui.selected !== e || !w) return;
@@ -1190,7 +1233,10 @@ function renderPanel(ui) {
       by.textContent = `${who}${e.year ? ` (${e.year})` : ""}${w.venue ? ` · ${w.venue}` : ""}`;
     }
     const ab = p.querySelector("#p-abstract");
-    if (ab && w.abstract) ab.textContent = w.abstract;
+    if (ab && w.abstract) {
+      ab.textContent = w.abstract;
+      p.querySelector("#p-abs").hidden = false;
+    }
   });
 }
 
@@ -1201,7 +1247,6 @@ function makeUi(m, els) {
     byKey: new Map(m.entries.map((e) => [e.key, e])),
     selected: null,
     hovered: null,
-    view: "tree",
     citations: false,
     cites: new Map(),
     citedBy: new Map(),
@@ -1276,11 +1321,12 @@ function makeUi(m, els) {
       e ? `#${encodeURIComponent(e.key)}` : location.pathname + location.search,
     );
     if (!e) return;
-    if (from !== "list" && e.tag && wide()) {
-      e.hub.el.open = true;
+    if (e.hub.el) e.hub.el.open = true;
+    if (from === "cover")
+      els.bar.scrollIntoView({ block: "start", behavior: smooth() });
+    else if (from !== "list" && e.tag && wide())
       e.tag.scrollIntoView({ block: "nearest", behavior: smooth() });
-    }
-    if (ui.view === "graph" && e.node && from !== "view") ui.reveal(e);
+    if (e.node && from !== "view") ui.reveal(e);
   };
   ui.reveal = (e) => {
     const st = els.stage;
@@ -1388,6 +1434,7 @@ async function main() {
     note: document.getElementById("note"),
     bar: document.getElementById("bar"),
   };
+  wireTheme(document.getElementById("theme"));
   const barHeight = () =>
     document.documentElement.style.setProperty(
       "--bar-h",
@@ -1430,47 +1477,25 @@ async function main() {
     data.source === "snapshot"
       ? "GitHub could not be reached: a snapshot of the catalogs."
       : "";
-  if (!matchMedia("(min-width: 1100px)").matches)
-    els.stage.scrollLeft = (els.stage.scrollWidth - els.stage.clientWidth) / 2;
 
-  // the citations, read once in the background for the panel, the tree and the timeline
-  const citations = readCitations(m, () => {})
-    .then((raw) => ui.useCitations(raw))
+  // the citations, read once in the background for the panel, the cover and the timeline
+  els.note.textContent = "Reading the citations…";
+  readCitations(m, () => {})
+    .then((raw) => {
+      ui.useCitations(raw);
+      drawTimeline(els.graph, m, ui.links);
+      els.note.textContent = ui.links.length
+        ? ""
+        : "No citations could be read.";
+      filter();
+      ui.mark(ui.hovered || ui.selected);
+      if (ui.selected && ui.selected.node) ui.reveal(ui.selected);
+    })
     .catch(() => {
       ui.citations = "failed";
+      els.note.textContent = "The citations could not be read.";
       if (ui.selected) renderPanel(ui);
     });
-
-  // the views
-  let timeline = null;
-  for (const b of app.querySelectorAll(".seg button")) {
-    b.addEventListener("click", async () => {
-      for (const x of app.querySelectorAll(".seg button"))
-        x.setAttribute("aria-pressed", String(x === b));
-      ui.view = b.dataset.view;
-      els.fan.toggleAttribute("hidden", ui.view !== "tree");
-      els.graph.toggleAttribute("hidden", ui.view !== "graph");
-      els.stage.classList.toggle("timeline", ui.view === "graph");
-      els.stage.scrollTop = 0;
-      els.stage.scrollLeft =
-        ui.view === "graph"
-          ? 0
-          : (els.stage.scrollWidth - els.stage.clientWidth) / 2;
-      hideCard();
-      if (ui.view === "graph" && !timeline) {
-        els.note.textContent = "Reading the citations…";
-        await citations;
-        timeline = drawTimeline(els.graph, m, ui.links);
-        els.note.textContent = ui.links.length
-          ? ""
-          : "No citations could be read.";
-        filter();
-        ui.mark(ui.selected);
-      }
-      if (ui.view === "graph" && ui.selected && ui.selected.node)
-        ui.reveal(ui.selected);
-    });
-  }
 
   // the search: it dims what does not match, in the views and in the list
   const q = document.getElementById("q");
