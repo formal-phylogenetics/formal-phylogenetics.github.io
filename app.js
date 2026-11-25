@@ -1431,27 +1431,23 @@ function shell(app) {
     <div class="bar" id="bar">
       <input id="q" type="search" placeholder="Search a method, a title or an author" aria-label="Search the catalogue" autocomplete="off" />
       <button type="button" class="theme" id="theme"></button>
+      <span class="key" aria-label="Legend">
+        <span class="k-item"><i class="sw k-method"></i>method</span>
+        <span class="k-item"><i class="sw k-theory"></i>theory</span>
+        <span class="k-item"><i class="sw s-formalized"></i>formalized</span>
+        <span class="k-item"><i class="ln out"></i>cites</span>
+        <span class="k-item"><i class="ln in"></i>cited by</span>
+      </span>
     </div>
     <div class="explorer">
-      <section class="hubs" id="hubs" aria-label="The hubs"></section>
-      <aside class="side">
+      <section class="timeline" aria-label="The entries along time, and the citations between them">
         <div class="side-top">
-        <div class="side-head">
-          <span class="key" aria-label="Legend">
-            <span class="k-item"><i class="sw k-method"></i>method</span>
-            <span class="k-item"><i class="sw k-theory"></i>theory</span>
-            <span class="k-item"><i class="sw s-formalized"></i>formalized</span>
-            <span class="k-item"><i class="ln out"></i>cites</span>
-            <span class="k-item"><i class="ln in"></i>cited by</span>
-          </span>
-        </div>
-        <svg id="axis" class="axis" aria-hidden="true"></svg>
+          <svg id="axis" class="axis" aria-hidden="true"></svg>
         </div>
         <div class="stage" id="stage">
           <svg id="graph" class="view" role="img" aria-label="The entries of the catalogs along time, a row for each hub, and the citations between them"></svg>
           <p class="note" id="note" aria-live="polite"></p>
         </div>
-        <div class="dock">
         <div class="slider">
           <svg id="overview" class="overview" role="group" aria-label="The years shown: drag the window or its ends, or scroll to zoom"></svg>
           <div class="s-controls">
@@ -1462,9 +1458,11 @@ function shell(app) {
             <button type="button" class="s-all" id="all-years" hidden>All years</button>
           </div>
         </div>
+      </section>
+      <section class="hubs" id="hubs" aria-label="The hubs"></section>
+      <div class="dock">
         <section class="panel" id="panel" aria-live="polite" aria-label="The selected entry"></section>
-        </div>
-      </aside>
+      </div>
     </div>`;
 }
 
@@ -1654,7 +1652,8 @@ function makeUi(m, els) {
     // the node, in the middle of what the bar above and the dock below leave visible
     const r = e.node.getBoundingClientRect();
     const top = els.bar.offsetHeight + els.sideTop.offsetHeight;
-    const bottom = innerHeight - els.dock.offsetHeight;
+    const bottom =
+      innerHeight - els.dock.offsetHeight - els.slider.offsetHeight;
     scrollTo({ top: scrollY + r.top - (top + bottom) / 2, behavior: smooth() });
   };
   ui.openHub = (h) => {
@@ -1753,12 +1752,20 @@ async function main() {
     bar: document.getElementById("bar"),
     sideTop: document.querySelector(".side-top"),
     dock: document.querySelector(".dock"),
+    slider: document.querySelector(".slider"),
     axis: document.getElementById("axis"),
     overview: document.getElementById("overview"),
     scales: [...document.querySelectorAll(".s-group button")],
     allYears: document.getElementById("all-years"),
   };
   wireTheme(document.getElementById("theme"));
+  // the trim bar rests on the panel of the pinned entry, both at the bottom of the window
+  new ResizeObserver(() =>
+    document.documentElement.style.setProperty(
+      "--dock-h",
+      `${els.dock.offsetHeight}px`,
+    ),
+  ).observe(els.dock);
   const barHeight = () =>
     document.documentElement.style.setProperty(
       "--bar-h",

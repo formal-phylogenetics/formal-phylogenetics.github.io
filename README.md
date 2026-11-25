@@ -1,18 +1,19 @@
 # formal-phylogenetics.github.io
 
 The site of the collection of Lean 4 formalizations of phylogenetics, at
-<https://formal-phylogenetics.github.io/>. Its cover is the tree of the collection, drawn as a fan
-from the root, [lean4-phylogenetics](https://github.com/formal-phylogenetics/lean4-phylogenetics),
-through the hubs and their families to a tip for each entry of the hubs' catalogs. Below it, the
-list of the hubs, which open to their families, sits beside a timeline of the entries: time runs
-from left to right, each hub is a row, and the citations between the entries are drawn between
-them. A trim bar under the timeline chooses the years shown, by dragging its ends or the range
-between them, and the scale gives each year the same width or a width that grows with its papers.
+<https://formal-phylogenetics.github.io/>. Beside the title, the tree of the collection is drawn as a
+fan from the root, [lean4-phylogenetics](https://github.com/formal-phylogenetics/lean4-phylogenetics),
+through the hubs and their families to a tip for each entry of the hubs' catalogs. Below, a
+timeline of the entries spans the page: time runs from left to right, each hub is a row, and the
+citations between the entries are drawn between them. A trim bar under it chooses the years shown,
+by dragging its ends or the range between them, and the scale gives each year the same width or a
+width that grows with its papers. The list of the hubs, which open to their families, follows.
 Colour is the hub, shape the kind of paper (round for a method, square for theory) and fill the
-status. Pointing at an entry, in the cover, the list or the timeline, marks it in all of them and
-shows its card, with its authors, venue and abstract. A click pins it: the panel shows what it cites
-and what cites it, marked everywhere, with links to its formalization and its paper, and the
-address keeps it; a click on the pinned entry unpins it. A button switches between light and dark.
+status. Pointing at an entry, in the tree, the timeline or the list, marks it in all of them and
+shows its card, with its authors, venue and abstract. A click pins it: a panel at the bottom of the
+window shows what it cites and what cites it, marked everywhere, with links to its formalization
+and its paper, and the address keeps it; a click on the pinned entry unpins it. A button in the
+middle of the bar switches between light and dark.
 
 The page reads the registry of the collection (`collection/repos.toml` in lean4-phylogenetics) and
 the catalog of each hub (`catalog/papers.toml`) from GitHub each time it opens, so a hub, family or
