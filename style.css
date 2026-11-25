@@ -1,111 +1,87 @@
-/* Formal Phylogenetics, the catalogue: a natural-history cabinet. Parchment by day and a
-   green-black museum by night, a book serif for the headings and the results, monospaced
-   specimen tags for the techniques. Each hub carries its own colour, --c, set by app.js from --c-light and
-   --c-dark. */
+/* Formal Phylogenetics. Paper by day and green-black by night, little text, one visual language:
+   colour is the hub (--c, from --c-light and --c-dark), shape is the kind of paper (round for a
+   method, square for theory), fill is the status. */
 :root {
   color-scheme: light;
-  --paper: #f3eee2;
-  --paper-2: #ebe4d3;
-  --card: #fbf8f0;
+  --paper: #f6f3ec;
+  --card: #fffdf8;
   --ink: #22201b;
-  --ink-2: #57534a;
-  --ink-3: #7c776c;
-  --ink-4: #a39d90;
-  --rule: #d8cfbd;
-  --faint: rgba(34, 32, 27, 0.12);
+  --ink-2: #55514a;
+  --ink-3: #85807a;
+  --ink-4: #b0aba2;
+  --rule: #e2dccf;
+  --faint: rgba(34, 32, 27, 0.1);
   --glow-1: #fde68a;
   --glow-2: #f59e0b;
   --focus: #2563eb;
-  --shadow: 0 1px 0 rgba(34, 32, 27, 0.05), 0 10px 30px -18px rgba(34, 32, 27, 0.35);
+  --shadow: 0 12px 32px -18px rgba(34, 32, 27, 0.45);
   --wash: 0.09;
-  --c: var(--ink-2);
+  --c: var(--ink-3);
 }
-
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --paper: #0e1311;
-    --paper-2: #121916;
-    --card: #151c19;
-    --ink: #ece6d6;
-    --ink-2: #bdb6a6;
-    --ink-3: #8f8a7e;
-    --ink-4: #66625a;
-    --rule: #2b3430;
-    --faint: rgba(236, 230, 214, 0.12);
-    --glow-1: #fde68a;
+    --paper: #0f1412;
+    --card: #161d1a;
+    --ink: #ebe6d8;
+    --ink-2: #bab3a4;
+    --ink-3: #8a857a;
+    --ink-4: #5f5b54;
+    --rule: #28302c;
+    --faint: rgba(235, 230, 216, 0.1);
     --glow-2: #d97706;
     --focus: #7aa7ff;
-    --shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 14px 34px -20px rgba(0, 0, 0, 0.8);
+    --shadow: 0 14px 34px -20px rgba(0, 0, 0, 0.85);
     --wash: 0.14;
   }
-  :root:not([data-theme="light"]) .hub-c {
+  :root:not([data-theme="light"]) .hub-c,
+  :root:not([data-theme="light"]) .card {
     --c: var(--c-dark);
   }
 }
-
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --paper: #0e1311;
-  --paper-2: #121916;
-  --card: #151c19;
-  --ink: #ece6d6;
-  --ink-2: #bdb6a6;
-  --ink-3: #8f8a7e;
-  --ink-4: #66625a;
-  --rule: #2b3430;
-  --faint: rgba(236, 230, 214, 0.12);
-  --glow-1: #fde68a;
+  --paper: #0f1412;
+  --card: #161d1a;
+  --ink: #ebe6d8;
+  --ink-2: #bab3a4;
+  --ink-3: #8a857a;
+  --ink-4: #5f5b54;
+  --rule: #28302c;
+  --faint: rgba(235, 230, 216, 0.1);
   --glow-2: #d97706;
   --focus: #7aa7ff;
-  --shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 14px 34px -20px rgba(0, 0, 0, 0.8);
+  --shadow: 0 14px 34px -20px rgba(0, 0, 0, 0.85);
   --wash: 0.14;
 }
-
-.hub-c {
-  --c: var(--c-light);
+.hub-c,
+.card {
+  --c: var(--c-light, var(--ink-3));
 }
-:root[data-theme="dark"] .hub-c {
-  --c: var(--c-dark);
+:root[data-theme="dark"] .hub-c,
+:root[data-theme="dark"] .card {
+  --c: var(--c-dark, var(--ink-3));
 }
 
 * {
   box-sizing: border-box;
 }
-
 html {
   background: var(--paper);
 }
-
 body {
   margin: 0;
   color: var(--ink);
-  background:
-    radial-gradient(1200px 600px at 50% -10%, color-mix(in oklab, var(--glow-1) 14%, transparent), transparent 70%),
-    linear-gradient(var(--paper), var(--paper-2));
+  background: var(--paper);
   font:
-    400 1.06rem/1.6 "Alegreya Sans",
-    "Gill Sans",
-    "Trebuchet MS",
+    400 1rem/1.55 "IBM Plex Sans",
+    "Helvetica Neue",
     sans-serif;
-  min-height: 100vh;
 }
-
-/* Paper grain over everything, never in the way. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 50;
-  opacity: 0.07;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.13 0 0 0 0 0.12 0 0 0 0 0.1 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
 a {
   color: inherit;
   text-decoration-color: var(--ink-4);
-  text-underline-offset: 0.18em;
+  text-underline-offset: 0.2em;
 }
 a:hover {
   text-decoration-color: currentColor;
@@ -115,34 +91,23 @@ a:hover {
   outline-offset: 2px;
   border-radius: 3px;
 }
-
-code {
-  font-family: "IBM Plex Mono", Menlo, monospace;
-  font-size: 0.95em;
+[hidden] {
+  display: none !important;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
-.page {
-  max-width: 1220px;
+.top,
+#app,
+.foot {
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 0 28px 64px;
+  padding: 0 28px;
 }
-
 .top {
   display: flex;
   justify-content: space-between;
-  gap: 16px;
-  padding: 20px 0 6px;
-  font-size: 0.95rem;
-  color: var(--ink-2);
+  padding-top: 18px;
+  font-size: 0.85rem;
+  color: var(--ink-3);
 }
 .top a {
   text-decoration: none;
@@ -151,68 +116,146 @@ code {
   color: var(--ink);
 }
 
-/* The title, set like the title page of a catalogue. */
 .hero {
-  text-align: center;
-  max-width: 780px;
-  margin: 26px auto 0;
-}
-.kicker {
-  margin: 0;
-  font-family: "Literata", Georgia, serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
-  font-size: 0.98rem;
-  color: var(--ink-3);
+  margin: 34px 0 0;
 }
 .hero h1 {
   margin: 0;
-  font-family: "Literata", Georgia, serif;
-  font-weight: 400;
-  font-size: clamp(2.3rem, 4.6vw, 3.4rem);
-  line-height: 1.05;
-  letter-spacing: 0.01em;
+  font:
+    500 clamp(2rem, 4vw, 2.7rem) / 1.1 "Literata",
+    Georgia,
+    serif;
+  letter-spacing: -0.01em;
 }
 .hero .sub {
-  margin: 10px auto 0;
-  font-family: "Literata", Georgia, serif;
-  font-size: clamp(1.05rem, 2vw, 1.28rem);
-  color: var(--ink-2);
-  max-width: 640px;
-}
-.hero .sub::before,
-.hero .sub::after {
-  content: "";
-  display: block;
-  width: 120px;
-  height: 1px;
-  margin: 14px auto;
-  background: linear-gradient(90deg, transparent, var(--ink-3), transparent);
-}
-.lede {
-  margin: 6px auto 0;
-  color: var(--ink-2);
-  max-width: 700px;
+  margin: 8px 0 0;
+  color: var(--ink-3);
 }
 
-/* The fan. */
-.fan-wrap {
-  position: relative;
-  margin: 18px auto 0;
+/* The bar: the views, the search and the key. */
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  margin: 26px 0 0;
+  padding: 10px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in oklab, var(--paper) 92%, transparent);
+  backdrop-filter: blur(6px);
 }
-#fan {
+.seg {
+  display: inline-flex;
+  gap: 4px;
+}
+.seg button {
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--ink-3);
+  font:
+    500 0.9rem "IBM Plex Sans",
+    sans-serif;
+  cursor: pointer;
+}
+.seg button[aria-selected="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+#q {
+  flex: 0 1 240px;
+  padding: 5px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--ink-4);
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.92rem;
+}
+#q:focus {
+  outline: none;
+  border-bottom-color: var(--ink);
+}
+.key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+.k-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sw {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--ink-3);
+}
+.sw.k-method {
+  border-radius: 50%;
+}
+.sw.k-theory {
+  border-radius: 1px;
+}
+.sw.s-formalized {
+  background: var(--ink-3);
+}
+.sw.s-in-progress {
+  background: linear-gradient(90deg, var(--ink-3) 50%, transparent 50%);
+}
+
+/* The stage: one view at a time. */
+.stage {
+  position: relative;
+  margin-top: 8px;
+}
+.view {
   display: block;
   width: 100%;
   height: auto;
   overflow: visible;
-  touch-action: manipulation;
+  max-height: 78vh;
 }
+.note {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-3);
+}
+
+/* Glyphs: shape is the kind, fill the status. */
+.glyph {
+  stroke: var(--c);
+  stroke-width: 1.6;
+  fill: var(--card);
+  transition: opacity 0.2s;
+}
+.glyph.s-formalized {
+  fill: var(--c);
+}
+.glyph.s-in-progress {
+  fill: color-mix(in oklab, var(--c) 45%, var(--card));
+}
+.glyph.s-partial {
+  stroke-dasharray: 2 1.5;
+}
+
+/* The fan. */
 #fan .branch {
   fill: none;
   stroke: var(--ink);
   stroke-linecap: round;
-  stroke-linejoin: round;
 }
 #fan .hubline {
   fill: none;
@@ -224,6 +267,15 @@ code {
   fill-opacity: var(--wash);
   transition: fill-opacity 0.25s;
 }
+#fan .wedge.sub {
+  fill-opacity: calc(var(--wash) * 1.4);
+}
+#fan .band {
+  fill: none;
+  stroke: var(--c);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
 #fan .ring {
   fill: none;
   stroke: var(--faint);
@@ -234,10 +286,9 @@ code {
 }
 #fan .ringname {
   font:
-    13px "Literata",
-    Georgia,
-    serif;
-  fill: var(--ink-3);
+    12px "IBM Plex Sans",
+    sans-serif;
+  fill: var(--ink-4);
 }
 #fan .hubname {
   font:
@@ -247,46 +298,34 @@ code {
   fill: var(--c);
   cursor: pointer;
 }
+#fan .hubname.subname {
+  font-size: 12.5px;
+}
 #fan .groupname {
   font:
-    600 11px "Literata",
-    Georgia,
-    serif;
+    600 10.5px "IBM Plex Sans",
+    sans-serif;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.24em;
   fill: var(--ink-3);
 }
 #fan .rootname {
   font:
-    500 19px "IBM Plex Mono",
-    Menlo,
+    500 14px "IBM Plex Mono",
     monospace;
-  fill: var(--ink);
+  fill: var(--ink-2);
 }
-#fan .rootsub {
-  font:
-    13px "Literata",
-    Georgia,
-    serif;
-  fill: var(--ink-3);
+#fan .rootdot {
+  fill: var(--ink);
 }
 #fan .leaf {
   stroke: var(--c);
   stroke-linecap: round;
-  transition:
-    opacity 0.25s,
-    stroke-width 0.15s;
+  transition: opacity 0.25s;
 }
 #fan .leaf.s-todo,
 #fan .leaf.s-partial {
   opacity: 0.42;
-}
-#fan .bud {
-  fill: var(--c);
-  transition: opacity 0.25s;
-}
-#fan .off {
-  opacity: 0.08 !important;
 }
 #fan .hub-c.dim .wedge {
   fill-opacity: calc(var(--wash) * 0.35);
@@ -304,8 +343,70 @@ code {
   stroke-linecap: round;
   pointer-events: none;
 }
+.off {
+  opacity: 0.08 !important;
+}
 
-/* The tree grows from the root when the page opens. */
+/* The timeline of citations. */
+#graph {
+  max-height: none;
+}
+.stage.scroll {
+  max-height: 80vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-bottom: 1px solid var(--rule);
+}
+#graph .gridline {
+  stroke: var(--faint);
+}
+#graph .year {
+  font:
+    11px "IBM Plex Mono",
+    monospace;
+  fill: var(--ink-3);
+}
+#graph .lanebg {
+  fill: var(--c);
+  fill-opacity: calc(var(--wash) * 0.5);
+  rx: 4;
+}
+#graph .lanename {
+  font:
+    500 13px "Literata",
+    Georgia,
+    serif;
+  fill: var(--c);
+}
+#graph .lanename.subname {
+  font-size: 11.5px;
+}
+#graph .edge {
+  fill: none;
+  stroke: var(--ink);
+  stroke-opacity: 0.05;
+  stroke-width: 0.7;
+  transition: stroke-opacity 0.2s;
+}
+#graph.focus .edge {
+  stroke-opacity: 0.02;
+}
+#graph .edge.out {
+  stroke-opacity: 0.75;
+  stroke-width: 1.2;
+}
+#graph .edge.in {
+  stroke: var(--glow-2);
+  stroke-opacity: 0.9;
+  stroke-width: 1.2;
+}
+#graph .glyph {
+  cursor: pointer;
+}
+#graph.focus .glyph:not(.near) {
+  opacity: 0.22;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   #fan.grow .anim {
     stroke-dasharray: 1;
@@ -321,9 +422,12 @@ code {
     animation: fade 0.6s ease var(--d, 0ms) both;
   }
   #fan.grow .glow {
-    transform-origin: center;
     transform-box: fill-box;
+    transform-origin: center;
     animation: pulse 3.6s ease-in-out 1.2s infinite;
+  }
+  #graph .nodes {
+    animation: fade 0.6s ease both;
   }
 }
 @keyframes grow {
@@ -348,466 +452,286 @@ code {
   }
 }
 
-.tooltip {
-  position: fixed;
-  z-index: 60;
-  pointer-events: none;
-  width: min(440px, calc(100vw - 24px));
-  padding: 12px 16px 12px;
-  background: var(--card);
-  border: 1px solid var(--rule);
-  border-top: 3px solid var(--c, var(--ink));
-  border-radius: 5px;
-  box-shadow: var(--shadow);
-  font-size: 0.92rem;
-  line-height: 1.4;
+/* The hubs: a row each, opening to the families and their tags. */
+.hubs {
+  margin-top: 30px;
 }
-.tooltip .t-name {
+.hubs h2 {
+  margin: 26px 0 4px;
   font:
-    600 1.08rem "IBM Plex Mono",
-    Menlo,
-    monospace;
-  color: var(--c, var(--ink));
-}
-.tooltip .t-name.cite {
-  font:
-    600 1.05rem "Literata",
-    Georgia,
-    serif;
-}
-.tooltip .t-title {
-  margin-top: 3px;
-  font:
-    500 0.98rem/1.35 "Literata",
-    Georgia,
-    serif;
-  color: var(--ink);
-}
-.tooltip .t-by {
-  margin-top: 4px;
-  font-size: 0.86rem;
-  color: var(--ink-3);
-}
-.tooltip .t-abstract {
-  margin: 8px 0 0;
-  padding-top: 8px;
-  border-top: 1px dashed var(--rule);
-  font-size: 0.85rem;
-  line-height: 1.45;
-  color: var(--ink-2);
-  max-height: 12.5em;
-  overflow: hidden;
-  mask-image: linear-gradient(180deg, #000 80%, transparent);
-}
-.tooltip .t-wait {
-  margin: 8px 0 0;
-  font-size: 0.84rem;
-  color: var(--ink-4);
-}
-.tooltip .t-foot {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px 10px;
-  margin-top: 10px;
-  font-size: 0.8rem;
-  color: var(--ink-3);
-}
-.tooltip .t-status {
-  font:
-    600 0.72rem "Literata",
-    Georgia,
-    serif;
+    600 0.72rem "IBM Plex Sans",
+    sans-serif;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--c, var(--ink-2));
-  align-self: center;
-}
-.tooltip .t-hint {
-  margin-top: 4px;
-  font-size: 0.78rem;
-  color: var(--ink-4);
-}
-
-.status-line {
-  margin: 4px 0 0;
-  text-align: center;
-  font-family: "Literata", Georgia, serif;
   color: var(--ink-3);
-  min-height: 1.6em;
 }
-
-/* Specimen tags. */
-.tag {
-  position: relative;
-  display: inline-flex;
+.hub {
+  border-top: 1px solid var(--rule);
+}
+.hub:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.hub > summary {
+  display: grid;
+  grid-template-columns: 1fr minmax(80px, 180px) 64px;
   align-items: center;
-  gap: 6px;
-  padding: 3px 10px 3px 20px;
-  border: 1px solid color-mix(in oklab, var(--c) 45%, var(--rule));
-  border-radius: 3px 9px 9px 3px;
-  background: var(--card);
-  color: var(--ink);
-  font-family: "IBM Plex Mono", Menlo, monospace;
-  font-size: 0.93rem;
-  line-height: 1.35;
-  text-decoration: none;
-  white-space: nowrap;
-  transition:
-    transform 0.15s,
-    box-shadow 0.15s,
-    background 0.15s;
+  gap: 16px;
+  padding: 11px 2px;
+  cursor: pointer;
+  list-style: none;
 }
-.tag::before {
-  /* the hole through which a specimen tag is tied */
-  content: "";
-  position: absolute;
-  left: 7px;
-  top: 50%;
-  width: 6px;
-  height: 6px;
-  margin-top: -3px;
-  border-radius: 50%;
-  border: 1px solid color-mix(in oklab, var(--c) 60%, var(--rule));
-  background: var(--paper);
-}
-.tag.cite {
-  font-family: "Literata", Georgia, serif;
-  font-size: 0.98rem;
-  letter-spacing: 0;
-}
-a.tag:hover {
-  transform: translateY(-1px) rotate(-0.6deg);
-  box-shadow: var(--shadow);
-}
-.tag.s-formalized {
-  background: color-mix(in oklab, var(--c) 16%, var(--card));
-  border-color: var(--c);
-  border-width: 1.5px;
-  font-weight: 700;
-}
-.tag.s-formalized::before {
-  background: var(--c);
-  border-color: var(--c);
-}
-.tag.s-in-progress {
-  border-style: dashed;
-  border-color: var(--c);
-  background: linear-gradient(90deg, color-mix(in oklab, var(--c) 14%, var(--card)) 50%, var(--card) 50%);
-}
-.tag.s-partial {
-  border-style: dotted;
-  border-color: var(--c);
-}
-.tag.s-todo {
-  color: var(--ink-2);
-}
-.tag[hidden] {
+.hub > summary::-webkit-details-marker {
   display: none;
 }
-
-.legend {
+.h-name {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 10px 12px;
-  margin: 26px auto 0;
-  max-width: 900px;
+  gap: 10px;
+  font:
+    500 1.02rem "Literata",
+    Georgia,
+    serif;
 }
-.legend .tag {
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
+.h-name::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c);
+  transition: transform 0.2s;
 }
-.legend-note {
-  flex-basis: 100%;
-  text-align: center;
-  color: var(--ink-3);
+.hub[open] > summary .h-name::before {
+  transform: scale(1.4);
+}
+.hub.sub > summary .h-name {
+  padding-left: 22px;
   font-size: 0.95rem;
 }
-
-/* The tools stay at hand while the drawers scroll by. */
-.tools {
-  position: sticky;
-  top: 0;
-  z-index: 20;
+.hub.sub > summary .h-name::before {
+  border-radius: 1px;
+}
+.h-bar {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 18px;
-  margin: 28px 0 8px;
-  padding: 12px 16px;
-  background: color-mix(in oklab, var(--paper) 88%, transparent);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-}
-.search {
-  flex: 1 1 260px;
-}
-.search input {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  background: var(--card);
-  color: var(--ink);
-  font: inherit;
-}
-.search input::placeholder {
-  color: var(--ink-4);
-  font-style: italic;
-}
-.seg {
-  display: inline-flex;
-  border: 1px solid var(--rule);
-  border-radius: 4px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--rule);
   overflow: hidden;
 }
-.seg button {
-  padding: 7px 12px;
-  border: 0;
-  border-right: 1px solid var(--rule);
-  background: var(--card);
-  color: var(--ink-2);
+.h-bar i {
+  background: var(--c);
+}
+.h-bar b {
+  background: color-mix(in oklab, var(--c) 45%, transparent);
+}
+.h-count {
+  text-align: right;
   font:
-    500 0.92rem "Alegreya Sans",
-    sans-serif;
-  cursor: pointer;
-}
-.seg button:last-child {
-  border-right: 0;
-}
-.seg button[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--paper);
-}
-.toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--ink-2);
-  cursor: pointer;
-}
-.toggle input {
-  accent-color: var(--ink);
-}
-.shown {
-  margin-left: auto;
-  font-family: "Literata", Georgia, serif;
-  color: var(--ink-3);
-}
-
-/* The drawers of the cabinet. */
-.catalogue {
-  margin-top: 18px;
-}
-.root-card {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 18px;
-  align-items: center;
-  margin: 18px 0 8px;
-  padding: 18px 22px;
-  background: var(--card);
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  box-shadow: var(--shadow);
-}
-.root-seal {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--glow-1), var(--glow-2) 60%, transparent 62%);
-  display: grid;
-  place-items: center;
-}
-.root-seal span {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--ink);
-  box-shadow:
-    inset 0 0 0 5px var(--ink),
-    inset 0 0 0 9px var(--glow-1);
-}
-.root-card h2 {
-  margin: 0;
-  font:
-    500 1.4rem "IBM Plex Mono",
-    Menlo,
+    0.8rem "IBM Plex Mono",
     monospace;
-}
-.root-card p {
-  margin: 2px 0 0;
-  color: var(--ink-2);
-}
-
-.group {
-  margin-top: 46px;
-}
-.group > h2 {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin: 0 0 16px;
-  font:
-    600 1rem "Literata",
-    Georgia,
-    serif;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: var(--ink-2);
-}
-.group > h2::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--ink-4), transparent);
-}
-
-.drawer {
-  position: relative;
-  margin: 0 0 22px;
-  background: var(--card);
-  border: 1px solid var(--rule);
-  border-left: 6px solid var(--c);
-  border-radius: 4px 8px 8px 4px;
-  box-shadow: var(--shadow);
-  scroll-margin-top: 90px;
-}
-.drawer.flash {
-  animation: flash 1.4s ease;
-}
-@keyframes flash {
-  20% {
-    box-shadow:
-      0 0 0 3px color-mix(in oklab, var(--c) 45%, transparent),
-      var(--shadow);
-  }
-}
-.drawer > header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 18px;
-  padding: 16px 22px 12px;
-  border-bottom: 1px solid var(--rule);
-  background: linear-gradient(90deg, color-mix(in oklab, var(--c) 9%, transparent), transparent 60%);
-}
-.drawer .d-kicker {
-  flex-basis: 100%;
-  font:
-    600 0.72rem "Literata",
-    Georgia,
-    serif;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--c);
-}
-.drawer h3 {
-  margin: 0;
-  font:
-    500 1.5rem/1.2 "Literata",
-    Georgia,
-    serif;
-}
-.drawer .d-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 14px;
   color: var(--ink-3);
-  font-size: 0.95rem;
 }
-.drawer .d-meta code {
-  color: var(--ink-2);
+.hub.miss {
+  opacity: 0.4;
 }
-.drawer .d-tally {
-  margin-left: auto;
-  font-family: "Literata", Georgia, serif;
+.h-body {
+  padding: 2px 2px 18px;
+}
+.hub.sub .h-body {
+  padding-left: 24px;
+}
+.h-repo {
+  display: inline-block;
+  margin-bottom: 8px;
+  font:
+    0.78rem "IBM Plex Mono",
+    monospace;
   color: var(--ink-3);
+  text-decoration: none;
 }
 .family {
   display: grid;
-  grid-template-columns: minmax(190px, 270px) 1fr;
-  gap: 8px 22px;
-  padding: 14px 22px;
-  border-top: 1px dashed var(--rule);
-}
-.family:first-of-type {
-  border-top: 0;
+  grid-template-columns: minmax(150px, 230px) 1fr;
+  gap: 6px 20px;
+  padding: 8px 0;
 }
 .family h4 {
   margin: 0;
+  padding-top: 3px;
   font:
-    500 0.98rem/1.35 "Literata",
-    Georgia,
-    serif;
-  color: var(--ink-2);
-}
-.family h4 b {
-  font-style: normal;
-  color: var(--c);
-  margin-right: 6px;
+    400 0.8rem/1.35 "IBM Plex Sans",
+    sans-serif;
+  color: var(--ink-3);
 }
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px 8px;
-  align-content: flex-start;
-}
-.family[hidden],
-.drawer[hidden] {
-  display: none;
+  gap: 6px;
 }
 .empty {
-  padding: 14px 22px;
+  margin: 0;
   color: var(--ink-3);
-  font-style: italic;
+  font-size: 0.9rem;
 }
 
-/* A sub-hub hangs from its hub, inside its drawer. */
-.drawer .drawer {
-  margin: 6px 22px 22px 46px;
-  box-shadow: none;
+/* Tags: a pill for a method, a block for theory. */
+.tag {
+  display: inline-block;
+  padding: 2px 9px;
+  border: 1px solid color-mix(in oklab, var(--c) 40%, var(--rule));
+  background: var(--card);
+  color: var(--ink-2);
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1.45;
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s;
 }
-.drawer .drawer::before {
-  content: "";
-  position: absolute;
-  left: -30px;
-  top: -14px;
-  width: 22px;
-  height: 46px;
-  border-left: 2px solid var(--ink-3);
-  border-bottom: 2px solid var(--ink-3);
-  border-bottom-left-radius: 10px;
+.tag.k-method {
+  border-radius: 999px;
+  font:
+    500 0.78rem/1.6 "IBM Plex Mono",
+    monospace;
+}
+.tag.k-theory {
+  border-radius: 2px;
+  font:
+    400 0.84rem/1.5 "Literata",
+    Georgia,
+    serif;
+}
+.tag.s-formalized {
+  background: var(--c);
+  border-color: var(--c);
+  color: var(--card);
+}
+.tag.s-in-progress {
+  border-color: var(--c);
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--c) 30%, var(--card)) 50%,
+    var(--card) 50%
+  );
+  color: var(--ink);
+}
+.tag.s-partial {
+  border-style: dashed;
+  border-color: var(--c);
+}
+a.tag:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+/* The card of an entry. */
+.card {
+  position: fixed;
+  z-index: 60;
+  pointer-events: none;
+  width: min(420px, calc(100vw - 24px));
+  padding: 12px 15px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--c);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.card .t-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.card .t-name {
+  color: var(--c);
+  font:
+    600 1rem "Literata",
+    Georgia,
+    serif;
+}
+.card .t-name.k-method {
+  font:
+    600 0.98rem "IBM Plex Mono",
+    monospace;
+}
+.card .t-kind,
+.card .t-status {
+  font:
+    600 0.66rem "IBM Plex Sans",
+    sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.card .t-status {
+  color: var(--c);
+}
+.card .t-title {
+  margin-top: 3px;
+  font:
+    500 0.95rem/1.35 "Literata",
+    Georgia,
+    serif;
+}
+.card .t-by {
+  margin-top: 3px;
+  font-size: 0.8rem;
+  color: var(--ink-3);
+}
+.card .t-abstract {
+  margin: 8px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+  max-height: 11.5em;
+  overflow: hidden;
+  mask-image: linear-gradient(180deg, #000 78%, transparent);
+}
+.card .t-wait {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  color: var(--ink-4);
+}
+.card .t-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  margin-top: 9px;
+  font-size: 0.76rem;
+  color: var(--ink-3);
 }
 
 .foot {
-  margin-top: 56px;
-  padding-top: 18px;
+  margin-top: 46px;
+  padding-top: 14px;
+  padding-bottom: 40px;
   border-top: 1px solid var(--rule);
+  font-size: 0.8rem;
   color: var(--ink-3);
-  font-size: 0.95rem;
 }
 
 @media (max-width: 760px) {
-  .page {
-    padding: 0 14px 48px;
+  .top,
+  #app,
+  .foot {
+    padding: 0 14px;
+  }
+  .key {
+    margin-left: 0;
   }
   .family {
     grid-template-columns: 1fr;
   }
-  .drawer .drawer {
-    margin-left: 22px;
-  }
-  .drawer .drawer::before {
-    display: none;
-  }
-  .shown {
-    margin-left: 0;
+  .hub > summary {
+    grid-template-columns: 1fr 70px 54px;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
