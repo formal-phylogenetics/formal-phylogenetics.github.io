@@ -35,6 +35,8 @@ shared by everyone on the same address.
   `citations.json`, the citations between the entries; `works.json`, the authors, venue and abstract
   of each entry: all written by `python3 snapshot.py`;
 - `catalogue.png`: the image shown when the page is shared, the tree of the collection.
+- `icon.svg`, `apple-touch-icon.png`: the icon, the tree of the collection in brief: the root, its
+  trunk forking into theory and inference, and the colour of each hub.
 - `.github/workflows/snapshot.yml`: the Snapshot workflow, which runs `snapshot.py`.
 
 To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>.
