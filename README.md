@@ -17,15 +17,19 @@ click on the pinned entry unpins it. The header switches between light and dark.
 
 The page reads the registry of the collection (`collection/repos.toml` in lean4-phylogenetics) and
 the catalog of each hub (`catalog/papers.toml`) from GitHub each time it opens, so a hub, family or
-entry appears as soon as it is pushed. The citations and the abstracts come from
-[OpenAlex](https://openalex.org), and the abstracts from [Semantic Scholar](https://www.semanticscholar.org)
-when OpenAlex has none.
+entry appears as soon as it is pushed. The citations and the abstracts are not read at each visit:
+`snapshot.py` reads them from [OpenAlex](https://openalex.org), and from
+[Semantic Scholar](https://www.semanticscholar.org) where OpenAlex has no abstract, in a few batched
+requests, and stores them in `citations.json` and `works.json`. Run it when the catalogs change;
+with `OPENALEX_API_KEY` set, OpenAlex counts its requests against that key instead of the small
+budget shared by everyone on the same address.
 
 - `index.html`, `style.css`, `app.js`: the page, with no build step; `app.js` draws into `#app`, so
   another site can show the catalogue with its own `index.html` that loads `style.css` and `app.js`
   from here;
-- `catalogue.json` and `citations.json`: the snapshots the page falls back on when GitHub or
-  OpenAlex cannot be reached, written by `python3 snapshot.py`;
+- `catalogue.json`, the catalogs the page falls back on when GitHub cannot be reached;
+  `citations.json`, the citations between the entries; `works.json`, the authors, venue and abstract
+  of each entry: all written by `python3 snapshot.py`;
 - `catalogue.png`: the image shown when the page is shared.
 
 To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>.

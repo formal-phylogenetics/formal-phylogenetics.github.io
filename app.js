@@ -1,7 +1,7 @@
 // The catalogue of formal phylogenetics. It reads the registry of the collection and the catalog of
 // each hub from GitHub and shows the entries in two views: the tree of the collection, drawn as a
-// fan, and the citations between the entries, read from OpenAlex. Below the views, each hub opens
-// to its families and their entries. The page is drawn into #app; the host page gives the header
+// fan, and the timeline of the entries with the citations between them, stored with the site by
+// snapshot.py. Below them, each hub opens to its families and their entries. The page is drawn into #app; the host page gives the header
 // and the footer.
 //
 // One visual language throughout: colour is the hub; shape is the kind of paper, round for a
@@ -12,8 +12,6 @@ const ROOT = "lean4-phylogenetics";
 const RAW = (repo, path) =>
   `https://raw.githubusercontent.com/${ORG}/${repo}/main/${path}`;
 const TOML = "https://cdn.jsdelivr.net/npm/smol-toml@1.9.1/+esm";
-const OPENALEX = "https://api.openalex.org/works";
-const S2 = "https://api.semanticscholar.org/graph/v1/paper/";
 const SVGNS = "http://www.w3.org/2000/svg";
 const HERE = (file) => new URL(file, import.meta.url);
 
@@ -662,82 +660,12 @@ function wireTimeline(svg, ui) {
 }
 
 // ---------------------------------------------------------------------------------------------
-// The citations between the entries, read from OpenAlex
-
-function workId(url) {
-  const u = String(url || "");
-  let m;
-  if ((m = u.match(/(?:doi\.org|dl\.acm\.org\/doi)\/(10\.[^?#]+)$/i))) {
-    const doi = decodeURIComponent(m[1]);
-    return { doi: doi.toLowerCase(), openalex: `doi:${doi}`, s2: `DOI:${doi}` };
-  }
-  if ((m = u.match(/arxiv\.org\/abs\/([^?#]+?)(?:v\d+)?$/i))) {
-    const doi = `10.48550/arxiv.${m[1]}`.toLowerCase();
-    return { doi, openalex: `doi:${doi}`, s2: `ARXIV:${m[1]}` };
-  }
-  if ((m = u.match(/biorxiv\.org\/content\/(10\.1101\/[\d.]+)/i)))
-    return {
-      doi: m[1].toLowerCase(),
-      openalex: `doi:${m[1]}`,
-      s2: `DOI:${m[1]}`,
-    };
-  if ((m = u.match(/ncbi\.nlm\.nih\.gov\/articles\/(PMC\d+)/i)))
-    return { openalex: `pmcid:${m[1]}`, s2: `PMCID:${m[1].slice(3)}` };
-  if ((m = u.match(/pubmed\.ncbi\.nlm\.nih\.gov\/(\d+)/i)))
-    return { openalex: `pmid:${m[1]}`, s2: `PMID:${m[1]}` };
-  return null;
-}
-
-async function readCitationsLive(m, progress) {
-  const byDoi = new Map();
-  for (const e of m.entries) {
-    const id = workId(e.paperUrl);
-    if (id && id.doi && !/[,|]/.test(id.doi)) byDoi.set(id.doi, e);
-  }
-  const dois = [...byDoi.keys()];
-  const byWork = new Map();
-  const refs = new Map();
-  for (let i = 0; i < dois.length; i += 50) {
-    const chunk = dois.slice(i, i + 50);
-    const url = `${OPENALEX}?filter=doi:${chunk.map((d) => encodeURIComponent(d).replace(/%2F/gi, "/")).join("|")}&select=id,doi,referenced_works&per-page=50`;
-    const r = await fetch(url);
-    if (!r.ok) throw new Error(`OpenAlex: ${r.status}`);
-    for (const w of (await r.json()).results || []) {
-      const e = byDoi.get(
-        String(w.doi || "")
-          .replace(/^https?:\/\/doi\.org\//i, "")
-          .toLowerCase(),
-      );
-      if (!e) continue;
-      byWork.set(w.id, e);
-      refs.set(e, w.referenced_works || []);
-    }
-    progress(Math.min(1, (i + 50) / dois.length));
-  }
-  const edges = [];
-  for (const [e, rs] of refs)
-    for (const w of rs)
-      if (byWork.has(w) && byWork.get(w) !== e)
-        edges.push([e.key, byWork.get(w).key]);
-  return edges;
-}
-
-async function readCitations(m, progress) {
-  const cached = sessionStorage.getItem("fp-citations");
-  if (cached) return JSON.parse(cached);
-  let edges;
-  try {
-    edges = await readCitationsLive(m, progress);
-  } catch (err) {
-    const r = await fetch(HERE("citations.json"));
-    edges = r.ok ? (await r.json()).edges : [];
-  }
-  try {
-    sessionStorage.setItem("fp-citations", JSON.stringify(edges));
-  } catch (err) {
-    /* the cache is a convenience */
-  }
-  return edges;
+// The citations and the works, read from OpenAlex and Semantic Scholar by snapshot.py and stored
+// with the site, so that a visit asks those services nothing.
+async function readCitations() {
+  const r = await fetch(HERE("citations.json"));
+  if (!r.ok) throw new Error("no citations");
+  return (await r.json()).edges;
 }
 
 // The timeline: every entry of the catalogs, in the row of its hub, at its year; time runs from
@@ -1238,85 +1166,17 @@ function createTimeline(els, m, links) {
 
 // ---------------------------------------------------------------------------------------------
 // The card of an entry: what the catalog says at once, then the authors, the venue and the
-// abstract from OpenAlex, or from Semantic Scholar when OpenAlex has no abstract.
+// abstract stored in works.json.
 
-const works = new Map();
 const card = { el: null, entry: null, pinned: null, timer: 0, place: () => {} };
 
-function invert(index) {
-  const words = [];
-  for (const [w, at] of Object.entries(index || {}))
-    for (const k of at) words[k] = w;
-  return words.join(" ");
-}
-const tidy = (s) =>
-  String(s || "")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .replace(/^\s*(abstract|summary)\b[\s.:]*/i, "")
-    .trim();
-
-// Text that came through a broken encoding upstream: a replacement character, or a question mark
-// where a letter was. A name has no question mark at all; in an abstract one ends a question.
-const garbledName = (s) => /\uFFFD|\?/.test(String(s || ""));
-const garbledText = (s) => /\uFFFD|\p{L}\?\p{L}/u.test(String(s || ""));
-
+let worksFile = null;
 function readWork(e) {
-  const id = workId(e.paperUrl);
-  if (!id) return Promise.resolve({});
-  if (!works.has(id.openalex)) {
-    works.set(
-      id.openalex,
-      (async () => {
-        const out = {};
-        try {
-          const r = await fetch(
-            `${OPENALEX}/${encodeURI(id.openalex)}?select=authorships,primary_location,abstract_inverted_index`,
-          );
-          if (r.ok) {
-            const w = await r.json();
-            out.authors = (w.authorships || [])
-              .map((a) => a.author && a.author.display_name)
-              .filter(Boolean);
-            out.venue =
-              w.primary_location && w.primary_location.source
-                ? w.primary_location.source.display_name
-                : "";
-            out.abstract = tidy(invert(w.abstract_inverted_index));
-            if (out.authors.some(garbledName)) out.authors = [];
-            if (garbledText(out.abstract)) out.abstract = "";
-          }
-        } catch (err) {
-          /* the card keeps what the catalog says */
-        }
-        if (!out.abstract || !out.authors || !out.authors.length) {
-          try {
-            const r = await fetch(
-              `${S2}${encodeURI(id.s2)}?fields=abstract,venue,authors`,
-            );
-            if (r.ok) {
-              const p = await r.json();
-              const abstract = tidy(p.abstract);
-              if (!out.abstract && !garbledText(abstract))
-                out.abstract = abstract;
-              out.venue = out.venue || p.venue || "";
-              const names = (p.authors || []).map((a) => a.name);
-              if (
-                !(out.authors && out.authors.length) &&
-                names.length &&
-                !names.some(garbledName)
-              )
-                out.authors = names;
-            }
-          } catch (err) {
-            /* idem */
-          }
-        }
-        return out;
-      })(),
-    );
-  }
-  return works.get(id.openalex);
+  if (!worksFile)
+    worksFile = fetch(HERE("works.json"))
+      .then((r) => (r.ok ? r.json() : {}))
+      .catch(() => ({}));
+  return worksFile.then((all) => all[e.key] || {});
 }
 
 function cardHtml(e, work, waiting) {
@@ -1353,10 +1213,9 @@ function showCard(e, place) {
   if (card.entry !== e) {
     card.entry = e;
     clearTimeout(card.timer);
-    const id = workId(e.paperUrl);
     tip.style.cssText = hubStyle(e.hub);
-    tip.innerHTML = cardHtml(e, e.work, !e.work && Boolean(id));
-    if (!e.work && id) {
+    tip.innerHTML = cardHtml(e, e.work, !e.work);
+    if (!e.work) {
       card.timer = setTimeout(async () => {
         e.work = await readWork(e);
         if (card.entry === e) {
@@ -1830,7 +1689,7 @@ async function main() {
 
   // the citations, read once in the background for the panel, the cover and the timeline
   els.note.textContent = "Reading the citations…";
-  readCitations(m, () => {})
+  readCitations()
     .then((raw) => {
       ui.useCitations(raw);
       ui.timeline = createTimeline(els, m, ui.links);
