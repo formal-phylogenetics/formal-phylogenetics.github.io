@@ -121,7 +121,7 @@
  },
  "lean4-phylo-alignment/andoni2010": {
   "authors": ["Alexandr Andoni", "Constantinos Daskalakis", "Avinatan Hassidim", "Sebastien Roch"],
-  "venue": "Innovations in Computer Science 2010",
+  "venue": "Stochastic Processes and their Applications",
   "abstract": "We consider the trace reconstruction problem on a tree (TRPT): a binary sequence is broadcast through a tree channel where we allow substitutions, deletions, and insertions; we seek to reconstruct the original sequence from the sequences received at the leaves. The TRPT is motivated by the multiple sequence alignment problem in computational biology. We give a simple recursive procedure giving strong reconstruction guarantees at low mutation rates. To our knowledge, this is the first rigorous trace reconstruction result on a tree in the presence of indels."
  },
  "lean4-phylo-alignment/aries": {

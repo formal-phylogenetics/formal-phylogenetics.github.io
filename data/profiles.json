@@ -141,7 +141,7 @@
     {
      "name": "University of Wisconsin–Madison",
      "country": "US",
-     "from": 2010,
+     "from": 2012,
      "to": 2023
     },
     {
@@ -1916,7 +1916,7 @@
     {
      "name": "Massachusetts Institute of Technology",
      "country": "US",
-     "from": 2010,
+     "from": 2011,
      "to": 2016
     }
    ]
@@ -4790,8 +4790,8 @@
     {
      "name": "Microsoft (United States)",
      "country": "US",
-     "from": 2010,
-     "to": 2010
+     "from": 2012,
+     "to": 2012
     }
    ]
   },
@@ -5367,7 +5367,15 @@
   },
   {
    "born": "1939",
-   "died": "1998-10-14"
+   "died": "1998-10-14",
+   "institutions": [
+    {
+     "name": "Université de Montréal",
+     "country": "CA",
+     "from": 1983,
+     "to": 1983
+    }
+   ]
   },
   {
    "openalex": "A5111243494",
@@ -6694,14 +6702,14 @@
     {
      "name": "Bar-Ilan University",
      "country": "IL",
-     "from": 2010,
-     "to": 2010
+     "from": 2012,
+     "to": 2012
     },
     {
      "name": "Google (Israel)",
      "country": "IL",
-     "from": 2010,
-     "to": 2010
+     "from": 2012,
+     "to": 2012
     }
    ]
   },
@@ -10464,7 +10472,7 @@
    "continues": [
     {
      "name": "Systematic Zoology",
-     "venue": 56
+     "venue": 57
     }
    ]
   },
@@ -10510,7 +10518,7 @@
    "continued_by": [
     {
      "name": "IEEE Transactions on Computational Biology and Bioinformatics",
-     "venue": 79
+     "venue": 80
     }
    ]
   },
@@ -11057,6 +11065,18 @@
    "other_titles": ["Journal on applied algebra and geometry", "Society for Industrial and Applied Mathematics journal on applied algebra and geometry", "SIAGA"]
   },
   {
+   "issn": ["0304-4149"],
+   "founded": "1973",
+   "first_year": 1973,
+   "country": "NL",
+   "website": "http://www.journals.elsevier.com/stochastic-processes-and-their-applications/",
+   "wikipedia": "https://en.wikipedia.org/wiki/Stochastic_Processes_and_Their_Applications",
+   "wikidata": "Q15734260",
+   "openalex": "S182850260",
+   "about": "journal",
+   "societies": ["Bernoulli Society for Mathematical Statistics and Probability"]
+  },
+  {
    "issn": ["0039-7989"],
    "first_year": 1952,
    "country": "US",
@@ -11328,7 +11348,6 @@
   {},
   {},
   {},
-  {},
   {
    "issn": ["0219-7200", "1757-6334"],
    "founded": "2003",
@@ -11543,18 +11562,6 @@
    "about": "scientific journal"
   },
   {},
-  {
-   "issn": ["0304-4149"],
-   "founded": "1973",
-   "first_year": 1973,
-   "country": "NL",
-   "website": "http://www.journals.elsevier.com/stochastic-processes-and-their-applications/",
-   "wikipedia": "https://en.wikipedia.org/wiki/Stochastic_Processes_and_Their_Applications",
-   "wikidata": "Q15734260",
-   "openalex": "S182850260",
-   "about": "journal",
-   "societies": ["Bernoulli Society for Mathematical Statistics and Probability"]
-  },
   {
    "issn": ["0002-9297", "1537-6605"],
    "founded": "1949",

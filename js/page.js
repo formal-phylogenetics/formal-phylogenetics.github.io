@@ -9,7 +9,7 @@ import {
   readWorks,
 } from "./data.js";
 import { coverModel, drawFan } from "./fan.js";
-import { hubRow, institutionRow, personRow, publisherRow } from "./lists.js";
+import { countryRow, hubRow, personRow, publisherRow } from "./lists.js";
 import { createNetwork } from "./network.js";
 import { paintStats, renderPanel } from "./panel.js";
 import { peopleModel, sameGroup } from "./people.js";
@@ -500,7 +500,7 @@ export async function main() {
         ? people.authors.map(personRow).join("")
         : which === "venues"
           ? people.publishers.map(publisherRow).join("")
-          : people.institutions.map(institutionRow).join("");
+          : people.countries.map(countryRow).join("");
     for (const t of sections[which].querySelectorAll("a.tag[data-key]")) {
       const e = ui.byKey.get(t.dataset.key);
       if (e) (e.tags ||= []).push(t);
@@ -529,6 +529,7 @@ export async function main() {
       venue: "venues",
       publisher: "publishers",
       institution: "institutions",
+      country: "countries",
     }[k];
     return list && people ? people[list][+i] : null;
   };
@@ -662,11 +663,24 @@ export async function main() {
       if (l.el)
         l.el.classList.toggle("off", on && !hit(l.source) && !hit(l.target));
     if (nets[view]) nets[view].search(words);
+    // a country stays when its name or one of its institutions matches, with those institutions
     if (built.has("institutions"))
       for (const d of sections.institutions.querySelectorAll(
         ":scope > details",
-      ))
-        d.hidden = on && !words.every((w) => d.dataset.name.includes(w));
+      )) {
+        const named =
+          on &&
+          words.every((w) =>
+            fold(d.querySelector(".h-name").textContent).includes(w),
+          );
+        let hits = 0;
+        for (const f of d.querySelectorAll(".family")) {
+          f.hidden =
+            on && !named && !words.every((w) => f.dataset.name.includes(w));
+          hits += !f.hidden;
+        }
+        d.hidden = on && !hits;
+      }
     for (const which of ["authors", "venues"]) {
       if (!built.has(which)) continue;
       for (const d of sections[which].querySelectorAll(":scope > details")) {

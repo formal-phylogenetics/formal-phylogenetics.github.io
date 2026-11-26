@@ -128,8 +128,24 @@ export const MOON =
 export const CROSS =
   '<svg class="ico-x" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 3l6 6M9 3L3 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
 
+// a country by its name, from the two letters of its ISO code
+const REGIONS = new Intl.DisplayNames(["en"], { type: "region" });
+export const countryName = (code) => {
+  try {
+    return (code && REGIONS.of(code)) || code || "";
+  } catch {
+    return code || "";
+  }
+};
+
+// the year an entry is placed at: the first of a range ("2025–2026"), or null
+export const yearOf = (e) => {
+  const m = String(e.year).match(/\d{4}/);
+  return m ? +m[0] : null;
+};
+
 export const yearSort = (a, b) =>
-  (+a.year || 0) - (+b.year || 0) || a.name.localeCompare(b.name);
+  (yearOf(a) || 0) - (yearOf(b) || 0) || a.name.localeCompare(b.name);
 
 export const when = (a, b) =>
   a && b ? (a === b ? a : `${a}–${b}`) : a ? `${a}–` : b ? `–${b}` : "";

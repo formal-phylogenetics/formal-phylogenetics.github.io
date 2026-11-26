@@ -19,7 +19,7 @@ what it is, and a click pins it in the panel; a click on what is pinned, on noth
 the panel of the pinned entry, author, venue, publisher or link; the search; and the list, of the
 hubs, which open to their families, of the authors, of the publishers, which open to their
 venues (a conference is a venue under Conference, a preprint server one under Preprint), or of the
-institutions, which open to their authors.
+countries, which open to their institutions and these to their authors.
 Colour is the hub, shape the kind of paper (round for a method, square for theory), fill the
 status, and size the entry's weight in the citations: its PageRank, in which a citation counts for
 as much as the paper that makes it weighs. Pointing at an entry, in the timeline or the list, marks it in both and shows its card,
@@ -32,7 +32,9 @@ collection place them at, with the years, and their ORCID, Google Scholar, OpenA
 pages; then their co-authors and venues in the collection, each with the entries behind it. The
 panel of a venue gives the year it was founded, the titles it continued or that continued it, its
 abbreviation and ISSN, and its authors with their entries there; that of an institution, its
-authors with their years there and its entries. The data is curated here, from the papers
+country, its authors with their years there and its entries; that of a country, its institutions
+and authors and its entries. An author's years at an institution are those of their papers in the
+collection that print it as their affiliation. The data is curated here, from the papers
 themselves, with the registries named at the foot of the page as references.
 
 The page reads the registry of the collection (`collection/repos.toml` in lean4-phylogenetics) and

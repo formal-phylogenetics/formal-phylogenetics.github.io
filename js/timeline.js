@@ -1,4 +1,4 @@
-import { fmt, glyph, hubStyle, short, svgEl } from "./base.js";
+import { fmt, glyph, hubStyle, short, svgEl, yearOf } from "./base.js";
 import { placeAt } from "./card.js";
 
 export function wireTimeline(svg, ui) {
@@ -22,11 +22,6 @@ export function wireTimeline(svg, ui) {
 // left to right, and a citation is a curve from the citing entry back to the entry it cites. Above
 // it, a trim bar chooses the years shown; a year's width grows with its papers. A row per hub, so
 // that a new hub is a new row.
-export const yearOf = (e) => {
-  const m = String(e.year).match(/\d{4}/);
-  return m ? +m[0] : null;
-};
-
 export function moveGlyph(e) {
   if (e.kind === "method") {
     e.node.setAttribute("cx", fmt(e.px));

@@ -68,8 +68,20 @@ export function personRow(a) {
   return `<details class="hub grp" data-name="${esc(fold(`${a.name} ${a.short}`))}"><summary><span class="h-name" title="${esc(a.name)}">${esc(a.short)}</span><span class="h-count">${a.entries.length}</span>${CHEVRON}</summary><div class="h-body"><button type="button" class="p-open" data-go="author:${a.i}">Profile, co-authors and venues</button>${hubs}</div></details>`;
 }
 
-export function institutionRow(h) {
-  return `<details class="hub grp" data-name="${esc(h.hay)}"><summary><span class="h-name">${esc(h.name)}${h.country ? ` <span class="h-sub">${esc(h.country)}</span>` : ""}</span><span class="h-count">${h.people.length}</span>${CHEVRON}</summary><div class="h-body"><button type="button" class="p-open" data-go="institution:${h.i}">Authors and entries</button><div class="p-chips all">${h.people.map(({ who, n }) => chipOf("author", who, n)).join("")}</div></div></details>`;
+// a country, opening to its institutions, each with its authors and the years they were there
+export function countryRow(c) {
+  const places = c.institutions
+    .slice()
+    .sort(
+      (x, y) =>
+        y.people.length - x.people.length || x.name.localeCompare(y.name),
+    )
+    .map(
+      (h) =>
+        `<div class="family" data-name="${esc(h.hay)}"><h4><button type="button" class="f-go" data-go="institution:${h.i}">${esc(h.name)}</button> <span class="f-n">${h.people.length}</span></h4><div class="p-chips all">${h.people.map(({ who, n }) => chipOf("author", who, n)).join("")}</div></div>`,
+    )
+    .join("");
+  return `<details class="hub grp" data-name="${esc(c.hay)}"><summary><span class="h-name">${esc(c.name)}</span><span class="h-count">${c.people.length}</span>${CHEVRON}</summary><div class="h-body"><button type="button" class="p-open" data-go="country:${c.i}">Institutions and authors</button>${places}</div></details>`;
 }
 
 export function publisherRow(p) {

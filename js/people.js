@@ -1,4 +1,4 @@
-import { fold, when } from "./base.js";
+import { countryName, fold, when } from "./base.js";
 
 // the authors, the venues and the publishers, and what joins them: for each author the co-authors
 // and the venues, for each venue the authors, for each publisher the venues and the authors, each
@@ -113,12 +113,58 @@ export function peopleModel(data, ui) {
     ),
   }));
   const institutionNamed = new Map(institutions.map((h) => [h.name, h]));
+  // the countries, as their institutions are: each with its institutions, its authors (and the
+  // entries their papers there make) and its entries, the most authors first
+  const lands = new Map();
+  for (const h of institutions) {
+    if (!h.country) continue;
+    if (!lands.has(h.country))
+      lands.set(h.country, {
+        kind: "country",
+        code: h.country,
+        name: countryName(h.country),
+        institutions: [],
+        entries: new Set(),
+        who: new Set(),
+      });
+    const c = lands.get(h.country);
+    h.land = c;
+    c.institutions.push(h);
+    for (const e of h.entries) c.entries.add(e);
+    for (const { who } of h.people) c.who.add(who);
+  }
+  const countries = [...lands.values()]
+    .map((c) => ({
+      ...c,
+      entries: [...c.entries],
+      people: [...c.who]
+        .map((who) => ({
+          who,
+          n: who.entries.filter((e) => c.entries.has(e)).length,
+        }))
+        .sort((x, y) => y.n - x.n || x.who.name.localeCompare(y.who.name)),
+      counts: c.institutions
+        .map((h) => ({ who: h, n: h.people.length }))
+        .sort((x, y) => y.n - x.n || x.who.name.localeCompare(y.who.name)),
+    }))
+    .sort(
+      (x, y) =>
+        y.people.length - x.people.length || x.name.localeCompare(y.name),
+    );
+  countries.forEach((c, i) => {
+    c.i = i;
+    c.hay = fold(
+      `${c.name} ${c.code} ${c.institutions.map((h) => h.hay).join(" ")}`,
+    );
+    for (const h of c.institutions) h.land = c;
+  });
   return {
     authors,
     venues,
     publishers,
     institutions,
     institutionNamed,
+    countries,
     venueOf,
     authorsOf,
     co,

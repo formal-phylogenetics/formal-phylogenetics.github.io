@@ -114,7 +114,7 @@
    "ror": "https://ror.org/01y2jtd41",
    "country": "US",
    "authors": [
-    [5, 2010, 2023],
+    [5, 2012, 2023],
     [13, 2007, 2026],
     [55, 2016, 2026],
     [39, 2007, 2012],
@@ -1001,6 +1001,19 @@
    "papers": ["lean4-phylo-gene-tree/mrbayes3-2", "lean4-phylo-network/netcs", "lean4-phylo-species-tree/duploss2", "lean4-phylo-species-tree/tree-qmc", "lean4-phylo-species-tree/weighted-tree-qmc", "lean4-phylo-tree-of-blobs/tob-qmc"]
   },
   {
+   "name": "Université de Montréal",
+   "ror": "https://ror.org/0161xgx34",
+   "country": "CA",
+   "authors": [
+    [120, 1975, 1985],
+    [59, 2001, 2001],
+    [575, 2004, 2004],
+    [204, 2004, 2004],
+    [326, 1983, 1983]
+   ],
+   "papers": ["lean4-phylo-alignment/sankoff1975", "lean4-phylo-alignment/sankoff1983", "lean4-phylo-alignment/sankoff1985", "lean4-phylo-combinatorics/bryant2001", "lean4-phylo-gene-tree/lartillot2004"]
+  },
+  {
    "name": "Bell Laboratories",
    "ror": null,
    "country": "US",
@@ -1077,7 +1090,7 @@
    "ror": "https://ror.org/042nb2s44",
    "country": "US",
    "authors": [
-    [88, 2010, 2016],
+    [88, 2011, 2016],
     [289, 2015, 2015],
     [393, 1974, 1974],
     [454, 2015, 2015]
@@ -1179,18 +1192,6 @@
     [503, 1996, 1996]
    ],
    "papers": ["lean4-phylo-geometry/barden2013", "lean4-phylo-geometry/feragen2013", "lean4-phylo-geometry/hotz2013", "lean4-phylo-geometry/li1996"]
-  },
-  {
-   "name": "Université de Montréal",
-   "ror": "https://ror.org/0161xgx34",
-   "country": "CA",
-   "authors": [
-    [120, 1975, 1985],
-    [59, 2001, 2001],
-    [575, 2004, 2004],
-    [204, 2004, 2004]
-   ],
-   "papers": ["lean4-phylo-alignment/sankoff1975", "lean4-phylo-alignment/sankoff1985", "lean4-phylo-combinatorics/bryant2001", "lean4-phylo-gene-tree/lartillot2004"]
   },
   {
    "name": "Vanderbilt University",
@@ -1865,7 +1866,7 @@
    "ror": "https://ror.org/00d0nc645",
    "country": "US",
    "authors": [
-    [281, 2010, 2010],
+    [281, 2012, 2012],
     [240, 2011, 2011]
    ],
    "papers": ["lean4-phylo-alignment/andoni2010", "lean4-phylo-statistics/mossel2011"]
@@ -2340,7 +2341,7 @@
    "ror": "https://ror.org/03kgsv495",
    "country": "IL",
    "authors": [
-    [430, 2010, 2010]
+    [430, 2012, 2012]
    ],
    "papers": ["lean4-phylo-alignment/andoni2010"]
   },
@@ -2565,7 +2566,7 @@
    "ror": "https://ror.org/02c20ys54",
    "country": "IL",
    "authors": [
-    [430, 2010, 2010]
+    [430, 2012, 2012]
    ],
    "papers": ["lean4-phylo-alignment/andoni2010"]
   },
@@ -6927,6 +6928,12 @@
    "short": "SIAM J. Appl. Algebra Geom."
   },
   {
+   "name": "Stochastic Processes and their Applications",
+   "publisher": "Elsevier",
+   "papers": ["lean4-phylo-alignment/andoni2010", "lean4-phylo-species-tree/kingman1982"],
+   "short": "Stoch. Process. Their Appl."
+  },
+  {
    "name": "Systematic Zoology",
    "publisher": "OUP",
    "papers": ["lean4-phylo-gene-tree/fitch1971", "lean4-phylo-statistics/felsenstein1978"],
@@ -7078,12 +7085,6 @@
    "short": "Inf. Control"
   },
   {
-   "name": "Innovations in Computer Science (ICS)",
-   "publisher": "Conference",
-   "papers": ["lean4-phylo-alignment/andoni2010"],
-   "short": "ICS"
-  },
-  {
    "name": "Intelligent Systems for Molecular Biology (ISMB)",
    "publisher": "Conference",
    "papers": ["lean4-phylo-gene-tree/dcm2"],
@@ -7222,12 +7223,6 @@
    "name": "Statistical Decision Theory and Related Topics",
    "publisher": "Elsevier",
    "papers": ["lean4-phylo-gene-tree/neyman1971"]
-  },
-  {
-   "name": "Stochastic Processes and their Applications",
-   "publisher": "Elsevier",
-   "papers": ["lean4-phylo-species-tree/kingman1982"],
-   "short": "Stoch. Process. Their Appl."
   },
   {
    "name": "The American Journal of Human Genetics",

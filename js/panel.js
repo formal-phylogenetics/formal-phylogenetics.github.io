@@ -2,10 +2,12 @@ import {
   ARROW,
   CROSS,
   STATUS,
+  countryName,
   esc,
   hubStyle,
   short,
   when,
+  yearOf,
   yearSort,
 } from "./base.js";
 import { readProfiles, readWork } from "./data.js";
@@ -72,7 +74,7 @@ export function authorFacts(pr, people) {
         people && people.institutionNamed.has(r.name)
           ? `<button type="button" class="p-up" data-go="institution:${people.institutionNamed.get(r.name).i}">${esc(r.name)}</button>`
           : esc(r.name),
-        esc(r.country || ""),
+        esc(countryName(r.country)),
         when(String(r.from), String(r.to)),
       ]),
     )}`;
@@ -137,8 +139,9 @@ export function groupPanel(g, people) {
   const entries = (g.kind === "link" ? linkEntries(g) : g.entries)
     .slice()
     .sort(yearSort);
-  const span = entries.length
-    ? when(entries[0].year, entries[entries.length - 1].year)
+  const years = entries.map(yearOf).filter(Boolean);
+  const span = years.length
+    ? when(String(Math.min(...years)), String(Math.max(...years)))
     : "";
   const count = `${entries.length} ${entries.length === 1 ? "entry" : "entries"}`;
   const meta =
@@ -147,8 +150,10 @@ export function groupPanel(g, people) {
       : g.kind === "author" || g.kind === "publisher"
         ? `${g.kind} · ${count}`
         : g.kind === "institution"
-          ? `${g.country ? `${esc(g.country)} · ` : ""}${g.people.length} ${g.people.length === 1 ? "author" : "authors"} · ${count}`
-          : count;
+          ? `${g.land ? `<button type="button" class="p-up" data-go="country:${g.land.i}">${esc(g.land.name)}</button> · ` : ""}${g.people.length} ${g.people.length === 1 ? "author" : "authors"} · ${count}`
+          : g.kind === "country"
+            ? `country · ${g.institutions.length} ${g.institutions.length === 1 ? "institution" : "institutions"} · ${g.people.length} ${g.people.length === 1 ? "author" : "authors"} · ${count}`
+            : count;
   const tags = `<div class="p-sec"><h3>Entries <span>${entries.length}</span></h3><div class="tags">${entries.map((e) => tagHtml(e, " mini", true)).join("")}</div></div>`;
   let body = "";
   if (g.kind === "author")
@@ -161,6 +166,9 @@ export function groupPanel(g, people) {
   else if (g.kind === "institution")
     body = `${g.ror ? linksRow([["ROR", g.ror]]) : ""}
       ${chipsSection("Authors", g.people, "author", "with the years their papers place them there")}`;
+  else if (g.kind === "country")
+    body = `${chipsSection("Institutions", g.counts, "institution", "with their authors")}
+      ${chipsSection("Authors", g.people, "author", "with their entries from there")}`;
   else if (g.kind === "publisher")
     body = `${chipsSection("Venues", g.counts, "venue", "with the entries there")}
       ${chipsSection("Authors", g.authors, "author", "with their entries there")}`;
