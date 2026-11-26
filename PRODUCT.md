@@ -73,7 +73,7 @@ others named in the footer) are references for that curation, credited, not mirr
 
 - The data in `data/` (`catalogue.json`, `citations.json`, `works.json`, `people.json`,
   `profiles.json`) and the hubs' catalogs on GitHub.
-- `assets/catalogue.png` (the image shown when the page is shared), `assets/icon.svg` and
+- `assets/share.png` (the image shown when the page is shared), `assets/icon.svg` and
   `assets/apple-touch-icon.png`.
 - No usage figures, testimonials or endorsements exist; none may be invented.
 

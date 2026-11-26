@@ -78,9 +78,11 @@ and [Europe PMC](https://europepmc.org), or, where none gives the abstract, from
   publishers, the institutions with the authors and the papers their bylines place there, and the
   co-authorship with its layout; `profiles.json`, read when a panel shows one,
   the profiles of the authors and the venues;
-- `assets/`: `catalogue.png`, the image shown when the page is shared, the tree of the collection;
-  `icon.svg` and `apple-touch-icon.png`, the icon, the tree of the collection in brief: the root, its
-  trunk forking into theory and inference, and the colour of each hub.
+- `assets/`: `share.png`, the image shown when the page is shared: a phylogeny drawn as the fan of
+  the page's tree, its trunk forking into theory and inference, with the name and the line of the
+  site; `icon.svg` and `apple-touch-icon.png`, the icon: the root, its trunk forking into theory and
+  inference, and the tips of each side. Neither depends on the catalogs, so neither changes when a hub
+  or an entry is added.
 
 To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>.
 
