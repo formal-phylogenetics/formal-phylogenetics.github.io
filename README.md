@@ -1,11 +1,9 @@
 # formal-phylogenetics.github.io
 
 The site of the collection of Lean 4 formalizations of phylogenetics, at
-<https://formal-phylogenetics.vltanh.me/>. Beside the title, the tree of the collection is drawn as a
-fan from the root, [lean4-phylogenetics](https://github.com/formal-phylogenetics/lean4-phylogenetics),
-the hubs of theory on the left and of inference on the right, each hub a wedge whose width grows with
-its catalog, through its families to a tip for each entry; under the title, the figures of the
-collection (papers, citations, authors, venues). Below come, in order: a trim bar, which
+<https://formal-phylogenetics.vltanh.me/>. Beside the title, a phylogeny drawn as a fan grows from its
+root, theory on the left and inference on the right; it is the same drawing whatever the catalogs
+hold. Under the title come the figures of the collection (papers, citations, authors, venues). Below come, in order: a trim bar, which
 chooses the years shown by dragging its ends or the range between them, each year as wide as its
 papers need; a view of the entries for those years: the timeline, where time runs from left to
 right, each hub is a row, and the citations between the entries are drawn between them; the graph
@@ -68,7 +66,7 @@ and [Europe PMC](https://europepmc.org), or, where none gives the abstract, from
   another site can show the catalogue with its own `index.html` that loads `style.css` and `app.js`
   from here;
 - `js/`: the modules of `app.js`: `base.js` (the constants and small helpers), `data.js` (reading
-  the catalogs and the data), `fan.js` (the tree), `timeline.js`, `card.js` (the card of an entry),
+  the catalogs and the data), `timeline.js`, `card.js` (the card of an entry),
   `people.js` (the authors, venues, publishers and institutions), `network.js` (the graphs of the
   people), `panel.js`, `lists.js` (the rows of the lists), `query.js` (the search) and `page.js` (the
   page and its wiring);
@@ -78,11 +76,12 @@ and [Europe PMC](https://europepmc.org), or, where none gives the abstract, from
   publishers, the institutions with the authors and the papers their bylines place there, and the
   co-authorship with its layout; `profiles.json`, read when a panel shows one,
   the profiles of the authors and the venues;
-- `assets/`: `share.png`, the image shown when the page is shared: a phylogeny drawn as the fan of
-  the page's tree, its trunk forking into theory and inference, with the name and the line of the
-  site; `icon.svg` and `apple-touch-icon.png`, the icon: the root, its trunk forking into theory and
-  inference, and the tips of each side. Neither depends on the catalogs, so neither changes when a hub
-  or an entry is added.
+- `assets/`: `tree.svg`, the drawing of the cover: a seeded phylogeny as a fan, its two unequal
+  sides in the warm and the cool hues of the palette, swept along each side, with its animation (the
+  tree grows out from its root, each lineage at its own rate, the tips' buds open as they are
+  reached, the root's glow pulses), so that it animates wherever it is shown; `share.png`, the image shown when the page is shared, that drawing with the
+  name and the line of the site; `icon.svg` and `apple-touch-icon.png`, the icon, the same fan with
+  fewer tips. None depends on the catalogs, so none changes when a hub or an entry is added.
 
 To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>.
 

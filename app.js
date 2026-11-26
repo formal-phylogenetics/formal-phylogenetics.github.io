@@ -8,8 +8,8 @@
 // One visual language throughout: colour is the hub; shape is the kind of paper, round for a
 // method and square for theory; fill is the status, solid once formalized, half while in progress.
 //
-// The parts are in js/: base.js, data.js, fan.js, timeline.js, card.js, people.js, network.js,
-// panel.js, lists.js and page.js.
+// The parts are in js/: base.js, data.js, timeline.js, card.js, people.js, network.js, panel.js,
+// lists.js and page.js.
 
 import { main } from "./js/page.js";
 

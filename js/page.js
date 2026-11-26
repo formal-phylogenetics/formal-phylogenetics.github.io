@@ -1,4 +1,4 @@
-import { GROUP, MOON, ORG, SUN, esc, fold, short } from "./base.js";
+import { GROUP, HERE, MOON, ORG, SUN, esc, fold, short } from "./base.js";
 import { card, hideCard, placeBy, showCard } from "./card.js";
 import {
   loadLive,
@@ -8,7 +8,6 @@ import {
   readPeople,
   readWorks,
 } from "./data.js";
-import { coverModel, drawFan } from "./fan.js";
 import { countryRow, hubRow, personRow, publisherRow } from "./lists.js";
 import { createNetwork } from "./network.js";
 import { paintStats, renderPanel } from "./panel.js";
@@ -29,9 +28,7 @@ export function shell(app) {
           <div id="updated-row" hidden><dt>Updated</dt><dd id="updated"></dd></div>
         </dl>
       </div>
-      <figure class="cover">
-        <svg id="fan" class="view" role="img" aria-label="The tree of the collection: the root, the hubs, their families and their entries"></svg>
-      </figure>
+      <figure class="cover" id="cover"></figure>
     </section>
     <div class="explorer">
       <div class="work">
@@ -329,16 +326,28 @@ export function wireList(ui) {
   });
 }
 
+// The cover: a phylogeny drawn as a fan, which grows from its root on arrival. It is the same
+// drawing whatever the catalogs hold; inlined, it follows the theme of the page.
+async function drawCover(figure) {
+  const r = await fetch(HERE("assets/tree.svg"));
+  if (!r.ok) return;
+  figure.innerHTML = await r.text();
+  const svg = figure.querySelector("svg");
+  svg.id = "fan";
+  svg.removeAttribute("width");
+  svg.removeAttribute("height");
+}
+
 export async function main() {
   const app = document.getElementById("app");
   shell(app);
+  drawCover(document.getElementById("cover")).catch(() => {});
   card.el = document.createElement("div");
   card.el.className = "card";
   card.el.setAttribute("role", "tooltip");
   card.el.hidden = true;
   document.body.appendChild(card.el);
   const els = {
-    fan: document.getElementById("fan"),
     graph: document.getElementById("graph"),
     stage: document.getElementById("stage"),
     panel: document.getElementById("panel"),
@@ -414,8 +423,6 @@ export async function main() {
   for (const h of m.hubs) h.el.addEventListener("toggle", paintFold);
   paintFold();
   const ui = makeUi(m, els);
-  els.fan.classList.add("grow");
-  drawFan(els.fan, coverModel(m));
   wireTimeline(els.graph, ui);
   wireList(ui);
   renderPanel(ui);

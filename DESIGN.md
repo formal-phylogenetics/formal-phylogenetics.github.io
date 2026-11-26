@@ -149,12 +149,14 @@ type, hairlines, and colour spent only where it carries information.
 One visual language runs through every view, list, chip and card. Colour is the hub. Shape is the
 kind of paper: round for a method, square for theory. Fill is the status: solid once formalized,
 half while in progress, dotted when partly covered, hollow to do. What an entry cites is drawn in
-ink, what cites it in amber. A reader who learns these four encodings once can read the tree, the
-timeline, the graphs and the lists without a legend.
+ink, what cites it in amber. A reader who learns these four encodings once can read the timeline,
+the graphs and the lists without a legend.
 
 The density is that of a well-set reference work: compact, labelled, legible at a glance and in
 bulk. Nothing is raised, glowing or ornamental; the data carries the colour, and the chrome stays
-paper and ink.
+paper and ink. The cover is the one ornament: a phylogeny drawn as a fan, the palette's warm hues
+swept along its theory side and the cool ones along its inference side, which encodes no data and
+stays the same whatever the catalogs hold.
 
 **Key Characteristics:**
 - Warm archive paper and iron-gall ink by day; forest night by dark, chosen by the reader or the system.
@@ -178,7 +180,7 @@ A restrained paper-and-ink palette, with hub colours and one amber as the only v
 ### Tertiary
 - **Hub colours** (hub-alignment, hub-gene-tree, hub-species-tree, hub-network, hub-combinatorics,
   hub-algebraic, hub-statistics, hub-geometry): each hub's identity, set on the
-  marks of its entries, its row of the timeline, its wedge of the tree, the border of a formalized
+  marks of its entries, its row of the timeline, the border of a formalized
   tag and the name in a panel's head. Each has a lighter night variant (see the sidecar). A hub
   added later takes the next spare colour.
 
@@ -232,7 +234,7 @@ before it, never by a heading of larger size; the content carries the weight.
 ## Layout
 
 A single column at most 1600px wide with 40px gutters. The hero sets the title, figures and credits
-beside the tree of the collection; below it the stage (timeline or graphs) and the panel of the
+beside the cover; below it the stage (timeline or graphs) and the panel of the
 pinned item, then the search bar with its tabs, then the lists. Spacing follows a 4px base scale
 (s1–s7: 4, 8, 12, 16, 24, 32, 48px): tight inside a group, one step more between groups, more
 above a section label than below it. Text inside wide containers keeps a readable width (a byline

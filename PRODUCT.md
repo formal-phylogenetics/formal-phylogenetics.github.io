@@ -41,7 +41,7 @@ others named in the footer) are references for that curation, credited, not mirr
 - Everything else it shows (citations, works and their bylines, people, institutions, profiles)
   comes from files in `data/`, exported from the collection's curated library of papers, which is
   private. The page queries no service when it is visited.
-- The views: a tree of the collection, a timeline of citations, a co-authorship graph and an
+- The views: a timeline of citations, a co-authorship graph and an
   author-venue graph, lists by hub, author, venue and institution, a search with fields, and a
   panel for each entry, author, venue, publisher, institution and country.
 
