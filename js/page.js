@@ -667,6 +667,8 @@ export async function main() {
     }
     offer();
     stats();
+    // a pinned entry's panel names its authors and their institutions once the people are read
+    if (ui.selected) renderPanel(ui);
     if (view !== "citations") show(view);
     if (list !== "hubs") showList(list);
     if (els.note.textContent === "Reading the authors…")

@@ -67,7 +67,9 @@ export function authorFacts(pr, people, who) {
     ${listSection(
       "Institutions",
       (pr.institutions || []).map((r) => {
-        const h = people && people.institutionNamed.get(r.name);
+        const h =
+          people &&
+          (people.institutions[r.at] || people.institutionNamed.get(r.name));
         const n = h && who && who.places ? (who.places.get(h) || []).length : 0;
         const find = `${fieldText("author", who ? who.name : "")} ${fieldText("institution", r.name)}`;
         return [
@@ -165,7 +167,14 @@ export function groupPanel(g, people) {
     body = `<div class="p-profile" id="p-profile"><p class="p-none">Reading the profile…</p></div>
       ${chipsSection("Authors", g.authors, "author", "with their entries there")}`;
   else if (g.kind === "institution")
-    body = `${g.ror ? linksRow([["ROR", g.ror]]) : ""}
+    body = `${[
+      g.earlier.length && `Earlier names: ${g.earlier.join("; ")}`,
+      g.other.length && `Other names: ${g.other.join("; ")}`,
+    ]
+      .filter(Boolean)
+      .map((s) => `<p class="p-lead">${esc(s)}</p>`)
+      .join("")}
+      ${g.ror ? linksRow([["ROR", g.ror]]) : ""}
       ${chipsSection("Authors", g.people, "author", "with the years their papers place them there")}`;
   else if (g.kind === "country")
     body = `${chipsSection("Institutions", g.counts, "institution", "with their authors")}
@@ -259,6 +268,7 @@ export function renderPanel(ui) {
       ${e.paperUrl ? `<a class="btn" href="${esc(e.paperUrl)}" target="_blank" rel="noopener">Paper${ARROW}</a>` : ""}
       <span class="p-where">${esc(short(e.hub.name))} › ${esc(e.family.title)}</span>
     </div>
+    <div class="p-sec p-auth" id="p-authors" hidden></div>
     ${rel("Cites", ready ? ui.cites.get(e) || [] : null, "out")}
     ${rel("Cited by", ready ? ui.citedBy.get(e) || [] : null, "in")}
     <details class="p-abs" id="p-abs" hidden><summary>Abstract</summary><p class="p-abstract" id="p-abstract"></p></details>`;
@@ -274,6 +284,34 @@ export function renderPanel(ui) {
   readWork(e).then((w) => {
     if (ui.selected !== e || !w) return;
     const by = p.querySelector("#p-by");
+    // the byline: each author, in the paper's order, with the institutions the paper gives them
+    const people = ui.model;
+    const sec = p.querySelector("#p-authors");
+    if (sec && people && w.byline && w.byline.length) {
+      const rows = w.byline.map(([a, at]) => {
+        const who = typeof a === "number" ? people.authors[a] : null;
+        const name = who
+          ? `<button type="button" class="p-up" data-go="author:${who.i}">${esc(who.name)}</button>`
+          : esc(a);
+        const where = at
+          .map((h) => people.institutions[h])
+          .filter(Boolean)
+          .map(
+            (h) =>
+              `<button type="button" class="p-up" data-go="institution:${h.i}">${esc(h.name)}</button>`,
+          )
+          .join("; ");
+        return `<li><span class="l-main">${name}</span>${where ? `<span class="l-sub">${where}</span>` : ""}</li>`;
+      });
+      sec.innerHTML = `<h3>Authors <span>${rows.length}</span></h3><ul class="p-list">${rows.join("")}</ul>${
+        rows.length > 12
+          ? `<button type="button" class="p-more" data-all>+${rows.length - 12} more</button>`
+          : ""
+      }`;
+      sec.hidden = false;
+      if (by) by.textContent = [e.year, w.venue].filter(Boolean).join(" · ");
+      return void showAbstract(p, w);
+    }
     const list = w.authors && w.authors.length ? w.authors : null;
     if (by && (list || w.venue)) {
       const who = list
@@ -283,10 +321,14 @@ export function renderPanel(ui) {
         : e.authors;
       by.textContent = `${who}${e.year ? ` (${e.year})` : ""}${w.venue ? ` · ${w.venue}` : ""}`;
     }
-    const ab = p.querySelector("#p-abstract");
-    if (ab && w.abstract) {
-      ab.textContent = w.abstract;
-      p.querySelector("#p-abs").hidden = false;
-    }
+    showAbstract(p, w);
   });
+}
+
+function showAbstract(p, w) {
+  const ab = p.querySelector("#p-abstract");
+  if (ab && w.abstract) {
+    ab.textContent = w.abstract;
+    p.querySelector("#p-abs").hidden = false;
+  }
 }

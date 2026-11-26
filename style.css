@@ -639,6 +639,10 @@ a:hover {
     sans-serif;
   cursor: pointer;
 }
+/* a long byline shows its first authors until asked for the rest */
+.p-auth:not(.all) .p-list > li:nth-child(n + 13) {
+  display: none;
+}
 .p-more:hover {
   border-color: var(--ink-3);
   color: var(--ink);

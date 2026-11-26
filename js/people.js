@@ -99,6 +99,9 @@ export function peopleModel(data, ui) {
     kind: "institution",
     i,
     name: h.name,
+    // the names it went by before, and its names in other languages
+    earlier: h.earlier || [],
+    other: h.other || [],
     country: h.country || "",
     ror: h.ror || "",
     people: h.authors
@@ -108,9 +111,9 @@ export function peopleModel(data, ui) {
       }))
       .filter((x) => x.who),
     entries: entriesOf(h.papers),
-    own: fold(h.name),
+    own: fold([h.name, ...(h.earlier || []), ...(h.other || [])].join(" ")),
     hay: fold(
-      `${h.name} ${h.authors.map(([j]) => (authors[j] ? authors[j].hay : "")).join(" ")}`,
+      `${h.name} ${(h.earlier || []).join(" ")} ${(h.other || []).join(" ")} ${h.authors.map(([j]) => (authors[j] ? authors[j].hay : "")).join(" ")}`,
     ),
   }));
   const institutionNamed = new Map(institutions.map((h) => [h.name, h]));

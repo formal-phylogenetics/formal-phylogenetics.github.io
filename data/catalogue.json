@@ -409,7 +409,7 @@
      "kind": "theory+algorithm",
      "authors": "Steel, Hein",
      "year": "2001",
-     "title": "Applying the Thorne–Kishino–Felsenstein Model to Sequence Evolution on a Star-Shaped Tree",
+     "title": "Applying the Thorne-Kishino-Felsenstein Model to Sequence Evolution on a Star-Shaped Tree",
      "url": "https://doi.org/10.1016/S0893-9659(01)80026-4",
      "status": "todo"
     },
@@ -486,7 +486,7 @@
      "kind": "theory+algorithm",
      "authors": "Westesson et al.",
      "year": "2012",
-     "title": "Accurate Reconstruction of Insertion–Deletion Histories by Statistical Phylogenetics",
+     "title": "Accurate Reconstruction of Insertion-Deletion Histories by Statistical Phylogenetics",
      "url": "https://doi.org/10.1371/journal.pone.0034572",
      "status": "todo"
     },
@@ -855,7 +855,7 @@
      "kind": "method",
      "authors": "Lassmann, Sonnhammer",
      "year": "2005",
-     "title": "Kalign: An Accurate and Fast Multiple Sequence Alignment Algorithm",
+     "title": "Kalign – An Accurate and Fast Multiple Sequence Alignment Algorithm",
      "url": "https://doi.org/10.1186/1471-2105-6-298",
      "status": "todo"
     },
@@ -1535,7 +1535,7 @@
      "kind": "theory+algorithm",
      "authors": "Mirarab, Warnow",
      "year": "2011",
-     "title": "FastSP: Linear-Time Calculation of Alignment Accuracy",
+     "title": "FastSP: Linear Time Calculation of Alignment Accuracy",
      "url": "https://doi.org/10.1093/bioinformatics/btr553",
      "status": "todo"
     },
@@ -2056,7 +2056,7 @@
      "kind": "method",
      "authors": "Price, Dehal, Arkin",
      "year": "2010",
-     "title": "FastTree 2: Approximately Maximum-Likelihood Trees for Large Alignments",
+     "title": "FastTree 2 – Approximately Maximum-Likelihood Trees for Large Alignments",
      "url": "https://doi.org/10.1371/journal.pone.0009490",
      "status": "todo"
     },
@@ -4060,7 +4060,7 @@
      "kind": "method",
      "authors": "Chaudhary et al.",
      "year": "2013",
-     "title": "Inferring Species Trees from Incongruent Multi-Copy Gene Trees Using the Robinson–Foulds Distance",
+     "title": "Inferring Species Trees from Incongruent Multi-Copy Gene Trees Using the Robinson-Foulds Distance",
      "url": "https://doi.org/10.1186/1748-7188-8-28",
      "status": "todo"
     },
@@ -4406,7 +4406,7 @@
      "kind": "method",
      "authors": "Vachaspati, Warnow",
      "year": "2017",
-     "title": "FastRFS: Fast and Accurate Robinson–Foulds Supertrees Using Constrained Exact Optimization",
+     "title": "FastRFS: Fast and Accurate Robinson-Foulds Supertrees Using Constrained Exact Optimization",
      "url": "https://doi.org/10.1093/bioinformatics/btw600",
      "status": "todo"
     },
@@ -5298,7 +5298,7 @@
      "kind": "theory",
      "authors": "Allman, Baños, Mitchell, Rhodes",
      "year": "2023",
-     "title": "The tree of blobs of a species network: identifiability under the coalescent",
+     "title": "The Tree of Blobs of a Species Network: Identifiability Under the Coalescent",
      "url": "https://doi.org/10.1007/s00285-022-01838-9",
      "status": "formalized",
      "commit": "46efa61d0988df12649089689ae77bc100be034f"
@@ -5311,7 +5311,7 @@
      "kind": "method",
      "authors": "Allman, Baños, Mitchell, Rhodes",
      "year": "2024",
-     "title": "TINNiK: inference of the tree of blobs of a species network under the coalescent model",
+     "title": "TINNiK: Inference of the Tree of Blobs of a Species Network Under the Coalescent Model",
      "url": "https://doi.org/10.1186/s13015-024-00266-2",
      "status": "formalized",
      "commit": "de514e1f14522531f16dcdfa12244fe72fe05944"
@@ -5337,7 +5337,7 @@
      "kind": "method",
      "authors": "Rhodes, Allman, Ané, Baños",
      "year": "2026",
-     "title": "Statistical inference of the Tree of Blobs of a phylogenetic network from quartet concordance factors",
+     "title": "Statistical Inference of the Tree of Blobs of a Phylogenetic Network from Quartet Concordance Factors",
      "url": "https://doi.org/10.64898/2026.05.28.728501",
      "status": "formalized",
      "commit": "98367a36cdd90f34b6ca3447824c1584d64d8aee"

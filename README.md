@@ -25,7 +25,8 @@ countries, which open to their institutions and these to their authors.
 A method is named by its name and year, a theory paper by its authors and year. Colour is the hub, shape the kind of paper (round for a method, square for theory), fill the
 status, and size the entry's weight in the citations: its PageRank, in which a citation counts for
 as much as the paper that makes it weighs. Pointing at an entry, in the timeline or the list, marks it in both and shows its card,
-with its authors, venue and abstract. A click pins it: the panel shows what it cites and what cites
+with its authors, venue and abstract. A click pins it: the panel shows its authors in the order the
+paper prints them, each with the institutions the paper gives them, and what it cites and what cites
 it, marked everywhere, with links to its formalization and its paper, and the address keeps it; a
 click on the pinned entry, on nothing, or Escape unpins it. The header switches between light and dark.
 
@@ -41,9 +42,12 @@ the years and the number of entries, which searches for them, and their ORCID, G
 theirs (a record that lists their papers, or a page of theirs that links it); then their co-authors and venues in the collection, each with the entries behind it. The
 panel of a venue gives the year it was founded, the titles it continued or that continued it, its
 abbreviation and ISSN, and its authors with their entries there; that of an institution, its
-country, its authors with their years there and its entries; that of a country, its institutions
-and authors and its entries. An author's years at an institution are those of their papers in the
-collection that print it as their affiliation. The data is curated here, from the papers
+country, its earlier names and its names in the languages of its country, its authors with their
+years there and its entries; that of a country, its institutions and authors and its entries. An
+author's institution is the one their paper names: a department under its university, an institute
+printed on its own as itself, a unit of several bodies under each; an institution renamed or merged
+since is one institution, under its present name in English. An author's years at an institution
+are those of their papers in the collection that place them there. The data is curated here, from the papers
 themselves, with the registries named at the foot of the page as references.
 
 The page reads the registry of the collection (`collection/repos.toml` in lean4-phylogenetics) and
