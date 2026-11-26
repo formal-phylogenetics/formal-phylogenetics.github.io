@@ -17,8 +17,9 @@ above one venue by their links. In both graphs a link
 is as wide as the entries behind it; pointing at an author, a venue, a publisher or a link tells
 what it is, and a click pins it in the panel; a click on what is pinned, on nothing, or Escape lets it go. Then come
 the panel of the pinned entry, author, venue, publisher or link; the search; and the list, of the
-hubs, which open to their families, of the authors, or of the publishers, which open to their
-venues: a conference is a venue under Conference, a preprint server one under Preprint.
+hubs, which open to their families, of the authors, of the publishers, which open to their
+venues (a conference is a venue under Conference, a preprint server one under Preprint), or of the
+institutions, which open to their authors.
 Colour is the hub, shape the kind of paper (round for a method, square for theory), fill the
 status, and size the entry's weight in the citations: its PageRank, in which a citation counts for
 as much as the paper that makes it weighs. Pointing at an entry, in the timeline or the list, marks it in both and shows its card,
@@ -26,13 +27,13 @@ with its authors, venue and abstract. A click pins it: the panel shows what it c
 it, marked everywhere, with links to its formalization and its paper, and the address keeps it; a
 click on the pinned entry, on nothing, or Escape unpins it. The header switches between light and dark.
 
-The panel of an author gives their years of birth and death, their positions and every institution
-their papers name, with the years, their doctoral advisors and students (those in the collection
-open their own panels), and their ORCID and Google Scholar profile; then their co-authors and venues
-in the collection, each with the entries behind it. The panel of a venue gives the year it was
-founded, the titles it continued or that continued it, its abbreviation and ISSN, and its authors
-with their entries there. The registries read for these are [ORCID](https://orcid.org),
-[OpenAlex](https://openalex.org) and [Wikidata](https://www.wikidata.org).
+The panel of an author gives their years of birth and death, the institutions their papers in the
+collection place them at, with the years, and their ORCID, Google Scholar, OpenAlex and Wikipedia
+pages; then their co-authors and venues in the collection, each with the entries behind it. The
+panel of a venue gives the year it was founded, the titles it continued or that continued it, its
+abbreviation and ISSN, and its authors with their entries there; that of an institution, its
+authors with their years there and its entries. The data is curated here, from the papers
+themselves, with the registries named at the foot of the page as references.
 
 The page reads the registry of the collection (`collection/repos.toml` in lean4-phylogenetics) and
 the catalog of each hub (`catalog/papers.toml`) from GitHub each time it opens, so a hub, family or
@@ -48,6 +49,10 @@ and [Europe PMC](https://europepmc.org), or, where none gives the abstract, from
 - `index.html`, `style.css`, `app.js`: the page, with no build step; `app.js` draws into `#app`, so
   another site can show the catalogue with its own `index.html` that loads `style.css` and `app.js`
   from here;
+- `js/`: the modules of `app.js`: `base.js` (the constants and small helpers), `data.js` (reading
+  the catalogs and the data), `fan.js` (the tree), `timeline.js`, `card.js` (the card of an entry),
+  `people.js` (the authors, venues, publishers and institutions), `network.js` (the graphs of the
+  people), `panel.js`, `lists.js` (the rows of the lists) and `page.js` (the page and its wiring);
 - `data/`: the data, written from the library: `catalogue.json`, the catalogs the page falls back on
   when GitHub cannot be reached; `citations.json`, the citations between the entries; `works.json`,
   the authors, venue and abstract of each entry; `people.json`, the authors, the venues with their

@@ -1,4 +1,3457 @@
 {
+ "institutions": [
+  {
+   "name": "University of California, Berkeley",
+   "ror": "https://ror.org/01an7q238",
+   "country": "US",
+   "authors": [
+    [40, 2004, 2011],
+    [15, 2023, 2026],
+    [38, 1996, 2016],
+    [77, 1996, 2026],
+    [113, 2008, 2009],
+    [118, 2010, 2019],
+    [142, 2009, 2010],
+    [152, 2013, 2016],
+    [247, 2004, 2017],
+    [207, 2017, 2018],
+    [64, 2009, 2012],
+    [270, 2019, 2020],
+    [169, 1993, 2025],
+    [245, 1993, 2005],
+    [594, 2009, 2009],
+    [50, 1996, 1996],
+    [501, 2009, 2009],
+    [628, 2004, 2004],
+    [495, 1997, 1997],
+    [555, 1971, 1971],
+    [239, 2003, 2003],
+    [25, 2011, 2011],
+    [60, 2014, 2014],
+    [464, 2013, 2013],
+    [494, 2016, 2016],
+    [686, 2012, 2012],
+    [449, 2008, 2008],
+    [718, 2019, 2019],
+    [534, 2009, 2009],
+    [61, 2004, 2004],
+    [314, 2009, 2009],
+    [65, 2016, 2016],
+    [5, 2006, 2006],
+    [468, 2009, 2009],
+    [432, 2016, 2016],
+    [710, 2005, 2005],
+    [34, 1996, 1996]
+   ],
+   "papers": ["lean4-phylo-algebraic/evans1993", "lean4-phylo-alignment/bafna1997", "lean4-phylo-alignment/fsa", "lean4-phylo-alignment/muscle-complexity", "lean4-phylo-alignment/pip", "lean4-phylo-alignment/satchmo", "lean4-phylo-alignment/westesson2012", "lean4-phylo-gene-tree/eickmeyer2008", "lean4-phylo-gene-tree/fasttree", "lean4-phylo-gene-tree/fasttree2", "lean4-phylo-gene-tree/huelsenbeck1996", "lean4-phylo-gene-tree/lakner2008", "lean4-phylo-gene-tree/mihaescu2009", "lean4-phylo-gene-tree/mossel2005", "lean4-phylo-gene-tree/mrbayes3-2", "lean4-phylo-gene-tree/neyman1971", "lean4-phylo-gene-tree/rannala1996", "lean4-phylo-gene-tree/revbayes", "lean4-phylo-gene-tree/roch2006", "lean4-phylo-gene-tree/yap2005", "lean4-phylo-gene-tree/zhang2019", "lean4-phylo-geometry/lin2017", "lean4-phylo-geometry/lin2018", "lean4-phylo-geometry/owen2011-fast", "lean4-phylo-geometry/page2020", "lean4-phylo-geometry/speyer2004", "lean4-phylo-geometry/yoshida2019", "lean4-phylo-network/warnow2025", "lean4-phylo-species-tree/aster", "lean4-phylo-species-tree/boussau2013", "lean4-phylo-species-tree/caster", "lean4-phylo-species-tree/castles", "lean4-phylo-species-tree/degiorgio2014", "lean4-phylo-species-tree/glass", "lean4-phylo-species-tree/qmc", "lean4-phylo-species-tree/qmc-fast", "lean4-phylo-species-tree/waster", "lean4-phylo-statistics/daskalakis2011", "lean4-phylo-statistics/mossel2004", "lean4-phylo-statistics/mossel2007", "lean4-phylo-statistics/mossel2011"]
+  },
+  {
+   "name": "University of Illinois Urbana-Champaign",
+   "ror": "https://ror.org/047426m28",
+   "country": "US",
+   "authors": [
+    [0, 2015, 2026],
+    [33, 2022, 2026],
+    [14, 2018, 2020],
+    [70, 2022, 2023],
+    [82, 2022, 2023],
+    [78, 2016, 2019],
+    [84, 2015, 2018],
+    [135, 2022, 2026],
+    [114, 2022, 2023],
+    [137, 2021, 2022],
+    [241, 2021, 2021],
+    [607, 2019, 2019],
+    [337, 2023, 2023],
+    [639, 1988, 1988],
+    [336, 2018, 2018],
+    [236, 2022, 2022],
+    [423, 2021, 2021],
+    [595, 2022, 2022],
+    [225, 2015, 2015],
+    [362, 2021, 2021],
+    [355, 2015, 2015],
+    [649, 2021, 2021],
+    [456, 2023, 2023],
+    [604, 1981, 1981]
+   ],
+   "papers": ["lean4-phylo-alignment/emma", "lean4-phylo-alignment/gupta2021", "lean4-phylo-alignment/hmmerge", "lean4-phylo-alignment/magus", "lean4-phylo-alignment/magus-ehmms", "lean4-phylo-alignment/nute2016", "lean4-phylo-alignment/nute2019", "lean4-phylo-alignment/pasta", "lean4-phylo-alignment/recursive-magus", "lean4-phylo-alignment/upp", "lean4-phylo-alignment/upp2", "lean4-phylo-alignment/witch", "lean4-phylo-alignment/witch-ng", "lean4-phylo-combinatorics/aho1981", "lean4-phylo-gene-tree/studier1988", "lean4-phylo-gene-tree/zhang2019", "lean4-phylo-network/camus", "lean4-phylo-network/warnow2025", "lean4-phylo-species-tree/astral-ii", "lean4-phylo-species-tree/astral-pro", "lean4-phylo-species-tree/astrid", "lean4-phylo-species-tree/castles", "lean4-phylo-species-tree/castles-pro", "lean4-phylo-species-tree/davidson2015", "lean4-phylo-species-tree/disco", "lean4-phylo-species-tree/disco-qr", "lean4-phylo-species-tree/fastmulrfs", "lean4-phylo-species-tree/fastral", "lean4-phylo-species-tree/fastrfs", "lean4-phylo-species-tree/legried2021", "lean4-phylo-species-tree/njmerge", "lean4-phylo-species-tree/qr-star", "lean4-phylo-species-tree/quintet-rooting", "lean4-phylo-species-tree/svdquest", "lean4-phylo-species-tree/tabatabaee2026", "lean4-phylo-species-tree/treemerge", "lean4-phylo-statistics/nute2018", "lean4-phylo-statistics/roch2019"]
+  },
+  {
+   "name": "Université de Montpellier",
+   "ror": "https://ror.org/051escj72",
+   "country": "FR",
+   "authors": [
+    [11, 1997, 2015],
+    [32, 2017, 2022],
+    [91, 2010, 2018],
+    [117, 2010, 2018],
+    [163, 2011, 2018],
+    [58, 2006, 2010],
+    [98, 2003, 2010],
+    [206, 2010, 2015],
+    [187, 2005, 2010],
+    [580, 2021, 2021],
+    [320, 2018, 2018],
+    [59, 2001, 2001],
+    [565, 2021, 2021],
+    [409, 2021, 2021],
+    [373, 2010, 2010],
+    [330, 2014, 2014],
+    [608, 2021, 2021],
+    [637, 2021, 2021],
+    [332, 2018, 2018],
+    [90, 2015, 2015],
+    [496, 2008, 2008],
+    [428, 2011, 2011],
+    [301, 2021, 2021],
+    [568, 2000, 2000]
+   ],
+   "papers": ["lean4-phylo-alignment/macse", "lean4-phylo-alignment/macse2", "lean4-phylo-alignment/tcs", "lean4-phylo-combinatorics/bryant2001", "lean4-phylo-combinatorics/lafond2019", "lean4-phylo-gene-tree/anisimova2006", "lean4-phylo-gene-tree/bionj", "lean4-phylo-gene-tree/desper2002", "lean4-phylo-gene-tree/desper2004", "lean4-phylo-gene-tree/fastme2", "lean4-phylo-gene-tree/gascuel2006", "lean4-phylo-gene-tree/hordijk2005", "lean4-phylo-gene-tree/le2008", "lean4-phylo-gene-tree/pauplin2000", "lean4-phylo-gene-tree/phyml", "lean4-phylo-gene-tree/phyml3", "lean4-phylo-network/huber2017", "lean4-phylo-network/netrax", "lean4-phylo-network/snappnet", "lean4-phylo-species-tree/astral-pro", "lean4-phylo-species-tree/chan2022", "lean4-phylo-species-tree/supertriplets"]
+  },
+  {
+   "name": "University of Wisconsin–Madison",
+   "ror": "https://ror.org/01y2jtd41",
+   "country": "US",
+   "authors": [
+    [5, 2010, 2023],
+    [13, 2007, 2026],
+    [55, 2016, 2026],
+    [39, 2007, 2012],
+    [105, 2025, 2026],
+    [68, 2025, 2026],
+    [69, 2020, 2021],
+    [164, 2009, 2010],
+    [192, 2026, 2026],
+    [173, 1967, 1971],
+    [526, 1999, 1999],
+    [295, 2007, 2007],
+    [353, 2015, 2015],
+    [366, 2009, 2009],
+    [438, 2022, 2022],
+    [707, 2016, 2016],
+    [554, 1999, 1999],
+    [561, 2015, 2015],
+    [484, 2010, 2010]
+   ],
+   "papers": ["lean4-phylo-algebraic/allman2008-gamma", "lean4-phylo-alignment/andoni2010", "lean4-phylo-alignment/fsa", "lean4-phylo-gene-tree/fitch1967", "lean4-phylo-gene-tree/fitch1971", "lean4-phylo-gene-tree/lakner2008", "lean4-phylo-gene-tree/mau1999", "lean4-phylo-gene-tree/mrbayes3-2", "lean4-phylo-network/allman2025", "lean4-phylo-network/inphynet", "lean4-phylo-network/kolbow2026", "lean4-phylo-network/phynest", "lean4-phylo-network/ribas2026", "lean4-phylo-network/snaq", "lean4-phylo-network/snaq-jl", "lean4-phylo-network/wicke2026", "lean4-phylo-species-tree/ane2007", "lean4-phylo-species-tree/bucky", "lean4-phylo-species-tree/daskalakis2016", "lean4-phylo-species-tree/hill2022", "lean4-phylo-species-tree/legried2021", "lean4-phylo-species-tree/metal", "lean4-phylo-species-tree/qr-star", "lean4-phylo-species-tree/roch2013", "lean4-phylo-species-tree/shekhar2018", "lean4-phylo-statistics/fan2020", "lean4-phylo-statistics/roch2015", "lean4-phylo-statistics/roch2017", "lean4-phylo-statistics/roch2019", "lean4-phylo-statistics/solislemus2016", "lean4-phylo-tree-of-blobs/ectoblob"]
+  },
+  {
+   "name": "The University of Texas at Austin",
+   "ror": "https://ror.org/00hj54h04",
+   "country": "US",
+   "authors": [
+    [0, 1999, 2015],
+    [3, 2011, 2015],
+    [46, 2008, 2012],
+    [24, 2008, 2012],
+    [47, 2008, 2009],
+    [10, 2001, 2011],
+    [51, 2014, 2020],
+    [224, 1999, 1999],
+    [232, 2009, 2009],
+    [119, 2001, 2004],
+    [721, 2008, 2008],
+    [439, 1996, 1996],
+    [416, 2019, 2019],
+    [643, 2001, 2001],
+    [486, 2015, 2015],
+    [26, 2014, 2014],
+    [225, 2015, 2015],
+    [725, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-alignment/fastsp", "lean4-phylo-alignment/liu2009", "lean4-phylo-alignment/liu2012", "lean4-phylo-alignment/nelesen2008", "lean4-phylo-alignment/pasta", "lean4-phylo-alignment/sate", "lean4-phylo-alignment/sate-ii", "lean4-phylo-alignment/upp", "lean4-phylo-alignment/wang2011", "lean4-phylo-alignment/warnow2012", "lean4-phylo-gene-tree/dactal", "lean4-phylo-gene-tree/dcm", "lean4-phylo-gene-tree/huelsenbeck1996", "lean4-phylo-gene-tree/huson1999-hybrid", "lean4-phylo-gene-tree/rec-i-dcm3", "lean4-phylo-geometry/grindstaff2019", "lean4-phylo-species-tree/astral", "lean4-phylo-species-tree/astral-ii", "lean4-phylo-species-tree/davidson2015", "lean4-phylo-species-tree/stelar", "lean4-phylo-species-tree/yu2011", "lean4-phylo-statistics/nakhleh2001", "lean4-phylo-statistics/warnow2001"]
+  },
+  {
+   "name": "European Bioinformatics Institute",
+   "ror": "https://ror.org/02catss52",
+   "country": "GB",
+   "authors": [
+    [17, 2005, 2026],
+    [72, 2005, 2012],
+    [185, 2008, 2015],
+    [73, 2021, 2026],
+    [671, 2012, 2012],
+    [360, 2015, 2015],
+    [37, 1994, 1994],
+    [306, 2008, 2008],
+    [528, 2011, 2011],
+    [296, 2008, 2008],
+    [548, 2015, 2015],
+    [514, 2011, 2011],
+    [522, 2025, 2025],
+    [394, 2008, 2008],
+    [505, 2011, 2011]
+   ],
+   "papers": ["lean4-phylo-alignment/clustal-omega", "lean4-phylo-alignment/clustalw", "lean4-phylo-alignment/demaio2021", "lean4-phylo-alignment/loytynoja2005", "lean4-phylo-alignment/loytynoja2008", "lean4-phylo-alignment/pagan", "lean4-phylo-alignment/pecan", "lean4-phylo-alignment/prank", "lean4-phylo-alignment/tan2015", "lean4-phylo-gene-tree/iqtree3", "lean4-phylo-network/squirrel"]
+  },
+  {
+   "name": "Bangladesh University of Engineering and Technology",
+   "ror": "https://ror.org/05a1qpv97",
+   "country": "BD",
+   "authors": [
+    [26, 2014, 2026],
+    [51, 2014, 2025],
+    [212, 2021, 2025],
+    [260, 2021, 2025],
+    [605, 2026, 2026],
+    [307, 2025, 2025],
+    [236, 2020, 2020],
+    [581, 2021, 2021],
+    [582, 2014, 2014],
+    [455, 2020, 2020],
+    [429, 2025, 2025],
+    [542, 2026, 2026],
+    [715, 2026, 2026],
+    [352, 2020, 2020]
+   ],
+   "papers": ["lean4-phylo-species-tree/hasan2025", "lean4-phylo-species-tree/qfm", "lean4-phylo-species-tree/stelar", "lean4-phylo-species-tree/stelar-x", "lean4-phylo-species-tree/wqfm", "lean4-phylo-species-tree/zaman2026"]
+  },
+  {
+   "name": "Rice University",
+   "ror": "https://ror.org/008zs3103",
+   "country": "US",
+   "authors": [
+    [10, 2009, 2026],
+    [36, 2011, 2018],
+    [131, 2016, 2018],
+    [24, 2012, 2014],
+    [252, 2009, 2009],
+    [112, 2020, 2020],
+    [722, 2018, 2018],
+    [368, 2014, 2014],
+    [474, 2026, 2026],
+    [609, 2026, 2026],
+    [292, 2013, 2013],
+    [681, 2020, 2020],
+    [705, 2026, 2026],
+    [420, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-gene-tree/dactal", "lean4-phylo-network/dimple", "lean4-phylo-network/phylonet-mpl", "lean4-phylo-network/wen2016", "lean4-phylo-network/wen2018", "lean4-phylo-network/yu2013", "lean4-phylo-network/yu2014", "lean4-phylo-network/yu2015", "lean4-phylo-network/zhu2018", "lean4-phylo-species-tree/than2009", "lean4-phylo-species-tree/wang2020", "lean4-phylo-species-tree/yu2011"]
+  },
+  {
+   "name": "University of Canterbury",
+   "ror": "https://ror.org/03y7q9t39",
+   "country": "NZ",
+   "authors": [
+    [7, 1993, 2015],
+    [9, 2009, 2013],
+    [4, 2009, 2012],
+    [123, 2005, 2021],
+    [62, 2021, 2024],
+    [257, 1997, 1998],
+    [234, 1971, 1981],
+    [175, 1981, 1982],
+    [278, 2001, 2001],
+    [188, 2007, 2007],
+    [659, 2021, 2021],
+    [300, 2024, 2024],
+    [87, 2024, 2024],
+    [310, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-algebraic/matsen2007", "lean4-phylo-algebraic/steel1994", "lean4-phylo-algebraic/szekely1993", "lean4-phylo-alignment/steel2001", "lean4-phylo-combinatorics/bryant2001", "lean4-phylo-combinatorics/foulds1982", "lean4-phylo-combinatorics/robinson1981", "lean4-phylo-gene-tree/gascuel2006", "lean4-phylo-gene-tree/tuffley1997", "lean4-phylo-gene-tree/tuffley1998", "lean4-phylo-geometry/allen2001", "lean4-phylo-geometry/berling2024", "lean4-phylo-geometry/bordewich2005", "lean4-phylo-geometry/collienne2021-discrete", "lean4-phylo-geometry/moulton2004", "lean4-phylo-geometry/robinson1971", "lean4-phylo-network/cass", "lean4-phylo-network/huber2018", "lean4-phylo-network/kelk2012", "lean4-phylo-network/lev1athan", "lean4-phylo-network/semple2021", "lean4-phylo-network/vaniersel2009", "lean4-phylo-network/vaniersel2011", "lean4-phylo-species-tree/allman2011", "lean4-phylo-species-tree/allman2011-clades", "lean4-phylo-species-tree/allman2013", "lean4-phylo-species-tree/degnan2009", "lean4-phylo-species-tree/smrt", "lean4-phylo-statistics/degnan2013", "lean4-phylo-statistics/erdos1999-part1", "lean4-phylo-statistics/erdos1999-part2", "lean4-phylo-statistics/roch2015", "lean4-phylo-statistics/steel2011"]
+  },
+  {
+   "name": "University of Oxford",
+   "ror": "https://ror.org/052gg0110",
+   "country": "GB",
+   "authors": [
+    [71, 2003, 2012],
+    [74, 2003, 2008],
+    [27, 2003, 2008],
+    [168, 2017, 2018],
+    [73, 2015, 2016],
+    [195, 2017, 2018],
+    [22, 2005, 2005],
+    [695, 2000, 2000],
+    [64, 2004, 2004],
+    [478, 1982, 1982],
+    [513, 2008, 2008],
+    [187, 2010, 2010],
+    [243, 2003, 2003],
+    [560, 2008, 2008]
+   ],
+   "papers": ["lean4-phylo-alignment/hein2000", "lean4-phylo-alignment/lunter2003", "lean4-phylo-alignment/lunter2005", "lean4-phylo-alignment/miklos2004", "lean4-phylo-alignment/statalign", "lean4-phylo-alignment/westesson2012", "lean4-phylo-gene-tree/phyml3", "lean4-phylo-species-tree/kingman1982", "lean4-phylo-species-tree/pomo", "lean4-phylo-species-tree/schrempf2016", "lean4-phylo-species-tree/stag", "lean4-phylo-species-tree/stride"]
+  },
+  {
+   "name": "University of Auckland",
+   "ror": "https://ror.org/03b94tp07",
+   "country": "NZ",
+   "authors": [
+    [22, 2007, 2018],
+    [42, 2012, 2022],
+    [112, 2017, 2018],
+    [183, 2010, 2014],
+    [98, 2010, 2012],
+    [62, 2016, 2016],
+    [697, 2014, 2014],
+    [462, 2022, 2022],
+    [59, 2009, 2009],
+    [488, 2014, 2014],
+    [701, 2014, 2014],
+    [370, 2022, 2022],
+    [668, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-gene-tree/beast", "lean4-phylo-gene-tree/beast2", "lean4-phylo-gene-tree/bmodeltest", "lean4-phylo-gene-tree/partitionfinder", "lean4-phylo-gene-tree/phyml3", "lean4-phylo-geometry/gavryushkin2016", "lean4-phylo-network/zhang2018", "lean4-phylo-species-tree/degnan2009", "lean4-phylo-species-tree/snapp", "lean4-phylo-species-tree/starbeast", "lean4-phylo-species-tree/starbeast2", "lean4-phylo-species-tree/starbeast3"]
+  },
+  {
+   "name": "Centre for Genomic Regulation",
+   "ror": "https://ror.org/03wyzt892",
+   "country": "ES",
+   "authors": [
+    [48, 2008, 2026],
+    [256, 2014, 2019],
+    [290, 2019, 2019],
+    [517, 2019, 2019],
+    [403, 2019, 2019],
+    [396, 2019, 2019],
+    [382, 2019, 2019],
+    [330, 2014, 2014],
+    [619, 2009, 2009],
+    [519, 2019, 2019],
+    [321, 2009, 2009],
+    [401, 2009, 2009]
+   ],
+   "papers": ["lean4-phylo-alignment/famsa2", "lean4-phylo-alignment/garriga2019", "lean4-phylo-alignment/r-coffee", "lean4-phylo-alignment/tcs", "lean4-phylo-alignment/trimal"]
+  },
+  {
+   "name": "University of California San Diego",
+   "ror": "https://ror.org/0168r3w48",
+   "country": "US",
+   "authors": [
+    [3, 2015, 2026],
+    [15, 2018, 2025],
+    [54, 2016, 2019],
+    [80, 2018, 2022],
+    [141, 2025, 2026],
+    [389, 1987, 1987],
+    [711, 2019, 2019],
+    [625, 2009, 2009],
+    [369, 1987, 1987],
+    [617, 2018, 2018],
+    [291, 2007, 2007],
+    [143, 2007, 2007]
+   ],
+   "papers": ["lean4-phylo-alignment/feng1987", "lean4-phylo-alignment/fsa", "lean4-phylo-combinatorics/gusfield2007", "lean4-phylo-network/brooqs", "lean4-phylo-species-tree/aster", "lean4-phylo-species-tree/astral-iii", "lean4-phylo-species-tree/astral-mp", "lean4-phylo-species-tree/astral-multi", "lean4-phylo-species-tree/astral-pro", "lean4-phylo-species-tree/astral-pro2", "lean4-phylo-species-tree/caster", "lean4-phylo-species-tree/castles", "lean4-phylo-species-tree/castles-pro", "lean4-phylo-species-tree/davidson2015", "lean4-phylo-species-tree/distique", "lean4-phylo-species-tree/quco", "lean4-phylo-species-tree/rabiee2020", "lean4-phylo-species-tree/sayyari2016", "lean4-phylo-species-tree/sayyari2018", "lean4-phylo-species-tree/shekhar2018", "lean4-phylo-species-tree/tabatabaee2026", "lean4-phylo-species-tree/wastral"]
+  },
+  {
+   "name": "University of California, Davis",
+   "ror": "https://ror.org/05rrcem69",
+   "country": "US",
+   "authors": [
+    [50, 2014, 2018],
+    [99, 1991, 2007],
+    [351, 2012, 2012],
+    [543, 2016, 2016],
+    [104, 1993, 1993],
+    [378, 2012, 2012],
+    [410, 2007, 2007],
+    [578, 2007, 2007],
+    [279, 2007, 2007],
+    [65, 2016, 2016],
+    [333, 2012, 2012],
+    [243, 2007, 2007]
+   ],
+   "papers": ["lean4-phylo-alignment/gusfield1993", "lean4-phylo-alignment/kececioglu1993", "lean4-phylo-alignment/zorro", "lean4-phylo-combinatorics/gusfield1991", "lean4-phylo-combinatorics/gusfield2007", "lean4-phylo-gene-tree/mrbayes3-2", "lean4-phylo-gene-tree/revbayes", "lean4-phylo-geometry/amenta2007", "lean4-phylo-species-tree/bpp", "lean4-phylo-species-tree/rannala2017", "lean4-phylo-species-tree/yang2014"]
+  },
+  {
+   "name": "Australian National University",
+   "ror": "https://ror.org/019wvm592",
+   "country": "AU",
+   "authors": [
+    [45, 2012, 2026],
+    [20, 2020, 2026],
+    [112, 2017, 2018],
+    [268, 2017, 2026],
+    [319, 2012, 2012],
+    [451, 2026, 2026],
+    [589, 2026, 2026],
+    [458, 2017, 2017],
+    [512, 2026, 2026],
+    [358, 2026, 2026],
+    [551, 2022, 2022]
+   ],
+   "papers": ["lean4-phylo-gene-tree/iqtree2", "lean4-phylo-gene-tree/iqtree3", "lean4-phylo-gene-tree/modelfinder", "lean4-phylo-gene-tree/naserkhdour2022", "lean4-phylo-gene-tree/partitionfinder", "lean4-phylo-network/zhang2018", "lean4-phylo-species-tree/minh2020", "lean4-phylo-species-tree/starbeast2"]
+  },
+  {
+   "name": "University of California, Santa Cruz",
+   "ror": "https://ror.org/03s65by71",
+   "country": "US",
+   "authors": [
+    [115, 2008, 2023],
+    [193, 2002, 2011],
+    [485, 1994, 1994],
+    [431, 1994, 1994],
+    [532, 1994, 1994],
+    [379, 2023, 2023],
+    [239, 1994, 1994],
+    [341, 2002, 2002],
+    [315, 1994, 1994],
+    [361, 2026, 2026],
+    [450, 2002, 2002]
+   ],
+   "papers": ["lean4-phylo-alignment/cline2002", "lean4-phylo-alignment/clustal-omega", "lean4-phylo-alignment/krogh1994", "lean4-phylo-alignment/marcosola2023", "lean4-phylo-alignment/pecan", "lean4-phylo-alignment/westesson2012", "lean4-phylo-geometry/bhatt2026"]
+  },
+  {
+   "name": "University of Vienna",
+   "ror": "https://ror.org/03prydq77",
+   "country": "AT",
+   "authors": [
+    [18, 2008, 2020],
+    [20, 2013, 2018],
+    [121, 2008, 2020],
+    [157, 2018, 2020],
+    [487, 2008, 2008],
+    [122, 2020, 2020],
+    [386, 2008, 2008],
+    [375, 2008, 2008],
+    [444, 2007, 2007],
+    [556, 2015, 2015],
+    [479, 2008, 2008]
+   ],
+   "papers": ["lean4-phylo-alignment/will2007", "lean4-phylo-gene-tree/iqtree", "lean4-phylo-gene-tree/iqtree2", "lean4-phylo-gene-tree/minh2013", "lean4-phylo-gene-tree/modelfinder", "lean4-phylo-gene-tree/ufboot2", "lean4-phylo-geometry/kupczok2008", "lean4-phylo-species-tree/ewing2008", "lean4-phylo-species-tree/schrempf2016"]
+  },
+  {
+   "name": "Pennsylvania State University",
+   "ror": "https://ror.org/04p491231",
+   "country": "US",
+   "authors": [
+    [250, 1992, 1993],
+    [359, 2011, 2011],
+    [222, 1988, 1988],
+    [538, 2002, 2002],
+    [297, 2011, 2011],
+    [223, 1993, 1993],
+    [60, 2014, 2014],
+    [549, 1994, 1994],
+    [143, 1997, 1997],
+    [535, 1988, 1988]
+   ],
+   "papers": ["lean4-phylo-alignment/bafna1997", "lean4-phylo-alignment/mafft", "lean4-phylo-alignment/myers1988", "lean4-phylo-alignment/wang2011", "lean4-phylo-gene-tree/muse1994", "lean4-phylo-gene-tree/tamura1992", "lean4-phylo-gene-tree/tamura1993", "lean4-phylo-species-tree/degiorgio2014"]
+  },
+  {
+   "name": "Iowa State University",
+   "ror": "https://ror.org/04rswrd78",
+   "country": "US",
+   "authors": [
+    [43, 2008, 2022],
+    [94, 1994, 2013],
+    [262, 2008, 2010],
+    [156, 2010, 2013],
+    [110, 2019, 2019],
+    [86, 2008, 2008],
+    [274, 1994, 1994],
+    [675, 2022, 2022],
+    [432, 2016, 2016]
+   ],
+   "papers": ["lean4-phylo-combinatorics/agarwala1994", "lean4-phylo-gene-tree/revbayes", "lean4-phylo-network/markin2019", "lean4-phylo-network/rfnet2", "lean4-phylo-species-tree/chaudhary2013", "lean4-phylo-species-tree/duptree", "lean4-phylo-species-tree/igtp", "lean4-phylo-species-tree/markin2021"]
+  },
+  {
+   "name": "Los Alamos National Laboratory",
+   "ror": "https://ror.org/01e41cf67",
+   "country": "US",
+   "authors": [
+    [153, 2000, 2001],
+    [475, 2026, 2026],
+    [511, 2026, 2026],
+    [411, 2026, 2026],
+    [599, 2026, 2026],
+    [64, 2001, 2001],
+    [674, 2026, 2026],
+    [261, 1981, 1981],
+    [302, 1976, 1976]
+   ],
+   "papers": ["lean4-phylo-alignment/holmes2001", "lean4-phylo-alignment/smith1981", "lean4-phylo-alignment/waterman1976", "lean4-phylo-gene-tree/kim2026", "lean4-phylo-gene-tree/weighbor"]
+  },
+  {
+   "name": "SIB Swiss Institute of Bioinformatics",
+   "ror": "https://ror.org/002n09z45",
+   "country": "CH",
+   "authors": [
+    [95, 2015, 2021],
+    [58, 2010, 2021],
+    [213, 2018, 2021],
+    [717, 2018, 2018],
+    [406, 2021, 2021],
+    [293, 2022, 2022],
+    [553, 2022, 2022],
+    [631, 2018, 2018],
+    [669, 2022, 2022]
+   ],
+   "papers": ["lean4-phylo-alignment/maiolo2018", "lean4-phylo-alignment/propip", "lean4-phylo-alignment/tan2015", "lean4-phylo-gene-tree/phyml3", "lean4-phylo-network/treeknit", "lean4-phylo-network/zhang2018"]
+  },
+  {
+   "name": "Stanford University",
+   "ror": "https://ror.org/00f54p054",
+   "country": "US",
+   "authors": [
+    [165, 2005, 2006],
+    [53, 2012, 2012],
+    [145, 2005, 2006],
+    [186, 1996, 2001],
+    [459, 2012, 2012],
+    [665, 1981, 1981],
+    [518, 2005, 2005],
+    [316, 2005, 2005],
+    [418, 2006, 2006]
+   ],
+   "papers": ["lean4-phylo-alignment/contralign", "lean4-phylo-alignment/probcons", "lean4-phylo-combinatorics/aho1981", "lean4-phylo-gene-tree/efron1996", "lean4-phylo-geometry/billera2001", "lean4-phylo-species-tree/helmkamp2012", "lean4-phylo-species-tree/snapp"]
+  },
+  {
+   "name": "The Ohio State University",
+   "ror": "https://ror.org/00rs6vg23",
+   "country": "US",
+   "authors": [
+    [12, 2007, 2025],
+    [209, 2019, 2019],
+    [226, 2007, 2009],
+    [592, 2021, 2021],
+    [684, 2025, 2025],
+    [31, 2007, 2007],
+    [683, 2021, 2021],
+    [68, 2025, 2025],
+    [334, 2025, 2025]
+   ],
+   "papers": ["lean4-phylo-network/phynest", "lean4-phylo-species-tree/allman2017", "lean4-phylo-species-tree/allman2019", "lean4-phylo-species-tree/chifman2015", "lean4-phylo-species-tree/kubatko2025", "lean4-phylo-species-tree/liu2007", "lean4-phylo-species-tree/long2019", "lean4-phylo-species-tree/richards2021", "lean4-phylo-species-tree/star-steac", "lean4-phylo-species-tree/stem", "lean4-phylo-species-tree/svdquartets", "lean4-phylo-species-tree/wascher2021", "lean4-phylo-statistics/kubatko2007"]
+  },
+  {
+   "name": "University of California, Los Angeles",
+   "ror": "https://ror.org/046rm7j60",
+   "country": "US",
+   "authors": [
+    [56, 2005, 2014],
+    [5, 2010, 2013],
+    [205, 2002, 2003],
+    [202, 1987, 1994],
+    [703, 2026, 2026],
+    [52, 2005, 2005],
+    [414, 2002, 2002],
+    [14, 2021, 2021],
+    [615, 2002, 2002]
+   ],
+   "papers": ["lean4-phylo-algebraic/lake1987", "lean4-phylo-algebraic/xue2026", "lean4-phylo-alignment/bali-phy", "lean4-phylo-alignment/lee2002", "lean4-phylo-alignment/lee2003", "lean4-phylo-alignment/redelings2005", "lean4-phylo-alignment/redelings2007", "lean4-phylo-gene-tree/beast2", "lean4-phylo-gene-tree/lake1994", "lean4-phylo-gene-tree/mrbayes3-2", "lean4-phylo-species-tree/glass", "lean4-phylo-species-tree/legried2021", "lean4-phylo-species-tree/roch2013", "lean4-phylo-statistics/daskalakis2011", "lean4-phylo-statistics/mossel2011", "lean4-phylo-statistics/roch2010"]
+  },
+  {
+   "name": "University of Copenhagen",
+   "ror": "https://ror.org/035b05819",
+   "country": "DK",
+   "authors": [
+    [15, 2025, 2026],
+    [77, 2025, 2026],
+    [390, 2013, 2013],
+    [372, 2026, 2026],
+    [573, 2013, 2013],
+    [317, 2013, 2013],
+    [571, 2026, 2026],
+    [402, 2004, 2004],
+    [303, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-alignment/gardner2004", "lean4-phylo-geometry/bhatt2026", "lean4-phylo-geometry/feragen2013", "lean4-phylo-species-tree/aster", "lean4-phylo-species-tree/caster", "lean4-phylo-species-tree/castles-pro", "lean4-phylo-species-tree/waster"]
+  },
+  {
+   "name": "Delft University of Technology",
+   "ror": "https://ror.org/02e2c7k09",
+   "country": "NL",
+   "authors": [
+    [4, 2016, 2026],
+    [28, 2025, 2026],
+    [29, 2019, 2025],
+    [191, 2023, 2024],
+    [259, 2022, 2025],
+    [189, 2019, 2022],
+    [221, 2019, 2022],
+    [482, 2022, 2022]
+   ],
+   "papers": ["lean4-phylo-network/bernardini2023", "lean4-phylo-network/fhynch", "lean4-phylo-network/frohn2025", "lean4-phylo-network/frohn2026", "lean4-phylo-network/holtgrefe2025-level2", "lean4-phylo-network/holtgrefe2025-multirootable", "lean4-phylo-network/holtgrefe2026", "lean4-phylo-network/huber2017", "lean4-phylo-network/huber2025", "lean4-phylo-network/squirrel", "lean4-phylo-network/trilonet", "lean4-phylo-network/vaniersel2019", "lean4-phylo-network/vaniersel2022-fpt", "lean4-phylo-network/vaniersel2022-trinets", "lean4-phylo-network/wicke2026"]
+  },
+  {
+   "name": "ETH Zurich",
+   "ror": "https://ror.org/05a28rw58",
+   "country": "CH",
+   "authors": [
+    [717, 2018, 2018],
+    [497, 2015, 2015],
+    [488, 2014, 2014],
+    [652, 2015, 2015],
+    [58, 2010, 2010],
+    [425, 2000, 2000],
+    [631, 2018, 2018],
+    [669, 2022, 2022]
+   ],
+   "papers": ["lean4-phylo-alignment/tan2015", "lean4-phylo-combinatorics/bodlaender2000", "lean4-phylo-gene-tree/beast2", "lean4-phylo-gene-tree/phyml3", "lean4-phylo-network/treeknit", "lean4-phylo-network/zhang2018"]
+  },
+  {
+   "name": "Heidelberg Institute for Theoretical Studies",
+   "ror": "https://ror.org/01f7bcy98",
+   "country": "DE",
+   "authors": [
+    [21, 2011, 2024],
+    [76, 2019, 2024],
+    [106, 2015, 2022],
+    [211, 2022, 2022],
+    [272, 2015, 2015],
+    [161, 2019, 2019],
+    [299, 2011, 2011],
+    [174, 2019, 2019]
+   ],
+   "papers": ["lean4-phylo-alignment/papara", "lean4-phylo-alignment/sate-ii", "lean4-phylo-gene-tree/examl3", "lean4-phylo-gene-tree/raxml-ng", "lean4-phylo-gene-tree/raxml8", "lean4-phylo-network/netrax", "lean4-phylo-species-tree/alerax", "lean4-phylo-species-tree/speciesrax"]
+  },
+  {
+   "name": "Tel Aviv University",
+   "ror": "https://ror.org/04mhzgx49",
+   "country": "IL",
+   "authors": [
+    [231, 2010, 2015],
+    [335, 2005, 2005],
+    [579, 2010, 2010],
+    [284, 2015, 2015],
+    [613, 2015, 2015],
+    [86, 2010, 2010],
+    [572, 2010, 2010],
+    [662, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-alignment/guidance2", "lean4-phylo-alignment/penn2010", "lean4-phylo-gene-tree/chor2005", "lean4-phylo-species-tree/igtp"]
+  },
+  {
+   "name": "Université Claude Bernard Lyon 1",
+   "ror": "https://ror.org/029brtt94",
+   "country": "FR",
+   "authors": [
+    [152, 2013, 2016],
+    [653, 2013, 2013],
+    [127, 2013, 2013],
+    [374, 2013, 2013],
+    [412, 2013, 2013],
+    [204, 2016, 2016],
+    [354, 2013, 2013],
+    [568, 2000, 2000]
+   ],
+   "papers": ["lean4-phylo-gene-tree/pauplin2000", "lean4-phylo-gene-tree/revbayes", "lean4-phylo-species-tree/boussau2013"]
+  },
+  {
+   "name": "Stockholm University",
+   "ror": "https://ror.org/05f0yaq80",
+   "country": "SE",
+   "authors": [
+    [109, 2026, 2026],
+    [63, 2026, 2026],
+    [166, 2026, 2026],
+    [65, 2012, 2016],
+    [277, 2026, 2026],
+    [244, 2009, 2009],
+    [398, 2009, 2009]
+   ],
+   "papers": ["lean4-phylo-alignment/kalign2", "lean4-phylo-gene-tree/mrbayes3-2", "lean4-phylo-gene-tree/revbayes", "lean4-phylo-network/ebert2026-constraints", "lean4-phylo-network/ebert2026-triples", "lean4-phylo-network/hellmuth2026", "lean4-phylo-network/lindeberg2026"]
+  },
+  {
+   "name": "University College London",
+   "ror": "https://ror.org/02jx3x895",
+   "country": "GB",
+   "authors": [
+    [34, 2003, 2018],
+    [360, 2015, 2015],
+    [185, 2015, 2015],
+    [58, 2006, 2006],
+    [655, 2010, 2010],
+    [174, 2018, 2018],
+    [461, 2018, 2018]
+   ],
+   "papers": ["lean4-phylo-alignment/tan2015", "lean4-phylo-alignment/translatorx", "lean4-phylo-gene-tree/anisimova2006", "lean4-phylo-species-tree/bpp", "lean4-phylo-species-tree/rannala2003", "lean4-phylo-species-tree/rannala2017", "lean4-phylo-species-tree/yang2014"]
+  },
+  {
+   "name": "University of Michigan",
+   "ror": "https://ror.org/00jmfr291",
+   "country": "US",
+   "authors": [
+    [53, 2006, 2011],
+    [198, 2006, 2009],
+    [60, 2009, 2010],
+    [69, 2022, 2022],
+    [252, 2011, 2011],
+    [9, 2009, 2009],
+    [434, 2012, 2012]
+   ],
+   "papers": ["lean4-phylo-species-tree/degnan2009", "lean4-phylo-species-tree/helmkamp2012", "lean4-phylo-species-tree/hill2022", "lean4-phylo-species-tree/maddison2006", "lean4-phylo-species-tree/smrt", "lean4-phylo-species-tree/stem", "lean4-phylo-species-tree/than2011", "lean4-phylo-statistics/degnan2006"]
+  },
+  {
+   "name": "University of New Mexico",
+   "ror": "https://ror.org/05fs6jp91",
+   "country": "US",
+   "authors": [
+    [9, 2005, 2018],
+    [219, 2001, 2004],
+    [427, 2000, 2000],
+    [12, 2005, 2005],
+    [126, 1993, 1993],
+    [502, 1998, 1998],
+    [693, 2004, 2004]
+   ],
+   "papers": ["lean4-phylo-algebraic/szekely1993", "lean4-phylo-gene-tree/lewis1998", "lean4-phylo-gene-tree/rec-i-dcm3", "lean4-phylo-gene-tree/weighbor", "lean4-phylo-species-tree/allman2018-splits", "lean4-phylo-species-tree/allman2018-star", "lean4-phylo-species-tree/degiorgio2014", "lean4-phylo-species-tree/degnan2005", "lean4-phylo-statistics/warnow2001"]
+  },
+  {
+   "name": "Bielefeld University",
+   "ror": "https://ror.org/02hpadn98",
+   "country": "DE",
+   "authors": [
+    [179, 2004, 2004],
+    [371, 1996, 1996],
+    [673, 2004, 2004],
+    [638, 1998, 1998],
+    [452, 2004, 2004],
+    [7, 1992, 1992]
+   ],
+   "papers": ["lean4-phylo-alignment/gardner2004", "lean4-phylo-alignment/hochsmann2004", "lean4-phylo-alignment/morgenstern1996", "lean4-phylo-alignment/stoye1998", "lean4-phylo-combinatorics/steel1992"]
+  },
+  {
+   "name": "Harvard University",
+   "ror": "https://ror.org/03vek6s52",
+   "country": "US",
+   "authors": [
+    [31, 2007, 2009],
+    [9, 2006, 2007],
+    [170, 2020, 2026],
+    [167, 2009, 2010],
+    [356, 2022, 2022],
+    [0, 2004, 2004]
+   ],
+   "papers": ["lean4-phylo-algebraic/xue2026", "lean4-phylo-gene-tree/rec-i-dcm3", "lean4-phylo-species-tree/best", "lean4-phylo-species-tree/liu2007", "lean4-phylo-species-tree/mp-est", "lean4-phylo-species-tree/star-steac", "lean4-phylo-species-tree/xiong2022", "lean4-phylo-statistics/degnan2006", "lean4-phylo-statistics/fan2020", "lean4-phylo-statistics/kubatko2007"]
+  },
+  {
+   "name": "Ludwig-Maximilians-Universität München",
+   "ror": "https://ror.org/05591te55",
+   "country": "DE",
+   "authors": [
+    [65, 2023, 2025],
+    [276, 2015, 2015],
+    [648, 2011, 2011],
+    [387, 2023, 2023],
+    [588, 2011, 2011],
+    [723, 2025, 2025]
+   ],
+   "papers": ["lean4-phylo-alignment/clustal-omega", "lean4-phylo-gene-tree/fabreti2023", "lean4-phylo-network/albrecht2015", "lean4-phylo-species-tree/zhu2025"]
+  },
+  {
+   "name": "Massey University",
+   "ror": "https://ror.org/052czxv31",
+   "country": "NZ",
+   "authors": [
+    [227, 1993, 1994],
+    [184, 1993, 1994],
+    [657, 2006, 2006],
+    [7, 1994, 1994],
+    [510, 1994, 1994],
+    [668, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-algebraic/hendy1993", "lean4-phylo-gene-tree/beast2", "lean4-phylo-gene-tree/lockhart1994", "lean4-phylo-statistics/thatte2006"]
+  },
+  {
+   "name": "Princeton University",
+   "ror": "https://ror.org/00hx57361",
+   "country": "US",
+   "authors": [
+    [240, 2017, 2017],
+    [440, 1975, 1975],
+    [44, 1999, 1999],
+    [283, 2026, 2026],
+    [443, 2026, 2026],
+    [621, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-alignment/aries", "lean4-phylo-alignment/hirschberg1975", "lean4-phylo-gene-tree/dcm2", "lean4-phylo-statistics/roch2017"]
+  },
+  {
+   "name": "Sichuan University",
+   "ror": "https://ror.org/011ashp19",
+   "country": "CN",
+   "authors": [
+    [614, 2022, 2022],
+    [678, 2022, 2022],
+    [702, 2022, 2022],
+    [515, 2022, 2022],
+    [708, 2022, 2022],
+    [700, 2022, 2022]
+   ],
+   "papers": ["lean4-phylo-species-tree/xiong2022"]
+  },
+  {
+   "name": "The University of Texas Health Science Center at Houston",
+   "ror": "https://ror.org/03gds6c39",
+   "country": "US",
+   "authors": [
+    [223, 1987, 1987],
+    [651, 1989, 1989],
+    [606, 1987, 1987],
+    [506, 1995, 1995],
+    [419, 1995, 1995],
+    [400, 1995, 1995]
+   ],
+   "papers": ["lean4-phylo-gene-tree/gu1995", "lean4-phylo-gene-tree/neighbor-joining", "lean4-phylo-statistics/takahata1989"]
+  },
+  {
+   "name": "Universitat Pompeu Fabra",
+   "ror": "https://ror.org/04n0g0b29",
+   "country": "ES",
+   "authors": [
+    [48, 2014, 2026],
+    [517, 2019, 2019],
+    [403, 2019, 2019],
+    [489, 2019, 2019],
+    [330, 2014, 2014],
+    [256, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-alignment/famsa2", "lean4-phylo-alignment/garriga2019", "lean4-phylo-alignment/tcs"]
+  },
+  {
+   "name": "University of Arizona",
+   "ror": "https://ror.org/03m2x1q45",
+   "country": "US",
+   "authors": [
+    [222, 1988, 1999],
+    [104, 2004, 2007],
+    [66, 1992, 1994],
+    [263, 2007, 2009],
+    [633, 2004, 2004],
+    [0, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-alignment/kececioglu2004", "lean4-phylo-alignment/myers1988", "lean4-phylo-alignment/myers1999", "lean4-phylo-alignment/wheeler2007", "lean4-phylo-combinatorics/kannan1992", "lean4-phylo-combinatorics/kannan1994", "lean4-phylo-gene-tree/dcm2", "lean4-phylo-gene-tree/ninja"]
+  },
+  {
+   "name": "University of Kansas",
+   "ror": "https://ror.org/001tmjg57",
+   "country": "US",
+   "authors": [
+    [52, 2021, 2021],
+    [533, 1958, 1958],
+    [713, 2012, 2012],
+    [446, 2012, 2012],
+    [627, 1958, 1958],
+    [432, 2016, 2016]
+   ],
+   "papers": ["lean4-phylo-alignment/bali-phy3", "lean4-phylo-alignment/sate-ii", "lean4-phylo-gene-tree/revbayes", "lean4-phylo-gene-tree/sokal1958"]
+  },
+  {
+   "name": "University of Pennsylvania",
+   "ror": "https://ror.org/00b30xv10",
+   "country": "US",
+   "authors": [
+    [0, 1994, 2000],
+    [130, 2011, 2015],
+    [66, 1995, 1997],
+    [196, 2015, 2015],
+    [285, 1999, 1999],
+    [422, 2015, 2015]
+   ],
+   "papers": ["lean4-phylo-alignment/pasta", "lean4-phylo-alignment/wang2011", "lean4-phylo-combinatorics/bodlaender2000", "lean4-phylo-combinatorics/henzinger1999", "lean4-phylo-combinatorics/kannan1994", "lean4-phylo-combinatorics/kannan1997", "lean4-phylo-combinatorics/mcmorris1994", "lean4-phylo-gene-tree/atteson1999", "lean4-phylo-gene-tree/dactal", "lean4-phylo-gene-tree/farach1995", "lean4-phylo-statistics/erdos1999-part1", "lean4-phylo-statistics/erdos1999-part2"]
+  },
+  {
+   "name": "University of Tübingen",
+   "ror": "https://ror.org/03a1kwz48",
+   "country": "DE",
+   "authors": [
+    [44, 2010, 2025],
+    [641, 2008, 2008],
+    [327, 2025, 2025],
+    [32, 2012, 2012],
+    [471, 2008, 2008],
+    [601, 2010, 2010]
+   ],
+   "papers": ["lean4-phylo-alignment/dialign-tx", "lean4-phylo-network/cass", "lean4-phylo-network/kelk2012", "lean4-phylo-network/phylofusion"]
+  },
+  {
+   "name": "University of Washington",
+   "ror": "https://ror.org/00cvxb145",
+   "country": "US",
+   "authors": [
+    [16, 1973, 2012],
+    [134, 2019, 2026],
+    [67, 1991, 1992],
+    [254, 1991, 1992],
+    [258, 2025, 2026],
+    [282, 2006, 2006]
+   ],
+   "papers": ["lean4-phylo-algebraic/cavender1987", "lean4-phylo-alignment/thorne1991", "lean4-phylo-alignment/thorne1992", "lean4-phylo-gene-tree/felsenstein1973", "lean4-phylo-gene-tree/felsenstein1981", "lean4-phylo-gene-tree/felsenstein1985", "lean4-phylo-gene-tree/felsenstein1996", "lean4-phylo-geometry/ardila2006", "lean4-phylo-geometry/valdezcabrera2025", "lean4-phylo-geometry/valdezcabrera2026", "lean4-phylo-geometry/willis2019", "lean4-phylo-species-tree/snapp", "lean4-phylo-statistics/felsenstein1978"]
+  },
+  {
+   "name": "Aarhus University",
+   "ror": "https://ror.org/01aj84f44",
+   "country": "DK",
+   "authors": [
+    [27, 2000, 2001],
+    [481, 2000, 2000],
+    [689, 2000, 2000],
+    [457, 2005, 2005],
+    [550, 2000, 2000]
+   ],
+   "papers": ["lean4-phylo-alignment/hein2000", "lean4-phylo-alignment/hein2001", "lean4-phylo-alignment/lunter2005", "lean4-phylo-alignment/steel2001"]
+  },
+  {
+   "name": "Centrum Wiskunde & Informatica",
+   "ror": "https://ror.org/00x7ekv49",
+   "country": "NL",
+   "authors": [
+    [30, 2009, 2011],
+    [124, 2009, 2024],
+    [4, 2014, 2015],
+    [661, 1996, 1996],
+    [93, 1993, 1993]
+   ],
+   "papers": ["lean4-phylo-algebraic/szekely1993", "lean4-phylo-geometry/li1996", "lean4-phylo-network/bernardini2023", "lean4-phylo-network/cass", "lean4-phylo-network/fhynch", "lean4-phylo-network/huber2015", "lean4-phylo-network/lev1athan", "lean4-phylo-network/vaniersel2009", "lean4-phylo-network/vaniersel2011", "lean4-phylo-network/vaniersel2014"]
+  },
+  {
+   "name": "Cornell University",
+   "ror": "https://ror.org/05bnh6r87",
+   "country": "US",
+   "authors": [
+    [414, 2002, 2002],
+    [338, 1996, 1996],
+    [254, 1992, 1992],
+    [672, 2001, 2001],
+    [305, 2001, 2001]
+   ],
+   "papers": ["lean4-phylo-alignment/lee2002", "lean4-phylo-alignment/thorne1992", "lean4-phylo-gene-tree/felsenstein1996", "lean4-phylo-geometry/billera2001"]
+  },
+  {
+   "name": "Duke University",
+   "ror": "https://ror.org/00py81415",
+   "country": "US",
+   "authors": [
+    [52, 2014, 2021],
+    [217, 2013, 2015],
+    [559, 2013, 2013],
+    [525, 2013, 2013],
+    [624, 2007, 2007]
+   ],
+   "papers": ["lean4-phylo-alignment/bali-phy3", "lean4-phylo-alignment/redelings2014", "lean4-phylo-geometry/hotz2013", "lean4-phylo-geometry/miller2015", "lean4-phylo-species-tree/ane2007"]
+  },
+  {
+   "name": "Max Planck Institute for Mathematics in the Sciences",
+   "ror": "https://ror.org/00ez2he07",
+   "country": "DE",
+   "authors": [
+    [146, 2014, 2014],
+    [405, 2024, 2024],
+    [466, 2024, 2024],
+    [298, 2014, 2014],
+    [312, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-geometry/bacak2014", "lean4-phylo-geometry/benner2014", "lean4-phylo-geometry/comaneci2024", "lean4-phylo-network/allman2024"]
+  },
+  {
+   "name": "North Carolina State University",
+   "ror": "https://ror.org/04tj63d06",
+   "country": "US",
+   "authors": [
+    [125, 2011, 2012],
+    [52, 2006, 2007],
+    [407, 1994, 1994],
+    [545, 2019, 2019],
+    [549, 1994, 1994]
+   ],
+   "papers": ["lean4-phylo-algebraic/allman2011-mixtures", "lean4-phylo-algebraic/allman2012", "lean4-phylo-algebraic/rhodes2012", "lean4-phylo-alignment/bali-phy", "lean4-phylo-alignment/redelings2007", "lean4-phylo-gene-tree/muse1994", "lean4-phylo-network/huebler2019"]
+  },
+  {
+   "name": "University College Dublin",
+   "ror": "https://ror.org/05m7pjf47",
+   "country": "IE",
+   "authors": [
+    [37, 2008, 2015],
+    [238, 2011, 2015],
+    [267, 2008, 2008],
+    [363, 2011, 2011],
+    [313, 2015, 2015]
+   ],
+   "papers": ["lean4-phylo-alignment/boyce2015", "lean4-phylo-alignment/clustal-omega", "lean4-phylo-alignment/r-coffee"]
+  },
+  {
+   "name": "University of Connecticut",
+   "ror": "https://ror.org/02der9h97",
+   "country": "US",
+   "authors": [
+    [57, 2012, 2023],
+    [569, 2017, 2017],
+    [86, 2026, 2026],
+    [566, 2026, 2026],
+    [537, 2016, 2016]
+   ],
+   "papers": ["lean4-phylo-network/alts", "lean4-phylo-network/mirzaei2016", "lean4-phylo-network/wu2013", "lean4-phylo-species-tree/duploss2", "lean4-phylo-species-tree/stells", "lean4-phylo-species-tree/stells2"]
+  },
+  {
+   "name": "University of East Anglia",
+   "ror": "https://ror.org/026k5mg93",
+   "country": "GB",
+   "authors": [
+    [6, 2014, 2026],
+    [23, 2011, 2026],
+    [85, 2015, 2018],
+    [562, 2016, 2016],
+    [642, 2011, 2011]
+   ],
+   "papers": ["lean4-phylo-geometry/moulton2025", "lean4-phylo-network/hellmuth2026", "lean4-phylo-network/holtgrefe2025-level2", "lean4-phylo-network/holtgrefe2025-multirootable", "lean4-phylo-network/holtgrefe2026", "lean4-phylo-network/huber2015", "lean4-phylo-network/huber2017", "lean4-phylo-network/huber2018", "lean4-phylo-network/huber2025", "lean4-phylo-network/lev1athan", "lean4-phylo-network/lindeberg2026", "lean4-phylo-network/squirrel", "lean4-phylo-network/trilonet", "lean4-phylo-network/vaniersel2014", "lean4-phylo-network/vaniersel2019", "lean4-phylo-network/vaniersel2022-trinets"]
+  },
+  {
+   "name": "University of Maryland, College Park",
+   "ror": "https://ror.org/047s2c258",
+   "country": "US",
+   "authors": [
+    [14, 2023, 2026],
+    [100, 2023, 2026],
+    [160, 2026, 2026],
+    [287, 2012, 2012],
+    [566, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-gene-tree/mrbayes3-2", "lean4-phylo-network/netcs", "lean4-phylo-species-tree/duploss2", "lean4-phylo-species-tree/tree-qmc", "lean4-phylo-species-tree/weighted-tree-qmc", "lean4-phylo-tree-of-blobs/tob-qmc"]
+  },
+  {
+   "name": "Bell Laboratories",
+   "ror": null,
+   "country": "US",
+   "authors": [
+    [275, 1981, 1981],
+    [626, 2000, 2000],
+    [413, 1982, 1982],
+    [647, 1981, 1981]
+   ],
+   "papers": ["lean4-phylo-combinatorics/aho1981", "lean4-phylo-combinatorics/foulds1982", "lean4-phylo-gene-tree/weighbor"]
+  },
+  {
+   "name": "Dalhousie University",
+   "ror": "https://ror.org/01e6qks80",
+   "country": "CA",
+   "authors": [
+    [8, 2022, 2026],
+    [597, 2026, 2026],
+    [644, 2026, 2026],
+    [716, 2022, 2022]
+   ],
+   "papers": ["lean4-phylo-gene-tree/iqtree3", "lean4-phylo-network/allman2022", "lean4-phylo-network/vaniersel2022-fpt", "lean4-phylo-tree-of-blobs/allman2023"]
+  },
+  {
+   "name": "European Molecular Biology Laboratory",
+   "ror": "https://ror.org/03mstc592",
+   "country": "DE",
+   "authors": [
+    [178, 1994, 2011],
+    [37, 1994, 1994],
+    [324, 2000, 2000],
+    [253, 1994, 1994]
+   ],
+   "papers": ["lean4-phylo-alignment/castresana2000", "lean4-phylo-alignment/clustal-omega", "lean4-phylo-alignment/clustalw"]
+  },
+  {
+   "name": "Eötvös Loránd University",
+   "ror": "https://ror.org/01jsq2704",
+   "country": "HU",
+   "authors": [
+    [127, 2022, 2024],
+    [122, 2020, 2020],
+    [74, 2005, 2005],
+    [126, 1993, 1993]
+   ],
+   "papers": ["lean4-phylo-algebraic/szekely1993", "lean4-phylo-alignment/lunter2005", "lean4-phylo-gene-tree/iqtree2", "lean4-phylo-species-tree/alerax", "lean4-phylo-species-tree/speciesrax"]
+  },
+  {
+   "name": "Florida State University",
+   "ror": "https://ror.org/05g3dte14",
+   "country": "US",
+   "authors": [
+    [216, 2008, 2012],
+    [492, 2008, 2008],
+    [81, 2008, 2008],
+    [567, 2013, 2013]
+   ],
+   "papers": ["lean4-phylo-gene-tree/lakner2008", "lean4-phylo-gene-tree/mrbayes3-2", "lean4-phylo-geometry/hotz2013"]
+  },
+  {
+   "name": "Kyoto University",
+   "ror": "https://ror.org/02kpeqv85",
+   "country": "JP",
+   "authors": [
+    [19, 2002, 2005],
+    [201, 2002, 2005],
+    [218, 2002, 2005],
+    [83, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-alignment/mafft", "lean4-phylo-alignment/mafft5"]
+  },
+  {
+   "name": "Massachusetts Institute of Technology",
+   "ror": "https://ror.org/042nb2s44",
+   "country": "US",
+   "authors": [
+    [88, 2010, 2016],
+    [289, 2015, 2015],
+    [393, 1974, 1974],
+    [454, 2015, 2015]
+   ],
+   "papers": ["lean4-phylo-alignment/andoni2010", "lean4-phylo-alignment/backurs2015", "lean4-phylo-alignment/wagner1974", "lean4-phylo-species-tree/daskalakis2016", "lean4-phylo-statistics/daskalakis2011"]
+  },
+  {
+   "name": "National Institute of Advanced Industrial Science and Technology",
+   "ror": "https://ror.org/01703db54",
+   "country": "JP",
+   "authors": [
+    [19, 2012, 2016],
+    [704, 2016, 2016],
+    [660, 2016, 2016],
+    [399, 2012, 2012]
+   ],
+   "papers": ["lean4-phylo-alignment/guidance2", "lean4-phylo-alignment/katoh2012", "lean4-phylo-alignment/mafft7", "lean4-phylo-alignment/yamada2016"]
+  },
+  {
+   "name": "National University of Singapore",
+   "ror": "https://ror.org/01tgyzw49",
+   "country": "SG",
+   "authors": [
+    [190, 2006, 2006],
+    [138, 2023, 2025],
+    [248, 2006, 2006],
+    [558, 2006, 2006]
+   ],
+   "papers": ["lean4-phylo-network/alts", "lean4-phylo-network/jansson2006-galled", "lean4-phylo-network/jansson2006-level1", "lean4-phylo-network/phylofusion"]
+  },
+  {
+   "name": "University of Alaska Fairbanks",
+   "ror": "https://ror.org/01j7nq853",
+   "country": "US",
+   "authors": [
+    [1, 2006, 2026],
+    [2, 2006, 2026],
+    [75, 2019, 2023],
+    [8, 2019, 2019]
+   ],
+   "papers": ["lean4-phylo-algebraic/allman2006", "lean4-phylo-algebraic/allman2008", "lean4-phylo-algebraic/allman2008-gamma", "lean4-phylo-algebraic/allman2008-ideals", "lean4-phylo-algebraic/allman2011-mixtures", "lean4-phylo-algebraic/allman2012", "lean4-phylo-algebraic/rhodes2012", "lean4-phylo-network/allman2022", "lean4-phylo-network/allman2024", "lean4-phylo-network/allman2025", "lean4-phylo-network/banos2019", "lean4-phylo-network/cummings2026", "lean4-phylo-network/holtgrefe2025-level2", "lean4-phylo-network/nanuq", "lean4-phylo-network/nanuq-plus", "lean4-phylo-network/wicke2026", "lean4-phylo-species-tree/allman2011", "lean4-phylo-species-tree/allman2011-clades", "lean4-phylo-species-tree/allman2013", "lean4-phylo-species-tree/allman2017", "lean4-phylo-species-tree/allman2018-splits", "lean4-phylo-species-tree/allman2018-star", "lean4-phylo-species-tree/allman2019", "lean4-phylo-species-tree/mscquartets", "lean4-phylo-species-tree/rhodes2020", "lean4-phylo-statistics/mitchell2019", "lean4-phylo-tree-of-blobs/allman2023", "lean4-phylo-tree-of-blobs/ectoblob", "lean4-phylo-tree-of-blobs/tinnik"]
+  },
+  {
+   "name": "University of North Carolina at Chapel Hill",
+   "ror": "https://ror.org/0130frc33",
+   "country": "US",
+   "authors": [
+    [230, 2011, 2015],
+    [521, 2013, 2013],
+    [170, 2026, 2026],
+    [623, 2013, 2013]
+   ],
+   "papers": ["lean4-phylo-algebraic/xue2026", "lean4-phylo-geometry/hotz2013", "lean4-phylo-geometry/miller2015", "lean4-phylo-geometry/owen2011-fast"]
+  },
+  {
+   "name": "University of Otago",
+   "ror": "https://ror.org/01jmxt844",
+   "country": "NZ",
+   "authors": [
+    [62, 2021, 2021],
+    [59, 2012, 2021],
+    [87, 2021, 2021],
+    [344, 2021, 2021]
+   ],
+   "papers": ["lean4-phylo-geometry/collienne2021", "lean4-phylo-geometry/collienne2021-discrete", "lean4-phylo-species-tree/snapp"]
+  },
+  {
+   "name": "University of Rochester",
+   "ror": "https://ror.org/022kthw22",
+   "country": "US",
+   "authors": [
+    [271, 2007, 2007],
+    [38, 2001, 2002],
+    [151, 2002, 2002],
+    [500, 2002, 2002]
+   ],
+   "papers": ["lean4-phylo-algebraic/stefankovic2007", "lean4-phylo-gene-tree/bollback2002", "lean4-phylo-gene-tree/huelsenbeck2002", "lean4-phylo-gene-tree/mrbayes", "lean4-phylo-statistics/stefankovic2007-pitfalls"]
+  },
+  {
+   "name": "University of Victoria",
+   "ror": "https://ror.org/04s5mat29",
+   "country": "CA",
+   "authors": [
+    [171, 1992, 2000],
+    [682, 2000, 2000],
+    [425, 2000, 2000],
+    [477, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-combinatorics/bodlaender1992", "lean4-phylo-combinatorics/bodlaender2000", "lean4-phylo-combinatorics/henzinger1999"]
+  },
+  {
+   "name": "University of Waterloo",
+   "ror": "https://ror.org/01aff2v68",
+   "country": "CA",
+   "authors": [
+    [25, 2013, 2013],
+    [661, 1996, 1996],
+    [138, 1996, 1996],
+    [503, 1996, 1996]
+   ],
+   "papers": ["lean4-phylo-geometry/barden2013", "lean4-phylo-geometry/feragen2013", "lean4-phylo-geometry/hotz2013", "lean4-phylo-geometry/li1996"]
+  },
+  {
+   "name": "Université de Montréal",
+   "ror": "https://ror.org/0161xgx34",
+   "country": "CA",
+   "authors": [
+    [120, 1975, 1985],
+    [59, 2001, 2001],
+    [575, 2004, 2004],
+    [204, 2004, 2004]
+   ],
+   "papers": ["lean4-phylo-alignment/sankoff1975", "lean4-phylo-alignment/sankoff1985", "lean4-phylo-combinatorics/bryant2001", "lean4-phylo-gene-tree/lartillot2004"]
+  },
+  {
+   "name": "Vanderbilt University",
+   "ror": "https://ror.org/02vm5rt34",
+   "country": "US",
+   "authors": [
+    [235, 2020, 2020],
+    [634, 2020, 2020],
+    [676, 1974, 1974],
+    [507, 2020, 2020]
+   ],
+   "papers": ["lean4-phylo-alignment/clipkit", "lean4-phylo-alignment/wagner1974"]
+  },
+  {
+   "name": "ZHAW Zurich University of Applied Sciences",
+   "ror": "https://ror.org/05pmsvm27",
+   "country": "CH",
+   "authors": [
+    [95, 2018, 2021],
+    [58, 2018, 2021],
+    [213, 2018, 2021],
+    [406, 2021, 2021]
+   ],
+   "papers": ["lean4-phylo-alignment/maiolo2018", "lean4-phylo-alignment/propip"]
+  },
+  {
+   "name": "American Museum of Natural History",
+   "ror": "https://ror.org/03thb3e06",
+   "country": "US",
+   "authors": [
+    [264, 1996, 2010],
+    [667, 2010, 2010],
+    [129, 2010, 2010]
+   ],
+   "papers": ["lean4-phylo-alignment/poy4", "lean4-phylo-alignment/wheeler1996"]
+  },
+  {
+   "name": "Celera Genomics",
+   "ror": null,
+   "country": "US",
+   "authors": [
+    [44, 1999, 1999],
+    [222, 1999, 1999],
+    [712, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-alignment/myers1999", "lean4-phylo-gene-tree/dcm", "lean4-phylo-gene-tree/huson1999-hybrid"]
+  },
+  {
+   "name": "Commonwealth Scientific and Industrial Research Organisation",
+   "ror": "https://ror.org/03qn8fb07",
+   "country": "AU",
+   "authors": [
+    [458, 2017, 2017],
+    [470, 2017, 2017],
+    [268, 2017, 2017]
+   ],
+   "papers": ["lean4-phylo-gene-tree/modelfinder"]
+  },
+  {
+   "name": "Gentofte Hospital",
+   "ror": "https://ror.org/051dzw862",
+   "country": "DK",
+   "authors": [
+    [365, 2013, 2013],
+    [658, 2013, 2013],
+    [691, 2013, 2013]
+   ],
+   "papers": ["lean4-phylo-geometry/feragen2013"]
+  },
+  {
+   "name": "Imperial College London",
+   "ror": "https://ror.org/041kmwe10",
+   "country": "GB",
+   "authors": [
+    [652, 2015, 2015],
+    [303, 2026, 2026],
+    [719, 2018, 2018]
+   ],
+   "papers": ["lean4-phylo-alignment/maiolo2018", "lean4-phylo-alignment/tan2015", "lean4-phylo-geometry/bhatt2026"]
+  },
+  {
+   "name": "Institut Pasteur",
+   "ror": "https://ror.org/0495fxg12",
+   "country": "FR",
+   "authors": [
+    [159, 2010, 2010],
+    [75, 2021, 2021],
+    [415, 2010, 2010]
+   ],
+   "papers": ["lean4-phylo-alignment/bmge", "lean4-phylo-species-tree/mscquartets", "lean4-phylo-species-tree/supertriplets"]
+  },
+  {
+   "name": "Karlsruhe Institute of Technology",
+   "ror": "https://ror.org/04t3en479",
+   "country": "DE",
+   "authors": [
+    [21, 2014, 2024],
+    [76, 2022, 2024],
+    [610, 2022, 2022]
+   ],
+   "papers": ["lean4-phylo-gene-tree/examl3", "lean4-phylo-gene-tree/raxml-ng", "lean4-phylo-gene-tree/raxml8", "lean4-phylo-network/netrax", "lean4-phylo-species-tree/alerax", "lean4-phylo-species-tree/speciesrax"]
+  },
+  {
+   "name": "Lawrence Berkeley National Laboratory",
+   "ror": "https://ror.org/02jbv0t02",
+   "country": "US",
+   "authors": [
+    [142, 2009, 2010],
+    [229, 2009, 2010],
+    [162, 2009, 2010]
+   ],
+   "papers": ["lean4-phylo-gene-tree/fasttree", "lean4-phylo-gene-tree/fasttree2"]
+  },
+  {
+   "name": "Leipzig University",
+   "ror": "https://ror.org/03s7gtk40",
+   "country": "DE",
+   "authors": [
+    [586, 2007, 2007],
+    [63, 2026, 2026],
+    [630, 2007, 2007]
+   ],
+   "papers": ["lean4-phylo-alignment/will2007", "lean4-phylo-network/ebert2026-constraints"]
+  },
+  {
+   "name": "McMaster University",
+   "ror": "https://ror.org/02fa3aq29",
+   "country": "CA",
+   "authors": [
+    [682, 2000, 2000],
+    [679, 1994, 1994],
+    [460, 1994, 1994]
+   ],
+   "papers": ["lean4-phylo-alignment/wang1994", "lean4-phylo-combinatorics/bodlaender2000"]
+  },
+  {
+   "name": "Michigan State University",
+   "ror": "https://ror.org/05hs6h993",
+   "country": "US",
+   "authors": [
+    [309, 2018, 2018],
+    [24, 2018, 2018],
+    [666, 2018, 2018]
+   ],
+   "papers": ["lean4-phylo-network/fastnet"]
+  },
+  {
+   "name": "Nanyang Technological University",
+   "ror": "https://ror.org/02e7b5302",
+   "country": "SG",
+   "authors": [
+    [611, 2010, 2010],
+    [524, 2010, 2010],
+    [508, 2010, 2010]
+   ],
+   "papers": ["lean4-phylo-alignment/msaprobs"]
+  },
+  {
+   "name": "National Institute of Diabetes and Digestive and Kidney Diseases",
+   "ror": "https://ror.org/00adh9b73",
+   "country": "US",
+   "authors": [
+    [208, 1988, 1989],
+    [140, 1989, 1989],
+    [322, 1988, 1988]
+   ],
+   "papers": ["lean4-phylo-alignment/altschul1989", "lean4-phylo-alignment/altschul1989-stars", "lean4-phylo-alignment/carrillo1988"]
+  },
+  {
+   "name": "Naval Postgraduate School",
+   "ror": "https://ror.org/033yfkj90",
+   "country": "US",
+   "authors": [
+    [35, 2017, 2020],
+    [603, 2026, 2026],
+    [564, 2020, 2020]
+   ],
+   "papers": ["lean4-phylo-geometry/bhatt2026", "lean4-phylo-geometry/lin2017", "lean4-phylo-geometry/lin2018", "lean4-phylo-geometry/nye2017", "lean4-phylo-geometry/page2020", "lean4-phylo-geometry/yoshida2019"]
+  },
+  {
+   "name": "New Jersey Institute of Technology",
+   "ror": "https://ror.org/05e74xb87",
+   "country": "US",
+   "authors": [
+    [133, 2025, 2026],
+    [350, 2026, 2026],
+    [119, 2006, 2006]
+   ],
+   "papers": ["lean4-phylo-alignment/probalign", "lean4-phylo-network/cummings2026", "lean4-phylo-network/holtgrefe2025-level2", "lean4-phylo-network/nanuq-plus", "lean4-phylo-network/wicke2026"]
+  },
+  {
+   "name": "Seoul National University",
+   "ror": "https://ror.org/04h9pn542",
+   "country": "KR",
+   "authors": [
+    [408, 2026, 2026],
+    [635, 2026, 2026],
+    [536, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-alignment/foldmason"]
+  },
+  {
+   "name": "Silesian University of Technology",
+   "ror": "https://ror.org/02dyjk442",
+   "country": "PL",
+   "authors": [
+    [97, 2014, 2026],
+    [89, 2014, 2026],
+    [357, 2016, 2016]
+   ],
+   "papers": ["lean4-phylo-alignment/famsa", "lean4-phylo-alignment/famsa2", "lean4-phylo-alignment/quickprobs"]
+  },
+  {
+   "name": "The Francis Crick Institute",
+   "ror": "https://ror.org/04tnbqb63",
+   "country": "GB",
+   "authors": [
+    [17, 1993, 1994],
+    [48, 2000, 2000],
+    [436, 2000, 2000]
+   ],
+   "papers": ["lean4-phylo-alignment/t-coffee", "lean4-phylo-gene-tree/goldman1993", "lean4-phylo-gene-tree/goldman1994"]
+  },
+  {
+   "name": "The Institute of Statistical Mathematics",
+   "ror": "https://ror.org/03jcejr58",
+   "country": "JP",
+   "authors": [
+    [101, 1985, 1999],
+    [237, 1999, 2002],
+    [67, 1985, 1989]
+   ],
+   "papers": ["lean4-phylo-gene-tree/hasegawa1985", "lean4-phylo-gene-tree/kishino1989", "lean4-phylo-gene-tree/shimodaira1999", "lean4-phylo-gene-tree/shimodaira2002"]
+  },
+  {
+   "name": "Universidade da Coruña",
+   "ror": "https://ror.org/01qckj285",
+   "country": "ES",
+   "authors": [
+    [161, 2012, 2012],
+    [650, 2012, 2012],
+    [367, 2012, 2012]
+   ],
+   "papers": ["lean4-phylo-gene-tree/jmodeltest2"]
+  },
+  {
+   "name": "Universidade de Vigo",
+   "ror": "https://ror.org/05rdf8595",
+   "country": "ES",
+   "authors": [
+    [79, 2005, 2012],
+    [161, 2012, 2012],
+    [139, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-gene-tree/jmodeltest", "lean4-phylo-gene-tree/jmodeltest2", "lean4-phylo-gene-tree/prottest"]
+  },
+  {
+   "name": "Universitat Autònoma de Barcelona",
+   "ror": "https://ror.org/052g8jq94",
+   "country": "ES",
+   "authors": [
+    [215, 2021, 2023],
+    [385, 2021, 2021],
+    [547, 2021, 2021]
+   ],
+   "papers": ["lean4-phylo-alignment/marcosola2023", "lean4-phylo-alignment/wfa"]
+  },
+  {
+   "name": "Universitat Politècnica de Catalunya",
+   "ror": "https://ror.org/03mb6wj31",
+   "country": "ES",
+   "authors": [
+    [172, 2007, 2016],
+    [155, 2007, 2016],
+    [220, 2021, 2023]
+   ],
+   "papers": ["lean4-phylo-algebraic/casanellas2007", "lean4-phylo-algebraic/fernandezsanchez2016", "lean4-phylo-alignment/marcosola2023", "lean4-phylo-alignment/wfa"]
+  },
+  {
+   "name": "University of Cambridge",
+   "ror": "https://ror.org/013meh722",
+   "country": "GB",
+   "authors": [
+    [144, 2013, 2018],
+    [17, 1993, 2001],
+    [132, 2001, 2001]
+   ],
+   "papers": ["lean4-phylo-gene-tree/goldman1993", "lean4-phylo-gene-tree/whelan2001", "lean4-phylo-geometry/barden2013", "lean4-phylo-geometry/barden2018"]
+  },
+  {
+   "name": "University of Florida",
+   "ror": "https://ror.org/02y3ad647",
+   "country": "US",
+   "authors": [
+    [646, 2025, 2025],
+    [154, 2013, 2013],
+    [156, 2013, 2013]
+   ],
+   "papers": ["lean4-phylo-network/phynest", "lean4-phylo-species-tree/chaudhary2013"]
+  },
+  {
+   "name": "University of Georgia",
+   "ror": "https://ror.org/00te3t702",
+   "country": "US",
+   "authors": [
+    [706, 2022, 2022],
+    [498, 2011, 2011],
+    [31, 2022, 2022]
+   ],
+   "papers": ["lean4-phylo-alignment/wang2011", "lean4-phylo-species-tree/xiong2022"]
+  },
+  {
+   "name": "University of Göttingen",
+   "ror": "https://ror.org/01y9bpm73",
+   "country": "DE",
+   "authors": [
+    [102, 2013, 2024],
+    [210, 2021, 2024],
+    [111, 2008, 2008]
+   ],
+   "papers": ["lean4-phylo-alignment/dialign-tx", "lean4-phylo-geometry/garba2021", "lean4-phylo-geometry/hotz2013", "lean4-phylo-geometry/lueg2024"]
+  },
+  {
+   "name": "University of Haifa",
+   "ror": "https://ror.org/02f009v59",
+   "country": "IL",
+   "authors": [
+    [41, 2010, 2015],
+    [286, 2015, 2015],
+    [714, 2012, 2012]
+   ],
+   "papers": ["lean4-phylo-combinatorics/snir2012", "lean4-phylo-species-tree/qmc", "lean4-phylo-species-tree/qmc-fast", "lean4-phylo-species-tree/roch2013", "lean4-phylo-species-tree/wqmc", "lean4-phylo-statistics/gronau2012"]
+  },
+  {
+   "name": "University of Southern California",
+   "ror": "https://ror.org/03taz7m60",
+   "country": "US",
+   "authors": [
+    [228, 1992, 1997],
+    [0, 1992, 1992],
+    [645, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-alignment/bafna1997", "lean4-phylo-alignment/pevzner1992", "lean4-phylo-combinatorics/bodlaender1992", "lean4-phylo-combinatorics/kannan1992", "lean4-phylo-species-tree/astral"]
+  },
+  {
+   "name": "University of Veterinary Medicine Vienna",
+   "ror": "https://ror.org/01w6qp003",
+   "country": "AT",
+   "authors": [
+    [200, 2015, 2016],
+    [122, 2015, 2016],
+    [73, 2015, 2015]
+   ],
+   "papers": ["lean4-phylo-species-tree/pomo", "lean4-phylo-species-tree/schrempf2016"]
+  },
+  {
+   "name": "Universität Greifswald",
+   "ror": "https://ror.org/00r1edq15",
+   "country": "DE",
+   "authors": [
+    [147, 2022, 2024],
+    [246, 2022, 2024],
+    [392, 2021, 2021]
+   ],
+   "papers": ["lean4-phylo-alignment/learnmsa", "lean4-phylo-alignment/learnmsa2", "lean4-phylo-geometry/collienne2021-discrete"]
+  },
+  {
+   "name": "Université du Québec à Montréal",
+   "ror": "https://ror.org/002rjbv21",
+   "country": "CA",
+   "authors": [
+    [265, 2014, 2018],
+    [249, 2014, 2018],
+    [214, 2014, 2018]
+   ],
+   "papers": ["lean4-phylo-network/willems2014", "lean4-phylo-network/willems2018"]
+  },
+  {
+   "name": "Utrecht University",
+   "ror": "https://ror.org/04pp8hn57",
+   "country": "NL",
+   "authors": [
+    [150, 1992, 2000],
+    [437, 1984, 1984],
+    [445, 1984, 1984]
+   ],
+   "papers": ["lean4-phylo-alignment/hogeweg1984", "lean4-phylo-combinatorics/bodlaender1992", "lean4-phylo-combinatorics/bodlaender2000"]
+  },
+  {
+   "name": "Yale University",
+   "ror": "https://ror.org/03v76x132",
+   "country": "US",
+   "authors": [
+    [331, 1996, 1996],
+    [196, 2000, 2000],
+    [285, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-algebraic/chang1996", "lean4-phylo-gene-tree/atteson1999", "lean4-phylo-geometry/kim2000"]
+  },
+  {
+   "name": "Barcelona Supercomputing Center",
+   "ror": "https://ror.org/05sd8tv96",
+   "country": "ES",
+   "authors": [
+    [220, 2021, 2023],
+    [215, 2021, 2023]
+   ],
+   "papers": ["lean4-phylo-alignment/marcosola2023", "lean4-phylo-alignment/wfa"]
+  },
+  {
+   "name": "Beijing Institute of Genomics",
+   "ror": "https://ror.org/049gn7z52",
+   "country": "CN",
+   "authors": [
+    [50, 2014, 2014],
+    [34, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-species-tree/yang2014"]
+  },
+  {
+   "name": "Birkbeck, University of London",
+   "ror": "https://ror.org/02mb95055",
+   "country": "GB",
+   "authors": [
+    [294, 1987, 1987],
+    [636, 1987, 1987]
+   ],
+   "papers": ["lean4-phylo-alignment/barton1987"]
+  },
+  {
+   "name": "Brigham Young University",
+   "ror": "https://ror.org/047rhhm47",
+   "country": "US",
+   "authors": [
+    [79, 1998, 1998],
+    [347, 1998, 1998]
+   ],
+   "papers": ["lean4-phylo-gene-tree/modeltest"]
+  },
+  {
+   "name": "Canadian Institute for Advanced Research",
+   "ror": "https://ror.org/01sdtdd95",
+   "country": "CA",
+   "authors": [
+    [575, 2004, 2004],
+    [204, 2004, 2004]
+   ],
+   "papers": ["lean4-phylo-gene-tree/lartillot2004"]
+  },
+  {
+   "name": "Centre de Coopération Internationale en Recherche Agronomique pour le Développement",
+   "ror": "https://ror.org/05kpkpg04",
+   "country": "FR",
+   "authors": [
+    [409, 2021, 2021],
+    [608, 2021, 2021]
+   ],
+   "papers": ["lean4-phylo-network/snappnet"]
+  },
+  {
+   "name": "Duquesne University",
+   "ror": "https://ror.org/02336z538",
+   "country": "US",
+   "authors": [
+    [39, 1999, 1999],
+    [620, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-gene-tree/larget1999", "lean4-phylo-gene-tree/mau1999"]
+  },
+  {
+   "name": "Eindhoven University of Technology",
+   "ror": "https://ror.org/02c2kyt77",
+   "country": "NL",
+   "authors": [
+    [194, 2009, 2014],
+    [570, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-network/keijsper2014", "lean4-phylo-network/vaniersel2009"]
+  },
+  {
+   "name": "Fred Hutch Cancer Center",
+   "ror": "https://ror.org/007ps6h72",
+   "country": "US",
+   "authors": [
+    [688, 2015, 2015],
+    [188, 2015, 2015]
+   ],
+   "papers": ["lean4-phylo-gene-tree/whidden2015"]
+  },
+  {
+   "name": "Genome Institute of Singapore",
+   "ror": "https://ror.org/05k8wg936",
+   "country": "SG",
+   "authors": [
+    [248, 2006, 2006],
+    [267, 2011, 2011]
+   ],
+   "papers": ["lean4-phylo-alignment/clustal-omega", "lean4-phylo-network/jansson2006-galled", "lean4-phylo-network/jansson2006-level1"]
+  },
+  {
+   "name": "Georgia Institute of Technology",
+   "ror": "https://ror.org/01zkghx44",
+   "country": "US",
+   "authors": [
+    [128, 2005, 2007],
+    [8, 2021, 2021]
+   ],
+   "papers": ["lean4-phylo-algebraic/stefankovic2007", "lean4-phylo-gene-tree/mossel2005", "lean4-phylo-species-tree/mscquartets", "lean4-phylo-statistics/stefankovic2007-pitfalls"]
+  },
+  {
+   "name": "Heinrich Heine University Düsseldorf",
+   "ror": "https://ror.org/024z2rq82",
+   "country": "DE",
+   "authors": [
+    [18, 2005, 2005],
+    [395, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-alignment/fleissner2005"]
+  },
+  {
+   "name": "Helmholtz Munich",
+   "ror": "https://ror.org/00cfam450",
+   "country": "DE",
+   "authors": [
+    [111, 1996, 1999],
+    [685, 1996, 1996]
+   ],
+   "papers": ["lean4-phylo-alignment/dialign2", "lean4-phylo-alignment/morgenstern1996"]
+  },
+  {
+   "name": "Howard Hughes Medical Institute",
+   "ror": "https://ror.org/006w34k90",
+   "country": "US",
+   "authors": [
+    [116, 2006, 2008],
+    [96, 2006, 2008]
+   ],
+   "papers": ["lean4-phylo-alignment/mummals", "lean4-phylo-alignment/promals", "lean4-phylo-alignment/promals3d"]
+  },
+  {
+   "name": "INRAE",
+   "ror": "https://ror.org/003vg9w96",
+   "country": "FR",
+   "authors": [
+    [186, 1996, 2001],
+    [346, 1988, 1988]
+   ],
+   "papers": ["lean4-phylo-alignment/corpet1988", "lean4-phylo-gene-tree/efron1996", "lean4-phylo-geometry/billera2001"]
+  },
+  {
+   "name": "Indiana University Bloomington",
+   "ror": "https://ror.org/02k40bc56",
+   "country": "US",
+   "authors": [
+    [182, 2020, 2026],
+    [170, 2020, 2020]
+   ],
+   "papers": ["lean4-phylo-gene-tree/iqtree3", "lean4-phylo-species-tree/minh2020", "lean4-phylo-statistics/fan2020"]
+  },
+  {
+   "name": "Inria",
+   "ror": "https://ror.org/02kvxyf05",
+   "country": "FR",
+   "authors": [
+    [124, 2023, 2024],
+    [653, 2013, 2013]
+   ],
+   "papers": ["lean4-phylo-network/bernardini2023", "lean4-phylo-network/fhynch", "lean4-phylo-species-tree/boussau2013"]
+  },
+  {
+   "name": "Institute for Research in Fundamental Sciences",
+   "ror": "https://ror.org/04xreqs31",
+   "country": "IR",
+   "authors": [
+    [577, 2014, 2014],
+    [663, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-network/tripnet"]
+  },
+  {
+   "name": "Janelia Research Campus",
+   "ror": "https://ror.org/013sk6x84",
+   "country": "US",
+   "authors": [
+    [92, 2008, 2011],
+    [593, 2008, 2008]
+   ],
+   "papers": ["lean4-phylo-alignment/eddy2011", "lean4-phylo-alignment/rivas2008"]
+  },
+  {
+   "name": "KTH Royal Institute of Technology",
+   "ror": "https://ror.org/026vcq606",
+   "country": "SE",
+   "authors": [
+    [380, 2009, 2009],
+    [491, 2009, 2009]
+   ],
+   "papers": ["lean4-phylo-gene-tree/elias2009"]
+  },
+  {
+   "name": "Karolinska Institutet",
+   "ror": "https://ror.org/056d84691",
+   "country": "SE",
+   "authors": [
+    [244, 2005, 2009],
+    [107, 2005, 2009]
+   ],
+   "papers": ["lean4-phylo-alignment/kalign", "lean4-phylo-alignment/kalign2"]
+  },
+  {
+   "name": "Kyushu University",
+   "ror": "https://ror.org/00p4k0j84",
+   "country": "JP",
+   "authors": [
+    [83, 2007, 2008],
+    [19, 2007, 2008]
+   ],
+   "papers": ["lean4-phylo-alignment/katoh2008", "lean4-phylo-alignment/katoh2008-ncrna", "lean4-phylo-alignment/parttree"]
+  },
+  {
+   "name": "LSU New Orleans",
+   "ror": "https://ror.org/034mtvk83",
+   "country": "US",
+   "authors": [
+    [598, 1997, 1997],
+    [339, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-gene-tree/rogers1997", "lean4-phylo-species-tree/tabatabaee2026"]
+  },
+  {
+   "name": "Lehman College",
+   "ror": "https://ror.org/03m908832",
+   "country": "US",
+   "authors": [
+    [103, 2001, 2007],
+    [25, 2015, 2019]
+   ],
+   "papers": ["lean4-phylo-geometry/amenta2007", "lean4-phylo-geometry/barden2018", "lean4-phylo-geometry/grindstaff2019", "lean4-phylo-geometry/miller2015", "lean4-phylo-statistics/nakhleh2001", "lean4-phylo-statistics/warnow2001"]
+  },
+  {
+   "name": "Maastricht University",
+   "ror": "https://ror.org/02jz4aj89",
+   "country": "NL",
+   "authors": [
+    [30, 2012, 2026],
+    [176, 2025, 2026]
+   ],
+   "papers": ["lean4-phylo-network/frohn2025", "lean4-phylo-network/frohn2026", "lean4-phylo-network/kelk2012"]
+  },
+  {
+   "name": "Mathematical Sciences Research Institute",
+   "ror": "https://ror.org/05hs5r386",
+   "country": "US",
+   "authors": [
+    [480, 2006, 2006],
+    [282, 2006, 2006]
+   ],
+   "papers": ["lean4-phylo-geometry/ardila2006"]
+  },
+  {
+   "name": "Medical University of Vienna",
+   "ror": "https://ror.org/05n3x4p02",
+   "country": "AT",
+   "authors": [
+    [18, 2016, 2016],
+    [20, 2016, 2016]
+   ],
+   "papers": ["lean4-phylo-species-tree/schrempf2016"]
+  },
+  {
+   "name": "Microsoft (United States)",
+   "ror": "https://ror.org/00d0nc645",
+   "country": "US",
+   "authors": [
+    [281, 2010, 2010],
+    [240, 2011, 2011]
+   ],
+   "papers": ["lean4-phylo-alignment/andoni2010", "lean4-phylo-statistics/mossel2011"]
+  },
+  {
+   "name": "Museo Nacional de Ciencias Naturales",
+   "ror": "https://ror.org/02v6zg374",
+   "country": "ES",
+   "authors": [
+    [139, 2005, 2010],
+    [269, 2005, 2010]
+   ],
+   "papers": ["lean4-phylo-alignment/translatorx", "lean4-phylo-gene-tree/prottest"]
+  },
+  {
+   "name": "National Animal Disease Center",
+   "ror": "https://ror.org/04ky99h94",
+   "country": "US",
+   "authors": [
+    [110, 2021, 2022],
+    [280, 2022, 2022]
+   ],
+   "papers": ["lean4-phylo-network/rfnet2", "lean4-phylo-species-tree/markin2021"]
+  },
+  {
+   "name": "National Center for Biotechnology Information",
+   "ror": "https://ror.org/02meqm098",
+   "country": "US",
+   "authors": [
+    [90, 2002, 2004],
+    [140, 1989, 1989]
+   ],
+   "papers": ["lean4-phylo-alignment/altschul1989", "lean4-phylo-gene-tree/desper2002", "lean4-phylo-gene-tree/desper2004"]
+  },
+  {
+   "name": "National Evolutionary Synthesis Center",
+   "ror": "https://ror.org/001ykb961",
+   "country": "US",
+   "authors": [
+    [52, 2014, 2014],
+    [154, 2008, 2008]
+   ],
+   "papers": ["lean4-phylo-alignment/redelings2014", "lean4-phylo-species-tree/duptree"]
+  },
+  {
+   "name": "National Institute of Genetics",
+   "ror": "https://ror.org/02xg1m795",
+   "country": "JP",
+   "authors": [
+    [197, 1980, 1981],
+    [651, 1989, 1989]
+   ],
+   "papers": ["lean4-phylo-gene-tree/kimura1980", "lean4-phylo-gene-tree/kimura1981", "lean4-phylo-statistics/takahata1989"]
+  },
+  {
+   "name": "Newcastle University",
+   "ror": "https://ror.org/01kj2bm70",
+   "country": "GB",
+   "authors": [
+    [49, 2011, 2024],
+    [177, 2021, 2021]
+   ],
+   "papers": ["lean4-phylo-geometry/garba2021", "lean4-phylo-geometry/lueg2024", "lean4-phylo-geometry/nye2011", "lean4-phylo-geometry/nye2014", "lean4-phylo-geometry/nye2017"]
+  },
+  {
+   "name": "Sandia National Laboratories",
+   "ror": "https://ror.org/01apwpt12",
+   "country": "US",
+   "authors": [
+    [692, 2023, 2023],
+    [0, 1994, 1994]
+   ],
+   "papers": ["lean4-phylo-alignment/emma", "lean4-phylo-combinatorics/warnow1994"]
+  },
+  {
+   "name": "Simon Fraser University",
+   "ror": "https://ror.org/0213rcc28",
+   "country": "CA",
+   "authors": [
+    [343, 2023, 2023],
+    [273, 2023, 2023]
+   ],
+   "papers": ["lean4-phylo-network/alts"]
+  },
+  {
+   "name": "Swedish Museum of Natural History",
+   "ror": "https://ror.org/05k323c76",
+   "country": "SE",
+   "authors": [
+    [81, 2012, 2016],
+    [656, 2012, 2012]
+   ],
+   "papers": ["lean4-phylo-gene-tree/mrbayes3-2", "lean4-phylo-gene-tree/revbayes"]
+  },
+  {
+   "name": "Technical University of Denmark",
+   "ror": "https://ror.org/04qtj9h94",
+   "country": "DK",
+   "authors": [
+    [485, 1994, 1994],
+    [340, 2023, 2023]
+   ],
+   "papers": ["lean4-phylo-alignment/krogh1994", "lean4-phylo-gene-tree/clausen2023"]
+  },
+  {
+   "name": "Technion – Israel Institute of Technology",
+   "ror": "https://ror.org/03qryx823",
+   "country": "IL",
+   "authors": [
+    [417, 2012, 2012],
+    [544, 2012, 2012]
+   ],
+   "papers": ["lean4-phylo-statistics/gronau2012"]
+  },
+  {
+   "name": "Technische Universität Berlin",
+   "ror": "https://ror.org/03v4gjf40",
+   "country": "DE",
+   "authors": [
+    [345, 2024, 2024],
+    [466, 2024, 2024]
+   ],
+   "papers": ["lean4-phylo-geometry/comaneci2024"]
+  },
+  {
+   "name": "The University of Melbourne",
+   "ror": "https://ror.org/01ej9dk98",
+   "country": "AU",
+   "authors": [
+    [504, 2022, 2022],
+    [329, 2022, 2022]
+   ],
+   "papers": ["lean4-phylo-species-tree/chan2022"]
+  },
+  {
+   "name": "The University of Osaka",
+   "ror": "https://ror.org/035t8zc32",
+   "country": "JP",
+   "authors": [
+    [19, 2012, 2016],
+    [632, 2013, 2013]
+   ],
+   "papers": ["lean4-phylo-alignment/guidance2", "lean4-phylo-alignment/katoh2012", "lean4-phylo-alignment/mafft7", "lean4-phylo-alignment/yamada2016"]
+  },
+  {
+   "name": "The University of Texas Southwestern Medical Center",
+   "ror": "https://ror.org/05byvp690",
+   "country": "US",
+   "authors": [
+    [96, 2006, 2008],
+    [476, 2008, 2008]
+   ],
+   "papers": ["lean4-phylo-alignment/mummals", "lean4-phylo-alignment/promals", "lean4-phylo-alignment/promals3d"]
+  },
+  {
+   "name": "The University of Tokyo",
+   "ror": "https://ror.org/057zh3y96",
+   "country": "JP",
+   "authors": [
+    [67, 1991, 1992],
+    [606, 1987, 1987]
+   ],
+   "papers": ["lean4-phylo-alignment/thorne1991", "lean4-phylo-alignment/thorne1992", "lean4-phylo-gene-tree/neighbor-joining"]
+  },
+  {
+   "name": "Trinity College Dublin",
+   "ror": "https://ror.org/02tyrky19",
+   "country": "IE",
+   "authors": [
+    [37, 1988, 1988],
+    [616, 1988, 1988]
+   ],
+   "papers": ["lean4-phylo-alignment/clustal"]
+  },
+  {
+   "name": "Universidad de Granada",
+   "ror": "https://ror.org/04njjy449",
+   "country": "ES",
+   "authors": [
+    [529, 1990, 1990],
+    [563, 1990, 1990]
+   ],
+   "papers": ["lean4-phylo-gene-tree/rodriguez1990"]
+  },
+  {
+   "name": "Universidad de Sevilla",
+   "ror": "https://ror.org/03yxnpp24",
+   "country": "ES",
+   "authors": [
+    [523, 1990, 1990],
+    [596, 1990, 1990]
+   ],
+   "papers": ["lean4-phylo-gene-tree/rodriguez1990"]
+  },
+  {
+   "name": "Universitat de les Illes Balears",
+   "ror": "https://ror.org/03e10x626",
+   "country": "ES",
+   "authors": [
+    [590, 2026, 2026],
+    [576, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-network/ribas2026"]
+  },
+  {
+   "name": "University of Alberta",
+   "ror": "https://ror.org/0160cpw27",
+   "country": "CA",
+   "authors": [
+    [50, 2003, 2003],
+    [470, 2017, 2017]
+   ],
+   "papers": ["lean4-phylo-gene-tree/modelfinder", "lean4-phylo-species-tree/rannala2003"]
+  },
+  {
+   "name": "University of Applied Sciences and Arts of Southern Switzerland",
+   "ror": "https://ror.org/05ep8g269",
+   "country": "CH",
+   "authors": [
+    [397, 2021, 2021],
+    [499, 2021, 2021]
+   ],
+   "papers": ["lean4-phylo-alignment/propip"]
+  },
+  {
+   "name": "University of Arkansas at Fayetteville",
+   "ror": "https://ror.org/05jbt9m15",
+   "country": "US",
+   "authors": [
+    [467, 2023, 2023],
+    [328, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-network/snaq-jl", "lean4-phylo-species-tree/adams2023"]
+  },
+  {
+   "name": "University of Basel",
+   "ror": "https://ror.org/02s6k3f65",
+   "country": "CH",
+   "authors": [
+    [293, 2022, 2022],
+    [553, 2022, 2022]
+   ],
+   "papers": ["lean4-phylo-network/treeknit"]
+  },
+  {
+   "name": "University of British Columbia",
+   "ror": "https://ror.org/03rmrcq20",
+   "country": "CA",
+   "authors": [
+    [311, 2013, 2013],
+    [516, 2006, 2006]
+   ],
+   "papers": ["lean4-phylo-alignment/pip", "lean4-phylo-species-tree/maddison2006"]
+  },
+  {
+   "name": "University of Edinburgh",
+   "ror": "https://ror.org/01nrxwf90",
+   "country": "GB",
+   "authors": [
+    [233, 2007, 2014],
+    [348, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-gene-tree/beast", "lean4-phylo-gene-tree/beast2", "lean4-phylo-network/cummings2026"]
+  },
+  {
+   "name": "University of Freiburg",
+   "ror": "https://ror.org/0245cg223",
+   "country": "DE",
+   "authors": [
+    [288, 2007, 2007],
+    [690, 2007, 2007]
+   ],
+   "papers": ["lean4-phylo-alignment/will2007"]
+  },
+  {
+   "name": "University of Helsinki",
+   "ror": "https://ror.org/040af2s02",
+   "country": "FI",
+   "authors": [
+    [72, 2012, 2012],
+    [664, 1985, 1985]
+   ],
+   "papers": ["lean4-phylo-alignment/pagan", "lean4-phylo-alignment/ukkonen1985"]
+  },
+  {
+   "name": "University of Houston",
+   "ror": "https://ror.org/048sx0r50",
+   "country": "US",
+   "authors": [
+    [181, 2007, 2010],
+    [203, 2007, 2010]
+   ],
+   "papers": ["lean4-phylo-alignment/landan2007", "lean4-phylo-alignment/penn2010"]
+  },
+  {
+   "name": "University of Kentucky",
+   "ror": "https://ror.org/02k3smh20",
+   "country": "US",
+   "authors": [
+    [35, 2008, 2008],
+    [720, 2019, 2019]
+   ],
+   "papers": ["lean4-phylo-gene-tree/eickmeyer2008", "lean4-phylo-geometry/yoshida2019"]
+  },
+  {
+   "name": "University of Manchester",
+   "ror": "https://ror.org/027m9bs27",
+   "country": "GB",
+   "authors": [
+    [149, 2012, 2013],
+    [132, 2012, 2013]
+   ],
+   "papers": ["lean4-phylo-alignment/blackburne2012", "lean4-phylo-alignment/blackburne2013"]
+  },
+  {
+   "name": "University of Oregon",
+   "ror": "https://ror.org/0293rh119",
+   "country": "US",
+   "authors": [
+    [199, 2004, 2008],
+    [255, 2004, 2008]
+   ],
+   "papers": ["lean4-phylo-gene-tree/kolaczkowski2008", "lean4-phylo-statistics/kolaczkowski2004"]
+  },
+  {
+   "name": "University of Tasmania",
+   "ror": "https://ror.org/01nfmeh72",
+   "country": "AU",
+   "authors": [
+    [75, 2023, 2024],
+    [696, 2020, 2020]
+   ],
+   "papers": ["lean4-phylo-gene-tree/iqtree2", "lean4-phylo-tree-of-blobs/allman2023", "lean4-phylo-tree-of-blobs/tinnik"]
+  },
+  {
+   "name": "University of Technology Sydney",
+   "ror": "https://ror.org/03f0f6041",
+   "country": "AU",
+   "authors": [
+    [546, 1997, 1997],
+    [381, 1997, 1997]
+   ],
+   "papers": ["lean4-phylo-alignment/morrison1997"]
+  },
+  {
+   "name": "University of Tennessee Health Science Center",
+   "ror": "https://ror.org/0011qv509",
+   "country": "US",
+   "authors": [
+    [421, 2023, 2023],
+    [404, 2023, 2023]
+   ],
+   "papers": ["lean4-phylo-alignment/marcosola2023"]
+  },
+  {
+   "name": "University of Zurich",
+   "ror": "https://ror.org/02crff812",
+   "country": "CH",
+   "authors": [
+    [95, 2015, 2015],
+    [213, 2018, 2018]
+   ],
+   "papers": ["lean4-phylo-alignment/maiolo2018", "lean4-phylo-alignment/tan2015"]
+  },
+  {
+   "name": "Université Libre de Bruxelles",
+   "ror": "https://ror.org/01r9htc13",
+   "country": "BE",
+   "authors": [
+    [465, 2012, 2012],
+    [391, 2012, 2012]
+   ],
+   "papers": ["lean4-phylo-gene-tree/fiorini2012"]
+  },
+  {
+   "name": "Uppsala University",
+   "ror": "https://ror.org/048a87296",
+   "country": "SE",
+   "authors": [
+    [81, 2001, 2001],
+    [6, 2004, 2004]
+   ],
+   "papers": ["lean4-phylo-gene-tree/mrbayes", "lean4-phylo-geometry/moulton2004"]
+  },
+  {
+   "name": "VNU University of Engineering and Technology",
+   "ror": "https://ror.org/019sx5d52",
+   "country": "VN",
+   "authors": [
+    [129, 2018, 2026],
+    [442, 2018, 2018]
+   ],
+   "papers": ["lean4-phylo-gene-tree/iqtree3", "lean4-phylo-gene-tree/ufboot2"]
+  },
+  {
+   "name": "Vienna Graduate School of Population Genetics",
+   "ror": null,
+   "country": "AT",
+   "authors": [
+    [122, 2015, 2015],
+    [73, 2015, 2015]
+   ],
+   "papers": ["lean4-phylo-species-tree/pomo"]
+  },
+  {
+   "name": "Westerdijk Fungal Biodiversity Institute",
+   "ror": "https://ror.org/030a5r161",
+   "country": "NL",
+   "authors": [
+    [424, 2009, 2009],
+    [308, 2009, 2009]
+   ],
+   "papers": ["lean4-phylo-network/vaniersel2009"]
+  },
+  {
+   "name": "Zoological Research Museum Alexander Koenig",
+   "ror": "https://ror.org/00wz4b049",
+   "country": "DE",
+   "authors": [
+    [539, 2009, 2009],
+    [540, 2009, 2009]
+   ],
+   "papers": ["lean4-phylo-alignment/misof2009"]
+  },
+  {
+   "name": "Aalborg University",
+   "ror": "https://ror.org/04m5j1k67",
+   "country": "DK",
+   "authors": [
+    [35, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-geometry/bhatt2026"]
+  },
+  {
+   "name": "Abbott (United States)",
+   "ror": "https://ror.org/0052svj16",
+   "country": "US",
+   "authors": [
+    [520, 1967, 1967]
+   ],
+   "papers": ["lean4-phylo-gene-tree/fitch1967"]
+  },
+  {
+   "name": "Adam Mickiewicz University in Poznań",
+   "ror": "https://ror.org/04g6bbq64",
+   "country": "PL",
+   "authors": [
+    [724, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-alignment/famsa2"]
+  },
+  {
+   "name": "Aix-Marseille Université",
+   "ror": "https://ror.org/035xkbk20",
+   "country": "FR",
+   "authors": [
+    [48, 2000, 2000]
+   ],
+   "papers": ["lean4-phylo-alignment/t-coffee"]
+  },
+  {
+   "name": "BASF (United States)",
+   "ror": "https://ror.org/002yzpx87",
+   "country": "US",
+   "authors": [
+    [677, 2011, 2011]
+   ],
+   "papers": ["lean4-phylo-alignment/wang2011"]
+  },
+  {
+   "name": "Bar-Ilan University",
+   "ror": "https://ror.org/03kgsv495",
+   "country": "IL",
+   "authors": [
+    [430, 2010, 2010]
+   ],
+   "papers": ["lean4-phylo-alignment/andoni2010"]
+  },
+  {
+   "name": "Bates College",
+   "ror": "https://ror.org/003yn7c76",
+   "country": "US",
+   "authors": [
+    [1, 2003, 2004]
+   ],
+   "papers": ["lean4-phylo-algebraic/allman2003", "lean4-phylo-algebraic/allman2004"]
+  },
+  {
+   "name": "Bayero University Kano",
+   "ror": "https://ror.org/049pzty39",
+   "country": "NG",
+   "authors": [
+    [177, 2021, 2021]
+   ],
+   "papers": ["lean4-phylo-geometry/garba2021"]
+  },
+  {
+   "name": "Biohistory Research Hall",
+   "ror": null,
+   "country": "JP",
+   "authors": [
+    [218, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-alignment/mafft5"]
+  },
+  {
+   "name": "Broad Institute",
+   "ror": "https://ror.org/05a0ya142",
+   "country": "US",
+   "authors": [
+    [235, 2007, 2007]
+   ],
+   "papers": ["lean4-phylo-species-tree/ane2007"]
+  },
+  {
+   "name": "Brown University",
+   "ror": "https://ror.org/05gq02987",
+   "country": "US",
+   "authors": [
+    [68, 2025, 2025]
+   ],
+   "papers": ["lean4-phylo-species-tree/kubatko2025"]
+  },
+  {
+   "name": "California State University, San Bernardino",
+   "ror": "https://ror.org/02n651896",
+   "country": "US",
+   "authors": [
+    [8, 2024, 2026]
+   ],
+   "papers": ["lean4-phylo-gene-tree/iqtree3", "lean4-phylo-network/allman2024", "lean4-phylo-network/allman2025", "lean4-phylo-network/holtgrefe2025-level2", "lean4-phylo-network/nanuq-plus", "lean4-phylo-network/wicke2026", "lean4-phylo-species-tree/dinh2025", "lean4-phylo-tree-of-blobs/ectoblob", "lean4-phylo-tree-of-blobs/tinnik"]
+  },
+  {
+   "name": "Calvin University",
+   "ror": "https://ror.org/05r0q9p84",
+   "country": "US",
+   "authors": [
+    [47, 2012, 2012]
+   ],
+   "papers": ["lean4-phylo-alignment/sate-ii", "lean4-phylo-gene-tree/dactal"]
+  },
+  {
+   "name": "Carnegie Mellon University",
+   "ror": "https://ror.org/05x2bcf33",
+   "country": "US",
+   "authors": [
+    [585, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-alignment/gestalt"]
+  },
+  {
+   "name": "City University of New York",
+   "ror": "https://ror.org/00453a208",
+   "country": "US",
+   "authors": [
+    [667, 2010, 2010]
+   ],
+   "papers": ["lean4-phylo-alignment/poy4"]
+  },
+  {
+   "name": "Cold Spring Harbor Laboratory",
+   "ror": "https://ror.org/02qz8b764",
+   "country": "US",
+   "authors": [
+    [433, 2018, 2018]
+   ],
+   "papers": ["lean4-phylo-network/fastnet"]
+  },
+  {
+   "name": "Colorado State University",
+   "ror": "https://ror.org/03k1gpj17",
+   "country": "US",
+   "authors": [
+    [654, 1986, 1986]
+   ],
+   "papers": ["lean4-phylo-gene-tree/tavare1986"]
+  },
+  {
+   "name": "Columbia University",
+   "ror": "https://ror.org/00hj8s172",
+   "country": "US",
+   "authors": [
+    [600, 2012, 2012]
+   ],
+   "papers": ["lean4-phylo-species-tree/snapp"]
+  },
+  {
+   "name": "Comenius University Bratislava",
+   "ror": "https://ror.org/0587ef340",
+   "country": "SK",
+   "authors": [
+    [271, 2007, 2007]
+   ],
+   "papers": ["lean4-phylo-statistics/stefankovic2007-pitfalls"]
+  },
+  {
+   "name": "Delaware State University",
+   "ror": "https://ror.org/03g35dg18",
+   "country": "US",
+   "authors": [
+    [31, 2010, 2012]
+   ],
+   "papers": ["lean4-phylo-gene-tree/mrbayes3-2", "lean4-phylo-species-tree/mp-est", "lean4-phylo-species-tree/njst"]
+  },
+  {
+   "name": "Digital Equipment Corporation",
+   "ror": null,
+   "country": "US",
+   "authors": [
+    [435, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-combinatorics/henzinger1999"]
+  },
+  {
+   "name": "Emory University",
+   "ror": "https://ror.org/03czfpz43",
+   "country": "US",
+   "authors": [
+    [426, 1996, 1996]
+   ],
+   "papers": ["lean4-phylo-gene-tree/efron1996"]
+  },
+  {
+   "name": "Erasmus MC",
+   "ror": "https://ror.org/018906e22",
+   "country": "NL",
+   "authors": [
+    [317, 2013, 2013]
+   ],
+   "papers": ["lean4-phylo-geometry/feragen2013"]
+  },
+  {
+   "name": "FORTH Institute of Computer Science",
+   "ror": "https://ror.org/02tf48g55",
+   "country": "GR",
+   "authors": [
+    [21, 2024, 2024]
+   ],
+   "papers": ["lean4-phylo-species-tree/alerax"]
+  },
+  {
+   "name": "Fields Institute for Research in Mathematical Sciences",
+   "ror": "https://ror.org/03zzj3f20",
+   "country": "CA",
+   "authors": [
+    [25, 2011, 2011]
+   ],
+   "papers": ["lean4-phylo-geometry/owen2011"]
+  },
+  {
+   "name": "Florida Atlantic University",
+   "ror": "https://ror.org/05p8w6387",
+   "country": "US",
+   "authors": [
+    [60, 2023, 2023]
+   ],
+   "papers": ["lean4-phylo-species-tree/adams2023"]
+  },
+  {
+   "name": "Freie Universität Berlin",
+   "ror": "https://ror.org/046ak2485",
+   "country": "DE",
+   "authors": [
+    [304, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-gene-tree/iqtree3"]
+  },
+  {
+   "name": "Georgia Southern University",
+   "ror": "https://ror.org/04agmb972",
+   "country": "US",
+   "authors": [
+    [136, 2009, 2011]
+   ],
+   "papers": ["lean4-phylo-species-tree/mp-est", "lean4-phylo-species-tree/njst", "lean4-phylo-species-tree/star-steac"]
+  },
+  {
+   "name": "GlaxoSmithKline (United States)",
+   "ror": "https://ror.org/025vn3989",
+   "country": "US",
+   "authors": [
+    [670, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-gene-tree/dcm2"]
+  },
+  {
+   "name": "Goethe University Frankfurt",
+   "ror": "https://ror.org/04cvxnb49",
+   "country": "DE",
+   "authors": [
+    [530, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-alignment/fleissner2005"]
+  },
+  {
+   "name": "Google (Israel)",
+   "ror": "https://ror.org/02c20ys54",
+   "country": "IL",
+   "authors": [
+    [430, 2010, 2010]
+   ],
+   "papers": ["lean4-phylo-alignment/andoni2010"]
+  },
+  {
+   "name": "Group for Research in Decision Analysis",
+   "ror": "https://ror.org/02pkvpx84",
+   "country": "CA",
+   "authors": [
+    [11, 1997, 1997]
+   ],
+   "papers": ["lean4-phylo-gene-tree/bionj"]
+  },
+  {
+   "name": "Gunma University",
+   "ror": "https://ror.org/046fm7598",
+   "country": "JP",
+   "authors": [
+    [541, 1995, 1995]
+   ],
+   "papers": ["lean4-phylo-alignment/miyazawa1995"]
+  },
+  {
+   "name": "HUN-REN Alfréd Rényi Institute of Mathematics",
+   "ror": "https://ror.org/03vw74f64",
+   "country": "HU",
+   "authors": [
+    [93, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-statistics/erdos1999-part1", "lean4-phylo-statistics/erdos1999-part2"]
+  },
+  {
+   "name": "HUN-REN Centre for Ecological Research",
+   "ror": "https://ror.org/04bhfmv97",
+   "country": "HU",
+   "authors": [
+    [127, 2022, 2024]
+   ],
+   "papers": ["lean4-phylo-species-tree/alerax", "lean4-phylo-species-tree/speciesrax"]
+  },
+  {
+   "name": "Hobart and William Smith Colleges",
+   "ror": "https://ror.org/004majf41",
+   "country": "US",
+   "authors": [
+    [602, 2019, 2019]
+   ],
+   "papers": ["lean4-phylo-network/huebler2019"]
+  },
+  {
+   "name": "Human Technopole",
+   "ror": "https://ror.org/029gmnc79",
+   "country": "IT",
+   "authors": [
+    [421, 2023, 2023]
+   ],
+   "papers": ["lean4-phylo-alignment/marcosola2023"]
+  },
+  {
+   "name": "Humboldt-Universität zu Berlin",
+   "ror": "https://ror.org/01hcx6992",
+   "country": "DE",
+   "authors": [
+    [377, 2008, 2008]
+   ],
+   "papers": ["lean4-phylo-gene-tree/eickmeyer2008"]
+  },
+  {
+   "name": "Hungarian Academy of Sciences",
+   "ror": "https://ror.org/02ks8qq67",
+   "country": "HU",
+   "authors": [
+    [93, 1993, 1993]
+   ],
+   "papers": ["lean4-phylo-algebraic/szekely1993"]
+  },
+  {
+   "name": "IMT Mines Alès",
+   "ror": "https://ror.org/03e8rf594",
+   "country": "FR",
+   "authors": [
+    [428, 2011, 2011]
+   ],
+   "papers": ["lean4-phylo-alignment/macse"]
+  },
+  {
+   "name": "ISREC Foundation",
+   "ror": "https://ror.org/04p69na38",
+   "country": "CH",
+   "authors": [
+    [48, 2000, 2000]
+   ],
+   "papers": ["lean4-phylo-alignment/t-coffee"]
+  },
+  {
+   "name": "Idaho State University",
+   "ror": "https://ror.org/0162z8b04",
+   "country": "US",
+   "authors": [
+    [261, 1976, 1976]
+   ],
+   "papers": ["lean4-phylo-alignment/waterman1976"]
+  },
+  {
+   "name": "Institut de Biologia Evolutiva",
+   "ror": "https://ror.org/044mj7r89",
+   "country": "ES",
+   "authors": [
+    [489, 2019, 2019]
+   ],
+   "papers": ["lean4-phylo-alignment/garriga2019"]
+  },
+  {
+   "name": "Institut de génétique et de biologie moléculaire et cellulaire",
+   "ror": "https://ror.org/0015ws592",
+   "country": "FR",
+   "authors": [
+    [253, 2011, 2011]
+   ],
+   "papers": ["lean4-phylo-alignment/clustal-omega"]
+  },
+  {
+   "name": "Institute of Crop Sciences",
+   "ror": "https://ror.org/051abs833",
+   "country": "CN",
+   "authors": [
+    [680, 2021, 2021]
+   ],
+   "papers": ["lean4-phylo-network/snappnet"]
+  },
+  {
+   "name": "Institute of Science and Technology Austria",
+   "ror": "https://ror.org/03gnh5541",
+   "country": "AT",
+   "authors": [
+    [483, 2019, 2019]
+   ],
+   "papers": ["lean4-phylo-alignment/garriga2019"]
+  },
+  {
+   "name": "Institute of Vertebrate Paleontology and Paleoanthropology",
+   "ror": "https://ror.org/0000pmw59",
+   "country": "CN",
+   "authors": [
+    [717, 2018, 2018]
+   ],
+   "papers": ["lean4-phylo-network/zhang2018"]
+  },
+  {
+   "name": "Isthmus SARL",
+   "ror": null,
+   "country": "FR",
+   "authors": [
+    [312, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-geometry/benner2014"]
+  },
+  {
+   "name": "Jhargram Raj College",
+   "ror": "https://ror.org/03qvxc742",
+   "country": "IN",
+   "authors": [
+    [622, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-alignment/babappalign"]
+  },
+  {
+   "name": "John von Neumann Institute for Computing",
+   "ror": "https://ror.org/02zmk8084",
+   "country": "DE",
+   "authors": [
+    [18, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-alignment/fleissner2005"]
+  },
+  {
+   "name": "Kinneret College on the Sea of Galilee",
+   "ror": "https://ror.org/05402ng93",
+   "country": "IL",
+   "authors": [
+    [342, 2015, 2015]
+   ],
+   "papers": ["lean4-phylo-species-tree/wqmc"]
+  },
+  {
+   "name": "Korea Basic Science Institute",
+   "ror": "https://ror.org/0417sdw47",
+   "country": "KR",
+   "authors": [
+    [408, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-alignment/foldmason"]
+  },
+  {
+   "name": "Louisiana State University",
+   "ror": "https://ror.org/05ect4e57",
+   "country": "US",
+   "authors": [
+    [323, 2009, 2009]
+   ],
+   "papers": ["lean4-phylo-species-tree/stem"]
+  },
+  {
+   "name": "MRC Laboratory of Medical Sciences",
+   "ror": "https://ror.org/05p1n6x86",
+   "country": "GB",
+   "authors": [
+    [652, 2015, 2015]
+   ],
+   "papers": ["lean4-phylo-alignment/tan2015"]
+  },
+  {
+   "name": "Martin Marietta Corporation",
+   "ror": null,
+   "country": "US",
+   "authors": [
+    [325, 1987, 1987]
+   ],
+   "papers": ["lean4-phylo-algebraic/cavender1987"]
+  },
+  {
+   "name": "Max Planck Institute for Developmental Biology",
+   "ror": "https://ror.org/022jc0g24",
+   "country": "DE",
+   "authors": [
+    [390, 2013, 2013]
+   ],
+   "papers": ["lean4-phylo-geometry/feragen2013"]
+  },
+  {
+   "name": "Max Planck Institute for Intelligent Systems",
+   "ror": "https://ror.org/04fq9j139",
+   "country": "DE",
+   "authors": [
+    [390, 2013, 2013]
+   ],
+   "papers": ["lean4-phylo-geometry/feragen2013"]
+  },
+  {
+   "name": "Max Planck Institute of Geoanthropology",
+   "ror": "https://ror.org/05mjrzy91",
+   "country": "DE",
+   "authors": [
+    [42, 2017, 2017]
+   ],
+   "papers": ["lean4-phylo-gene-tree/bmodeltest"]
+  },
+  {
+   "name": "Merseburg University of Applied Sciences",
+   "ror": "https://ror.org/04f8x5b20",
+   "country": "DE",
+   "authors": [
+    [629, 2025, 2025]
+   ],
+   "papers": ["lean4-phylo-geometry/moulton2025"]
+  },
+  {
+   "name": "Middlesex University London",
+   "ror": "https://ror.org/01rv4p989",
+   "country": "GB",
+   "authors": [
+    [29, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-network/frohn2026"]
+  },
+  {
+   "name": "Mohamed bin Zayed University of Artificial Intelligence",
+   "ror": "https://ror.org/0258gkt32",
+   "country": "AE",
+   "authors": [
+    [48, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-alignment/famsa2"]
+  },
+  {
+   "name": "Museum of New Zealand Te Papa Tongarewa",
+   "ror": "https://ror.org/05c9swc26",
+   "country": "NZ",
+   "authors": [
+    [531, 2018, 2018]
+   ],
+   "papers": ["lean4-phylo-network/zhu2018"]
+  },
+  {
+   "name": "Muséum national d'Histoire naturelle",
+   "ror": "https://ror.org/03wkt5x30",
+   "country": "FR",
+   "authors": [
+    [11, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-network/wicke2026"]
+  },
+  {
+   "name": "National Institute for Theory and Mathematics in Biology",
+   "ror": null,
+   "country": "US",
+   "authors": [
+    [133, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-network/wicke2026"]
+  },
+  {
+   "name": "Natural History Museum",
+   "ror": "https://ror.org/039zvsn29",
+   "country": "GB",
+   "authors": [
+    [34, 1994, 1994]
+   ],
+   "papers": ["lean4-phylo-gene-tree/goldman1994", "lean4-phylo-gene-tree/yang1994"]
+  },
+  {
+   "name": "Nisource (United States)",
+   "ror": "https://ror.org/03yajem64",
+   "country": "US",
+   "authors": [
+    [69, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-algebraic/xue2026"]
+  },
+  {
+   "name": "Northern Michigan University",
+   "ror": "https://ror.org/01epvyf46",
+   "country": "US",
+   "authors": [
+    [242, 1976, 1981]
+   ],
+   "papers": ["lean4-phylo-alignment/smith1981", "lean4-phylo-alignment/waterman1976"]
+  },
+  {
+   "name": "Northumbria University",
+   "ror": "https://ror.org/049e6bc10",
+   "country": "GB",
+   "authors": [
+    [177, 2024, 2024]
+   ],
+   "papers": ["lean4-phylo-geometry/lueg2024"]
+  },
+  {
+   "name": "Okinawa Institute of Science and Technology Graduate University",
+   "ror": "https://ror.org/02qg15b79",
+   "country": "JP",
+   "authors": [
+    [127, 2024, 2024]
+   ],
+   "papers": ["lean4-phylo-species-tree/alerax"]
+  },
+  {
+   "name": "Peking University",
+   "ror": "https://ror.org/02v51f717",
+   "country": "CN",
+   "authors": [
+    [15, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-species-tree/waster"]
+  },
+  {
+   "name": "Pennsylvania Western University",
+   "ror": "https://ror.org/01w8vjw54",
+   "country": "US",
+   "authors": [
+    [694, 1994, 1994]
+   ],
+   "papers": ["lean4-phylo-combinatorics/mcmorris1994"]
+  },
+  {
+   "name": "Queen Mary University of London",
+   "ror": "https://ror.org/026zzn846",
+   "country": "GB",
+   "authors": [
+    [587, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-gene-tree/iqtree3"]
+  },
+  {
+   "name": "RIKEN Center for Interdisciplinary Theoretical and Mathematical Sciences",
+   "ror": "https://ror.org/022hvg611",
+   "country": "JP",
+   "authors": [
+    [68, 2025, 2026]
+   ],
+   "papers": ["lean4-phylo-network/inphynet", "lean4-phylo-network/snaq-jl"]
+  },
+  {
+   "name": "Rhône-Poulenc Rorer",
+   "ror": null,
+   "country": "GB",
+   "authors": [
+    [111, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-alignment/dialign2"]
+  },
+  {
+   "name": "Rockefeller University",
+   "ror": "https://ror.org/0420db125",
+   "country": "US",
+   "authors": [
+    [626, 2000, 2000]
+   ],
+   "papers": ["lean4-phylo-gene-tree/weighbor"]
+  },
+  {
+   "name": "Ronin Institute",
+   "ror": "https://ror.org/04awze035",
+   "country": "US",
+   "authors": [
+    [52, 2021, 2021]
+   ],
+   "papers": ["lean4-phylo-alignment/bali-phy3"]
+  },
+  {
+   "name": "Rutgers, The State University of New Jersey",
+   "ror": "https://ror.org/05vt9qd57",
+   "country": "US",
+   "authors": [
+    [388, 1995, 1995]
+   ],
+   "papers": ["lean4-phylo-gene-tree/farach1995"]
+  },
+  {
+   "name": "SHOWA Medical University",
+   "ror": "https://ror.org/04mzk4q39",
+   "country": "JP",
+   "authors": [
+    [709, 1985, 1985]
+   ],
+   "papers": ["lean4-phylo-gene-tree/hasegawa1985"]
+  },
+  {
+   "name": "Saitama Cancer Center",
+   "ror": "https://ror.org/03a4d7t12",
+   "country": "JP",
+   "authors": [
+    [180, 1982, 1993]
+   ],
+   "papers": ["lean4-phylo-alignment/gotoh1982", "lean4-phylo-alignment/gotoh1993"]
+  },
+  {
+   "name": "Shahid Beheshti University",
+   "ror": "https://ror.org/0091vmj44",
+   "country": "IR",
+   "authors": [
+    [384, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-network/tripnet"]
+  },
+  {
+   "name": "Shepherd University",
+   "ror": "https://ror.org/00y93ak93",
+   "country": "US",
+   "authors": [
+    [473, 1988, 1988]
+   ],
+   "papers": ["lean4-phylo-gene-tree/studier1988"]
+  },
+  {
+   "name": "SmithKline Beecham",
+   "ror": null,
+   "country": "US",
+   "authors": [
+    [591, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-gene-tree/huson1999-hybrid"]
+  },
+  {
+   "name": "Sungkyunkwan University",
+   "ror": "https://ror.org/04q78tk20",
+   "country": "KR",
+   "authors": [
+    [536, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-alignment/foldmason"]
+  },
+  {
+   "name": "Technische Universität Ilmenau",
+   "ror": "https://ror.org/01weqhp73",
+   "country": "DE",
+   "authors": [
+    [447, 2013, 2013]
+   ],
+   "papers": ["lean4-phylo-geometry/hotz2013"]
+  },
+  {
+   "name": "Texas A&M University",
+   "ror": "https://ror.org/01f5ytq51",
+   "country": "US",
+   "authors": [
+    [251, 2017, 2017]
+   ],
+   "papers": ["lean4-phylo-geometry/lin2017", "lean4-phylo-geometry/nye2017"]
+  },
+  {
+   "name": "Texas State University",
+   "ror": "https://ror.org/05h9q1g27",
+   "country": "US",
+   "authors": [
+    [469, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-network/cummings2026"]
+  },
+  {
+   "name": "The Graduate Center, CUNY",
+   "ror": "https://ror.org/00awd9g61",
+   "country": "US",
+   "authors": [
+    [103, 2001, 2007]
+   ],
+   "papers": ["lean4-phylo-geometry/amenta2007", "lean4-phylo-statistics/warnow2001"]
+  },
+  {
+   "name": "The Kids Research Institute Australia",
+   "ror": "https://ror.org/01dbmzx78",
+   "country": "AU",
+   "authors": [
+    [107, 2020, 2020]
+   ],
+   "papers": ["lean4-phylo-alignment/kalign3"]
+  },
+  {
+   "name": "The University of Sydney",
+   "ror": "https://ror.org/0384j8v12",
+   "country": "AU",
+   "authors": [
+    [441, 2012, 2012]
+   ],
+   "papers": ["lean4-phylo-gene-tree/partitionfinder"]
+  },
+  {
+   "name": "The University of Western Australia",
+   "ror": "https://ror.org/047272k79",
+   "country": "AU",
+   "authors": [
+    [107, 2020, 2020]
+   ],
+   "papers": ["lean4-phylo-alignment/kalign3"]
+  },
+  {
+   "name": "Tohoku University",
+   "ror": "https://ror.org/01dq60k83",
+   "country": "JP",
+   "authors": [
+    [704, 2016, 2016]
+   ],
+   "papers": ["lean4-phylo-alignment/yamada2016"]
+  },
+  {
+   "name": "Tokyo Metropolitan University",
+   "ror": "https://ror.org/00ws30h19",
+   "country": "JP",
+   "authors": [
+    [250, 1992, 1992]
+   ],
+   "papers": ["lean4-phylo-gene-tree/tamura1992"]
+  },
+  {
+   "name": "Universidad Nacional Autónoma de México",
+   "ror": "https://ror.org/01tmp8f25",
+   "country": "MX",
+   "authors": [
+    [322, 1988, 1988]
+   ],
+   "papers": ["lean4-phylo-alignment/carrillo1988"]
+  },
+  {
+   "name": "University College Cork",
+   "ror": "https://ror.org/03265fv13",
+   "country": "IE",
+   "authors": [
+    [37, 2000, 2000]
+   ],
+   "papers": ["lean4-phylo-alignment/t-coffee"]
+  },
+  {
+   "name": "University of Bonn",
+   "ror": "https://ror.org/041nas322",
+   "country": "DE",
+   "authors": [
+    [640, 2003, 2003]
+   ],
+   "papers": ["lean4-phylo-geometry/sturm2003"]
+  },
+  {
+   "name": "University of Bristol",
+   "ror": "https://ror.org/0524sp257",
+   "country": "GB",
+   "authors": [
+    [266, 2022, 2024]
+   ],
+   "papers": ["lean4-phylo-species-tree/alerax", "lean4-phylo-species-tree/speciesrax"]
+  },
+  {
+   "name": "University of Chicago",
+   "ror": "https://ror.org/024mw5h28",
+   "country": "US",
+   "authors": [
+    [480, 2006, 2006]
+   ],
+   "papers": ["lean4-phylo-geometry/ardila2006"]
+  },
+  {
+   "name": "University of Delaware",
+   "ror": "https://ror.org/01sbq1a82",
+   "country": "US",
+   "authors": [
+    [364, 2025, 2025]
+   ],
+   "papers": ["lean4-phylo-species-tree/dinh2025"]
+  },
+  {
+   "name": "University of Gothenburg",
+   "ror": "https://ror.org/01tm6cn81",
+   "country": "SE",
+   "authors": [
+    [463, 2017, 2017]
+   ],
+   "papers": ["lean4-phylo-species-tree/jones2017"]
+  },
+  {
+   "name": "University of Groningen",
+   "ror": "https://ror.org/012p63287",
+   "country": "NL",
+   "authors": [
+    [557, 2013, 2013]
+   ],
+   "papers": ["lean4-phylo-gene-tree/minh2013"]
+  },
+  {
+   "name": "University of Hawaii at Hilo",
+   "ror": "https://ror.org/02mp2av58",
+   "country": "US",
+   "authors": [
+    [687, 2017, 2017]
+   ],
+   "papers": ["lean4-phylo-geometry/nye2017"]
+  },
+  {
+   "name": "University of Hawaiʻi at Mānoa",
+   "ror": "https://ror.org/01wspgy28",
+   "country": "US",
+   "authors": [
+    [583, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-network/cummings2026"]
+  },
+  {
+   "name": "University of Idaho",
+   "ror": "https://ror.org/03hbp5t65",
+   "country": "US",
+   "authors": [
+    [395, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-alignment/fleissner2005"]
+  },
+  {
+   "name": "University of Illinois Chicago",
+   "ror": "https://ror.org/02mpq6x41",
+   "country": "US",
+   "authors": [
+    [574, 2011, 2011]
+   ],
+   "papers": ["lean4-phylo-algebraic/allman2011-mixtures"]
+  },
+  {
+   "name": "University of Leeds",
+   "ror": "https://ror.org/024mrxd33",
+   "country": "GB",
+   "authors": [
+    [310, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-geometry/bordewich2005"]
+  },
+  {
+   "name": "University of Louisville",
+   "ror": "https://ror.org/01ckdn478",
+   "country": "US",
+   "authors": [
+    [527, 1994, 1994]
+   ],
+   "papers": ["lean4-phylo-combinatorics/mcmorris1994"]
+  },
+  {
+   "name": "University of North Carolina at Charlotte",
+   "ror": "https://ror.org/04dawnj30",
+   "country": "US",
+   "authors": [
+    [509, 2006, 2006]
+   ],
+   "papers": ["lean4-phylo-alignment/probalign"]
+  },
+  {
+   "name": "University of Nottingham",
+   "ror": "https://ror.org/01ee9ar58",
+   "country": "GB",
+   "authors": [
+    [108, 2013, 2018]
+   ],
+   "papers": ["lean4-phylo-geometry/barden2013", "lean4-phylo-geometry/barden2018", "lean4-phylo-geometry/hotz2013"]
+  },
+  {
+   "name": "University of Ottawa",
+   "ror": "https://ror.org/03c4mmv16",
+   "country": "CA",
+   "authors": [
+    [490, 2019, 2019]
+   ],
+   "papers": ["lean4-phylo-combinatorics/lafond2019"]
+  },
+  {
+   "name": "University of Padua",
+   "ror": "https://ror.org/00240q980",
+   "country": "IT",
+   "authors": [
+    [493, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-alignment/gestalt"]
+  },
+  {
+   "name": "University of South Carolina",
+   "ror": "https://ror.org/02b6qw903",
+   "country": "US",
+   "authors": [
+    [126, 1999, 1999]
+   ],
+   "papers": ["lean4-phylo-statistics/erdos1999-part1", "lean4-phylo-statistics/erdos1999-part2"]
+  },
+  {
+   "name": "University of Southern Maine",
+   "ror": "https://ror.org/03ke6tv85",
+   "country": "US",
+   "authors": [
+    [2, 2003, 2004]
+   ],
+   "papers": ["lean4-phylo-algebraic/allman2003", "lean4-phylo-algebraic/allman2004"]
+  },
+  {
+   "name": "University of Toronto",
+   "ror": "https://ror.org/03dbr7087",
+   "country": "CA",
+   "authors": [
+    [339, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-species-tree/tabatabaee2026"]
+  },
+  {
+   "name": "University of Trieste",
+   "ror": "https://ror.org/02n742c10",
+   "country": "IT",
+   "authors": [
+    [148, 2023, 2024]
+   ],
+   "papers": ["lean4-phylo-network/bernardini2023", "lean4-phylo-network/fhynch"]
+  },
+  {
+   "name": "University of Utah",
+   "ror": "https://ror.org/03r0ha626",
+   "country": "US",
+   "authors": [
+    [448, 2019, 2019]
+   ],
+   "papers": ["lean4-phylo-network/huebler2019"]
+  },
+  {
+   "name": "University of Virginia",
+   "ror": "https://ror.org/0153tk833",
+   "country": "US",
+   "authors": [
+    [698, 2012, 2012]
+   ],
+   "papers": ["lean4-phylo-alignment/zorro"]
+  },
+  {
+   "name": "Universität Hamburg",
+   "ror": "https://ror.org/00g30e956",
+   "country": "DE",
+   "authors": [
+    [539, 2009, 2009]
+   ],
+   "papers": ["lean4-phylo-alignment/misof2009"]
+  },
+  {
+   "name": "Université de Sherbrooke",
+   "ror": "https://ror.org/00kybxq39",
+   "country": "CA",
+   "authors": [
+    [490, 2019, 2019]
+   ],
+   "papers": ["lean4-phylo-combinatorics/lafond2019"]
+  },
+  {
+   "name": "Vietnam National University, Hanoi",
+   "ror": "https://ror.org/02jmfj006",
+   "country": "VN",
+   "authors": [
+    [129, 2010, 2010]
+   ],
+   "papers": ["lean4-phylo-alignment/poy4"]
+  },
+  {
+   "name": "Vrije Universiteit Amsterdam",
+   "ror": "https://ror.org/008xxew50",
+   "country": "NL",
+   "authors": [
+    [124, 2009, 2024]
+   ],
+   "papers": ["lean4-phylo-network/bernardini2023", "lean4-phylo-network/fhynch", "lean4-phylo-network/vaniersel2009"]
+  },
+  {
+   "name": "Wake Forest University",
+   "ror": "https://ror.org/0207ad724",
+   "country": "US",
+   "authors": [
+    [158, 2014, 2015]
+   ],
+   "papers": ["lean4-phylo-species-tree/chifman2015", "lean4-phylo-species-tree/svdquartets"]
+  },
+  {
+   "name": "Walter and Eliza Hall Institute of Medical Research",
+   "ror": "https://ror.org/01b6kha49",
+   "country": "AU",
+   "authors": [
+    [245, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-gene-tree/yap2005"]
+  },
+  {
+   "name": "Waseda University",
+   "ror": "https://ror.org/00ntfnx83",
+   "country": "JP",
+   "authors": [
+    [218, 2005, 2005]
+   ],
+   "papers": ["lean4-phylo-alignment/mafft5"]
+  },
+  {
+   "name": "Washington University in St. Louis",
+   "ror": "https://ror.org/01yc7t268",
+   "country": "US",
+   "authors": [
+    [92, 1998, 1998]
+   ],
+   "papers": ["lean4-phylo-alignment/eddy1998"]
+  },
+  {
+   "name": "Weizmann Institute of Science",
+   "ror": "https://ror.org/0316ej306",
+   "country": "IL",
+   "authors": [
+    [40, 2011, 2011]
+   ],
+   "papers": ["lean4-phylo-statistics/daskalakis2011", "lean4-phylo-statistics/mossel2011"]
+  },
+  {
+   "name": "Wellcome Sanger Institute",
+   "ror": "https://ror.org/05cy4wa09",
+   "country": "GB",
+   "authors": [
+    [328, 2026, 2026]
+   ],
+   "papers": ["lean4-phylo-network/snaq-jl"]
+  },
+  {
+   "name": "Zhejiang University",
+   "ror": "https://ror.org/00a2xv884",
+   "country": "CN",
+   "authors": [
+    [618, 2020, 2020]
+   ],
+   "papers": ["lean4-phylo-alignment/clipkit"]
+  },
+  {
+   "name": "École Normale Supérieure - PSL",
+   "ror": "https://ror.org/05a0dhs15",
+   "country": "FR",
+   "authors": [
+    [725, 2014, 2014]
+   ],
+   "papers": ["lean4-phylo-species-tree/astral"]
+  },
+  {
+   "name": "École Polytechnique Fédérale de Lausanne",
+   "ror": "https://ror.org/02s376052",
+   "country": "CH",
+   "authors": [
+    [21, 2006, 2006]
+   ],
+   "papers": ["lean4-phylo-gene-tree/raxml"]
+  }
+ ],
  "publishers": {
   "AAAS": "American Association for the Advancement of Science",
   "ACM": "Association for Computing Machinery",

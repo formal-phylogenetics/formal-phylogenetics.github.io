@@ -392,12 +392,6 @@ a:hover {
 .panel.empty {
   display: none;
 }
-.p-hint {
-  margin: 0;
-  font-size: 0.84rem;
-  line-height: 1.5;
-  color: var(--ink-3);
-}
 .p-head {
   display: flex;
   align-items: baseline;
@@ -616,20 +610,6 @@ a:hover {
   font-size: 0.86rem;
   color: var(--ink-2);
 }
-.p-text {
-  margin: 0;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: var(--ink-2);
-}
-.p-soft {
-  color: var(--ink-3);
-}
-.p-source {
-  margin: var(--s3) 0 0;
-  font-size: 0.72rem;
-  color: var(--ink-3);
-}
 .p-ids {
   display: flex;
   flex-wrap: wrap;
@@ -734,32 +714,6 @@ a:hover {
   font-variant-numeric: tabular-nums;
   text-align: center;
 }
-a.p-plain {
-  text-decoration: none;
-}
-a.p-plain:hover {
-  border-color: var(--ink-3);
-  color: var(--ink);
-}
-.p-ext {
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-color: var(--ink-4);
-  text-underline-offset: 2px;
-}
-.p-ext:hover {
-  text-decoration-color: var(--ink-3);
-}
-.p-plain {
-  display: inline-flex;
-  align-items: center;
-  height: 26px;
-  padding: 0 10px;
-  border: 1px dashed var(--rule);
-  border-radius: 6px;
-  color: var(--ink-2);
-  font-size: 0.78rem;
-}
 .p-open,
 .f-go {
   padding: 0;
@@ -793,6 +747,13 @@ a.p-plain:hover {
 .p-open.on::after,
 .f-go.on::after {
   content: " · pinned";
+  font-weight: 400;
+  color: var(--ink-3);
+}
+.h-sub {
+  margin-left: 6px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.72rem;
   font-weight: 400;
   color: var(--ink-3);
 }
@@ -1214,13 +1175,6 @@ a.p-plain:hover {
   padding-left: 20px;
   font-size: 0.92rem;
 }
-.h-bar {
-  display: flex;
-  height: 3px;
-  border-radius: 3px;
-  background: var(--rule);
-  overflow: hidden;
-}
 .h-count {
   text-align: right;
   font:
@@ -1438,6 +1392,16 @@ a.tag:hover {
   font-size: 0.8rem;
   color: var(--ink-3);
 }
+.foot a {
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--ink-4);
+  text-underline-offset: 2px;
+}
+.foot a:hover {
+  color: var(--ink);
+  text-decoration-color: var(--ink-3);
+}
 
 @media (max-width: 899px) {
   .hero {
@@ -1465,9 +1429,6 @@ a.tag:hover {
   }
   .family {
     grid-template-columns: 1fr;
-  }
-  .side-head {
-    display: block;
   }
   .key {
     justify-content: flex-start;
