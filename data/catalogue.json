@@ -37,14 +37,6 @@
    "url": "https://github.com/formal-phylogenetics/lean4-phylo-network"
   },
   {
-   "name": "lean4-phylo-tree-of-blobs",
-   "role": "hub",
-   "parent": "lean4-phylo-network",
-   "title": "The tree of blobs of a phylogenetic network",
-   "package": "TreeOfBlobs",
-   "url": "https://github.com/formal-phylogenetics/lean4-phylo-tree-of-blobs"
-  },
-  {
    "name": "lean4-phylo-combinatorics",
    "role": "hub",
    "parent": "lean4-phylogenetics",
@@ -4405,6 +4397,10 @@
     {
      "id": 4,
      "title": "Likelihood and Bayesian inference"
+    },
+    {
+     "id": 5,
+     "title": "Tree of blobs"
     }
    ],
    "paper": [
@@ -5228,20 +5224,10 @@
      "title": "Inference of Phylogenetic Networks from Sequence Data Using Composite Likelihood",
      "url": "https://doi.org/10.1093/sysbio/syae054",
      "status": "todo"
-    }
-   ]
-  },
-  "lean4-phylo-tree-of-blobs": {
-   "family": [
-    {
-     "id": 1,
-     "title": "The tree of blobs: identifiability and consistent inference"
-    }
-   ],
-   "paper": [
+    },
     {
      "id": "allman2023",
-     "family": 1,
+     "family": 5,
      "order": 1,
      "kind": "theory",
      "authors": "Allman, Baños, Mitchell, Rhodes",
@@ -5253,7 +5239,7 @@
     },
     {
      "id": "tinnik",
-     "family": 1,
+     "family": 5,
      "order": 2,
      "short": "TINNiK",
      "kind": "method",
@@ -5266,7 +5252,7 @@
     },
     {
      "id": "tob-qmc",
-     "family": 1,
+     "family": 5,
      "order": 3,
      "short": "TOB-QMC",
      "kind": "method",
@@ -5279,7 +5265,7 @@
     },
     {
      "id": "ectoblob",
-     "family": 1,
+     "family": 5,
      "order": 4,
      "short": "ECToBlob",
      "kind": "method",

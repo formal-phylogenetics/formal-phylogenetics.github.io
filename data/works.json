@@ -6275,6 +6275,30 @@
    ]
   ]
  },
+ "lean4-phylo-network/allman2023": {
+  "authors": ["Elizabeth S. Allman", "Hector Baños", "Jonathan D. Mitchell", "John A. Rhodes"],
+  "venue": "Journal of Mathematical Biology",
+  "where": "86(1):10",
+  "abstract": "Inference of species networks from genomic data under the Network Multispecies Coalescent Model is currently severely limited by heavy computational demands. It also remains unclear how complicated networks can be for consistent inference to be possible. As a step toward inferring a general species network, this work considers its tree of blobs, in which non-cut edges are contracted to nodes, so only tree-like relationships between the taxa are shown. An identifiability theorem, that most features of the unrooted tree of blobs can be determined from the distribution of gene quartet topologies, is established. This depends upon an analysis of gene quartet concordance factors under the model, together with a new combinatorial inference rule. The arguments for this theoretical result suggest a practical algorithm for tree of blobs inference, to be fully developed in a subsequent work.",
+  "byline": [
+   [
+    2,
+    [78]
+   ],
+   [
+    8,
+    [67]
+   ],
+   [
+    75,
+    [78, 183]
+   ],
+   [
+    1,
+    [78]
+   ]
+  ]
+ },
  "lean4-phylo-network/allman2024": {
   "authors": ["Elizabeth S. Allman", "Hector Baños", "Marina Garrote-Lopez", "John A. Rhodes"],
   "venue": "Bulletin of Mathematical Biology",
@@ -6527,6 +6551,29 @@
    [
     63,
     [33]
+   ]
+  ]
+ },
+ "lean4-phylo-network/ectoblob": {
+  "authors": ["John A. Rhodes", "Elizabeth S. Allman", "Cecile Ané", "Hector Baños"],
+  "venue": "bioRxiv",
+  "abstract": "A phylogenetic network represents evolutionary relationships involving hybridization, gene flow, or admixture. While the full network may not be identifiable from genomic data under common coalescent models, its tree of blobs, depicting only the tree-like portions of the network structure, is. We introduce ECToBlob (Edge Contraction for Tree of Blobs), a new statistically-consistent algorithm to estimate the tree of blobs from quartet concordance factors. Starting from a resolved tree, ECToBlob successively contracts edges which statistical tests indicate do not belong in the tree of blobs, due to reticulate or polytomous signal. We show that ASTRAL provides a valid starting tree under common assumptions, in that, asymptotically in the number of loci, trees optimizing ASTRAL ’s criterion refine the tree of blobs. We describe several algorithm variants, differing in how evidence from multiple tests are combined to determine if the edge should be contracted, and provide software implementations. Relevance to Life Sciences Hybridization, gene flow, or admixture are now recognized as important aspects of evolutionary history, but their genomic signal is confounded with that from a coalescent process, creating substantial challenges for inferring phylogenetic networks. The network’s tree of blobs identifies areas where reticulation occurred, separated by tree-like branching. ECToBlob quickly estimates the tree of blobs using quartet concordance factors from gene trees, and provides a measure of statistical support for its result. Performance is illustrated through simulation and on empirical data, using an implementation in the R package MSCquartets. While the presence of a blob may be all that can be inferred in some cases, in others ECToBlob offers a robust and principled way to focus further analyses on more local reticulate structure. Mathematical Content This work makes contributions to mathematical phylogenetics in optimization, combinatorics, and statistics. We show that any tree maximizing quartet support (the criterion underlying ASTRAL) is a refinement of the network’s tree of blobs under the coalescent model. Second, we give a concise proof that whether a network has a cut-edge corresponding to a given split is determined by information in certain subcollections of its 4-taxon subnetworks (quarnets). Finally, we propose valid statistical approaches for combining p -values across multiple quarnet hypothesis tests, proving that their use with specific decreasing test levels leads to statistically consistent inference as the number of loci grows. MSC codes 05C90, 60J95, 62-04, 62F07, 92D15",
+  "byline": [
+   [
+    1,
+    [78]
+   ],
+   [
+    2,
+    [78]
+   ],
+   [
+    13,
+    [5]
+   ],
+   [
+    8,
+    [204]
    ]
   ]
  },
@@ -7376,6 +7423,49 @@
    [
     6,
     [62]
+   ]
+  ]
+ },
+ "lean4-phylo-network/tinnik": {
+  "authors": ["Elizabeth S. Allman", "Hector Baños", "Jonathan D. Mitchell", "John A. Rhodes"],
+  "venue": "Algorithms for Molecular Biology",
+  "where": "19(1):23",
+  "abstract": "The tree of blobs of a species network shows only the tree-like aspects of relationships of taxa on a network, omitting information on network substructures where hybridization or other types of lateral transfer of genetic information occur. By isolating such regions of a network, inference of the tree of blobs can serve as a starting point for a more detailed investigation, or indicate the limit of what may be inferrable without additional assumptions. Building on our theoretical work on the identifiability of the tree of blobs from gene quartet distributions under the Network Multispecies Coalescent model, we develop an algorithm, TINNiK, for statistically consistent tree of blobs inference. We provide examples of its application to both simulated and empirical datasets, utilizing an implementation in the MSCquartets 2.0 R package.",
+  "byline": [
+   [
+    2,
+    [78]
+   ],
+   [
+    8,
+    [204]
+   ],
+   [
+    75,
+    [183]
+   ],
+   [
+    1,
+    [78]
+   ]
+  ]
+ },
+ "lean4-phylo-network/tob-qmc": {
+  "authors": ["Junyan Dai", "Yunheng Han", "Erin K. Molloy"],
+  "venue": "bioRxiv",
+  "abstract": "Hybridization between species is an important force in evolution, commonly modeled by the network multispecies coalescent. Reconstructing evolutionary histories under this model is computationally challenging, even for level-1 networks where hybridization events are isolated. Divide-and-conquer is a promising path forward, but current methods with statistical guarantees rely on an estimated tree of blobs (TOB) for the network, which compresses the non-tree-like parts into single vertices. TOB reconstruction is itself challenging, with the only available method TINNiK having time complexity O(n⁵ + n⁴k) for k genes and n species. Here, we present a new framework for scalable TOB reconstruction with statistical guarantees. Our approach operates by (1) seeking a refinement of the TOB and then (2) contracting edges in it. For step (1), we show that any optimal solution to Weighted Quartet Consensus is a TOB refinement almost surely, as the number of genes goes to infinity, motivating the use of methods, such as ASTRAL or TREE-QMC. For step (2), we show that applying the same hypothesis tests as TINNiK to just O(n) four-taxon subsets around each edge is sufficient for statistical consistency when the underlying network is level-1. Leveraging TREE-QMC for the first step gives our method time complexity O(n³k) and its name: TOB-QMC. On simulated data, TOB-QMC typically matches or exceeds TINNiK in accuracy while being more scalable. TOB-QMC also enables fast exploration of non-tree-like evolution, as demonstrated through re-analysis of three phylogenomic data sets. Lastly, our study clarifies the theoretical utility of quartet-based species tree methods in the context of hybridization, which is critical given the recent result that ASTRAL can be misleading.",
+  "byline": [
+   [
+    160,
+    [63]
+   ],
+   [
+    100,
+    [63]
+   ],
+   [
+    14,
+    [63]
    ]
   ]
  },
@@ -10542,96 +10632,6 @@
    [
     103,
     [92]
-   ]
-  ]
- },
- "lean4-phylo-tree-of-blobs/allman2023": {
-  "authors": ["Elizabeth S. Allman", "Hector Baños", "Jonathan D. Mitchell", "John A. Rhodes"],
-  "venue": "Journal of Mathematical Biology",
-  "where": "86(1):10",
-  "abstract": "Inference of species networks from genomic data under the Network Multispecies Coalescent Model is currently severely limited by heavy computational demands. It also remains unclear how complicated networks can be for consistent inference to be possible. As a step toward inferring a general species network, this work considers its tree of blobs, in which non-cut edges are contracted to nodes, so only tree-like relationships between the taxa are shown. An identifiability theorem, that most features of the unrooted tree of blobs can be determined from the distribution of gene quartet topologies, is established. This depends upon an analysis of gene quartet concordance factors under the model, together with a new combinatorial inference rule. The arguments for this theoretical result suggest a practical algorithm for tree of blobs inference, to be fully developed in a subsequent work.",
-  "byline": [
-   [
-    2,
-    [78]
-   ],
-   [
-    8,
-    [67]
-   ],
-   [
-    75,
-    [78, 183]
-   ],
-   [
-    1,
-    [78]
-   ]
-  ]
- },
- "lean4-phylo-tree-of-blobs/ectoblob": {
-  "authors": ["John A. Rhodes", "Elizabeth S. Allman", "Cecile Ané", "Hector Baños"],
-  "venue": "bioRxiv",
-  "abstract": "A phylogenetic network represents evolutionary relationships involving hybridization, gene flow, or admixture. While the full network may not be identifiable from genomic data under common coalescent models, its tree of blobs, depicting only the tree-like portions of the network structure, is. We introduce ECToBlob (Edge Contraction for Tree of Blobs), a new statistically-consistent algorithm to estimate the tree of blobs from quartet concordance factors. Starting from a resolved tree, ECToBlob successively contracts edges which statistical tests indicate do not belong in the tree of blobs, due to reticulate or polytomous signal. We show that ASTRAL provides a valid starting tree under common assumptions, in that, asymptotically in the number of loci, trees optimizing ASTRAL ’s criterion refine the tree of blobs. We describe several algorithm variants, differing in how evidence from multiple tests are combined to determine if the edge should be contracted, and provide software implementations. Relevance to Life Sciences Hybridization, gene flow, or admixture are now recognized as important aspects of evolutionary history, but their genomic signal is confounded with that from a coalescent process, creating substantial challenges for inferring phylogenetic networks. The network’s tree of blobs identifies areas where reticulation occurred, separated by tree-like branching. ECToBlob quickly estimates the tree of blobs using quartet concordance factors from gene trees, and provides a measure of statistical support for its result. Performance is illustrated through simulation and on empirical data, using an implementation in the R package MSCquartets. While the presence of a blob may be all that can be inferred in some cases, in others ECToBlob offers a robust and principled way to focus further analyses on more local reticulate structure. Mathematical Content This work makes contributions to mathematical phylogenetics in optimization, combinatorics, and statistics. We show that any tree maximizing quartet support (the criterion underlying ASTRAL) is a refinement of the network’s tree of blobs under the coalescent model. Second, we give a concise proof that whether a network has a cut-edge corresponding to a given split is determined by information in certain subcollections of its 4-taxon subnetworks (quarnets). Finally, we propose valid statistical approaches for combining p -values across multiple quarnet hypothesis tests, proving that their use with specific decreasing test levels leads to statistically consistent inference as the number of loci grows. MSC codes 05C90, 60J95, 62-04, 62F07, 92D15",
-  "byline": [
-   [
-    1,
-    [78]
-   ],
-   [
-    2,
-    [78]
-   ],
-   [
-    13,
-    [5]
-   ],
-   [
-    8,
-    [204]
-   ]
-  ]
- },
- "lean4-phylo-tree-of-blobs/tinnik": {
-  "authors": ["Elizabeth S. Allman", "Hector Baños", "Jonathan D. Mitchell", "John A. Rhodes"],
-  "venue": "Algorithms for Molecular Biology",
-  "where": "19(1):23",
-  "abstract": "The tree of blobs of a species network shows only the tree-like aspects of relationships of taxa on a network, omitting information on network substructures where hybridization or other types of lateral transfer of genetic information occur. By isolating such regions of a network, inference of the tree of blobs can serve as a starting point for a more detailed investigation, or indicate the limit of what may be inferrable without additional assumptions. Building on our theoretical work on the identifiability of the tree of blobs from gene quartet distributions under the Network Multispecies Coalescent model, we develop an algorithm, TINNiK, for statistically consistent tree of blobs inference. We provide examples of its application to both simulated and empirical datasets, utilizing an implementation in the MSCquartets 2.0 R package.",
-  "byline": [
-   [
-    2,
-    [78]
-   ],
-   [
-    8,
-    [204]
-   ],
-   [
-    75,
-    [183]
-   ],
-   [
-    1,
-    [78]
-   ]
-  ]
- },
- "lean4-phylo-tree-of-blobs/tob-qmc": {
-  "authors": ["Junyan Dai", "Yunheng Han", "Erin K. Molloy"],
-  "venue": "bioRxiv",
-  "abstract": "Hybridization between species is an important force in evolution, commonly modeled by the network multispecies coalescent. Reconstructing evolutionary histories under this model is computationally challenging, even for level-1 networks where hybridization events are isolated. Divide-and-conquer is a promising path forward, but current methods with statistical guarantees rely on an estimated tree of blobs (TOB) for the network, which compresses the non-tree-like parts into single vertices. TOB reconstruction is itself challenging, with the only available method TINNiK having time complexity O(n⁵ + n⁴k) for k genes and n species. Here, we present a new framework for scalable TOB reconstruction with statistical guarantees. Our approach operates by (1) seeking a refinement of the TOB and then (2) contracting edges in it. For step (1), we show that any optimal solution to Weighted Quartet Consensus is a TOB refinement almost surely, as the number of genes goes to infinity, motivating the use of methods, such as ASTRAL or TREE-QMC. For step (2), we show that applying the same hypothesis tests as TINNiK to just O(n) four-taxon subsets around each edge is sufficient for statistical consistency when the underlying network is level-1. Leveraging TREE-QMC for the first step gives our method time complexity O(n³k) and its name: TOB-QMC. On simulated data, TOB-QMC typically matches or exceeds TINNiK in accuracy while being more scalable. TOB-QMC also enables fast exploration of non-tree-like evolution, as demonstrated through re-analysis of three phylogenomic data sets. Lastly, our study clarifies the theoretical utility of quartet-based species tree methods in the context of hybridization, which is critical given the recent result that ASTRAL can be misleading.",
-  "byline": [
-   [
-    160,
-    [63]
-   ],
-   [
-    100,
-    [63]
-   ],
-   [
-    14,
-    [63]
    ]
   ]
  }
