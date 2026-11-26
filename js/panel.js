@@ -287,28 +287,43 @@ export function renderPanel(ui) {
   readWork(e).then((w) => {
     if (ui.selected !== e || !w) return;
     const by = p.querySelector("#p-by");
-    // the byline: each author, in the paper's order, with the institutions the paper gives them
+    // the byline: each author, in the paper's order, with the institutions the paper gives them and
+    // their countries, then the venue and its publisher, each a pill that opens its panel
     const people = ui.model;
     const sec = p.querySelector("#p-authors");
     if (sec && people && w.byline && w.byline.length) {
+      const pill = (kind, i, label, title) =>
+        `<button type="button" class="p-chip${kind === "country" ? " c-land" : ""}" data-go="${kind}:${i}"${title && title !== label ? ` title="${esc(title)}"` : ""}><span>${esc(label)}</span></button>`;
       const rows = w.byline.map(([a, at]) => {
         const who = typeof a === "number" ? people.authors[a] : null;
-        const name = who
-          ? `<button type="button" class="p-up" data-go="author:${who.i}">${esc(who.name)}</button>`
-          : esc(a);
-        const where = at
-          .map((h) => people.institutions[h])
-          .filter(Boolean)
+        const houses = at.map((h) => people.institutions[h]).filter(Boolean);
+        // each institution, then its country when it is not the one before
+        const places = houses
           .map(
-            (h) =>
-              `<button type="button" class="p-up" data-go="institution:${h.i}">${esc(h.name)}</button>`,
+            (h, k) =>
+              pill("institution", h.i, h.name) +
+              (h.land && (k === 0 || houses[k - 1].land !== h.land)
+                ? pill("country", h.land.i, h.land.name)
+                : ""),
           )
-          .join("; ");
-        return `<li><span class="l-main">${name}</span>${where ? `<span class="l-sub">${where}</span>` : ""}</li>`;
+          .join("");
+        return `<div class="p-arow">${
+          who
+            ? pill("author", who.i, who.short || who.name, who.name)
+            : `<span class="p-plain">${esc(a)}</span>`
+        }${places}</div>`;
       });
-      sec.innerHTML = `<h3>Authors <span>${rows.length}</span></h3><ul class="p-list">${rows.join("")}</ul>${
+      const venue = people.venueOf.get(e);
+      const house = venue && venue.house;
+      sec.innerHTML = `<h3>Authors <span>${rows.length}</span></h3><div class="p-arows">${rows.join("")}</div>${
         rows.length > 12
           ? `<button type="button" class="p-more" data-all>+${rows.length - 12} more</button>`
+          : ""
+      }${
+        venue
+          ? `<h3 class="p-vhead">Venue</h3><div class="p-chips">${pill("venue", venue.i, venue.short || venue.name, venue.name)}${
+              house ? pill("publisher", house.i, house.full || house.name) : ""
+            }</div>`
           : ""
       }`;
       sec.hidden = false;

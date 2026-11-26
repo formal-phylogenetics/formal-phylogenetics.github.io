@@ -640,8 +640,34 @@ a:hover {
   cursor: pointer;
 }
 /* a long byline shows its first authors until asked for the rest */
-.p-auth:not(.all) .p-list > li:nth-child(n + 13) {
+.p-auth:not(.all) .p-arows > .p-arow:nth-child(n + 13) {
   display: none;
+}
+/* an entry's authors: a line each, the author's pill, then their institutions and countries */
+.p-arow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 0;
+  border-top: 1px solid var(--rule);
+}
+.p-arow:first-child {
+  border-top: 0;
+}
+.p-arow > .p-chip:first-child {
+  margin-right: 4px;
+  font-weight: 600;
+}
+.p-chip.c-land {
+  color: var(--ink-3);
+}
+.p-plain {
+  margin-right: 4px;
+  color: var(--ink-2);
+}
+.p-auth .p-vhead {
+  margin-top: var(--s3);
 }
 .p-more:hover {
   border-color: var(--ink-3);
