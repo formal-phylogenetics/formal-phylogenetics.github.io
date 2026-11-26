@@ -1,7 +1,7 @@
 // The catalogue of formal phylogenetics. It reads the registry of the collection and the catalog of
 // each hub from GitHub and shows the entries in two views: the tree of the collection, drawn as a
-// fan, and the timeline of the entries with the citations between them, stored with the site by
-// snapshot.py. Below them, each hub opens to its families and their entries. The page is drawn into #app; the host page gives the header
+// fan, and the timeline of the entries with the citations between them, stored with the site.
+// Below them, each hub opens to its families and their entries. The page is drawn into #app; the host page gives the header
 // and the footer.
 //
 // One visual language throughout: colour is the hub; shape is the kind of paper, round for a
@@ -660,8 +660,8 @@ function wireTimeline(svg, ui) {
 }
 
 // ---------------------------------------------------------------------------------------------
-// The citations and the works, read from OpenAlex, Semantic Scholar, Europe PMC and Crossref by
-// snapshot.py and stored with the site, so that a visit asks those services nothing.
+// The citations and the works, stored with the site: the citations from the papers' own reference
+// lists, the works from their records. A visit asks no service.
 async function readCitations() {
   const r = await fetch(HERE("citations.json"));
   if (!r.ok) throw new Error("no citations");

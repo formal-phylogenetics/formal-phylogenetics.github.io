@@ -18,26 +18,23 @@ click on the pinned entry unpins it. The header switches between light and dark.
 The page reads the registry of the collection (`collection/repos.toml` in lean4-phylogenetics) and
 the catalog of each hub (`catalog/papers.toml`) from GitHub each time it opens, so a hub, family or
 entry appears as soon as it is pushed. The citations and the abstracts are not read at each visit:
-`snapshot.py` reads them in a few batched requests and stores them in `citations.json` and
-`works.json`: the citations from the reference lists of [OpenAlex](https://openalex.org),
-[Crossref](https://www.crossref.org) and [Semantic Scholar](https://www.semanticscholar.org); the
-authors, venue and abstract of each entry from OpenAlex, and where it has no abstract, from Semantic
-Scholar, [Europe PMC](https://europepmc.org) (the abstracts of PubMed) or Crossref. Once entries are added to the
-catalogs, run the Snapshot workflow from the Actions tab: it runs the script with the repository
-secret `OPENALEX_API_KEY` and commits what changed. The script also runs here; with
-`OPENALEX_API_KEY` set, OpenAlex counts its requests against that key instead of the small budget
-shared by everyone on the same address.
+they are stored in `citations.json` and `works.json`, written from the collection's library of
+papers, which is private. The citations come from the papers' own reference lists, in every version
+the library holds (the list the publisher deposited with [Crossref](https://www.crossref.org), the
+full text in PubMed Central, the PDF, the arXiv source), checked one by one where they differ from
+what [OpenAlex](https://openalex.org), Crossref and [Semantic Scholar](https://www.semanticscholar.org)
+claim. The authors, venue and abstract of each entry come from Crossref, OpenAlex, Semantic Scholar
+and [Europe PMC](https://europepmc.org), or, where none gives the abstract, from the paper itself.
 
 - `index.html`, `style.css`, `app.js`: the page, with no build step; `app.js` draws into `#app`, so
   another site can show the catalogue with its own `index.html` that loads `style.css` and `app.js`
   from here;
 - `catalogue.json`, the catalogs the page falls back on when GitHub cannot be reached;
   `citations.json`, the citations between the entries; `works.json`, the authors, venue and abstract
-  of each entry: all written by `python3 snapshot.py`;
+  of each entry: all written from the library;
 - `catalogue.png`: the image shown when the page is shared, the tree of the collection.
 - `icon.svg`, `apple-touch-icon.png`: the icon, the tree of the collection in brief: the root, its
   trunk forking into theory and inference, and the colour of each hub.
-- `.github/workflows/snapshot.yml`: the Snapshot workflow, which runs `snapshot.py`.
 
 To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>.
 
