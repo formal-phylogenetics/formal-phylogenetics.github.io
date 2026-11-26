@@ -51,7 +51,8 @@ export function listSection(title, rows) {
 }
 
 // the institutions an author's papers in the collection place them at, each with the entries that
-// do (a search for them), and the links to their ORCID, Google Scholar, OpenAlex and Wikipedia pages
+// do (a search for them), and the links to their ORCID, Google Scholar, dblp and OpenAlex pages,
+// those checked to be theirs
 export function authorFacts(pr, people, who) {
   if (!pr) return "";
   return `${linksRow([
@@ -60,8 +61,8 @@ export function authorFacts(pr, people, who) {
       "Google Scholar",
       `https://scholar.google.com/citations?user=${pr.scholar}`,
     ],
+    pr.dblp && ["dblp", `https://dblp.org/pid/${pr.dblp}.html`],
     pr.openalex && ["OpenAlex", `https://openalex.org/${pr.openalex}`],
-    pr.wikipedia && ["Wikipedia", pr.wikipedia],
   ])}
     ${listSection(
       "Institutions",

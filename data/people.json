@@ -1079,7 +1079,7 @@
     ],
     [
      123,
-     2005,
+     2004,
      2021,
      [12, 17, 20]
     ],
@@ -1139,8 +1139,8 @@
     ],
     [
      310,
-     2005,
-     2005,
+     2004,
+     2004,
      [12]
     ]
    ],
@@ -2308,7 +2308,7 @@
     [
      29,
      2019,
-     2025,
+     2026,
      [2, 5, 8, 9, 11, 12]
     ],
     [
@@ -3260,7 +3260,7 @@
     [
      44,
      2010,
-     2025,
+     2026,
      [1, 3]
     ],
     [
@@ -3271,8 +3271,8 @@
     ],
     [
      327,
-     2025,
-     2025,
+     2026,
+     2026,
      [3]
     ],
     [
@@ -4028,7 +4028,7 @@
     [
      138,
      2023,
-     2025,
+     2026,
      [0, 3]
     ],
     [
@@ -8049,8 +8049,8 @@
    "authors": [
     [
      310,
-     2005,
-     2005,
+     2004,
+     2004,
      [0]
     ]
    ],
@@ -10978,7 +10978,7 @@
    "papers": ["lean4-phylo-species-tree/disco"]
   },
   {
-   "name": "Francisco Rodríguez",
+   "name": "F. Rodríguez",
    "papers": ["lean4-phylo-gene-tree/rodriguez1990"]
   },
   {
@@ -11186,9 +11186,8 @@
    "papers": ["lean4-phylo-network/lev1athan"]
   },
   {
-   "name": "Jerry Chih-Yuan Sun",
-   "papers": ["lean4-phylo-statistics/nakhleh2001"],
-   "short": "Jerry Sun"
+   "name": "Jerry Sun",
+   "papers": ["lean4-phylo-statistics/nakhleh2001"]
   },
   {
    "name": "Edward Susko",

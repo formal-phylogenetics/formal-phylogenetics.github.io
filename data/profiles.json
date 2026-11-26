@@ -3,8 +3,8 @@
   {
    "orcid": ["0000-0001-7717-3514"],
    "scholar": "pPB_WK0AAAAJ",
+   "dblp": "w/TandyWarnow",
    "openalex": "A5032411541",
-   "wikipedia": "https://en.wikipedia.org/wiki/Tandy_Warnow",
    "institutions": [
     {
      "name": "University of Illinois Urbana-Champaign",
@@ -53,6 +53,7 @@
   {
    "orcid": ["0000-0001-9921-1091"],
    "scholar": "qFmGkM0AAAAJ",
+   "dblp": "06/439",
    "openalex": "A5089193790",
    "institutions": [
     {
@@ -72,8 +73,8 @@
   {
    "orcid": ["0000-0002-4866-9606"],
    "scholar": "P0Ibe3UAAAAJ",
+   "dblp": "39/4927",
    "openalex": "A5026382332",
-   "wikipedia": "https://en.wikipedia.org/wiki/Elizabeth_S._Allman",
    "institutions": [
     {
      "name": "University of Alaska Fairbanks",
@@ -92,6 +93,7 @@
   {
    "orcid": ["0000-0001-5410-1518"],
    "scholar": "uxSj18QAAAAJ",
+   "dblp": "40/4665",
    "openalex": "A5087959579",
    "institutions": [
     {
@@ -111,6 +113,7 @@
   {
    "orcid": ["0000-0001-7142-4706"],
    "scholar": "9GAwpXYAAAAJ",
+   "dblp": "53/5495",
    "openalex": "A5069094985",
    "institutions": [
     {
@@ -136,6 +139,7 @@
   {
    "orcid": ["0000-0002-7608-8550"],
    "scholar": "hISpTpQAAAAJ",
+   "dblp": "42/5427",
    "openalex": "A5057444173",
    "institutions": [
     {
@@ -160,6 +164,7 @@
   },
   {
    "orcid": ["0000-0001-9371-6435"],
+   "dblp": "m/VMoulton",
    "openalex": "A5042929579",
    "institutions": [
     {
@@ -179,8 +184,8 @@
   {
    "orcid": ["0000-0001-7015-4644"],
    "scholar": "7ezIRWQAAAAJ",
+   "dblp": "s/MikeASteel",
    "openalex": "A5035720494",
-   "wikipedia": "https://en.wikipedia.org/wiki/Mike_Steel_(mathematician)",
    "institutions": [
     {
      "name": "University of Canterbury",
@@ -205,6 +210,7 @@
   {
    "orcid": ["0000-0001-5769-2544"],
    "scholar": "qR0QQqwAAAAJ",
+   "dblp": "255/6743",
    "openalex": "A5064252541",
    "institutions": [
     {
@@ -236,7 +242,7 @@
   {
    "orcid": ["0000-0001-7886-638X"],
    "scholar": "gma2jsIAAAAJ",
-   "openalex": "A5062698632",
+   "dblp": "122/8680",
    "institutions": [
     {
      "name": "University of New Mexico",
@@ -267,8 +273,8 @@
   {
    "orcid": ["0000-0003-3288-6769"],
    "scholar": "46HLWf8AAAAJ",
+   "dblp": "18/7026",
    "openalex": "A5080534085",
-   "wikipedia": "https://en.wikipedia.org/wiki/Luay_Nakhleh",
    "institutions": [
     {
      "name": "Rice University",
@@ -287,8 +293,8 @@
   {
    "orcid": ["0000-0002-9412-9723"],
    "scholar": "vlLa_zgAAAAJ",
+   "dblp": "80/5364",
    "openalex": "A5078068308",
-   "wikipedia": "https://en.wikipedia.org/wiki/Olivier_Gascuel",
    "institutions": [
     {
      "name": "Muséum national d'Histoire naturelle",
@@ -313,6 +319,7 @@
   {
    "orcid": ["0000-0002-5215-7144"],
    "scholar": "NXfqqyMAAAAJ",
+   "dblp": "78/2902",
    "openalex": "A5080396236",
    "institutions": [
     {
@@ -332,8 +339,8 @@
   {
    "orcid": ["0000-0002-4702-8217"],
    "scholar": "zgfSvoYAAAAJ",
+   "dblp": "53/8713",
    "openalex": "A5031584591",
-   "wikipedia": "https://en.wikipedia.org/wiki/C%C3%A9cile_An%C3%A9",
    "institutions": [
     {
      "name": "University of Wisconsin–Madison",
@@ -346,6 +353,7 @@
   {
    "orcid": ["0000-0001-5553-3312"],
    "scholar": "DZshML0AAAAJ",
+   "dblp": "138/6797",
    "openalex": "A5045334836",
    "institutions": [
     {
@@ -371,6 +379,7 @@
   {
    "orcid": ["0000-0002-4222-9968"],
    "scholar": "tLmALrkAAAAJ",
+   "dblp": "94/3019-55",
    "openalex": "A5016903406",
    "institutions": [
     {
@@ -402,8 +411,8 @@
   {
    "orcid": ["0000-0003-0578-867X"],
    "scholar": "vZq8qQ4AAAAJ",
+   "dblp": "242/9425",
    "openalex": "A5110931656",
-   "wikipedia": "https://en.wikipedia.org/wiki/Joseph_Felsenstein",
    "institutions": [
     {
      "name": "University of Washington",
@@ -416,8 +425,8 @@
   {
    "orcid": ["0000-0001-8486-2211"],
    "scholar": "nblpP5sAAAAJ",
+   "dblp": "06/6613",
    "openalex": "A5020967139",
-   "wikipedia": "https://en.wikipedia.org/wiki/Nick_Goldman",
    "institutions": [
     {
      "name": "European Bioinformatics Institute",
@@ -442,8 +451,8 @@
   {
    "orcid": ["0000-0002-3366-4458"],
    "scholar": "iH_4RxYAAAAJ",
+   "dblp": "07/3545",
    "openalex": "A5085983122",
-   "wikipedia": "https://en.wikipedia.org/wiki/Arndt_von_Haeseler",
    "institutions": [
     {
      "name": "University of Vienna",
@@ -474,6 +483,7 @@
   {
    "orcid": ["0000-0003-4133-8393"],
    "scholar": "RA-XeqIAAAAJ",
+   "dblp": "99/5006",
    "openalex": "A5064063992",
    "institutions": [
     {
@@ -505,6 +515,7 @@
   {
    "orcid": ["0000-0002-5535-6560"],
    "scholar": "UI0xN_QAAAAJ",
+   "dblp": "92/422",
    "openalex": "A5019880902",
    "institutions": [
     {
@@ -530,6 +541,7 @@
   {
    "orcid": ["0000-0003-0353-0691"],
    "scholar": "WbMNvJwAAAAJ",
+   "dblp": "01/501",
    "openalex": "A5025640090",
    "institutions": [
     {
@@ -561,6 +573,7 @@
   {
    "orcid": ["0000-0003-4454-2576"],
    "scholar": "qh4gZBMAAAAJ",
+   "dblp": "30/11017",
    "openalex": "A5079724732",
    "institutions": [
     {
@@ -579,8 +592,8 @@
   },
   {
    "orcid": ["0000-0002-6368-7511"],
+   "dblp": "h/KatharinaTHuber",
    "openalex": "A5007694498",
-   "wikipedia": "https://en.wikipedia.org/wiki/Katharina_T._Huber",
    "institutions": [
     {
      "name": "University of East Anglia",
@@ -591,8 +604,10 @@
    ]
   },
   {
+   "orcid": ["0000-0001-9890-3969"],
    "scholar": "exrdRM0AAAAJ",
-   "openalex": "A5015164474",
+   "dblp": "155/3741",
+   "openalex": "A5086108592",
    "institutions": [
     {
      "name": "Michigan State University",
@@ -617,6 +632,7 @@
   {
    "orcid": ["0000-0003-2418-5268"],
    "scholar": "4t7H0QQAAAAJ",
+   "dblp": "78/6671",
    "openalex": "A5013498747",
    "institutions": [
     {
@@ -648,6 +664,7 @@
   {
    "orcid": ["0000-0002-5640-0615"],
    "scholar": "h2vHz3wAAAAJ",
+   "dblp": "12/4544",
    "openalex": "A5063693993",
    "institutions": [
     {
@@ -666,8 +683,8 @@
   },
   {
    "orcid": ["0000-0002-8100-0824"],
+   "dblp": "06/2491",
    "openalex": "A5079496228",
-   "wikipedia": "https://en.wikipedia.org/wiki/Jotun_Hein",
    "institutions": [
     {
      "name": "University of Oxford",
@@ -686,6 +703,7 @@
   {
    "orcid": ["0009-0001-6162-9668"],
    "scholar": "wJh7R3UAAAAJ",
+   "dblp": "372/3704",
    "openalex": "A5094208364",
    "institutions": [
     {
@@ -698,6 +716,7 @@
   },
   {
    "orcid": ["0000-0002-4091-7089"],
+   "dblp": "35/4186-1",
    "openalex": "A5091128796",
    "institutions": [
     {
@@ -710,13 +729,14 @@
      "name": "Delft University of Technology",
      "country": "NL",
      "from": 2019,
-     "to": 2025
+     "to": 2026
     }
    ]
   },
   {
    "orcid": ["0000-0002-9518-4724"],
    "scholar": "Eoays_KFyQsC",
+   "dblp": "31/4697",
    "openalex": "A5026795741",
    "institutions": [
     {
@@ -736,7 +756,7 @@
   {
    "orcid": ["0000-0003-0568-4264"],
    "scholar": "DYAW-BoAAAAJ",
-   "openalex": "A5100322345",
+   "openalex": "A5100322392",
    "institutions": [
     {
      "name": "University of Georgia",
@@ -767,6 +787,7 @@
   {
    "orcid": ["0009-0004-0179-9771"],
    "scholar": "1DmIE0kAAAAJ",
+   "dblp": "02/4233",
    "openalex": "A5057284934",
    "institutions": [
     {
@@ -786,6 +807,7 @@
   {
    "orcid": ["0000-0002-7811-5989"],
    "scholar": "lOz9fVMAAAAJ",
+   "dblp": "319/2344",
    "openalex": "A5043584815",
    "institutions": [
     {
@@ -799,7 +821,6 @@
   {
    "orcid": ["0000-0003-3351-7981"],
    "openalex": "A5073515441",
-   "wikipedia": "https://en.wikipedia.org/wiki/Ziheng_Yang",
    "institutions": [
     {
      "name": "University College London",
@@ -830,8 +851,8 @@
   {
    "orcid": ["0000-0003-0995-2553"],
    "scholar": "rgJ3iHYAAAAJ",
+   "dblp": "31/1663",
    "openalex": "A5079338715",
-   "wikipedia": "https://en.wikipedia.org/wiki/Ruriko_Yoshida",
    "institutions": [
     {
      "name": "Aalborg University",
@@ -854,8 +875,7 @@
    ]
   },
   {
-   "orcid": ["0000-0002-1237-6115", "0009-0008-9802-3214"],
-   "openalex": "A5100371811",
+   "dblp": "60/7421",
    "institutions": [
     {
      "name": "Rice University",
@@ -868,8 +888,8 @@
   {
    "orcid": ["0000-0002-3952-3285"],
    "scholar": "Ap0K7rUAAAAJ",
+   "dblp": "89/6822",
    "openalex": "A5090607558",
-   "wikipedia": "https://en.wikipedia.org/wiki/Desmond_G._Higgins",
    "institutions": [
     {
      "name": "University College Dublin",
@@ -906,6 +926,7 @@
   {
    "orcid": ["0000-0002-3050-9997"],
    "scholar": "rQ0w89cAAAAJ",
+   "dblp": "22/4634",
    "openalex": "A5068909032",
    "institutions": [
     {
@@ -923,7 +944,9 @@
    ]
   },
   {
+   "orcid": ["0000-0003-0043-8814"],
    "scholar": "z7yViWgAAAAJ",
+   "dblp": "66/8712",
    "openalex": "A5053292653",
    "institutions": [
     {
@@ -943,8 +966,8 @@
   {
    "orcid": ["0000-0001-7812-7886"],
    "scholar": "5t2myD8AAAAJ",
+   "dblp": "m/EMossel",
    "openalex": "A5013467728",
-   "wikipedia": "https://en.wikipedia.org/wiki/Elchanan_Mossel",
    "institutions": [
     {
      "name": "Weizmann Institute of Science",
@@ -962,6 +985,7 @@
   },
   {
    "orcid": ["0000-0001-5833-7659"],
+   "dblp": "18/913",
    "openalex": "A5063493591",
    "institutions": [
     {
@@ -975,6 +999,7 @@
   {
    "orcid": ["0000-0001-6765-3813"],
    "scholar": "r4OMnO8AAAAJ",
+   "dblp": "07/948",
    "openalex": "A5027519870",
    "institutions": [
     {
@@ -994,6 +1019,7 @@
   {
    "orcid": ["0000-0002-5291-3798"],
    "scholar": "EF9D28wAAAAJ",
+   "dblp": "96/3333",
    "openalex": "A5041404337",
    "institutions": [
     {
@@ -1007,13 +1033,14 @@
   {
    "orcid": ["0000-0002-2961-604X"],
    "scholar": "hLTZTG4AAAAJ",
+   "dblp": "03/1116",
    "openalex": "A5026094905",
    "institutions": [
     {
      "name": "University of Tübingen",
      "country": "DE",
      "from": 2010,
-     "to": 2025
+     "to": 2026
     },
     {
      "name": "Celera Genomics",
@@ -1032,6 +1059,7 @@
   {
    "orcid": ["0000-0002-1140-2596"],
    "scholar": "Se6txrMAAAAJ",
+   "dblp": "235/6533",
    "openalex": "A5037983874",
    "institutions": [
     {
@@ -1043,7 +1071,9 @@
    ]
   },
   {
+   "orcid": ["0000-0003-1633-4462"],
    "scholar": "rVo0piwAAAAJ",
+   "dblp": "86/2431",
    "openalex": "A5026339571",
    "institutions": [
     {
@@ -1055,6 +1085,7 @@
    ]
   },
   {
+   "dblp": "06/1350",
    "openalex": "A5044103722",
    "institutions": [
     {
@@ -1074,6 +1105,7 @@
   {
    "orcid": ["0000-0003-1461-0988"],
    "scholar": "3KeXQ2cAAAAJ",
+   "dblp": "76/6647",
    "openalex": "A5058332830",
    "institutions": [
     {
@@ -1117,6 +1149,7 @@
   {
    "orcid": ["0000-0002-8737-777X"],
    "scholar": "IFu7XnQAAAAJ",
+   "dblp": "25/1649",
    "openalex": "A5026106566",
    "institutions": [
     {
@@ -1129,6 +1162,8 @@
   },
   {
    "orcid": ["0000-0002-8355-9955"],
+   "scholar": "rgw5bacAAAAJ",
+   "dblp": "33/3005",
    "openalex": "A5078293553",
    "institutions": [
     {
@@ -1159,6 +1194,7 @@
   },
   {
    "orcid": ["0000-0002-6809-9516"],
+   "dblp": "25/10045",
    "openalex": "A5058195213",
    "institutions": [
     {
@@ -1178,6 +1214,7 @@
   {
    "orcid": ["0000-0002-3278-4343"],
    "scholar": "rNW3ReoAAAAJ",
+   "dblp": "09/2977",
    "openalex": "A5055127665",
    "institutions": [
     {
@@ -1221,8 +1258,8 @@
   {
    "orcid": ["0000-0002-1829-8664"],
    "scholar": "4ah5oHUAAAAJ",
+   "dblp": "45/1867",
    "openalex": "A5013539361",
-   "wikipedia": "https://en.wikipedia.org/wiki/Noah_Rosenberg",
    "institutions": [
     {
      "name": "Stanford University",
@@ -1240,6 +1277,7 @@
   },
   {
    "orcid": ["0009-0004-7008-4032"],
+   "dblp": "119/2543",
    "openalex": "A5022809314",
    "institutions": [
     {
@@ -1253,6 +1291,7 @@
   {
    "orcid": ["0000-0002-9789-8915"],
    "scholar": "GrUypj8AAAAJ",
+   "dblp": "181/4322",
    "openalex": "A5038934812",
    "institutions": [
     {
@@ -1265,8 +1304,8 @@
   },
   {
    "orcid": ["0000-0001-9818-479X"],
+   "dblp": "36/644",
    "openalex": "A5039905606",
-   "wikipedia": "https://en.wikipedia.org/wiki/Marc_A._Suchard",
    "institutions": [
     {
      "name": "University of California, Los Angeles",
@@ -1277,9 +1316,10 @@
    ]
   },
   {
-   "orcid": ["0000-0002-9086-6080", "0000-0003-4988-3521"],
+   "orcid": ["0000-0003-4988-3521"],
    "scholar": "9JrzplAAAAAJ",
-   "openalex": "A5026608819",
+   "dblp": "55/5012-1",
+   "openalex": "A5101579568",
    "institutions": [
     {
      "name": "University of Connecticut",
@@ -1292,6 +1332,7 @@
   {
    "orcid": ["0000-0001-8145-7966"],
    "scholar": "yeY5Ba8AAAAJ",
+   "dblp": "168/1147",
    "openalex": "A5046692009",
    "institutions": [
     {
@@ -1329,6 +1370,7 @@
   {
    "orcid": ["0000-0003-1963-5535"],
    "scholar": "xTWXOf8AAAAJ",
+   "dblp": "67/4063",
    "openalex": "A5075139465",
    "institutions": [
     {
@@ -1360,6 +1402,7 @@
   {
    "orcid": ["0000-0003-4908-7234"],
    "scholar": "psdJNJMAAAAJ",
+   "dblp": "301/5083",
    "openalex": "A5034595016",
    "institutions": [
     {
@@ -1391,6 +1434,7 @@
   {
    "orcid": ["0000-0001-7355-2541"],
    "scholar": "RzVMRc0AAAAJ",
+   "dblp": "09/951",
    "openalex": "A5077667471",
    "institutions": [
     {
@@ -1404,6 +1448,7 @@
   {
    "orcid": ["0000-0001-6299-8249"],
    "scholar": "coK1R-kAAAAJ",
+   "dblp": "155/9869",
    "openalex": "A5086499703",
    "institutions": [
     {
@@ -1428,6 +1473,8 @@
   },
   {
    "orcid": ["0000-0002-1620-5508"],
+   "scholar": "4ja1NHsAAAAJ",
+   "dblp": "59/7705",
    "openalex": "A5019719296",
    "institutions": [
     {
@@ -1447,7 +1494,7 @@
   {
    "orcid": ["0000-0001-7639-5369"],
    "scholar": "Smss_mgAAAAJ",
-   "openalex": "A5054625887",
+   "dblp": "209/7264",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -1472,6 +1519,7 @@
   {
    "orcid": ["0000-0001-6519-6292"],
    "scholar": "pw6xnRcAAAAJ",
+   "dblp": "130/1181",
    "openalex": "A5110768391",
    "institutions": [
     {
@@ -1503,6 +1551,7 @@
   {
    "orcid": ["0009-0003-3028-4198"],
    "scholar": "WhvtccoAAAAJ",
+   "dblp": "86/5425",
    "openalex": "A5103555404",
    "institutions": [
     {
@@ -1522,6 +1571,7 @@
   {
    "orcid": ["0000-0002-3244-359X"],
    "scholar": "N9S6FoAAAAAJ",
+   "dblp": "66/6649",
    "openalex": "A5066174715",
    "institutions": [
     {
@@ -1547,6 +1597,7 @@
   {
    "orcid": ["0000-0002-5882-2109"],
    "scholar": "UQFcoZoAAAAJ",
+   "dblp": "376/8122",
    "openalex": "A5039363377",
    "institutions": [
     {
@@ -1578,6 +1629,7 @@
   {
    "orcid": ["0000-0003-2016-753X"],
    "scholar": "yLdTqzMAAAAJ",
+   "dblp": "263/2245",
    "openalex": "A5015617196",
    "institutions": [
     {
@@ -1603,6 +1655,7 @@
   {
    "orcid": ["0000-0002-4210-8269"],
    "scholar": "NWaomv8AAAAJ",
+   "dblp": "325/6381",
    "openalex": "A5058038050",
    "institutions": [
     {
@@ -1615,7 +1668,7 @@
   },
   {
    "orcid": ["0000-0002-3798-2058"],
-   "scholar": "GSgdLjgAAAAJ",
+   "dblp": "51/5872",
    "openalex": "A5062526316",
    "institutions": [
     {
@@ -1628,6 +1681,7 @@
   },
   {
    "orcid": ["0000-0001-5389-6611"],
+   "dblp": "82/5469",
    "openalex": "A5000878403",
    "institutions": [
     {
@@ -1646,6 +1700,8 @@
   },
   {
    "orcid": ["0000-0002-1776-8564"],
+   "scholar": "5qarsrQAAAAJ",
+   "dblp": "215/3729",
    "openalex": "A5030621715",
    "institutions": [
     {
@@ -1675,7 +1731,9 @@
    ]
   },
   {
-   "openalex": "A5108093851",
+   "orcid": ["0000-0002-1160-6855"],
+   "dblp": "68/148",
+   "openalex": "A5085275630",
    "institutions": [
     {
      "name": "University of Oxford",
@@ -1692,9 +1750,9 @@
    ]
   },
   {
-   "orcid": ["0000-0003-3792-4058", "0000-0003-3945-8150"],
+   "orcid": ["0000-0003-3945-8150"],
    "scholar": "EOKl1BkAAAAJ",
-   "openalex": "A5056273880",
+   "dblp": "301/5189",
    "institutions": [
     {
      "name": "University of Tasmania",
@@ -1718,6 +1776,8 @@
   },
   {
    "orcid": ["0000-0001-6286-4419"],
+   "dblp": "21/777",
+   "openalex": "A5122032388",
    "institutions": [
     {
      "name": "Karlsruhe Institute of Technology",
@@ -1736,8 +1796,8 @@
   {
    "orcid": ["0000-0003-0513-6591"],
    "scholar": "PySbfcEAAAAJ",
+   "dblp": "51/725",
    "openalex": "A5088476239",
-   "wikipedia": "https://en.wikipedia.org/wiki/Rasmus_Nielsen_(biologist)",
    "institutions": [
     {
      "name": "University of Copenhagen",
@@ -1755,6 +1815,7 @@
   },
   {
    "orcid": ["0000-0003-4129-6525"],
+   "dblp": "207/5403",
    "openalex": "A5025825738",
    "institutions": [
     {
@@ -1768,6 +1829,7 @@
   {
    "orcid": ["0000-0003-1407-3406"],
    "scholar": "sXJWNsYAAAAJ",
+   "dblp": "94/359",
    "openalex": "A5042649313",
    "institutions": [
     {
@@ -1785,8 +1847,7 @@
    ]
   },
   {
-   "orcid": ["0009-0007-1262-6288"],
-   "openalex": "A5064288583",
+   "dblp": "199/8106",
    "institutions": [
     {
      "name": "University of California San Diego",
@@ -1799,6 +1860,7 @@
   {
    "orcid": ["0000-0002-3929-251X"],
    "scholar": "ZyOio_YAAAAJ",
+   "dblp": "44/6852",
    "openalex": "A5048208979",
    "institutions": [
     {
@@ -1824,6 +1886,7 @@
   {
    "orcid": ["0000-0003-2276-9892"],
    "scholar": "Q4qs4D8AAAAJ",
+   "dblp": "313/4968",
    "openalex": "A5032280221",
    "institutions": [
     {
@@ -1835,6 +1898,7 @@
    ]
   },
   {
+   "dblp": "99/4630",
    "openalex": "A5106184369",
    "institutions": [
     {
@@ -1853,6 +1917,7 @@
   },
   {
    "orcid": ["0000-0001-8623-5414"],
+   "dblp": "197/8177",
    "openalex": "A5028714834",
    "institutions": [
     {
@@ -1865,6 +1930,8 @@
   },
   {
    "orcid": ["0000-0002-2663-2001"],
+   "scholar": "RRUCOG4AAAAJ",
+   "dblp": "27/1661",
    "openalex": "A5057121631",
    "institutions": [
     {
@@ -1878,6 +1945,7 @@
   {
    "orcid": ["0000-0003-0039-2596"],
    "scholar": "XCa-z_QAAAAJ",
+   "dblp": "42/1668",
    "openalex": "A5024793976",
    "institutions": [
     {
@@ -1902,6 +1970,7 @@
   },
   {
    "orcid": ["0000-0003-4215-8263"],
+   "dblp": "271/0534",
    "openalex": "A5006811718",
    "institutions": [
     {
@@ -1921,8 +1990,8 @@
   {
    "orcid": ["0000-0002-5451-0490"],
    "scholar": "iTv2cOgAAAAJ",
+   "dblp": "d/ConstantinosDaskalakis",
    "openalex": "A5034822411",
-   "wikipedia": "https://en.wikipedia.org/wiki/Constantinos_Daskalakis",
    "institutions": [
     {
      "name": "Massachusetts Institute of Technology",
@@ -1935,6 +2004,7 @@
   {
    "orcid": ["0000-0002-9496-733X"],
    "scholar": "Yua1bj8AAAAJ",
+   "dblp": "54/4531",
    "openalex": "A5041822808",
    "institutions": [
     {
@@ -1946,6 +2016,7 @@
    ]
   },
   {
+   "dblp": "33/3034",
    "openalex": "A5071021780",
    "institutions": [
     {
@@ -1965,6 +2036,7 @@
   {
    "orcid": ["0000-0001-5286-647X"],
    "scholar": "sGsDnZUAAAAJ",
+   "dblp": "17/7105",
    "openalex": "A5023646775",
    "institutions": [
     {
@@ -1978,8 +2050,8 @@
   {
    "orcid": ["0000-0001-6676-4706"],
    "scholar": "rFf-AooAAAAJ",
+   "dblp": "e/SeanREddy",
    "openalex": "A5020118397",
-   "wikipedia": "https://en.wikipedia.org/wiki/Sean_Eddy",
    "institutions": [
     {
      "name": "Janelia Research Campus",
@@ -1998,6 +2070,7 @@
   {
    "orcid": ["0000-0002-1139-2316"],
    "scholar": "znl2FI4AAAAJ",
+   "dblp": "e/PeterLErdos",
    "openalex": "A5037065021",
    "institutions": [
     {
@@ -2023,6 +2096,7 @@
   {
    "orcid": ["0000-0002-8563-3637"],
    "scholar": "38ev4xkAAAAJ",
+   "dblp": "62/3259",
    "openalex": "A5070873690",
    "institutions": [
     {
@@ -2035,6 +2109,7 @@
   },
   {
    "orcid": ["0000-0001-7089-6285"],
+   "dblp": "02/6578",
    "openalex": "A5104651531",
    "institutions": [
     {
@@ -2060,8 +2135,8 @@
   {
    "orcid": ["0000-0003-4108-1153"],
    "scholar": "Ok6uF9kAAAAJ",
+   "dblp": "18/6563",
    "openalex": "A5108096094",
-   "wikipedia": "https://en.wikipedia.org/wiki/Nick_Grishin",
    "institutions": [
     {
      "name": "Howard Hughes Medical Institute",
@@ -2080,6 +2155,7 @@
   {
    "orcid": ["0000-0002-5508-0090"],
    "scholar": "Y78wsJcAAAAJ",
+   "dblp": "37/10328",
    "openalex": "A5017711795",
    "institutions": [
     {
@@ -2093,6 +2169,7 @@
   {
    "orcid": ["0000-0002-3665-8096"],
    "scholar": "kvrvJccAAAAJ",
+   "dblp": "87/3621",
    "openalex": "A5079627910",
    "institutions": [
     {
@@ -2112,8 +2189,8 @@
   {
    "orcid": ["0000-0002-7469-5103"],
    "scholar": "VoAHydgAAAAJ",
+   "dblp": "g/DanGusfield",
    "openalex": "A5062896251",
-   "wikipedia": "https://en.wikipedia.org/wiki/Dan_Gusfield",
    "institutions": [
     {
      "name": "University of California, Davis",
@@ -2126,6 +2203,7 @@
   {
    "orcid": ["0000-0003-0200-5924"],
    "scholar": "-KieaLoAAAAJ",
+   "dblp": "202/1217",
    "openalex": "A5014884281",
    "institutions": [
     {
@@ -2137,7 +2215,8 @@
    ]
   },
   {
-   "openalex": "A5113914255",
+   "dblp": "89/1096",
+   "openalex": "A5114142611",
    "institutions": [
     {
      "name": "The Institute of Statistical Mathematics",
@@ -2149,6 +2228,8 @@
   },
   {
    "orcid": ["0000-0001-5990-1741"],
+   "scholar": "DPjlHNEAAAAJ",
+   "dblp": "95/2668",
    "openalex": "A5019677811",
    "institutions": [
     {
@@ -2161,8 +2242,9 @@
   },
   {
    "orcid": ["0000-0003-1657-8301"],
+   "scholar": "k_K-PFkAAAAJ",
+   "dblp": "18/4437",
    "openalex": "A5020447053",
-   "wikipedia": "https://en.wikipedia.org/wiki/Katherine_St._John",
    "institutions": [
     {
      "name": "Lehman College",
@@ -2180,6 +2262,8 @@
   },
   {
    "orcid": ["0000-0003-1204-6535"],
+   "scholar": "SKXmmxIAAAAJ",
+   "dblp": "k/JDKececioglu",
    "openalex": "A5083998316",
    "institutions": [
     {
@@ -2198,6 +2282,7 @@
   },
   {
    "orcid": ["0000-0003-0577-0218"],
+   "dblp": "438/5252",
    "openalex": "A5117462448",
    "institutions": [
     {
@@ -2210,6 +2295,7 @@
   },
   {
    "orcid": ["0000-0001-7394-2718"],
+   "dblp": "155/5457",
    "openalex": "A5108777053",
    "institutions": [
     {
@@ -2223,6 +2309,7 @@
   {
    "orcid": ["0000-0002-0138-2691"],
    "scholar": "7fZs_tEAAAAJ",
+   "dblp": "82/4636",
    "openalex": "A5075290044",
    "institutions": [
     {
@@ -2246,6 +2333,8 @@
    ]
   },
   {
+   "orcid": ["0000-0001-7602-2036"],
+   "dblp": "43/3168",
    "openalex": "A5100925064",
    "institutions": [
     {
@@ -2258,6 +2347,7 @@
   },
   {
    "orcid": ["0000-0001-9664-1918"],
+   "dblp": "301/9887",
    "openalex": "A5000112440",
    "institutions": [
     {
@@ -2271,6 +2361,7 @@
   {
    "orcid": ["0000-0003-3280-9050"],
    "scholar": "zjO8A8cAAAAJ",
+   "dblp": "180/3876",
    "openalex": "A5006412633",
    "institutions": [
     {
@@ -2290,6 +2381,7 @@
   {
    "orcid": ["0000-0002-7431-2862"],
    "scholar": "IiGchZoAAAAJ",
+   "dblp": "62/5598",
    "openalex": "A5024220352",
    "institutions": [
     {
@@ -2314,6 +2406,7 @@
   },
   {
    "orcid": ["0000-0003-1589-6885"],
+   "dblp": "241/5609",
    "openalex": "A5010915538",
    "institutions": [
     {
@@ -2339,8 +2432,8 @@
   {
    "orcid": ["0000-0002-9164-6231"],
    "scholar": "DKfEcuEAAAAJ",
+   "dblp": "52/2663",
    "openalex": "A5020008219",
-   "wikipedia": "https://en.wikipedia.org/wiki/Lior_Pachter",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -2352,6 +2445,7 @@
   },
   {
    "orcid": ["0000-0002-8676-7565"],
+   "dblp": "175/0967",
    "openalex": "A5069222630",
    "institutions": [
     {
@@ -2364,6 +2458,8 @@
   },
   {
    "orcid": ["0000-0001-8863-3539"],
+   "scholar": "V-pBZI8AAAAJ",
+   "dblp": "83/7067",
    "openalex": "A5061203088",
    "institutions": [
     {
@@ -2376,6 +2472,7 @@
   },
   {
    "orcid": ["0000-0002-3505-9665"],
+   "dblp": "06/566",
    "openalex": "A5037320644",
    "institutions": [
     {
@@ -2388,6 +2485,8 @@
   },
   {
    "orcid": ["0000-0002-9308-7541"],
+   "scholar": "WLaQnegAAAAJ",
+   "dblp": "85/3773",
    "openalex": "A5025043496",
    "institutions": [
     {
@@ -2400,7 +2499,7 @@
   },
   {
    "scholar": "62Uqu6wAAAAJ",
-   "openalex": "A5082369624",
+   "dblp": "r/SRao",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -2412,6 +2511,7 @@
   },
   {
    "scholar": "8GkpkAIAAAAJ",
+   "dblp": "r/UsmanRoshan",
    "openalex": "A5087990990",
    "institutions": [
     {
@@ -2431,8 +2531,8 @@
   {
    "orcid": ["0000-0001-8415-5189"],
    "scholar": "C-BvZ4oAAAAJ",
+   "dblp": "66/977",
    "openalex": "A5089707881",
-   "wikipedia": "https://en.wikipedia.org/wiki/David_Sankoff",
    "institutions": [
     {
      "name": "Université de Montréal",
@@ -2444,6 +2544,8 @@
   },
   {
    "orcid": ["0000-0002-2311-8592"],
+   "scholar": "8lFCw7IAAAAJ",
+   "dblp": "61/3124",
    "openalex": "A5008754104",
    "institutions": [
     {
@@ -2457,6 +2559,7 @@
   {
    "orcid": ["0000-0001-8865-9237"],
    "scholar": "3pvnGAcAAAAJ",
+   "dblp": "327/0346",
    "openalex": "A5034699583",
    "institutions": [
     {
@@ -2488,12 +2591,13 @@
   {
    "orcid": ["0000-0002-4315-4195"],
    "scholar": "1DiCu18AAAAJ",
+   "dblp": "s/CharlesSemple",
    "openalex": "A5049682492",
    "institutions": [
     {
      "name": "University of Canterbury",
      "country": "NZ",
-     "from": 2005,
+     "from": 2004,
      "to": 2021
     }
    ]
@@ -2501,6 +2605,7 @@
   {
    "orcid": ["0000-0001-6938-8902"],
    "scholar": "qk0hejcAAAAJ",
+   "dblp": "05/1060",
    "openalex": "A5044184077",
    "institutions": [
     {
@@ -2525,6 +2630,7 @@
   },
   {
    "orcid": ["0000-0002-5883-8768"],
+   "dblp": "20/4816",
    "openalex": "A5062015657",
    "institutions": [
     {
@@ -2538,6 +2644,7 @@
   {
    "orcid": ["0000-0002-9470-9111"],
    "scholar": "Z_IKKGkAAAAJ",
+   "dblp": "19/1937",
    "openalex": "A5103035080",
    "institutions": [
     {
@@ -2563,6 +2670,7 @@
   {
    "orcid": ["0000-0002-8556-845X"],
    "scholar": "sPrYT-oAAAAJ",
+   "dblp": "29/1942",
    "openalex": "A5013858021",
    "institutions": [
     {
@@ -2593,6 +2701,8 @@
   },
   {
    "orcid": ["0009-0001-4741-8303"],
+   "scholar": "5rYkmbIAAAAJ",
+   "dblp": "03/4633",
    "openalex": "A5051363868",
    "institutions": [
     {
@@ -2605,6 +2715,7 @@
   },
   {
    "orcid": ["0000-0002-9060-9199"],
+   "dblp": "88/5",
    "openalex": "A5075478912",
    "institutions": [
     {
@@ -2629,6 +2740,7 @@
   },
   {
    "orcid": ["0000-0002-3684-0031"],
+   "dblp": "w/LiSanWang",
    "openalex": "A5038370606",
    "institutions": [
     {
@@ -2640,6 +2752,8 @@
    ]
   },
   {
+   "orcid": ["0000-0001-8229-2294"],
+   "dblp": "216/1702",
    "openalex": "A5071681339",
    "institutions": [
     {
@@ -2651,6 +2765,7 @@
    ]
   },
   {
+   "dblp": "97/5840",
    "openalex": "A5111907688",
    "institutions": [
     {
@@ -2670,6 +2785,7 @@
   {
    "orcid": ["0000-0002-4275-5546"],
    "scholar": "pNgZWZYAAAAJ",
+   "dblp": "244/9724",
    "openalex": "A5039954761",
    "institutions": [
     {
@@ -2689,6 +2805,7 @@
   {
    "orcid": ["0000-0002-2802-4317"],
    "scholar": "4d7ZNX8AAAAJ",
+   "dblp": "03/5814",
    "openalex": "A5005338517",
    "institutions": [
     {
@@ -2702,7 +2819,6 @@
   {
    "orcid": ["0000-0002-8496-3597"],
    "scholar": "DmWcoVEAAAAJ",
-   "openalex": "A5045151661",
    "institutions": [
     {
      "name": "University of Illinois Urbana-Champaign",
@@ -2713,7 +2829,7 @@
    ]
   },
   {
-   "orcid": ["0000-0002-5378-3278", "0000-0003-0435-0385"],
+   "orcid": ["0000-0002-5378-3278"],
    "openalex": "A5101434033",
    "institutions": [
     {
@@ -2727,6 +2843,7 @@
   {
    "orcid": ["0000-0003-3550-2636"],
    "scholar": "ti6HxeUAAAAJ",
+   "dblp": "294/4406",
    "openalex": "A5014969856",
    "institutions": [
     {
@@ -2739,14 +2856,14 @@
   },
   {
    "orcid": ["0000-0003-0260-824X"],
+   "dblp": "68/5601",
    "openalex": "A5012300835",
-   "wikipedia": "https://en.wikipedia.org/wiki/Louxin_Zhang",
    "institutions": [
     {
      "name": "National University of Singapore",
      "country": "SG",
      "from": 2023,
-     "to": 2025
+     "to": 2026
     },
     {
      "name": "University of Waterloo",
@@ -2758,6 +2875,7 @@
   },
   {
    "orcid": ["0000-0002-6201-1587"],
+   "dblp": "39/2810",
    "openalex": "A5025784970",
    "institutions": [
     {
@@ -2776,8 +2894,8 @@
   },
   {
    "orcid": ["0000-0003-2120-9631"],
+   "dblp": "64/5081",
    "openalex": "A5015061000",
-   "wikipedia": "https://en.wikipedia.org/wiki/Stephen_Altschul",
    "institutions": [
     {
      "name": "National Center for Biotechnology Information",
@@ -2795,6 +2913,7 @@
   },
   {
    "orcid": ["0009-0005-1607-5300"],
+   "dblp": "355/1614",
    "openalex": "A5093277856",
    "institutions": [
     {
@@ -2807,6 +2926,8 @@
   },
   {
    "orcid": ["0000-0002-4999-2931"],
+   "scholar": "u7WiGLQAAAAJ",
+   "dblp": "a/AdamPArkin",
    "openalex": "A5066623854",
    "institutions": [
     {
@@ -2826,8 +2947,8 @@
   {
    "orcid": ["0000-0002-5810-6241"],
    "scholar": "NzQu5SwAAAAJ",
+   "dblp": "b/VineetBafna",
    "openalex": "A5028801735",
-   "wikipedia": "https://en.wikipedia.org/wiki/Vineet_Bafna",
    "institutions": [
     {
      "name": "University of California San Diego",
@@ -2845,7 +2966,6 @@
   },
   {
    "openalex": "A5040934656",
-   "wikipedia": "https://en.wikipedia.org/wiki/Dennis_Barden",
    "institutions": [
     {
      "name": "University of Cambridge",
@@ -2857,6 +2977,8 @@
   },
   {
    "orcid": ["0009-0009-1513-8452"],
+   "scholar": "POWKkqEAAAAJ",
+   "dblp": "b/SerafimBatzoglou",
    "openalex": "A5108224144",
    "institutions": [
     {
@@ -2869,6 +2991,7 @@
   },
   {
    "orcid": ["0009-0000-5769-0282"],
+   "dblp": "150/1408",
    "openalex": "A5017768733",
    "institutions": [
     {
@@ -2893,6 +3016,8 @@
   },
   {
    "orcid": ["0000-0001-6647-088X"],
+   "scholar": "Ed1iCYAAAAAJ",
+   "dblp": "11/495-1",
    "openalex": "A5085190716",
    "institutions": [
     {
@@ -2905,6 +3030,7 @@
   },
   {
    "orcid": ["0000-0002-8158-3070"],
+   "dblp": "64/10932",
    "openalex": "A5066694525",
    "institutions": [
     {
@@ -2918,8 +3044,8 @@
   {
    "orcid": ["0000-0002-9297-3330"],
    "scholar": "CcqZZqMAAAAJ",
+   "dblp": "b/HLBodlaender",
    "openalex": "A5032730524",
-   "wikipedia": "https://en.wikipedia.org/wiki/Hans_L._Bodlaender",
    "institutions": [
     {
      "name": "Utrecht University",
@@ -2931,7 +3057,7 @@
   },
   {
    "orcid": ["0000-0002-4624-4612"],
-   "scholar": "WWNXoPgAAAAJ",
+   "dblp": "09/865",
    "openalex": "A5049997602",
    "institutions": [
     {
@@ -2945,6 +3071,7 @@
   {
    "orcid": ["0000-0003-0776-4460"],
    "scholar": "nlZoAnYAAAAJ",
+   "dblp": "118/6071",
    "openalex": "A5079299227",
    "institutions": [
     {
@@ -2962,7 +3089,8 @@
    ]
   },
   {
-   "openalex": "A5053034134",
+   "dblp": "71/1294",
+   "openalex": "A5103452554",
    "institutions": [
     {
      "name": "Los Alamos National Laboratory",
@@ -2974,6 +3102,8 @@
   },
   {
    "orcid": ["0000-0001-8120-5136"],
+   "scholar": "2uYkSdAAAAAJ",
+   "dblp": "51/1691",
    "openalex": "A5026152724",
    "institutions": [
     {
@@ -2993,6 +3123,7 @@
   {
    "orcid": ["0000-0002-1724-8358"],
    "scholar": "kD8vQsoAAAAJ",
+   "dblp": "123/6233",
    "openalex": "A5046205224",
    "institutions": [
     {
@@ -3004,7 +3135,7 @@
    ]
   },
   {
-   "orcid": ["0009-0007-7578-3619"],
+   "dblp": "02/8796",
    "openalex": "A5103769806",
    "institutions": [
     {
@@ -3023,6 +3154,7 @@
   },
   {
    "orcid": ["0000-0001-9311-2009"],
+   "dblp": "174/8632",
    "openalex": "A5068432987",
    "institutions": [
     {
@@ -3035,6 +3167,7 @@
   },
   {
    "orcid": ["0000-0002-7520-0627"],
+   "dblp": "52/1445",
    "openalex": "A5034225463",
    "institutions": [
     {
@@ -3047,6 +3180,7 @@
   },
   {
    "orcid": ["0000-0002-8212-5215"],
+   "dblp": "58/7106",
    "openalex": "A5003921430",
    "institutions": [
     {
@@ -3060,7 +3194,7 @@
   {
    "orcid": ["0009-0009-5699-2196"],
    "scholar": "Kpwvx_EAAAAJ",
-   "openalex": "A5100308559",
+   "dblp": "355/1672-2",
    "institutions": [
     {
      "name": "University of Maryland, College Park",
@@ -3073,6 +3207,7 @@
   {
    "orcid": ["0000-0001-5482-3932"],
    "scholar": "JI6ADoMAAAAJ",
+   "dblp": "68/9445",
    "openalex": "A5087352477",
    "institutions": [
     {
@@ -3097,6 +3232,7 @@
   },
   {
    "orcid": ["0000-0001-5810-2497"],
+   "dblp": "25/494",
    "openalex": "A5013558711",
    "institutions": [
     {
@@ -3110,6 +3246,7 @@
   {
    "orcid": ["0000-0002-6501-6287"],
    "scholar": "XpiYb2EAAAAJ",
+   "dblp": "175/2199",
    "openalex": "A5039262721",
    "institutions": [
     {
@@ -3122,7 +3259,7 @@
   },
   {
    "orcid": ["0000-0003-1498-9254"],
-   "scholar": "0ZMkdbYAAAAJ",
+   "dblp": "14/7969",
    "openalex": "A5032698492",
    "institutions": [
     {
@@ -3134,6 +3271,7 @@
    ]
   },
   {
+   "dblp": "58/2809",
    "institutions": [
     {
      "name": "Stanford University",
@@ -3144,6 +3282,8 @@
    ]
   },
   {
+   "orcid": ["0009-0009-3361-7000"],
+   "dblp": "436/9816",
    "openalex": "A5135474240",
    "institutions": [
     {
@@ -3157,8 +3297,8 @@
   {
    "orcid": ["0000-0003-2535-6217"],
    "scholar": "t0Sk55AAAAAJ",
+   "dblp": "391/3541",
    "openalex": "A5040485140",
-   "wikipedia": "https://en.wikipedia.org/wiki/Scott_V._Edwards",
    "institutions": [
     {
      "name": "Harvard University",
@@ -3170,6 +3310,7 @@
   },
   {
    "orcid": ["0000-0002-9065-8978"],
+   "dblp": "38/260",
    "openalex": "A5042815594",
    "institutions": [
     {
@@ -3182,6 +3323,7 @@
   },
   {
    "orcid": ["0000-0002-3728-0101"],
+   "dblp": "90/6653",
    "openalex": "A5047884754",
    "institutions": [
     {
@@ -3194,6 +3336,7 @@
   },
   {
    "orcid": ["0000-0002-4572-6265"],
+   "dblp": "222/7622",
    "openalex": "A5013511350",
    "institutions": [
     {
@@ -3219,8 +3362,8 @@
   {
    "orcid": ["0000-0002-6148-9212"],
    "scholar": "rLCC8mQAAAAJ",
+   "dblp": "f/MichaelRFellows",
    "openalex": "A5054676766",
-   "wikipedia": "https://en.wikipedia.org/wiki/Michael_Fellows",
    "institutions": [
     {
      "name": "University of Victoria",
@@ -3232,6 +3375,7 @@
   },
   {
    "orcid": ["0000-0002-7062-8042"],
+   "dblp": "123/8033",
    "openalex": "A5001091868",
    "institutions": [
     {
@@ -3243,8 +3387,8 @@
    ]
   },
   {
+   "dblp": "33/5746",
    "openalex": "A5109969097",
-   "wikipedia": "https://en.wikipedia.org/wiki/Walter_M._Fitch",
    "institutions": [
     {
      "name": "University of Wisconsin–Madison",
@@ -3256,6 +3400,7 @@
   },
   {
    "orcid": ["0000-0002-8474-9507"],
+   "dblp": "01/5035",
    "openalex": "A5024578874",
    "institutions": [
     {
@@ -3275,6 +3420,7 @@
   {
    "orcid": ["0000-0001-7538-8263"],
    "scholar": "Nia2OcUAAAAJ",
+   "dblp": "08/5440",
    "openalex": "A5003787332",
    "institutions": [
     {
@@ -3287,6 +3433,7 @@
   },
   {
    "orcid": ["0000-0002-5002-4049"],
+   "dblp": "276/5133",
    "openalex": "A5059493575",
    "institutions": [
     {
@@ -3298,6 +3445,7 @@
    ]
   },
   {
+   "dblp": "262/0225",
    "openalex": "A5083559595",
    "institutions": [
     {
@@ -3323,8 +3471,8 @@
   {
    "orcid": ["0000-0003-0657-5166"],
    "scholar": "udfEf1EAAAAJ",
+   "dblp": "40/1662",
    "openalex": "A5004328524",
-   "wikipedia": "https://en.wikipedia.org/wiki/Toby_Gibson",
    "institutions": [
     {
      "name": "European Molecular Biology Laboratory",
@@ -3335,6 +3483,7 @@
    ]
   },
   {
+   "dblp": "g/RobertGiegerich",
    "openalex": "A5086259996",
    "institutions": [
     {
@@ -3347,7 +3496,8 @@
   },
   {
    "orcid": ["0009-0002-6750-1945"],
-   "openalex": "A5115430430",
+   "dblp": "96/2868",
+   "openalex": "A5035583573",
    "institutions": [
     {
      "name": "Saitama Cancer Center",
@@ -3359,9 +3509,7 @@
   },
   {
    "orcid": ["0000-0002-6743-2022"],
-   "scholar": "-jRaGA4AAAAJ",
    "openalex": "A5029261997",
-   "wikipedia": "https://en.wikipedia.org/wiki/Dan_Graur",
    "institutions": [
     {
      "name": "University of Houston",
@@ -3373,6 +3521,8 @@
   },
   {
    "orcid": ["0000-0002-5731-8808"],
+   "scholar": "ShySYTIAAAAJ",
+   "dblp": "50/4342",
    "openalex": "A5038671526",
    "institutions": [
     {
@@ -3385,9 +3535,8 @@
   },
   {
    "orcid": ["0000-0002-2403-7997"],
-   "scholar": "yCDfCgkAAAAJ",
+   "dblp": "155/3444",
    "openalex": "A5088763701",
-   "wikipedia": "https://en.wikipedia.org/wiki/Joseph_Heled",
    "institutions": [
     {
      "name": "University of Auckland",
@@ -3399,7 +3548,7 @@
   },
   {
    "orcid": ["0000-0002-9295-5861"],
-   "scholar": "UzYvV08AAAAJ",
+   "dblp": "01/748",
    "openalex": "A5037747408",
    "institutions": [
     {
@@ -3412,6 +3561,7 @@
   },
   {
    "orcid": ["0000-0001-7313-717X"],
+   "dblp": "88/4722",
    "openalex": "A5048365807",
    "institutions": [
     {
@@ -3430,8 +3580,8 @@
   },
   {
    "orcid": ["0000-0002-2208-8168"],
+   "dblp": "46/7279",
    "openalex": "A5003674456",
-   "wikipedia": "https://en.wikipedia.org/wiki/Susan_P._Holmes",
    "institutions": [
     {
      "name": "INRAE",
@@ -3450,6 +3600,7 @@
   {
    "orcid": ["0000-0002-0223-6194"],
    "scholar": "zzCqObkAAAAJ",
+   "dblp": "44/1479",
    "openalex": "A5053511679",
    "institutions": [
     {
@@ -3469,6 +3620,7 @@
   {
    "orcid": ["0000-0003-0607-6025"],
    "scholar": "BuHO6ssAAAAJ",
+   "dblp": "155/3638",
    "openalex": "A5084752404",
    "institutions": [
     {
@@ -3487,6 +3639,7 @@
   },
   {
    "orcid": ["0000-0002-5192-1470"],
+   "dblp": "205/2469",
    "openalex": "A5021244614",
    "institutions": [
     {
@@ -3499,6 +3652,7 @@
   },
   {
    "orcid": ["0000-0001-6859-8932"],
+   "dblp": "j/JesperJansson",
    "openalex": "A5060626918",
    "institutions": [
     {
@@ -3511,6 +3665,7 @@
   },
   {
    "orcid": ["0000-0002-7337-1086"],
+   "dblp": "328/1883",
    "openalex": "A5069372696",
    "institutions": [
     {
@@ -3523,6 +3678,7 @@
   },
   {
    "orcid": ["0000-0002-0233-4413"],
+   "dblp": "438/4655",
    "openalex": "A5072954943",
    "institutions": [
     {
@@ -3534,8 +3690,8 @@
    ]
   },
   {
+   "dblp": "22/6782",
    "openalex": "A5059033237",
-   "wikipedia": "https://en.wikipedia.org/wiki/Kevin_Karplus",
    "institutions": [
     {
      "name": "University of California, Santa Cruz",
@@ -3546,6 +3702,7 @@
    ]
   },
   {
+   "dblp": "k/JudithKeijsper",
    "openalex": "A5083979837",
    "institutions": [
     {
@@ -3558,6 +3715,7 @@
   },
   {
    "orcid": ["0000-0001-8583-5362"],
+   "dblp": "95/4257-3",
    "openalex": "A5016652002",
    "institutions": [
     {
@@ -3570,8 +3728,8 @@
   },
   {
    "orcid": ["0000-0002-7726-8246"],
+   "dblp": "88/3405",
    "openalex": "A5085644660",
-   "wikipedia": "https://en.wikipedia.org/wiki/Junhyong_Kim",
    "institutions": [
     {
      "name": "University of Pennsylvania",
@@ -3588,7 +3746,6 @@
    ]
   },
   {
-   "wikipedia": "https://en.wikipedia.org/wiki/Motoo_Kimura",
    "institutions": [
     {
      "name": "National Institute of Genetics",
@@ -3600,8 +3757,8 @@
   },
   {
    "orcid": ["0000-0002-6567-4853"],
+   "dblp": "38/7064",
    "openalex": "A5071488274",
-   "wikipedia": "https://en.wikipedia.org/wiki/Lacey_Knowles",
    "institutions": [
     {
      "name": "University of Michigan",
@@ -3613,6 +3770,7 @@
   },
   {
    "orcid": ["0000-0002-9490-6019"],
+   "dblp": "61/7244",
    "openalex": "A5071679223",
    "institutions": [
     {
@@ -3626,6 +3784,7 @@
   {
    "orcid": ["0000-0002-3219-6648"],
    "scholar": "eDKoXeYAAAAJ",
+   "dblp": "33/413",
    "openalex": "A5006598290",
    "institutions": [
     {
@@ -3637,6 +3796,7 @@
    ]
   },
   {
+   "openalex": "A5108441257",
    "institutions": [
     {
      "name": "Kyoto University",
@@ -3647,9 +3807,7 @@
    ]
   },
   {
-   "scholar": "ymtjcMUAAAAJ",
    "openalex": "A5113779448",
-   "wikipedia": "https://en.wikipedia.org/wiki/James_A._Lake",
    "institutions": [
     {
      "name": "University of California, Los Angeles",
@@ -3661,7 +3819,7 @@
   },
   {
    "orcid": ["0000-0002-2502-8750"],
-   "scholar": "tXN4vVYAAAAJ",
+   "dblp": "64/6182",
    "openalex": "A5035098416",
    "institutions": [
     {
@@ -3674,6 +3832,8 @@
   },
   {
    "orcid": ["0000-0002-9973-7760"],
+   "scholar": "QrXr-4cAAAAJ",
+   "dblp": "75/4226",
    "openalex": "A5057909697",
    "institutions": [
     {
@@ -3697,7 +3857,8 @@
    ]
   },
   {
-   "orcid": ["0000-0001-8360-8756"],
+   "orcid": ["0000-0002-9233-1645"],
+   "dblp": "44/4095",
    "openalex": "A5103393374",
    "institutions": [
     {
@@ -3710,6 +3871,7 @@
   },
   {
    "orcid": ["0000-0003-2864-4783"],
+   "dblp": "22/7102",
    "openalex": "A5088743342",
    "institutions": [
     {
@@ -3723,6 +3885,7 @@
   {
    "orcid": ["0000-0001-9120-3142"],
    "scholar": "PgWCieEAAAAJ",
+   "dblp": "97/339-6",
    "openalex": "A5038042986",
    "institutions": [
     {
@@ -3734,7 +3897,7 @@
    ]
   },
   {
-   "orcid": ["0009-0002-3443-2023"],
+   "dblp": "56/6177",
    "openalex": "A5056652131",
    "institutions": [
     {
@@ -3747,6 +3910,7 @@
   },
   {
    "orcid": ["0000-0002-0661-8720"],
+   "dblp": "154/6696",
    "openalex": "A5062862111",
    "institutions": [
     {
@@ -3758,6 +3922,7 @@
    ]
   },
   {
+   "dblp": "262/0050",
    "openalex": "A5003176141",
    "institutions": [
     {
@@ -3770,6 +3935,7 @@
   },
   {
    "orcid": ["0000-0002-1300-5631"],
+   "dblp": "136/5896",
    "openalex": "A5069752796",
    "institutions": [
     {
@@ -3782,6 +3948,7 @@
   },
   {
    "orcid": ["0000-0002-1343-7493"],
+   "dblp": "305/5850",
    "openalex": "A5049610333",
    "institutions": [
     {
@@ -3794,6 +3961,7 @@
   },
   {
    "orcid": ["0000-0001-5858-4182"],
+   "dblp": "169/6017",
    "openalex": "A5029417733",
    "institutions": [
     {
@@ -3818,6 +3986,8 @@
   },
   {
    "orcid": ["0000-0003-3753-5925"],
+   "scholar": "tP0i83IAAAAJ",
+   "dblp": "95/2125",
    "openalex": "A5004592090",
    "institutions": [
     {
@@ -3830,6 +4000,7 @@
   },
   {
    "orcid": ["0000-0001-7951-3914"],
+   "dblp": "146/3439",
    "openalex": "A5052502603",
    "institutions": [
     {
@@ -3847,6 +4018,9 @@
    ]
   },
   {
+   "orcid": ["0000-0002-1624-2296"],
+   "dblp": "71/6032",
+   "openalex": "A5086733446",
    "institutions": [
     {
      "name": "Florida State University",
@@ -3858,6 +4032,7 @@
   },
   {
    "orcid": ["0000-0003-0858-586X"],
+   "dblp": "49/484",
    "openalex": "A5016020455",
    "institutions": [
     {
@@ -3893,8 +4068,8 @@
   {
    "orcid": ["0000-0003-1549-4544"],
    "scholar": "Gk9u5lUAAAAJ",
+   "dblp": "18/242",
    "openalex": "A5059287546",
-   "wikipedia": "https://en.wikipedia.org/wiki/Bernard_Moret",
    "institutions": [
     {
      "name": "University of New Mexico",
@@ -3907,6 +4082,7 @@
   {
    "orcid": ["0000-0002-9848-8758"],
    "scholar": "dPNtkyUAAAAJ",
+   "dblp": "80/1904",
    "openalex": "A5088729105",
    "institutions": [
     {
@@ -3926,6 +4102,7 @@
   {
    "orcid": ["0000-0003-1355-5884"],
    "scholar": "JCRspVQAAAAJ",
+   "dblp": "60/8762",
    "openalex": "A5003671076",
    "institutions": [
     {
@@ -3939,8 +4116,8 @@
   {
    "orcid": ["0000-0002-6580-7839"],
    "scholar": "jlas1aMAAAAJ",
+   "dblp": "m/EugeneWMyers",
    "openalex": "A5068657716",
-   "wikipedia": "https://en.wikipedia.org/wiki/Eugene_Myers",
    "institutions": [
     {
      "name": "Celera Genomics",
@@ -3963,8 +4140,8 @@
    ]
   },
   {
-   "openalex": "A5109177049",
-   "wikipedia": "https://en.wikipedia.org/wiki/Masatoshi_Nei",
+   "dblp": "09/5473",
+   "openalex": "A5109245200",
    "institutions": [
     {
      "name": "Pennsylvania State University",
@@ -3981,6 +4158,7 @@
    ]
   },
   {
+   "dblp": "71/3029",
    "openalex": "A5053558310",
    "institutions": [
     {
@@ -3994,6 +4172,7 @@
   {
    "orcid": ["0000-0002-3932-063X"],
    "scholar": "sPYxhvUAAAAJ",
+   "dblp": "155/1353",
    "openalex": "A5040525401",
    "institutions": [
     {
@@ -4013,6 +4192,7 @@
   {
    "orcid": ["0000-0003-1981-1826"],
    "scholar": "DmXbhZ8AAAAJ",
+   "dblp": "97/2288",
    "openalex": "A5057360121",
    "institutions": [
     {
@@ -4026,8 +4206,8 @@
   {
    "orcid": ["0000-0001-9565-467X"],
    "scholar": "OCnUJ4cAAAAJ",
+   "dblp": "26/4280",
    "openalex": "A5111374600",
-   "wikipedia": "https://en.wikipedia.org/wiki/David_Penny",
    "institutions": [
     {
      "name": "Massey University",
@@ -4040,8 +4220,8 @@
   {
    "orcid": ["0000-0002-0418-165X"],
    "scholar": "0fq5QeIAAAAJ",
+   "dblp": "p/PAPevzner",
    "openalex": "A5027480961",
-   "wikipedia": "https://en.wikipedia.org/wiki/Pavel_A._Pevzner",
    "institutions": [
     {
      "name": "University of Southern California",
@@ -4053,6 +4233,8 @@
   },
   {
    "orcid": ["0000-0002-4251-0362"],
+   "scholar": "a4tgchgAAAAJ",
+   "dblp": "70/4157",
    "openalex": "A5072368469",
    "institutions": [
     {
@@ -4064,6 +4246,7 @@
    ]
   },
   {
+   "dblp": "70/4960",
    "openalex": "A5005781105",
    "institutions": [
     {
@@ -4077,6 +4260,7 @@
   {
    "orcid": ["0000-0001-9463-2575"],
    "scholar": "SMSKZPUAAAAJ",
+   "dblp": "70/3084",
    "openalex": "A5070736617",
    "institutions": [
     {
@@ -4088,6 +4272,7 @@
    ]
   },
   {
+   "dblp": "68/3169",
    "openalex": "A5017120294",
    "institutions": [
     {
@@ -4101,8 +4286,8 @@
   {
    "orcid": ["0000-0003-4337-3707"],
    "scholar": "JiYPDfoAAAAJ",
+   "dblp": "61/2025",
    "openalex": "A5083534383",
-   "wikipedia": "https://en.wikipedia.org/wiki/Andrew_Rambaut",
    "institutions": [
     {
      "name": "University of Edinburgh",
@@ -4113,6 +4298,7 @@
    ]
   },
   {
+   "dblp": "75/4310",
    "openalex": "A5072298591",
    "institutions": [
     {
@@ -4125,6 +4311,8 @@
   },
   {
    "orcid": ["0000-0002-7248-6551"],
+   "scholar": "OvAV_eoAAAAJ",
+   "dblp": "175/1936",
    "openalex": "A5046883178",
    "institutions": [
     {
@@ -4143,6 +4331,8 @@
   },
   {
    "orcid": ["0009-0008-2844-1031"],
+   "scholar": "lg2ICQwAAAAJ",
+   "dblp": "358/4497",
    "openalex": "A5000971978",
    "institutions": [
     {
@@ -4162,6 +4352,7 @@
   {
    "orcid": ["0000-0002-3371-7724"],
    "scholar": "LvoIaIsAAAAJ",
+   "dblp": "19/3393",
    "openalex": "A5012479520",
    "institutions": [
     {
@@ -4173,6 +4364,8 @@
    ]
   },
   {
+   "orcid": ["0000-0002-7885-6867"],
+   "dblp": "80/3130",
    "openalex": "A5037909083",
    "institutions": [
     {
@@ -4185,8 +4378,8 @@
   },
   {
    "scholar": "4VVgg_UAAAAJ",
+   "dblp": "12/2226",
    "openalex": "A5107849607",
-   "wikipedia": "https://en.wikipedia.org/wiki/Kimmen_Sj%C3%B6lander",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -4205,8 +4398,8 @@
   {
    "orcid": ["0009-0004-8183-1910"],
    "scholar": "y0U2EaUAAAAJ",
+   "dblp": "36/3231",
    "openalex": "A5076570918",
-   "wikipedia": "https://en.wikipedia.org/wiki/Allan_Sly_(mathematician)",
    "institutions": [
     {
      "name": "Princeton University",
@@ -4224,7 +4417,7 @@
   },
   {
    "orcid": ["0000-0002-7826-1214"],
-   "openalex": "A5053130831",
+   "dblp": "187/5083",
    "institutions": [
     {
      "name": "University of Illinois Urbana-Champaign",
@@ -4235,6 +4428,7 @@
    ]
   },
   {
+   "dblp": "81/6039",
    "openalex": "A5113513874",
    "institutions": [
     {
@@ -4247,6 +4441,7 @@
   },
   {
    "orcid": ["0000-0002-0734-9868"],
+   "dblp": "84/6299",
    "openalex": "A5050837693",
    "institutions": [
     {
@@ -4266,6 +4461,7 @@
   {
    "orcid": ["0000-0002-9015-5588"],
    "scholar": "p8d8870AAAAJ",
+   "dblp": "46/4992",
    "openalex": "A5032432650",
    "institutions": [
     {
@@ -4284,8 +4480,8 @@
   },
   {
    "orcid": ["0000-0002-5403-7998"],
+   "dblp": "30/2771",
    "openalex": "A5001135422",
-   "wikipedia": "https://en.wikipedia.org/wiki/Terry_Speed",
    "institutions": [
     {
      "name": "Walter and Eliza Hall Institute of Medical Research",
@@ -4303,6 +4499,7 @@
   },
   {
    "orcid": ["0000-0001-8696-0384"],
+   "dblp": "45/6354",
    "openalex": "A5025051195",
    "institutions": [
     {
@@ -4316,8 +4513,8 @@
   {
    "orcid": ["0000-0002-6642-1479"],
    "scholar": "5zTUNsQAAAAJ",
+   "dblp": "04/3430",
    "openalex": "A5027670183",
-   "wikipedia": "https://en.wikipedia.org/wiki/Bernd_Sturmfels",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -4330,6 +4527,7 @@
   {
    "orcid": ["0000-0001-7806-7086"],
    "scholar": "KaCbE9MAAAAJ",
+   "dblp": "s/WingKinSung",
    "openalex": "A5012563463",
    "institutions": [
     {
@@ -4349,6 +4547,7 @@
   {
    "orcid": ["0000-0002-1818-208X"],
    "scholar": "cOfpZhEAAAAJ",
+   "dblp": "154/4820",
    "openalex": "A5083583971",
    "institutions": [
     {
@@ -4361,6 +4560,7 @@
   },
   {
    "orcid": ["0000-0001-7189-5399"],
+   "dblp": "45/3752",
    "openalex": "A5007823743",
    "institutions": [
     {
@@ -4379,6 +4579,7 @@
   },
   {
    "orcid": ["0000-0002-9873-7056"],
+   "dblp": "43/10359",
    "openalex": "A5011723492",
    "institutions": [
     {
@@ -4390,8 +4591,7 @@
    ]
   },
   {
-   "orcid": ["0000-0001-7350-331X"],
-   "openalex": "A5050147589",
+   "dblp": "122/8837",
    "institutions": [
     {
      "name": "University of Michigan",
@@ -4409,6 +4609,7 @@
   },
   {
    "orcid": ["0000-0003-4893-3478"],
+   "dblp": "t/JulieDawnThompson",
    "openalex": "A5039921905",
    "institutions": [
     {
@@ -4427,7 +4628,7 @@
   },
   {
    "orcid": ["0000-0003-3779-5743"],
-   "scholar": "qNX7BRUAAAAJ",
+   "dblp": "55/872",
    "openalex": "A5064952920",
    "institutions": [
     {
@@ -4447,6 +4648,7 @@
   {
    "orcid": ["0000-0001-9589-6994"],
    "scholar": "RIUYP8YAAAAJ",
+   "dblp": "196/7396",
    "openalex": "A5026537989",
    "institutions": [
     {
@@ -4458,6 +4660,8 @@
    ]
   },
   {
+   "orcid": ["0000-0003-3220-0253"],
+   "dblp": "35/3822",
    "institutions": [
     {
      "name": "Centre for Genomic Regulation",
@@ -4475,6 +4679,8 @@
   },
   {
    "orcid": ["0000-0002-7051-2082"],
+   "dblp": "96/8636",
+   "openalex": "A5008632383",
    "institutions": [
     {
      "name": "University of Canterbury",
@@ -4486,6 +4692,7 @@
   },
   {
    "orcid": ["0009-0005-9958-2075"],
+   "dblp": "422/0907",
    "openalex": "A5111247291",
    "institutions": [
     {
@@ -4497,6 +4704,7 @@
    ]
   },
   {
+   "dblp": "302/4622",
    "openalex": "A5017473471",
    "institutions": [
     {
@@ -4509,6 +4717,7 @@
   },
   {
    "orcid": ["0009-0008-7273-4165"],
+   "dblp": "305/6296",
    "openalex": "A5067730186",
    "institutions": [
     {
@@ -4520,8 +4729,8 @@
    ]
   },
   {
+   "dblp": "w/MichaelSWaterman",
    "openalex": "A5105360062",
-   "wikipedia": "https://en.wikipedia.org/wiki/Michael_Waterman",
    "institutions": [
     {
      "name": "Los Alamos National Laboratory",
@@ -4538,6 +4747,7 @@
    ]
   },
   {
+   "dblp": "36/6726",
    "openalex": "A5051576626",
    "institutions": [
     {
@@ -4551,6 +4761,7 @@
   {
    "orcid": ["0000-0003-2004-1785"],
    "scholar": "Hi2OqhcAAAAJ",
+   "dblp": "74/3170",
    "openalex": "A5073174813",
    "institutions": [
     {
@@ -4563,9 +4774,8 @@
   },
   {
    "orcid": ["0000-0001-6977-984X"],
-   "scholar": "Rjw5orwAAAAJ",
+   "dblp": "02/1953",
    "openalex": "A5068555585",
-   "wikipedia": "https://en.wikipedia.org/wiki/Ward_C._Wheeler",
    "institutions": [
     {
      "name": "American Museum of Natural History",
@@ -4576,6 +4786,7 @@
    ]
   },
   {
+   "dblp": "154/4837",
    "openalex": "A5019733537",
    "institutions": [
     {
@@ -4588,6 +4799,7 @@
   },
   {
    "orcid": ["0000-0003-1072-0223"],
+   "dblp": "93/8246",
    "openalex": "A5101579525",
    "institutions": [
     {
@@ -4600,6 +4812,7 @@
   },
   {
    "orcid": ["0000-0002-7344-3764"],
+   "dblp": "52/1407",
    "openalex": "A5036376802",
    "institutions": [
     {
@@ -4619,6 +4832,7 @@
   {
    "orcid": ["0000-0002-0580-6324"],
    "scholar": "zZT0fKUAAAAJ",
+   "dblp": "72/534",
    "openalex": "A5091416583",
    "institutions": [
     {
@@ -4638,6 +4852,7 @@
   {
    "orcid": ["0000-0001-6212-9502"],
    "scholar": "3Lf6I5MAAAAJ",
+   "dblp": "76/3216",
    "openalex": "A5020585125",
    "institutions": [
     {
@@ -4649,8 +4864,9 @@
    ]
   },
   {
-   "orcid": ["0009-0004-8321-6938"],
-   "openalex": "A5008912634",
+   "orcid": ["0000-0002-3336-6282"],
+   "dblp": "147/3390",
+   "openalex": "A5070132922",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -4662,6 +4878,7 @@
   },
   {
    "orcid": ["0000-0002-4849-7955"],
+   "dblp": "00/3605",
    "openalex": "A5088287514",
    "institutions": [
     {
@@ -4679,6 +4896,7 @@
    ]
   },
   {
+   "dblp": "06/8770",
    "openalex": "A5063987802",
    "institutions": [
     {
@@ -4691,6 +4909,7 @@
   },
   {
    "orcid": ["0009-0003-7668-5499"],
+   "dblp": "404/4253",
    "openalex": "A5034158753",
    "institutions": [
     {
@@ -4703,6 +4922,7 @@
   },
   {
    "orcid": ["0000-0002-5518-9723"],
+   "dblp": "64/5354",
    "openalex": "A5032663560",
    "institutions": [
     {
@@ -4715,8 +4935,8 @@
   },
   {
    "scholar": "gb2r2ssAAAAJ",
+   "dblp": "a/AVAho",
    "openalex": "A5047516262",
-   "wikipedia": "https://en.wikipedia.org/wiki/Alfred_Aho",
    "institutions": [
     {
      "name": "Bell Laboratories",
@@ -4727,6 +4947,7 @@
    ]
   },
   {
+   "dblp": "92/8178",
    "openalex": "A5059942408",
    "institutions": [
     {
@@ -4738,6 +4959,7 @@
    ]
   },
   {
+   "dblp": "421/7388",
    "openalex": "A5120648625",
    "institutions": [
     {
@@ -4761,8 +4983,8 @@
   {
    "orcid": ["0000-0002-4441-2328"],
    "scholar": "ZzNrbIUAAAAJ",
+   "dblp": "92/5591",
    "openalex": "A5031972964",
-   "wikipedia": "https://en.wikipedia.org/wiki/Nina_Amenta",
    "institutions": [
     {
      "name": "University of California, Davis",
@@ -4774,6 +4996,8 @@
   },
   {
    "orcid": ["0000-0002-3138-5535"],
+   "scholar": "8l6k1DMAAAAJ",
+   "dblp": "98/11538",
    "openalex": "A5074627869",
    "institutions": [
     {
@@ -4787,6 +5011,7 @@
   {
    "orcid": ["0009-0004-8042-0976"],
    "scholar": "Evgx6UkAAAAJ",
+   "dblp": "66/6009",
    "institutions": [
     {
      "name": "Microsoft (United States)",
@@ -4797,9 +5022,10 @@
    ]
   },
   {
+   "orcid": ["0000-0002-6744-1826"],
    "scholar": "2rDg8JwAAAAJ",
+   "dblp": "77/4854",
    "openalex": "A5040287199",
-   "wikipedia": "https://en.wikipedia.org/wiki/Federico_Ardila",
    "institutions": [
     {
      "name": "Mathematical Sciences Research Institute",
@@ -4829,6 +5055,8 @@
   },
   {
    "orcid": ["0000-0002-5079-4684"],
+   "scholar": "fQ3SLLgAAAAJ",
+   "dblp": "37/8713",
    "openalex": "A5057094793",
    "institutions": [
     {
@@ -4840,6 +5068,7 @@
    ]
   },
   {
+   "dblp": "14/626",
    "openalex": "A5051519410",
    "institutions": [
     {
@@ -4857,6 +5086,7 @@
    ]
   },
   {
+   "dblp": "242/7827",
    "openalex": "A5019404260",
    "institutions": [
     {
@@ -4868,6 +5098,7 @@
    ]
   },
   {
+   "dblp": "204/2300",
    "openalex": "A5112398863",
    "institutions": [
     {
@@ -4880,6 +5111,8 @@
   },
   {
    "orcid": ["0000-0001-8231-3323"],
+   "scholar": "ZCTrqQkAAAAJ",
+   "dblp": "b/RolfBackofen",
    "openalex": "A5017672883",
    "institutions": [
     {
@@ -4891,7 +5124,9 @@
    ]
   },
   {
+   "orcid": ["0000-0001-7546-6313"],
    "scholar": "UNHdIKoAAAAJ",
+   "dblp": "74/10669",
    "openalex": "A5084855970",
    "institutions": [
     {
@@ -4904,6 +5139,7 @@
   },
   {
    "orcid": ["0000-0002-7495-1218"],
+   "dblp": "340/3055",
    "openalex": "A5084109668",
    "institutions": [
     {
@@ -4917,6 +5153,7 @@
   {
    "orcid": ["0000-0002-6684-5335"],
    "scholar": "-HQ8ZY4AAAAJ",
+   "dblp": "84/4015-1",
    "openalex": "A5040822940",
    "institutions": [
     {
@@ -4940,6 +5177,7 @@
   {
    "orcid": ["0000-0002-3816-3724"],
    "scholar": "j814XnEAAAAJ",
+   "dblp": "253/6796",
    "openalex": "A5029469990",
    "institutions": [
     {
@@ -4959,8 +5197,8 @@
   {
    "orcid": ["0000-0002-9014-5355"],
    "scholar": "CpR9VWkAAAAJ",
+   "dblp": "01/206",
    "openalex": "A5082043302",
-   "wikipedia": "https://en.wikipedia.org/wiki/Geoff_Barton_(scientist)",
    "institutions": [
     {
      "name": "Birkbeck, University of London",
@@ -4972,6 +5210,8 @@
   },
   {
    "orcid": ["0000-0001-8334-6311"],
+   "scholar": "bkKzaV8AAAAJ",
+   "dblp": "324/9481",
    "openalex": "A5087935049",
    "institutions": [
     {
@@ -4983,7 +5223,7 @@
    ]
   },
   {
-   "orcid": ["0000-0001-5271-8733"],
+   "dblp": "55/5036",
    "openalex": "A5010808737",
    "institutions": [
     {
@@ -4995,6 +5235,7 @@
    ]
   },
   {
+   "dblp": "09/9838",
    "institutions": [
     {
      "name": "Pennsylvania State University",
@@ -5006,6 +5247,8 @@
   },
   {
    "orcid": ["0000-0002-0912-8137"],
+   "scholar": "lKzd4lgAAAAJ",
+   "dblp": "121/9620",
    "openalex": "A5014883715",
    "institutions": [
     {
@@ -5017,6 +5260,7 @@
    ]
   },
   {
+   "dblp": "94/8296",
    "institutions": [
     {
      "name": "Heidelberg Institute for Theoretical Studies",
@@ -5028,6 +5272,7 @@
   },
   {
    "orcid": ["0000-0002-1303-0669"],
+   "dblp": "394/0361",
    "openalex": "A5091919866",
    "institutions": [
     {
@@ -5040,6 +5285,7 @@
   },
   {
    "orcid": ["0000-0001-7271-4027"],
+   "dblp": "b/VincentBerry",
    "openalex": "A5058327913",
    "institutions": [
     {
@@ -5051,6 +5297,7 @@
    ]
   },
   {
+   "dblp": "127/2724",
    "openalex": "A5091114650",
    "institutions": [
     {
@@ -5064,6 +5311,7 @@
   {
    "orcid": ["0000-0002-0891-4611"],
    "scholar": "tL0x_vUAAAAJ",
+   "dblp": "176/8584",
    "openalex": "A5091290326",
    "institutions": [
     {
@@ -5093,8 +5341,8 @@
    ]
   },
   {
+   "dblp": "60/6547",
    "openalex": "A5008530739",
-   "wikipedia": "https://en.wikipedia.org/wiki/Louis_Billera",
    "institutions": [
     {
      "name": "Cornell University",
@@ -5107,8 +5355,8 @@
   {
    "orcid": ["0000-0001-8314-8497"],
    "scholar": "ftd3UB0AAAAJ",
+   "dblp": "00/6856",
    "openalex": "A5061379058",
-   "wikipedia": "https://en.wikipedia.org/wiki/Ewan_Birney",
    "institutions": [
     {
      "name": "European Bioinformatics Institute",
@@ -5120,6 +5368,7 @@
   },
   {
    "orcid": ["0000-0002-0225-2063"],
+   "dblp": "320/3988",
    "openalex": "A5024700830",
    "institutions": [
     {
@@ -5132,7 +5381,7 @@
   },
   {
    "orcid": ["0000-0002-0476-3609"],
-   "scholar": "owrs4WAAAAAJ",
+   "dblp": "81/5412",
    "openalex": "A5036101186",
    "institutions": [
     {
@@ -5145,6 +5394,7 @@
   },
   {
    "orcid": ["0000-0002-7262-8978"],
+   "dblp": "204/5332",
    "openalex": "A5015509833",
    "institutions": [
     {
@@ -5158,24 +5408,26 @@
   {
    "orcid": ["0000-0003-1475-8923"],
    "scholar": "rHYx-PMAAAAJ",
+   "dblp": "29/3552",
    "openalex": "A5016565949",
    "institutions": [
     {
      "name": "University of Canterbury",
      "country": "NZ",
-     "from": 2005,
-     "to": 2005
+     "from": 2004,
+     "to": 2004
     },
     {
      "name": "University of Leeds",
      "country": "GB",
-     "from": 2005,
-     "to": 2005
+     "from": 2004,
+     "to": 2004
     }
    ]
   },
   {
    "orcid": ["0000-0001-7402-8506"],
+   "dblp": "52/3912",
    "openalex": "A5003426513",
    "institutions": [
     {
@@ -5188,6 +5440,7 @@
   },
   {
    "orcid": ["0000-0001-9334-0845"],
+   "dblp": "60/5986",
    "openalex": "A5045929541",
    "institutions": [
     {
@@ -5206,6 +5459,7 @@
   },
   {
    "orcid": ["0000-0002-7530-2965"],
+   "dblp": "169/4010",
    "openalex": "A5000125764",
    "institutions": [
     {
@@ -5218,6 +5472,7 @@
   },
   {
    "orcid": ["0000-0002-8046-1063"],
+   "dblp": "04/2769",
    "openalex": "A5032741707",
    "institutions": [
     {
@@ -5229,7 +5484,7 @@
    ]
   },
   {
-   "orcid": ["0000-0002-9102-7457"],
+   "dblp": "85/6568",
    "openalex": "A5101541750",
    "institutions": [
     {
@@ -5242,6 +5497,8 @@
   },
   {
    "orcid": ["0000-0001-7947-2243"],
+   "scholar": "xoNrEqUAAAAJ",
+   "dblp": "10/6530",
    "openalex": "A5012113499",
    "institutions": [
     {
@@ -5253,6 +5510,10 @@
    ]
   },
   {
+   "orcid": ["0000-0002-6328-902X"],
+   "scholar": "7kTk3LUAAAAJ",
+   "dblp": "45/3080",
+   "openalex": "A5023677285",
    "institutions": [
     {
      "name": "Erasmus MC",
@@ -5270,10 +5531,13 @@
   },
   {
    "orcid": ["0009-0004-9056-8587"],
-   "wikipedia": "https://en.wikipedia.org/wiki/Peter_Buneman"
+   "scholar": "d9bq04sAAAAJ",
+   "dblp": "b/PeterBuneman",
+   "openalex": "A5087078518"
   },
   {
    "orcid": ["0000-0003-4164-5158"],
+   "dblp": "323/9613",
    "openalex": "A5079500258",
    "institutions": [
     {
@@ -5298,6 +5562,7 @@
   {
    "orcid": ["0000-0002-0309-604X"],
    "scholar": "sCFo5z4AAAAJ",
+   "dblp": "30/7253",
    "openalex": "A5059757648",
    "institutions": [
     {
@@ -5310,6 +5575,7 @@
   },
   {
    "orcid": ["0000-0003-3659-6769"],
+   "dblp": "94/196",
    "openalex": "A5016104570",
    "institutions": [
     {
@@ -5328,6 +5594,7 @@
   },
   {
    "orcid": ["0000-0002-1552-227X"],
+   "dblp": "18/7064",
    "openalex": "A5027836945",
    "institutions": [
     {
@@ -5340,6 +5607,7 @@
   },
   {
    "orcid": ["0000-0002-9391-8050"],
+   "dblp": "29/2537",
    "openalex": "A5014728174",
    "institutions": [
     {
@@ -5351,6 +5619,7 @@
    ]
   },
   {
+   "orcid": ["0000-0001-9406-546X"],
    "openalex": "A5049499032",
    "institutions": [
     {
@@ -5362,6 +5631,8 @@
    ]
   },
   {
+   "dblp": "81/2840",
+   "openalex": "A5071801811",
    "institutions": [
     {
      "name": "Université de Montréal",
@@ -5372,17 +5643,22 @@
    ]
   },
   {
+   "orcid": ["0009-0008-7054-0121"],
+   "dblp": "354/5374",
    "openalex": "A5111243494",
    "institutions": [
     {
      "name": "University of Tübingen",
      "country": "DE",
-     "from": 2025,
-     "to": 2025
+     "from": 2026,
+     "to": 2026
     }
    ]
   },
   {
+   "orcid": ["0000-0001-8687-5905"],
+   "dblp": "438/4653",
+   "openalex": "A5015900882",
    "institutions": [
     {
      "name": "University of Arkansas at Fayetteville",
@@ -5400,6 +5676,7 @@
   },
   {
    "orcid": ["0000-0002-8425-8775"],
+   "dblp": "37/3620",
    "openalex": "A5027919534",
    "institutions": [
     {
@@ -5413,6 +5690,7 @@
   {
    "orcid": ["0000-0002-6711-1739"],
    "scholar": "5TgmGNEAAAAJ",
+   "dblp": "94/3805",
    "openalex": "A5007504298",
    "institutions": [
     {
@@ -5436,7 +5714,7 @@
    ]
   },
   {
-   "openalex": "A5102825135",
+   "dblp": "74/3213",
    "institutions": [
     {
      "name": "Yale University",
@@ -5460,6 +5738,7 @@
   },
   {
    "orcid": ["0009-0004-2525-4506"],
+   "dblp": "50/65",
    "openalex": "A5075573393",
    "institutions": [
     {
@@ -5471,7 +5750,6 @@
    ]
   },
   {
-   "openalex": "A5101458538",
    "institutions": [
     {
      "name": "The Ohio State University",
@@ -5482,6 +5760,8 @@
    ]
   },
   {
+   "scholar": "cXTKzbMAAAAJ",
+   "dblp": "74/3460",
    "openalex": "A5059847817",
    "institutions": [
     {
@@ -5493,6 +5773,7 @@
    ]
   },
   {
+   "dblp": "207/5438",
    "openalex": "A5051523377",
    "institutions": [
     {
@@ -5505,6 +5786,7 @@
   },
   {
    "orcid": ["0000-0003-2205-730X"],
+   "dblp": "272/6817",
    "openalex": "A5006996313",
    "institutions": [
     {
@@ -5517,7 +5799,7 @@
   },
   {
    "orcid": ["0000-0001-9190-9284"],
-   "scholar": "lfdvCjEAAAAJ",
+   "dblp": "34/6517",
    "openalex": "A5012821611",
    "institutions": [
     {
@@ -5549,6 +5831,7 @@
   },
   {
    "orcid": ["0000-0002-8197-7520"],
+   "dblp": "227/2005",
    "openalex": "A5064950341",
    "institutions": [
     {
@@ -5561,8 +5844,8 @@
   },
   {
    "orcid": ["0000-0002-0148-1956"],
+   "dblp": "43/6526",
    "openalex": "A5053719847",
-   "wikipedia": "https://en.wikipedia.org/wiki/Melissa_S._Cline",
    "institutions": [
     {
      "name": "University of California, Santa Cruz",
@@ -5585,8 +5868,8 @@
   {
    "orcid": ["0000-0001-6097-6708"],
    "scholar": "49Jo0L4AAAAJ",
+   "dblp": "54/9539",
    "openalex": "A5091754800",
-   "wikipedia": "https://en.wikipedia.org/wiki/Caroline_Colijn",
    "institutions": [
     {
      "name": "Simon Fraser University",
@@ -5598,6 +5881,7 @@
   },
   {
    "orcid": ["0000-0002-3175-8522"],
+   "dblp": "283/6466",
    "openalex": "A5023199094",
    "institutions": [
     {
@@ -5610,6 +5894,7 @@
   },
   {
    "orcid": ["0000-0002-9566-3733"],
+   "dblp": "373/1379",
    "openalex": "A5061597768",
    "institutions": [
     {
@@ -5621,6 +5906,7 @@
    ]
   },
   {
+   "dblp": "52/3535",
    "openalex": "A5049225687",
    "institutions": [
     {
@@ -5634,8 +5920,8 @@
   {
    "orcid": ["0000-0002-0836-3389"],
    "scholar": "nccuYroAAAAJ",
+   "dblp": "35/5987",
    "openalex": "A5046615539",
-   "wikipedia": "https://en.wikipedia.org/wiki/Keith_A._Crandall",
    "institutions": [
     {
      "name": "Brigham Young University",
@@ -5647,6 +5933,7 @@
   },
   {
    "orcid": ["0000-0003-3984-0579"],
+   "dblp": "149/4243",
    "openalex": "A5014996327",
    "institutions": [
     {
@@ -5658,11 +5945,13 @@
    ]
   },
   {
+   "dblp": "392/2824",
    "openalex": "A5099172241"
   },
   {
    "orcid": ["0009-0003-2449-931X"],
    "scholar": "-JiDbaEAAAAJ",
+   "dblp": "381/9459",
    "openalex": "A5140833213",
    "institutions": [
     {
@@ -5676,6 +5965,7 @@
   {
    "orcid": ["0000-0003-2397-7925"],
    "scholar": "TE8_LDwAAAAJ",
+   "dblp": "40/2343",
    "openalex": "A5047169338",
    "institutions": [
     {
@@ -5687,7 +5977,10 @@
    ]
   },
   {
-   "openalex": "A5109453800",
+   "orcid": ["0009-0008-4770-0297"],
+   "scholar": "G1kSUlgAAAAJ",
+   "dblp": "353/7745",
+   "openalex": "A5102025823",
    "institutions": [
     {
      "name": "Bangladesh University of Engineering and Technology",
@@ -5700,6 +5993,7 @@
   {
    "orcid": ["0000-0003-2252-2988"],
    "scholar": "iSL1cKsAAAAJ",
+   "dblp": "24/8356",
    "openalex": "A5068042294",
    "institutions": [
     {
@@ -5713,6 +6007,7 @@
   {
    "orcid": ["0000-0001-8269-9430"],
    "scholar": "jBr0cxUAAAAJ",
+   "dblp": "29/1606",
    "openalex": "A5011691995",
    "institutions": [
     {
@@ -5724,6 +6019,7 @@
    ]
   },
   {
+   "dblp": "143/1762",
    "openalex": "A5032477773",
    "institutions": [
     {
@@ -5747,6 +6043,8 @@
    ]
   },
   {
+   "orcid": ["0000-0003-4023-8446"],
+   "dblp": "92/6288",
    "openalex": "A5066510227",
    "institutions": [
     {
@@ -5760,6 +6058,7 @@
   {
    "orcid": ["0000-0001-8144-580X"],
    "scholar": "CATSwmgAAAAJ",
+   "dblp": "278/8081",
    "openalex": "A5089270558",
    "institutions": [
     {
@@ -5772,6 +6071,7 @@
   },
   {
    "orcid": ["0000-0001-8465-1342"],
+   "dblp": "48/3007",
    "openalex": "A5067498631",
    "institutions": [
     {
@@ -5785,8 +6085,8 @@
   {
    "orcid": ["0000-0002-2170-853X"],
    "scholar": "QInd7HoAAAAJ",
+   "dblp": "22/229",
    "openalex": "A5050068380",
-   "wikipedia": "https://en.wikipedia.org/wiki/Christophe_Dessimoz",
    "institutions": [
     {
      "name": "European Bioinformatics Institute",
@@ -5803,7 +6103,10 @@
    ]
   },
   {
-   "openalex": "A5121527446",
+   "orcid": ["0000-0002-7112-6618"],
+   "scholar": "w_cefGcAAAAJ",
+   "dblp": "241/6954",
+   "openalex": "A5068105586",
    "institutions": [
     {
      "name": "University of California, Santa Cruz",
@@ -5815,6 +6118,7 @@
   },
   {
    "orcid": ["0000-0003-2978-2520"],
+   "dblp": "301/4950",
    "openalex": "A5067513381",
    "institutions": [
     {
@@ -5826,6 +6130,7 @@
    ]
   },
   {
+   "dblp": "128/7482",
    "openalex": "A5006434469",
    "institutions": [
     {
@@ -5837,6 +6142,9 @@
    ]
   },
   {
+   "orcid": ["0009-0001-7875-7711"],
+   "scholar": "HEWu8gUAAAAJ",
+   "dblp": "125/5383",
    "openalex": "A5113971138",
    "institutions": [
     {
@@ -5848,6 +6156,7 @@
    ]
   },
   {
+   "dblp": "02/1684",
    "openalex": "A5047600415",
    "institutions": [
     {
@@ -5860,6 +6169,8 @@
   },
   {
    "orcid": ["0000-0003-1275-1621"],
+   "scholar": "eIMVw2MAAAAJ",
+   "dblp": "40/7404",
    "openalex": "A5024989829",
    "institutions": [
     {
@@ -5873,6 +6184,7 @@
   {
    "orcid": ["0000-0002-6011-3387"],
    "scholar": "xO3xcX8AAAAJ",
+   "dblp": "04/5260",
    "openalex": "A5070686724",
    "institutions": [
     {
@@ -5884,8 +6196,7 @@
    ]
   },
   {
-   "orcid": ["0000-0001-5368-2787"],
-   "openalex": "A5102849844",
+   "dblp": "89/1561",
    "institutions": [
     {
      "name": "Rice University",
@@ -5896,8 +6207,8 @@
    ]
   },
   {
+   "dblp": "22/3315",
    "openalex": "A5109558515",
-   "wikipedia": "https://en.wikipedia.org/wiki/Russell_Doolittle",
    "institutions": [
     {
      "name": "University of California San Diego",
@@ -5909,7 +6220,7 @@
   },
   {
    "orcid": ["0000-0003-0371-9961"],
-   "scholar": "UDZDBjcAAAAJ",
+   "dblp": "163/6329",
    "openalex": "A5052240308",
    "institutions": [
     {
@@ -5921,8 +6232,8 @@
    ]
   },
   {
+   "dblp": "70/4796",
    "openalex": "A5111472625",
-   "wikipedia": "https://en.wikipedia.org/wiki/Andreas_Dress",
    "institutions": [
     {
      "name": "Bielefeld University",
@@ -5934,7 +6245,9 @@
   },
   {
    "orcid": ["0000-0002-5479-1974"],
-   "openalex": "A5147403426",
+   "scholar": "gg75dtQAAAAJ",
+   "dblp": "222/4593",
+   "openalex": "A5022291539",
    "institutions": [
     {
      "name": "University of Copenhagen",
@@ -5946,6 +6259,7 @@
   },
   {
    "orcid": ["0000-0002-7427-6822"],
+   "dblp": "46/6810",
    "openalex": "A5034589995",
    "institutions": [
     {
@@ -5958,6 +6272,7 @@
   },
   {
    "orcid": ["0000-0003-2836-3463"],
+   "dblp": "20/4211",
    "openalex": "A5036099891",
    "institutions": [
     {
@@ -5970,6 +6285,7 @@
   },
   {
    "orcid": ["0000-0001-8187-9253"],
+   "dblp": "27/907",
    "openalex": "A5064227397",
    "institutions": [
     {
@@ -5981,12 +6297,12 @@
    ]
   },
   {
-   "scholar": "duBlF_YAAAAJ",
-   "openalex": "A5108567924",
-   "wikipedia": "https://en.wikipedia.org/wiki/Bradley_Efron"
+   "dblp": "147/3925",
+   "openalex": "A5108567924"
   },
   {
    "orcid": ["0000-0001-7942-1243"],
+   "dblp": "34/1695",
    "openalex": "A5013234411",
    "institutions": [
     {
@@ -6000,8 +6316,8 @@
   {
    "orcid": ["0000-0002-0159-2197"],
    "scholar": "LrlwhwUAAAAJ",
+   "dblp": "75/6757",
    "openalex": "A5059066311",
-   "wikipedia": "https://en.wikipedia.org/wiki/Jonathan_Eisen",
    "institutions": [
     {
      "name": "University of California, Davis",
@@ -6014,6 +6330,7 @@
   {
    "orcid": ["0000-0001-8345-8356"],
    "scholar": "rWNHPpAAAAAJ",
+   "dblp": "200/3080",
    "openalex": "A5054998077",
    "institutions": [
     {
@@ -6025,7 +6342,7 @@
    ]
   },
   {
-   "orcid": ["0000-0001-9035-5419"],
+   "dblp": "17/5727",
    "openalex": "A5063926383",
    "institutions": [
     {
@@ -6038,6 +6355,7 @@
   },
   {
    "orcid": ["0000-0001-7328-4831"],
+   "dblp": "52/6137",
    "openalex": "A5007566988",
    "institutions": [
     {
@@ -6051,6 +6369,7 @@
   {
    "orcid": ["0000-0002-2331-9714"],
    "scholar": "4DeNxosAAAAJ",
+   "dblp": "01/3826",
    "openalex": "A5085000737",
    "institutions": [
     {
@@ -6063,12 +6382,13 @@
   },
   {
    "orcid": ["0000-0003-2031-2872"],
-   "scholar": "5kf1vNwAAAAJ",
+   "dblp": "57/2408",
    "openalex": "A5102847261"
   },
   {
    "orcid": ["0000-0002-8913-3904"],
    "scholar": "Dr4pU2MAAAAJ",
+   "dblp": "32/2590",
    "openalex": "A5035605233",
    "institutions": [
     {
@@ -6081,7 +6401,7 @@
   },
   {
    "orcid": ["0000-0002-6460-3789"],
-   "openalex": "A5031177539",
+   "dblp": "21/3965",
    "institutions": [
     {
      "name": "Universitat Autònoma de Barcelona",
@@ -6103,6 +6423,7 @@
    ]
   },
   {
+   "openalex": "A5040214814",
    "institutions": [
     {
      "name": "Ludwig-Maximilians-Universität München",
@@ -6115,8 +6436,8 @@
   {
    "orcid": ["0000-0003-3616-7788"],
    "scholar": "2uHUSa8AAAAJ",
+   "dblp": "f/MartinFarachColton",
    "openalex": "A5087023890",
-   "wikipedia": "https://en.wikipedia.org/wiki/Martin_Farach-Colton",
    "institutions": [
     {
      "name": "Rutgers, The State University of New Jersey",
@@ -6138,6 +6459,8 @@
   },
   {
    "orcid": ["0000-0002-9945-981X"],
+   "scholar": "MNDVpoUAAAAJ",
+   "dblp": "62/8616",
    "openalex": "A5041988622",
    "institutions": [
     {
@@ -6163,6 +6486,7 @@
   {
    "orcid": ["0000-0002-6845-9008"],
    "scholar": "Klc6YZcAAAAJ",
+   "dblp": "49/381",
    "openalex": "A5001781037",
    "institutions": [
     {
@@ -6175,6 +6499,7 @@
   },
   {
    "orcid": ["0000-0002-9429-0859"],
+   "dblp": "02/9508",
    "openalex": "A5088362612",
    "institutions": [
     {
@@ -6187,8 +6512,8 @@
   },
   {
    "scholar": "YVy_ry8AAAAJ",
+   "dblp": "f/MichaelJFischer",
    "openalex": "A5103508736",
-   "wikipedia": "https://en.wikipedia.org/wiki/Michael_J._Fischer",
    "institutions": [
     {
      "name": "Massachusetts Institute of Technology",
@@ -6199,8 +6524,7 @@
    ]
   },
   {
-   "orcid": ["0000-0001-5025-3733"],
-   "openalex": "A5053917852",
+   "dblp": "51/3820",
    "institutions": [
     {
      "name": "European Bioinformatics Institute",
@@ -6211,6 +6535,7 @@
    ]
   },
   {
+   "dblp": "33/5294",
    "openalex": "A5022368699",
    "institutions": [
     {
@@ -6229,6 +6554,7 @@
   },
   {
    "orcid": ["0000-0002-5431-190X"],
+   "dblp": "157/4351",
    "openalex": "A5045966754",
    "institutions": [
     {
@@ -6240,6 +6566,8 @@
    ]
   },
   {
+   "orcid": ["0009-0007-9114-0672"],
+   "dblp": "304/7031",
    "openalex": "A5075290852",
    "institutions": [
     {
@@ -6251,8 +6579,7 @@
    ]
   },
   {
-   "orcid": ["0000-0003-2682-2304"],
-   "scholar": "DgFqKHYAAAAJ",
+   "dblp": "39/9422",
    "openalex": "A5084687928",
    "institutions": [
     {
@@ -6266,6 +6593,7 @@
   {
    "orcid": ["0000-0003-0998-2859"],
    "scholar": "-44WlcwAAAAJ",
+   "dblp": "38/6748",
    "openalex": "A5055829507",
    "institutions": [
     {
@@ -6277,6 +6605,9 @@
    ]
   },
   {
+   "orcid": ["0000-0002-1224-4075"],
+   "dblp": "27/1627",
+   "openalex": "A5022543354",
    "institutions": [
     {
      "name": "The University of Texas Health Science Center at Houston",
@@ -6289,6 +6620,7 @@
   {
    "orcid": ["0000-0003-0019-1735"],
    "scholar": "f5qDizoAAAAJ",
+   "dblp": "32/3987",
    "openalex": "A5003394700",
    "institutions": [
     {
@@ -6301,6 +6633,7 @@
   },
   {
    "orcid": ["0000-0002-7808-1213"],
+   "dblp": "40/1933",
    "openalex": "A5067459027",
    "institutions": [
     {
@@ -6313,6 +6646,7 @@
   },
   {
    "orcid": ["0000-0002-9861-5294"],
+   "dblp": "250/2563",
    "openalex": "A5060024897",
    "institutions": [
     {
@@ -6332,6 +6666,7 @@
   {
    "orcid": ["0000-0003-3821-631X"],
    "scholar": "d5TKoncAAAAJ",
+   "dblp": "98/9718",
    "openalex": "A5008992371",
    "institutions": [
     {
@@ -6344,6 +6679,8 @@
   },
   {
    "orcid": ["0000-0002-0673-9450"],
+   "scholar": "EusCh_8AAAAJ",
+   "dblp": "280/8969",
    "openalex": "A5039537406",
    "institutions": [
     {
@@ -6374,9 +6711,8 @@
   },
   {
    "orcid": ["0000-0002-1334-5556"],
-   "scholar": "1nr7TU0AAAAJ",
+   "dblp": "23/11040",
    "openalex": "A5054716421",
-   "wikipedia": "https://en.wikipedia.org/wiki/Brandon_Gaut",
    "institutions": [
     {
      "name": "North Carolina State University",
@@ -6388,6 +6724,7 @@
   },
   {
    "orcid": ["0000-0001-7798-427X"],
+   "dblp": "301/5043",
    "openalex": "A5010061723",
    "institutions": [
     {
@@ -6405,6 +6742,8 @@
    ]
   },
   {
+   "orcid": ["0000-0001-9918-875X"],
+   "dblp": "311/6401",
    "openalex": "A5109034758",
    "institutions": [
     {
@@ -6422,6 +6761,7 @@
    ]
   },
   {
+   "dblp": "84/2884",
    "institutions": [
     {
      "name": "University of California, Davis",
@@ -6434,6 +6774,7 @@
   {
    "orcid": ["0000-0002-7311-9606"],
    "scholar": "ppFtlYgAAAAJ",
+   "dblp": "445/3559",
    "openalex": "A5037877880",
    "institutions": [
     {
@@ -6445,7 +6786,7 @@
    ]
   },
   {
-   "scholar": "_6Fh2pwAAAAJ",
+   "dblp": "46/1721",
    "openalex": "A5052681801",
    "institutions": [
     {
@@ -6459,8 +6800,8 @@
   {
    "orcid": ["0000-0003-3081-9351"],
    "scholar": "qrPaF3QAAAAJ",
+   "dblp": "g/RLGraham",
    "openalex": "A5071015671",
-   "wikipedia": "https://en.wikipedia.org/wiki/Ronald_Graham",
    "institutions": [
     {
      "name": "Bell Laboratories",
@@ -6472,6 +6813,7 @@
   },
   {
    "orcid": ["0000-0001-8632-4126"],
+   "dblp": "05/6417",
    "openalex": "A5073368743",
    "institutions": [
     {
@@ -6503,6 +6845,7 @@
   },
   {
    "orcid": ["0000-0002-3993-1510"],
+   "dblp": "223/5683",
    "openalex": "A5056230275",
    "institutions": [
     {
@@ -6515,6 +6858,7 @@
   },
   {
    "orcid": ["0000-0001-8536-4062"],
+   "dblp": "00/1179",
    "openalex": "A5018334027",
    "institutions": [
     {
@@ -6526,7 +6870,7 @@
    ]
   },
   {
-   "openalex": "A5087219672",
+   "dblp": "62/476",
    "institutions": [
     {
      "name": "Stanford University",
@@ -6538,6 +6882,7 @@
   },
   {
    "orcid": ["0000-0001-9845-6986"],
+   "dblp": "91/958-2",
    "openalex": "A5080712092",
    "institutions": [
     {
@@ -6550,6 +6895,7 @@
   },
   {
    "orcid": ["0009-0002-8598-1970"],
+   "dblp": "337/4468",
    "openalex": "A5017817308",
    "institutions": [
     {
@@ -6563,6 +6909,7 @@
   {
    "orcid": ["0000-0001-9744-131X"],
    "scholar": "zABbjIoAAAAJ",
+   "dblp": "324/0217",
    "openalex": "A5028113588",
    "institutions": [
     {
@@ -6581,7 +6928,6 @@
   },
   {
    "orcid": ["0000-0002-9346-0457"],
-   "openalex": "A5090810402",
    "institutions": [
     {
      "name": "University of Pennsylvania",
@@ -6592,6 +6938,7 @@
    ]
   },
   {
+   "dblp": "203/6154",
    "institutions": [
     {
      "name": "University of Illinois Urbana-Champaign",
@@ -6603,6 +6950,7 @@
   },
   {
    "orcid": ["0000-0002-5622-1916"],
+   "dblp": "96/5161",
    "openalex": "A5082317807",
    "institutions": [
     {
@@ -6615,6 +6963,8 @@
   },
   {
    "orcid": ["0000-0001-6738-6786"],
+   "scholar": "aSl0gXwAAAAJ",
+   "dblp": "h/MichaelTHallett",
    "openalex": "A5059804416",
    "institutions": [
     {
@@ -6632,7 +6982,9 @@
    ]
   },
   {
-   "openalex": "A5060779313",
+   "orcid": ["0000-0002-3127-1757"],
+   "dblp": "49/2179",
+   "openalex": "A5009012039",
    "institutions": [
     {
      "name": "Emory University",
@@ -6644,6 +6996,7 @@
   },
   {
    "orcid": ["0000-0002-4443-042X"],
+   "dblp": "66/5246",
    "openalex": "A5111911477",
    "institutions": [
     {
@@ -6656,6 +7009,7 @@
   },
   {
    "orcid": ["0000-0001-5630-2743"],
+   "dblp": "134/9890",
    "openalex": "A5081436487",
    "institutions": [
     {
@@ -6674,6 +7028,7 @@
   },
   {
    "orcid": ["0009-0004-7792-9798"],
+   "dblp": "320/3864",
    "openalex": "A5088616760",
    "institutions": [
     {
@@ -6685,6 +7040,10 @@
    ]
   },
   {
+   "orcid": ["0000-0002-3855-344X"],
+   "scholar": "CnBvgwcAAAAJ",
+   "dblp": "16/2522",
+   "openalex": "A5089579452",
    "institutions": [
     {
      "name": "Bar-Ilan University",
@@ -6703,8 +7062,8 @@
   {
    "orcid": ["0000-0003-1533-4575"],
    "scholar": "S2OjOvYAAAAJ",
+   "dblp": "h/DavidHaussler",
    "openalex": "A5090849321",
-   "wikipedia": "https://en.wikipedia.org/wiki/David_Haussler",
    "institutions": [
     {
      "name": "University of California, Santa Cruz",
@@ -6716,6 +7075,7 @@
   },
   {
    "orcid": ["0000-0002-0087-2541"],
+   "dblp": "129/6316",
    "openalex": "A5084374084",
    "institutions": [
     {
@@ -6739,6 +7099,7 @@
    ]
   },
   {
+   "dblp": "176/7531",
    "openalex": "A5044642735",
    "institutions": [
     {
@@ -6751,6 +7112,7 @@
   },
   {
    "orcid": ["0000-0002-1117-8061"],
+   "dblp": "122/8801",
    "openalex": "A5088623554",
    "institutions": [
     {
@@ -6763,6 +7125,8 @@
   },
   {
    "orcid": ["0000-0002-5008-6530"],
+   "scholar": "NXbggxYAAAAJ",
+   "dblp": "h/MonikaRauchHenzinger",
    "openalex": "A5003641345",
    "institutions": [
     {
@@ -6776,6 +7140,7 @@
   {
    "orcid": ["0000-0001-8641-4930"],
    "scholar": "ZhNFzz8AAAAJ",
+   "dblp": "85/5966",
    "openalex": "A5103164604",
    "institutions": [
     {
@@ -6787,6 +7152,7 @@
    ]
   },
   {
+   "dblp": "25/4975",
    "openalex": "A5010859072",
    "institutions": [
     {
@@ -6799,6 +7165,7 @@
   },
   {
    "orcid": ["0000-0003-4485-2267"],
+   "dblp": "320/6077",
    "openalex": "A5086440837",
    "institutions": [
     {
@@ -6810,10 +7177,9 @@
    ]
   },
   {
-   "orcid": ["0000-0001-7525-3385"],
+   "orcid": ["0000-0002-4787-0033", "0000-0001-7525-3385"],
    "scholar": "TUgQVOYAAAAJ",
-   "openalex": "A5103274106",
-   "wikipedia": "https://en.wikipedia.org/wiki/David_Hillis",
+   "openalex": "A5090130021",
    "institutions": [
     {
      "name": "The University of Texas at Austin",
@@ -6824,9 +7190,8 @@
    ]
   },
   {
-   "scholar": "5NL9BdYAAAAJ",
+   "dblp": "h/DanielSHirschberg",
    "openalex": "A5113554965",
-   "wikipedia": "https://en.wikipedia.org/wiki/Dan_Hirschberg",
    "institutions": [
     {
      "name": "Princeton University",
@@ -6839,6 +7204,7 @@
   {
    "orcid": ["0000-0002-0361-2307"],
    "scholar": "Qr-P8DgAAAAJ",
+   "dblp": "144/2202",
    "openalex": "A5090497511",
    "institutions": [
     {
@@ -6851,6 +7217,7 @@
   },
   {
    "orcid": ["0000-0001-9200-2668"],
+   "dblp": "191/0607",
    "openalex": "A5025772345",
    "institutions": [
     {
@@ -6876,6 +7243,7 @@
   {
    "orcid": ["0000-0001-7132-0800"],
    "scholar": "sO2tBiAAAAAJ",
+   "dblp": "99/6107",
    "openalex": "A5011771355",
    "institutions": [
     {
@@ -6888,8 +7256,8 @@
   },
   {
    "orcid": ["0000-0003-3392-9839"],
+   "dblp": "91/1548",
    "openalex": "A5060013591",
-   "wikipedia": "https://en.wikipedia.org/wiki/Paulien_Hogeweg",
    "institutions": [
     {
      "name": "Utrecht University",
@@ -6901,7 +7269,7 @@
   },
   {
    "orcid": ["0000-0001-5575-0536"],
-   "scholar": "3UyNayMAAAAJ",
+   "dblp": "66/8321",
    "openalex": "A5021006859",
    "institutions": [
     {
@@ -6913,7 +7281,7 @@
    ]
   },
   {
-   "orcid": ["0000-0002-9450-6269"],
+   "dblp": "42/2083",
    "openalex": "A5006607273",
    "institutions": [
     {
@@ -6937,6 +7305,7 @@
    ]
   },
   {
+   "dblp": "61/6285",
    "openalex": "A5074935193",
    "institutions": [
     {
@@ -6948,6 +7317,8 @@
    ]
   },
   {
+   "scholar": "D8iiWtEAAAAJ",
+   "dblp": "44/6970",
    "openalex": "A5047915561",
    "institutions": [
     {
@@ -6960,6 +7331,7 @@
   },
   {
    "orcid": ["0000-0001-7224-2074"],
+   "dblp": "94/5549",
    "openalex": "A5091335490",
    "institutions": [
     {
@@ -6971,7 +7343,8 @@
    ]
   },
   {
-   "openalex": "A5110563743",
+   "dblp": "53/2856",
+   "openalex": "A5109835157",
    "institutions": [
     {
      "name": "Bielefeld University",
@@ -6983,13 +7356,15 @@
   },
   {
    "orcid": ["0000-0001-9367-6189"],
+   "scholar": "tXNWGFEAAAAJ",
+   "dblp": "301/5076",
    "openalex": "A5065496237"
   },
   {
    "orcid": ["0009-0005-2022-8429"],
    "scholar": "oOwNKsAAAAAJ",
+   "dblp": "i/PiotrIndyk",
    "openalex": "A5076056716",
-   "wikipedia": "https://en.wikipedia.org/wiki/Piotr_Indyk",
    "institutions": [
     {
      "name": "Massachusetts Institute of Technology",
@@ -7013,6 +7388,7 @@
   },
   {
    "orcid": ["0000-0001-8147-6200"],
+   "dblp": "370/6101",
    "openalex": "A5032942384",
    "institutions": [
     {
@@ -7025,6 +7401,7 @@
   },
   {
    "orcid": ["0000-0002-8776-5764"],
+   "dblp": "75/6174",
    "openalex": "A5073578961",
    "institutions": [
     {
@@ -7037,6 +7414,7 @@
   },
   {
    "orcid": ["0000-0002-9619-3809"],
+   "dblp": "53/5735",
    "openalex": "A5023435254",
    "institutions": [
     {
@@ -7055,6 +7433,7 @@
   },
   {
    "orcid": ["0000-0002-4857-5431"],
+   "dblp": "122/8899",
    "openalex": "A5007757678",
    "institutions": [
     {
@@ -7068,8 +7447,8 @@
   {
    "orcid": ["0000-0003-3833-4498"],
    "scholar": "XUhsCZwAAAAJ",
+   "dblp": "j/TaoJiang-1",
    "openalex": "A5101911266",
-   "wikipedia": "https://en.wikipedia.org/wiki/Tao_Jiang_(computer_scientist)",
    "institutions": [
     {
      "name": "McMaster University",
@@ -7117,8 +7496,8 @@
   {
    "orcid": ["0000-0001-8935-817X"],
    "scholar": "yxUduqMAAAAJ",
+   "dblp": "j/MichaelIJordan",
    "openalex": "A5049812527",
-   "wikipedia": "https://en.wikipedia.org/wiki/Michael_I._Jordan",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -7130,6 +7509,8 @@
   },
   {
    "orcid": ["0000-0002-7157-6694"],
+   "scholar": "rEsm1asAAAAJ",
+   "dblp": "95/6753",
    "openalex": "A5038947183",
    "institutions": [
     {
@@ -7143,6 +7524,7 @@
   {
    "orcid": ["0000-0002-4974-9659"],
    "scholar": "pcrOEs8AAAAJ",
+   "dblp": "85/3641",
    "openalex": "A5035639170",
    "institutions": [
     {
@@ -7161,6 +7543,7 @@
   },
   {
    "orcid": ["0009-0005-0054-8134"],
+   "dblp": "199/3496",
    "openalex": "A5101628700",
    "institutions": [
     {
@@ -7172,6 +7555,7 @@
    ]
   },
   {
+   "dblp": "34/2935",
    "openalex": "A5014148410",
    "institutions": [
     {
@@ -7184,6 +7568,7 @@
   },
   {
    "orcid": ["0000-0002-7460-470X"],
+   "dblp": "396/5577",
    "openalex": "A5032435550",
    "institutions": [
     {
@@ -7196,6 +7581,7 @@
   },
   {
    "orcid": ["0000-0003-0854-6449"],
+   "dblp": "134/8870",
    "openalex": "A5004613714",
    "institutions": [
     {
@@ -7215,6 +7601,7 @@
   {
    "orcid": ["0000-0001-9186-3538"],
    "scholar": "FTx_BNsAAAAJ",
+   "dblp": "k/MichaelKaufmann1",
    "openalex": "A5103045561",
    "institutions": [
     {
@@ -7228,8 +7615,8 @@
   {
    "orcid": ["0000-0001-7113-9630"],
    "scholar": "lsYXBx8AAAAJ",
-   "openalex": "A5108044601",
-   "wikipedia": "https://en.wikipedia.org/wiki/Manolis_Kellis"
+   "dblp": "75/2690",
+   "openalex": "A5108044601"
   },
   {
    "openalex": "A5097932722",
@@ -7256,6 +7643,7 @@
   {
    "orcid": ["0000-0002-8702-0754"],
    "scholar": "lffKENIAAAAJ",
+   "dblp": "279/9924",
    "openalex": "A5025375789",
    "institutions": [
     {
@@ -7267,6 +7655,7 @@
    ]
   },
   {
+   "dblp": "97/1037",
    "openalex": "A5101648487",
    "institutions": [
     {
@@ -7279,6 +7668,8 @@
   },
   {
    "orcid": ["0000-0001-7311-7427"],
+   "scholar": "2-iEYMUAAAAJ",
+   "dblp": "k/ValerieKing",
    "openalex": "A5110426531",
    "institutions": [
     {
@@ -7290,6 +7681,7 @@
    ]
   },
   {
+   "dblp": "64/7602",
    "openalex": "A5087249367",
    "institutions": [
     {
@@ -7301,6 +7693,8 @@
    ]
   },
   {
+   "orcid": ["0000-0002-4570-6109"],
+   "dblp": "68/1530",
    "openalex": "A5072339922",
    "institutions": [
     {
@@ -7314,8 +7708,8 @@
   {
    "orcid": ["0000-0002-9808-4307"],
    "scholar": "24OOpyEAAAAJ",
+   "dblp": "97/2557",
    "openalex": "A5018272550",
-   "wikipedia": "https://en.wikipedia.org/wiki/Caroline_Klivans",
    "institutions": [
     {
      "name": "Mathematical Sciences Research Institute",
@@ -7332,6 +7726,7 @@
    ]
   },
   {
+   "dblp": "00/1163",
    "openalex": "A5041681575",
    "institutions": [
     {
@@ -7344,6 +7739,7 @@
   },
   {
    "orcid": ["0000-0003-0978-8730"],
+   "dblp": "302/4481",
    "openalex": "A5064299065",
    "institutions": [
     {
@@ -7356,6 +7752,7 @@
   },
   {
    "orcid": ["0000-0001-8243-4694"],
+   "dblp": "23/5084",
    "openalex": "A5072121403",
    "institutions": [
     {
@@ -7367,6 +7764,7 @@
    ]
   },
   {
+   "dblp": "67/8713",
    "openalex": "A5082276721",
    "institutions": [
     {
@@ -7380,8 +7778,8 @@
   {
    "orcid": ["0000-0002-5147-6282"],
    "scholar": "-vGMjmwAAAAJ",
+   "dblp": "k/AndersKrogh",
    "openalex": "A5083542637",
-   "wikipedia": "https://en.wikipedia.org/wiki/Anders_Krogh",
    "institutions": [
     {
      "name": "Technical University of Denmark",
@@ -7398,8 +7796,7 @@
    ]
   },
   {
-   "orcid": ["0000-0002-4918-2330"],
-   "openalex": "A5101777458",
+   "dblp": "160/6770",
    "institutions": [
     {
      "name": "The University of Texas at Austin",
@@ -7411,6 +7808,7 @@
   },
   {
    "orcid": ["0000-0001-5237-1899"],
+   "dblp": "42/1588",
    "openalex": "A5005612030",
    "institutions": [
     {
@@ -7423,6 +7821,7 @@
   },
   {
    "orcid": ["0000-0002-5657-018X"],
+   "dblp": "150/0077",
    "openalex": "A5025504717",
    "institutions": [
     {
@@ -7441,6 +7840,7 @@
   },
   {
    "orcid": ["0000-0003-1297-5078"],
+   "dblp": "02/10992",
    "openalex": "A5069514895",
    "institutions": [
     {
@@ -7459,6 +7859,8 @@
   },
   {
    "orcid": ["0000-0002-5305-7372"],
+   "scholar": "O2xit3MAAAAJ",
+   "dblp": "117/8942",
    "openalex": "A5016796629",
    "institutions": [
     {
@@ -7477,6 +7879,8 @@
   },
   {
    "orcid": ["0000-0002-4552-0240"],
+   "scholar": "lS1rJKQAAAAJ",
+   "dblp": "86/3552",
    "openalex": "A5064553103",
    "institutions": [
     {
@@ -7500,6 +7904,8 @@
   },
   {
    "orcid": ["0000-0001-5323-8483"],
+   "scholar": "3WJN5csAAAAJ",
+   "dblp": "36/5719",
    "openalex": "A5090463247",
    "institutions": [
     {
@@ -7512,6 +7918,8 @@
   },
   {
    "orcid": ["0000-0002-8672-6966"],
+   "scholar": "LxPnTjYAAAAJ",
+   "dblp": "139/1590",
    "openalex": "A5082247127",
    "institutions": [
     {
@@ -7523,7 +7931,7 @@
    ]
   },
   {
-   "wikipedia": "https://en.wikipedia.org/wiki/Eugene_Lawler",
+   "dblp": "59/4835",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -7535,6 +7943,7 @@
   },
   {
    "orcid": ["0000-0002-3715-210X"],
+   "dblp": "49/4978",
    "openalex": "A5051648291",
    "institutions": [
     {
@@ -7546,6 +7955,8 @@
    ]
   },
   {
+   "orcid": ["0009-0000-4285-7334"],
+   "dblp": "20/1285",
    "openalex": "A5081773015",
    "institutions": [
     {
@@ -7558,6 +7969,8 @@
   },
   {
    "orcid": ["0000-0003-4811-2231"],
+   "dblp": "84/3659",
+   "openalex": "A5055252653",
    "institutions": [
     {
      "name": "University of Georgia",
@@ -7570,6 +7983,7 @@
   {
    "orcid": ["0000-0002-6335-7977"],
    "scholar": "dYPH0_QAAAAJ",
+   "dblp": "98/5581",
    "openalex": "A5031382797",
    "institutions": [
     {
@@ -7592,6 +8006,7 @@
    ]
   },
   {
+   "dblp": "62/997",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -7603,6 +8018,7 @@
   },
   {
    "orcid": ["0000-0001-9852-8759"],
+   "dblp": "02/30",
    "openalex": "A5103242082",
    "institutions": [
     {
@@ -7614,7 +8030,10 @@
    ]
   },
   {
-   "openalex": "A5100351496",
+   "orcid": ["0000-0002-2157-2775"],
+   "scholar": "oGgPXFEAAAAJ",
+   "dblp": "l/MingLi1",
+   "openalex": "A5100351398",
    "institutions": [
     {
      "name": "University of Waterloo",
@@ -7625,7 +8044,7 @@
    ]
   },
   {
-   "openalex": "A5101475442",
+   "orcid": ["0000-0002-6856-6831"],
    "institutions": [
     {
      "name": "The University of Melbourne",
@@ -7637,6 +8056,7 @@
   },
   {
    "orcid": ["0000-0002-9003-7733"],
+   "dblp": "32/3885-1",
    "openalex": "A5101583301",
    "institutions": [
     {
@@ -7648,6 +8068,9 @@
    ]
   },
   {
+   "orcid": ["0000-0003-1086-1456", "0000-0003-2757-5026"],
+   "dblp": "06/3554",
+   "openalex": "A5049358254",
    "institutions": [
     {
      "name": "The University of Texas Health Science Center at Houston",
@@ -7671,6 +8094,8 @@
   },
   {
    "orcid": ["0000-0003-3440-9675"],
+   "scholar": "qYQHl4sAAAAJ",
+   "dblp": "29/3462-4",
    "openalex": "A5100617992",
    "institutions": [
     {
@@ -7682,6 +8107,7 @@
    ]
   },
   {
+   "dblp": "91/2190",
    "openalex": "A5054458396",
    "institutions": [
     {
@@ -7694,6 +8120,7 @@
   },
   {
    "orcid": ["0000-0002-1862-5688"],
+   "dblp": "135/5854",
    "openalex": "A5063295409",
    "institutions": [
     {
@@ -7706,6 +8133,7 @@
   },
   {
    "orcid": ["0000-0003-3269-7263"],
+   "dblp": "127/7002",
    "openalex": "A5084142327",
    "institutions": [
     {
@@ -7719,6 +8147,7 @@
   {
    "orcid": ["0000-0001-5668-5027"],
    "scholar": "0SPfIN4AAAAJ",
+   "dblp": "232/0355",
    "openalex": "A5072480273",
    "institutions": [
     {
@@ -7730,6 +8159,7 @@
    ]
   },
   {
+   "dblp": "86/401",
    "openalex": "A5084872691",
    "institutions": [
     {
@@ -7742,6 +8172,7 @@
   },
   {
    "orcid": ["0000-0003-1256-7306"],
+   "dblp": "49/5677",
    "openalex": "A5018972787",
    "institutions": [
     {
@@ -7754,7 +8185,6 @@
   },
   {
    "orcid": ["0000-0002-7094-6868"],
-   "openalex": "A5100654768",
    "institutions": [
     {
      "name": "Sichuan University",
@@ -7766,9 +8196,7 @@
   },
   {
    "orcid": ["0000-0003-4953-4575"],
-   "scholar": "eYoJy9kAAAAJ",
    "openalex": "A5041917392",
-   "wikipedia": "https://en.wikipedia.org/wiki/Wayne_Maddison",
    "institutions": [
     {
      "name": "University of British Columbia",
@@ -7780,6 +8208,7 @@
   },
   {
    "orcid": ["0000-0003-4368-445X"],
+   "dblp": "141/4948",
    "openalex": "A5047855078",
    "institutions": [
     {
@@ -7797,6 +8226,7 @@
    ]
   },
   {
+   "dblp": "59/626",
    "openalex": "A5049594282",
    "institutions": [
     {
@@ -7809,6 +8239,7 @@
   },
   {
    "orcid": ["0000-0001-8442-9709"],
+   "dblp": "340/3596",
    "openalex": "A5081950816",
    "institutions": [
     {
@@ -7820,8 +8251,7 @@
    ]
   },
   {
-   "openalex": "A5109233902",
-   "wikipedia": "https://en.wikipedia.org/wiki/Emanuel_Margoliash",
+   "openalex": "A5109101057",
    "institutions": [
     {
      "name": "Abbott (United States)",
@@ -7833,6 +8263,7 @@
   },
   {
    "orcid": ["0000-0003-2000-1476"],
+   "dblp": "m/JSMarron",
    "openalex": "A5053189482",
    "institutions": [
     {
@@ -7845,6 +8276,7 @@
   },
   {
    "orcid": ["0000-0002-6298-1014"],
+   "dblp": "02/6681",
    "institutions": [
     {
      "name": "European Bioinformatics Institute",
@@ -7866,6 +8298,8 @@
   },
   {
    "orcid": ["0000-0002-6588-4762"],
+   "scholar": "o_roEHkAAAAJ",
+   "dblp": "63/6663",
    "openalex": "A5059218594",
    "institutions": [
     {
@@ -7879,6 +8313,7 @@
   {
    "orcid": ["0000-0002-1819-729X"],
    "scholar": "Skdtm7cAAAAJ",
+   "dblp": "132/8978",
    "openalex": "A5000362971",
    "institutions": [
     {
@@ -7890,6 +8325,7 @@
    ]
   },
   {
+   "dblp": "75/6707",
    "openalex": "A5022253831",
    "institutions": [
     {
@@ -7902,6 +8338,7 @@
   },
   {
    "orcid": ["0000-0001-5770-6336"],
+   "dblp": "83/5089",
    "openalex": "A5037518076",
    "institutions": [
     {
@@ -7915,6 +8352,7 @@
   {
    "orcid": ["0000-0003-1769-5032"],
    "scholar": "FKr7J48AAAAJ",
+   "dblp": "38/4469",
    "openalex": "A5084942657",
    "institutions": [
     {
@@ -7926,6 +8364,7 @@
    ]
   },
   {
+   "dblp": "248/1403",
    "openalex": "A5112206058",
    "institutions": [
     {
@@ -7938,6 +8377,7 @@
   },
   {
    "orcid": ["0000-0003-1027-135X"],
+   "dblp": "93/2953",
    "openalex": "A5038468188",
    "institutions": [
     {
@@ -7951,6 +8391,7 @@
   {
    "orcid": ["0000-0002-2433-9071"],
    "scholar": "yFP4OZwAAAAJ",
+   "dblp": "216/1690",
    "openalex": "A5078168597",
    "institutions": [
     {
@@ -7962,6 +8403,7 @@
    ]
   },
   {
+   "dblp": "76/3910",
    "institutions": [
     {
      "name": "University of California, Santa Cruz",
@@ -7972,7 +8414,7 @@
    ]
   },
   {
-   "wikipedia": "https://en.wikipedia.org/wiki/Charles_Duncan_Michener",
+   "openalex": "A5108262021",
    "institutions": [
     {
      "name": "University of Kansas",
@@ -7983,6 +8425,7 @@
    ]
   },
   {
+   "dblp": "80/5017",
    "openalex": "A5077590229",
    "institutions": [
     {
@@ -7995,8 +8438,8 @@
   },
   {
    "scholar": "k9T3V7EAAAAJ",
+   "dblp": "m/WebbMiller",
    "openalex": "A5071092709",
-   "wikipedia": "https://en.wikipedia.org/wiki/Webb_Miller",
    "institutions": [
     {
      "name": "Pennsylvania State University",
@@ -8009,6 +8452,7 @@
   {
    "orcid": ["0000-0001-8637-6719"],
    "scholar": "jaTEO_QAAAAJ",
+   "dblp": "197/3961",
    "openalex": "A5016012053",
    "institutions": [
     {
@@ -8026,8 +8470,7 @@
    ]
   },
   {
-   "orcid": ["0009-0000-8641-3313"],
-   "openalex": "A5012828174",
+   "dblp": "181/4693",
    "institutions": [
     {
      "name": "University of Connecticut",
@@ -8038,6 +8481,8 @@
    ]
   },
   {
+   "orcid": ["0000-0002-6277-4330"],
+   "dblp": "123/8243",
    "institutions": [
     {
      "name": "Pennsylvania State University",
@@ -8049,8 +8494,8 @@
   },
   {
    "orcid": ["0000-0003-4175-6798"],
+   "dblp": "129/9103",
    "openalex": "A5068566097",
-   "wikipedia": "https://en.wikipedia.org/wiki/Bernhard_Misof",
    "institutions": [
     {
      "name": "Universität Hamburg",
@@ -8067,6 +8512,7 @@
    ]
   },
   {
+   "dblp": "138/5655",
    "institutions": [
     {
      "name": "Zoological Research Museum Alexander Koenig",
@@ -8078,6 +8524,8 @@
   },
   {
    "orcid": ["0000-0002-5063-3661"],
+   "scholar": "6TZe1KgAAAAJ",
+   "dblp": "248/9312",
    "openalex": "A5073480262",
    "institutions": [
     {
@@ -8090,6 +8538,8 @@
   },
   {
    "orcid": ["0009-0001-3607-3848"],
+   "dblp": "415/0214",
+   "openalex": "A5106016455",
    "institutions": [
     {
      "name": "Bangladesh University of Engineering and Technology",
@@ -8100,8 +8550,7 @@
    ]
   },
   {
-   "orcid": ["0000-0002-9117-9792"],
-   "openalex": "A5069591226",
+   "dblp": "66/4040",
    "institutions": [
     {
      "name": "University of California, Davis",
@@ -8114,8 +8563,8 @@
   {
    "orcid": ["0000-0003-3222-3308"],
    "scholar": "D16xkKgAAAAJ",
+   "dblp": "m/ShlomoMoran",
    "openalex": "A5007961513",
-   "wikipedia": "https://en.wikipedia.org/wiki/Shlomo_Moran",
    "institutions": [
     {
      "name": "Technion – Israel Institute of Technology",
@@ -8136,6 +8585,7 @@
    ]
   },
   {
+   "dblp": "150/6791",
    "openalex": "A5103396395",
    "institutions": [
     {
@@ -8148,6 +8598,7 @@
   },
   {
    "orcid": ["0000-0001-6697-0331"],
+   "dblp": "59/5413",
    "openalex": "A5051140834",
    "institutions": [
     {
@@ -8161,6 +8612,7 @@
   {
    "orcid": ["0000-0002-7860-3560"],
    "scholar": "CAik9V8AAAAJ",
+   "dblp": "85/7970",
    "openalex": "A5052402024",
    "institutions": [
     {
@@ -8173,7 +8625,7 @@
   },
   {
    "orcid": ["0000-0003-0104-0728"],
-   "scholar": "Cbek-EAAAAAJ",
+   "dblp": "54/983",
    "openalex": "A5035823928",
    "institutions": [
     {
@@ -8191,7 +8643,6 @@
    ]
   },
   {
-   "openalex": "A5103423226",
    "institutions": [
     {
      "name": "Aarhus University",
@@ -8219,8 +8670,8 @@
   {
    "orcid": ["0000-0003-2525-1407"],
    "scholar": "dfvX0rMAAAAJ",
+   "dblp": "87/11007",
    "openalex": "A5037559147",
-   "wikipedia": "https://en.wikipedia.org/wiki/Richard_A._Neher",
    "institutions": [
     {
      "name": "SIB Swiss Institute of Bioinformatics",
@@ -8238,6 +8689,8 @@
   },
   {
    "orcid": ["0000-0001-9038-878X"],
+   "scholar": "LMM1iqkAAAAJ",
+   "dblp": "02/11016",
    "openalex": "A5072759658",
    "institutions": [
     {
@@ -8250,7 +8703,6 @@
   },
   {
    "openalex": "A5000190053",
-   "wikipedia": "https://en.wikipedia.org/wiki/Jerzy_Neyman",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -8261,6 +8713,7 @@
    ]
   },
   {
+   "dblp": "185/8201",
    "openalex": "A5110523329",
    "institutions": [
     {
@@ -8272,8 +8725,6 @@
    ]
   },
   {
-   "orcid": ["0009-0008-2579-9337"],
-   "openalex": "A5058371508",
    "institutions": [
     {
      "name": "University of Groningen",
@@ -8284,6 +8735,7 @@
    ]
   },
   {
+   "dblp": "18/2864",
    "openalex": "A5007686655",
    "institutions": [
     {
@@ -8296,6 +8748,7 @@
   },
   {
    "orcid": ["0000-0003-4630-2293"],
+   "dblp": "86/9338",
    "openalex": "A5012884872",
    "institutions": [
     {
@@ -8307,6 +8760,7 @@
    ]
   },
   {
+   "dblp": "42/5925",
    "institutions": [
     {
      "name": "University of Oxford",
@@ -8317,8 +8771,10 @@
    ]
   },
   {
+   "orcid": ["0000-0001-8743-0887"],
    "scholar": "fn13u8IAAAAJ",
-   "openalex": "A5103202243",
+   "dblp": "n/RobertDNowak",
+   "openalex": "A5106921483",
    "institutions": [
     {
      "name": "University of Wisconsin–Madison",
@@ -8329,7 +8785,7 @@
    ]
   },
   {
-   "openalex": "A5035576414",
+   "dblp": "198/1054",
    "institutions": [
     {
      "name": "University of East Anglia",
@@ -8341,6 +8797,7 @@
   },
   {
    "orcid": ["0000-0003-0216-0393"],
+   "dblp": "78/2599",
    "openalex": "A5009966967",
    "institutions": [
     {
@@ -8363,6 +8820,8 @@
   },
   {
    "orcid": ["0000-0001-8084-1464"],
+   "scholar": "8DXP2RkAAAAJ",
+   "dblp": "82/1264",
    "openalex": "A5071954558",
    "institutions": [
     {
@@ -8390,6 +8849,8 @@
    ]
   },
   {
+   "orcid": ["0000-0003-2664-0850"],
+   "dblp": "28/8507",
    "institutions": [
     {
      "name": "Florida State University",
@@ -8417,7 +8878,7 @@
    ]
   },
   {
-   "orcid": ["0000-0002-7657-0144"],
+   "dblp": "203/2127",
    "openalex": "A5024354914",
    "institutions": [
     {
@@ -8429,6 +8890,7 @@
    ]
   },
   {
+   "dblp": "63/852",
    "openalex": "A5012974477",
    "institutions": [
     {
@@ -8440,6 +8902,8 @@
    ]
   },
   {
+   "orcid": ["0000-0001-8682-5393"],
+   "dblp": "345/8464",
    "institutions": [
     {
      "name": "University of Copenhagen",
@@ -8450,8 +8914,8 @@
    ]
   },
   {
+   "dblp": "64/4932",
    "openalex": "A5047473211",
-   "wikipedia": "https://en.wikipedia.org/wiki/Osnat_Penn",
    "institutions": [
     {
      "name": "Tel Aviv University",
@@ -8463,6 +8927,7 @@
   },
   {
    "orcid": ["0000-0003-0138-0693"],
+   "dblp": "01/9764",
    "openalex": "A5101699990",
    "institutions": [
     {
@@ -8475,9 +8940,8 @@
   },
   {
    "orcid": ["0000-0002-4784-4169"],
-   "scholar": "itYIYM8AAAAJ",
+   "dblp": "53/1987",
    "openalex": "A5088934782",
-   "wikipedia": "https://en.wikipedia.org/wiki/Sonja_Petrovi%C4%87_(statistician)",
    "institutions": [
     {
      "name": "University of Illinois Chicago",
@@ -8490,6 +8954,7 @@
   {
    "orcid": ["0000-0002-1335-8015"],
    "scholar": "LC7IwaEAAAAJ",
+   "dblp": "39/1360",
    "openalex": "A5101537273",
    "institutions": [
     {
@@ -8508,6 +8973,7 @@
   },
   {
    "orcid": ["0000-0002-0313-3357"],
+   "dblp": "176/7412",
    "openalex": "A5022404104",
    "institutions": [
     {
@@ -8520,6 +8986,7 @@
   },
   {
    "orcid": ["0000-0001-9716-0550"],
+   "dblp": "58/9508",
    "openalex": "A5005109924",
    "institutions": [
     {
@@ -8531,6 +8998,7 @@
    ]
   },
   {
+   "dblp": "37/1808",
    "openalex": "A5052788964",
    "institutions": [
     {
@@ -8542,6 +9010,10 @@
    ]
   },
   {
+   "orcid": ["0000-0002-3186-7024"],
+   "scholar": "pQcnw8YAAAAJ",
+   "dblp": "48/3135",
+   "openalex": "A5024573537",
    "institutions": [
     {
      "name": "Tel Aviv University",
@@ -8553,6 +9025,7 @@
   },
   {
    "orcid": ["0000-0002-6736-877X"],
+   "dblp": "311/6718",
    "openalex": "A5009063953",
    "institutions": [
     {
@@ -8565,6 +9038,8 @@
   },
   {
    "orcid": ["0000-0002-9887-4456"],
+   "scholar": "9d52x-cAAAAJ",
+   "dblp": "47/5073-1",
    "openalex": "A5100733249",
    "institutions": [
     {
@@ -8578,6 +9053,7 @@
   {
    "orcid": ["0000-0001-9419-6478"],
    "scholar": "IUwFD9gAAAAJ",
+   "dblp": "r/MohammadSohelRahman",
    "openalex": "A5029174615",
    "institutions": [
     {
@@ -8600,11 +9076,13 @@
    ]
   },
   {
+   "dblp": "33/11028",
    "openalex": "A5017864952"
   },
   {
    "orcid": ["0000-0001-7603-1207"],
    "scholar": "_vjPh4UAAAAJ",
+   "dblp": "r/RRavi-1",
    "openalex": "A5087844619",
    "institutions": [
     {
@@ -8617,6 +9095,7 @@
   },
   {
    "orcid": ["0000-0002-4452-4872"],
+   "dblp": "61/7064",
    "openalex": "A5047490071",
    "institutions": [
     {
@@ -8629,6 +9108,9 @@
   },
   {
    "orcid": ["0000-0001-9514-3976"],
+   "scholar": "zy5V3qMAAAAJ",
+   "dblp": "98/8064",
+   "openalex": "A5001078049",
    "institutions": [
     {
      "name": "Queen Mary University of London",
@@ -8639,6 +9121,7 @@
    ]
   },
   {
+   "dblp": "25/6198",
    "openalex": "A5040165643",
    "institutions": [
     {
@@ -8663,6 +9146,7 @@
   },
   {
    "orcid": ["0009-0009-7075-5015"],
+   "dblp": "340/7060",
    "openalex": "A5025033000",
    "institutions": [
     {
@@ -8674,6 +9158,7 @@
    ]
   },
   {
+   "dblp": "45/5352",
    "openalex": "A5111625451",
    "institutions": [
     {
@@ -8696,6 +9181,7 @@
   },
   {
    "orcid": ["0000-0002-2084-269X"],
+   "dblp": "55/6058",
    "openalex": "A5051867731",
    "institutions": [
     {
@@ -8707,7 +9193,7 @@
    ]
   },
   {
-   "orcid": ["0000-0003-3539-804X"],
+   "dblp": "95/6569",
    "openalex": "A5042650280",
    "institutions": [
     {
@@ -8720,6 +9206,7 @@
   },
   {
    "orcid": ["0000-0002-9979-2524"],
+   "dblp": "294/3825",
    "openalex": "A5055951182",
    "institutions": [
     {
@@ -8731,8 +9218,6 @@
    ]
   },
   {
-   "orcid": ["0000-0002-0753-7826"],
-   "openalex": "A5019831447",
    "institutions": [
     {
      "name": "Universidad de Sevilla",
@@ -8744,9 +9229,8 @@
   },
   {
    "orcid": ["0000-0003-1370-9820"],
-   "scholar": "Dm-pAawAAAAJ",
-   "openalex": "A5149729483",
-   "wikipedia": "https://en.wikipedia.org/wiki/Andrew_J._Roger",
+   "dblp": "67/5476",
+   "openalex": "A5053095410",
    "institutions": [
     {
      "name": "Dalhousie University",
@@ -8768,6 +9252,7 @@
   },
   {
    "orcid": ["0000-0002-8082-1225"],
+   "dblp": "174/8634",
    "openalex": "A5081272194",
    "institutions": [
     {
@@ -8791,6 +9276,7 @@
    ]
   },
   {
+   "dblp": "47/3305",
    "openalex": "A5061099144",
    "institutions": [
     {
@@ -8803,6 +9289,7 @@
   },
   {
    "orcid": ["0000-0003-1975-7030"],
+   "dblp": "202/4344",
    "openalex": "A5021803524",
    "institutions": [
     {
@@ -8814,6 +9301,7 @@
    ]
   },
   {
+   "dblp": "451/1364",
    "openalex": "A5130847000",
    "institutions": [
     {
@@ -8825,8 +9313,8 @@
    ]
   },
   {
+   "dblp": "26/5086",
    "openalex": "A5014143171",
-   "wikipedia": "https://en.wikipedia.org/wiki/Yehoshua_Sagiv",
    "institutions": [
     {
      "name": "University of Illinois Urbana-Champaign",
@@ -8849,6 +9337,7 @@
    ]
   },
   {
+   "dblp": "89/1658",
    "openalex": "A5052941366",
    "institutions": [
     {
@@ -8866,7 +9355,6 @@
    ]
   },
   {
-   "orcid": ["0000-0002-7482-0701"],
    "scholar": "7UEpFHMAAAAJ",
    "openalex": "A5033896710",
    "institutions": [
@@ -8880,6 +9368,7 @@
   },
   {
    "orcid": ["0000-0002-4548-4606"],
+   "dblp": "311/7147",
    "openalex": "A5101540356",
    "institutions": [
     {
@@ -8898,6 +9387,8 @@
   },
   {
    "orcid": ["0000-0002-0736-5075"],
+   "scholar": "E1v2MBUAAAAJ",
+   "dblp": "295/7786",
    "openalex": "A5025638647",
    "institutions": [
     {
@@ -8921,6 +9412,8 @@
   },
   {
    "orcid": ["0000-0003-2597-8331"],
+   "scholar": "fUxQceoAAAAJ",
+   "dblp": "80/1737",
    "openalex": "A5020388832",
    "institutions": [
     {
@@ -8933,10 +9426,12 @@
   },
   {
    "orcid": ["0000-0001-5033-8040"],
+   "dblp": "254/9369",
    "openalex": "A5035173636"
   },
   {
    "orcid": ["0000-0003-0270-6392"],
+   "dblp": "51/9825",
    "openalex": "A5089719407",
    "institutions": [
     {
@@ -8949,7 +9444,6 @@
   },
   {
    "orcid": ["0000-0003-4680-789X"],
-   "openalex": "A5102918932",
    "institutions": [
     {
      "name": "Sichuan University",
@@ -8960,6 +9454,7 @@
    ]
   },
   {
+   "dblp": "07/104",
    "openalex": "A5017160011",
    "institutions": [
     {
@@ -8972,9 +9467,8 @@
   },
   {
    "orcid": ["0000-0001-9771-543X"],
-   "scholar": "_KTRRAcAAAAJ",
+   "dblp": "53/1671",
    "openalex": "A5018021274",
-   "wikipedia": "https://en.wikipedia.org/wiki/Paul_M._Sharp",
    "institutions": [
     {
      "name": "Trinity College Dublin",
@@ -8986,6 +9480,7 @@
   },
   {
    "orcid": ["0000-0002-9439-1078"],
+   "dblp": "207/2181",
    "openalex": "A5061321764",
    "institutions": [
     {
@@ -8998,6 +9493,8 @@
   },
   {
    "orcid": ["0000-0001-5765-1419"],
+   "scholar": "aNqPBsEAAAAJ",
+   "dblp": "301/5196",
    "openalex": "A5076622760",
    "institutions": [
     {
@@ -9009,6 +9506,7 @@
    ]
   },
   {
+   "dblp": "36/7252",
    "openalex": "A5035845554",
    "institutions": [
     {
@@ -9020,6 +9518,7 @@
    ]
   },
   {
+   "dblp": "30/5654",
    "institutions": [
     {
      "name": "Duquesne University",
@@ -9032,8 +9531,8 @@
   {
    "orcid": ["0000-0001-8271-6026"],
    "scholar": "JpAehzgAAAAJ",
+   "dblp": "73/6093-1",
    "openalex": "A5085615320",
-   "wikipedia": "https://en.wikipedia.org/wiki/Mona_Singh_(scientist)",
    "institutions": [
     {
      "name": "Princeton University",
@@ -9046,7 +9545,7 @@
   {
    "orcid": ["0000-0001-9590-3875"],
    "scholar": "ZEI-IzMAAAAJ",
-   "openalex": "A5123860556",
+   "openalex": "A5050322243",
    "institutions": [
     {
      "name": "Jhargram Raj College",
@@ -9057,6 +9556,8 @@
    ]
   },
   {
+   "dblp": "148/7096",
+   "openalex": "A5051611498",
    "institutions": [
     {
      "name": "University of North Carolina at Chapel Hill",
@@ -9080,6 +9581,7 @@
   },
   {
    "orcid": ["0000-0002-0584-6537"],
+   "dblp": "78/2428",
    "openalex": "A5068272466",
    "institutions": [
     {
@@ -9092,6 +9594,7 @@
   },
   {
    "orcid": ["0000-0002-8254-6925"],
+   "dblp": "90/4109",
    "openalex": "A5046654923",
    "institutions": [
     {
@@ -9109,7 +9612,7 @@
    ]
   },
   {
-   "wikipedia": "https://en.wikipedia.org/wiki/Robert_R._Sokal",
+   "openalex": "A5034798175",
    "institutions": [
     {
      "name": "University of Kansas",
@@ -9121,6 +9624,7 @@
   },
   {
    "orcid": ["0000-0003-4540-2559"],
+   "dblp": "s/DavidESpeyer",
    "openalex": "A5021128761",
    "institutions": [
     {
@@ -9133,6 +9637,7 @@
   },
   {
    "orcid": ["0000-0002-5343-7236"],
+   "dblp": "33/2888",
    "openalex": "A5025482166",
    "institutions": [
     {
@@ -9146,6 +9651,7 @@
   {
    "orcid": ["0000-0002-5016-5191"],
    "scholar": "pVnGRlkAAAAJ",
+   "dblp": "35/3876",
    "openalex": "A5016104736",
    "institutions": [
     {
@@ -9159,8 +9665,8 @@
   {
    "orcid": ["0000-0001-6431-535X"],
    "scholar": "bvN5cz8AAAAJ",
+   "dblp": "25/11204",
    "openalex": "A5055449742",
-   "wikipedia": "https://en.wikipedia.org/wiki/Tanja_Stadler",
    "institutions": [
     {
      "name": "ETH Zurich",
@@ -9178,6 +9684,7 @@
   },
   {
    "orcid": ["0000-0003-4078-0817"],
+   "dblp": "98/6496",
    "openalex": "A5003461562",
    "institutions": [
     {
@@ -9189,6 +9696,7 @@
    ]
   },
   {
+   "dblp": "04/3237",
    "openalex": "A5010742929",
    "institutions": [
     {
@@ -9202,6 +9710,7 @@
   {
    "orcid": ["0000-0002-8436-595X"],
    "scholar": "VXV2j6gAAAAJ",
+   "dblp": "301/4942",
    "openalex": "A5071152958",
    "institutions": [
     {
@@ -9215,8 +9724,8 @@
   {
    "orcid": ["0000-0001-8781-9753"],
    "scholar": "_D9XIZUAAAAJ",
+   "dblp": "179/5577",
    "openalex": "A5019985343",
-   "wikipedia": "https://en.wikipedia.org/wiki/Martin_Steinegger_(scientist)",
    "institutions": [
     {
      "name": "Seoul National University",
@@ -9229,8 +9738,8 @@
   {
    "orcid": ["0000-0002-1884-5445"],
    "scholar": "Sm1UdzUAAAAJ",
+   "dblp": "93/2269",
    "openalex": "A5023619547",
-   "wikipedia": "https://en.wikipedia.org/wiki/Michael_Sternberg",
    "institutions": [
     {
      "name": "Birkbeck, University of London",
@@ -9242,6 +9751,7 @@
   },
   {
    "orcid": ["0000-0002-5118-5223"],
+   "dblp": "191/4830",
    "openalex": "A5087033319",
    "institutions": [
     {
@@ -9254,6 +9764,8 @@
   },
   {
    "orcid": ["0000-0002-4656-7155"],
+   "scholar": "_dmbTJkAAAAJ",
+   "dblp": "72/3506",
    "openalex": "A5019771245",
    "institutions": [
     {
@@ -9279,7 +9791,6 @@
    "orcid": ["0000-0001-5374-583X"],
    "scholar": "4Ap41EAAAAAJ",
    "openalex": "A5051991253",
-   "wikipedia": "https://en.wikipedia.org/wiki/Karl-Theodor_Sturm",
    "institutions": [
     {
      "name": "University of Bonn",
@@ -9290,6 +9801,7 @@
    ]
   },
   {
+   "dblp": "76/11174",
    "institutions": [
     {
      "name": "University of Tübingen",
@@ -9301,6 +9813,7 @@
   },
   {
    "orcid": ["0000-0003-4992-9497"],
+   "dblp": "15/9838",
    "openalex": "A5068225528",
    "institutions": [
     {
@@ -9312,8 +9825,7 @@
    ]
   },
   {
-   "orcid": ["0000-0002-7892-4313"],
-   "openalex": "A5090042836",
+   "dblp": "42/5820",
    "institutions": [
     {
      "name": "The University of Texas at Austin",
@@ -9325,6 +9837,8 @@
   },
   {
    "orcid": ["0000-0003-1122-8740"],
+   "scholar": "BZ6bxeYAAAAJ",
+   "dblp": "94/4152",
    "openalex": "A5021576212",
    "institutions": [
     {
@@ -9336,6 +9850,7 @@
    ]
   },
   {
+   "dblp": "23/7417",
    "openalex": "A5109080904",
    "institutions": [
     {
@@ -9348,6 +9863,8 @@
   },
   {
    "orcid": ["0000-0003-0396-1395"],
+   "scholar": "H1jbCPkAAAAJ",
+   "dblp": "80/1968",
    "openalex": "A5073568173",
    "institutions": [
     {
@@ -9359,6 +9876,7 @@
    ]
   },
   {
+   "dblp": "70/1755",
    "openalex": "A5028962222",
    "institutions": [
     {
@@ -9372,6 +9890,7 @@
   {
    "orcid": ["0000-0001-9642-8244"],
    "scholar": "xjYIe80AAAAJ",
+   "dblp": "71/5971",
    "openalex": "A5010030898",
    "institutions": [
     {
@@ -9384,6 +9903,7 @@
   },
   {
    "orcid": ["0000-0003-0043-7133"],
+   "dblp": "180/0898",
    "openalex": "A5034361277",
    "institutions": [
     {
@@ -9396,6 +9916,8 @@
   },
   {
    "orcid": ["0000-0002-6281-6641"],
+   "scholar": "ImTlKugAAAAJ",
+   "dblp": "09/6075",
    "openalex": "A5049011209",
    "institutions": [
     {
@@ -9426,6 +9948,7 @@
   {
    "orcid": ["0000-0003-0026-8739"],
    "scholar": "VHWpui0AAAAJ",
+   "dblp": "139/1601",
    "openalex": "A5021785258",
    "institutions": [
     {
@@ -9451,6 +9974,7 @@
   {
    "orcid": ["0000-0002-3681-7536"],
    "scholar": "zNf1lL8AAAAJ",
+   "dblp": "31/1212",
    "openalex": "A5026210731",
    "institutions": [
     {
@@ -9469,8 +9993,7 @@
   },
   {
    "orcid": ["0000-0002-3716-4952"],
-   "scholar": "1aX_bIcAAAAJ",
-   "wikipedia": "https://en.wikipedia.org/wiki/Simon_Tavar%C3%A9",
+   "dblp": "43/6059",
    "institutions": [
     {
      "name": "Colorado State University",
@@ -9482,7 +10005,7 @@
   },
   {
    "orcid": ["0000-0002-3749-5620"],
-   "scholar": "OUMd27UAAAAJ",
+   "dblp": "04/9422",
    "openalex": "A5074431478",
    "institutions": [
     {
@@ -9494,7 +10017,7 @@
    ]
   },
   {
-   "scholar": "mv55TGMAAAAJ",
+   "dblp": "89/4560",
    "openalex": "A5058899830",
    "institutions": [
     {
@@ -9507,6 +10030,7 @@
   },
   {
    "orcid": ["0000-0002-0478-6819"],
+   "dblp": "13/3140",
    "openalex": "A5024698436",
    "institutions": [
     {
@@ -9518,6 +10042,7 @@
    ]
   },
   {
+   "dblp": "118/9686",
    "openalex": "A5102227590",
    "institutions": [
     {
@@ -9530,6 +10055,7 @@
   },
   {
    "orcid": ["0000-0001-8902-484X"],
+   "dblp": "353/9380",
    "openalex": "A5005044944",
    "institutions": [
     {
@@ -9542,6 +10068,7 @@
   },
   {
    "orcid": ["0000-0002-4567-4768"],
+   "dblp": "00/2749",
    "openalex": "A5074475230",
    "institutions": [
     {
@@ -9554,8 +10081,8 @@
   },
   {
    "orcid": ["0000-0002-1062-8710"],
+   "dblp": "46/86",
    "openalex": "A5039252182",
-   "wikipedia": "https://en.wikipedia.org/wiki/John_Tromp",
    "institutions": [
     {
      "name": "Centrum Wiskunde & Informatica",
@@ -9574,8 +10101,8 @@
   {
    "orcid": ["0000-0003-4194-7068"],
    "scholar": "KNmYK-kAAAAJ",
+   "dblp": "79/6712",
    "openalex": "A5021278923",
-   "wikipedia": "https://en.wikipedia.org/wiki/Tamir_Tuller",
    "institutions": [
     {
      "name": "Tel Aviv University",
@@ -9586,6 +10113,7 @@
    ]
   },
   {
+   "dblp": "38/5789",
    "openalex": "A5028345097",
    "institutions": [
     {
@@ -9598,8 +10126,8 @@
   },
   {
    "orcid": ["0000-0002-5978-1505"],
+   "dblp": "u/EskoUkkonen",
    "openalex": "A5058284151",
-   "wikipedia": "https://en.wikipedia.org/wiki/Esko_Ukkonen",
    "institutions": [
     {
      "name": "University of Helsinki",
@@ -9612,8 +10140,8 @@
   {
    "orcid": ["0000-0002-1847-3426"],
    "scholar": "wUJ2bXgAAAAJ",
+   "dblp": "u/JeffreyDUllman",
    "openalex": "A5089065417",
-   "wikipedia": "https://en.wikipedia.org/wiki/Jeffrey_Ullman",
    "institutions": [
     {
      "name": "Stanford University",
@@ -9625,6 +10153,7 @@
   },
   {
    "orcid": ["0000-0002-0851-9232"],
+   "dblp": "204/5271",
    "openalex": "A5081579563",
    "institutions": [
     {
@@ -9636,6 +10165,7 @@
    ]
   },
   {
+   "dblp": "34/6817",
    "openalex": "A5090713998",
    "institutions": [
     {
@@ -9653,6 +10183,9 @@
    ]
   },
   {
+   "orcid": ["0000-0001-6220-2239"],
+   "dblp": "60/9743",
+   "openalex": "A5088841943",
    "institutions": [
     {
      "name": "Massey University",
@@ -9670,7 +10203,7 @@
   },
   {
    "orcid": ["0000-0001-6220-2239"],
-   "scholar": "u1smC2cAAAAJ",
+   "dblp": "60/9743",
    "openalex": "A5088841943",
    "institutions": [
     {
@@ -9688,6 +10221,7 @@
    ]
   },
   {
+   "dblp": "94/3318",
    "openalex": "A5030076495",
    "institutions": [
     {
@@ -9700,6 +10234,7 @@
   },
   {
    "orcid": ["0000-0002-2005-2516"],
+   "dblp": "63/2556",
    "openalex": "A5086993200",
    "institutions": [
     {
@@ -9712,8 +10247,8 @@
   },
   {
    "orcid": ["0000-0002-6518-1290"],
+   "dblp": "225/9747",
    "openalex": "A5062317141",
-   "wikipedia": "https://en.wikipedia.org/wiki/Karen_Vogtmann",
    "institutions": [
     {
      "name": "Cornell University",
@@ -9724,6 +10259,8 @@
    ]
   },
   {
+   "orcid": ["0000-0002-5377-2800"],
+   "dblp": "v/BjoernVoss",
    "openalex": "A5044044433",
    "institutions": [
     {
@@ -9736,6 +10273,7 @@
   },
   {
    "orcid": ["0000-0001-7999-9897"],
+   "dblp": "84/10964",
    "openalex": "A5063198169",
    "institutions": [
     {
@@ -9748,6 +10286,7 @@
   },
   {
    "orcid": ["0000-0001-8735-6816"],
+   "dblp": "319/1729",
    "openalex": "A5014828539",
    "institutions": [
     {
@@ -9759,8 +10298,7 @@
    ]
   },
   {
-   "orcid": ["0000-0002-2888-0834"],
-   "openalex": "A5052370039",
+   "dblp": "w/RobertAWagner",
    "institutions": [
     {
      "name": "Vanderbilt University",
@@ -9771,6 +10309,9 @@
    ]
   },
   {
+   "orcid": ["0009-0005-4525-0163"],
+   "scholar": "V9CTmJAAAAAJ",
+   "dblp": "32/3145",
    "openalex": "A5075652070",
    "institutions": [
     {
@@ -9782,8 +10323,6 @@
    ]
   },
   {
-   "orcid": ["0009-0007-0687-5296"],
-   "openalex": "A5016468297",
    "institutions": [
     {
      "name": "Sichuan University",
@@ -9795,6 +10334,8 @@
   },
   {
    "orcid": ["0000-0002-4344-8791"],
+   "scholar": "rb0Rzp8AAAAJ",
+   "dblp": "40/4750-1",
    "openalex": "A5065315257",
    "institutions": [
     {
@@ -9818,8 +10359,6 @@
    ]
   },
   {
-   "orcid": ["0000-0002-4709-8637"],
-   "openalex": "A5102001926",
    "institutions": [
     {
      "name": "Rice University",
@@ -9830,6 +10369,8 @@
    ]
   },
   {
+   "orcid": ["0000-0002-2410-7991"],
+   "dblp": "w/TWareham",
    "openalex": "A5022101310",
    "institutions": [
     {
@@ -9848,6 +10389,7 @@
   },
   {
    "orcid": ["0000-0002-4948-7724"],
+   "scholar": "IMc2-pwAAAAJ",
    "openalex": "A5026146712",
    "institutions": [
     {
@@ -9869,8 +10411,7 @@
    ]
   },
   {
-   "orcid": ["0000-0003-0402-4539"],
-   "openalex": "A5050463649",
+   "dblp": "03/4809",
    "institutions": [
     {
      "name": "Helmholtz Munich",
@@ -9881,6 +10422,7 @@
    ]
   },
   {
+   "dblp": "29/11017",
    "openalex": "A5051186755",
    "institutions": [
     {
@@ -9893,6 +10435,7 @@
   },
   {
    "orcid": ["0000-0001-6128-1772"],
+   "dblp": "150/0105",
    "openalex": "A5079509519",
    "institutions": [
     {
@@ -9905,6 +10448,8 @@
   },
   {
    "orcid": ["0000-0001-9406-730X"],
+   "scholar": "itc4x9kAAAAJ",
+   "dblp": "49/1674",
    "openalex": "A5041594411",
    "institutions": [
     {
@@ -9929,6 +10474,7 @@
   {
    "orcid": ["0000-0002-2376-9205"],
    "scholar": "_N2B6S8AAAAJ",
+   "dblp": "04/2389",
    "openalex": "A5103135268",
    "institutions": [
     {
@@ -9941,6 +10487,7 @@
   },
   {
    "orcid": ["0000-0002-5669-9274"],
+   "dblp": "118/9678",
    "openalex": "A5062177551",
    "institutions": [
     {
@@ -9953,6 +10500,7 @@
   },
   {
    "orcid": ["0000-0002-2606-9562"],
+   "dblp": "06/6926",
    "openalex": "A5083515047",
    "institutions": [
     {
@@ -9964,6 +10512,8 @@
    ]
   },
   {
+   "orcid": ["0000-0002-3737-8969"],
+   "dblp": "84/4994",
    "openalex": "A5113709903",
    "institutions": [
     {
@@ -9975,6 +10525,7 @@
    ]
   },
   {
+   "dblp": "70/2137",
    "openalex": "A5012571970",
    "institutions": [
     {
@@ -9987,7 +10538,7 @@
   },
   {
    "orcid": ["0000-0002-1302-4445"],
-   "scholar": "38cb5XQAAAAJ",
+   "dblp": "00/6205",
    "openalex": "A5065384282",
    "institutions": [
     {
@@ -10012,6 +10563,7 @@
   },
   {
    "orcid": ["0000-0001-9386-725X"],
+   "dblp": "67/10609",
    "openalex": "A5004389745",
    "institutions": [
     {
@@ -10024,6 +10576,7 @@
   },
   {
    "orcid": ["0000-0003-3093-4077"],
+   "dblp": "14/2654",
    "openalex": "A5088633211",
    "institutions": [
     {
@@ -10035,8 +10588,7 @@
    ]
   },
   {
-   "openalex": "A5015874173",
-   "wikipedia": "https://en.wikipedia.org/wiki/Christian_Wunsch"
+   "openalex": "A5015874173"
   },
   {
    "orcid": ["0000-0002-2851-5474"],
@@ -10052,6 +10604,8 @@
    ]
   },
   {
+   "orcid": ["0000-0003-0878-3380"],
+   "scholar": "-YfKWT4AAAAJ",
    "institutions": [
     {
      "name": "University of Auckland",
@@ -10062,7 +10616,6 @@
    ]
   },
   {
-   "orcid": ["0009-0004-0794-7106"],
    "openalex": "A5038494888",
    "institutions": [
     {
@@ -10075,6 +10628,8 @@
   },
   {
    "orcid": ["0000-0002-3601-1508"],
+   "dblp": "294/8750",
+   "openalex": "A5067078369",
    "institutions": [
     {
      "name": "University of California, Los Angeles",
@@ -10087,7 +10642,7 @@
   {
    "orcid": ["0000-0001-7218-6148"],
    "scholar": "muiCiHkAAAAJ",
-   "openalex": "A5101494443",
+   "dblp": "201/3666",
    "institutions": [
     {
      "name": "National Institute of Advanced Industrial Science and Technology",
@@ -10105,6 +10660,7 @@
   },
   {
    "orcid": ["0000-0003-2433-5553"],
+   "dblp": "375/1505",
    "openalex": "A5012259885",
    "institutions": [
     {
@@ -10116,6 +10672,7 @@
    ]
   },
   {
+   "openalex": "A5104336313",
    "institutions": [
     {
      "name": "University of Georgia",
@@ -10126,7 +10683,6 @@
    ]
   },
   {
-   "openalex": "A5037432352",
    "institutions": [
     {
      "name": "University of Wisconsin–Madison",
@@ -10137,7 +10693,7 @@
    ]
   },
   {
-   "orcid": ["0009-0004-9174-4116"],
+   "orcid": ["0000-0003-0025-1996"],
    "openalex": "A5033401182",
    "institutions": [
     {
@@ -10161,6 +10717,7 @@
   },
   {
    "orcid": ["0000-0002-5272-5543"],
+   "dblp": "16/7110",
    "openalex": "A5108134721",
    "institutions": [
     {
@@ -10172,9 +10729,7 @@
    ]
   },
   {
-   "orcid": ["0000-0001-6146-0594"],
-   "scholar": "3z9jHzEAAAAJ",
-   "openalex": "A5083452260",
+   "orcid": ["0000-0003-4698-5653"],
    "institutions": [
     {
      "name": "University of California San Diego",
@@ -10187,6 +10742,7 @@
   {
    "orcid": ["0000-0001-5581-5002"],
    "scholar": "OJKibFgAAAAJ",
+   "dblp": "79/6720",
    "openalex": "A5015513138",
    "institutions": [
     {
@@ -10198,7 +10754,6 @@
    ]
   },
   {
-   "openalex": "A5100894451",
    "institutions": [
     {
      "name": "University of Kansas",
@@ -10211,6 +10766,7 @@
   {
    "orcid": ["0000-0001-7550-6506"],
    "scholar": "Fvx28w8AAAAJ",
+   "dblp": "y/RaphaelYuster",
    "openalex": "A5026016357",
    "institutions": [
     {
@@ -10224,6 +10780,7 @@
   {
    "orcid": ["0009-0009-1190-2695"],
    "scholar": "hP88rYAAAAAJ",
+   "dblp": "329/6906",
    "openalex": "A5028290653",
    "institutions": [
     {
@@ -10236,8 +10793,9 @@
   },
   {
    "orcid": ["0000-0002-0562-1629"],
+   "scholar": "GoTWlmgAAAAJ",
+   "dblp": "73/3395",
    "openalex": "A5019738080",
-   "wikipedia": "https://en.wikipedia.org/wiki/Norbert_Zeh",
    "institutions": [
     {
      "name": "Dalhousie University",
@@ -10249,6 +10807,7 @@
   },
   {
    "orcid": ["0000-0001-6009-5273"],
+   "dblp": "91/195-33",
    "openalex": "A5045272233",
    "institutions": [
     {
@@ -10272,8 +10831,8 @@
    ]
   },
   {
-   "orcid": ["0000-0002-9278-2649"],
-   "openalex": "A5091794009",
+   "scholar": "mE11hO8AAAAJ",
+   "dblp": "224/0139",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -10306,8 +10865,6 @@
    ]
   },
   {
-   "orcid": ["0000-0003-0127-2916"],
-   "openalex": "A5100623224",
    "institutions": [
     {
      "name": "The University of Texas at Austin",
@@ -10318,6 +10875,8 @@
    ]
   },
   {
+   "orcid": ["0000-0002-2245-7875"],
+   "dblp": "189/8108",
    "openalex": "A5003087064",
    "institutions": [
     {
@@ -10341,6 +10900,8 @@
   },
   {
    "orcid": ["0000-0002-8096-3776"],
+   "scholar": "jGRzjmoAAAAJ",
+   "dblp": "30/9445",
    "openalex": "A5052786144",
    "institutions": [
     {
@@ -10354,6 +10915,7 @@
   {
    "orcid": ["0000-0002-3580-8806"],
    "scholar": "-NgHOiwAAAAJ",
+   "dblp": "150/1506",
    "openalex": "A5000357741",
    "institutions": [
     {

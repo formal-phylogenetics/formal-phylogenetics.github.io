@@ -37,7 +37,8 @@ title, authors, year, venue and the institutions of its byline; fields narrow it
 there. The advanced form beside the search writes the same fields.
 
 The panel of an author gives the institutions their papers in the collection place them at, with
-the years and the number of entries, which searches for them, and their ORCID, Google Scholar, OpenAlex and Wikipedia pages; then their co-authors and venues in the collection, each with the entries behind it. The
+the years and the number of entries, which searches for them, and their ORCID, Google Scholar, dblp and OpenAlex pages, each shown once it is checked to be
+theirs (a record that lists their papers, or a page of theirs that links it); then their co-authors and venues in the collection, each with the entries behind it. The
 panel of a venue gives the year it was founded, the titles it continued or that continued it, its
 abbreviation and ISSN, and its authors with their entries there; that of an institution, its
 country, its authors with their years there and its entries; that of a country, its institutions

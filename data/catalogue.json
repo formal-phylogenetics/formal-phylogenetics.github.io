@@ -142,7 +142,7 @@
      "kind": "method",
      "authors": "Liu et al.",
      "year": "2009",
-     "title": "SATé: Rapid and Accurate Large-Scale Coestimation of Sequence Alignments and Phylogenetic Trees",
+     "title": "Rapid and Accurate Large-Scale Coestimation of Sequence Alignments and Phylogenetic Trees",
      "url": "https://doi.org/10.1126/science.1171243",
      "status": "todo"
     },
@@ -268,7 +268,7 @@
      "kind": "method",
      "authors": "Berger, Stamatakis",
      "year": "2011",
-     "title": "PaPaRa: Aligning Short Reads to Reference Alignments and Trees",
+     "title": "Aligning Short Reads to Reference Alignments and Trees",
      "url": "https://doi.org/10.1093/bioinformatics/btr320",
      "status": "todo"
     },
@@ -291,7 +291,7 @@
      "kind": "method",
      "authors": "Nguyen et al.",
      "year": "2015",
-     "title": "UPP: Ultra-Large Alignments Using Phylogeny-Aware Profiles",
+     "title": "Ultra-Large Alignments Using Phylogeny-Aware Profiles",
      "url": "https://doi.org/10.1186/s13059-015-0688-z",
      "status": "todo"
     },
@@ -375,7 +375,7 @@
      "kind": "theory+algorithm",
      "authors": "Thorne, Kishino, Felsenstein",
      "year": "1991",
-     "title": "An Evolutionary Model for Maximum Likelihood Alignment of DNA Sequences (TKF91)",
+     "title": "An Evolutionary Model for Maximum Likelihood Alignment of DNA Sequences",
      "url": "https://doi.org/10.1007/BF02193625",
      "status": "todo"
     },
@@ -387,7 +387,7 @@
      "kind": "theory+algorithm",
      "authors": "Thorne, Kishino, Felsenstein",
      "year": "1992",
-     "title": "Inching Toward Reality: An Improved Likelihood Model of Sequence Evolution (TKF92)",
+     "title": "Inching Toward Reality: An Improved Likelihood Model of Sequence Evolution",
      "url": "https://doi.org/10.1007/BF00163848",
      "status": "todo"
     },
@@ -453,7 +453,7 @@
      "kind": "theory+algorithm",
      "authors": "Miklós, Lunter, Holmes",
      "year": "2004",
-     "title": "A Long Indel Model for Evolutionary Sequence Alignment",
+     "title": "A “Long Indel” Model for Evolutionary Sequence Alignment",
      "url": "https://doi.org/10.1093/molbev/msh043",
      "status": "todo"
     },
@@ -498,7 +498,7 @@
      "kind": "theory+algorithm",
      "authors": "Bouchard-Côté, Jordan",
      "year": "2013",
-     "title": "Evolutionary Inference via the Poisson Indel Process (PIP)",
+     "title": "Evolutionary Inference via the Poisson Indel Process",
      "url": "https://doi.org/10.1073/pnas.1220450110",
      "status": "todo"
     },
@@ -622,7 +622,7 @@
      "kind": "method",
      "authors": "Löytynoja, Goldman",
      "year": "2008",
-     "title": "PRANK: Phylogeny-Aware Gap Placement Prevents Errors in Sequence Alignment and Evolutionary Analysis",
+     "title": "Phylogeny-Aware Gap Placement Prevents Errors in Sequence Alignment and Evolutionary Analysis",
      "url": "https://doi.org/10.1126/science.1158395",
      "status": "todo"
     },
@@ -669,7 +669,7 @@
      "kind": "method",
      "authors": "Löytynoja, Vilella, Goldman",
      "year": "2012",
-     "title": "PAGAN: Accurate Extension of Multiple Sequence Alignments Using a Phylogeny-Aware Graph Algorithm",
+     "title": "Accurate Extension of Multiple Sequence Alignments Using a Phylogeny-Aware Graph Algorithm",
      "url": "https://doi.org/10.1093/bioinformatics/bts198",
      "status": "todo"
     },
@@ -737,7 +737,7 @@
      "kind": "method",
      "authors": "Barton, Sternberg",
      "year": "1987",
-     "title": "A Strategy for the Rapid Multiple Alignment of Protein Sequences",
+     "title": "A Strategy for the Rapid Multiple Alignment of Protein Sequences: Confidence Levels from Tertiary Structure Comparisons",
      "url": "https://doi.org/10.1016/0022-2836(87)90316-0",
      "status": "todo"
     },
@@ -772,7 +772,7 @@
      "kind": "method",
      "authors": "Corpet",
      "year": "1988",
-     "title": "Multiple Sequence Alignment with Hierarchical Clustering (MultAlin)",
+     "title": "Multiple Sequence Alignment with Hierarchical Clustering",
      "url": "https://doi.org/10.1093/nar/16.22.10881",
      "status": "todo"
     },
@@ -1009,7 +1009,7 @@
      "kind": "theory+algorithm",
      "authors": "Lee, Grasso, Sharlow",
      "year": "2002",
-     "title": "Multiple Sequence Alignment Using Partial Order Graphs (POA)",
+     "title": "Multiple Sequence Alignment Using Partial Order Graphs",
      "url": "https://doi.org/10.1093/bioinformatics/18.3.452",
      "status": "todo"
     },
@@ -1068,7 +1068,7 @@
      "kind": "method",
      "authors": "Wheeler, Kececioglu",
      "year": "2007",
-     "title": "Multiple Alignment by Aligning Alignments (Opal)",
+     "title": "Multiple Alignment by Aligning Alignments",
      "url": "https://doi.org/10.1093/bioinformatics/btm226",
      "status": "todo"
     },
@@ -1092,7 +1092,7 @@
      "kind": "method",
      "authors": "Bradley et al.",
      "year": "2009",
-     "title": "Fast Statistical Alignment (FSA)",
+     "title": "Fast Statistical Alignment",
      "url": "https://doi.org/10.1371/journal.pcbi.1000392",
      "status": "todo"
     },
@@ -1128,7 +1128,7 @@
      "kind": "method",
      "authors": "Gudyś, Deorowicz",
      "year": "2014",
-     "title": "QuickProbs: A Fast Multiple Sequence Alignment Algorithm Designed for Graphics Processors",
+     "title": "QuickProbs—A Fast Multiple Sequence Alignment Algorithm Designed for Graphics Processors",
      "url": "https://doi.org/10.1371/journal.pone.0088901",
      "status": "todo"
     },
@@ -1273,7 +1273,7 @@
      "kind": "theory+algorithm",
      "authors": "Marco-Sola et al.",
      "year": "2021",
-     "title": "Fast Gap-Affine Pairwise Alignment Using the Wavefront Algorithm (WFA)",
+     "title": "Fast Gap-Affine Pairwise Alignment Using the Wavefront Algorithm",
      "url": "https://doi.org/10.1093/bioinformatics/btaa777",
      "status": "todo"
     },
@@ -1285,7 +1285,7 @@
      "kind": "theory+algorithm",
      "authors": "Marco-Sola et al.",
      "year": "2023",
-     "title": "Optimal Gap-Affine Alignment in O(s) Space (BiWFA)",
+     "title": "Optimal Gap-Affine Alignment in O(s) Space",
      "url": "https://doi.org/10.1093/bioinformatics/btad074",
      "status": "todo"
     },
@@ -1441,7 +1441,7 @@
      "kind": "method",
      "authors": "Castresana",
      "year": "2000",
-     "title": "Selection of Conserved Blocks from Multiple Alignments for Their Use in Phylogenetic Analysis (Gblocks)",
+     "title": "Selection of Conserved Blocks from Multiple Alignments for Their Use in Phylogenetic Analysis",
      "url": "https://doi.org/10.1093/oxfordjournals.molbev.a026334",
      "status": "todo"
     },
@@ -1487,7 +1487,7 @@
      "kind": "method",
      "authors": "Misof, Misof",
      "year": "2009",
-     "title": "A Monte Carlo Approach Successfully Identifies Randomness in Multiple Sequence Alignments: A More Objective Means of Data Exclusion (ALISCORE)",
+     "title": "A Monte Carlo Approach Successfully Identifies Randomness in Multiple Sequence Alignments: A More Objective Means of Data Exclusion",
      "url": "https://doi.org/10.1093/sysbio/syp006",
      "status": "todo"
     },
@@ -1499,7 +1499,7 @@
      "kind": "method",
      "authors": "Penn et al.",
      "year": "2010",
-     "title": "An Alignment Confidence Score Capturing Robustness to Guide Tree Uncertainty (GUIDANCE)",
+     "title": "An Alignment Confidence Score Capturing Robustness to Guide Tree Uncertainty",
      "url": "https://doi.org/10.1093/molbev/msq066",
      "status": "todo"
     },
@@ -1523,7 +1523,7 @@
      "kind": "method",
      "authors": "Wu, Chatterji, Eisen",
      "year": "2012",
-     "title": "ZORRO: Accounting for Alignment Uncertainty in Phylogenomics",
+     "title": "Accounting for Alignment Uncertainty in Phylogenomics",
      "url": "https://doi.org/10.1371/journal.pone.0030288",
      "status": "todo"
     },
@@ -1750,7 +1750,7 @@
      "kind": "method",
      "authors": "Will et al.",
      "year": "2007",
-     "title": "Inferring Noncoding RNA Families and Classes by Means of Genome-Scale Structure-Based Clustering (LocARNA)",
+     "title": "Inferring Noncoding RNA Families and Classes by Means of Genome-Scale Structure-Based Clustering",
      "url": "https://doi.org/10.1371/journal.pcbi.0030065",
      "status": "todo"
     },
@@ -1987,7 +1987,7 @@
      "kind": "method",
      "authors": "Guindon, Gascuel",
      "year": "2003",
-     "title": "PhyML: A Simple, Fast, and Accurate Algorithm to Estimate Large Phylogenies by Maximum Likelihood",
+     "title": "A Simple, Fast, and Accurate Algorithm to Estimate Large Phylogenies by Maximum Likelihood",
      "url": "https://doi.org/10.1080/10635150390235520",
      "status": "todo"
     },
@@ -2209,7 +2209,7 @@
      "kind": "method",
      "authors": "Lockhart et al.",
      "year": "1994",
-     "title": "Recovering Evolutionary Trees Under a More Realistic Model of Sequence Evolution (LogDet)",
+     "title": "Recovering Evolutionary Trees Under a More Realistic Model of Sequence Evolution",
      "url": "https://doi.org/10.1093/oxfordjournals.molbev.a040136",
      "status": "todo"
     },
@@ -2266,7 +2266,7 @@
      "kind": "method",
      "authors": "Bruno, Socci, Halpern",
      "year": "2000",
-     "title": "Weighted Neighbor Joining: A Likelihood-Based Approach to Distance-Based Phylogeny Reconstruction (Weighbor)",
+     "title": "Weighted Neighbor Joining: A Likelihood-Based Approach to Distance-Based Phylogeny Reconstruction",
      "url": "https://doi.org/10.1093/oxfordjournals.molbev.a026231",
      "status": "todo"
     },
@@ -2288,7 +2288,7 @@
      "kind": "theory",
      "authors": "Desper, Gascuel",
      "year": "2004",
-     "title": "Theoretical Foundation of the Balanced Minimum Evolution Method and Its Relationship to Weighted Least-Squares Tree Fitting",
+     "title": "Theoretical Foundation of the Balanced Minimum Evolution Method of Phylogenetic Inference and Its Relationship to Weighted Least-Squares Tree Fitting",
      "url": "https://doi.org/10.1093/molbev/msh049",
      "status": "todo"
     },
@@ -3010,11 +3010,11 @@
      "id": "dcm2",
      "family": 8,
      "order": 2,
-     "short": "DCM-2",
+     "short": "DCM2",
      "kind": "method",
      "authors": "Huson, Vawter, Warnow",
      "year": "1999",
-     "title": "Solving Large Scale Phylogenetic Problems Using DCM-2",
+     "title": "Solving Large Scale Phylogenetic Problems Using DCM2",
      "url": "https://pubmed.ncbi.nlm.nih.gov/10786294/",
      "status": "todo"
     },
@@ -3127,7 +3127,7 @@
      "kind": "method",
      "authors": "Snir, Rao",
      "year": "2010",
-     "title": "Quartets MaxCut: A Divide-and-Conquer Quartets Algorithm",
+     "title": "Quartets MaxCut: A Divide and Conquer Quartets Algorithm",
      "url": "https://doi.org/10.1109/TCBB.2008.133",
      "status": "todo"
     },
@@ -3162,7 +3162,7 @@
      "kind": "method",
      "authors": "Reaz, Bayzid, Rahman",
      "year": "2014",
-     "title": "QFM: Accurate Phylogenetic Tree Reconstruction from Quartets",
+     "title": "Accurate Phylogenetic Tree Reconstruction from Quartets: A Heuristic Approach",
      "url": "https://doi.org/10.1371/journal.pone.0104008",
      "status": "todo"
     },
@@ -3267,7 +3267,7 @@
      "kind": "method",
      "authors": "Rhodes et al.",
      "year": "2021",
-     "title": "MSCquartets: Quartet Methods for Species Trees and Networks Under the MSC",
+     "title": "MSCquartets 1.0: Quartet Methods for Species Trees and Networks Under the Multispecies Coalescent Model in R",
      "url": "https://doi.org/10.1093/bioinformatics/btaa868",
      "status": "todo"
     },
@@ -3314,7 +3314,7 @@
      "kind": "method",
      "authors": "Zhang, Mirarab",
      "year": "2022",
-     "title": "wASTRAL: Weighting by Gene Tree Uncertainty Improves Accuracy of Quartet-Based Species Trees",
+     "title": "Weighting by Gene Tree Uncertainty Improves Accuracy of Quartet-Based Species Trees",
      "url": "https://doi.org/10.1093/molbev/msac215",
      "status": "todo"
     },
@@ -3326,7 +3326,7 @@
      "kind": "method",
      "authors": "Han, Molloy",
      "year": "2023",
-     "title": "TREE-QMC: Improving Quartet Graph Construction for Scalable and Accurate Species Tree Estimation",
+     "title": "Improving Quartet Graph Construction for Scalable and Accurate Species Tree Estimation from Gene Trees",
      "url": "https://doi.org/10.1101/gr.277629.122",
      "status": "todo"
     },
@@ -3417,7 +3417,7 @@
      "kind": "method",
      "authors": "Liu, Yu, Edwards",
      "year": "2010",
-     "title": "MP-EST: A Maximum Pseudo-Likelihood Approach for Estimating Species Trees Under the Coalescent Model",
+     "title": "A Maximum Pseudo-Likelihood Approach for Estimating Species Trees Under the Coalescent Model",
      "url": "https://doi.org/10.1186/1471-2148-10-302",
      "status": "todo"
     },
@@ -3508,7 +3508,7 @@
      "kind": "method",
      "authors": "Liu et al.",
      "year": "2009",
-     "title": "Estimating Species Phylogenies Using Coalescence Times Among Sequences (STAR and STEAC)",
+     "title": "Estimating Species Phylogenies Using Coalescence Times Among Sequences",
      "url": "https://doi.org/10.1093/sysbio/syp031",
      "status": "todo"
     },
@@ -3520,7 +3520,7 @@
      "kind": "theory+algorithm",
      "authors": "Mossel, Roch",
      "year": "2010",
-     "title": "Incomplete Lineage Sorting: Consistent Phylogeny Estimation from Multiple Loci (GLASS)",
+     "title": "Incomplete Lineage Sorting: Consistent Phylogeny Estimation from Multiple Loci",
      "url": "https://doi.org/10.1109/TCBB.2008.66",
      "status": "todo"
     },
@@ -3532,7 +3532,7 @@
      "kind": "method",
      "authors": "Liu, Yu",
      "year": "2011",
-     "title": "Estimating Species Trees from Unrooted Gene Trees (NJst)",
+     "title": "Estimating Species Trees from Unrooted Gene Trees",
      "url": "https://doi.org/10.1093/sysbio/syr027",
      "status": "todo"
     },
@@ -3589,7 +3589,7 @@
      "kind": "method",
      "authors": "Sayyari, Mirarab",
      "year": "2016",
-     "title": "DISTIQUE: Anchoring Quartet-Based Phylogenetic Distances and Applications to Species Tree Reconstruction",
+     "title": "Anchoring Quartet-Based Phylogenetic Distances and Applications to Species Tree Reconstruction",
      "url": "https://doi.org/10.1186/s12864-016-3098-z",
      "status": "todo"
     },
@@ -3624,7 +3624,7 @@
      "kind": "method",
      "authors": "Chifman, Kubatko",
      "year": "2014",
-     "title": "SVDquartets: Quartet Inference from SNP Data Under the Coalescent Model",
+     "title": "Quartet Inference from SNP Data Under the Coalescent Model",
      "url": "https://doi.org/10.1093/bioinformatics/btu530",
      "status": "todo"
     },
@@ -3647,7 +3647,7 @@
      "kind": "theory+algorithm",
      "authors": "Dasarathy, Nowak, Roch",
      "year": "2015",
-     "title": "Data Requirement for Phylogenetic Inference from Multiple Loci: A New Distance Method (METAL)",
+     "title": "Data Requirement for Phylogenetic Inference from Multiple Loci: A New Distance Method",
      "url": "https://doi.org/10.1109/TCBB.2014.2361685",
      "status": "todo"
     },
@@ -3693,7 +3693,7 @@
      "kind": "theory",
      "authors": "Long, Kubatko",
      "year": "2019",
-     "title": "Identifiability and Reconstructibility of Species Phylogenies Under a Modified Coalescent Model",
+     "title": "Identifiability and Reconstructibility of Species Phylogenies Under a Modified Coalescent",
      "url": "https://doi.org/10.1007/s11538-018-0456-9",
      "status": "todo"
     },
@@ -3841,7 +3841,7 @@
      "kind": "method",
      "authors": "Heled, Drummond",
      "year": "2010",
-     "title": "*BEAST: Bayesian Inference of Species Trees from Multilocus Data",
+     "title": "Bayesian Inference of Species Trees from Multilocus Data",
      "url": "https://doi.org/10.1093/molbev/msp274",
      "status": "todo"
     },
@@ -3865,7 +3865,7 @@
      "kind": "method",
      "authors": "Bryant et al.",
      "year": "2012",
-     "title": "SNAPP: Inferring Species Trees Directly from Biallelic Genetic Markers",
+     "title": "Inferring Species Trees Directly from Biallelic Genetic Markers: Bypassing Gene Trees in a Full Coalescent Analysis",
      "url": "https://doi.org/10.1093/molbev/mss086",
      "status": "todo"
     },
@@ -3877,7 +3877,7 @@
      "kind": "method",
      "authors": "Wu",
      "year": "2012",
-     "title": "STELLS: Coalescent-Based Species Tree Inference from Gene Tree Topologies Under Incomplete Lineage Sorting by Maximum Likelihood",
+     "title": "Coalescent-Based Species Tree Inference from Gene Tree Topologies Under Incomplete Lineage Sorting by Maximum Likelihood",
      "url": "https://doi.org/10.1111/j.1558-5646.2011.01476.x",
      "status": "todo"
     },
@@ -3946,7 +3946,7 @@
      "kind": "method",
      "authors": "Flouri et al.",
      "year": "2018",
-     "title": "BPP: Species Tree Inference Using Genomic Sequences and the Multispecies Coalescent",
+     "title": "Species Tree Inference with BPP Using Genomic Sequences and the Multispecies Coalescent",
      "url": "https://doi.org/10.1093/molbev/msy147",
      "status": "todo"
     },
@@ -3965,11 +3965,11 @@
      "id": "starbeast3",
      "family": 5,
      "order": 18,
-     "short": "StarBEAST3",
+     "short": "StarBeast3",
      "kind": "method",
      "authors": "Douglas et al.",
      "year": "2022",
-     "title": "StarBEAST3: Adaptive Parallelized Bayesian Inference Under the Multispecies Coalescent",
+     "title": "StarBeast3: Adaptive Parallelized Bayesian Inference Under the Multispecies Coalescent",
      "url": "https://doi.org/10.1093/sysbio/syac010",
      "status": "todo"
     },
@@ -4049,7 +4049,7 @@
      "kind": "theory+algorithm",
      "authors": "Roch, Snir",
      "year": "2013",
-     "title": "Recovering the Treelike Trend of Evolution Despite Extensive Lateral Genetic Transfer",
+     "title": "Recovering the Treelike Trend of Evolution Despite Extensive Lateral Genetic Transfer: A Probabilistic Analysis",
      "url": "https://doi.org/10.1089/cmb.2012.0234",
      "status": "todo"
     },
@@ -4176,7 +4176,7 @@
      "kind": "method",
      "authors": "Morel et al.",
      "year": "2022",
-     "title": "SpeciesRax: Maximum Likelihood Species Tree Inference Under Gene Duplication, Transfer, and Loss",
+     "title": "SpeciesRax: A Tool for Maximum Likelihood Species Tree Inference from Gene Family Trees Under Duplication, Transfer, and Loss",
      "url": "https://doi.org/10.1093/molbev/msab365",
      "status": "todo"
     },
@@ -4210,7 +4210,7 @@
      "kind": "method",
      "authors": "Morel et al.",
      "year": "2024",
-     "title": "AleRax: Gene and Species Tree Co-Estimation Under DTL Models",
+     "title": "AleRax: A Tool for Gene and Species Tree Co-Estimation and Reconciliation Under a Probabilistic Model of Gene Duplication, Transfer, and Loss",
      "url": "https://doi.org/10.1093/bioinformatics/btae162",
      "status": "todo"
     },
@@ -4290,7 +4290,7 @@
      "kind": "method",
      "authors": "Tabatabaee et al.",
      "year": "2022",
-     "title": "Quintet Rooting: Rooting Species Trees Under the Multispecies Coalescent Model",
+     "title": "Quintet Rooting: Rooting Species Trees Under the Multi-Species Coalescent Model",
      "url": "https://doi.org/10.1093/bioinformatics/btac224",
      "status": "todo"
     },
@@ -4326,7 +4326,7 @@
      "kind": "method",
      "authors": "Tabatabaee et al.",
      "year": "2023",
-     "title": "CASTLES: Phylogenomic Branch Length Estimation Using Quartets",
+     "title": "Phylogenomic Branch Length Estimation Using Quartets",
      "url": "https://doi.org/10.1093/bioinformatics/btad221",
      "status": "todo"
     },
@@ -4349,7 +4349,7 @@
      "kind": "method",
      "authors": "Tabatabaee et al.",
      "year": "2025",
-     "title": "CASTLES-Pro: Species Tree Branch Length Estimation Despite Incomplete Lineage Sorting, Duplication, and Loss",
+     "title": "Species Tree Branch Length Estimation Despite Incomplete Lineage Sorting, Duplication, and Loss",
      "url": "https://doi.org/10.1093/gbe/evaf200",
      "status": "todo"
     },
@@ -4481,7 +4481,7 @@
      "kind": "method",
      "authors": "Allman, Baños, Rhodes",
      "year": "2019",
-     "title": "NANUQ: A Method for Inferring Species Networks from Gene Trees",
+     "title": "NANUQ: A Method for Inferring Species Networks from Gene Trees Under the Coalescent Model",
      "url": "https://doi.org/10.1186/s13015-019-0159-2",
      "status": "in-progress",
      "commit": "edca11442dc8f45662b35a6a4d03073010bfea10"
@@ -4494,7 +4494,7 @@
      "kind": "method",
      "authors": "Solís-Lemus, Ané",
      "year": "2016",
-     "title": "SNaQ: Inferring Phylogenetic Networks with Maximum Pseudolikelihood",
+     "title": "Inferring Phylogenetic Networks with Maximum Pseudolikelihood Under Incomplete Lineage Sorting",
      "url": "https://doi.org/10.1371/journal.pgen.1005896",
      "status": "in-progress"
     },
@@ -4550,8 +4550,8 @@
      "short": "InPhyNet",
      "kind": "method",
      "authors": "Kolbow, Kong, Solís-Lemus",
-     "year": "2025–2026",
-     "title": "InPhyNet: Massively Scalable Inference of Phylogenetic Networks",
+     "year": "2025",
+     "title": "A Method for Massively Scalable Inference of Phylogenetic Networks",
      "url": "https://doi.org/10.1101/2025.05.05.652278",
      "status": "todo"
     },
@@ -4562,7 +4562,7 @@
      "kind": "method",
      "authors": "Frohn et al.",
      "year": "2026",
-     "title": "Bounds on Sequence Length for Reconstructing Level-1 Networks Under the CFN Model",
+     "title": "Bounds on the Sequence Length Sufficient to Reconstruct Binary Level-1 Phylogenetic Networks Under the CFN Model",
      "url": "https://doi.org/10.1007/s00026-026-00830-0",
      "status": "todo"
     },
@@ -4574,7 +4574,7 @@
      "kind": "method",
      "authors": "Dai, Molloy",
      "year": "2026",
-     "title": "NetCS: Is Level-1 Blob Reconstruction Under the Network Multispecies Coalescent Easy?",
+     "title": "Is Level-1 Blob Reconstruction Under the Network Multispecies Coalescent Easy?",
      "url": "https://doi.org/10.4230/LIPIcs.WABI.2026.1",
      "status": "todo"
     },
@@ -4600,7 +4600,7 @@
      "kind": "method",
      "authors": "Arasti, Mirarab",
      "year": "2026",
-     "title": "BROOQS: Spectral Methods Resolve Level-1 Hybridization Cycles",
+     "title": "BROOQS: Quartet-Based Resolution of Level-1 Hybridization Cycles Without Tests of Symmetry",
      "url": "https://doi.org/10.64898/2026.08.31.748319",
      "status": "todo"
     },
@@ -4646,7 +4646,7 @@
      "kind": "method",
      "authors": "Guang et al.",
      "year": "2026",
-     "title": "DIMPLE: A Tree-Guided Divide-and-Conquer Framework for ILS-Aware Network Inference",
+     "title": "DIMPLE: A Tree-Guided Divide-and-Conquer Framework for ILS-Aware Phylogenetic Network Inference on Large-Scale Data",
      "url": "https://doi.org/10.64898/2026.10.12.758494",
      "status": "todo"
     },
@@ -4724,7 +4724,7 @@
      "kind": "method",
      "authors": "Holtgrefe et al.",
      "year": "2025",
-     "title": "Squirrel: Reconstructing Semi-directed Level-1 Networks from Four-Leaved Networks or Alignments",
+     "title": "Squirrel: Reconstructing Semi-directed Phylogenetic Level-1 Networks from Four-Leaved Networks or Sequence Alignments",
      "url": "https://doi.org/10.1093/molbev/msaf067",
      "status": "todo"
     },
@@ -4746,7 +4746,7 @@
      "kind": "theory",
      "authors": "Holtgrefe et al.",
      "year": "2025",
-     "title": "Distinguishing Level-2 Networks with Quartets and Inter-Taxon Quartet Distances",
+     "title": "Distinguishing Phylogenetic Level-2 Networks with Quartets and Inter-Taxon Quartet Distances",
      "url": "https://doi.org/10.1007/s11538-025-01549-4",
      "status": "todo"
     },
@@ -4756,9 +4756,9 @@
      "order": 9,
      "kind": "theory",
      "authors": "Holtgrefe et al.",
-     "year": "2025–2026",
+     "year": "2026",
      "title": "Characterizing Semi-directed Phylogenetic Networks and Their Multi-rootable Variants",
-     "url": "https://arxiv.org/abs/2507.18772",
+     "url": "https://doi.org/10.1007/s12064-025-00453-8",
      "status": "todo"
     },
     {
@@ -4801,7 +4801,7 @@
      "kind": "method",
      "authors": "Jansson, Sung",
      "year": "2006",
-     "title": "Inferring a Level-1 Phylogenetic Network from Dense Rooted Triplets",
+     "title": "Inferring a Level-1 Phylogenetic Network from a Dense Set of Rooted Triplets",
      "url": "https://doi.org/10.1016/j.tcs.2006.06.022",
      "status": "todo"
     },
@@ -4824,7 +4824,7 @@
      "kind": "method",
      "authors": "van Iersel et al.",
      "year": "2010",
-     "title": "CASS: Using Fewer Reticulations to Represent Conflicting Clusters",
+     "title": "Phylogenetic Networks Do Not Need to Be Complex: Using Fewer Reticulations to Represent Conflicting Clusters",
      "url": "https://doi.org/10.1093/bioinformatics/btq202",
      "status": "todo"
     },
@@ -4847,7 +4847,7 @@
      "kind": "method",
      "authors": "Huber et al.",
      "year": "2011",
-     "title": "LEV1ATHAN: A Practical Algorithm for Reconstructing Level-1 Phylogenetic Networks",
+     "title": "A Practical Algorithm for Reconstructing Level-1 Phylogenetic Networks",
      "url": "https://doi.org/10.1109/TCBB.2010.17",
      "status": "todo"
     },
@@ -4881,7 +4881,7 @@
      "kind": "method",
      "authors": "Poormohammadi et al.",
      "year": "2014",
-     "title": "TripNet: Constructing Rooted Networks from Rooted Triplets",
+     "title": "TripNet: A Method for Constructing Rooted Phylogenetic Networks from Rooted Triplets",
      "url": "https://doi.org/10.1371/journal.pone.0106531",
      "status": "todo"
     },
@@ -4892,7 +4892,7 @@
      "kind": "method",
      "authors": "Willems, Tahiri, Makarenkov",
      "year": "2014",
-     "title": "Inferring Explicit Hybridization Networks Following the Neighbor-Joining Principle",
+     "title": "A New Efficient Algorithm for Inferring Explicit Hybridization Networks Following the Neighbor-Joining Principle",
      "url": "https://doi.org/10.1142/S0219720014500243",
      "status": "todo"
     },
@@ -4904,7 +4904,7 @@
      "kind": "method",
      "authors": "Oldman et al.",
      "year": "2016",
-     "title": "TriLoNet: Piecing Together Small Networks to Reconstruct Reticulate Histories",
+     "title": "TriLoNet: Piecing Together Small Networks to Reconstruct Reticulate Evolutionary Histories",
      "url": "https://doi.org/10.1093/molbev/msw068",
      "status": "todo"
     },
@@ -4915,7 +4915,7 @@
      "kind": "method",
      "authors": "Huber et al.",
      "year": "2017",
-     "title": "Reconstructing Level-1 Networks from Nondense Binet and Trinet Sets",
+     "title": "Reconstructing Phylogenetic Level-1 Networks from Nondense Binet and Trinet Sets",
      "url": "https://doi.org/10.1007/s00453-015-0069-8",
      "status": "todo"
     },
@@ -4926,7 +4926,7 @@
      "kind": "method",
      "authors": "Willems, Tahiri, Makarenkov",
      "year": "2018",
-     "title": "Building Explicit Hybridization Networks Using Maximum Likelihood and Neighbor Joining",
+     "title": "Building Explicit Hybridization Networks Using the Maximum Likelihood and Neighbor-Joining Approaches",
      "url": "https://doi.org/10.5445/KSP/1000085951/04",
      "status": "todo"
     },
@@ -4970,7 +4970,7 @@
      "kind": "method",
      "authors": "Ebert, Hellmuth",
      "year": "2026",
-     "title": "Inferring Phylogenetic Networks from Allowed and Forbidden LCA-Constraints",
+     "title": "Inferring Phylogenetic Networks from Required and Forbidden LCA-Constraints",
      "url": "https://arxiv.org/abs/2605.03827",
      "status": "todo"
     },
@@ -5025,7 +5025,7 @@
      "kind": "method",
      "authors": "Mirzaei, Wu",
      "year": "2016",
-     "title": "Fast Construction of Near-Parsimonious Hybridization Networks",
+     "title": "Fast Construction of Near Parsimonious Hybridization Networks for Multiple Phylogenetic Trees",
      "url": "https://doi.org/10.1109/TCBB.2015.2462336",
      "status": "todo"
     },
@@ -5045,7 +5045,7 @@
      "family": 4,
      "order": 5,
      "kind": "theory",
-     "authors": "van Iersel et al.",
+     "authors": "Murakami et al.",
      "year": "2019",
      "title": "Reconstructing Tree-Child Networks from Reticulate-Edge-Deleted Subnetworks",
      "url": "https://doi.org/10.1007/s11538-019-00641-w",
@@ -5094,7 +5094,7 @@
      "kind": "method",
      "authors": "Zhang et al.",
      "year": "2023",
-     "title": "ALTS: Inferring Networks by Aligning Lineage Taxon Strings",
+     "title": "A Fast and Scalable Method for Inferring Phylogenetic Networks from Trees by Aligning Lineage Taxon Strings",
      "url": "https://doi.org/10.1101/gr.277669.123",
      "status": "todo"
     },
@@ -5117,7 +5117,7 @@
      "kind": "method",
      "authors": "Bernardini et al.",
      "year": "2024",
-     "title": "FHyNCH: Inferring Networks from Multifurcating Trees via Cherry Picking and Machine Learning",
+     "title": "Inferring Phylogenetic Networks from Multifurcating Trees via Cherry Picking and Machine Learning",
      "url": "https://doi.org/10.1016/j.ympev.2024.108137",
      "status": "todo"
     },
@@ -5128,8 +5128,8 @@
      "short": "PhyloFusion",
      "kind": "method",
      "authors": "Zhang, Cetinkaya, Huson",
-     "year": "2025",
-     "title": "PhyloFusion: Fast Fusion of Rooted Phylogenetic Trees into Rooted Networks",
+     "year": "2026",
+     "title": "PhyloFusion—Fast and Easy Fusion of Rooted Phylogenetic Trees into Rooted Phylogenetic Networks",
      "url": "https://doi.org/10.1093/sysbio/syaf049",
      "status": "todo"
     },
@@ -5138,7 +5138,7 @@
      "family": 5,
      "order": 1,
      "kind": "method",
-     "authors": "Yu, Zhu, Degnan, Nakhleh",
+     "authors": "Yu, Barnett, Nakhleh",
      "year": "2013",
      "title": "Parsimonious Inference of Hybridization in the Presence of Incomplete Lineage Sorting",
      "url": "https://doi.org/10.1093/sysbio/syt037",
@@ -5163,7 +5163,7 @@
      "kind": "method",
      "authors": "Yu, Nakhleh",
      "year": "2015",
-     "title": "PhyloNet-MPL: Maximum Pseudo-Likelihood Inference of Phylogenetic Networks",
+     "title": "A Maximum Pseudo-Likelihood Approach for Phylogenetic Networks",
      "url": "https://doi.org/10.1186/1471-2164-16-S10-S10",
      "status": "todo"
     },
@@ -5174,7 +5174,7 @@
      "kind": "method",
      "authors": "Yu, Nakhleh",
      "year": "2015",
-     "title": "A Distance-Based Method for Inferring Phylogenetic Networks in the Presence of ILS",
+     "title": "A Distance-Based Method for Inferring Phylogenetic Networks in the Presence of Incomplete Lineage Sorting",
      "url": "https://doi.org/10.1007/978-3-319-19048-8_32",
      "status": "todo"
     },
@@ -5230,7 +5230,7 @@
      "kind": "method",
      "authors": "Hejase et al.",
      "year": "2018",
-     "title": "FastNet: Statistical Inference of Phylogenetic Networks Using Genomic Data",
+     "title": "FastNet: Fast and Accurate Statistical Inference of Phylogenetic Networks Using Large-Scale Genomic Sequence Data",
      "url": "https://doi.org/10.1007/978-3-030-00834-5_14",
      "status": "todo"
     },
@@ -5242,7 +5242,7 @@
      "kind": "method",
      "authors": "Rabier et al.",
      "year": "2021",
-     "title": "SnappNet: Inference of Complex Phylogenetic Networks by MCMC",
+     "title": "On the Inference of Complex Phylogenetic Networks by Markov Chain Monte-Carlo",
      "url": "https://doi.org/10.1371/journal.pcbi.1008380",
      "status": "todo"
     },
@@ -5265,7 +5265,7 @@
      "kind": "method",
      "authors": "Lutteropp et al.",
      "year": "2022",
-     "title": "NetRAX: Maximum Likelihood Phylogenetic Network Inference",
+     "title": "NetRAX: Accurate and Fast Maximum Likelihood Phylogenetic Network Inference",
      "url": "https://doi.org/10.1093/bioinformatics/btac396",
      "status": "todo"
     },
@@ -5277,7 +5277,7 @@
      "kind": "method",
      "authors": "Kong, Swofford, Kubatko",
      "year": "2025",
-     "title": "PhyNEST: Inference of Phylogenetic Networks from Sequence Data Using Composite Likelihood",
+     "title": "Inference of Phylogenetic Networks from Sequence Data Using Composite Likelihood",
      "url": "https://doi.org/10.1093/sysbio/syae054",
      "status": "todo"
     }
@@ -5379,7 +5379,7 @@
      "kind": "theory+algorithm",
      "authors": "Aho et al.",
      "year": "1981",
-     "title": "Inferring a Tree from Lowest Common Ancestors with an Application to the Optimization of Relational Expressions (BUILD)",
+     "title": "Inferring a Tree from Lowest Common Ancestors with an Application to the Optimization of Relational Expressions",
      "url": "https://doi.org/10.1137/0210030",
      "status": "todo"
     },
@@ -5879,7 +5879,7 @@
      "kind": "theory+algorithm",
      "authors": "Erdős, Steel, Székely, Warnow",
      "year": "1999",
-     "title": "A Few Logs Suffice to Build (Almost) All Trees, Part II",
+     "title": "A Few Logs Suffice to Build (Almost) All Trees: Part II",
      "url": "https://doi.org/10.1016/S0304-3975(99)00028-6",
      "status": "todo"
     },
@@ -6110,7 +6110,7 @@
      "kind": "theory",
      "authors": "Roch, Nute, Warnow",
      "year": "2019",
-     "title": "Long-Branch Attraction in Species Tree Estimation: Inconsistency of Partitioned Likelihood and Summary Methods",
+     "title": "Long-Branch Attraction in Species Tree Estimation: Inconsistency of Partitioned Likelihood and Topology-Based Summary Methods",
      "url": "https://doi.org/10.1093/sysbio/syy061",
      "status": "todo"
     },
@@ -6616,7 +6616,7 @@
      "order": 4,
      "kind": "theory",
      "authors": "Bordewich, Semple",
-     "year": "2005",
+     "year": "2004",
      "title": "On the Computational Complexity of the Rooted Subtree Prune and Regraft Distance",
      "url": "https://doi.org/10.1007/s00026-004-0229-z",
      "status": "todo"
