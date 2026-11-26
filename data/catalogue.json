@@ -86,51 +86,27 @@
    "family": [
     {
      "id": 1,
-     "title": "Divide-and-conquer alignment and scalable phylogenetic co-estimation"
+     "title": "Scalable alignment"
     },
     {
      "id": 2,
-     "title": "Profile HMM ensembles, backbone alignment and fragmentary sequences"
+     "title": "Statistical alignment"
     },
     {
      "id": 3,
-     "title": "Statistical alignment and evolutionary indel models"
+     "title": "Heuristic alignment"
     },
     {
      "id": 4,
-     "title": "Phylogeny-aware alignment and joint statistical estimation"
+     "title": "Alignment optimization"
     },
     {
      "id": 5,
-     "title": "Progressive alignment and iterative refinement"
+     "title": "Alignment quality"
     },
     {
      "id": 6,
-     "title": "Consistency-based, posterior-probability and graph-based alignment"
-    },
-    {
-     "id": 7,
-     "title": "Pairwise alignment and dynamic programming foundations"
-    },
-    {
-     "id": 8,
-     "title": "Exact multiple alignment, computational complexity and approximation algorithms"
-    },
-    {
-     "id": 9,
-     "title": "Alignment uncertainty, consensus, accuracy metrics and filtering"
-    },
-    {
-     "id": 10,
-     "title": "Alignment error and its impact on phylogenetic inference"
-    },
-    {
-     "id": 11,
-     "title": "RNA, codon and structure-aware alignment"
-    },
-    {
-     "id": 12,
-     "title": "Machine learning and learned statistical alignment models"
+     "title": "General and specialized alignment"
     }
    ],
    "paper": [
@@ -229,8 +205,8 @@
     },
     {
      "id": "krogh1994",
-     "family": 2,
-     "order": 1,
+     "family": 1,
+     "order": 9,
      "kind": "theory+algorithm",
      "authors": "Krogh et al.",
      "year": "1994",
@@ -240,8 +216,8 @@
     },
     {
      "id": "eddy1998",
-     "family": 2,
-     "order": 2,
+     "family": 1,
+     "order": 10,
      "kind": "theory",
      "authors": "Eddy",
      "year": "1998",
@@ -251,8 +227,8 @@
     },
     {
      "id": "eddy2011",
-     "family": 2,
-     "order": 3,
+     "family": 1,
+     "order": 11,
      "kind": "method",
      "authors": "Eddy",
      "year": "2011",
@@ -262,8 +238,8 @@
     },
     {
      "id": "papara",
-     "family": 2,
-     "order": 4,
+     "family": 1,
+     "order": 12,
      "short": "PaPaRa",
      "kind": "method",
      "authors": "Berger, Stamatakis",
@@ -274,8 +250,8 @@
     },
     {
      "id": "katoh2012",
-     "family": 2,
-     "order": 5,
+     "family": 1,
+     "order": 13,
      "kind": "method",
      "authors": "Katoh, Frith",
      "year": "2012",
@@ -285,8 +261,8 @@
     },
     {
      "id": "upp",
-     "family": 2,
-     "order": 6,
+     "family": 1,
+     "order": 14,
      "short": "UPP",
      "kind": "method",
      "authors": "Nguyen et al.",
@@ -297,8 +273,8 @@
     },
     {
      "id": "magus-ehmms",
-     "family": 2,
-     "order": 7,
+     "family": 1,
+     "order": 15,
      "short": "MAGUS+eHMMs",
      "kind": "method",
      "authors": "Shen, Zaharias, Warnow",
@@ -309,8 +285,8 @@
     },
     {
      "id": "witch",
-     "family": 2,
-     "order": 8,
+     "family": 1,
+     "order": 16,
      "short": "WITCH",
      "kind": "method",
      "authors": "Shen, Park, Warnow",
@@ -321,8 +297,8 @@
     },
     {
      "id": "upp2",
-     "family": 2,
-     "order": 9,
+     "family": 1,
+     "order": 17,
      "short": "UPP2",
      "kind": "method",
      "authors": "Park et al.",
@@ -333,8 +309,8 @@
     },
     {
      "id": "witch-ng",
-     "family": 2,
-     "order": 10,
+     "family": 1,
+     "order": 18,
      "short": "WITCH-NG",
      "kind": "theory+algorithm",
      "authors": "Liu, Warnow",
@@ -345,8 +321,8 @@
     },
     {
      "id": "hmmerge",
-     "family": 2,
-     "order": 11,
+     "family": 1,
+     "order": 19,
      "short": "HMMerge",
      "kind": "method",
      "authors": "Park, Warnow",
@@ -357,8 +333,8 @@
     },
     {
      "id": "emma",
-     "family": 2,
-     "order": 12,
+     "family": 1,
+     "order": 20,
      "short": "EMMA",
      "kind": "method",
      "authors": "Shen et al.",
@@ -369,7 +345,7 @@
     },
     {
      "id": "thorne1991",
-     "family": 3,
+     "family": 2,
      "order": 1,
      "short": "TKF91",
      "kind": "theory+algorithm",
@@ -381,7 +357,7 @@
     },
     {
      "id": "thorne1992",
-     "family": 3,
+     "family": 2,
      "order": 2,
      "short": "TKF92",
      "kind": "theory+algorithm",
@@ -393,7 +369,7 @@
     },
     {
      "id": "hein2000",
-     "family": 3,
+     "family": 2,
      "order": 3,
      "kind": "theory",
      "authors": "Hein et al.",
@@ -404,7 +380,7 @@
     },
     {
      "id": "steel2001",
-     "family": 3,
+     "family": 2,
      "order": 4,
      "kind": "theory+algorithm",
      "authors": "Steel, Hein",
@@ -415,7 +391,7 @@
     },
     {
      "id": "hein2001",
-     "family": 3,
+     "family": 2,
      "order": 5,
      "kind": "theory+algorithm",
      "authors": "Hein",
@@ -426,7 +402,7 @@
     },
     {
      "id": "holmes2001",
-     "family": 3,
+     "family": 2,
      "order": 6,
      "kind": "theory+algorithm",
      "authors": "Holmes, Bruno",
@@ -437,7 +413,7 @@
     },
     {
      "id": "lunter2003",
-     "family": 3,
+     "family": 2,
      "order": 7,
      "kind": "theory+algorithm",
      "authors": "Lunter et al.",
@@ -448,7 +424,7 @@
     },
     {
      "id": "miklos2004",
-     "family": 3,
+     "family": 2,
      "order": 8,
      "kind": "theory+algorithm",
      "authors": "Miklós, Lunter, Holmes",
@@ -459,7 +435,7 @@
     },
     {
      "id": "rivas2008",
-     "family": 3,
+     "family": 2,
      "order": 9,
      "kind": "theory+algorithm",
      "authors": "Rivas, Eddy",
@@ -470,7 +446,7 @@
     },
     {
      "id": "andoni2010",
-     "family": 3,
+     "family": 2,
      "order": 10,
      "kind": "theory+algorithm",
      "authors": "Andoni et al.",
@@ -481,7 +457,7 @@
     },
     {
      "id": "westesson2012",
-     "family": 3,
+     "family": 2,
      "order": 11,
      "kind": "theory+algorithm",
      "authors": "Westesson et al.",
@@ -492,7 +468,7 @@
     },
     {
      "id": "pip",
-     "family": 3,
+     "family": 2,
      "order": 12,
      "short": "PIP",
      "kind": "theory+algorithm",
@@ -504,7 +480,7 @@
     },
     {
      "id": "demaio2021",
-     "family": 3,
+     "family": 2,
      "order": 13,
      "kind": "theory+algorithm",
      "authors": "De Maio",
@@ -515,8 +491,8 @@
     },
     {
      "id": "hein1990",
-     "family": 4,
-     "order": 1,
+     "family": 2,
+     "order": 14,
      "kind": "method",
      "authors": "Hein",
      "year": "1990",
@@ -526,8 +502,8 @@
     },
     {
      "id": "wheeler1996",
-     "family": 4,
-     "order": 2,
+     "family": 2,
+     "order": 15,
      "kind": "method",
      "authors": "Wheeler",
      "year": "1996",
@@ -537,8 +513,8 @@
     },
     {
      "id": "satchmo",
-     "family": 4,
-     "order": 3,
+     "family": 2,
+     "order": 16,
      "short": "SATCHMO",
      "kind": "method",
      "authors": "Edgar, Sjölander",
@@ -549,8 +525,8 @@
     },
     {
      "id": "loytynoja2005",
-     "family": 4,
-     "order": 4,
+     "family": 2,
+     "order": 17,
      "kind": "method",
      "authors": "Löytynoja, Goldman",
      "year": "2005",
@@ -560,8 +536,8 @@
     },
     {
      "id": "redelings2005",
-     "family": 4,
-     "order": 5,
+     "family": 2,
+     "order": 18,
      "kind": "method",
      "authors": "Redelings, Suchard",
      "year": "2005",
@@ -571,8 +547,8 @@
     },
     {
      "id": "lunter2005",
-     "family": 4,
-     "order": 6,
+     "family": 2,
+     "order": 19,
      "kind": "method",
      "authors": "Lunter et al.",
      "year": "2005",
@@ -582,8 +558,8 @@
     },
     {
      "id": "fleissner2005",
-     "family": 4,
-     "order": 7,
+     "family": 2,
+     "order": 20,
      "kind": "method",
      "authors": "Fleissner, Metzler, von Haeseler",
      "year": "2005",
@@ -593,8 +569,8 @@
     },
     {
      "id": "bali-phy",
-     "family": 4,
-     "order": 8,
+     "family": 2,
+     "order": 21,
      "short": "BAli-Phy",
      "kind": "method",
      "authors": "Suchard, Redelings",
@@ -605,8 +581,8 @@
     },
     {
      "id": "redelings2007",
-     "family": 4,
-     "order": 9,
+     "family": 2,
+     "order": 22,
      "kind": "method",
      "authors": "Redelings, Suchard",
      "year": "2007",
@@ -616,8 +592,8 @@
     },
     {
      "id": "prank",
-     "family": 4,
-     "order": 10,
+     "family": 2,
+     "order": 23,
      "short": "PRANK",
      "kind": "method",
      "authors": "Löytynoja, Goldman",
@@ -628,8 +604,8 @@
     },
     {
      "id": "loytynoja2008",
-     "family": 4,
-     "order": 11,
+     "family": 2,
+     "order": 24,
      "kind": "theory+algorithm",
      "authors": "Löytynoja, Goldman",
      "year": "2008",
@@ -639,8 +615,8 @@
     },
     {
      "id": "statalign",
-     "family": 4,
-     "order": 12,
+     "family": 2,
+     "order": 25,
      "short": "StatAlign",
      "kind": "method",
      "authors": "Novák et al.",
@@ -651,8 +627,8 @@
     },
     {
      "id": "poy4",
-     "family": 4,
-     "order": 13,
+     "family": 2,
+     "order": 26,
      "short": "POY 4",
      "kind": "method",
      "authors": "Varón, Vinh, Wheeler",
@@ -663,8 +639,8 @@
     },
     {
      "id": "pagan",
-     "family": 4,
-     "order": 14,
+     "family": 2,
+     "order": 27,
      "short": "PAGAN",
      "kind": "method",
      "authors": "Löytynoja, Vilella, Goldman",
@@ -675,8 +651,8 @@
     },
     {
      "id": "redelings2014",
-     "family": 4,
-     "order": 15,
+     "family": 2,
+     "order": 28,
      "kind": "method",
      "authors": "Redelings",
      "year": "2014",
@@ -686,8 +662,8 @@
     },
     {
      "id": "maiolo2018",
-     "family": 4,
-     "order": 16,
+     "family": 2,
+     "order": 29,
      "kind": "theory+algorithm",
      "authors": "Maiolo et al.",
      "year": "2018",
@@ -697,8 +673,8 @@
     },
     {
      "id": "bali-phy3",
-     "family": 4,
-     "order": 17,
+     "family": 2,
+     "order": 30,
      "short": "BAli-Phy 3",
      "kind": "method",
      "authors": "Redelings",
@@ -709,8 +685,8 @@
     },
     {
      "id": "propip",
-     "family": 4,
-     "order": 18,
+     "family": 2,
+     "order": 31,
      "short": "ProPIP",
      "kind": "method",
      "authors": "Maiolo et al.",
@@ -721,7 +697,7 @@
     },
     {
      "id": "hogeweg1984",
-     "family": 5,
+     "family": 3,
      "order": 1,
      "kind": "method",
      "authors": "Hogeweg, Hesper",
@@ -732,7 +708,7 @@
     },
     {
      "id": "barton1987",
-     "family": 5,
+     "family": 3,
      "order": 2,
      "kind": "method",
      "authors": "Barton, Sternberg",
@@ -743,7 +719,7 @@
     },
     {
      "id": "feng1987",
-     "family": 5,
+     "family": 3,
      "order": 3,
      "kind": "method",
      "authors": "Feng, Doolittle",
@@ -754,7 +730,7 @@
     },
     {
      "id": "clustal",
-     "family": 5,
+     "family": 3,
      "order": 4,
      "short": "CLUSTAL",
      "kind": "method",
@@ -766,7 +742,7 @@
     },
     {
      "id": "corpet1988",
-     "family": 5,
+     "family": 3,
      "order": 5,
      "short": "MultAlin",
      "kind": "method",
@@ -778,7 +754,7 @@
     },
     {
      "id": "gotoh1993",
-     "family": 5,
+     "family": 3,
      "order": 6,
      "kind": "theory+algorithm",
      "authors": "Gotoh",
@@ -789,7 +765,7 @@
     },
     {
      "id": "clustalw",
-     "family": 5,
+     "family": 3,
      "order": 7,
      "short": "CLUSTAL W",
      "kind": "method",
@@ -801,7 +777,7 @@
     },
     {
      "id": "mafft",
-     "family": 5,
+     "family": 3,
      "order": 8,
      "short": "MAFFT",
      "kind": "method",
@@ -813,7 +789,7 @@
     },
     {
      "id": "muscle",
-     "family": 5,
+     "family": 3,
      "order": 9,
      "short": "MUSCLE",
      "kind": "method",
@@ -825,7 +801,7 @@
     },
     {
      "id": "muscle-complexity",
-     "family": 5,
+     "family": 3,
      "order": 10,
      "short": "MUSCLE",
      "kind": "theory+algorithm",
@@ -837,7 +813,7 @@
     },
     {
      "id": "mafft5",
-     "family": 5,
+     "family": 3,
      "order": 11,
      "short": "MAFFT 5",
      "kind": "method",
@@ -849,7 +825,7 @@
     },
     {
      "id": "kalign",
-     "family": 5,
+     "family": 3,
      "order": 12,
      "short": "Kalign",
      "kind": "method",
@@ -861,7 +837,7 @@
     },
     {
      "id": "parttree",
-     "family": 5,
+     "family": 3,
      "order": 13,
      "short": "PartTree",
      "kind": "method",
@@ -873,7 +849,7 @@
     },
     {
      "id": "katoh2008",
-     "family": 5,
+     "family": 3,
      "order": 14,
      "kind": "method",
      "authors": "Katoh, Toh",
@@ -884,7 +860,7 @@
     },
     {
      "id": "kalign2",
-     "family": 5,
+     "family": 3,
      "order": 15,
      "short": "Kalign2",
      "kind": "method",
@@ -896,7 +872,7 @@
     },
     {
      "id": "clustal-omega",
-     "family": 5,
+     "family": 3,
      "order": 16,
      "short": "Clustal Omega",
      "kind": "method",
@@ -908,7 +884,7 @@
     },
     {
      "id": "mafft7",
-     "family": 5,
+     "family": 3,
      "order": 17,
      "short": "MAFFT 7",
      "kind": "method",
@@ -920,7 +896,7 @@
     },
     {
      "id": "yamada2016",
-     "family": 5,
+     "family": 3,
      "order": 18,
      "kind": "method",
      "authors": "Yamada, Tomii, Katoh",
@@ -931,7 +907,7 @@
     },
     {
      "id": "famsa",
-     "family": 5,
+     "family": 3,
      "order": 19,
      "short": "FAMSA",
      "kind": "method",
@@ -943,7 +919,7 @@
     },
     {
      "id": "kalign3",
-     "family": 5,
+     "family": 3,
      "order": 20,
      "short": "Kalign 3",
      "kind": "method",
@@ -955,7 +931,7 @@
     },
     {
      "id": "famsa2",
-     "family": 5,
+     "family": 3,
      "order": 21,
      "short": "FAMSA2",
      "kind": "method",
@@ -967,8 +943,8 @@
     },
     {
      "id": "morgenstern1996",
-     "family": 6,
-     "order": 1,
+     "family": 3,
+     "order": 22,
      "short": "DIALIGN",
      "kind": "method",
      "authors": "Morgenstern, Dress, Werner",
@@ -979,8 +955,8 @@
     },
     {
      "id": "dialign2",
-     "family": 6,
-     "order": 2,
+     "family": 3,
+     "order": 23,
      "short": "DIALIGN 2",
      "kind": "method",
      "authors": "Morgenstern",
@@ -991,8 +967,8 @@
     },
     {
      "id": "t-coffee",
-     "family": 6,
-     "order": 3,
+     "family": 3,
+     "order": 24,
      "short": "T-Coffee",
      "kind": "method",
      "authors": "Notredame, Higgins, Heringa",
@@ -1003,8 +979,8 @@
     },
     {
      "id": "lee2002",
-     "family": 6,
-     "order": 4,
+     "family": 3,
+     "order": 25,
      "short": "POA",
      "kind": "theory+algorithm",
      "authors": "Lee, Grasso, Sharlow",
@@ -1015,8 +991,8 @@
     },
     {
      "id": "lee2003",
-     "family": 6,
-     "order": 5,
+     "family": 3,
+     "order": 26,
      "kind": "theory+algorithm",
      "authors": "Lee",
      "year": "2003",
@@ -1026,8 +1002,8 @@
     },
     {
      "id": "probcons",
-     "family": 6,
-     "order": 6,
+     "family": 3,
+     "order": 27,
      "short": "ProbCons",
      "kind": "method",
      "authors": "Do et al.",
@@ -1038,8 +1014,8 @@
     },
     {
      "id": "probalign",
-     "family": 6,
-     "order": 7,
+     "family": 3,
+     "order": 28,
      "short": "Probalign",
      "kind": "method",
      "authors": "Roshan, Livesay",
@@ -1050,8 +1026,8 @@
     },
     {
      "id": "mummals",
-     "family": 6,
-     "order": 8,
+     "family": 3,
+     "order": 29,
      "short": "MUMMALS",
      "kind": "method",
      "authors": "Pei, Grishin",
@@ -1062,8 +1038,8 @@
     },
     {
      "id": "wheeler2007",
-     "family": 6,
-     "order": 9,
+     "family": 3,
+     "order": 30,
      "short": "Opal",
      "kind": "method",
      "authors": "Wheeler, Kececioglu",
@@ -1074,8 +1050,8 @@
     },
     {
      "id": "pecan",
-     "family": 6,
-     "order": 10,
+     "family": 3,
+     "order": 31,
      "short": "Pecan",
      "kind": "method",
      "authors": "Paten et al.",
@@ -1086,8 +1062,8 @@
     },
     {
      "id": "fsa",
-     "family": 6,
-     "order": 11,
+     "family": 3,
+     "order": 32,
      "short": "FSA",
      "kind": "method",
      "authors": "Bradley et al.",
@@ -1098,8 +1074,8 @@
     },
     {
      "id": "dialign-tx",
-     "family": 6,
-     "order": 12,
+     "family": 3,
+     "order": 33,
      "short": "DIALIGN-TX",
      "kind": "method",
      "authors": "Subramanian et al.",
@@ -1110,8 +1086,8 @@
     },
     {
      "id": "msaprobs",
-     "family": 6,
-     "order": 13,
+     "family": 3,
+     "order": 34,
      "short": "MSAProbs",
      "kind": "method",
      "authors": "Liu, Schmidt, Maskell",
@@ -1122,8 +1098,8 @@
     },
     {
      "id": "quickprobs",
-     "family": 6,
-     "order": 14,
+     "family": 3,
+     "order": 35,
      "short": "QuickProbs",
      "kind": "method",
      "authors": "Gudyś, Deorowicz",
@@ -1134,8 +1110,8 @@
     },
     {
      "id": "muscle5",
-     "family": 6,
-     "order": 15,
+     "family": 3,
+     "order": 36,
      "short": "Muscle5",
      "kind": "method",
      "authors": "Edgar",
@@ -1146,7 +1122,7 @@
     },
     {
      "id": "needleman1970",
-     "family": 7,
+     "family": 4,
      "order": 1,
      "kind": "theory+algorithm",
      "authors": "Needleman, Wunsch",
@@ -1157,7 +1133,7 @@
     },
     {
      "id": "wagner1974",
-     "family": 7,
+     "family": 4,
      "order": 2,
      "kind": "theory+algorithm",
      "authors": "Wagner, Fischer",
@@ -1168,7 +1144,7 @@
     },
     {
      "id": "hirschberg1975",
-     "family": 7,
+     "family": 4,
      "order": 3,
      "kind": "theory+algorithm",
      "authors": "Hirschberg",
@@ -1179,7 +1155,7 @@
     },
     {
      "id": "waterman1976",
-     "family": 7,
+     "family": 4,
      "order": 4,
      "kind": "theory",
      "authors": "Waterman, Smith, Beyer",
@@ -1190,7 +1166,7 @@
     },
     {
      "id": "smith1981",
-     "family": 7,
+     "family": 4,
      "order": 5,
      "kind": "theory+algorithm",
      "authors": "Smith, Waterman",
@@ -1201,7 +1177,7 @@
     },
     {
      "id": "gotoh1982",
-     "family": 7,
+     "family": 4,
      "order": 6,
      "kind": "theory+algorithm",
      "authors": "Gotoh",
@@ -1212,7 +1188,7 @@
     },
     {
      "id": "ukkonen1985",
-     "family": 7,
+     "family": 4,
      "order": 7,
      "kind": "theory+algorithm",
      "authors": "Ukkonen",
@@ -1223,7 +1199,7 @@
     },
     {
      "id": "myers1988",
-     "family": 7,
+     "family": 4,
      "order": 8,
      "kind": "theory+algorithm",
      "authors": "Myers, Miller",
@@ -1234,7 +1210,7 @@
     },
     {
      "id": "miyazawa1995",
-     "family": 7,
+     "family": 4,
      "order": 9,
      "kind": "theory+algorithm",
      "authors": "Miyazawa",
@@ -1245,7 +1221,7 @@
     },
     {
      "id": "myers1999",
-     "family": 7,
+     "family": 4,
      "order": 10,
      "kind": "theory+algorithm",
      "authors": "Myers",
@@ -1256,7 +1232,7 @@
     },
     {
      "id": "backurs2015",
-     "family": 7,
+     "family": 4,
      "order": 11,
      "kind": "theory",
      "authors": "Backurs, Indyk",
@@ -1267,7 +1243,7 @@
     },
     {
      "id": "wfa",
-     "family": 7,
+     "family": 4,
      "order": 12,
      "short": "WFA",
      "kind": "theory+algorithm",
@@ -1279,7 +1255,7 @@
     },
     {
      "id": "marcosola2023",
-     "family": 7,
+     "family": 4,
      "order": 13,
      "short": "BiWFA",
      "kind": "theory+algorithm",
@@ -1291,8 +1267,8 @@
     },
     {
      "id": "sankoff1975",
-     "family": 8,
-     "order": 1,
+     "family": 4,
+     "order": 14,
      "kind": "theory+algorithm",
      "authors": "Sankoff",
      "year": "1975",
@@ -1302,8 +1278,8 @@
     },
     {
      "id": "sankoff1983",
-     "family": 8,
-     "order": 2,
+     "family": 4,
+     "order": 15,
      "kind": "theory+algorithm",
      "authors": "Sankoff, Cedergren",
      "year": "1983",
@@ -1313,8 +1289,8 @@
     },
     {
      "id": "carrillo1988",
-     "family": 8,
-     "order": 3,
+     "family": 4,
+     "order": 16,
      "kind": "theory+algorithm",
      "authors": "Carrillo, Lipman",
      "year": "1988",
@@ -1324,8 +1300,8 @@
     },
     {
      "id": "altschul1989",
-     "family": 8,
-     "order": 4,
+     "family": 4,
+     "order": 17,
      "kind": "theory",
      "authors": "Altschul",
      "year": "1989",
@@ -1335,8 +1311,8 @@
     },
     {
      "id": "altschul1989-stars",
-     "family": 8,
-     "order": 5,
+     "family": 4,
+     "order": 18,
      "kind": "theory+algorithm",
      "authors": "Altschul, Lipman",
      "year": "1989",
@@ -1346,8 +1322,8 @@
     },
     {
      "id": "pevzner1992",
-     "family": 8,
-     "order": 6,
+     "family": 4,
+     "order": 19,
      "kind": "theory+algorithm",
      "authors": "Pevzner",
      "year": "1992",
@@ -1357,8 +1333,8 @@
     },
     {
      "id": "gusfield1993",
-     "family": 8,
-     "order": 7,
+     "family": 4,
+     "order": 20,
      "kind": "theory+algorithm",
      "authors": "Gusfield",
      "year": "1993",
@@ -1368,8 +1344,8 @@
     },
     {
      "id": "kececioglu1993",
-     "family": 8,
-     "order": 8,
+     "family": 4,
+     "order": 21,
      "kind": "theory+algorithm",
      "authors": "Kececioglu",
      "year": "1993",
@@ -1379,8 +1355,8 @@
     },
     {
      "id": "wang1994",
-     "family": 8,
-     "order": 9,
+     "family": 4,
+     "order": 22,
      "kind": "theory",
      "authors": "Wang, Jiang",
      "year": "1994",
@@ -1390,8 +1366,8 @@
     },
     {
      "id": "bafna1997",
-     "family": 8,
-     "order": 10,
+     "family": 4,
+     "order": 23,
      "kind": "theory+algorithm",
      "authors": "Bafna, Lawler, Pevzner",
      "year": "1997",
@@ -1401,8 +1377,8 @@
     },
     {
      "id": "stoye1998",
-     "family": 8,
-     "order": 11,
+     "family": 4,
+     "order": 24,
      "kind": "theory+algorithm",
      "authors": "Stoye",
      "year": "1998",
@@ -1412,8 +1388,8 @@
     },
     {
      "id": "gestalt",
-     "family": 8,
-     "order": 12,
+     "family": 4,
+     "order": 25,
      "short": "GESTALT",
      "kind": "theory+algorithm",
      "authors": "Lancia, Ravi",
@@ -1424,8 +1400,8 @@
     },
     {
      "id": "kececioglu2004",
-     "family": 8,
-     "order": 13,
+     "family": 4,
+     "order": 26,
      "kind": "theory+algorithm",
      "authors": "Kececioglu, Starrett",
      "year": "2004",
@@ -1435,7 +1411,7 @@
     },
     {
      "id": "castresana2000",
-     "family": 9,
+     "family": 5,
      "order": 1,
      "short": "Gblocks",
      "kind": "method",
@@ -1447,7 +1423,7 @@
     },
     {
      "id": "cline2002",
-     "family": 9,
+     "family": 5,
      "order": 2,
      "kind": "method",
      "authors": "Cline, Hughey, Karplus",
@@ -1458,7 +1434,7 @@
     },
     {
      "id": "landan2007",
-     "family": 9,
+     "family": 5,
      "order": 3,
      "kind": "method",
      "authors": "Landan, Graur",
@@ -1469,7 +1445,7 @@
     },
     {
      "id": "trimal",
-     "family": 9,
+     "family": 5,
      "order": 4,
      "short": "trimAl",
      "kind": "method",
@@ -1481,7 +1457,7 @@
     },
     {
      "id": "misof2009",
-     "family": 9,
+     "family": 5,
      "order": 5,
      "short": "ALISCORE",
      "kind": "method",
@@ -1493,7 +1469,7 @@
     },
     {
      "id": "penn2010",
-     "family": 9,
+     "family": 5,
      "order": 6,
      "short": "GUIDANCE",
      "kind": "method",
@@ -1505,7 +1481,7 @@
     },
     {
      "id": "bmge",
-     "family": 9,
+     "family": 5,
      "order": 7,
      "short": "BMGE",
      "kind": "method",
@@ -1517,7 +1493,7 @@
     },
     {
      "id": "zorro",
-     "family": 9,
+     "family": 5,
      "order": 8,
      "short": "ZORRO",
      "kind": "method",
@@ -1529,7 +1505,7 @@
     },
     {
      "id": "fastsp",
-     "family": 9,
+     "family": 5,
      "order": 9,
      "short": "FastSP",
      "kind": "theory+algorithm",
@@ -1541,7 +1517,7 @@
     },
     {
      "id": "tcs",
-     "family": 9,
+     "family": 5,
      "order": 10,
      "short": "TCS",
      "kind": "method",
@@ -1553,7 +1529,7 @@
     },
     {
      "id": "guidance2",
-     "family": 9,
+     "family": 5,
      "order": 11,
      "short": "GUIDANCE2",
      "kind": "method",
@@ -1565,7 +1541,7 @@
     },
     {
      "id": "tan2015",
-     "family": 9,
+     "family": 5,
      "order": 12,
      "kind": "evaluation",
      "authors": "Tan et al.",
@@ -1576,7 +1552,7 @@
     },
     {
      "id": "clipkit",
-     "family": 9,
+     "family": 5,
      "order": 13,
      "short": "ClipKIT",
      "kind": "method",
@@ -1588,8 +1564,8 @@
     },
     {
      "id": "morrison1997",
-     "family": 10,
-     "order": 1,
+     "family": 5,
+     "order": 14,
      "kind": "evaluation",
      "authors": "Morrison, Ellis",
      "year": "1997",
@@ -1599,8 +1575,8 @@
     },
     {
      "id": "nelesen2008",
-     "family": 10,
-     "order": 2,
+     "family": 5,
+     "order": 15,
      "kind": "evaluation",
      "authors": "Nelesen et al.",
      "year": "2008",
@@ -1610,8 +1586,8 @@
     },
     {
      "id": "liu2009",
-     "family": 10,
-     "order": 3,
+     "family": 5,
+     "order": 16,
      "kind": "evaluation",
      "authors": "Liu et al.",
      "year": "2009",
@@ -1621,8 +1597,8 @@
     },
     {
      "id": "wang2011",
-     "family": 10,
-     "order": 4,
+     "family": 5,
+     "order": 17,
      "kind": "evaluation",
      "authors": "Wang et al.",
      "year": "2011",
@@ -1632,8 +1608,8 @@
     },
     {
      "id": "liu2012",
-     "family": 10,
-     "order": 5,
+     "family": 5,
+     "order": 18,
      "kind": "method+evaluation",
      "authors": "Liu, Warnow",
      "year": "2012",
@@ -1643,8 +1619,8 @@
     },
     {
      "id": "warnow2012",
-     "family": 10,
-     "order": 6,
+     "family": 5,
+     "order": 19,
      "kind": "theory",
      "authors": "Warnow",
      "year": "2012",
@@ -1654,8 +1630,8 @@
     },
     {
      "id": "blackburne2012",
-     "family": 10,
-     "order": 7,
+     "family": 5,
+     "order": 20,
      "kind": "theory+algorithm",
      "authors": "Blackburne, Whelan",
      "year": "2012",
@@ -1665,8 +1641,8 @@
     },
     {
      "id": "blackburne2013",
-     "family": 10,
-     "order": 8,
+     "family": 5,
+     "order": 21,
      "kind": "evaluation",
      "authors": "Blackburne, Whelan",
      "year": "2013",
@@ -1676,8 +1652,8 @@
     },
     {
      "id": "boyce2015",
-     "family": 10,
-     "order": 9,
+     "family": 5,
+     "order": 22,
      "kind": "theory+evaluation",
      "authors": "Boyce, Sievers, Higgins",
      "year": "2015",
@@ -1687,8 +1663,8 @@
     },
     {
      "id": "nute2019",
-     "family": 10,
-     "order": 10,
+     "family": 5,
+     "order": 23,
      "kind": "evaluation",
      "authors": "Nute, Saleh, Warnow",
      "year": "2019",
@@ -1698,7 +1674,7 @@
     },
     {
      "id": "sankoff1985",
-     "family": 11,
+     "family": 6,
      "order": 1,
      "kind": "theory+algorithm",
      "authors": "Sankoff",
@@ -1709,7 +1685,7 @@
     },
     {
      "id": "hochsmann2004",
-     "family": 11,
+     "family": 6,
      "order": 2,
      "short": "RNAforester",
      "kind": "theory+algorithm",
@@ -1721,7 +1697,7 @@
     },
     {
      "id": "gardner2004",
-     "family": 11,
+     "family": 6,
      "order": 3,
      "kind": "evaluation",
      "authors": "Gardner, Giegerich",
@@ -1732,7 +1708,7 @@
     },
     {
      "id": "promals",
-     "family": 11,
+     "family": 6,
      "order": 4,
      "short": "PROMALS",
      "kind": "method",
@@ -1744,7 +1720,7 @@
     },
     {
      "id": "will2007",
-     "family": 11,
+     "family": 6,
      "order": 5,
      "short": "LocARNA",
      "kind": "method",
@@ -1756,7 +1732,7 @@
     },
     {
      "id": "katoh2008-ncrna",
-     "family": 11,
+     "family": 6,
      "order": 6,
      "kind": "method",
      "authors": "Katoh, Toh",
@@ -1767,7 +1743,7 @@
     },
     {
      "id": "promals3d",
-     "family": 11,
+     "family": 6,
      "order": 7,
      "short": "PROMALS3D",
      "kind": "method",
@@ -1779,7 +1755,7 @@
     },
     {
      "id": "r-coffee",
-     "family": 11,
+     "family": 6,
      "order": 8,
      "short": "R-Coffee",
      "kind": "method",
@@ -1791,7 +1767,7 @@
     },
     {
      "id": "translatorx",
-     "family": 11,
+     "family": 6,
      "order": 9,
      "short": "TranslatorX",
      "kind": "method",
@@ -1803,7 +1779,7 @@
     },
     {
      "id": "macse",
-     "family": 11,
+     "family": 6,
      "order": 10,
      "short": "MACSE",
      "kind": "method",
@@ -1815,7 +1791,7 @@
     },
     {
      "id": "macse2",
-     "family": 11,
+     "family": 6,
      "order": 11,
      "short": "MACSE v2",
      "kind": "method",
@@ -1827,7 +1803,7 @@
     },
     {
      "id": "foldmason",
-     "family": 11,
+     "family": 6,
      "order": 12,
      "short": "FoldMason",
      "kind": "method",
@@ -1839,8 +1815,8 @@
     },
     {
      "id": "contralign",
-     "family": 12,
-     "order": 1,
+     "family": 6,
+     "order": 13,
      "short": "CONTRAlign",
      "kind": "method",
      "authors": "Do, Gross, Batzoglou",
@@ -1851,8 +1827,8 @@
     },
     {
      "id": "learnmsa",
-     "family": 12,
-     "order": 2,
+     "family": 6,
+     "order": 14,
      "short": "learnMSA",
      "kind": "method",
      "authors": "Becker, Stanke",
@@ -1863,8 +1839,8 @@
     },
     {
      "id": "learnmsa2",
-     "family": 12,
-     "order": 3,
+     "family": 6,
+     "order": 15,
      "short": "learnMSA2",
      "kind": "method",
      "authors": "Becker, Stanke",
@@ -1875,8 +1851,8 @@
     },
     {
      "id": "babappalign",
-     "family": 12,
-     "order": 4,
+     "family": 6,
+     "order": 16,
      "short": "BABAPPAlign",
      "kind": "method",
      "authors": "Sinha",
@@ -1887,8 +1863,8 @@
     },
     {
      "id": "aries",
-     "family": 12,
-     "order": 5,
+     "family": 6,
+     "order": 17,
      "short": "ARIES",
      "kind": "method",
      "authors": "Hoang, Armour-Garb, Singh",
@@ -1903,35 +1879,23 @@
    "family": [
     {
      "id": 1,
-     "title": "Maximum likelihood and tree-search algorithms"
+     "title": "Maximum likelihood"
     },
     {
      "id": 2,
-     "title": "Distance-based inference and minimum evolution"
+     "title": "Distance-based inference"
     },
     {
      "id": 3,
-     "title": "Molecular substitution models"
+     "title": "Evolutionary models and model selection"
     },
     {
      "id": 4,
-     "title": "Substitution-model selection and adequacy"
+     "title": "Bayesian inference"
     },
     {
      "id": 5,
-     "title": "Maximum parsimony"
-    },
-    {
-     "id": 6,
-     "title": "Bayesian phylogenetic inference and MCMC"
-    },
-    {
-     "id": 7,
-     "title": "Branch support, rooting and hypothesis testing"
-    },
-    {
-     "id": 8,
-     "title": "Large-scale divide-and-conquer reconstruction"
+     "title": "Parsimony, support, rooting and scalable inference"
     }
    ],
    "paper": [
@@ -2597,8 +2561,8 @@
     },
     {
      "id": "goldman1993",
-     "family": 4,
-     "order": 1,
+     "family": 3,
+     "order": 19,
      "kind": "theory+algorithm",
      "authors": "Goldman",
      "year": "1993",
@@ -2608,8 +2572,8 @@
     },
     {
      "id": "modeltest",
-     "family": 4,
-     "order": 2,
+     "family": 3,
+     "order": 20,
      "short": "MODELTEST",
      "kind": "method",
      "authors": "Posada, Crandall",
@@ -2620,8 +2584,8 @@
     },
     {
      "id": "bollback2002",
-     "family": 4,
-     "order": 3,
+     "family": 3,
+     "order": 21,
      "kind": "theory+algorithm",
      "authors": "Bollback",
      "year": "2002",
@@ -2631,8 +2595,8 @@
     },
     {
      "id": "prottest",
-     "family": 4,
-     "order": 4,
+     "family": 3,
+     "order": 22,
      "short": "ProtTest",
      "kind": "method",
      "authors": "Abascal, Zardoya, Posada",
@@ -2643,8 +2607,8 @@
     },
     {
      "id": "jmodeltest",
-     "family": 4,
-     "order": 5,
+     "family": 3,
+     "order": 23,
      "short": "jModelTest",
      "kind": "method",
      "authors": "Posada",
@@ -2655,8 +2619,8 @@
     },
     {
      "id": "partitionfinder",
-     "family": 4,
-     "order": 6,
+     "family": 3,
+     "order": 24,
      "short": "PartitionFinder",
      "kind": "method",
      "authors": "Lanfear et al.",
@@ -2667,8 +2631,8 @@
     },
     {
      "id": "jmodeltest2",
-     "family": 4,
-     "order": 7,
+     "family": 3,
+     "order": 25,
      "short": "jModelTest 2",
      "kind": "method",
      "authors": "Darriba et al.",
@@ -2679,8 +2643,8 @@
     },
     {
      "id": "bmodeltest",
-     "family": 4,
-     "order": 8,
+     "family": 3,
+     "order": 26,
      "short": "bModelTest",
      "kind": "method",
      "authors": "Bouckaert, Drummond",
@@ -2691,8 +2655,8 @@
     },
     {
      "id": "modelfinder",
-     "family": 4,
-     "order": 9,
+     "family": 3,
+     "order": 27,
      "short": "ModelFinder",
      "kind": "method",
      "authors": "Kalyaanamoorthy et al.",
@@ -2703,13 +2667,139 @@
     },
     {
      "id": "fabreti2023",
-     "family": 4,
-     "order": 10,
+     "family": 3,
+     "order": 28,
      "kind": "theory+method",
      "authors": "Fabreti, Höhna",
      "year": "2023",
      "title": "Nucleotide Substitution Model Selection Is Not Necessary for Bayesian Inference of Phylogeny with Well-Behaved Priors",
      "url": "https://doi.org/10.1093/sysbio/syad041",
+     "status": "todo"
+    },
+    {
+     "id": "rannala1996",
+     "family": 4,
+     "order": 1,
+     "kind": "theory+algorithm",
+     "authors": "Rannala, Yang",
+     "year": "1996",
+     "title": "Probability Distribution of Molecular Evolutionary Trees: A New Method of Phylogenetic Inference",
+     "url": "https://doi.org/10.1007/BF02338839",
+     "status": "todo"
+    },
+    {
+     "id": "mau1999",
+     "family": 4,
+     "order": 2,
+     "kind": "method",
+     "authors": "Mau, Newton, Larget",
+     "year": "1999",
+     "title": "Bayesian Phylogenetic Inference via Markov Chain Monte Carlo Methods",
+     "url": "https://doi.org/10.1111/j.0006-341X.1999.00001.x",
+     "status": "todo"
+    },
+    {
+     "id": "larget1999",
+     "family": 4,
+     "order": 3,
+     "kind": "theory+algorithm",
+     "authors": "Larget, Simon",
+     "year": "1999",
+     "title": "Markov Chain Monte Carlo Algorithms for the Bayesian Analysis of Phylogenetic Trees",
+     "url": "https://doi.org/10.1093/oxfordjournals.molbev.a026160",
+     "status": "todo"
+    },
+    {
+     "id": "mrbayes",
+     "family": 4,
+     "order": 4,
+     "short": "MrBayes",
+     "kind": "method",
+     "authors": "Huelsenbeck, Ronquist",
+     "year": "2001",
+     "title": "MrBayes: Bayesian Inference of Phylogenetic Trees",
+     "url": "https://doi.org/10.1093/bioinformatics/17.8.754",
+     "status": "todo"
+    },
+    {
+     "id": "mossel2005",
+     "family": 4,
+     "order": 5,
+     "kind": "theory",
+     "authors": "Mossel, Vigoda",
+     "year": "2005",
+     "title": "Phylogenetic MCMC Algorithms Are Misleading on Mixtures of Trees",
+     "url": "https://doi.org/10.1126/science.1115493",
+     "status": "todo"
+    },
+    {
+     "id": "beast",
+     "family": 4,
+     "order": 6,
+     "short": "BEAST",
+     "kind": "method",
+     "authors": "Drummond, Rambaut",
+     "year": "2007",
+     "title": "BEAST: Bayesian Evolutionary Analysis by Sampling Trees",
+     "url": "https://doi.org/10.1186/1471-2148-7-214",
+     "status": "todo"
+    },
+    {
+     "id": "lakner2008",
+     "family": 4,
+     "order": 7,
+     "kind": "theory+algorithm",
+     "authors": "Lakner et al.",
+     "year": "2008",
+     "title": "Efficiency of Markov Chain Monte Carlo Tree Proposals in Bayesian Phylogenetics",
+     "url": "https://doi.org/10.1080/10635150801886156",
+     "status": "todo"
+    },
+    {
+     "id": "mrbayes3-2",
+     "family": 4,
+     "order": 8,
+     "short": "MrBayes 3.2",
+     "kind": "method",
+     "authors": "Ronquist et al.",
+     "year": "2012",
+     "title": "MrBayes 3.2: Efficient Bayesian Phylogenetic Inference and Model Choice Across a Large Model Space",
+     "url": "https://doi.org/10.1093/sysbio/sys029",
+     "status": "todo"
+    },
+    {
+     "id": "beast2",
+     "family": 4,
+     "order": 9,
+     "short": "BEAST 2",
+     "kind": "method",
+     "authors": "Bouckaert et al.",
+     "year": "2014",
+     "title": "BEAST 2: A Software Platform for Bayesian Evolutionary Analysis",
+     "url": "https://doi.org/10.1371/journal.pcbi.1003537",
+     "status": "todo"
+    },
+    {
+     "id": "whidden2015",
+     "family": 4,
+     "order": 10,
+     "kind": "theory+algorithm",
+     "authors": "Whidden, Matsen",
+     "year": "2015",
+     "title": "Quantifying MCMC Exploration of Phylogenetic Tree Space",
+     "url": "https://doi.org/10.1093/sysbio/syv006",
+     "status": "todo"
+    },
+    {
+     "id": "revbayes",
+     "family": 4,
+     "order": 11,
+     "short": "RevBayes",
+     "kind": "method",
+     "authors": "Höhna et al.",
+     "year": "2016",
+     "title": "RevBayes: Bayesian Phylogenetic Inference Using Graphical Models and an Interactive Model-Specification Language",
+     "url": "https://doi.org/10.1093/sysbio/syw021",
      "status": "todo"
     },
     {
@@ -2735,135 +2825,9 @@
      "status": "todo"
     },
     {
-     "id": "rannala1996",
-     "family": 6,
-     "order": 1,
-     "kind": "theory+algorithm",
-     "authors": "Rannala, Yang",
-     "year": "1996",
-     "title": "Probability Distribution of Molecular Evolutionary Trees: A New Method of Phylogenetic Inference",
-     "url": "https://doi.org/10.1007/BF02338839",
-     "status": "todo"
-    },
-    {
-     "id": "mau1999",
-     "family": 6,
-     "order": 2,
-     "kind": "method",
-     "authors": "Mau, Newton, Larget",
-     "year": "1999",
-     "title": "Bayesian Phylogenetic Inference via Markov Chain Monte Carlo Methods",
-     "url": "https://doi.org/10.1111/j.0006-341X.1999.00001.x",
-     "status": "todo"
-    },
-    {
-     "id": "larget1999",
-     "family": 6,
-     "order": 3,
-     "kind": "theory+algorithm",
-     "authors": "Larget, Simon",
-     "year": "1999",
-     "title": "Markov Chain Monte Carlo Algorithms for the Bayesian Analysis of Phylogenetic Trees",
-     "url": "https://doi.org/10.1093/oxfordjournals.molbev.a026160",
-     "status": "todo"
-    },
-    {
-     "id": "mrbayes",
-     "family": 6,
-     "order": 4,
-     "short": "MrBayes",
-     "kind": "method",
-     "authors": "Huelsenbeck, Ronquist",
-     "year": "2001",
-     "title": "MrBayes: Bayesian Inference of Phylogenetic Trees",
-     "url": "https://doi.org/10.1093/bioinformatics/17.8.754",
-     "status": "todo"
-    },
-    {
-     "id": "mossel2005",
-     "family": 6,
-     "order": 5,
-     "kind": "theory",
-     "authors": "Mossel, Vigoda",
-     "year": "2005",
-     "title": "Phylogenetic MCMC Algorithms Are Misleading on Mixtures of Trees",
-     "url": "https://doi.org/10.1126/science.1115493",
-     "status": "todo"
-    },
-    {
-     "id": "beast",
-     "family": 6,
-     "order": 6,
-     "short": "BEAST",
-     "kind": "method",
-     "authors": "Drummond, Rambaut",
-     "year": "2007",
-     "title": "BEAST: Bayesian Evolutionary Analysis by Sampling Trees",
-     "url": "https://doi.org/10.1186/1471-2148-7-214",
-     "status": "todo"
-    },
-    {
-     "id": "lakner2008",
-     "family": 6,
-     "order": 7,
-     "kind": "theory+algorithm",
-     "authors": "Lakner et al.",
-     "year": "2008",
-     "title": "Efficiency of Markov Chain Monte Carlo Tree Proposals in Bayesian Phylogenetics",
-     "url": "https://doi.org/10.1080/10635150801886156",
-     "status": "todo"
-    },
-    {
-     "id": "mrbayes3-2",
-     "family": 6,
-     "order": 8,
-     "short": "MrBayes 3.2",
-     "kind": "method",
-     "authors": "Ronquist et al.",
-     "year": "2012",
-     "title": "MrBayes 3.2: Efficient Bayesian Phylogenetic Inference and Model Choice Across a Large Model Space",
-     "url": "https://doi.org/10.1093/sysbio/sys029",
-     "status": "todo"
-    },
-    {
-     "id": "beast2",
-     "family": 6,
-     "order": 9,
-     "short": "BEAST 2",
-     "kind": "method",
-     "authors": "Bouckaert et al.",
-     "year": "2014",
-     "title": "BEAST 2: A Software Platform for Bayesian Evolutionary Analysis",
-     "url": "https://doi.org/10.1371/journal.pcbi.1003537",
-     "status": "todo"
-    },
-    {
-     "id": "whidden2015",
-     "family": 6,
-     "order": 10,
-     "kind": "theory+algorithm",
-     "authors": "Whidden, Matsen",
-     "year": "2015",
-     "title": "Quantifying MCMC Exploration of Phylogenetic Tree Space",
-     "url": "https://doi.org/10.1093/sysbio/syv006",
-     "status": "todo"
-    },
-    {
-     "id": "revbayes",
-     "family": 6,
-     "order": 11,
-     "short": "RevBayes",
-     "kind": "method",
-     "authors": "Höhna et al.",
-     "year": "2016",
-     "title": "RevBayes: Bayesian Phylogenetic Inference Using Graphical Models and an Interactive Model-Specification Language",
-     "url": "https://doi.org/10.1093/sysbio/syw021",
-     "status": "todo"
-    },
-    {
      "id": "felsenstein1985",
-     "family": 7,
-     "order": 1,
+     "family": 5,
+     "order": 3,
      "kind": "method",
      "authors": "Felsenstein",
      "year": "1985",
@@ -2873,8 +2837,8 @@
     },
     {
      "id": "kishino1989",
-     "family": 7,
-     "order": 2,
+     "family": 5,
+     "order": 4,
      "kind": "theory+algorithm",
      "authors": "Kishino, Hasegawa",
      "year": "1989",
@@ -2884,8 +2848,8 @@
     },
     {
      "id": "huelsenbeck1996",
-     "family": 7,
-     "order": 3,
+     "family": 5,
+     "order": 5,
      "kind": "theory+algorithm",
      "authors": "Huelsenbeck, Hillis, Nielsen",
      "year": "1996",
@@ -2895,8 +2859,8 @@
     },
     {
      "id": "efron1996",
-     "family": 7,
-     "order": 4,
+     "family": 5,
+     "order": 6,
      "kind": "theory",
      "authors": "Efron, Halloran, Holmes",
      "year": "1996",
@@ -2906,8 +2870,8 @@
     },
     {
      "id": "shimodaira1999",
-     "family": 7,
-     "order": 5,
+     "family": 5,
+     "order": 7,
      "kind": "theory+algorithm",
      "authors": "Shimodaira, Hasegawa",
      "year": "1999",
@@ -2917,8 +2881,8 @@
     },
     {
      "id": "shimodaira2002",
-     "family": 7,
-     "order": 6,
+     "family": 5,
+     "order": 8,
      "kind": "method",
      "authors": "Shimodaira",
      "year": "2002",
@@ -2928,8 +2892,8 @@
     },
     {
      "id": "huelsenbeck2002",
-     "family": 7,
-     "order": 7,
+     "family": 5,
+     "order": 9,
      "kind": "method",
      "authors": "Huelsenbeck, Bollback, Levine",
      "year": "2002",
@@ -2939,8 +2903,8 @@
     },
     {
      "id": "yap2005",
-     "family": 7,
-     "order": 8,
+     "family": 5,
+     "order": 10,
      "kind": "method",
      "authors": "Yap, Speed",
      "year": "2005",
@@ -2950,8 +2914,8 @@
     },
     {
      "id": "anisimova2006",
-     "family": 7,
-     "order": 9,
+     "family": 5,
+     "order": 11,
      "short": "aLRT",
      "kind": "theory+algorithm",
      "authors": "Anisimova, Gascuel",
@@ -2962,8 +2926,8 @@
     },
     {
      "id": "minh2013",
-     "family": 7,
-     "order": 10,
+     "family": 5,
+     "order": 12,
      "kind": "method",
      "authors": "Minh, Nguyen, von Haeseler",
      "year": "2013",
@@ -2973,8 +2937,8 @@
     },
     {
      "id": "ufboot2",
-     "family": 7,
-     "order": 11,
+     "family": 5,
+     "order": 13,
      "short": "UFBoot2",
      "kind": "method",
      "authors": "Hoang et al.",
@@ -2985,8 +2949,8 @@
     },
     {
      "id": "naserkhdour2022",
-     "family": 7,
-     "order": 12,
+     "family": 5,
+     "order": 14,
      "kind": "method",
      "authors": "Naser-Khdour, Minh, Lanfear",
      "year": "2022",
@@ -2996,8 +2960,8 @@
     },
     {
      "id": "dcm",
-     "family": 8,
-     "order": 1,
+     "family": 5,
+     "order": 15,
      "short": "DCM",
      "kind": "theory+algorithm",
      "authors": "Huson, Nettles, Warnow",
@@ -3008,8 +2972,8 @@
     },
     {
      "id": "dcm2",
-     "family": 8,
-     "order": 2,
+     "family": 5,
+     "order": 16,
      "short": "DCM2",
      "kind": "method",
      "authors": "Huson, Vawter, Warnow",
@@ -3020,8 +2984,8 @@
     },
     {
      "id": "huson1999-hybrid",
-     "family": 8,
-     "order": 3,
+     "family": 5,
+     "order": 17,
      "kind": "method",
      "authors": "Huson et al.",
      "year": "1999",
@@ -3031,8 +2995,8 @@
     },
     {
      "id": "rec-i-dcm3",
-     "family": 8,
-     "order": 4,
+     "family": 5,
+     "order": 18,
      "short": "Rec-I-DCM3",
      "kind": "method",
      "authors": "Roshan et al.",
@@ -3043,8 +3007,8 @@
     },
     {
      "id": "dactal",
-     "family": 8,
-     "order": 5,
+     "family": 5,
+     "order": 19,
      "short": "DACTAL",
      "kind": "method",
      "authors": "Nelesen et al.",
@@ -3055,8 +3019,8 @@
     },
     {
      "id": "zhang2019",
-     "family": 8,
-     "order": 6,
+     "family": 5,
+     "order": 20,
      "kind": "theory+algorithm",
      "authors": "Zhang, Rao, Warnow",
      "year": "2019",
@@ -3070,39 +3034,27 @@
    "family": [
     {
      "id": 1,
-     "title": "Quartet-based statistical species-tree inference"
+     "title": "Quartet inference"
     },
     {
      "id": 2,
-     "title": "Rooted triplets, clades, consensus and deep coalescences"
+     "title": "Other summary methods"
     },
     {
      "id": 3,
-     "title": "Coalescent-aware distance and time-based inference"
+     "title": "Direct sequence-based inference"
     },
     {
      "id": 4,
-     "title": "Site-pattern, spectral and direct sequence-based inference"
+     "title": "Full likelihood and Bayesian inference"
     },
     {
      "id": 5,
-     "title": "Full-likelihood, Bayesian and gene-tree co-estimation"
+     "title": "Duplication, loss, transfer and paralogy"
     },
     {
      "id": 6,
-     "title": "Species-tree inference under duplication, loss, transfer and paralogy"
-    },
-    {
-     "id": 7,
-     "title": "Species-tree rooting, branch lengths, support and hypothesis testing"
-    },
-    {
-     "id": 8,
-     "title": "Species-tree model foundations and estimator-specific limitations"
-    },
-    {
-     "id": 9,
-     "title": "Supertree-based and divide-and-conquer species-tree inference"
+     "title": "Rooting, branch lengths, support and general methods"
     }
    ],
    "paper": [
@@ -3502,8 +3454,8 @@
     },
     {
      "id": "star-steac",
-     "family": 3,
-     "order": 1,
+     "family": 2,
+     "order": 13,
      "short": "STAR and STEAC",
      "kind": "method",
      "authors": "Liu et al.",
@@ -3514,8 +3466,8 @@
     },
     {
      "id": "glass",
-     "family": 3,
-     "order": 2,
+     "family": 2,
+     "order": 14,
      "short": "GLASS",
      "kind": "theory+algorithm",
      "authors": "Mossel, Roch",
@@ -3526,8 +3478,8 @@
     },
     {
      "id": "njst",
-     "family": 3,
-     "order": 3,
+     "family": 2,
+     "order": 15,
      "short": "NJst",
      "kind": "method",
      "authors": "Liu, Yu",
@@ -3538,8 +3490,8 @@
     },
     {
      "id": "helmkamp2012",
-     "family": 3,
-     "order": 4,
+     "family": 2,
+     "order": 16,
      "kind": "theory+algorithm",
      "authors": "Helmkamp, Jewett, Rosenberg",
      "year": "2012",
@@ -3549,8 +3501,8 @@
     },
     {
      "id": "allman2013",
-     "family": 3,
-     "order": 5,
+     "family": 2,
+     "order": 17,
      "kind": "theory",
      "authors": "Allman, Degnan, Rhodes",
      "year": "2013",
@@ -3560,8 +3512,8 @@
     },
     {
      "id": "degiorgio2014",
-     "family": 3,
-     "order": 6,
+     "family": 2,
+     "order": 18,
      "kind": "theory",
      "authors": "DeGiorgio, Degnan",
      "year": "2014",
@@ -3571,8 +3523,8 @@
     },
     {
      "id": "astrid",
-     "family": 3,
-     "order": 7,
+     "family": 2,
+     "order": 19,
      "short": "ASTRID",
      "kind": "method",
      "authors": "Vachaspati, Warnow",
@@ -3583,8 +3535,8 @@
     },
     {
      "id": "distique",
-     "family": 3,
-     "order": 8,
+     "family": 2,
+     "order": 20,
      "short": "DISTIQUE",
      "kind": "method",
      "authors": "Sayyari, Mirarab",
@@ -3595,8 +3547,8 @@
     },
     {
      "id": "allman2018-star",
-     "family": 3,
-     "order": 9,
+     "family": 2,
+     "order": 21,
      "kind": "theory+algorithm",
      "authors": "Allman, Degnan, Rhodes",
      "year": "2018",
@@ -3606,7 +3558,7 @@
     },
     {
      "id": "smrt",
-     "family": 4,
+     "family": 3,
      "order": 1,
      "short": "SMRT",
      "kind": "theory+algorithm",
@@ -3618,7 +3570,7 @@
     },
     {
      "id": "svdquartets",
-     "family": 4,
+     "family": 3,
      "order": 2,
      "short": "SVDquartets",
      "kind": "method",
@@ -3630,7 +3582,7 @@
     },
     {
      "id": "chifman2015",
-     "family": 4,
+     "family": 3,
      "order": 3,
      "kind": "theory",
      "authors": "Chifman, Kubatko",
@@ -3641,7 +3593,7 @@
     },
     {
      "id": "metal",
-     "family": 4,
+     "family": 3,
      "order": 4,
      "short": "METAL",
      "kind": "theory+algorithm",
@@ -3653,7 +3605,7 @@
     },
     {
      "id": "pomo",
-     "family": 4,
+     "family": 3,
      "order": 5,
      "short": "PoMo",
      "kind": "method",
@@ -3665,7 +3617,7 @@
     },
     {
      "id": "schrempf2016",
-     "family": 4,
+     "family": 3,
      "order": 6,
      "kind": "method",
      "authors": "Schrempf et al.",
@@ -3676,7 +3628,7 @@
     },
     {
      "id": "svdquest",
-     "family": 4,
+     "family": 3,
      "order": 7,
      "short": "SVDquest",
      "kind": "method",
@@ -3688,7 +3640,7 @@
     },
     {
      "id": "long2019",
-     "family": 4,
+     "family": 3,
      "order": 8,
      "kind": "theory",
      "authors": "Long, Kubatko",
@@ -3699,7 +3651,7 @@
     },
     {
      "id": "allman2019",
-     "family": 4,
+     "family": 3,
      "order": 9,
      "kind": "theory+algorithm",
      "authors": "Allman, Long, Rhodes",
@@ -3710,7 +3662,7 @@
     },
     {
      "id": "wascher2021",
-     "family": 4,
+     "family": 3,
      "order": 10,
      "kind": "theory",
      "authors": "Wascher, Kubatko",
@@ -3721,7 +3673,7 @@
     },
     {
      "id": "richards2021",
-     "family": 4,
+     "family": 3,
      "order": 11,
      "kind": "method",
      "authors": "Richards, Kubatko",
@@ -3732,7 +3684,7 @@
     },
     {
      "id": "caster",
-     "family": 4,
+     "family": 3,
      "order": 12,
      "short": "CASTER",
      "kind": "method",
@@ -3744,7 +3696,7 @@
     },
     {
      "id": "kubatko2025",
-     "family": 4,
+     "family": 3,
      "order": 13,
      "kind": "method",
      "authors": "Kubatko et al.",
@@ -3755,7 +3707,7 @@
     },
     {
      "id": "waster",
-     "family": 4,
+     "family": 3,
      "order": 14,
      "short": "WASTER",
      "kind": "method",
@@ -3767,7 +3719,7 @@
     },
     {
      "id": "rannala2003",
-     "family": 5,
+     "family": 4,
      "order": 1,
      "kind": "method",
      "authors": "Rannala, Yang",
@@ -3778,7 +3730,7 @@
     },
     {
      "id": "degnan2005",
-     "family": 5,
+     "family": 4,
      "order": 2,
      "kind": "theory+algorithm",
      "authors": "Degnan, Salter",
@@ -3789,7 +3741,7 @@
     },
     {
      "id": "liu2007",
-     "family": 5,
+     "family": 4,
      "order": 3,
      "kind": "method",
      "authors": "Liu, Pearl",
@@ -3800,7 +3752,7 @@
     },
     {
      "id": "ane2007",
-     "family": 5,
+     "family": 4,
      "order": 4,
      "kind": "method",
      "authors": "Ané et al.",
@@ -3811,7 +3763,7 @@
     },
     {
      "id": "best",
-     "family": 5,
+     "family": 4,
      "order": 5,
      "short": "BEST",
      "kind": "method",
@@ -3823,7 +3775,7 @@
     },
     {
      "id": "stem",
-     "family": 5,
+     "family": 4,
      "order": 6,
      "short": "STEM",
      "kind": "method",
@@ -3835,7 +3787,7 @@
     },
     {
      "id": "starbeast",
-     "family": 5,
+     "family": 4,
      "order": 7,
      "short": "*BEAST",
      "kind": "method",
@@ -3847,7 +3799,7 @@
     },
     {
      "id": "bucky",
-     "family": 5,
+     "family": 4,
      "order": 8,
      "short": "BUCKy",
      "kind": "method",
@@ -3859,7 +3811,7 @@
     },
     {
      "id": "snapp",
-     "family": 5,
+     "family": 4,
      "order": 9,
      "short": "SNAPP",
      "kind": "method",
@@ -3871,7 +3823,7 @@
     },
     {
      "id": "stells",
-     "family": 5,
+     "family": 4,
      "order": 10,
      "short": "STELLS",
      "kind": "method",
@@ -3883,7 +3835,7 @@
     },
     {
      "id": "yang2014",
-     "family": 5,
+     "family": 4,
      "order": 11,
      "kind": "method",
      "authors": "Yang, Rannala",
@@ -3894,7 +3846,7 @@
     },
     {
      "id": "stells2",
-     "family": 5,
+     "family": 4,
      "order": 12,
      "short": "STELLS2",
      "kind": "method",
@@ -3906,7 +3858,7 @@
     },
     {
      "id": "rannala2017",
-     "family": 5,
+     "family": 4,
      "order": 13,
      "kind": "method",
      "authors": "Rannala, Yang",
@@ -3917,7 +3869,7 @@
     },
     {
      "id": "starbeast2",
-     "family": 5,
+     "family": 4,
      "order": 14,
      "short": "StarBEAST2",
      "kind": "method",
@@ -3929,7 +3881,7 @@
     },
     {
      "id": "jones2017",
-     "family": 5,
+     "family": 4,
      "order": 15,
      "kind": "method",
      "authors": "Jones",
@@ -3940,7 +3892,7 @@
     },
     {
      "id": "bpp",
-     "family": 5,
+     "family": 4,
      "order": 16,
      "short": "BPP",
      "kind": "method",
@@ -3952,7 +3904,7 @@
     },
     {
      "id": "wang2020",
-     "family": 5,
+     "family": 4,
      "order": 17,
      "kind": "method",
      "authors": "Wang, Ogilvie, Nakhleh",
@@ -3963,7 +3915,7 @@
     },
     {
      "id": "starbeast3",
-     "family": 5,
+     "family": 4,
      "order": 18,
      "short": "StarBeast3",
      "kind": "method",
@@ -3975,7 +3927,7 @@
     },
     {
      "id": "quco",
-     "family": 5,
+     "family": 4,
      "order": 19,
      "short": "QuCo",
      "kind": "method",
@@ -3987,7 +3939,7 @@
     },
     {
      "id": "zhu2025",
-     "family": 5,
+     "family": 4,
      "order": 20,
      "kind": "method",
      "authors": "Zhu, Höhna",
@@ -3998,7 +3950,7 @@
     },
     {
      "id": "duptree",
-     "family": 6,
+     "family": 5,
      "order": 1,
      "short": "DupTree",
      "kind": "method",
@@ -4010,7 +3962,7 @@
     },
     {
      "id": "igtp",
-     "family": 6,
+     "family": 5,
      "order": 2,
      "short": "iGTP",
      "kind": "method",
@@ -4022,7 +3974,7 @@
     },
     {
      "id": "rasmussen2012",
-     "family": 6,
+     "family": 5,
      "order": 3,
      "kind": "theory+algorithm",
      "authors": "Rasmussen, Kellis",
@@ -4033,7 +3985,7 @@
     },
     {
      "id": "boussau2013",
-     "family": 6,
+     "family": 5,
      "order": 4,
      "kind": "method",
      "authors": "Boussau et al.",
@@ -4044,7 +3996,7 @@
     },
     {
      "id": "roch2013",
-     "family": 6,
+     "family": 5,
      "order": 5,
      "kind": "theory+algorithm",
      "authors": "Roch, Snir",
@@ -4055,7 +4007,7 @@
     },
     {
      "id": "chaudhary2013",
-     "family": 6,
+     "family": 5,
      "order": 6,
      "kind": "method",
      "authors": "Chaudhary et al.",
@@ -4066,7 +4018,7 @@
     },
     {
      "id": "davidson2015",
-     "family": 6,
+     "family": 5,
      "order": 7,
      "kind": "method",
      "authors": "Davidson et al.",
@@ -4077,7 +4029,7 @@
     },
     {
      "id": "daskalakis2016",
-     "family": 6,
+     "family": 5,
      "order": 8,
      "kind": "theory+algorithm",
      "authors": "Daskalakis, Roch",
@@ -4088,7 +4040,7 @@
     },
     {
      "id": "stag",
-     "family": 6,
+     "family": 5,
      "order": 9,
      "short": "STAG",
      "kind": "method",
@@ -4100,7 +4052,7 @@
     },
     {
      "id": "astral-pro",
-     "family": 6,
+     "family": 5,
      "order": 10,
      "short": "ASTRAL-Pro",
      "kind": "method",
@@ -4112,7 +4064,7 @@
     },
     {
      "id": "fastmulrfs",
-     "family": 6,
+     "family": 5,
      "order": 11,
      "short": "FastMulRFS",
      "kind": "method",
@@ -4124,7 +4076,7 @@
     },
     {
      "id": "legried2021",
-     "family": 6,
+     "family": 5,
      "order": 12,
      "kind": "theory",
      "authors": "Legried et al.",
@@ -4135,7 +4087,7 @@
     },
     {
      "id": "markin2021",
-     "family": 6,
+     "family": 5,
      "order": 13,
      "kind": "theory",
      "authors": "Markin, Eulenstein",
@@ -4146,7 +4098,7 @@
     },
     {
      "id": "astral-pro2",
-     "family": 6,
+     "family": 5,
      "order": 14,
      "short": "ASTRAL-Pro 2",
      "kind": "method",
@@ -4158,7 +4110,7 @@
     },
     {
      "id": "disco",
-     "family": 6,
+     "family": 5,
      "order": 15,
      "short": "DISCO",
      "kind": "method",
@@ -4170,7 +4122,7 @@
     },
     {
      "id": "speciesrax",
-     "family": 6,
+     "family": 5,
      "order": 16,
      "short": "SpeciesRax",
      "kind": "method",
@@ -4182,7 +4134,7 @@
     },
     {
      "id": "hill2022",
-     "family": 6,
+     "family": 5,
      "order": 17,
      "kind": "theory",
      "authors": "Hill, Legried, Roch",
@@ -4193,7 +4145,7 @@
     },
     {
      "id": "xiong2022",
-     "family": 6,
+     "family": 5,
      "order": 18,
      "kind": "theory",
      "authors": "Xiong et al.",
@@ -4204,7 +4156,7 @@
     },
     {
      "id": "alerax",
-     "family": 6,
+     "family": 5,
      "order": 19,
      "short": "AleRax",
      "kind": "method",
@@ -4216,7 +4168,7 @@
     },
     {
      "id": "duploss2",
-     "family": 6,
+     "family": 5,
      "order": 20,
      "short": "DupLoss-2",
      "kind": "method",
@@ -4228,7 +4180,7 @@
     },
     {
      "id": "sayyari2016",
-     "family": 7,
+     "family": 6,
      "order": 1,
      "kind": "method",
      "authors": "Sayyari, Mirarab",
@@ -4239,7 +4191,7 @@
     },
     {
      "id": "stride",
-     "family": 7,
+     "family": 6,
      "order": 2,
      "short": "STRIDE",
      "kind": "method",
@@ -4251,7 +4203,7 @@
     },
     {
      "id": "allman2017",
-     "family": 7,
+     "family": 6,
      "order": 3,
      "kind": "method",
      "authors": "Allman, Kubatko, Rhodes",
@@ -4262,7 +4214,7 @@
     },
     {
      "id": "sayyari2018",
-     "family": 7,
+     "family": 6,
      "order": 4,
      "kind": "method",
      "authors": "Sayyari, Mirarab",
@@ -4273,7 +4225,7 @@
     },
     {
      "id": "minh2020",
-     "family": 7,
+     "family": 6,
      "order": 5,
      "kind": "method",
      "authors": "Minh, Hahn, Lanfear",
@@ -4284,7 +4236,7 @@
     },
     {
      "id": "quintet-rooting",
-     "family": 7,
+     "family": 6,
      "order": 6,
      "short": "Quintet Rooting",
      "kind": "method",
@@ -4296,7 +4248,7 @@
     },
     {
      "id": "qr-star",
-     "family": 7,
+     "family": 6,
      "order": 7,
      "short": "QR-STAR",
      "kind": "method",
@@ -4308,7 +4260,7 @@
     },
     {
      "id": "disco-qr",
-     "family": 7,
+     "family": 6,
      "order": 8,
      "short": "DISCO+QR",
      "kind": "method",
@@ -4320,7 +4272,7 @@
     },
     {
      "id": "castles",
-     "family": 7,
+     "family": 6,
      "order": 9,
      "short": "CASTLES",
      "kind": "method",
@@ -4332,7 +4284,7 @@
     },
     {
      "id": "adams2023",
-     "family": 7,
+     "family": 6,
      "order": 10,
      "kind": "method",
      "authors": "Adams, DeGiorgio",
@@ -4343,7 +4295,7 @@
     },
     {
      "id": "castles-pro",
-     "family": 7,
+     "family": 6,
      "order": 11,
      "short": "CASTLES-Pro",
      "kind": "method",
@@ -4355,7 +4307,7 @@
     },
     {
      "id": "tabatabaee2026",
-     "family": 7,
+     "family": 6,
      "order": 12,
      "kind": "method",
      "authors": "Tabatabaee, Claramunt, Mirarab",
@@ -4366,8 +4318,8 @@
     },
     {
      "id": "kingman1982",
-     "family": 8,
-     "order": 1,
+     "family": 6,
+     "order": 13,
      "kind": "theory",
      "authors": "Kingman",
      "year": "1982",
@@ -4377,8 +4329,8 @@
     },
     {
      "id": "dinh2025",
-     "family": 8,
-     "order": 2,
+     "family": 6,
+     "order": 14,
      "kind": "theory",
      "authors": "Dinh, Baños",
      "year": "2025",
@@ -4388,8 +4340,8 @@
     },
     {
      "id": "supertriplets",
-     "family": 9,
-     "order": 1,
+     "family": 6,
+     "order": 15,
      "short": "SuperTriplets",
      "kind": "method",
      "authors": "Ranwez et al.",
@@ -4400,8 +4352,8 @@
     },
     {
      "id": "fastrfs",
-     "family": 9,
-     "order": 2,
+     "family": 6,
+     "order": 16,
      "short": "FastRFS",
      "kind": "method",
      "authors": "Vachaspati, Warnow",
@@ -4412,8 +4364,8 @@
     },
     {
      "id": "njmerge",
-     "family": 9,
-     "order": 3,
+     "family": 6,
+     "order": 17,
      "short": "NJMerge",
      "kind": "method",
      "authors": "Molloy, Warnow",
@@ -4424,8 +4376,8 @@
     },
     {
      "id": "treemerge",
-     "family": 9,
-     "order": 4,
+     "family": 6,
+     "order": 18,
      "short": "TreeMerge",
      "kind": "method",
      "authors": "Molloy, Warnow",
@@ -4440,23 +4392,19 @@
    "family": [
     {
      "id": 1,
-     "title": "Quartet- and quintet-based statistical network inference"
+     "title": "Quartet and quintet inference"
     },
     {
      "id": 2,
-     "title": "Semi-directed reconstruction from quartets, quarnets and quinnets"
+     "title": "Combinatorial reconstruction"
     },
     {
      "id": 3,
-     "title": "Rooted reconstruction from triplets, trinets, clusters and LCA constraints"
-    },
-    {
-     "id": 4,
      "title": "Reconstruction and reconciliation from multiple input trees"
     },
     {
-     "id": 5,
-     "title": "Model-based likelihood, Bayesian and sequence-data inference"
+     "id": 4,
+     "title": "Likelihood and Bayesian inference"
     }
    ],
    "paper": [
@@ -4785,8 +4733,8 @@
     },
     {
      "id": "jansson2006-galled",
-     "family": 3,
-     "order": 1,
+     "family": 2,
+     "order": 12,
      "kind": "method",
      "authors": "Jansson, Nguyen, Sung",
      "year": "2006",
@@ -4796,8 +4744,8 @@
     },
     {
      "id": "jansson2006-level1",
-     "family": 3,
-     "order": 2,
+     "family": 2,
+     "order": 13,
      "kind": "method",
      "authors": "Jansson, Sung",
      "year": "2006",
@@ -4807,8 +4755,8 @@
     },
     {
      "id": "vaniersel2009",
-     "family": 3,
-     "order": 3,
+     "family": 2,
+     "order": 14,
      "kind": "method",
      "authors": "van Iersel et al.",
      "year": "2009",
@@ -4818,8 +4766,8 @@
     },
     {
      "id": "cass",
-     "family": 3,
-     "order": 4,
+     "family": 2,
+     "order": 15,
      "short": "CASS",
      "kind": "method",
      "authors": "van Iersel et al.",
@@ -4830,8 +4778,8 @@
     },
     {
      "id": "vaniersel2011",
-     "family": 3,
-     "order": 5,
+     "family": 2,
+     "order": 16,
      "kind": "method",
      "authors": "van Iersel, Kelk",
      "year": "2011",
@@ -4841,8 +4789,8 @@
     },
     {
      "id": "lev1athan",
-     "family": 3,
-     "order": 6,
+     "family": 2,
+     "order": 17,
      "short": "LEV1ATHAN",
      "kind": "method",
      "authors": "Huber et al.",
@@ -4853,8 +4801,8 @@
     },
     {
      "id": "kelk2012",
-     "family": 3,
-     "order": 7,
+     "family": 2,
+     "order": 18,
      "kind": "theory",
      "authors": "Kelk, Scornavacca, van Iersel",
      "year": "2012",
@@ -4864,8 +4812,8 @@
     },
     {
      "id": "vaniersel2014",
-     "family": 3,
-     "order": 8,
+     "family": 2,
+     "order": 19,
      "kind": "theory",
      "authors": "van Iersel, Moulton",
      "year": "2014",
@@ -4875,8 +4823,8 @@
     },
     {
      "id": "tripnet",
-     "family": 3,
-     "order": 9,
+     "family": 2,
+     "order": 20,
      "short": "TripNet",
      "kind": "method",
      "authors": "Poormohammadi et al.",
@@ -4887,8 +4835,8 @@
     },
     {
      "id": "willems2014",
-     "family": 3,
-     "order": 10,
+     "family": 2,
+     "order": 21,
      "kind": "method",
      "authors": "Willems, Tahiri, Makarenkov",
      "year": "2014",
@@ -4898,8 +4846,8 @@
     },
     {
      "id": "trilonet",
-     "family": 3,
-     "order": 11,
+     "family": 2,
+     "order": 22,
      "short": "TriLoNet",
      "kind": "method",
      "authors": "Oldman et al.",
@@ -4910,8 +4858,8 @@
     },
     {
      "id": "huber2017",
-     "family": 3,
-     "order": 12,
+     "family": 2,
+     "order": 23,
      "kind": "method",
      "authors": "Huber et al.",
      "year": "2017",
@@ -4921,8 +4869,8 @@
     },
     {
      "id": "willems2018",
-     "family": 3,
-     "order": 13,
+     "family": 2,
+     "order": 24,
      "kind": "method",
      "authors": "Willems, Tahiri, Makarenkov",
      "year": "2018",
@@ -4932,8 +4880,8 @@
     },
     {
      "id": "semple2021",
-     "family": 3,
-     "order": 14,
+     "family": 2,
+     "order": 25,
      "kind": "theory",
      "authors": "Semple, Toft",
      "year": "2021",
@@ -4943,8 +4891,8 @@
     },
     {
      "id": "vaniersel2022-trinets",
-     "family": 3,
-     "order": 15,
+     "family": 2,
+     "order": 26,
      "kind": "method",
      "authors": "van Iersel et al.",
      "year": "2022",
@@ -4954,8 +4902,8 @@
     },
     {
      "id": "lindeberg2026",
-     "family": 3,
-     "order": 16,
+     "family": 2,
+     "order": 27,
      "kind": "method",
      "authors": "Lindeberg et al.",
      "year": "2026",
@@ -4965,8 +4913,8 @@
     },
     {
      "id": "ebert2026-constraints",
-     "family": 3,
-     "order": 17,
+     "family": 2,
+     "order": 28,
      "kind": "method",
      "authors": "Ebert, Hellmuth",
      "year": "2026",
@@ -4976,8 +4924,8 @@
     },
     {
      "id": "hellmuth2026",
-     "family": 3,
-     "order": 18,
+     "family": 2,
+     "order": 29,
      "kind": "theory",
      "authors": "Hellmuth, Lindeberg, Moulton",
      "year": "2026",
@@ -4987,8 +4935,8 @@
     },
     {
      "id": "ebert2026-triples",
-     "family": 3,
-     "order": 19,
+     "family": 2,
+     "order": 30,
      "kind": "method",
      "authors": "Ebert, Lindeberg, Hellmuth",
      "year": "2026",
@@ -4998,7 +4946,7 @@
     },
     {
      "id": "wu2013",
-     "family": 4,
+     "family": 3,
      "order": 1,
      "kind": "method",
      "authors": "Wu",
@@ -5009,7 +4957,7 @@
     },
     {
      "id": "albrecht2015",
-     "family": 4,
+     "family": 3,
      "order": 2,
      "kind": "method",
      "authors": "Albrecht",
@@ -5020,7 +4968,7 @@
     },
     {
      "id": "mirzaei2016",
-     "family": 4,
+     "family": 3,
      "order": 3,
      "kind": "method",
      "authors": "Mirzaei, Wu",
@@ -5031,7 +4979,7 @@
     },
     {
      "id": "markin2019",
-     "family": 4,
+     "family": 3,
      "order": 4,
      "kind": "method",
      "authors": "Markin, Eulenstein",
@@ -5042,7 +4990,7 @@
     },
     {
      "id": "vaniersel2019",
-     "family": 4,
+     "family": 3,
      "order": 5,
      "kind": "theory",
      "authors": "Murakami et al.",
@@ -5053,7 +5001,7 @@
     },
     {
      "id": "vaniersel2022-fpt",
-     "family": 4,
+     "family": 3,
      "order": 6,
      "kind": "method",
      "authors": "van Iersel et al.",
@@ -5064,7 +5012,7 @@
     },
     {
      "id": "rfnet2",
-     "family": 4,
+     "family": 3,
      "order": 7,
      "short": "RF-Net 2",
      "kind": "method",
@@ -5076,7 +5024,7 @@
     },
     {
      "id": "treeknit",
-     "family": 4,
+     "family": 3,
      "order": 8,
      "short": "TreeKnit",
      "kind": "method",
@@ -5088,7 +5036,7 @@
     },
     {
      "id": "alts",
-     "family": 4,
+     "family": 3,
      "order": 9,
      "short": "ALTS",
      "kind": "method",
@@ -5100,7 +5048,7 @@
     },
     {
      "id": "bernardini2023",
-     "family": 4,
+     "family": 3,
      "order": 10,
      "kind": "method",
      "authors": "Bernardini et al.",
@@ -5111,7 +5059,7 @@
     },
     {
      "id": "fhynch",
-     "family": 4,
+     "family": 3,
      "order": 11,
      "short": "FHyNCH",
      "kind": "method",
@@ -5123,7 +5071,7 @@
     },
     {
      "id": "phylofusion",
-     "family": 4,
+     "family": 3,
      "order": 12,
      "short": "PhyloFusion",
      "kind": "method",
@@ -5135,7 +5083,7 @@
     },
     {
      "id": "yu2013",
-     "family": 5,
+     "family": 4,
      "order": 1,
      "kind": "method",
      "authors": "Yu, Barnett, Nakhleh",
@@ -5146,7 +5094,7 @@
     },
     {
      "id": "yu2014",
-     "family": 5,
+     "family": 4,
      "order": 2,
      "kind": "method",
      "authors": "Yu et al.",
@@ -5157,7 +5105,7 @@
     },
     {
      "id": "phylonet-mpl",
-     "family": 5,
+     "family": 4,
      "order": 3,
      "short": "PhyloNet-MPL",
      "kind": "method",
@@ -5169,7 +5117,7 @@
     },
     {
      "id": "yu2015",
-     "family": 5,
+     "family": 4,
      "order": 4,
      "kind": "method",
      "authors": "Yu, Nakhleh",
@@ -5180,7 +5128,7 @@
     },
     {
      "id": "wen2016",
-     "family": 5,
+     "family": 4,
      "order": 5,
      "kind": "method",
      "authors": "Wen, Yu, Nakhleh",
@@ -5191,7 +5139,7 @@
     },
     {
      "id": "wen2018",
-     "family": 5,
+     "family": 4,
      "order": 6,
      "kind": "method",
      "authors": "Wen, Nakhleh",
@@ -5202,7 +5150,7 @@
     },
     {
      "id": "zhang2018",
-     "family": 5,
+     "family": 4,
      "order": 7,
      "kind": "method",
      "authors": "Zhang et al.",
@@ -5213,7 +5161,7 @@
     },
     {
      "id": "zhu2018",
-     "family": 5,
+     "family": 4,
      "order": 8,
      "kind": "method",
      "authors": "Zhu et al.",
@@ -5224,7 +5172,7 @@
     },
     {
      "id": "fastnet",
-     "family": 5,
+     "family": 4,
      "order": 9,
      "short": "FastNet",
      "kind": "method",
@@ -5236,7 +5184,7 @@
     },
     {
      "id": "snappnet",
-     "family": 5,
+     "family": 4,
      "order": 10,
      "short": "SnappNet",
      "kind": "method",
@@ -5248,7 +5196,7 @@
     },
     {
      "id": "allman2022",
-     "family": 5,
+     "family": 4,
      "order": 11,
      "kind": "theory",
      "authors": "Allman, Baños, Rhodes",
@@ -5259,7 +5207,7 @@
     },
     {
      "id": "netrax",
-     "family": 5,
+     "family": 4,
      "order": 12,
      "short": "NetRAX",
      "kind": "method",
@@ -5271,7 +5219,7 @@
     },
     {
      "id": "phynest",
-     "family": 5,
+     "family": 4,
      "order": 13,
      "short": "PhyNEST",
      "kind": "method",
