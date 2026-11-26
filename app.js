@@ -14,6 +14,9 @@ const RAW = (repo, path) =>
 const TOML = "https://cdn.jsdelivr.net/npm/smol-toml@1.9.1/+esm";
 const SVGNS = "http://www.w3.org/2000/svg";
 const HERE = (file) => new URL(file, import.meta.url);
+// the data written with the page is checked with the server at each visit (an unchanged file
+// costs a short answer), so that the page never reads data older than itself
+const FRESH = { cache: "no-cache" };
 
 // The colour of each hub, for light and for dark pages; a hub not named here takes a spare colour.
 const COLOURS = {
@@ -93,7 +96,7 @@ async function loadLive() {
 }
 
 async function loadSnapshot() {
-  const r = await fetch(HERE("catalogue.json"));
+  const r = await fetch(HERE("catalogue.json"), FRESH);
   if (!r.ok) throw new Error("no snapshot");
   return { ...(await r.json()), source: "snapshot" };
 }
@@ -663,7 +666,7 @@ function wireTimeline(svg, ui) {
 // The citations and the works, stored with the site: the citations from the papers' own reference
 // lists, the works from their records. A visit asks no service.
 async function readCitations() {
-  const r = await fetch(HERE("citations.json"));
+  const r = await fetch(HERE("citations.json"), FRESH);
   if (!r.ok) throw new Error("no citations");
   return (await r.json()).edges;
 }
@@ -1177,7 +1180,7 @@ const card = { el: null, entry: null, pinned: null, timer: 0, place: () => {} };
 let worksFile = null;
 function readWorks() {
   if (!worksFile)
-    worksFile = fetch(HERE("works.json"))
+    worksFile = fetch(HERE("works.json"), FRESH)
       .then((r) => (r.ok ? r.json() : {}))
       .catch(() => ({}));
   return worksFile;
@@ -1316,7 +1319,7 @@ function hubRow(h) {
 let peopleFile = null;
 function readPeople() {
   if (!peopleFile)
-    peopleFile = fetch(HERE("people.json"))
+    peopleFile = fetch(HERE("people.json"), FRESH)
       .then((r) => (r.ok ? r.json() : null))
       .catch(() => null);
   return peopleFile;
@@ -1324,7 +1327,7 @@ function readPeople() {
 let profilesFile = null;
 function readProfiles() {
   if (!profilesFile)
-    profilesFile = fetch(HERE("profiles.json"))
+    profilesFile = fetch(HERE("profiles.json"), FRESH)
       .then((r) => (r.ok ? r.json() : null))
       .catch(() => null);
   return profilesFile;
@@ -2923,6 +2926,7 @@ async function main() {
   // venues, once people.json is read
   const statsEl = document.getElementById("stats");
   let people = null;
+  let peopleFailed = false;
   const stats = () => paintStats(statsEl, m, ui, people);
   stats();
   let lastWin = { a: -Infinity, b: Infinity };
@@ -2963,7 +2967,9 @@ async function main() {
     if (timeline) return;
     keyNet.innerHTML = KEYS[v];
     if (!people) {
-      els.note.textContent = "Reading the authors…";
+      els.note.textContent = peopleFailed
+        ? "The authors could not be read."
+        : "Reading the authors…";
       return;
     }
     nets[v] ||= createNetwork(net, netLinks, ui, people, v);
@@ -3076,8 +3082,17 @@ async function main() {
   for (const s of [sections.authors, sections.venues])
     s.addEventListener("click", go);
   readPeople().then((data) => {
-    if (!data) return;
-    people = peopleModel(data, ui);
+    try {
+      people = data && peopleModel(data, ui);
+    } catch (err) {
+      people = null;
+    }
+    if (!people) {
+      peopleFailed = true;
+      if (view !== "citations" || list !== "hubs")
+        els.note.textContent = "The authors could not be read.";
+      return;
+    }
     ui.model = people;
     stats();
     if (view !== "citations") show(view);
