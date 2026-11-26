@@ -4,11 +4,16 @@ The site of the collection of Lean 4 formalizations of phylogenetics, at
 <https://formal-phylogenetics.vltanh.me/>. Beside the title, the tree of the collection is drawn as a
 fan from the root, [lean4-phylogenetics](https://github.com/formal-phylogenetics/lean4-phylogenetics),
 the hubs of theory on the left and of inference on the right, each hub a wedge whose width grows with
-its catalog, through its families to a tip for each entry. Below come, in order: a trim bar, which
+its catalog, through its families to a tip for each entry; under the title, the figures of the
+collection (papers, citations, authors, publishers). Below come, in order: a trim bar, which
 chooses the years shown by dragging its ends or the range between them, each year as wide as its
-papers need; a timeline of the entries, where time runs from left to right, each hub is a row, and
-the citations between the entries are drawn between them; the panel of the pinned entry; the
-search; and the list of the hubs, which open to their families, one at a time or all at once.
+papers need; a view of the entries for those years: the timeline, where time runs from left to
+right, each hub is a row, and the citations between the entries are drawn between them, or the
+graph of the co-authorship of the authors, or the graph of the authors and the publishers they
+published with, both in a fixed layout where the years shown choose which entries count; the panel
+of the pinned entry, author or publisher; the search; and the list, of the hubs, which open to
+their families, of the authors, or of the publishers, which open to their venues, every preprint
+server under Preprint.
 Colour is the hub, shape the kind of paper (round for a method, square for theory), fill the
 status, and size the entry's weight in the citations: its PageRank, in which a citation counts for
 as much as the paper that makes it weighs. Pointing at an entry, in the timeline or the list, marks it in both and shows its card,
@@ -32,7 +37,8 @@ and [Europe PMC](https://europepmc.org), or, where none gives the abstract, from
   from here;
 - `catalogue.json`, the catalogs the page falls back on when GitHub cannot be reached;
   `citations.json`, the citations between the entries; `works.json`, the authors, venue and abstract
-  of each entry: all written from the library;
+  of each entry; `people.json`, the authors and the publishers with their entries, and the two
+  graphs with their layouts: all written from the library;
 - `catalogue.png`: the image shown when the page is shared, the tree of the collection.
 - `icon.svg`, `apple-touch-icon.png`: the icon, the tree of the collection in brief: the root, its
   trunk forking into theory and inference, and the colour of each hub.

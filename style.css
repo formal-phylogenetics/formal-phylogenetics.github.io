@@ -1238,3 +1238,182 @@ a.tag:hover {
     animation: none !important;
   }
 }
+
+/* the figures under the title */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3) var(--s5);
+  margin: var(--s4) 0 0;
+}
+.stats > div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.stats dt {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.stats dd {
+  margin: 0;
+  font-family: Literata, Georgia, serif;
+  font-size: 1.3rem;
+  line-height: 1.15;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink);
+}
+
+/* the switches: what the stage shows, and how the list is grouped */
+.side-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2) var(--s4);
+}
+.side-top > .slider {
+  flex-basis: 100%;
+}
+.views,
+.lists {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--ink) 5%, transparent);
+}
+.views button,
+.lists button {
+  white-space: nowrap;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--ink-3);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.views button:hover,
+.lists button:hover {
+  color: var(--ink);
+}
+.views button[aria-selected="true"],
+.lists button[aria-selected="true"] {
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: 0 1px 2px color-mix(in oklab, var(--ink) 12%, transparent);
+}
+.views button:focus-visible,
+.lists button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+.find .lists {
+  margin-left: auto;
+}
+
+/* the graphs of the people */
+svg[hidden] {
+  display: none;
+}
+.net {
+  display: block;
+  width: 100%;
+}
+.net .n-edge {
+  stroke: var(--ink);
+  stroke-opacity: 0.16;
+  transition: stroke-opacity 0.2s;
+}
+.net .n-edge.pub {
+  stroke-opacity: 0.07;
+}
+.net .n-node.author {
+  fill: var(--c);
+  fill-opacity: 0.85;
+  stroke: var(--paper);
+  stroke-width: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.net .n-node.publisher {
+  fill: var(--card);
+  stroke: var(--ink-2);
+  stroke-width: 1.3;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.net .n-label {
+  font:
+    500 10.5px "IBM Plex Sans",
+    sans-serif;
+  fill: var(--ink-2);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.net .n-label.publisher {
+  font-weight: 600;
+  fill: var(--ink);
+}
+.net .gone {
+  display: none;
+}
+.net .off {
+  opacity: 0.14;
+}
+.net.focus .n-edge {
+  stroke-opacity: 0.03;
+}
+.net.focus .n-edge.near {
+  stroke-opacity: 0.55;
+}
+.net.focus .n-node {
+  opacity: 0.22;
+}
+.net.focus .n-node.hot,
+.net.focus .n-node.near {
+  opacity: 1;
+}
+.net .n-node.hot {
+  stroke: var(--ink);
+  stroke-width: 1.6;
+}
+.net .n-label.hot,
+.net .n-label.hot.gone {
+  display: inline;
+  font-weight: 600;
+  fill: var(--ink);
+}
+.k-size.pub {
+  width: 12px;
+}
+.ln.co {
+  background: var(--ink-3);
+}
+
+/* the lists of the authors and of the publishers, and their panel */
+.hubs.people > .grp > summary .h-name {
+  color: var(--ink);
+}
+.p-group {
+  margin-top: var(--s3);
+}
+
+@media (max-width: 760px) {
+  .find {
+    flex-wrap: wrap;
+  }
+  .find input {
+    flex-basis: 100%;
+  }
+  .find .lists {
+    margin-left: 0;
+  }
+}
