@@ -1,6 +1,6 @@
 import { esc, fmt, fold, hubStyle, svgEl, yearSort } from "./base.js";
 import { card, placeAt } from "./card.js";
-import { sameGroup } from "./people.js";
+import { linkEntries, sameGroup } from "./people.js";
 
 // The graphs of the people, for the years the trim bar shows. The co-authorship of the authors
 // keeps the layout the library computed once: an author or a link appears once an entry of those
@@ -371,6 +371,7 @@ export function createNetwork(svg, canvas, ui, people, kind) {
       .filter((a) => a.count >= least)
       .sort((x, y) => x.rank - y.rank);
     const fewA = seen.filter((a) => a.count < least);
+    restA.members = new Set(fewA);
     restA.count = fewA.length;
     restA.entries = [...new Set(fewA.flatMap((a) => a.entries.filter(inWin)))];
     restA.name = `${fewA.length} ${fewA.length === 1 ? "author" : "authors"} of ${least === 2 ? "one entry" : `fewer than ${least} entries`}`;
@@ -549,12 +550,15 @@ export function createNetwork(svg, canvas, ui, people, kind) {
         around(v);
     } else if (t && (t.kind === "institution" || t.kind === "country")) {
       // an institution or a country: the authors placed there, and the venues of its entries
-      for (const { who } of t.people)
-        if (dotOf.has(who)) lit.add(dotOf.get(who));
+      for (const { who } of t.people) if (dotFor(who)) lit.add(dotFor(who));
       for (const e of t.entries) {
         const v = people.venueOf.get(e);
         if (v && dotOf.has(v)) lit.add(dotOf.get(v));
       }
+    } else if (t && t.kind === "set") {
+      // what this graph does not draw (a venue or publisher among the authors, a link of the other
+      // graph): the authors of its entries, and in the rows their venues
+      for (const n of t.nodes) lit.add(n);
     } else if (t) {
       hot = t;
       around(t);
@@ -576,21 +580,50 @@ export function createNetwork(svg, canvas, ui, people, kind) {
     }
     paint();
   };
-  // a pinned author, venue, publisher, institution, country or link, as this graph has it
-  const own = (g) => {
+  // the node that stands for an author or venue here: its dot, or in the rows the node of the authors
+  // of few entries when it is one of them
+  const dotFor = (x) => {
+    const d = dotOf.get(x);
+    return d && rows && restA.members && restA.members.has(d) ? restA : d;
+  };
+  // the authors of some entries, and in the rows their venues
+  const related = (entries) => {
+    const out = new Set();
+    for (const e of entries) {
+      for (const a of people.authorsOf.get(e) || [])
+        if (dotFor(a)) out.add(dotFor(a));
+      const v = rows && people.venueOf.get(e);
+      if (v && dotOf.has(v)) out.add(dotOf.get(v));
+    }
+    return out;
+  };
+  // a pinned thing as this graph has it, worked out once for each pin and each drawing
+  const resolve = (g) => {
     if (!g) return null;
     if (g.kind === "link")
-      return { kind: "link", a: { d: g.a }, b: { d: g.b } };
-    if (g.kind === "publisher") return rows ? g : null;
+      return links.some((x) => x.a.d === g.a && x.b.d === g.b)
+        ? { kind: "link", a: { d: g.a }, b: { d: g.b } }
+        : { kind: "set", nodes: related(linkEntries(g)) };
+    if (g.kind === "publisher")
+      return rows ? g : { kind: "set", nodes: related(g.entries) };
     if (g.kind === "institution" || g.kind === "country") return g;
     if (g === restA) return restA;
-    return dotOf.get(g) || null;
+    return (
+      dotFor(g) ||
+      (g.entries ? { kind: "set", nodes: related(g.entries) } : null)
+    );
+  };
+  let owned = { g: undefined, t: null };
+  const own = (g) => {
+    if (owned.g !== g) owned = { g, t: resolve(g) };
+    return owned.t;
   };
   const draw = () => {
     if (!mine()) svg.replaceChildren(root);
     restOk = false;
     if (rows) drawRows();
     else drawCoauthors();
+    owned = { g: undefined, t: null };
     mark(shown && shown !== pinned ? shown : own(pinned));
   };
   const targetAt = (ev) => {
@@ -713,7 +746,9 @@ export function createNetwork(svg, canvas, ui, people, kind) {
       if (now) draw();
     },
     pin(g) {
+      // a new pin replaces whatever was last shown, so a redraw shows the pin
       pinned = g;
+      shown = null;
       if (mine()) mark(own(g));
     },
   };
