@@ -9,8 +9,9 @@ chooses the years shown by dragging its ends or the range between them, each yea
 papers need; a timeline of the entries, where time runs from left to right, each hub is a row, and
 the citations between the entries are drawn between them; the panel of the pinned entry; the
 search; and the list of the hubs, which open to their families, one at a time or all at once.
-Colour is the hub, shape the kind of paper (round for a method, square for theory) and fill the
-status. Pointing at an entry, in the timeline or the list, marks it in both and shows its card,
+Colour is the hub, shape the kind of paper (round for a method, square for theory), fill the
+status, and size the entry's weight in the citations: its PageRank, in which a citation counts for
+as much as the paper that makes it weighs. Pointing at an entry, in the timeline or the list, marks it in both and shows its card,
 with its authors, venue and abstract. A click pins it: the panel shows what it cites and what cites
 it, marked everywhere, with links to its formalization and its paper, and the address keeps it; a
 click on the pinned entry unpins it. The header switches between light and dark.

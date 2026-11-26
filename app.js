@@ -693,7 +693,8 @@ function createTimeline(els, m, links) {
   const nodes = m.entries.filter((e) => yearOf(e) !== null);
   for (const e of nodes) {
     e.y4 = yearOf(e);
-    e.r = Math.min(6.5, 2.8 + 0.9 * Math.sqrt(e.cited || 0));
+    // the size says the weight in the citations (PageRank)
+    e.r = 2.6 + 4.4 * Math.sqrt(e.weight || 0);
   }
   const Y0 = Math.min(...nodes.map((e) => e.y4));
   const Y1 = Math.max(...nodes.map((e) => e.y4)) + 1;
@@ -1199,7 +1200,11 @@ function cardHtml(e, work, waiting) {
       : work
         ? `<p class="t-wait">No abstract is available.</p>`
         : "";
-  const cited = e.cited ? ` · cited by ${e.cited} in the catalogs` : "";
+  const nth = (k) =>
+    `${k}${["th", "st", "nd", "rd"][(k % 100 > 10 && k % 100 < 14) || k % 10 > 3 ? 0 : k % 10]}`;
+  const cited = e.cited
+    ? ` · cited by ${e.cited} in the catalogs${e.place ? `, ${nth(e.place)} by weight` : ""}`
+    : "";
   return `<div class="t-head"><span class="t-name k-${e.kind}">${esc(e.name)}</span><span class="t-kind">${e.kind}</span></div>
     <div class="t-title">${esc(e.title)}</div>
     <div class="t-by">${esc(who)}${e.year ? ` (${esc(e.year)})` : ""}${esc(venue)}</div>
@@ -1325,6 +1330,7 @@ function shell(app) {
             <span class="k-item"><i class="sw s-formalized"></i>formalized</span>
             <span class="k-item"><i class="ln out"></i>cites</span>
             <span class="k-item"><i class="ln in"></i>cited by</span>
+            <span class="k-item"><svg class="k-size" viewBox="0 0 20 12" aria-hidden="true"><circle cx="3.5" cy="7" r="2.2"/><circle cx="13.5" cy="6" r="5.2"/></svg>weight (PageRank)</span>
           </span>
           <div class="slider">
             <button type="button" class="s-all" id="all-years" disabled>All years</button>
@@ -1546,6 +1552,30 @@ function makeUi(m, els) {
         ui.edgesOf.get(x).push(l);
       }
     }
+    // the weight of each entry in the citations: its PageRank, where a citation counts for as much
+    // as the paper that makes it weighs (damping 0.85; a paper citing none spreads its weight evenly)
+    const all = m.entries;
+    const n = all.length;
+    const out = (e) => (ui.cites.get(e) || []).length;
+    let pr = new Map(all.map((e) => [e, 1 / n]));
+    for (let step = 0; step < 60; step++) {
+      let spread = 0;
+      for (const e of all) if (!out(e)) spread += pr.get(e);
+      const next = new Map(all.map((e) => [e, (0.15 + 0.85 * spread) / n]));
+      for (const l of ui.links)
+        next.set(
+          l.target,
+          next.get(l.target) + (0.85 * pr.get(l.source)) / out(l.source),
+        );
+      pr = next;
+    }
+    const top = Math.max(...pr.values());
+    [...pr.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .forEach(([e, v], i) => {
+        e.weight = v / top;
+        e.place = i + 1;
+      });
     const byYear = (a, b) => String(a.year).localeCompare(String(b.year));
     for (const list of [...ui.cites.values(), ...ui.citedBy.values()])
       list.sort(byYear);
