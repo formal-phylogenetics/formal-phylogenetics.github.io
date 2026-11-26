@@ -5,10 +5,10 @@
 .ft .ink{stroke:var(--ink,#22201b)}
 .ft .dot{fill:var(--ink,#22201b)}
 .cover .ft .bg{fill:none}
-:root[data-theme="dark"] .cover .ft .anim{stroke:var(--n)}
+:root[data-theme="dark"] .cover .ft .anim:not(.ink){stroke:var(--n)}
 :root[data-theme="dark"] .cover .ft .bud{fill:var(--n)}
 @media (prefers-color-scheme:dark){
-:root:not([data-theme="light"]) .cover .ft .anim{stroke:var(--n)}
+:root:not([data-theme="light"]) .cover .ft .anim:not(.ink){stroke:var(--n)}
 :root:not([data-theme="light"]) .cover .ft .bud{fill:var(--n)}
 }
 @media (prefers-reduced-motion:no-preference){
