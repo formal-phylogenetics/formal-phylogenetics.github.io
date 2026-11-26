@@ -49,17 +49,11 @@ export function listSection(title, rows) {
     .join("")}</ul></div>`;
 }
 
-// an author's years and the institutions their papers in the collection place them at, with the
-// links to their ORCID, Google Scholar, OpenAlex and Wikipedia pages
+// the institutions an author's papers in the collection place them at, with the links to their
+// ORCID, Google Scholar, OpenAlex and Wikipedia pages
 export function authorFacts(pr, people) {
   if (!pr) return "";
-  const life = pr.died
-    ? `${pr.born || "?"}–${pr.died.slice(0, 4)}`
-    : pr.born
-      ? `born ${pr.born}`
-      : "";
-  return `${life ? `<p class="p-lead">${esc(life)}</p>` : ""}
-    ${linksRow([
+  return `${linksRow([
       ...(pr.orcid || []).map((o) => [`ORCID ${o}`, `https://orcid.org/${o}`]),
       pr.scholar && [
         "Google Scholar",

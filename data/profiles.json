@@ -5,7 +5,6 @@
    "scholar": "pPB_WK0AAAAJ",
    "openalex": "A5032411541",
    "wikipedia": "https://en.wikipedia.org/wiki/Tandy_Warnow",
-   "born": "1955",
    "institutions": [
     {
      "name": "University of Illinois Urbana-Champaign",
@@ -54,7 +53,6 @@
   {
    "orcid": ["0000-0001-9921-1091"],
    "openalex": "A5089193790",
-   "born": "1960",
    "institutions": [
     {
      "name": "University of Alaska Fairbanks",
@@ -72,9 +70,9 @@
   },
   {
    "orcid": ["0000-0002-4866-9606"],
+   "scholar": "P0Ibe3UAAAAJ",
    "openalex": "A5026382332",
    "wikipedia": "https://en.wikipedia.org/wiki/Elizabeth_S._Allman",
-   "born": "1965",
    "institutions": [
     {
      "name": "University of Alaska Fairbanks",
@@ -136,7 +134,6 @@
    "orcid": ["0000-0002-7608-8550"],
    "scholar": "hISpTpQAAAAJ",
    "openalex": "A5057444173",
-   "born": "1978",
    "institutions": [
     {
      "name": "University of Wisconsin–Madison",
@@ -181,7 +178,6 @@
    "scholar": "7ezIRWQAAAAJ",
    "openalex": "A5035720494",
    "wikipedia": "https://en.wikipedia.org/wiki/Mike_Steel_(mathematician)",
-   "born": "1960",
    "institutions": [
     {
      "name": "University of Canterbury",
@@ -288,7 +284,6 @@
    "scholar": "vlLa_zgAAAAJ",
    "openalex": "A5078068308",
    "wikipedia": "https://en.wikipedia.org/wiki/Olivier_Gascuel",
-   "born": "1956",
    "institutions": [
     {
      "name": "Muséum national d'Histoire naturelle",
@@ -402,7 +397,6 @@
    "scholar": "vZq8qQ4AAAAJ",
    "openalex": "A5110931656",
    "wikipedia": "https://en.wikipedia.org/wiki/Joseph_Felsenstein",
-   "born": "1942",
    "institutions": [
     {
      "name": "University of Washington",
@@ -443,7 +437,6 @@
    "scholar": "XqglmcgAAAAJ",
    "openalex": "A5085983122",
    "wikipedia": "https://en.wikipedia.org/wiki/Arndt_von_Haeseler",
-   "born": "1959",
    "institutions": [
     {
      "name": "University of Vienna",
@@ -559,7 +552,6 @@
   {
    "orcid": ["0000-0003-4454-2576"],
    "openalex": "A5079724732",
-   "born": "1976",
    "institutions": [
     {
      "name": "University of Auckland",
@@ -579,7 +571,6 @@
    "orcid": ["0000-0002-6368-7511"],
    "openalex": "A5007694498",
    "wikipedia": "https://en.wikipedia.org/wiki/Katharina_T._Huber",
-   "born": "1965",
    "institutions": [
     {
      "name": "University of East Anglia",
@@ -664,7 +655,6 @@
    "orcid": ["0000-0002-8100-0824"],
    "openalex": "A5079496228",
    "wikipedia": "https://en.wikipedia.org/wiki/Jotun_Hein",
-   "born": "1956",
    "institutions": [
     {
      "name": "University of Oxford",
@@ -795,7 +785,6 @@
    "orcid": ["0000-0003-3351-7981"],
    "openalex": "A5073515441",
    "wikipedia": "https://en.wikipedia.org/wiki/Ziheng_Yang",
-   "born": "1964",
    "institutions": [
     {
      "name": "University College London",
@@ -866,7 +855,6 @@
    "scholar": "Ap0K7rUAAAAJ",
    "openalex": "A5090607558",
    "wikipedia": "https://en.wikipedia.org/wiki/Desmond_G._Higgins",
-   "born": "1959",
    "institutions": [
     {
      "name": "University College Dublin",
@@ -971,7 +959,6 @@
    "orcid": ["0000-0001-6765-3813"],
    "scholar": "r4OMnO8AAAAJ",
    "openalex": "A5027519870",
-   "born": "1967",
    "institutions": [
     {
      "name": "University of Auckland",
@@ -1004,7 +991,6 @@
    "orcid": ["0000-0002-2961-604X"],
    "scholar": "hLTZTG4AAAAJ",
    "openalex": "A5026094905",
-   "born": "1960",
    "institutions": [
     {
      "name": "University of Tübingen",
@@ -1260,7 +1246,6 @@
    "orcid": ["0000-0001-9818-479X"],
    "openalex": "A5039905606",
    "wikipedia": "https://en.wikipedia.org/wiki/Marc_A._Suchard",
-   "born": "1972",
    "institutions": [
     {
      "name": "University of California, Los Angeles",
@@ -1322,7 +1307,6 @@
   {
    "orcid": ["0000-0003-1963-5535"],
    "openalex": "A5075139465",
-   "born": "1972",
    "institutions": [
     {
      "name": "University of Otago",
@@ -1419,7 +1403,6 @@
   {
    "orcid": ["0000-0002-1620-5508"],
    "openalex": "A5019719296",
-   "born": "1980",
    "institutions": [
     {
      "name": "Leipzig University",
@@ -1463,7 +1446,6 @@
    "orcid": ["0000-0001-6519-6292"],
    "scholar": "pw6xnRcAAAAJ",
    "openalex": "A5110768391",
-   "born": "1983",
    "institutions": [
     {
      "name": "Ludwig-Maximilians-Universität München",
@@ -1512,7 +1494,6 @@
   {
    "orcid": ["0000-0002-3244-359X"],
    "openalex": "A5066174715",
-   "born": "1955",
    "institutions": [
     {
      "name": "The University of Tokyo",
@@ -1725,7 +1706,6 @@
    "scholar": "PySbfcEAAAAJ",
    "openalex": "A5088476239",
    "wikipedia": "https://en.wikipedia.org/wiki/Rasmus_Nielsen_(biologist)",
-   "born": "1970",
    "institutions": [
     {
      "name": "University of Copenhagen",
@@ -1756,7 +1736,6 @@
   {
    "orcid": ["0000-0003-1407-3406"],
    "openalex": "A5042649313",
-   "born": "1971",
    "institutions": [
     {
      "name": "Universidade de Vigo",
@@ -1788,7 +1767,6 @@
    "orcid": ["0000-0002-3929-251X"],
    "scholar": "ZyOio_YAAAAJ",
    "openalex": "A5048208979",
-   "born": "1962",
    "institutions": [
     {
      "name": "Swedish Museum of Natural History",
@@ -1911,7 +1889,6 @@
    "scholar": "iTv2cOgAAAAJ",
    "openalex": "A5034822411",
    "wikipedia": "https://en.wikipedia.org/wiki/Constantinos_Daskalakis",
-   "born": "1981",
    "institutions": [
     {
      "name": "Massachusetts Institute of Technology",
@@ -2097,7 +2074,6 @@
    "scholar": "VoAHydgAAAAJ",
    "openalex": "A5062896251",
    "wikipedia": "https://en.wikipedia.org/wiki/Dan_Gusfield",
-   "born": "1951",
    "institutions": [
     {
      "name": "University of California, Davis",
@@ -2146,7 +2122,6 @@
    "orcid": ["0000-0003-1657-8301"],
    "openalex": "A5020447053",
    "wikipedia": "https://en.wikipedia.org/wiki/Katherine_St._John",
-   "born": "1966",
    "institutions": [
     {
      "name": "Lehman College",
@@ -2323,7 +2298,6 @@
    "scholar": "DKfEcuEAAAAJ",
    "openalex": "A5020008219",
    "wikipedia": "https://en.wikipedia.org/wiki/Lior_Pachter",
-   "born": "1973",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -2414,7 +2388,6 @@
    "scholar": "C-BvZ4oAAAAJ",
    "openalex": "A5089707881",
    "wikipedia": "https://en.wikipedia.org/wiki/David_Sankoff",
-   "born": "1942",
    "institutions": [
     {
      "name": "Université de Montréal",
@@ -2755,7 +2728,6 @@
    "orcid": ["0000-0003-2120-9631"],
    "openalex": "A5015061000",
    "wikipedia": "https://en.wikipedia.org/wiki/Stephen_Altschul",
-   "born": "1957",
    "institutions": [
     {
      "name": "National Center for Biotechnology Information",
@@ -2786,7 +2758,6 @@
   {
    "orcid": ["0000-0002-4999-2931"],
    "openalex": "A5066623854",
-   "born": "1966",
    "institutions": [
     {
      "name": "Lawrence Berkeley National Laboratory",
@@ -2825,7 +2796,6 @@
   {
    "openalex": "A5040934656",
    "wikipedia": "https://en.wikipedia.org/wiki/Dennis_Barden",
-   "born": "1936",
    "institutions": [
     {
      "name": "University of Cambridge",
@@ -2900,7 +2870,6 @@
    "scholar": "CcqZZqMAAAAJ",
    "openalex": "A5032730524",
    "wikipedia": "https://en.wikipedia.org/wiki/Hans_L._Bodlaender",
-   "born": "1960",
    "institutions": [
     {
      "name": "Utrecht University",
@@ -2926,7 +2895,6 @@
   {
    "orcid": ["0000-0003-0776-4460"],
    "openalex": "A5079299227",
-   "born": "1981",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -3200,7 +3168,6 @@
    "scholar": "rLCC8mQAAAAJ",
    "openalex": "A5054676766",
    "wikipedia": "https://en.wikipedia.org/wiki/Michael_Fellows",
-   "born": "1952",
    "institutions": [
     {
      "name": "University of Victoria",
@@ -3225,8 +3192,6 @@
   {
    "openalex": "A5109969097",
    "wikipedia": "https://en.wikipedia.org/wiki/Walter_M._Fitch",
-   "born": "1929",
-   "died": "2011-03-10",
    "institutions": [
     {
      "name": "University of Wisconsin–Madison",
@@ -3343,7 +3308,6 @@
    "scholar": "-jRaGA4AAAAJ",
    "openalex": "A5029261997",
    "wikipedia": "https://en.wikipedia.org/wiki/Dan_Graur",
-   "born": "1953",
    "institutions": [
     {
      "name": "University of Houston",
@@ -3356,7 +3320,6 @@
   {
    "orcid": ["0000-0002-5731-8808"],
    "openalex": "A5038671526",
-   "born": "1975",
    "institutions": [
     {
      "name": "Indiana University Bloomington",
@@ -3371,8 +3334,6 @@
    "scholar": "yCDfCgkAAAAJ",
    "openalex": "A5088763701",
    "wikipedia": "https://en.wikipedia.org/wiki/Joseph_Heled",
-   "born": "1961",
-   "died": "2025-03-18",
    "institutions": [
     {
      "name": "University of Auckland",
@@ -3417,7 +3378,6 @@
    "orcid": ["0000-0002-2208-8168"],
    "openalex": "A5003674456",
    "wikipedia": "https://en.wikipedia.org/wiki/Susan_P._Holmes",
-   "born": "1954",
    "institutions": [
     {
      "name": "INRAE",
@@ -3521,7 +3481,6 @@
   {
    "openalex": "A5059033237",
    "wikipedia": "https://en.wikipedia.org/wiki/Kevin_Karplus",
-   "born": "1954",
    "institutions": [
     {
      "name": "University of California, Santa Cruz",
@@ -3545,7 +3504,6 @@
   {
    "orcid": ["0000-0001-8583-5362"],
    "openalex": "A5016652002",
-   "born": "1986",
    "institutions": [
     {
      "name": "University of Oxford",
@@ -3576,8 +3534,6 @@
   },
   {
    "wikipedia": "https://en.wikipedia.org/wiki/Motoo_Kimura",
-   "born": "1924",
-   "died": "1994-11-13",
    "institutions": [
     {
      "name": "National Institute of Genetics",
@@ -3638,7 +3594,6 @@
    "scholar": "ymtjcMUAAAAJ",
    "openalex": "A5113779448",
    "wikipedia": "https://en.wikipedia.org/wiki/James_A._Lake",
-   "born": "1941",
    "institutions": [
     {
      "name": "University of California, Los Angeles",
@@ -3847,7 +3802,6 @@
   {
    "orcid": ["0000-0003-0858-586X"],
    "openalex": "A5016020455",
-   "born": "1974",
    "institutions": [
     {
      "name": "Duke University",
@@ -3858,7 +3812,6 @@
    ]
   },
   {
-   "born": "1940",
    "institutions": [
     {
      "name": "Biohistory Research Hall",
@@ -3885,7 +3838,6 @@
    "scholar": "Gk9u5lUAAAAJ",
    "openalex": "A5059287546",
    "wikipedia": "https://en.wikipedia.org/wiki/Bernard_Moret",
-   "born": "1953",
    "institutions": [
     {
      "name": "University of New Mexico",
@@ -3931,7 +3883,6 @@
    "scholar": "jlas1aMAAAAJ",
    "openalex": "A5068657716",
    "wikipedia": "https://en.wikipedia.org/wiki/Eugene_Myers",
-   "born": "1953",
    "institutions": [
     {
      "name": "Celera Genomics",
@@ -3956,8 +3907,6 @@
   {
    "openalex": "A5109177049",
    "wikipedia": "https://en.wikipedia.org/wiki/Masatoshi_Nei",
-   "born": "1931",
-   "died": "2023-05",
    "institutions": [
     {
      "name": "Pennsylvania State University",
@@ -4020,8 +3969,6 @@
    "orcid": ["0000-0001-9565-467X"],
    "openalex": "A5111374600",
    "wikipedia": "https://en.wikipedia.org/wiki/David_Penny",
-   "born": "1938",
-   "died": "2024-05-20",
    "institutions": [
     {
      "name": "Massey University",
@@ -4036,7 +3983,6 @@
    "scholar": "0fq5QeIAAAAJ",
    "openalex": "A5027480961",
    "wikipedia": "https://en.wikipedia.org/wiki/Pavel_A._Pevzner",
-   "born": "1956",
    "institutions": [
     {
      "name": "University of Southern California",
@@ -4073,7 +4019,6 @@
    "orcid": ["0000-0001-9463-2575"],
    "scholar": "SMSKZPUAAAAJ",
    "openalex": "A5070736617",
-   "born": "1972",
    "institutions": [
     {
      "name": "Tel Aviv University",
@@ -4183,7 +4128,6 @@
    "scholar": "4VVgg_UAAAAJ",
    "openalex": "A5107849607",
    "wikipedia": "https://en.wikipedia.org/wiki/Kimmen_Sj%C3%B6lander",
-   "born": "1955",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -4204,7 +4148,6 @@
    "scholar": "y0U2EaUAAAAJ",
    "openalex": "A5076570918",
    "wikipedia": "https://en.wikipedia.org/wiki/Allan_Sly_(mathematician)",
-   "born": "1982",
    "institutions": [
     {
      "name": "Princeton University",
@@ -4283,7 +4226,6 @@
    "orcid": ["0000-0002-5403-7998"],
    "openalex": "A5001135422",
    "wikipedia": "https://en.wikipedia.org/wiki/Terry_Speed",
-   "born": "1943",
    "institutions": [
     {
      "name": "Walter and Eliza Hall Institute of Medical Research",
@@ -4316,7 +4258,6 @@
    "scholar": "5zTUNsQAAAAJ",
    "openalex": "A5027670183",
    "wikipedia": "https://en.wikipedia.org/wiki/Bernd_Sturmfels",
-   "born": "1962",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -4519,7 +4460,6 @@
   {
    "openalex": "A5105360062",
    "wikipedia": "https://en.wikipedia.org/wiki/Michael_Waterman",
-   "born": "1942",
    "institutions": [
     {
      "name": "Los Alamos National Laboratory",
@@ -4563,7 +4503,6 @@
    "scholar": "Rjw5orwAAAAJ",
    "openalex": "A5068555585",
    "wikipedia": "https://en.wikipedia.org/wiki/Ward_C._Wheeler",
-   "born": "1963",
    "institutions": [
     {
      "name": "American Museum of Natural History",
@@ -4636,7 +4575,6 @@
    "orcid": ["0000-0001-6212-9502"],
    "scholar": "3Lf6I5MAAAAJ",
    "openalex": "A5020585125",
-   "born": "1966",
    "institutions": [
     {
      "name": "Museo Nacional de Ciencias Naturales",
@@ -4715,7 +4653,6 @@
    "scholar": "gb2r2ssAAAAJ",
    "openalex": "A5047516262",
    "wikipedia": "https://en.wikipedia.org/wiki/Alfred_Aho",
-   "born": "1941",
    "institutions": [
     {
      "name": "Bell Laboratories",
@@ -4799,7 +4736,6 @@
    "scholar": "2rDg8JwAAAAJ",
    "openalex": "A5040287199",
    "wikipedia": "https://en.wikipedia.org/wiki/Federico_Ardila",
-   "born": "1977",
    "institutions": [
     {
      "name": "Mathematical Sciences Research Institute",
@@ -4881,7 +4817,6 @@
   {
    "orcid": ["0000-0001-8231-3323"],
    "openalex": "A5017672883",
-   "born": "1963",
    "institutions": [
     {
      "name": "University of Freiburg",
@@ -4972,7 +4907,6 @@
   {
    "orcid": ["0000-0001-8334-6311"],
    "openalex": "A5087935049",
-   "born": "1964",
    "institutions": [
     {
      "name": "University of Wisconsin–Madison",
@@ -5095,7 +5029,6 @@
   {
    "openalex": "A5008530739",
    "wikipedia": "https://en.wikipedia.org/wiki/Louis_Billera",
-   "born": "1943",
    "institutions": [
     {
      "name": "Cornell University",
@@ -5110,7 +5043,6 @@
    "scholar": "ftd3UB0AAAAJ",
    "openalex": "A5061379058",
    "wikipedia": "https://en.wikipedia.org/wiki/Ewan_Birney",
-   "born": "1972",
    "institutions": [
     {
      "name": "European Bioinformatics Institute",
@@ -5136,7 +5068,6 @@
    "orcid": ["0000-0002-0476-3609"],
    "scholar": "owrs4WAAAAAJ",
    "openalex": "A5036101186",
-   "born": "1955",
    "institutions": [
     {
      "name": "Westerdijk Fungal Biodiversity Institute",
@@ -5273,8 +5204,7 @@
   },
   {
    "orcid": ["0009-0004-9056-8587"],
-   "wikipedia": "https://en.wikipedia.org/wiki/Peter_Buneman",
-   "born": "1943"
+   "wikipedia": "https://en.wikipedia.org/wiki/Peter_Buneman"
   },
   {
    "orcid": ["0000-0003-4164-5158"],
@@ -5366,8 +5296,6 @@
    ]
   },
   {
-   "born": "1939",
-   "died": "1998-10-14",
    "institutions": [
     {
      "name": "Université de Montréal",
@@ -5538,7 +5466,6 @@
    "orcid": ["0000-0002-8926-5974"],
    "scholar": "jO9Lc-EAAAAJ",
    "openalex": "A5008768353",
-   "born": "1975",
    "institutions": [
     {
      "name": "LSU New Orleans",
@@ -5718,7 +5645,6 @@
   {
    "orcid": ["0000-0001-8269-9430"],
    "openalex": "A5011691995",
-   "born": "1974",
    "institutions": [
     {
      "name": "Université Claude Bernard Lyon 1",
@@ -5742,7 +5668,6 @@
   {
    "orcid": ["0000-0001-8747-1101"],
    "openalex": "A5073113816",
-   "born": "1974",
    "institutions": [
     {
      "name": "Harvard University",
@@ -5792,7 +5717,6 @@
    "scholar": "QInd7HoAAAAJ",
    "openalex": "A5050068380",
    "wikipedia": "https://en.wikipedia.org/wiki/Christophe_Dessimoz",
-   "born": "1980",
    "institutions": [
     {
      "name": "European Bioinformatics Institute",
@@ -5904,8 +5828,6 @@
   {
    "openalex": "A5109558515",
    "wikipedia": "https://en.wikipedia.org/wiki/Russell_Doolittle",
-   "born": "1931",
-   "died": "2019-10-11",
    "institutions": [
     {
      "name": "University of California San Diego",
@@ -5931,8 +5853,6 @@
   {
    "openalex": "A5111472625",
    "wikipedia": "https://en.wikipedia.org/wiki/Andreas_Dress",
-   "born": "1938",
-   "died": "2024-02-23",
    "institutions": [
     {
      "name": "Bielefeld University",
@@ -5969,7 +5889,6 @@
   {
    "orcid": ["0000-0003-2836-3463"],
    "openalex": "A5036099891",
-   "born": "1967",
    "institutions": [
     {
      "name": "Université Claude Bernard Lyon 1",
@@ -5994,13 +5913,11 @@
   {
    "scholar": "duBlF_YAAAAJ",
    "openalex": "A5108567924",
-   "wikipedia": "https://en.wikipedia.org/wiki/Bradley_Efron",
-   "born": "1938"
+   "wikipedia": "https://en.wikipedia.org/wiki/Bradley_Efron"
   },
   {
    "orcid": ["0000-0001-7942-1243"],
    "openalex": "A5013234411",
-   "born": "1979",
    "institutions": [
     {
      "name": "Humboldt-Universität zu Berlin",
@@ -6015,7 +5932,6 @@
    "scholar": "LrlwhwUAAAAJ",
    "openalex": "A5059066311",
    "wikipedia": "https://en.wikipedia.org/wiki/Jonathan_Eisen",
-   "born": "1968",
    "institutions": [
     {
      "name": "University of California, Davis",
@@ -6130,7 +6046,6 @@
    "scholar": "2uHUSa8AAAAJ",
    "openalex": "A5087023890",
    "wikipedia": "https://en.wikipedia.org/wiki/Martin_Farach-Colton",
-   "born": "1963",
    "institutions": [
     {
      "name": "Rutgers, The State University of New Jersey",
@@ -6202,7 +6117,6 @@
    "scholar": "YVy_ry8AAAAJ",
    "openalex": "A5103508736",
    "wikipedia": "https://en.wikipedia.org/wiki/Michael_J._Fischer",
-   "born": "1942",
    "institutions": [
     {
      "name": "Massachusetts Institute of Technology",
@@ -6473,8 +6387,6 @@
    "scholar": "qrPaF3QAAAAJ",
    "openalex": "A5071015671",
    "wikipedia": "https://en.wikipedia.org/wiki/Ronald_Graham",
-   "born": "1935",
-   "died": "2020-07-06",
    "institutions": [
     {
      "name": "Bell Laboratories",
@@ -6718,7 +6630,6 @@
    "scholar": "S2OjOvYAAAAJ",
    "openalex": "A5090849321",
    "wikipedia": "https://en.wikipedia.org/wiki/David_Haussler",
-   "born": "1953",
    "institutions": [
     {
      "name": "University of California, Santa Cruz",
@@ -6828,7 +6739,6 @@
    "scholar": "TUgQVOYAAAAJ",
    "openalex": "A5103274106",
    "wikipedia": "https://en.wikipedia.org/wiki/David_Hillis",
-   "born": "1958",
    "institutions": [
     {
      "name": "The University of Texas at Austin",
@@ -6842,7 +6752,6 @@
    "scholar": "5NL9BdYAAAAJ",
    "openalex": "A5113554965",
    "wikipedia": "https://en.wikipedia.org/wiki/Dan_Hirschberg",
-   "born": "1949",
    "institutions": [
     {
      "name": "Princeton University",
@@ -6892,7 +6801,6 @@
   {
    "orcid": ["0000-0001-7132-0800"],
    "openalex": "A5011771355",
-   "born": "1964",
    "institutions": [
     {
      "name": "University of Vienna",
@@ -6906,7 +6814,6 @@
    "orcid": ["0000-0003-3392-9839"],
    "openalex": "A5060013591",
    "wikipedia": "https://en.wikipedia.org/wiki/Paulien_Hogeweg",
-   "born": "1943",
    "institutions": [
     {
      "name": "Utrecht University",
@@ -7087,7 +6994,6 @@
    "scholar": "XUhsCZwAAAAJ",
    "openalex": "A5101911266",
    "wikipedia": "https://en.wikipedia.org/wiki/Tao_Jiang_(computer_scientist)",
-   "born": "1963",
    "institutions": [
     {
      "name": "McMaster University",
@@ -7137,7 +7043,6 @@
    "scholar": "yxUduqMAAAAJ",
    "openalex": "A5049812527",
    "wikipedia": "https://en.wikipedia.org/wiki/Michael_I._Jordan",
-   "born": "1956",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -7163,7 +7068,6 @@
    "orcid": ["0000-0002-4974-9659"],
    "scholar": "pcrOEs8AAAAJ",
    "openalex": "A5035639170",
-   "born": "1965",
    "institutions": [
     {
      "name": "Max Planck Institute for Mathematics in the Sciences",
@@ -7236,7 +7140,6 @@
    "orcid": ["0000-0001-9186-3538"],
    "scholar": "FTx_BNsAAAAJ",
    "openalex": "A5103045561",
-   "born": "1959",
    "institutions": [
     {
      "name": "University of Tübingen",
@@ -7250,8 +7153,7 @@
    "orcid": ["0000-0001-7113-9630"],
    "scholar": "lsYXBx8AAAAJ",
    "openalex": "A5108044601",
-   "wikipedia": "https://en.wikipedia.org/wiki/Manolis_Kellis",
-   "born": "1977"
+   "wikipedia": "https://en.wikipedia.org/wiki/Manolis_Kellis"
   },
   {
    "openalex": "A5097932722",
@@ -7403,7 +7305,6 @@
    "scholar": "-vGMjmwAAAAJ",
    "openalex": "A5083542637",
    "wikipedia": "https://en.wikipedia.org/wiki/Anders_Krogh",
-   "born": "1959",
    "institutions": [
     {
      "name": "Technical University of Denmark",
@@ -7546,8 +7447,6 @@
   },
   {
    "wikipedia": "https://en.wikipedia.org/wiki/Eugene_Lawler",
-   "born": "1933",
-   "died": "1994-09-02",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -7628,7 +7527,6 @@
   {
    "orcid": ["0000-0001-9852-8759"],
    "openalex": "A5103242082",
-   "born": "1961",
    "institutions": [
     {
      "name": "University of New Mexico",
@@ -7720,7 +7618,6 @@
   {
    "orcid": ["0000-0002-1862-5688"],
    "openalex": "A5063295409",
-   "born": "1970",
    "institutions": [
     {
      "name": "Massey University",
@@ -7795,7 +7692,6 @@
    "scholar": "eYoJy9kAAAAJ",
    "openalex": "A5041917392",
    "wikipedia": "https://en.wikipedia.org/wiki/Wayne_Maddison",
-   "born": "1958",
    "institutions": [
     {
      "name": "University of British Columbia",
@@ -7849,8 +7745,6 @@
   {
    "openalex": "A5109233902",
    "wikipedia": "https://en.wikipedia.org/wiki/Emanuel_Margoliash",
-   "born": "1920",
-   "died": "2008-04-10",
    "institutions": [
     {
      "name": "Abbott (United States)",
@@ -7863,7 +7757,6 @@
   {
    "orcid": ["0000-0003-2000-1476"],
    "openalex": "A5053189482",
-   "born": "1954",
    "institutions": [
     {
      "name": "University of North Carolina at Chapel Hill",
@@ -7910,7 +7803,6 @@
    "orcid": ["0000-0002-1819-729X"],
    "scholar": "Skdtm7cAAAAJ",
    "openalex": "A5000362971",
-   "born": "1969",
    "institutions": [
     {
      "name": "Duke University",
@@ -7970,7 +7862,6 @@
   {
    "orcid": ["0000-0003-1027-135X"],
    "openalex": "A5038468188",
-   "born": "1969",
    "institutions": [
     {
      "name": "Goethe University Frankfurt",
@@ -7984,7 +7875,6 @@
    "orcid": ["0000-0002-2433-9071"],
    "scholar": "yFP4OZwAAAAJ",
    "openalex": "A5078168597",
-   "born": "1974",
    "institutions": [
     {
      "name": "Museum of New Zealand Te Papa Tongarewa",
@@ -8006,8 +7896,6 @@
   },
   {
    "wikipedia": "https://en.wikipedia.org/wiki/Charles_Duncan_Michener",
-   "born": "1918",
-   "died": "2015-11-01",
    "institutions": [
     {
      "name": "University of Kansas",
@@ -8032,7 +7920,6 @@
    "scholar": "k9T3V7EAAAAJ",
    "openalex": "A5071092709",
    "wikipedia": "https://en.wikipedia.org/wiki/Webb_Miller",
-   "born": "1943",
    "institutions": [
     {
      "name": "Pennsylvania State University",
@@ -8087,7 +7974,6 @@
    "orcid": ["0000-0003-4175-6798"],
    "openalex": "A5068566097",
    "wikipedia": "https://en.wikipedia.org/wiki/Bernhard_Misof",
-   "born": "1965",
    "institutions": [
     {
      "name": "Universität Hamburg",
@@ -8153,7 +8039,6 @@
    "scholar": "D16xkKgAAAAJ",
    "openalex": "A5007961513",
    "wikipedia": "https://en.wikipedia.org/wiki/Shlomo_Moran",
-   "born": "1947",
    "institutions": [
     {
      "name": "Technion – Israel Institute of Technology",
@@ -8199,7 +8084,6 @@
   {
    "orcid": ["0000-0002-7860-3560"],
    "openalex": "A5052402024",
-   "born": "1984",
    "institutions": [
     {
      "name": "European Bioinformatics Institute",
@@ -8213,7 +8097,6 @@
    "orcid": ["0000-0003-0104-0728"],
    "scholar": "Cbek-EAAAAAJ",
    "openalex": "A5035823928",
-   "born": "1966",
    "institutions": [
     {
      "name": "North Carolina State University",
@@ -8253,15 +8136,13 @@
    ]
   },
   {
-   "openalex": "A5109080286",
-   "born": "1927"
+   "openalex": "A5109080286"
   },
   {
    "orcid": ["0000-0003-2525-1407"],
    "scholar": "dfvX0rMAAAAJ",
    "openalex": "A5037559147",
    "wikipedia": "https://en.wikipedia.org/wiki/Richard_A._Neher",
-   "born": "1979",
    "institutions": [
     {
      "name": "SIB Swiss Institute of Bioinformatics",
@@ -8292,8 +8173,6 @@
   {
    "openalex": "A5000190053",
    "wikipedia": "https://en.wikipedia.org/wiki/Jerzy_Neyman",
-   "born": "1894",
-   "died": "1981-08-05",
    "institutions": [
     {
      "name": "University of California, Berkeley",
@@ -8648,7 +8527,6 @@
    "orcid": ["0000-0001-7603-1207"],
    "scholar": "_vjPh4UAAAAJ",
    "openalex": "A5087844619",
-   "born": "1969",
    "institutions": [
     {
      "name": "Carnegie Mellon University",
@@ -9017,7 +8895,6 @@
    "scholar": "_KTRRAcAAAAJ",
    "openalex": "A5018021274",
    "wikipedia": "https://en.wikipedia.org/wiki/Paul_M._Sharp",
-   "born": "1957",
    "institutions": [
     {
      "name": "Trinity College Dublin",
@@ -9152,8 +9029,6 @@
   },
   {
    "wikipedia": "https://en.wikipedia.org/wiki/Robert_R._Sokal",
-   "born": "1926",
-   "died": "2012-04-09",
    "institutions": [
     {
      "name": "University of Kansas",
@@ -9191,7 +9066,6 @@
    "orcid": ["0000-0002-5016-5191"],
    "scholar": "pVnGRlkAAAAJ",
    "openalex": "A5016104736",
-   "born": "1965",
    "institutions": [
     {
      "name": "Leipzig University",
@@ -9206,7 +9080,6 @@
    "scholar": "bvN5cz8AAAAJ",
    "openalex": "A5055449742",
    "wikipedia": "https://en.wikipedia.org/wiki/Tanja_Stadler",
-   "born": "1981",
    "institutions": [
     {
      "name": "ETH Zurich",
@@ -9276,7 +9149,6 @@
    "scholar": "Sm1UdzUAAAAJ",
    "openalex": "A5023619547",
    "wikipedia": "https://en.wikipedia.org/wiki/Michael_Sternberg",
-   "born": "1951",
    "institutions": [
     {
      "name": "Birkbeck, University of London",
@@ -9326,7 +9198,6 @@
    "scholar": "4Ap41EAAAAAJ",
    "openalex": "A5051991253",
    "wikipedia": "https://en.wikipedia.org/wiki/Karl-Theodor_Sturm",
-   "born": "1960",
    "institutions": [
     {
      "name": "University of Bonn",
@@ -9498,7 +9369,6 @@
    "orcid": ["0000-0002-3681-7536"],
    "scholar": "zNf1lL8AAAAJ",
    "openalex": "A5026210731",
-   "born": "1974",
    "institutions": [
     {
      "name": "Inria",
@@ -9518,7 +9388,6 @@
    "orcid": ["0000-0002-3716-4952"],
    "scholar": "1aX_bIcAAAAJ",
    "wikipedia": "https://en.wikipedia.org/wiki/Simon_Tavar%C3%A9",
-   "born": "1952",
    "institutions": [
     {
      "name": "Colorado State University",
@@ -9604,7 +9473,6 @@
    "orcid": ["0000-0002-1062-8710"],
    "openalex": "A5039252182",
    "wikipedia": "https://en.wikipedia.org/wiki/John_Tromp",
-   "born": "1966",
    "institutions": [
     {
      "name": "Centrum Wiskunde & Informatica",
@@ -9649,7 +9517,6 @@
    "orcid": ["0000-0002-5978-1505"],
    "openalex": "A5058284151",
    "wikipedia": "https://en.wikipedia.org/wiki/Esko_Ukkonen",
-   "born": "1950",
    "institutions": [
     {
      "name": "University of Helsinki",
@@ -9664,7 +9531,6 @@
    "scholar": "wUJ2bXgAAAAJ",
    "openalex": "A5089065417",
    "wikipedia": "https://en.wikipedia.org/wiki/Jeffrey_Ullman",
-   "born": "1942",
    "institutions": [
     {
      "name": "Stanford University",
@@ -9765,7 +9631,6 @@
    "orcid": ["0000-0002-6518-1290"],
    "openalex": "A5062317141",
    "wikipedia": "https://en.wikipedia.org/wiki/Karen_Vogtmann",
-   "born": "1949",
    "institutions": [
     {
      "name": "Cornell University",
@@ -9848,7 +9713,6 @@
   {
    "orcid": ["0000-0002-4344-8791"],
    "openalex": "A5065315257",
-   "born": "1962",
    "institutions": [
     {
      "name": "McMaster University",
@@ -10042,7 +9906,6 @@
    "orcid": ["0000-0002-1302-4445"],
    "scholar": "38cb5XQAAAAJ",
    "openalex": "A5065384282",
-   "born": "1964",
    "institutions": [
     {
      "name": "University of Oxford",
@@ -10228,7 +10091,6 @@
    "orcid": ["0000-0001-6146-0594"],
    "scholar": "3z9jHzEAAAAJ",
    "openalex": "A5083452260",
-   "born": "1960",
    "institutions": [
     {
      "name": "University of California San Diego",

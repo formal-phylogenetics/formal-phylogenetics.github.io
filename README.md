@@ -27,9 +27,8 @@ with its authors, venue and abstract. A click pins it: the panel shows what it c
 it, marked everywhere, with links to its formalization and its paper, and the address keeps it; a
 click on the pinned entry, on nothing, or Escape unpins it. The header switches between light and dark.
 
-The panel of an author gives their years of birth and death, the institutions their papers in the
-collection place them at, with the years, and their ORCID, Google Scholar, OpenAlex and Wikipedia
-pages; then their co-authors and venues in the collection, each with the entries behind it. The
+The panel of an author gives the institutions their papers in the collection place them at, with
+the years, and their ORCID, Google Scholar, OpenAlex and Wikipedia pages; then their co-authors and venues in the collection, each with the entries behind it. The
 panel of a venue gives the year it was founded, the titles it continued or that continued it, its
 abbreviation and ISSN, and its authors with their entries there; that of an institution, its
 country, its authors with their years there and its entries; that of a country, its institutions
