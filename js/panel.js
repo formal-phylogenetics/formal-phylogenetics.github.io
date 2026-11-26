@@ -67,9 +67,12 @@ export function authorFacts(pr, people, who) {
     ${listSection(
       "Institutions",
       (pr.institutions || []).map((r) => {
+        // by its place in people.json, when that file is the one the profile was written with
+        const at = people && people.institutions[r.at];
         const h =
-          people &&
-          (people.institutions[r.at] || people.institutionNamed.get(r.name));
+          at && at.name === r.name
+            ? at
+            : people && people.institutionNamed.get(r.name);
         const n = h && who && who.places ? (who.places.get(h) || []).length : 0;
         const find = `${fieldText("author", who ? who.name : "")} ${fieldText("institution", r.name)}`;
         return [
