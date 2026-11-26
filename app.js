@@ -96,7 +96,7 @@ async function loadLive() {
 }
 
 async function loadSnapshot() {
-  const r = await fetch(HERE("catalogue.json"), FRESH);
+  const r = await fetch(HERE("data/catalogue.json"), FRESH);
   if (!r.ok) throw new Error("no snapshot");
   return { ...(await r.json()), source: "snapshot" };
 }
@@ -656,17 +656,18 @@ function wireTimeline(svg, ui) {
     ui.hover(e, () => placeAt(ev.clientX, ev.clientY));
   });
   svg.addEventListener("pointerleave", () => ui.hover(null));
-  svg.addEventListener(
-    "click",
-    () => ui.hovered && ui.pick(ui.hovered, "view"),
-  );
+  svg.addEventListener("click", (ev) => {
+    if (!ui.hovered) return;
+    ev.preventDefault();
+    ui.pick(ui.hovered, "view");
+  });
 }
 
 // ---------------------------------------------------------------------------------------------
 // The citations and the works, stored with the site: the citations from the papers' own reference
 // lists, the works from their records. A visit asks no service.
 async function readCitations() {
-  const r = await fetch(HERE("citations.json"), FRESH);
+  const r = await fetch(HERE("data/citations.json"), FRESH);
   if (!r.ok) throw new Error("no citations");
   return (await r.json()).edges;
 }
@@ -1180,7 +1181,7 @@ const card = { el: null, entry: null, pinned: null, timer: 0, place: () => {} };
 let worksFile = null;
 function readWorks() {
   if (!worksFile)
-    worksFile = fetch(HERE("works.json"), FRESH)
+    worksFile = fetch(HERE("data/works.json"), FRESH)
       .then((r) => (r.ok ? r.json() : {}))
       .catch(() => ({}));
   return worksFile;
@@ -1319,7 +1320,7 @@ function hubRow(h) {
 let peopleFile = null;
 function readPeople() {
   if (!peopleFile)
-    peopleFile = fetch(HERE("people.json"), FRESH)
+    peopleFile = fetch(HERE("data/people.json"), FRESH)
       .then((r) => (r.ok ? r.json() : null))
       .catch(() => null);
   return peopleFile;
@@ -1327,7 +1328,7 @@ function readPeople() {
 let profilesFile = null;
 function readProfiles() {
   if (!profilesFile)
-    profilesFile = fetch(HERE("profiles.json"), FRESH)
+    profilesFile = fetch(HERE("data/profiles.json"), FRESH)
       .then((r) => (r.ok ? r.json() : null))
       .catch(() => null);
   return profilesFile;
@@ -1350,9 +1351,10 @@ function peopleModel(data, ui) {
       kind: "author",
       i,
       name: a.name,
+      short: a.short || a.name,
       entries,
       hub,
-      hay: fold(a.name),
+      hay: fold(`${a.name} ${a.short || ""}`),
       p: data.coauthors.pos[i],
     };
   });
@@ -1371,6 +1373,7 @@ function peopleModel(data, ui) {
       houses.set(v.publisher, {
         kind: "publisher",
         name: v.publisher,
+        full: (data.publishers || {})[v.publisher] || v.publisher,
         venues: [],
         entries: [],
         hay: fold(v.publisher),
@@ -1454,7 +1457,7 @@ const linkEntries = (g) => g.a.entries.filter((e) => g.b.entries.includes(e));
 const when = (a, b) =>
   a && b ? (a === b ? a : `${a}–${b}`) : a ? `${a}–` : b ? `–${b}` : "";
 const chipOf = (kind, x, n) =>
-  `<button type="button" class="p-chip" data-go="${kind}:${x.i}"><span>${esc(x.name)}</span>${n != null ? `<span class="c-n">${n}</span>` : ""}</button>`;
+  `<button type="button" class="p-chip" data-go="${kind}:${x.i}"${x.short && x.short !== x.name ? ` title="${esc(x.name)}"` : ""}><span>${esc(x.short || x.name)}</span>${n != null ? `<span class="c-n">${n}</span>` : ""}</button>`;
 function chipsSection(title, list, kind, note) {
   if (!list.length) return "";
   const more =
@@ -1493,15 +1496,16 @@ const hostOf = (u) => {
 };
 const num = (n) => Number(n).toLocaleString("en");
 
+// an author's years, positions, institutions and doctoral genealogy, with their ORCID and Google
+// Scholar profile to tell them apart
 function authorFacts(pr, model) {
   if (!pr)
-    return `<p class="p-none">ORCID, OpenAlex and Wikidata have nothing on this author.</p>`;
+    return `<p class="p-none">ORCID and Wikidata have nothing on this author.</p>`;
   const life = pr.died
     ? `${pr.born || "?"}–${pr.died.slice(0, 4)}`
     : pr.born
       ? `born ${pr.born}`
       : "";
-  const lead = [life, pr.about].filter(Boolean).map(esc).join(" · ");
   const held = (list) =>
     list.map((r) => {
       const what = [r.role, r.department].filter(Boolean).join(", ");
@@ -1511,44 +1515,36 @@ function authorFacts(pr, model) {
         when(r.start, r.end),
       ];
     });
+  // an advisor or student: an author of the collection opens their panel, anyone else their
+  // Wikidata page; the authors of the collection first
   const person = (r) =>
     r.author != null && model.authors[r.author]
-      ? `<button type="button" class="p-chip" data-go="author:${r.author}"><span>${esc(r.name)}</span></button>`
-      : `<span class="p-plain">${esc(r.name)}</span>`;
-  const people = (title, list) =>
-    list && list.length
-      ? `<div class="p-sec"><h3>${title}</h3><div class="p-chips all">${list.map(person).join("")}</div></div>`
-      : "";
-  const counts = [
-    pr.works != null && `${num(pr.works)} works`,
-    pr.cited != null && `${num(pr.cited)} citations`,
-    pr.h_index != null && `h-index ${pr.h_index}`,
-  ].filter(Boolean);
-  return `${lead ? `<p class="p-lead">${lead}</p>` : ""}
+      ? chipOf("author", model.authors[r.author])
+      : r.wikidata
+        ? `<a class="p-plain" href="https://www.wikidata.org/wiki/${esc(r.wikidata)}" target="_blank" rel="noopener">${esc(r.name)}</a>`
+        : `<span class="p-plain">${esc(r.name)}</span>`;
+  const people = (title, list) => {
+    if (!list || !list.length) return "";
+    const sorted = [...list].sort(
+      (a, b) => (b.author != null) - (a.author != null),
+    );
+    const more =
+      sorted.length > 12
+        ? `<button type="button" class="p-more" data-all>+${sorted.length - 12} more</button>`
+        : "";
+    return `<div class="p-sec"><h3>${title} <span>${list.length}</span></h3><div class="p-chips">${sorted.map(person).join("")}${more}</div></div>`;
+  };
+  return `${life ? `<p class="p-lead">${esc(life)}</p>` : ""}
     ${linksRow([
       ...(pr.orcid || []).map((o) => [`ORCID ${o}`, `https://orcid.org/${o}`]),
       pr.scholar && [
         "Google Scholar",
         `https://scholar.google.com/citations?user=${pr.scholar}`,
       ],
-      pr.dblp && ["DBLP", `https://dblp.org/pid/${pr.dblp}.html`],
-      pr.mathgenealogy && [
-        "Mathematics Genealogy",
-        `https://www.mathgenealogy.org/id.php?id=${pr.mathgenealogy}`,
-      ],
-      pr.wikipedia && ["Wikipedia", pr.wikipedia],
-      pr.wikidata && [
-        "Wikidata",
-        `https://www.wikidata.org/wiki/${pr.wikidata}`,
-      ],
-      pr.openalex && ["OpenAlex", `https://openalex.org/${pr.openalex}`],
-      ...(pr.links || []).map((l) => [l.name || hostOf(l.url), l.url]),
     ])}
     ${listSection("Positions", held(pr.positions || []))}
-    ${listSection("Education", held(pr.education || []))}
-    ${listSection("Service and memberships", held(pr.service || []))}
     ${listSection(
-      "Institutions on their papers",
+      "Institutions",
       (pr.institutions || []).map((r) => [
         esc(r.name),
         esc(r.country || ""),
@@ -1556,20 +1552,20 @@ function authorFacts(pr, model) {
       ]),
     )}
     ${people("Doctoral advisors", pr.advisors)}
-    ${people("Doctoral students", pr.students)}
-    ${listSection(
-      "Honours",
-      (pr.honours || []).map((r) => [
-        esc(r.name),
-        esc(r.by || ""),
-        r.year || "",
-      ]),
-    )}
-    ${counts.length || (pr.topics || []).length ? `<div class="p-sec"><h3>In OpenAlex</h3><p class="p-text">${esc(counts.join(" · "))}${(pr.topics || []).length ? `<br><span class="p-soft">${esc(pr.topics.join(" · "))}</span>` : ""}</p></div>` : ""}
-    ${(pr.keywords || []).length ? `<div class="p-sec"><h3>Keywords</h3><p class="p-text">${esc(pr.keywords.join(" · "))}</p></div>` : ""}
-    ${pr.biography ? `<details class="p-abs"><summary>Biography</summary><p class="p-abstract">${esc(pr.biography)}</p></details>` : ""}
-    <p class="p-source">From ORCID, OpenAlex and Wikidata${pr.by_name ? "; the Wikidata item is the one scholar of that name in these fields" : ""}.</p>`;
+    ${people("Doctoral students", pr.students)}`;
 }
+
+// a venue's predecessor or successor: one of the collection opens its panel, another its Wikidata page
+const titles = (list) =>
+  list
+    .map((r) =>
+      r.venue != null
+        ? `<button type="button" class="p-up" data-go="venue:${r.venue}">${esc(r.name)}</button>`
+        : r.wikidata
+          ? `<a class="p-ext" href="https://www.wikidata.org/wiki/${esc(r.wikidata)}" target="_blank" rel="noopener">${esc(r.name)}</a>`
+          : esc(r.name),
+    )
+    .join("; ");
 
 function venueFacts(pr, v) {
   if (v.publisher === "Conference" || v.publisher === "Preprint" || !pr)
@@ -1591,8 +1587,8 @@ function venueFacts(pr, v) {
     .map(esc)
     .join(" · ");
   const rows = [
-    pr.continues && ["Continues", esc(pr.continues.join("; ")), ""],
-    pr.continued_by && ["Continued by", esc(pr.continued_by.join("; ")), ""],
+    pr.continues && ["Continues", titles(pr.continues), ""],
+    pr.continued_by && ["Continued by", titles(pr.continued_by), ""],
     pr.iso4 && ["Abbreviation", esc(pr.iso4), ""],
     pr.issn && ["ISSN", esc(pr.issn.join(", ")), ""],
     pr.country && ["Country", esc(pr.country), ""],
@@ -1687,15 +1683,12 @@ function groupPanel(g, model) {
 }
 
 // the figures under the title, from the data the page has read
-function paintStats(el, m, ui, model) {
+function paintStats(el, m, ui, counts) {
   const items = [
     [m.entries.length, "papers"],
     ui.links.length && [ui.links.length, "citations"],
-    model && [model.authors.length, "authors"],
-    model && [
-      model.venues.filter((v) => v.name !== "Venue not recorded").length,
-      "venues",
-    ],
+    counts && [counts.authors, "authors"],
+    counts && [counts.venues, "venues"],
   ].filter(Boolean);
   el.innerHTML = items
     .map(
@@ -1734,46 +1727,35 @@ function createNetwork(svg, canvas, ui, model, kind) {
   const rows = kind === "venues";
   const { publishers } = model;
 
-  // the order of the two rows: from the publishers' own order, sweeps that put each author at the
-  // mean place of the venues of their entries, each venue at the mean place of its authors, and
-  // each publisher at the mean place of its venues
+  // the order of the two rows: the publishers by their links to authors, the most first, and in
+  // each the venues the same way; each author above the venue of most of their entries, and above
+  // one venue the authors by their links, the most first, so that the links stay short
   const rank = new Map();
   if (rows) {
     const at = new Map();
-    const mean = (pairs) => {
-      let s = 0;
-      let w = 0;
-      for (const { who, n } of pairs) ((s += n * at.get(who)), (w += n));
-      return w ? s / w : 1;
+    const tie = (x, y) => x.name.localeCompare(y.name);
+    const links = (v) => v.authors.length;
+    const house = (p) => p.venues.reduce((s, v) => s + links(v), 0);
+    const order = [...publishers]
+      .sort((x, y) => house(y) - house(x) || tie(x, y))
+      .flatMap((p) =>
+        [...p.venues].sort((x, y) => links(y) - links(x) || tie(x, y)),
+      );
+    order.forEach((v, i) => at.set(v, i));
+    const home = (a) => {
+      const most = a.venues.length ? a.venues[0].n : 0;
+      const tops = a.venues
+        .filter((x) => x.n === most)
+        .map((x) => at.get(x.who));
+      return tops.length ? Math.min(...tops) : order.length;
     };
-    const busy = (x, y) =>
-      y.entries.length - x.entries.length || x.name.localeCompare(y.name);
-    const place = (list) =>
-      list.forEach((x, i) => at.set(x, i / Math.max(1, list.length - 1)));
-    const mid = new Map();
-    let order = publishers.flatMap((p) => [...p.venues].sort(busy));
-    let orderA = model.authors;
-    for (let s = 0; s < 10; s++) {
-      place(order);
-      for (const a of model.authors) mid.set(a, mean(a.venues));
-      orderA = [...model.authors].sort(
-        (x, y) => mid.get(x) - mid.get(y) || busy(x, y),
-      );
-      place(orderA);
-      for (const v of model.venues) mid.set(v, mean(v.authors));
-      const pm = new Map(
-        publishers.map((p) => [
-          p,
-          p.venues.reduce((t, v) => t + mid.get(v) * v.entries.length, 0) /
-            Math.max(1, p.entries.length),
-        ]),
-      );
-      order = [...publishers]
-        .sort((x, y) => pm.get(x) - pm.get(y))
-        .flatMap((p) =>
-          [...p.venues].sort((x, y) => mid.get(x) - mid.get(y) || busy(x, y)),
-        );
-    }
+    const orderA = [...model.authors].sort(
+      (x, y) =>
+        home(x) - home(y) ||
+        y.venues.length - x.venues.length ||
+        y.entries.length - x.entries.length ||
+        tie(x, y),
+    );
     order.forEach((v, i) => rank.set(v, i));
     orderA.forEach((a, i) => rank.set(a, i));
   }
@@ -1806,7 +1788,7 @@ function createNetwork(svg, canvas, ui, model, kind) {
     n.el = svgEl(n.kind === "venue" ? "rect" : "circle", attrs, gN);
     n.el.dataset.i = i;
     n.label = svgEl("text", { class: `n-label ${n.kind}` }, gL);
-    n.label.textContent = n.kind === "venue" ? n.short : n.name;
+    n.label.textContent = n.short || n.name;
   });
   const bands = new Map();
   if (rows)
@@ -2213,7 +2195,7 @@ function createNetwork(svg, canvas, ui, model, kind) {
         (a, b) => (b === restA) - (a === restA) || b.count - a.count,
       )) {
         if (!n.count) continue;
-        let text = n.kind === "author" ? n.name : n.short;
+        let text = n.short || n.name;
         const fits = (s) => s.length * 6 <= (up ? room.up : room.down) - n.r;
         if (!fits(text) && n.kind === "author")
           text = text.replace(/^(\S)\S*\s+(?:\S+\s+)*?(?=\S+$)/, "$1. ");
@@ -2309,12 +2291,13 @@ function createNetwork(svg, canvas, ui, model, kind) {
       ((ev.clientY - r.top) * H) / r.height,
     );
   };
+  // a card names what it shows by the short names; the panel gives the full ones
   const title = (t) =>
     t.kind === "link"
       ? rows
-        ? `${t.a.kind === "rest" ? "Authors of one entry" : t.a.name} in ${t.b.name}`
-        : `${t.a.name} and ${t.b.name}`
-      : t.name;
+        ? `${t.a.kind === "rest" ? "Authors of one entry" : t.a.short || t.a.name} in ${t.b.short || t.b.name}`
+        : `${t.a.short || t.a.name} and ${t.b.short || t.b.name}`
+      : t.short || t.name;
   const cardFor = (t) => {
     const list = t.entries.filter(inWin).sort(yearSort);
     const names = list
@@ -2385,6 +2368,7 @@ function createNetwork(svg, canvas, ui, model, kind) {
   svg.addEventListener("click", (ev) => {
     const t = mine() && (over || targetAt(ev));
     if (!t) return;
+    ev.preventDefault();
     over = null;
     card.el.hidden = true;
     ui.pickGroup(pick(t));
@@ -2423,17 +2407,31 @@ function createNetwork(svg, canvas, ui, model, kind) {
 // the lists of the authors and of the publishers with their venues, each a row that opens to its
 // entries; a button opens the author's or the venue's panel
 function personRow(a) {
-  const entries = [...a.entries].sort(yearSort);
-  return `<details class="hub grp" data-name="${esc(fold(a.name))}"><summary><span class="h-name">${esc(a.name)}</span><span class="h-count">${entries.length}</span>${CHEVRON}</summary><div class="h-body"><button type="button" class="p-open" data-go="author:${a.i}">Profile, co-authors and venues</button><div class="family" data-name="${esc(fold(a.name))}"><div class="tags">${entries.map((e) => tagHtml(e, "", true)).join("")}</div></div></div></details>`;
+  // the author's entries in the hubs that hold them, the hub of the most entries first
+  const byHub = new Map();
+  for (const e of [...a.entries].sort(yearSort)) {
+    if (!byHub.has(e.hub)) byHub.set(e.hub, []);
+    byHub.get(e.hub).push(e);
+  }
+  const hubs = [...byHub]
+    .sort(
+      (x, y) => y[1].length - x[1].length || x[0].name.localeCompare(y[0].name),
+    )
+    .map(
+      ([h, list]) =>
+        `<div class="family" data-name="${esc(fold(`${a.name} ${h.title || ""}`))}"><h4>${esc(h.title || short(h.name))} <span class="f-n">${list.length}</span></h4><div class="tags">${list.map((e) => tagHtml(e, "", true)).join("")}</div></div>`,
+    )
+    .join("");
+  return `<details class="hub grp" data-name="${esc(fold(`${a.name} ${a.short}`))}"><summary><span class="h-name" title="${esc(a.name)}">${esc(a.short)}</span><span class="h-count">${a.entries.length}</span>${CHEVRON}</summary><div class="h-body"><button type="button" class="p-open" data-go="author:${a.i}">Profile, co-authors and venues</button>${hubs}</div></details>`;
 }
 function publisherRow(p) {
   const venues = p.venues
     .map((v) => {
       const entries = [...v.entries].sort(yearSort);
-      return `<div class="family" data-name="${esc(fold(`${v.name} ${v.short}`))}"><h4><button type="button" class="f-go" data-go="venue:${v.i}">${esc(v.name)}</button> <span class="f-n">${entries.length}</span></h4><div class="tags">${entries.map((e) => tagHtml(e, "", true)).join("")}</div></div>`;
+      return `<div class="family" data-name="${esc(fold(`${v.name} ${v.short}`))}"><h4><button type="button" class="f-go" data-go="venue:${v.i}" title="${esc(v.name)}">${esc(v.short)}</button> <span class="f-n">${entries.length}</span></h4><div class="tags">${entries.map((e) => tagHtml(e, "", true)).join("")}</div></div>`;
     })
     .join("");
-  return `<details class="hub grp" data-name="${esc(fold(p.name))}"><summary><span class="h-name">${esc(p.name)}</span><span class="h-count">${p.entries.length}</span>${CHEVRON}</summary><div class="h-body"><button type="button" class="p-open" data-go="publisher:${p.i}">Venues and authors</button>${venues}</div></details>`;
+  return `<details class="hub grp" data-name="${esc(fold(`${p.name} ${p.full}`))}"><summary><span class="h-name">${esc(p.full)}</span><span class="h-count">${p.entries.length}</span>${CHEVRON}</summary><div class="h-body"><button type="button" class="p-open" data-go="publisher:${p.i}">Venues and authors</button>${venues}</div></details>`;
 }
 
 function shell(app) {
@@ -2927,7 +2925,9 @@ async function main() {
   const statsEl = document.getElementById("stats");
   let people = null;
   let peopleFailed = false;
-  const stats = () => paintStats(statsEl, m, ui, people);
+  // the authors and the venues are counted from the file itself, before anything is built from it
+  let counts = null;
+  const stats = () => paintStats(statsEl, m, ui, counts);
   stats();
   let lastWin = { a: -Infinity, b: Infinity };
   const nets = {};
@@ -3079,9 +3079,33 @@ async function main() {
     if (ev.currentTarget === els.panel) topOfPanel();
   };
   els.panel.addEventListener("click", go);
+  // a click on nothing (the page, the background of a view or a graph) lets go of what is pinned,
+  // as Escape does; a click that picks, ends a selection of text or lands in the panel does not
+  const KEEP =
+    "a, button, input, select, textarea, label, summary, [data-go], [data-key], .panel, .card, .overview, .views, .lists, .find";
+  document.addEventListener("click", (ev) => {
+    if (!ui.selected && !ui.group) return;
+    if (ev.defaultPrevented || ev.button !== 0) return;
+    if (ev.target.closest && ev.target.closest(KEEP)) return;
+    if (String(getSelection()).trim()) return;
+    if (ui.selected) ui.select(null);
+    if (ui.group) ui.selectGroup(null);
+  });
+  addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape" && ui.group && !ev.target.closest?.("input"))
+      ui.selectGroup(null);
+  });
   for (const s of [sections.authors, sections.venues])
     s.addEventListener("click", go);
   readPeople().then((data) => {
+    if (data && Array.isArray(data.authors) && Array.isArray(data.venues)) {
+      counts = {
+        authors: data.authors.length,
+        venues: data.venues.filter((v) => v.name !== "Venue not recorded")
+          .length,
+      };
+      stats();
+    }
     try {
       people = data && peopleModel(data, ui);
     } catch (err) {

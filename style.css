@@ -734,6 +734,22 @@ a:hover {
   font-variant-numeric: tabular-nums;
   text-align: center;
 }
+a.p-plain {
+  text-decoration: none;
+}
+a.p-plain:hover {
+  border-color: var(--ink-3);
+  color: var(--ink);
+}
+.p-ext {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--ink-4);
+  text-underline-offset: 2px;
+}
+.p-ext:hover {
+  text-decoration-color: var(--ink-3);
+}
 .p-plain {
   display: inline-flex;
   align-items: center;
