@@ -76,12 +76,12 @@ and [Europe PMC](https://europepmc.org), or, where none gives the abstract, from
   publishers, the institutions with the authors and the papers their bylines place there, and the
   co-authorship with its layout; `profiles.json`, read when a panel shows one,
   the profiles of the authors and the venues;
-- `assets/`: `tree.svg`, the drawing of the cover: a seeded phylogeny as a fan, its two unequal
-  sides in the warm and the cool hues of the palette, swept along each side, with its animation (the
+- `assets/`: `tree.svg`, the drawing of the cover: a phylogeny as a fan, its tips spread evenly
+  over two unequal sides in the warm and the cool hues of the palette, swept along each side, with its animation (the
   tree grows out from its root, each lineage at its own rate, the tips' buds open as they are
   reached, the root's glow pulses), so that it animates wherever it is shown; `share.png`, the image shown when the page is shared, that drawing with the
-  name and the line of the site; `icon.svg` and `apple-touch-icon.png`, the icon, the same fan with
-  fewer tips. None depends on the catalogs, so none changes when a hub or an entry is added.
+  name and the line of the site; `icon.svg` and `apple-touch-icon.png`, the icon, the same tree,
+  small. None depends on the catalogs, so none changes when a hub or an entry is added.
 
 To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>.
 
