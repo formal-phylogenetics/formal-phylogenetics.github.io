@@ -640,33 +640,71 @@ a:hover {
   cursor: pointer;
 }
 /* a long byline shows its first authors until asked for the rest */
-.p-auth:not(.all) .p-arows > .p-arow:nth-child(n + 13) {
+.p-auth:not(.all) .p-byline > li:nth-child(n + 13) {
   display: none;
 }
-/* an entry's authors: a line each, the author's pill, then their institutions and countries */
-.p-arows {
+/* an entry's byline: the authors in a column, the institutions the paper gives them beside */
+.p-byline {
   display: grid;
-  gap: 6px;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 5px var(--s4);
+  max-width: 62rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.84rem;
+  line-height: 1.4;
 }
-.p-arow {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 5px;
+.p-byline > li {
+  display: contents;
 }
-.p-arow > .p-chip:first-child {
-  margin-right: 4px;
+.b-name,
+.b-inst,
+.b-land {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--ink-4);
+  cursor: pointer;
+}
+.b-who {
+  color: var(--ink);
   font-weight: 600;
 }
-.p-chip.c-land {
-  color: var(--ink-3);
-}
-.p-plain {
-  margin-right: 4px;
+.b-at {
   color: var(--ink-2);
 }
-.p-auth .p-vhead {
-  margin-top: var(--s3);
+.b-land {
+  color: var(--ink-3);
+}
+.b-name:hover,
+.b-inst:hover,
+.b-land:hover {
+  color: var(--ink);
+  text-decoration-line: underline;
+}
+.b-sep {
+  color: var(--ink-4);
+}
+.p-pages {
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 560px) {
+  .p-where {
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+  .p-byline {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0;
+  }
+  .b-at {
+    margin-bottom: 6px;
+  }
 }
 .p-more:hover {
   border-color: var(--ink-3);
@@ -781,6 +819,9 @@ a:hover {
   border-color: var(--ink-3);
 }
 .p-list {
+  display: grid;
+  gap: 7px;
+  max-width: 44rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -788,14 +829,9 @@ a:hover {
 .p-list li {
   display: grid;
   grid-template-columns: 1fr auto;
-  column-gap: var(--s3);
-  padding: 4px 0;
-  border-top: 1px solid color-mix(in oklab, var(--rule) 60%, transparent);
+  column-gap: var(--s4);
   font-size: 0.82rem;
   line-height: 1.35;
-}
-.p-list li:first-child {
-  border-top: 0;
 }
 .l-main {
   color: var(--ink);

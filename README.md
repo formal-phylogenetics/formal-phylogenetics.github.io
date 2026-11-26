@@ -26,8 +26,9 @@ A method is named by its name and year, a theory paper by its authors and year. 
 status, and size the entry's weight in the citations: its PageRank, in which a citation counts for
 as much as the paper that makes it weighs. Pointing at an entry, in the timeline or the list, marks it in both and shows its card,
 with its authors, venue and abstract. A click pins it: the panel shows its authors in the order the
-paper prints them, each with the institutions the paper gives them and their countries, then its
-venue and publisher, each of these a pill that opens its own panel; and what it cites and what cites
+paper prints them, each with the institutions the paper gives them and their countries, under a
+citation line with its venue, volume, pages, year and publisher, each name a link to its own panel;
+and what it cites and what cites
 it, marked everywhere, with links to its formalization and its paper, and the address keeps it; a
 click on the pinned entry, on nothing, or Escape unpins it. The header switches between light and dark.
 

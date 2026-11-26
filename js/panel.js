@@ -260,7 +260,7 @@ export function renderPanel(ui) {
   };
   const ready = ui.citations === true;
   p.innerHTML = `<div class="p-head hub-c" style="${hubStyle(e.hub)}">
-      <span class="p-name ${e.named ? "named" : "cite"}">${esc(e.name)}</span>
+      <span class="p-name ${e.named ? "named" : "cite"}">${esc(e.named && e.short ? e.short : e.name)}</span>
       <span class="p-meta">${esc(e.kind)} · ${esc(STATUS[e.status])}</span>
       <button type="button" class="p-close" aria-label="Clear the selection">${CROSS}</button>
     </div>
@@ -287,47 +287,60 @@ export function renderPanel(ui) {
   readWork(e).then((w) => {
     if (ui.selected !== e || !w) return;
     const by = p.querySelector("#p-by");
-    // the byline: each author, in the paper's order, with the institutions the paper gives them and
-    // their countries, then the venue and its publisher, each a pill that opens its panel
     const people = ui.model;
+    const go = (kind, i, label, cls, title) =>
+      `<button type="button" class="${cls}" data-go="${kind}:${i}"${title && title !== label ? ` title="${esc(title)}"` : ""}>${esc(label)}</button>`;
+    // the citation: the venue, where in it, the year and the publisher, as a reference gives them
+    const venue = people && people.venueOf.get(e);
+    const house =
+      venue && !["Conference", "Preprint", "Other"].includes(venue.house.name)
+        ? venue.house
+        : null;
+    if (by && (w.venue || w.where)) {
+      by.innerHTML = [
+        [
+          venue
+            ? go("venue", venue.i, w.venue || venue.name, "p-up")
+            : esc(w.venue || ""),
+          w.where ? `<span class="p-pages">${esc(w.where)}</span>` : "",
+        ]
+          .filter(Boolean)
+          .join(" "),
+        esc(e.year || ""),
+        house ? go("publisher", house.i, house.full || house.name, "p-up") : "",
+      ]
+        .filter(Boolean)
+        .join('<span class="b-sep"> · </span>');
+    }
+    // the byline: each author in the paper's order, with the institutions the paper gives them,
+    // each followed by its country where the next one is in another
     const sec = p.querySelector("#p-authors");
     if (sec && people && w.byline && w.byline.length) {
-      const pill = (kind, i, label, title) =>
-        `<button type="button" class="p-chip${kind === "country" ? " c-land" : ""}" data-go="${kind}:${i}"${title && title !== label ? ` title="${esc(title)}"` : ""}><span>${esc(label)}</span></button>`;
       const rows = w.byline.map(([a, at]) => {
         const who = typeof a === "number" ? people.authors[a] : null;
         const houses = at.map((h) => people.institutions[h]).filter(Boolean);
-        // each institution, then its country when it is not the one before
         const places = houses
           .map(
             (h, k) =>
-              pill("institution", h.i, h.name) +
-              (h.land && (k === 0 || houses[k - 1].land !== h.land)
-                ? pill("country", h.land.i, h.land.name)
+              go("institution", h.i, h.name, "b-inst") +
+              (h.land &&
+              (k === houses.length - 1 || houses[k + 1].land !== h.land)
+                ? `<span class="b-sep">, </span>${go("country", h.land.i, h.land.name, "b-land")}`
                 : ""),
           )
-          .join("");
-        return `<div class="p-arow">${
+          .join('<span class="b-sep"> · </span>');
+        return `<li><span class="b-who">${
           who
-            ? pill("author", who.i, who.short || who.name, who.name)
-            : `<span class="p-plain">${esc(a)}</span>`
-        }${places}</div>`;
+            ? go("author", who.i, who.short || who.name, "b-name", who.name)
+            : esc(a)
+        }</span><span class="b-at">${places}</span></li>`;
       });
-      const venue = people.venueOf.get(e);
-      const house = venue && venue.house;
-      sec.innerHTML = `<h3>Authors <span>${rows.length}</span></h3><div class="p-arows">${rows.join("")}</div>${
+      sec.innerHTML = `<h3>Authors <span>${rows.length}</span></h3><ol class="p-byline">${rows.join("")}</ol>${
         rows.length > 12
           ? `<button type="button" class="p-more" data-all>+${rows.length - 12} more</button>`
           : ""
-      }${
-        venue
-          ? `<h3 class="p-vhead">Venue</h3><div class="p-chips">${pill("venue", venue.i, venue.short || venue.name, venue.name)}${
-              house ? pill("publisher", house.i, house.full || house.name) : ""
-            }</div>`
-          : ""
       }`;
       sec.hidden = false;
-      if (by) by.textContent = [e.year, w.venue].filter(Boolean).join(" · ");
       return void showAbstract(p, w);
     }
     const list = w.authors && w.authors.length ? w.authors : null;
@@ -337,7 +350,7 @@ export function renderPanel(ui) {
           ? `${list.slice(0, 8).join(", ")} et al.`
           : list.join(", ")
         : e.authors;
-      by.textContent = `${who}${e.year ? ` (${e.year})` : ""}${w.venue ? ` · ${w.venue}` : ""}`;
+      by.textContent = `${who}${e.year ? ` (${e.year})` : ""}${w.venue ? ` · ${w.venue}` : ""}${w.where ? ` ${w.where}` : ""}`;
     }
     showAbstract(p, w);
   });
