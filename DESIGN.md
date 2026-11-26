@@ -22,7 +22,6 @@ colors:
   hub-gene-tree: "#0e7490"
   hub-species-tree: "#15803d"
   hub-network: "#4338ca"
-  hub-tree-of-blobs: "#7c3aed"
   hub-combinatorics: "#b45309"
   hub-algebraic: "#b91c1c"
   hub-statistics: "#be185d"
@@ -177,8 +176,8 @@ A restrained paper-and-ink palette, with hub colours and one amber as the only v
   the panel; by night **Night Amber** (night-amber). It means one direction and nothing else.
 
 ### Tertiary
-- **Hub colours** (hub-alignment, hub-gene-tree, hub-species-tree, hub-network, hub-tree-of-blobs,
-  hub-combinatorics, hub-algebraic, hub-statistics, hub-geometry): each hub's identity, set on the
+- **Hub colours** (hub-alignment, hub-gene-tree, hub-species-tree, hub-network, hub-combinatorics,
+  hub-algebraic, hub-statistics, hub-geometry): each hub's identity, set on the
   marks of its entries, its row of the timeline, its wedge of the tree, the border of a formalized
   tag and the name in a panel's head. Each has a lighter night variant (see the sidecar). A hub
   added later takes the next spare colour.

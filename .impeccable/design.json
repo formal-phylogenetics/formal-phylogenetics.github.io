@@ -328,23 +328,6 @@
           "#dde9ff"
         ]
       },
-      "hub-tree-of-blobs": {
-        "role": "tertiary",
-        "displayName": "Tree-of-Blobs Violet",
-        "canonical": "#7c3aed",
-        "oklch": "oklch(54.1% 0.247 293.0)",
-        "night": "#c4a2ff",
-        "tonalRamp": [
-          "#120035",
-          "#2e0068",
-          "#4d109e",
-          "#6d2fd4",
-          "#8d58fc",
-          "#ac87ff",
-          "#ceb4ff",
-          "#f1e1ff"
-        ]
-      },
       "hub-combinatorics": {
         "role": "tertiary",
         "displayName": "Combinatorics Ochre",

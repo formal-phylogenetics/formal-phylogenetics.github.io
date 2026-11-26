@@ -18,8 +18,8 @@ web
 ## Product Purpose
 
 The site of Formal Phylogenetics, a collection of Lean 4 formalizations of phylogenetics organized
-as a tree of repositories (a root library, hubs of inference and of theory, sub-hubs, and a
-repository for each paper formalized). Its purpose is to map the literature the collection draws
+as a tree of repositories (a root library, hubs of inference and of theory, each with its families
+of papers, the libraries under a hub, and a repository for each paper formalized). Its purpose is to map the literature the collection draws
 on: the papers of every hub's catalog, the citations between them, their authors and co-authors,
 their venues and publishers, and the institutions and countries their bylines give. A visit
 succeeds when a reader can follow a thread through that literature (a paper to what it cites, an

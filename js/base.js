@@ -22,7 +22,6 @@ export const COLOURS = {
   "lean4-phylo-gene-tree": ["#0e7490", "#4cc9e0"],
   "lean4-phylo-species-tree": ["#15803d", "#5fd38d"],
   "lean4-phylo-network": ["#4338ca", "#a5a5ff"],
-  "lean4-phylo-tree-of-blobs": ["#7c3aed", "#c4a2ff"],
   "lean4-phylo-combinatorics": ["#b45309", "#f0b35a"],
   "lean4-phylo-algebraic": ["#b91c1c", "#ff8f8f"],
   "lean4-phylo-statistics": ["#be185d", "#ff8cc6"],
