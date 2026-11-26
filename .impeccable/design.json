@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-26T20:17:11+00:00",
+  "title": "Design System: Formal Phylogenetics",
+  "extensions": {
+    "colorMeta": {
+      "archive-paper": {
+        "role": "neutral",
+        "displayName": "Archive Paper",
+        "canonical": "#f6f3ec",
+        "oklch": "oklch(96.5% 0.010 87.5)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#272520",
+          "#44423c",
+          "#63615b",
+          "#85827c",
+          "#a8a59e",
+          "#ccc9c2",
+          "#f1eee7"
+        ]
+      },
+      "card-paper": {
+        "role": "neutral",
+        "displayName": "Card Paper",
+        "canonical": "#fffdf8",
+        "oklch": "oklch(99.4% 0.007 88.6)",
+        "tonalRamp": [
+          "#0c0b08",
+          "#262521",
+          "#43423e",
+          "#63615d",
+          "#84827e",
+          "#a7a5a0",
+          "#cbc9c4",
+          "#f0eee9"
+        ]
+      },
+      "raised-paper": {
+        "role": "neutral",
+        "displayName": "Raised Paper",
+        "canonical": "#fbf8f1",
+        "oklch": "oklch(98.0% 0.010 87.5)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#272520",
+          "#44423c",
+          "#63615b",
+          "#85827c",
+          "#a8a59e",
+          "#ccc9c2",
+          "#f1eee7"
+        ]
+      },
+      "iron-gall-ink": {
+        "role": "primary",
+        "displayName": "Iron-Gall Ink",
+        "canonical": "#22201b",
+        "oklch": "oklch(24.4% 0.010 88.8)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#272520",
+          "#44423c",
+          "#63615b",
+          "#85827c",
+          "#a7a59e",
+          "#ccc9c2",
+          "#f1eee7"
+        ]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#4f4b44",
+        "oklch": "oklch(41.4% 0.013 81.8)",
+        "tonalRamp": [
+          "#0e0b06",
+          "#28251e",
+          "#45413b",
+          "#656159",
+          "#86827a",
+          "#a9a49c",
+          "#cdc8c0",
+          "#f3eee5"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "#6b665e",
+        "oklch": "oklch(51.2% 0.014 79.7)",
+        "tonalRamp": [
+          "#0e0b05",
+          "#29241e",
+          "#46413a",
+          "#656059",
+          "#878279",
+          "#aaa49c",
+          "#cec8bf",
+          "#f3eee4"
+        ]
+      },
+      "ink-faint": {
+        "role": "neutral",
+        "displayName": "Ink Faint",
+        "canonical": "#a8a297",
+        "oklch": "oklch(71.4% 0.017 82.8)",
+        "tonalRamp": [
+          "#0f0a04",
+          "#29241c",
+          "#464138",
+          "#666156",
+          "#878277",
+          "#aaa499",
+          "#cfc8bd",
+          "#f4eee2"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e2dccf",
+        "oklch": "oklch(89.6% 0.019 86.2)",
+        "tonalRamp": [
+          "#0f0b04",
+          "#29251b",
+          "#464137",
+          "#666155",
+          "#878276",
+          "#aaa498",
+          "#cec9bc",
+          "#f4eee1"
+        ]
+      },
+      "citation-amber": {
+        "role": "secondary",
+        "displayName": "Citation Amber",
+        "canonical": "#c2700c",
+        "oklch": "oklch(62.3% 0.141 61.6)",
+        "tonalRamp": [
+          "#1d0300",
+          "#421600",
+          "#6a2f00",
+          "#944b00",
+          "#b96d19",
+          "#d89457",
+          "#f5bc8c",
+          "#ffe6c3"
+        ]
+      },
+      "focus-blue": {
+        "role": "neutral",
+        "displayName": "Focus Blue",
+        "canonical": "#2563eb",
+        "oklch": "oklch(54.6% 0.215 262.9)",
+        "tonalRamp": [
+          "#000234",
+          "#001967",
+          "#07359b",
+          "#1b54d1",
+          "#3d79f9",
+          "#6aa1ff",
+          "#99c8ff",
+          "#ccefff"
+        ]
+      },
+      "forest-night": {
+        "role": "neutral",
+        "displayName": "Forest Night",
+        "canonical": "#121816",
+        "oklch": "oklch(20.2% 0.010 173.1)",
+        "tonalRamp": [
+          "#070d0b",
+          "#202725",
+          "#3d4441",
+          "#5c6361",
+          "#7d8482",
+          "#9fa7a4",
+          "#c3cbc8",
+          "#e8f1ee"
+        ]
+      },
+      "forest-card": {
+        "role": "neutral",
+        "displayName": "Forest Card",
+        "canonical": "#1a221e",
+        "oklch": "oklch(24.3% 0.014 163.6)",
+        "tonalRamp": [
+          "#060d0a",
+          "#1f2723",
+          "#3c4440",
+          "#5a645f",
+          "#7b8580",
+          "#9ea8a3",
+          "#c2ccc7",
+          "#e7f2ec"
+        ]
+      },
+      "forest-raised": {
+        "role": "neutral",
+        "displayName": "Forest Raised",
+        "canonical": "#1e2723",
+        "oklch": "oklch(26.3% 0.015 166.5)",
+        "tonalRamp": [
+          "#060d0a",
+          "#1e2723",
+          "#3b4540",
+          "#5a645f",
+          "#7a8580",
+          "#9da8a3",
+          "#c1ccc7",
+          "#e6f2ec"
+        ]
+      },
+      "night-ink": {
+        "role": "primary",
+        "displayName": "Night Ink",
+        "canonical": "#eee9dc",
+        "oklch": "oklch(93.4% 0.018 89.4)",
+        "tonalRamp": [
+          "#0e0b04",
+          "#29251b",
+          "#464237",
+          "#656156",
+          "#878276",
+          "#a9a598",
+          "#cec9bc",
+          "#f3eee1"
+        ]
+      },
+      "night-hairline": {
+        "role": "neutral",
+        "displayName": "Night Hairline",
+        "canonical": "#34403a",
+        "oklch": "oklch(35.9% 0.019 163.7)",
+        "tonalRamp": [
+          "#040e09",
+          "#1d2823",
+          "#39453f",
+          "#58655e",
+          "#79867f",
+          "#9ba9a2",
+          "#bfcdc6",
+          "#e4f3eb"
+        ]
+      },
+      "night-amber": {
+        "role": "secondary",
+        "displayName": "Night Amber",
+        "canonical": "#f5a524",
+        "oklch": "oklch(78.2% 0.158 72.3)",
+        "tonalRamp": [
+          "#1c0300",
+          "#411800",
+          "#693200",
+          "#924e00",
+          "#b77000",
+          "#d5973f",
+          "#f2bf7d",
+          "#ffe8b9"
+        ]
+      },
+      "hub-alignment": {
+        "role": "tertiary",
+        "displayName": "Alignment Blue",
+        "canonical": "#2563eb",
+        "oklch": "oklch(54.6% 0.215 262.9)",
+        "night": "#7aa7ff",
+        "tonalRamp": [
+          "#000234",
+          "#001967",
+          "#07359b",
+          "#1b54d1",
+          "#3d79f9",
+          "#6aa1ff",
+          "#99c8ff",
+          "#ccefff"
+        ]
+      },
+      "hub-gene-tree": {
+        "role": "tertiary",
+        "displayName": "Gene-Tree Teal",
+        "canonical": "#0e7490",
+        "oklch": "oklch(52.0% 0.094 223.1)",
+        "night": "#4cc9e0",
+        "tonalRamp": [
+          "#000e18",
+          "#002b3a",
+          "#004a5f",
+          "#106c85",
+          "#3d8ea9",
+          "#6fb0c7",
+          "#9fd2e6",
+          "#d1f6ff"
+        ]
+      },
+      "hub-species-tree": {
+        "role": "tertiary",
+        "displayName": "Species-Tree Green",
+        "canonical": "#15803d",
+        "oklch": "oklch(52.7% 0.137 150.1)",
+        "night": "#5fd38d",
+        "tonalRamp": [
+          "#001200",
+          "#00300a",
+          "#00511f",
+          "#127537",
+          "#3f9757",
+          "#70b880",
+          "#a0daab",
+          "#d2fbd9"
+        ]
+      },
+      "hub-network": {
+        "role": "tertiary",
+        "displayName": "Network Indigo",
+        "canonical": "#4338ca",
+        "oklch": "oklch(45.7% 0.215 277.0)",
+        "night": "#a5a5ff",
+        "tonalRamp": [
+          "#070033",
+          "#1b1065",
+          "#322b9a",
+          "#4c49cf",
+          "#696ef7",
+          "#8c97ff",
+          "#b3c0ff",
+          "#dde9ff"
+        ]
+      },
+      "hub-tree-of-blobs": {
+        "role": "tertiary",
+        "displayName": "Tree-of-Blobs Violet",
+        "canonical": "#7c3aed",
+        "oklch": "oklch(54.1% 0.247 293.0)",
+        "night": "#c4a2ff",
+        "tonalRamp": [
+          "#120035",
+          "#2e0068",
+          "#4d109e",
+          "#6d2fd4",
+          "#8d58fc",
+          "#ac87ff",
+          "#ceb4ff",
+          "#f1e1ff"
+        ]
+      },
+      "hub-combinatorics": {
+        "role": "tertiary",
+        "displayName": "Combinatorics Ochre",
+        "canonical": "#b45309",
+        "oklch": "oklch(55.5% 0.146 49.0)",
+        "night": "#f0b35a",
+        "tonalRamp": [
+          "#1f0000",
+          "#461000",
+          "#702800",
+          "#9c4300",
+          "#c2662d",
+          "#e08e61",
+          "#fcb793",
+          "#ffe2c8"
+        ]
+      },
+      "hub-algebraic": {
+        "role": "tertiary",
+        "displayName": "Algebraic Red",
+        "canonical": "#b91c1c",
+        "oklch": "oklch(50.5% 0.190 27.5)",
+        "night": "#ff8f8f",
+        "tonalRamp": [
+          "#260000",
+          "#520000",
+          "#800309",
+          "#b0221f",
+          "#d84b42",
+          "#f67b6f",
+          "#ffa99d",
+          "#ffd9cf"
+        ]
+      },
+      "hub-statistics": {
+        "role": "tertiary",
+        "displayName": "Statistics Rose",
+        "canonical": "#be185d",
+        "oklch": "oklch(52.5% 0.199 4.0)",
+        "night": "#ff8cc6",
+        "tonalRamp": [
+          "#250007",
+          "#50001e",
+          "#7f0038",
+          "#ae1655",
+          "#d74475",
+          "#f4759a",
+          "#ffa5bf",
+          "#ffd5e7"
+        ]
+      },
+      "hub-geometry": {
+        "role": "tertiary",
+        "displayName": "Geometry Orange",
+        "canonical": "#c2410c",
+        "oklch": "oklch(55.3% 0.174 38.4)",
+        "night": "#ff9c66",
+        "tonalRamp": [
+          "#230000",
+          "#4e0100",
+          "#7a1800",
+          "#a93200",
+          "#d0572f",
+          "#ee8462",
+          "#ffb093",
+          "#ffddc8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The site's name only; clamp(1.9rem, 3.4vw, 2.5rem)."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "The collection's figures under the title."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "The name in a panel's head, in its hub's colour."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "An entry's title in its panel."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Page text and the search field."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Panel content, bylines, citation lines and lists (0.82-0.86rem)."
+      },
+      "tag": {
+        "displayName": "Tag",
+        "purpose": "Entry tags and chips; 0.76rem inside a panel."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase section labels, meta lines, stat and credit labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "floating-card",
+        "value": "0 12px 32px -18px rgba(34, 32, 27, 0.45)",
+        "night": "0 16px 36px -18px rgba(0, 0, 0, 0.9)",
+        "purpose": "The entry card under the pointer; nothing else floats."
+      },
+      {
+        "name": "selected-tab",
+        "value": "0 1px 2px color-mix(in oklab, var(--ink) 12%, transparent)",
+        "purpose": "The selected segment of a switch."
+      },
+      {
+        "name": "selected-ring",
+        "value": "0 0 0 1.5px var(--ink)",
+        "purpose": "A selected tag; at 70% ink for what it cites, in amber for what cites it."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-draw",
+        "value": "cubic-bezier(0.25, 0.7, 0.2, 1)",
+        "purpose": "Edges drawing in and nodes gliding to new places (0.38-0.5s)."
+      },
+      {
+        "name": "ease-pop",
+        "value": "cubic-bezier(0.3, 1.5, 0.5, 1)",
+        "purpose": "The tree's tips appearing on first load (0.5s, staggered)."
+      },
+      {
+        "name": "state-quick",
+        "value": "0.15s",
+        "purpose": "Border and ring changes on tags."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "Under prefers-reduced-motion every transition and animation is off."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "560px"
+      },
+      {
+        "name": "compact",
+        "value": "760px"
+      },
+      {
+        "name": "medium",
+        "value": "899px"
+      },
+      {
+        "name": "wide",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Entry Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "An entry of a catalog: the hub mark (round for a method, square for theory; fill for the status) and its name.",
+      "html": "<span class=\"ds-tags\"><a class=\"ds-tag ds-formalized\" style=\"--c:#15803d\" href=\"#\">ASTRAL 2014</a><a class=\"ds-tag ds-theory\" style=\"--c:#be185d\" href=\"#\">Roch et al. 2019</a><a class=\"ds-tag ds-progress\" style=\"--c:#4338ca\" href=\"#\">SNaQ 2016</a><a class=\"ds-tag ds-sel\" style=\"--c:#2563eb\" href=\"#\">MAFFT 2002</a><a class=\"ds-tag ds-in\" style=\"--c:#0e7490\" href=\"#\">FastTree 2 2010</a></span>",
+      "css": ".ds-tags{display:flex;flex-wrap:wrap;gap:6px} .ds-tag{display:inline-flex;align-items:center;gap:7px;height:26px;padding:0 10px 0 9px;border:1px solid var(--rule, #e2dccf);border-radius:6px;background:var(--card, #fffdf8);color:var(--ink, #22201b);font:500 0.8rem/1 \"IBM Plex Sans\", \"Helvetica Neue\", sans-serif;text-decoration:none;white-space:nowrap;transition:border-color .15s,box-shadow .15s} .ds-tag::before{content:\"\";width:8px;height:8px;box-sizing:border-box;border:1.5px solid var(--c);border-radius:50%} .ds-tag.ds-theory::before{border-radius:1.5px} .ds-tag.ds-formalized{border-color:color-mix(in oklab,var(--c) 45%,var(--rule, #e2dccf));background:color-mix(in oklab,var(--c) 11%,var(--card, #fffdf8))} .ds-tag.ds-formalized::before{background:var(--c)} .ds-tag.ds-progress::before{background:linear-gradient(90deg,var(--c) 50%,transparent 50%)} .ds-tag:hover{border-color:var(--c)} .ds-tag.ds-sel{border-color:var(--ink, #22201b);box-shadow:0 0 0 1.5px var(--ink, #22201b)} .ds-tag.ds-in{box-shadow:0 0 0 1.5px var(--amber, #c2700c)} .ds-tag:focus-visible{outline:2px solid var(--focus, #2563eb);outline-offset:2px}"
+    },
+    {
+      "name": "Count Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "An author, venue or institution in a panel, with the number of entries behind it.",
+      "html": "<span class=\"ds-chips\"><button class=\"ds-chip\" type=\"button\">Siavash Mirarab<span class=\"ds-n\">7</span></button><button class=\"ds-chip\" type=\"button\">Syst. Biol.<span class=\"ds-n\">4</span></button><button class=\"ds-chip ds-more\" type=\"button\">+62 more</button></span>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:5px} .ds-chip{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 4px 0 10px;border:1px solid var(--rule, #e2dccf);border-radius:6px;background:var(--card, #fffdf8);color:var(--ink, #22201b);font:500 0.8rem \"IBM Plex Sans\", \"Helvetica Neue\", sans-serif;cursor:pointer} .ds-chip:hover{border-color:var(--ink-3, #6b665e)} .ds-chip:focus-visible{outline:2px solid var(--focus, #2563eb);outline-offset:2px} .ds-n{min-width:18px;padding:1px 5px;border-radius:4px;background:color-mix(in oklab,var(--ink, #22201b) 8%,transparent);color:var(--ink-2, #4f4b44);font-size:.72rem;font-variant-numeric:tabular-nums} .ds-chip.ds-more{padding:0 10px;border-style:dashed;color:var(--ink-3, #6b665e)}"
+    },
+    {
+      "name": "Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "A link out of the site from a panel (the paper).",
+      "html": "<a class=\"ds-btn\" href=\"#\">Paper ↗</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;height:30px;padding:0 12px;border:1px solid var(--rule, #e2dccf);border-radius:999px;background:var(--card, #fffdf8);color:var(--ink, #22201b);font:500 0.84rem \"IBM Plex Sans\", \"Helvetica Neue\", sans-serif;text-decoration:none} .ds-btn:hover{border-color:var(--ink-3, #6b665e)} .ds-btn:focus-visible{outline:2px solid var(--focus, #2563eb);outline-offset:2px}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The formalization of an entry; one per panel at most.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Formalization ↗</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;height:30px;padding:0 12px;border:1px solid var(--ink, #22201b);border-radius:999px;background:var(--ink, #22201b);color:var(--paper, #f6f3ec);font:500 0.84rem \"IBM Plex Sans\", \"Helvetica Neue\", sans-serif;text-decoration:none} .ds-btn-primary:hover{opacity:.88} .ds-btn-primary:focus-visible{outline:2px solid var(--focus, #2563eb);outline-offset:2px}"
+    },
+    {
+      "name": "Identifier Pill",
+      "kind": "chip",
+      "refersTo": "link-pill",
+      "description": "A person's or an institution's page elsewhere: ORCID, Google Scholar, dblp, OpenAlex, ROR.",
+      "html": "<span class=\"ds-ids\"><a class=\"ds-id\" href=\"#\">ORCID 0000-0001-7717-3514</a><a class=\"ds-id\" href=\"#\">Google Scholar</a><a class=\"ds-id\" href=\"#\">dblp</a></span>",
+      "css": ".ds-ids{display:flex;flex-wrap:wrap;gap:6px} .ds-id{padding:2px 9px;border:1px solid var(--rule, #e2dccf);border-radius:999px;background:var(--card, #fffdf8);color:var(--ink, #22201b);font:400 0.76rem \"IBM Plex Sans\", \"Helvetica Neue\", sans-serif;text-decoration:none} .ds-id:hover{border-color:var(--ink-3, #6b665e)} .ds-id:focus-visible{outline:2px solid var(--focus, #2563eb);outline-offset:2px}"
+    },
+    {
+      "name": "Segmented Switch",
+      "kind": "nav",
+      "refersTo": "tab",
+      "description": "What the stage shows, and how the list is grouped.",
+      "html": "<div class=\"ds-seg\" role=\"tablist\"><button type=\"button\" role=\"tab\" aria-selected=\"true\">Citations</button><button type=\"button\" role=\"tab\" aria-selected=\"false\">Co-authorship</button><button type=\"button\" role=\"tab\" aria-selected=\"false\">Author-venue</button></div>",
+      "css": ".ds-seg{display:inline-flex;gap:2px;padding:2px;border-radius:8px;background:color-mix(in oklab,var(--ink, #22201b) 5%,transparent)} .ds-seg button{min-height:28px;padding:0 10px;border:0;border-radius:6px;background:none;color:var(--ink-3, #6b665e);font:400 0.8rem \"IBM Plex Sans\", \"Helvetica Neue\", sans-serif;cursor:pointer} .ds-seg button:hover{color:var(--ink, #22201b)} .ds-seg button[aria-selected=\"true\"]{background:var(--card, #fffdf8);color:var(--ink, #22201b);box-shadow:0 1px 2px color-mix(in oklab,var(--ink, #22201b) 12%,transparent)} .ds-seg button:focus-visible{outline:2px solid var(--focus, #2563eb);outline-offset:1px}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "The search: an underline, no box; fields such as author: or institution: narrow it.",
+      "html": "<input class=\"ds-q\" type=\"search\" placeholder=\"Search a method, a title, an author or an institution\" />",
+      "css": ".ds-q{width:100%;max-width:420px;padding:8px 2px;border:0;border-bottom:1px solid var(--ink-4, #a8a297);background:none;color:var(--ink, #22201b);font:400 0.95rem \"IBM Plex Sans\", \"Helvetica Neue\", sans-serif} .ds-q::placeholder{color:var(--ink-3, #6b665e)} .ds-q:focus{outline:none;border-bottom-color:var(--ink, #22201b)}"
+    },
+    {
+      "name": "Section Label",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "How a section of a panel is introduced: a faint dash, an uppercase label and its count.",
+      "html": "<h3 class=\"ds-sec\">Authors <span>16</span></h3>",
+      "css": ".ds-sec{display:flex;align-items:center;gap:8px;margin:0 0 8px;font:600 0.7rem \"IBM Plex Sans\", \"Helvetica Neue\", sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3, #6b665e)} .ds-sec::before{content:\"\";width:14px;height:2px;border-radius:1px;background:var(--ink-4, #a8a297)} .ds-sec span{letter-spacing:0}"
+    },
+    {
+      "name": "Byline",
+      "kind": "custom",
+      "refersTo": "body-small",
+      "description": "An entry's authors as the paper prints them, each with the institutions it gives them and their countries; every name a link.",
+      "html": "<ol class=\"ds-byline\"><li><button class=\"ds-who\" type=\"button\">Thomas Wong</button><span class=\"ds-at\"><button class=\"ds-inst\" type=\"button\">Australian National University</button><span class=\"ds-sep\">, </span><button class=\"ds-land\" type=\"button\">Australia</button></span></li><li><button class=\"ds-who\" type=\"button\">Hector Baños</button><span class=\"ds-at\"><button class=\"ds-inst\" type=\"button\">California State University, San Bernardino</button><span class=\"ds-sep\">, </span><button class=\"ds-land\" type=\"button\">United States</button><span class=\"ds-sep\"> · </span><button class=\"ds-inst\" type=\"button\">Dalhousie University</button><span class=\"ds-sep\">, </span><button class=\"ds-land\" type=\"button\">Canada</button></span></li></ol>",
+      "css": ".ds-byline{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:5px 16px;margin:0;padding:0;list-style:none;font:400 0.84rem/1.4 \"IBM Plex Sans\", \"Helvetica Neue\", sans-serif} .ds-byline li{display:contents} .ds-byline button{padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;text-underline-offset:2px;text-decoration-color:var(--ink-4, #a8a297);cursor:pointer} .ds-who{color:var(--ink, #22201b);font-weight:600!important} .ds-at{color:var(--ink-2, #4f4b44)} .ds-land{color:var(--ink-3, #6b665e)!important} .ds-byline button:hover{color:var(--ink, #22201b);text-decoration-line:underline} .ds-byline button:focus-visible{outline:2px solid var(--focus, #2563eb);outline-offset:2px} .ds-sep{color:var(--ink-4, #a8a297)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Annotated Atlas",
+    "overview": "The site is a map of a field. Each hub of the collection is a region with its own colour, and every name on the map leads somewhere: a paper to what it cites, an author to their co-authors and institutions, a venue to its authors. The notes stay quiet beside the map. The interface is ink on archive paper by day and the same ink, lightened, on a green-black forest night: little text, small type, hairlines, and colour spent only where it carries information.\n\nOne visual language runs through every view, list, chip and card. Colour is the hub. Shape is the kind of paper: round for a method, square for theory. Fill is the status: solid once formalized, half while in progress, dotted when partly covered, hollow to do. What an entry cites is drawn in ink, what cites it in amber. A reader who learns these four encodings once can read the tree, the timeline, the graphs and the lists without a legend.\n\nThe density is that of a well-set reference work: compact, labelled, legible at a glance and in bulk. Nothing is raised, glowing or ornamental; the data carries the colour, and the chrome stays paper and ink.",
+    "keyCharacteristics": [
+      "Warm archive paper and iron-gall ink by day; forest night by dark, chosen by the reader or the system.",
+      "Hub colour as the only categorical colour; citation amber as the only directional one.",
+      "Serif for what a thing is called, sans for everything that describes or labels it.",
+      "Flat tonal layering; one soft shadow, for what floats under the pointer.",
+      "Small tags and pills for collections; plain text links for reading (bylines, citations)."
+    ],
+    "rules": [
+      {
+        "name": "The Hub Owns the Colour Rule",
+        "body": "Categorical colour belongs to the hubs. Interface chrome (tabs, buttons, panels, links) stays paper and ink; no hue is spent on decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Directions Rule",
+        "body": "Ink for what an entry cites, amber for what cites it. Amber is never a highlight, a warning or an accent elsewhere.",
+        "section": "colors"
+      },
+      {
+        "name": "The Faint Is Not Text Rule",
+        "body": "Ink Faint marks structure (an underline, a \"·\", a section dash). Any word, count or year is Ink Muted at the lightest.",
+        "section": "colors"
+      },
+      {
+        "name": "The Serif Names Things Rule",
+        "body": "Literata only for what a thing is called or counted; never for a label, a control or running metadata.",
+        "section": "typography"
+      },
+      {
+        "name": "The Small-Caps Labels Rule",
+        "body": "A section is introduced by a short uppercase label with a faint dash before it, never by a heading of larger size; the content carries the weight.",
+        "section": "typography"
+      },
+      {
+        "name": "The Readable Width Rule",
+        "body": "No line of related text spans the full stage; cap it so the eye can travel from a name to its date.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Paper Rule",
+        "body": "Everything at rest lies flat on the paper. Only what floats above the pointer casts a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Mark Grammar Rule",
+        "body": "Round is a method, square is theory; solid is formalized, half is in progress, dotted is partly covered, hollow is to do. These shapes and fills mean nothing else anywhere on the site.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do spend colour only on hubs (hub colours) and on the direction of a citation (ink, amber).",
+      "Do keep the mark grammar everywhere an entry appears: hub colour, shape for the kind, fill for the status.",
+      "Do use Literata for names, titles and figures, and IBM Plex Sans for everything else.",
+      "Do separate rows by spacing (5–7px gaps) and cap text width inside full-width panels.",
+      "Do give every name in a panel a link to its own panel."
+    ],
+    "donts": [
+      "Don't draw a rule between every row of a list or byline; the user rejected rows of horizontal bars.",
+      "Don't set a byline or a citation as pills; pills are for collections the reader browses and jumps through.",
+      "Don't use amber for anything but what cites an entry.",
+      "Don't add shadows to panels, tags or chips at rest.",
+      "Don't set words in Ink Faint."
+    ]
+  }
+}

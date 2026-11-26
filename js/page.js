@@ -477,6 +477,15 @@ export async function main() {
       if (nets[view]) nets[view].setWindow(lastWin.a, lastWin.b);
     });
   });
+  // what the graphs mark: the pinned author, venue or other group, or the pinned entry, which they
+  // show as its authors and venue (the same object while it stays pinned)
+  let entryPin = null;
+  const graphPin = () => {
+    if (!ui.selected) return ui.group;
+    if (!entryPin || entryPin.e !== ui.selected)
+      entryPin = { kind: "entry", e: ui.selected, entries: [ui.selected] };
+    return entryPin;
+  };
   const show = (v) => {
     view = v;
     for (const b of document.querySelectorAll(".views [data-view]"))
@@ -499,7 +508,7 @@ export async function main() {
       return;
     }
     nets[v] ||= createNetwork(net, netLinks, ui, people, v);
-    nets[v].pin(ui.group);
+    nets[v].pin(graphPin());
     net.setAttribute(
       "aria-label",
       v === "coauthors"
@@ -563,7 +572,8 @@ export async function main() {
     }[k];
     return list && people ? people[list][+i] : null;
   };
-  const pinAll = (g) => {
+  const pinAll = () => {
+    const g = graphPin();
     for (const n of Object.values(nets)) n.pin(g);
   };
   const selectGroup = ui.selectGroup;
@@ -578,17 +588,15 @@ export async function main() {
   };
   ui.selectGroup = (g) => {
     selectGroup(g);
-    pinAll(g);
+    pinAll();
     markLists(g);
   };
   ui.pickGroup = (g) => ui.selectGroup(sameGroup(ui.group, g) ? null : g);
   const select = ui.select;
   ui.select = (e, from) => {
     select(e, from);
-    if (e) {
-      pinAll(null);
-      markLists(null);
-    }
+    pinAll();
+    if (e) markLists(null);
     if (from === "panel") topOfPanel();
   };
   // a pick inside the panel changes it in place: its top comes back into view when it was passed

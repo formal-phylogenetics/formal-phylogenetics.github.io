@@ -559,6 +559,7 @@ export function createNetwork(svg, canvas, ui, people, kind) {
       // what this graph does not draw (a venue or publisher among the authors, a link of the other
       // graph): the authors of its entries, and in the rows their venues
       for (const n of t.nodes) lit.add(n);
+      if (t.hot) hot = t.hot;
     } else if (t) {
       hot = t;
       around(t);
@@ -608,6 +609,11 @@ export function createNetwork(svg, canvas, ui, people, kind) {
       return rows ? g : { kind: "set", nodes: related(g.entries) };
     if (g.kind === "institution" || g.kind === "country") return g;
     if (g === restA) return restA;
+    // a pinned entry: its authors, and in the rows its venue, named even where its name had no room
+    if (g.kind === "entry") {
+      const v = rows && people.venueOf.get(g.e);
+      return { kind: "set", nodes: related(g.entries), hot: v && dotOf.get(v) };
+    }
     return (
       dotFor(g) ||
       (g.entries ? { kind: "set", nodes: related(g.entries) } : null)

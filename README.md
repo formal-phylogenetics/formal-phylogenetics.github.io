@@ -17,7 +17,8 @@ above one venue by their links. In both graphs a link
 is as wide as the entries behind it; pointing at an author, a venue, a publisher or a link tells
 what it is, and a click pins it in the panel; a click on what is pinned, on nothing, or Escape lets it go. A pinned
 author, venue, publisher, institution or country is marked in every view with what belongs to it (in
-the timeline its entries, in the graphs its authors and venues) and the links between two of those.
+the timeline its entries, in the graphs its authors and venues) and the links between two of those;
+a pinned entry is marked in the graphs by its authors and its venue.
 Then come the panel of the pinned entry, author, venue, publisher or link; the search; and the list, of the
 hubs, which open to their families, of the authors, of the publishers, which open to their
 venues (a conference is a venue under Conference, a preprint server one under Preprint), or of the
