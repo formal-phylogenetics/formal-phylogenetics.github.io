@@ -81,7 +81,10 @@ and [Europe PMC](https://europepmc.org), or, where none gives the abstract, from
   tree grows out from its root, each lineage at its own rate, the tips' buds open as they are
   reached, the root's glow pulses), so that it animates wherever it is shown; `share.png`, the image shown when the page is shared, that drawing with the
   name and the line of the site; `icon.svg` and `apple-touch-icon.png`, the icon, the same tree,
-  small. None depends on the catalogs, so none changes when a hub or an entry is added.
+  small. None depends on the catalogs, so none changes when a hub or an entry is added. `fonts/`,
+  the faces of the page, IBM Plex Sans and Literata, served with it: one variable file for each
+  script, which `style.css` declares and a page fetches only when its text needs it, with their
+  licence (`OFL-*.txt`).
 
 To preview it, run `python3 -m http.server` here and open <http://localhost:8000/>.
 

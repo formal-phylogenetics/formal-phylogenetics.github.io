@@ -25,14 +25,19 @@
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:url" content="https://formal-phylogenetics.vltanh.me/" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#f6f3ec"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#121816"
+      media="(prefers-color-scheme: dark)"
+    />
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Literata:opsz,wght@7..72,400..600&display=swap"
-      rel="stylesheet"
-    />
     <script>
       // The theme the reader chose, applied before the page is drawn.
       try {
@@ -41,8 +46,38 @@
           document.documentElement.dataset.theme = t;
       } catch (e) {}
     </script>
+    <!-- the faces of the first screen, fetched with the stylesheet rather than after it -->
+    <link
+      rel="preload"
+      href="assets/fonts/plex-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/literata-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="app.js"></script>
+    <!-- the modules of app.js, fetched together rather than one import after another -->
+    <link rel="modulepreload" href="js/page.js" />
+    <link rel="modulepreload" href="js/base.js" />
+    <link rel="modulepreload" href="js/data.js" />
+    <link rel="modulepreload" href="js/card.js" />
+    <link rel="modulepreload" href="js/lists.js" />
+    <link rel="modulepreload" href="js/network.js" />
+    <link rel="modulepreload" href="js/panel.js" />
+    <link rel="modulepreload" href="js/people.js" />
+    <link rel="modulepreload" href="js/query.js" />
+    <link rel="modulepreload" href="js/timeline.js" />
+    <!-- the hosts the page reads the catalogs from -->
+    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://api.github.com" crossorigin />
   </head>
   <body>
     <header class="top">

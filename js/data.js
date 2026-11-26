@@ -13,13 +13,18 @@ import {
 } from "./base.js";
 
 export async function loadLive() {
-  const { parse } = await import(TOML);
-  const read = async (repo, path) => {
+  // the reader of TOML and the registry are fetched together; the catalogs follow the registry
+  const text = async (repo, path) => {
     const r = await fetch(RAW(repo, path), { cache: "no-cache" });
     if (!r.ok) throw new Error(`${repo}/${path}: ${r.status}`);
-    return parse(await r.text());
+    return r.text();
   };
-  const registry = await read(ROOT, "collection/repos.toml");
+  const [{ parse }, root] = await Promise.all([
+    import(TOML),
+    text(ROOT, "collection/repos.toml"),
+  ]);
+  const read = async (repo, path) => parse(await text(repo, path));
+  const registry = parse(root);
   const hubs = (registry.repo || []).filter((r) => r.role === "hub");
   const cats = await Promise.all(
     hubs.map((h) => read(h.name, "catalog/papers.toml").catch(() => null)),

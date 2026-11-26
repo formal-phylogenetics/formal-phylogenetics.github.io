@@ -25,10 +25,10 @@ export function shell(app) {
         <dl class="meta">
           <div><dt>Maintainer</dt><dd><a href="https://vltanh.me">The-Anh Vu-Le</a>, with the help of Claude and ChatGPT</dd></div>
           <div><dt>Skills</dt><dd><a href="https://github.com/vltanh/formalize-math-paper">formalize-math-paper</a>, <a href="https://impeccable.style">impeccable</a></dd></div>
-          <div id="updated-row" hidden><dt>Updated</dt><dd id="updated"></dd></div>
+          <div id="updated-row" class="pending"><dt>Updated</dt><dd id="updated">&nbsp;</dd></div>
         </dl>
       </div>
-      <figure class="cover" id="cover"></figure>
+      <figure class="cover" id="cover"><svg id="fan" viewBox="0 0 760 372" aria-hidden="true"></svg></figure>
     </section>
     <div class="explorer">
       <div class="work">
@@ -54,9 +54,11 @@ export function shell(app) {
           </div>
           <svg id="axis" class="axis" aria-hidden="true"></svg>
         </div>
-        <div class="stage" id="stage">
+        <div class="stage loading" id="stage">
+          <canvas id="tl-links" class="tl-links" aria-hidden="true"></canvas>
           <svg id="graph" class="view" role="img" aria-label="The entries of the catalogs along time, a row for each hub, and the citations between them"></svg>
           <canvas id="net-links" class="net-links" aria-hidden="true" hidden></canvas>
+          <canvas id="net-over" class="net-links" aria-hidden="true" hidden></canvas>
           <svg id="net" class="net" role="img" hidden></svg>
           <p class="note" id="note" aria-live="polite"></p>
         </div>
@@ -110,6 +112,8 @@ export function themeNow() {
 export function wireTheme(btn) {
   const paint = () => {
     const dark = themeNow() === "dark";
+    for (const meta of document.querySelectorAll('meta[name="theme-color"]'))
+      meta.content = dark ? "#121816" : "#f6f3ec";
     btn.innerHTML = `${dark ? SUN : MOON}<span>${dark ? "Light" : "Dark"}</span>`;
     const label = dark ? "Switch to light mode" : "Switch to dark mode";
     btn.setAttribute("aria-label", label);
@@ -158,23 +162,25 @@ export function makeUi(m, els) {
     // a pinned author, venue, institution or other group: its entries, and the citations between two
     // of them
     const g = !e && ui.group;
-    els.graph.classList.toggle("focus", Boolean(e || g));
+    const focus = Boolean(e || g);
+    const links = [];
+    els.graph.classList.toggle("focus", focus);
     if (g) {
       const set = new Set(g.kind === "link" ? linkEntries(g) : g.entries || []);
       for (const x of set)
         for (const el of [x.node, ...(x.tags || [])]) add(el, "grp");
       for (const l of ui.links)
-        if (set.has(l.source) && set.has(l.target)) add(l.el, "grp");
-      return;
+        if (set.has(l.source) && set.has(l.target)) links.push([l, "grp"]);
+    } else if (e) {
+      for (const el of [e.node, ...(e.tags || [])]) add(el, "sel");
+      for (const x of ui.cites.get(e) || [])
+        for (const el of [x.node, ...(x.tags || [])]) add(el, "out");
+      for (const x of ui.citedBy.get(e) || [])
+        for (const el of [x.node, ...(x.tags || [])]) add(el, "in");
+      for (const l of ui.edgesOf.get(e) || [])
+        links.push([l, l.source === e ? "out" : "in"]);
     }
-    if (!e) return;
-    for (const el of [e.node, ...(e.tags || [])]) add(el, "sel");
-    for (const x of ui.cites.get(e) || [])
-      for (const el of [x.node, ...(x.tags || [])]) add(el, "out");
-    for (const x of ui.citedBy.get(e) || [])
-      for (const el of [x.node, ...(x.tags || [])]) add(el, "in");
-    for (const l of ui.edgesOf.get(e) || [])
-      add(l.el, l.source === e ? "out" : "in");
+    if (ui.timeline) ui.timeline.mark(links, focus);
   };
   ui.hover = (e, place) => {
     if (e === ui.hovered) {
@@ -251,21 +257,23 @@ export function makeUi(m, els) {
     // as the paper that makes it weighs (damping 0.85; a paper citing none spreads its weight evenly)
     const all = m.entries;
     const n = all.length;
-    const out = (e) => (ui.cites.get(e) || []).length;
-    let pr = new Map(all.map((e) => [e, 1 / n]));
+    const at = new Map(all.map((e, i) => [e, i]));
+    const src = Int32Array.from(ui.links, (l) => at.get(l.source));
+    const dst = Int32Array.from(ui.links, (l) => at.get(l.target));
+    const out = new Int32Array(n);
+    for (const i of src) out[i] += 1;
+    let pr = new Float64Array(n).fill(1 / n);
     for (let step = 0; step < 60; step++) {
       let spread = 0;
-      for (const e of all) if (!out(e)) spread += pr.get(e);
-      const next = new Map(all.map((e) => [e, (0.15 + 0.85 * spread) / n]));
-      for (const l of ui.links)
-        next.set(
-          l.target,
-          next.get(l.target) + (0.85 * pr.get(l.source)) / out(l.source),
-        );
+      for (let i = 0; i < n; i++) if (!out[i]) spread += pr[i];
+      const next = new Float64Array(n).fill((0.15 + 0.85 * spread) / n);
+      for (let k = 0; k < src.length; k++)
+        next[dst[k]] += (0.85 * pr[src[k]]) / out[src[k]];
       pr = next;
     }
-    const top = Math.max(...pr.values());
-    [...pr.entries()]
+    const top = Math.max(...pr);
+    all
+      .map((e, i) => [e, pr[i]])
       .sort((a, b) => b[1] - a[1])
       .forEach(([e, v], i) => {
         e.weight = v / top;
@@ -336,9 +344,18 @@ async function drawCover(figure) {
   svg.id = "fan";
   svg.removeAttribute("width");
   svg.removeAttribute("height");
+  // the glow of the root pulses while the cover is in sight, and rests once it is scrolled past
+  if ("IntersectionObserver" in window)
+    new IntersectionObserver(([seen]) =>
+      figure.classList.toggle("away", !seen.isIntersecting),
+    ).observe(figure);
 }
 
 export async function main() {
+  // the citations and the people are read while the catalogs are: none waits on another
+  const citationsRead = readCitations();
+  citationsRead.catch(() => {});
+  readPeople();
   const app = document.getElementById("app");
   shell(app);
   drawCover(document.getElementById("cover")).catch(() => {});
@@ -356,6 +373,7 @@ export async function main() {
     axis: document.getElementById("axis"),
     overview: document.getElementById("overview"),
     allYears: document.getElementById("all-years"),
+    links: document.getElementById("tl-links"),
   };
   // when the collection last changed: the last push to one of its public repositories
   fetch(
@@ -371,7 +389,7 @@ export async function main() {
       }).format(new Date(at));
       document.getElementById("updated").innerHTML =
         `<time datetime="${esc(at)}">${esc(shown)}</time>`;
-      document.getElementById("updated-row").hidden = false;
+      document.getElementById("updated-row").classList.remove("pending");
     })
     .catch(() => {});
   const themeBtn = document.getElementById("theme");
@@ -385,6 +403,7 @@ export async function main() {
       data = await loadSnapshot();
     } catch (err2) {
       els.note.textContent = "The catalogs could not be read from GitHub.";
+      els.stage.classList.remove("loading");
       return;
     }
   }
@@ -426,22 +445,24 @@ export async function main() {
   wireTimeline(els.graph, ui);
   wireList(ui);
   renderPanel(ui);
-  els.note.textContent =
+  // what the note says when nothing else is to be said: that the catalogs are a snapshot, if they are
+  const calm =
     data.source === "snapshot"
       ? "GitHub could not be reached: a snapshot of the catalogs."
       : "";
 
   // the citations, read once in the background for the panel, the cover and the timeline
   els.note.textContent = "Reading the citations…";
-  readCitations()
+  citationsRead
     .then((raw) => {
       ui.useCitations(raw);
       stats();
       ui.timeline = createTimeline(els, m, ui.links);
       ui.timeline.layout();
+      els.stage.classList.remove("loading");
       ui.timeline.enter();
       els.note.textContent = ui.links.length
-        ? ""
+        ? calm
         : "No citations could be read.";
       filter();
       ui.mark(ui.hovered || ui.selected);
@@ -449,6 +470,7 @@ export async function main() {
     })
     .catch(() => {
       ui.citations = "failed";
+      els.stage.classList.remove("loading");
       els.note.textContent = "The citations could not be read.";
       if (ui.selected) renderPanel(ui);
     });
@@ -467,6 +489,7 @@ export async function main() {
   let view = "citations";
   const net = document.getElementById("net");
   const netLinks = document.getElementById("net-links");
+  const netOver = document.getElementById("net-over");
   const keyNet = document.getElementById("key-net");
   const KEYS = {
     coauthors:
@@ -500,13 +523,18 @@ export async function main() {
     const timeline = v === "citations";
     // SVG elements take the attribute, not the property
     els.graph.toggleAttribute("hidden", !timeline);
+    els.links.hidden = !timeline;
     document.getElementById("axis").toggleAttribute("hidden", !timeline);
     document.getElementById("key-citations").hidden = !timeline;
     keyNet.hidden = timeline;
     net.toggleAttribute("hidden", timeline);
     netLinks.hidden = timeline;
+    netOver.hidden = timeline;
     hideCard();
-    if (timeline) return;
+    if (timeline) {
+      if (ui.timeline) ui.timeline.wake();
+      return;
+    }
     keyNet.innerHTML = KEYS[v];
     if (!people) {
       els.note.textContent = peopleFailed
@@ -514,7 +542,7 @@ export async function main() {
         : "Reading the authors…";
       return;
     }
-    nets[v] ||= createNetwork(net, netLinks, ui, people, v);
+    nets[v] ||= createNetwork(net, netLinks, netOver, ui, people, v);
     nets[v].pin(graphPin());
     net.setAttribute(
       "aria-label",
@@ -527,7 +555,14 @@ export async function main() {
   };
   for (const b of document.querySelectorAll(".views [data-view]"))
     b.addEventListener("click", () => show(b.dataset.view));
-  new ResizeObserver(() => nets[view] && nets[view].draw()).observe(els.stage);
+  // a new width draws the graph again; a new height, which its own drawing makes, does not
+  let stageWidth = 0;
+  new ResizeObserver(([seen]) => {
+    const w = Math.round(seen.contentRect.width);
+    if (w === stageWidth) return;
+    stageWidth = w;
+    if (nets[view]) nets[view].draw();
+  }).observe(els.stage);
 
   // the lists: by hub, by author, by venue
   const sections = {
@@ -672,6 +707,9 @@ export async function main() {
       return;
     }
     ui.model = people;
+    const idle = window.requestIdleCallback || ((f) => setTimeout(f, 300));
+    for (const which of ["authors", "venues", "institutions"])
+      idle(() => build(which), { timeout: 4000 });
     // the search also reads each entry's venue and the institutions of its byline
     for (const e of m.entries) {
       const v = people.venueOf.get(e);
@@ -687,7 +725,7 @@ export async function main() {
     if (view !== "citations") show(view);
     if (list !== "hubs") showList(list);
     if (els.note.textContent === "Reading the authors…")
-      els.note.textContent = "";
+      els.note.textContent = calm;
     if (q.value.trim()) filter();
   });
 
@@ -734,11 +772,12 @@ export async function main() {
     if (!on) opened.clear();
     // a citation shows when both its ends match
     for (const l of ui.links)
-      if (l.el)
-        l.el.classList.toggle("off", on && !(test(l.source) && test(l.target)));
+      l.off = on && !(test(l.source) && test(l.target));
+    if (ui.timeline) ui.timeline.search();
     if (nets[view]) nets[view].search(query);
-    // a country shows with its institutions that match
-    if (built.has("institutions"))
+    // a country shows with its institutions that match (the lists hidden follow the search when they
+    // are shown)
+    if (built.has("institutions") && list === "institutions")
       for (const d of sections.institutions.querySelectorAll(
         ":scope > details",
       )) {
@@ -763,7 +802,7 @@ export async function main() {
       }
     // an author or a publisher shows with the entries that match: its own, or its venues'
     for (const which of ["authors", "venues"]) {
-      if (!built.has(which)) continue;
+      if (!built.has(which) || which !== list) continue;
       for (const d of sections[which].querySelectorAll(":scope > details")) {
         const row = goOf(d, which === "authors" ? "author" : "publisher");
         const all = named(d.dataset.name);
@@ -798,7 +837,7 @@ export async function main() {
         : "Reading the authors…";
     else if (on && !any) els.note.textContent = "No entry matches the search.";
     else if (els.note.textContent === "No entry matches the search.")
-      els.note.textContent = "";
+      els.note.textContent = calm;
     if (adv.hidden === false && document.activeElement === q) fillForm();
   };
   // the catalogs often shorten the authors to "et al.": the full lists in works.json join what

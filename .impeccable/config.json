@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "plex sans\",\"helvetica neue\",sans-serif",
+        "createdAt": "2026-11-26T22:23:17.268Z",
+        "reason": "false positive: DESIGN.md typography.body declares IBM Plex Sans, Helvetica Neue, sans-serif; the detector split the quoted family name"
+      }
+    ]
+  }
+}

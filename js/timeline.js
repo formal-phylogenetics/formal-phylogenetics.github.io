@@ -21,7 +21,9 @@ export function wireTimeline(svg, ui) {
 // The timeline: every entry of the catalogs, in the row of its hub, at its year; time runs from
 // left to right, and a citation is a curve from the citing entry back to the entry it cites. Above
 // it, a trim bar chooses the years shown; a year's width grows with its papers. A row per hub, so
-// that a new hub is a new row.
+// that a new hub is a new row. The citations at rest are drawn on a canvas under the drawing, each
+// its own stroke, so that where they bundle the ink adds up; the marked ones (what an entry cites
+// and what cites it, or those within a pinned group) are paths over it, a few at a time.
 export function moveGlyph(e) {
   if (e.kind === "method") {
     e.node.setAttribute("cx", fmt(e.px));
@@ -33,8 +35,16 @@ export function moveGlyph(e) {
   }
 }
 
+const edgePath = (l) => {
+  const p = l.source;
+  const q = l.target;
+  const mid = (p.px + q.px) / 2;
+  return `M${fmt(p.px)} ${fmt(p.py)}C${fmt(mid)} ${fmt(p.py)} ${fmt(mid)} ${fmt(q.py)} ${fmt(q.px)} ${fmt(q.py)}`;
+};
+
 export function createTimeline(els, m, links) {
   const svg = els.graph;
+  const canvas = els.links;
   const nodes = m.entries.filter((e) => yearOf(e) !== null);
   for (const e of nodes) {
     e.y4 = yearOf(e);
@@ -89,14 +99,100 @@ export function createTimeline(els, m, links) {
     }),
   );
   const gEdges = svgEl("g", { class: "edges" }, svg);
-  for (const l of links)
-    l.el = svgEl("path", { class: "edge", pathLength: 1 }, gEdges);
   const gNodes = svgEl("g", { class: "nodes" }, svg);
+  const hubGroups = new Map(
+    lanes.map((h) => [
+      h,
+      svgEl("g", { class: "hub-c", style: hubStyle(h) }, gNodes),
+    ]),
+  );
   for (const e of nodes) {
-    const g = svgEl("g", { class: "hub-c", style: hubStyle(e.hub) }, gNodes);
-    e.node = glyph(e, 0, 0, e.r, g);
+    e.node = glyph(e, 0, 0, e.r, hubGroups.get(e.hub));
     e.node.dataset.key = e.key;
   }
+
+  // the citations at rest, on the canvas: the ink and its opacity are read from the page once and
+  // again when the theme changes, never at a mark or a layout
+  let W = 0;
+  let H = 0;
+  let tone = null;
+  const paintLinks = () => {
+    if (!W || svg.hasAttribute("hidden")) return;
+    const r = Math.min(2, window.devicePixelRatio || 1);
+    const cw = Math.round(W * r);
+    const ch = Math.round(H * r);
+    if (canvas.width !== cw || canvas.height !== ch) {
+      canvas.width = cw;
+      canvas.height = ch;
+    }
+    canvas.style.width = `${W}px`;
+    canvas.style.height = `${H}px`;
+    if (!tone) {
+      const css = getComputedStyle(svg);
+      tone = {
+        ink: css.getPropertyValue("--ink").trim() || "#22201b",
+        edge: parseFloat(css.getPropertyValue("--edge")) || 0.05,
+      };
+    }
+    const { ink, edge } = tone;
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.setTransform(r, 0, 0, r, 0, 0);
+    ctx.strokeStyle = ink;
+    ctx.lineWidth = 0.8;
+    for (const l of links) {
+      const p = l.source;
+      const q = l.target;
+      if (!p.vis || !q.vis) continue;
+      const mid = (p.px + q.px) / 2;
+      ctx.globalAlpha = l.off ? edge * 0.08 : edge;
+      ctx.beginPath();
+      ctx.moveTo(p.px, p.py);
+      ctx.bezierCurveTo(mid, p.py, mid, q.py, q.px, q.py);
+      ctx.stroke();
+    }
+  };
+  const retone = () => {
+    tone = null;
+    paintLinks();
+  };
+  new MutationObserver(retone).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener(
+    "change",
+    retone,
+  );
+
+  // the marked citations, as paths over the canvas: made when they are marked, so that each draws
+  // out from its entry, and moved by the layout
+  let marked = new Map();
+  const placeMarked = () => {
+    for (const [l, path] of marked) {
+      const shown = l.source.vis && l.target.vis;
+      path.style.display = shown ? "" : "none";
+      if (shown) path.setAttribute("d", edgePath(l));
+      path.classList.toggle("off", Boolean(l.off));
+    }
+  };
+  const markLinks = (list, focus) => {
+    gEdges.replaceChildren();
+    marked = new Map();
+    for (const [l, cls] of list) {
+      const path = svgEl("path", { class: `edge ${cls}`, pathLength: 1 });
+      marked.set(l, path);
+      gEdges.appendChild(path);
+    }
+    placeMarked();
+    canvas.classList.toggle("focus", focus);
+  };
+  // the classes of the motion, on the drawing and on the canvas of its citations
+  const flag = (cls, on) => {
+    svg.classList.toggle(cls, on);
+    canvas.classList.toggle(cls, on);
+  };
 
   // the trim bar: a track with the papers of each year, the shade outside the range shown, a frame
   // round it, a handle at each end, and the first and last years above the handles
@@ -141,8 +237,11 @@ export function createTimeline(els, m, links) {
   const PADY = 6;
   const GAP = 3;
   const OVH = 62;
+  // the width of the stage, as the resize observer last gave it (reading it from the page would make
+  // the browser lay the page out there and then)
+  let width = 0;
   const dims = () => {
-    const W = Math.max(300, Math.round(els.stage.clientWidth));
+    const W = Math.max(300, width || Math.round(els.stage.clientWidth));
     const L = W < 560 ? 92 : 122;
     return { W, L, PW: W - L - 14 };
   };
@@ -190,8 +289,18 @@ export function createTimeline(els, m, links) {
     return out.sort((p, q) => p[0] - q[0]);
   }
 
+  // the rows are laid out while the timeline shows; the trim bar always, since it chooses the years
+  // of the graphs too
+  let stale = false;
   function layout() {
     const d = dims();
+    if (svg.hasAttribute("hidden")) stale = true;
+    else layRows(d);
+    layTrim(d);
+  }
+
+  function layRows(d) {
+    stale = false;
     const X = scaleX(d);
     let top = 4;
     for (const h of lanes) {
@@ -229,27 +338,16 @@ export function createTimeline(els, m, links) {
       name.setAttribute("y", fmt(top + Math.min(height / 2, STEP) + 4));
       top += height + GAP;
     }
-    const H = top + 2;
+    H = top + 2;
+    W = d.W;
     svg.setAttribute("viewBox", `0 0 ${d.W} ${fmt(H)}`);
     svg.setAttribute("height", fmt(H));
     for (const e of nodes) {
       e.node.style.display = e.vis ? "" : "none";
       if (e.vis) moveGlyph(e);
     }
-    for (const l of links) {
-      const p = l.source;
-      const q = l.target;
-      if (!p.vis || !q.vis) {
-        l.el.style.display = "none";
-        continue;
-      }
-      l.el.style.display = "";
-      const mid = (p.px + q.px) / 2;
-      l.el.setAttribute(
-        "d",
-        `M${fmt(p.px)} ${fmt(p.py)}C${fmt(mid)} ${fmt(p.py)} ${fmt(mid)} ${fmt(q.py)} ${fmt(q.px)} ${fmt(q.py)}`,
-      );
-    }
+    paintLinks();
+    placeMarked();
 
     // the years: labels above the rows, lines across them
     const marks = ticks(d, X);
@@ -266,8 +364,10 @@ export function createTimeline(els, m, links) {
           `<line class="gridline" x1="${fmt(x)}" x2="${fmt(x)}" y1="0" y2="${fmt(H)}"/>`,
       )
       .join("");
+  }
 
-    // the trim bar
+  // the trim bar
+  function layTrim(d) {
     const TY = 22;
     const TH = 36;
     ov.setAttribute("viewBox", `0 0 ${d.W} ${OVH}`);
@@ -371,9 +471,9 @@ export function createTimeline(els, m, links) {
   let glideTimer = 0;
   const glide = () => {
     if (still()) return;
-    svg.classList.add("glide");
+    flag("glide", true);
     clearTimeout(glideTimer);
-    glideTimer = setTimeout(() => svg.classList.remove("glide"), 420);
+    glideTimer = setTimeout(() => flag("glide", false), 420);
   };
   const setWindow = (a, b, smooth = false) => {
     const w = Math.max(1, Math.min(b - a, Y1 - Y0));
@@ -473,10 +573,27 @@ export function createTimeline(els, m, links) {
   hA.addEventListener("keydown", keys("a"));
   hB.addEventListener("keydown", keys("b"));
   els.allYears.addEventListener("click", () => setWindow(Y0, Y1, true));
-  new ResizeObserver(schedule).observe(els.stage);
+  // a new width lays the timeline out again; a new height, which its own layout makes, does not
+  new ResizeObserver(([seen]) => {
+    const w = Math.round(seen.contentRect.width);
+    if (w === width) return;
+    width = w;
+    schedule();
+  }).observe(els.stage);
 
   return {
     layout,
+    // the timeline shown again: the rows follow what changed while it was hidden
+    wake() {
+      if (stale) layRows(dims());
+    },
+    // the citations to mark, each with its class (out, in, grp), and whether the rest fall back
+    mark: markLinks,
+    // the search changed which citations are dimmed (l.off)
+    search() {
+      paintLinks();
+      placeMarked();
+    },
     ensure(e) {
       if (e.y4 == null || (e.y4 >= st.a && e.y4 < st.b)) return;
       const w = st.b - st.a;
@@ -497,14 +614,14 @@ export function createTimeline(els, m, links) {
             "--d",
             `${Math.round(((e.px - d.L) / d.PW) * 1100)}ms`,
           );
-      svg.classList.add("pending");
+      flag("pending", true);
       const io = new IntersectionObserver(
         (seen) => {
           if (!seen.some((x) => x.isIntersecting)) return;
           io.disconnect();
-          svg.classList.remove("pending");
-          svg.classList.add("enter");
-          setTimeout(() => svg.classList.remove("enter"), 2200);
+          flag("pending", false);
+          flag("enter", true);
+          setTimeout(() => flag("enter", false), 2200);
         },
         { threshold: 0.12 },
       );

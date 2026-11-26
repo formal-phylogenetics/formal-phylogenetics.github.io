@@ -16,7 +16,7 @@ import { tagHtml } from "./lists.js";
 import { linkEntries } from "./people.js";
 
 export const chipOf = (kind, x, n) =>
-  `<button type="button" class="p-chip" data-go="${kind}:${x.i}"${x.short && x.short !== x.name ? ` title="${esc(x.name)}"` : ""}><span>${esc(x.short || x.name)}</span>${n != null ? `<span class="c-n">${n}</span>` : ""}</button>`;
+  `<button type="button" class="p-chip${n == null ? " bare" : ""}" data-go="${kind}:${x.i}"${x.short && x.short !== x.name ? ` title="${esc(x.name)}"` : ""}><span>${esc(x.short || x.name)}</span>${n != null ? `<span class="c-n">${n}</span>` : ""}</button>`;
 
 export function chipsSection(title, list, kind, note) {
   if (!list.length) return "";
@@ -255,7 +255,7 @@ export function renderPanel(ui) {
         : "";
     return `<div class="p-rel ${cls}">${head}<div class="tags">${list
       .slice(0, FIRST)
-      .map((x) => tagHtml(x, " mini"))
+      .map((x) => tagHtml(x, " mini", true))
       .join("")}${more}</div></div>`;
   };
   const ready = ui.citations === true;
@@ -280,7 +280,9 @@ export function renderPanel(ui) {
     b.addEventListener("click", () => {
       const list =
         (b.dataset.rel === "out" ? ui.cites : ui.citedBy).get(e) || [];
-      b.parentElement.innerHTML = list.map((x) => tagHtml(x, " mini")).join("");
+      b.parentElement.innerHTML = list
+        .map((x) => tagHtml(x, " mini", true))
+        .join("");
     });
   }
   p.scrollTop = 0;

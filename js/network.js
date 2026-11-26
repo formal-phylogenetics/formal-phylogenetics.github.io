@@ -25,7 +25,7 @@ export const SHORT_HOUSE = {
   Preprint: "Prepr.",
 };
 
-export function createNetwork(svg, canvas, ui, people, kind) {
+export function createNetwork(svg, canvas, upper, ui, people, kind) {
   const W0 = () => Math.max(300, Math.round(svg.parentNode.clientWidth));
   const rows = kind === "venues";
   const { publishers } = people;
@@ -181,7 +181,7 @@ export function createNetwork(svg, canvas, ui, people, kind) {
   };
 
   // the links, on the canvas under the drawing: each its own stroke, so that where they bundle the
-  // ink adds up; what is marked over the rest
+  // ink adds up; what is marked on a second canvas over the first, which then fades
   let W = 0;
   let H = 0;
   let focus = false;
@@ -191,21 +191,19 @@ export function createNetwork(svg, canvas, ui, people, kind) {
     svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
     svg.style.height = `${h}px`;
     const r = Math.min(2, window.devicePixelRatio || 1);
-    if (
-      canvas.width !== Math.round(w * r) ||
-      canvas.height !== Math.round(h * r)
-    ) {
-      canvas.width = Math.round(w * r);
-      canvas.height = Math.round(h * r);
+    for (const c of [canvas, upper]) {
+      if (c.width !== Math.round(w * r) || c.height !== Math.round(h * r)) {
+        c.width = Math.round(w * r);
+        c.height = Math.round(h * r);
+      }
+      c.style.width = `${w}px`;
+      c.style.height = `${h}px`;
     }
-    canvas.style.width = `${w}px`;
-    canvas.style.height = `${h}px`;
   };
-  // all the links at rest are drawn once into a picture of their own; marking one draws that
-  // picture faded and the marked links over it, so that pointing costs a few strokes, not all
-  const rest = document.createElement("canvas");
+  // all the links at rest are drawn once, on the lower canvas; marking one fades that canvas and
+  // draws the marked links on the upper one, so that pointing costs a few strokes, not all
   let restOk = false;
-  let ink = "#22201b";
+  let ink = null;
   const stroke = (ctx, l, alpha) => {
     ctx.globalAlpha = alpha;
     ctx.lineWidth = l.w;
@@ -222,15 +220,12 @@ export function createNetwork(svg, canvas, ui, people, kind) {
   };
   const paint = () => {
     if (!mine() || !W) return;
-    const ctx = canvas.getContext("2d");
     const r = canvas.width / W;
-    // the ink is read when the picture is redrawn, not at each mark, which would make the
-    // browser work out the styles of the whole page there and then
+    // the ink is read once and again when the theme changes, not at each drawing, which would make
+    // the browser work out the styles of the whole page there and then
+    ink ||= getComputedStyle(svg).getPropertyValue("--ink").trim() || "#22201b";
     if (!restOk) {
-      ink = getComputedStyle(svg).getPropertyValue("--ink").trim() || "#22201b";
-      rest.width = canvas.width;
-      rest.height = canvas.height;
-      const b = rest.getContext("2d");
+      const b = canvas.getContext("2d");
       pen(b, r, ink);
       b.clearRect(0, 0, W, H);
       const base = rows ? 0.14 : 0.16;
@@ -238,10 +233,10 @@ export function createNetwork(svg, canvas, ui, people, kind) {
         if (l.count) stroke(b, l, (l.rest ? 0.045 : base) * (l.off ? 0.14 : 1));
       restOk = true;
     }
+    canvas.classList.toggle("dim", focus);
+    const ctx = upper.getContext("2d");
     ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.globalAlpha = focus ? 0.2 : 1;
-    ctx.drawImage(rest, 0, 0);
+    ctx.clearRect(0, 0, upper.width, upper.height);
     if (!focus) return;
     pen(ctx, r, ink);
     for (const l of links)
@@ -729,6 +724,7 @@ export function createNetwork(svg, canvas, ui, people, kind) {
   });
   // the colours of the links follow the theme
   const repaint = () => {
+    ink = null;
     restOk = false;
     paint();
   };
