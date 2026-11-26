@@ -58,6 +58,28 @@
    ]
   },
   {
+   "orcid": ["0000-0001-5410-1518"],
+   "scholar": "uxSj18QAAAAJ",
+   "dblp": "40/4665",
+   "openalex": "A5087959579",
+   "institutions": [
+    {
+     "name": "University of California San Diego",
+     "at": 12,
+     "country": "US",
+     "from": 2015,
+     "to": 2026
+    },
+    {
+     "name": "The University of Texas at Austin",
+     "at": 4,
+     "country": "US",
+     "from": 2011,
+     "to": 2015
+    }
+   ]
+  },
+  {
    "orcid": ["0000-0001-9921-1091"],
    "scholar": "qFmGkM0AAAAJ",
    "dblp": "06/439",
@@ -102,28 +124,6 @@
    ]
   },
   {
-   "orcid": ["0000-0001-5410-1518"],
-   "scholar": "uxSj18QAAAAJ",
-   "dblp": "40/4665",
-   "openalex": "A5087959579",
-   "institutions": [
-    {
-     "name": "University of California San Diego",
-     "at": 12,
-     "country": "US",
-     "from": 2015,
-     "to": 2026
-    },
-    {
-     "name": "The University of Texas at Austin",
-     "at": 4,
-     "country": "US",
-     "from": 2011,
-     "to": 2015
-    }
-   ]
-  },
-  {
    "orcid": ["0000-0001-7142-4706"],
    "scholar": "9GAwpXYAAAAJ",
    "dblp": "53/5495",
@@ -156,6 +156,42 @@
      "country": "NZ",
      "from": 2009,
      "to": 2012
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0003-0353-0691"],
+   "scholar": "WbMNvJwAAAAJ",
+   "dblp": "01/501",
+   "openalex": "A5025640090",
+   "institutions": [
+    {
+     "name": "FORTH Institute of Computer Science",
+     "at": 218,
+     "country": "GR",
+     "from": 2024,
+     "to": 2024
+    },
+    {
+     "name": "Karlsruhe Institute of Technology",
+     "at": 98,
+     "country": "DE",
+     "from": 2014,
+     "to": 2024
+    },
+    {
+     "name": "Heidelberg Institute for Theoretical Studies",
+     "at": 27,
+     "country": "DE",
+     "from": 2011,
+     "to": 2024
+    },
+    {
+     "name": "Swiss Federal Institute of Technology in Lausanne",
+     "at": 280,
+     "country": "CH",
+     "from": 2006,
+     "to": 2006
     }
    ]
   },
@@ -275,6 +311,35 @@
    ]
   },
   {
+   "orcid": ["0000-0002-5535-6560"],
+   "scholar": "UI0xN_QAAAAJ",
+   "dblp": "92/422",
+   "openalex": "A5019880902",
+   "institutions": [
+    {
+     "name": "Australian National University",
+     "at": 14,
+     "country": "AU",
+     "from": 2020,
+     "to": 2026
+    },
+    {
+     "name": "Medical University of Vienna",
+     "at": 28,
+     "country": "AT",
+     "from": 2013,
+     "to": 2018
+    },
+    {
+     "name": "University of Vienna",
+     "at": 24,
+     "country": "AT",
+     "from": 2013,
+     "to": 2018
+    }
+   ]
+  },
+  {
    "orcid": ["0000-0001-7886-638X"],
    "scholar": "gma2jsIAAAAJ",
    "dblp": "122/8680",
@@ -313,6 +378,35 @@
      "country": "US",
      "from": 2006,
      "to": 2006
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0001-8486-2211"],
+   "scholar": "nblpP5sAAAAJ",
+   "dblp": "06/6613",
+   "openalex": "A5020967139",
+   "institutions": [
+    {
+     "name": "European Bioinformatics Institute",
+     "at": 6,
+     "country": "GB",
+     "from": 2005,
+     "to": 2026
+    },
+    {
+     "name": "University of Cambridge",
+     "at": 115,
+     "country": "GB",
+     "from": 1993,
+     "to": 2001
+    },
+    {
+     "name": "The Francis Crick Institute",
+     "at": 111,
+     "country": "GB",
+     "from": 1993,
+     "to": 1994
     }
    ]
   },
@@ -425,21 +519,6 @@
    ]
   },
   {
-   "orcid": ["0000-0002-4702-8217"],
-   "scholar": "zgfSvoYAAAAJ",
-   "dblp": "53/8713",
-   "openalex": "A5031584591",
-   "institutions": [
-    {
-     "name": "University of Wisconsin–Madison",
-     "at": 5,
-     "country": "US",
-     "from": 2007,
-     "to": 2026
-    }
-   ]
-  },
-  {
    "orcid": ["0000-0001-5553-3312"],
    "scholar": "DZshML0AAAAJ",
    "dblp": "138/6797",
@@ -465,6 +544,43 @@
      "country": "US",
      "from": 2018,
      "to": 2020
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0002-4702-8217"],
+   "scholar": "zgfSvoYAAAAJ",
+   "dblp": "53/8713",
+   "openalex": "A5031584591",
+   "institutions": [
+    {
+     "name": "University of Wisconsin–Madison",
+     "at": 5,
+     "country": "US",
+     "from": 2007,
+     "to": 2026
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0003-0607-6025"],
+   "scholar": "BuHO6ssAAAAJ",
+   "dblp": "155/3638",
+   "openalex": "A5084752404",
+   "institutions": [
+    {
+     "name": "Fred Hutch Cancer Center",
+     "at": 135,
+     "country": "US",
+     "from": 2015,
+     "to": 2015
+    },
+    {
+     "name": "University of Canterbury",
+     "at": 9,
+     "country": "NZ",
+     "from": 2007,
+     "to": 2007
     }
    ]
   },
@@ -505,6 +621,28 @@
    ]
   },
   {
+   "orcid": ["0000-0002-5640-0615"],
+   "scholar": "h2vHz3wAAAAJ",
+   "dblp": "12/4544",
+   "openalex": "A5063693993",
+   "institutions": [
+    {
+     "name": "Bangladesh University of Engineering and Technology",
+     "at": 7,
+     "country": "BD",
+     "from": 2014,
+     "to": 2026
+    },
+    {
+     "name": "The University of Texas at Austin",
+     "at": 4,
+     "country": "US",
+     "from": 2014,
+     "to": 2014
+    }
+   ]
+  },
+  {
    "orcid": ["0000-0003-0578-867X"],
    "scholar": "vZq8qQ4AAAAJ",
    "dblp": "242/9425",
@@ -516,35 +654,6 @@
      "country": "US",
      "from": 1973,
      "to": 2012
-    }
-   ]
-  },
-  {
-   "orcid": ["0000-0001-8486-2211"],
-   "scholar": "nblpP5sAAAAJ",
-   "dblp": "06/6613",
-   "openalex": "A5020967139",
-   "institutions": [
-    {
-     "name": "European Bioinformatics Institute",
-     "at": 6,
-     "country": "GB",
-     "from": 2005,
-     "to": 2026
-    },
-    {
-     "name": "University of Cambridge",
-     "at": 115,
-     "country": "GB",
-     "from": 1993,
-     "to": 2001
-    },
-    {
-     "name": "The Francis Crick Institute",
-     "at": 111,
-     "country": "GB",
-     "from": 1993,
-     "to": 1994
     }
    ]
   },
@@ -635,67 +744,38 @@
    ]
   },
   {
-   "orcid": ["0000-0002-5535-6560"],
-   "scholar": "UI0xN_QAAAAJ",
-   "dblp": "92/422",
-   "openalex": "A5019880902",
+   "orcid": ["0000-0002-1776-8564"],
+   "scholar": "5qarsrQAAAAJ",
+   "dblp": "215/3729",
+   "openalex": "A5030621715",
    "institutions": [
     {
-     "name": "Australian National University",
-     "at": 14,
-     "country": "AU",
-     "from": 2020,
+     "name": "European Bioinformatics Institute",
+     "at": 6,
+     "country": "GB",
+     "from": 2021,
      "to": 2026
     },
     {
-     "name": "Medical University of Vienna",
-     "at": 28,
+     "name": "University of Oxford",
+     "at": 10,
+     "country": "GB",
+     "from": 2015,
+     "to": 2016
+    },
+    {
+     "name": "University of Veterinary Medicine Vienna",
+     "at": 49,
      "country": "AT",
-     "from": 2013,
-     "to": 2018
+     "from": 2015,
+     "to": 2015
     },
     {
-     "name": "University of Vienna",
-     "at": 24,
+     "name": "Vienna Graduate School of Population Genetics",
+     "at": 190,
      "country": "AT",
-     "from": 2013,
-     "to": 2018
-    }
-   ]
-  },
-  {
-   "orcid": ["0000-0003-0353-0691"],
-   "scholar": "WbMNvJwAAAAJ",
-   "dblp": "01/501",
-   "openalex": "A5025640090",
-   "institutions": [
-    {
-     "name": "FORTH Institute of Computer Science",
-     "at": 218,
-     "country": "GR",
-     "from": 2024,
-     "to": 2024
-    },
-    {
-     "name": "Karlsruhe Institute of Technology",
-     "at": 98,
-     "country": "DE",
-     "from": 2014,
-     "to": 2024
-    },
-    {
-     "name": "Heidelberg Institute for Theoretical Studies",
-     "at": 27,
-     "country": "DE",
-     "from": 2011,
-     "to": 2024
-    },
-    {
-     "name": "Swiss Federal Institute of Technology in Lausanne",
-     "at": 280,
-     "country": "CH",
-     "from": 2006,
-     "to": 2006
+     "from": 2015,
+     "to": 2015
     }
    ]
   },
@@ -801,28 +881,6 @@
    ]
   },
   {
-   "orcid": ["0000-0002-5640-0615"],
-   "scholar": "h2vHz3wAAAAJ",
-   "dblp": "12/4544",
-   "openalex": "A5063693993",
-   "institutions": [
-    {
-     "name": "Bangladesh University of Engineering and Technology",
-     "at": 7,
-     "country": "BD",
-     "from": 2014,
-     "to": 2026
-    },
-    {
-     "name": "The University of Texas at Austin",
-     "at": 4,
-     "country": "US",
-     "from": 2014,
-     "to": 2014
-    }
-   ]
-  },
-  {
    "orcid": ["0000-0002-8100-0824"],
    "dblp": "06/2491",
    "openalex": "A5079496228",
@@ -855,6 +913,28 @@
      "country": "NL",
      "from": 2025,
      "to": 2026
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0002-3050-9997"],
+   "scholar": "rQ0w89cAAAAJ",
+   "dblp": "22/4634",
+   "openalex": "A5068909032",
+   "institutions": [
+    {
+     "name": "University of California, Berkeley",
+     "at": 0,
+     "country": "US",
+     "from": 1996,
+     "to": 2016
+    },
+    {
+     "name": "University of Rochester",
+     "at": 81,
+     "country": "US",
+     "from": 2001,
+     "to": 2002
     }
    ]
   },
@@ -902,6 +982,21 @@
    ]
   },
   {
+   "orcid": ["0000-0002-1140-2596"],
+   "scholar": "Se6txrMAAAAJ",
+   "dblp": "235/6533",
+   "openalex": "A5037983874",
+   "institutions": [
+    {
+     "name": "Australian National University",
+     "at": 14,
+     "country": "AU",
+     "from": 2012,
+     "to": 2026
+    }
+   ]
+  },
+  {
    "orcid": ["0000-0003-0568-4264"],
    "scholar": "DYAW-BoAAAAJ",
    "openalex": "A5100322392",
@@ -933,6 +1028,28 @@
      "country": "US",
      "from": 2007,
      "to": 2007
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0003-0513-6591"],
+   "scholar": "PySbfcEAAAAJ",
+   "dblp": "51/725",
+   "openalex": "A5088476239",
+   "institutions": [
+    {
+     "name": "University of Copenhagen",
+     "at": 23,
+     "country": "DK",
+     "from": 2025,
+     "to": 2026
+    },
+    {
+     "name": "University of California, Berkeley",
+     "at": 0,
+     "country": "US",
+     "from": 1996,
+     "to": 2026
     }
    ]
   },
@@ -983,6 +1100,21 @@
      "country": "DE",
      "from": 2012,
      "to": 2012
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0003-2276-9892"],
+   "scholar": "Q4qs4D8AAAAJ",
+   "dblp": "313/4968",
+   "openalex": "A5032280221",
+   "institutions": [
+    {
+     "name": "University of Illinois Urbana-Champaign",
+     "at": 2,
+     "country": "US",
+     "from": 2022,
+     "to": 2023
     }
    ]
   },
@@ -1077,6 +1209,11 @@
    ]
   },
   {
+   "orcid": ["0000-0002-6947-5915"],
+   "dblp": "182/1980",
+   "openalex": "A5083364801"
+  },
+  {
    "orcid": ["0000-0002-3952-3285"],
    "scholar": "Ap0K7rUAAAAJ",
    "dblp": "89/6822",
@@ -1116,28 +1253,6 @@
      "country": "IE",
      "from": 1988,
      "to": 1988
-    }
-   ]
-  },
-  {
-   "orcid": ["0000-0002-3050-9997"],
-   "scholar": "rQ0w89cAAAAJ",
-   "dblp": "22/4634",
-   "openalex": "A5068909032",
-   "institutions": [
-    {
-     "name": "University of California, Berkeley",
-     "at": 0,
-     "country": "US",
-     "from": 1996,
-     "to": 2016
-    },
-    {
-     "name": "University of Rochester",
-     "at": 81,
-     "country": "US",
-     "from": 2001,
-     "to": 2002
     }
    ]
   },
@@ -1222,6 +1337,11 @@
    ]
   },
   {
+   "orcid": ["0000-0002-1340-9644"],
+   "dblp": "218/8667",
+   "openalex": "A5005887668"
+  },
+  {
    "orcid": ["0000-0002-5291-3798"],
    "scholar": "EF9D28wAAAAJ",
    "dblp": "96/3333",
@@ -1266,17 +1386,26 @@
    ]
   },
   {
-   "orcid": ["0000-0002-1140-2596"],
-   "scholar": "Se6txrMAAAAJ",
-   "dblp": "235/6533",
-   "openalex": "A5037983874",
+   "orcid": ["0000-0001-8425-7556"],
+   "dblp": "287/9612",
+   "openalex": "A5030824535"
+  },
+  {
+   "orcid": ["0000-0002-0975-9019"],
+   "dblp": "18/2964",
+   "openalex": "A5033881627"
+  },
+  {
+   "orcid": ["0000-0001-7394-2718"],
+   "dblp": "155/5457",
+   "openalex": "A5108777053",
    "institutions": [
     {
-     "name": "Australian National University",
-     "at": 14,
-     "country": "AU",
-     "from": 2012,
-     "to": 2026
+     "name": "Heidelberg Institute for Theoretical Studies",
+     "at": 27,
+     "country": "DE",
+     "from": 2015,
+     "to": 2022
     }
    ]
   },
@@ -1292,6 +1421,27 @@
      "country": "US",
      "from": 2008,
      "to": 2012
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0001-6286-4419"],
+   "dblp": "21/777",
+   "openalex": "A5122032388",
+   "institutions": [
+    {
+     "name": "Karlsruhe Institute of Technology",
+     "at": 98,
+     "country": "DE",
+     "from": 2022,
+     "to": 2024
+    },
+    {
+     "name": "Heidelberg Institute for Theoretical Studies",
+     "at": 27,
+     "country": "DE",
+     "from": 2019,
+     "to": 2024
     }
    ]
   },
@@ -1384,6 +1534,18 @@
      "country": "GB",
      "from": 2011,
      "to": 2024
+    }
+   ]
+  },
+  {
+   "dblp": "199/8106",
+   "institutions": [
+    {
+     "name": "University of California San Diego",
+     "at": 12,
+     "country": "US",
+     "from": 2018,
+     "to": 2022
     }
    ]
   },
@@ -1567,6 +1729,11 @@
    ]
   },
   {
+   "orcid": ["0000-0002-7911-9156"],
+   "dblp": "294/3281",
+   "openalex": "A5070734603"
+  },
+  {
    "orcid": ["0000-0003-4988-3521"],
    "scholar": "9JrzplAAAAAJ",
    "dblp": "55/5012-1",
@@ -1632,6 +1799,33 @@
    ]
   },
   {
+   "orcid": ["0000-0002-5810-6241"],
+   "scholar": "NzQu5SwAAAAJ",
+   "dblp": "b/VineetBafna",
+   "openalex": "A5028801735",
+   "institutions": [
+    {
+     "name": "University of California San Diego",
+     "at": 12,
+     "country": "US",
+     "from": 2007,
+     "to": 2007
+    },
+    {
+     "name": "Pennsylvania State University",
+     "at": 16,
+     "country": "US",
+     "from": 1997,
+     "to": 1997
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0002-3437-150X"],
+   "dblp": "134/2922",
+   "openalex": "A5087735622"
+  },
+  {
    "orcid": ["0000-0003-1963-5535"],
    "scholar": "xTWXOf8AAAAJ",
    "dblp": "67/4063",
@@ -1666,6 +1860,11 @@
      "to": 2001
     }
    ]
+  },
+  {
+   "orcid": ["0000-0001-6535-2478"],
+   "dblp": "186/9366",
+   "openalex": "A5076593250"
   },
   {
    "orcid": ["0000-0003-4908-7234"],
@@ -1715,6 +1914,20 @@
      "country": "US",
      "from": 2004,
      "to": 2004
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0002-3728-0101"],
+   "dblp": "90/6653",
+   "openalex": "A5047884754",
+   "institutions": [
+    {
+     "name": "University of California, Berkeley",
+     "at": 0,
+     "country": "US",
+     "from": 1993,
+     "to": 2025
     }
    ]
   },
@@ -1993,6 +2206,21 @@
    ]
   },
   {
+   "orcid": ["0000-0001-5668-5027"],
+   "scholar": "0SPfIN4AAAAJ",
+   "dblp": "232/0355",
+   "openalex": "A5072480273",
+   "institutions": [
+    {
+     "name": "Australian National University",
+     "at": 14,
+     "country": "AU",
+     "from": 2026,
+     "to": 2026
+    }
+   ]
+  },
+  {
    "orcid": ["0000-0001-5389-6611"],
    "dblp": "82/5469",
    "openalex": "A5000878403",
@@ -2010,42 +2238,6 @@
      "country": "GB",
      "from": 2005,
      "to": 2012
-    }
-   ]
-  },
-  {
-   "orcid": ["0000-0002-1776-8564"],
-   "scholar": "5qarsrQAAAAJ",
-   "dblp": "215/3729",
-   "openalex": "A5030621715",
-   "institutions": [
-    {
-     "name": "European Bioinformatics Institute",
-     "at": 6,
-     "country": "GB",
-     "from": 2021,
-     "to": 2026
-    },
-    {
-     "name": "University of Oxford",
-     "at": 10,
-     "country": "GB",
-     "from": 2015,
-     "to": 2016
-    },
-    {
-     "name": "University of Veterinary Medicine Vienna",
-     "at": 49,
-     "country": "AT",
-     "from": 2015,
-     "to": 2015
-    },
-    {
-     "name": "Vienna Graduate School of Population Genetics",
-     "at": 190,
-     "country": "AT",
-     "from": 2015,
-     "to": 2015
     }
    ]
   },
@@ -2113,45 +2305,53 @@
    ]
   },
   {
-   "orcid": ["0000-0001-6286-4419"],
-   "dblp": "21/777",
-   "openalex": "A5122032388",
+   "orcid": ["0000-0002-7431-2862"],
+   "scholar": "IiGchZoAAAAJ",
+   "dblp": "62/5598",
+   "openalex": "A5024220352",
    "institutions": [
     {
-     "name": "Karlsruhe Institute of Technology",
-     "at": 98,
+     "name": "University of Göttingen",
+     "at": 119,
      "country": "DE",
-     "from": 2022,
-     "to": 2024
+     "from": 2008,
+     "to": 2008
     },
     {
-     "name": "Heidelberg Institute for Theoretical Studies",
-     "at": 27,
+     "name": "Rhône-Poulenc Rorer",
+     "at": 270,
+     "country": "GB",
+     "from": 1999,
+     "to": 1999
+    },
+    {
+     "name": "Helmholtz Zentrum München - German Research Center for Environmental Health",
+     "at": 139,
      "country": "DE",
-     "from": 2019,
-     "to": 2024
+     "from": 1996,
+     "to": 1999
     }
    ]
   },
   {
-   "orcid": ["0000-0003-0513-6591"],
-   "scholar": "PySbfcEAAAAJ",
-   "dblp": "51/725",
-   "openalex": "A5088476239",
+   "orcid": ["0000-0002-3932-063X"],
+   "scholar": "sPYxhvUAAAAJ",
+   "dblp": "155/1353",
+   "openalex": "A5040525401",
    "institutions": [
     {
-     "name": "University of Copenhagen",
-     "at": 23,
-     "country": "DK",
-     "from": 2025,
-     "to": 2026
+     "name": "The University of Texas at Austin",
+     "at": 4,
+     "country": "US",
+     "from": 2015,
+     "to": 2015
     },
     {
-     "name": "University of California, Berkeley",
-     "at": 0,
+     "name": "University of Illinois Urbana-Champaign",
+     "at": 2,
      "country": "US",
-     "from": 1996,
-     "to": 2026
+     "from": 2015,
+     "to": 2015
     }
    ]
   },
@@ -2168,6 +2368,34 @@
      "to": 2019
     }
    ]
+  },
+  {
+   "orcid": ["0000-0001-8084-1464"],
+   "scholar": "8DXP2RkAAAAJ",
+   "dblp": "82/1264",
+   "openalex": "A5071954558",
+   "institutions": [
+    {
+     "name": "French National Centre for Scientific Research",
+     "at": 1,
+     "country": "FR",
+     "from": 2021,
+     "to": 2021
+    },
+    {
+     "name": "Université de Montpellier",
+     "at": 3,
+     "country": "FR",
+     "from": 2021,
+     "to": 2021
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0001-9617-5304"],
+   "scholar": "4glkLD0AAAAJ",
+   "dblp": "p/MihaiPop",
+   "openalex": "A5064979917"
   },
   {
    "orcid": ["0000-0003-1407-3406"],
@@ -2188,18 +2416,6 @@
      "country": "US",
      "from": 1998,
      "to": 1998
-    }
-   ]
-  },
-  {
-   "dblp": "199/8106",
-   "institutions": [
-    {
-     "name": "University of California San Diego",
-     "at": 12,
-     "country": "US",
-     "from": 2018,
-     "to": 2022
     }
    ]
   },
@@ -2233,21 +2449,6 @@
    ]
   },
   {
-   "orcid": ["0000-0003-2276-9892"],
-   "scholar": "Q4qs4D8AAAAJ",
-   "dblp": "313/4968",
-   "openalex": "A5032280221",
-   "institutions": [
-    {
-     "name": "University of Illinois Urbana-Champaign",
-     "at": 2,
-     "country": "US",
-     "from": 2022,
-     "to": 2023
-    }
-   ]
-  },
-  {
    "dblp": "99/4630",
    "openalex": "A5106184369",
    "institutions": [
@@ -2266,6 +2467,11 @@
      "to": 2005
     }
    ]
+  },
+  {
+   "orcid": ["0000-0001-5600-2900"],
+   "dblp": "129/7577",
+   "openalex": "A5080797757"
   },
   {
    "orcid": ["0000-0001-8623-5414"],
@@ -2326,6 +2532,18 @@
    ]
   },
   {
+   "dblp": "94/8296",
+   "institutions": [
+    {
+     "name": "Heidelberg Institute for Theoretical Studies",
+     "at": 27,
+     "country": "DE",
+     "from": 2011,
+     "to": 2011
+    }
+   ]
+  },
+  {
    "orcid": ["0000-0003-4215-8263"],
    "dblp": "271/0534",
    "openalex": "A5006811718",
@@ -2343,6 +2561,35 @@
      "country": "NZ",
      "from": 2021,
      "to": 2021
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0001-5482-3932"],
+   "scholar": "JI6ADoMAAAAJ",
+   "dblp": "68/9445",
+   "openalex": "A5087352477",
+   "institutions": [
+    {
+     "name": "Heidelberg Institute for Theoretical Studies",
+     "at": 27,
+     "country": "DE",
+     "from": 2019,
+     "to": 2019
+    },
+    {
+     "name": "Universidade da Coruña",
+     "at": 114,
+     "country": "ES",
+     "from": 2012,
+     "to": 2012
+    },
+    {
+     "name": "University of Vigo",
+     "at": 124,
+     "country": "ES",
+     "from": 2012,
+     "to": 2012
     }
    ]
   },
@@ -2462,6 +2709,21 @@
    ]
   },
   {
+   "orcid": ["0000-0002-0159-2197"],
+   "scholar": "LrlwhwUAAAAJ",
+   "dblp": "75/6757",
+   "openalex": "A5059066311",
+   "institutions": [
+    {
+     "name": "University of California, Davis",
+     "at": 13,
+     "country": "US",
+     "from": 2012,
+     "to": 2012
+    }
+   ]
+  },
+  {
    "orcid": ["0000-0002-1139-2316"],
    "scholar": "znl2FI4AAAAJ",
    "dblp": "e/PeterLErdos",
@@ -2495,6 +2757,27 @@
      "country": "US",
      "from": 1994,
      "to": 2013
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0002-8474-9507"],
+   "dblp": "01/5035",
+   "openalex": "A5024578874",
+   "institutions": [
+    {
+     "name": "Heidelberg Institute for Theoretical Studies",
+     "at": 27,
+     "country": "DE",
+     "from": 2019,
+     "to": 2019
+    },
+    {
+     "name": "University College London",
+     "at": 34,
+     "country": "GB",
+     "from": 2018,
+     "to": 2018
     }
    ]
   },
@@ -2636,6 +2919,11 @@
    ]
   },
   {
+   "orcid": ["0000-0002-1697-1130"],
+   "dblp": "32/3276",
+   "openalex": "A5031905987"
+  },
+  {
    "orcid": ["0000-0001-5990-1741"],
    "scholar": "DPjlHNEAAAAJ",
    "dblp": "95/2668",
@@ -2709,20 +2997,6 @@
    ]
   },
   {
-   "orcid": ["0000-0001-7394-2718"],
-   "dblp": "155/5457",
-   "openalex": "A5108777053",
-   "institutions": [
-    {
-     "name": "Heidelberg Institute for Theoretical Studies",
-     "at": 27,
-     "country": "DE",
-     "from": 2015,
-     "to": 2022
-    }
-   ]
-  },
-  {
    "orcid": ["0000-0002-0138-2691"],
    "scholar": "7fZs_tEAAAAJ",
    "dblp": "82/4636",
@@ -2766,6 +3040,11 @@
    ]
   },
   {
+   "orcid": ["0000-0002-5555-898X"],
+   "dblp": "11/9006",
+   "openalex": "A5042591267"
+  },
+  {
    "orcid": ["0000-0001-9664-1918"],
    "dblp": "301/9887",
    "openalex": "A5000112440",
@@ -2776,6 +3055,20 @@
      "country": "SE",
      "from": 2026,
      "to": 2026
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0002-1300-5631"],
+   "dblp": "136/5896",
+   "openalex": "A5069752796",
+   "institutions": [
+    {
+     "name": "Heidelberg Institute for Theoretical Studies",
+     "at": 27,
+     "country": "DE",
+     "from": 2022,
+     "to": 2022
     }
    ]
   },
@@ -2802,33 +3095,21 @@
    ]
   },
   {
-   "orcid": ["0000-0002-7431-2862"],
-   "scholar": "IiGchZoAAAAJ",
-   "dblp": "62/5598",
-   "openalex": "A5024220352",
+   "orcid": ["0000-0002-6298-1014"],
+   "dblp": "02/6681",
    "institutions": [
     {
-     "name": "University of Göttingen",
-     "at": 119,
-     "country": "DE",
-     "from": 2008,
-     "to": 2008
-    },
-    {
-     "name": "Rhône-Poulenc Rorer",
-     "at": 270,
+     "name": "European Bioinformatics Institute",
+     "at": 6,
      "country": "GB",
-     "from": 1999,
-     "to": 1999
-    },
-    {
-     "name": "Helmholtz Zentrum München - German Research Center for Environmental Health",
-     "at": 139,
-     "country": "DE",
-     "from": 1996,
-     "to": 1999
+     "from": 2025,
+     "to": 2025
     }
    ]
+  },
+  {
+   "dblp": "63/6498",
+   "openalex": "A5022461817"
   },
   {
    "orcid": ["0000-0003-1589-6885"],
@@ -3007,6 +3288,10 @@
      "to": 1985
     }
    ]
+  },
+  {
+   "orcid": ["0000-0003-0564-1643"],
+   "openalex": "A5011225501"
   },
   {
    "orcid": ["0000-0002-2311-8592"],
@@ -3366,6 +3651,20 @@
    ]
   },
   {
+   "orcid": ["0000-0003-3093-4077"],
+   "dblp": "14/2654",
+   "openalex": "A5088633211",
+   "institutions": [
+    {
+     "name": "University of Virginia",
+     "at": 311,
+     "country": "US",
+     "from": 2012,
+     "to": 2012
+    }
+   ]
+  },
+  {
    "orcid": ["0000-0002-5378-3278"],
    "openalex": "A5101434033",
    "institutions": [
@@ -3493,28 +3792,6 @@
    ]
   },
   {
-   "orcid": ["0000-0002-5810-6241"],
-   "scholar": "NzQu5SwAAAAJ",
-   "dblp": "b/VineetBafna",
-   "openalex": "A5028801735",
-   "institutions": [
-    {
-     "name": "University of California San Diego",
-     "at": 12,
-     "country": "US",
-     "from": 2007,
-     "to": 2007
-    },
-    {
-     "name": "Pennsylvania State University",
-     "at": 16,
-     "country": "US",
-     "from": 1997,
-     "to": 1997
-    }
-   ]
-  },
-  {
    "openalex": "A5040934656",
    "institutions": [
     {
@@ -3584,6 +3861,33 @@
    ]
   },
   {
+   "orcid": ["0000-0001-5756-3988"],
+   "openalex": "A5069719340",
+   "institutions": [
+    {
+     "name": "Freie Universität Berlin",
+     "at": 221,
+     "country": "DE",
+     "from": 2026,
+     "to": 2026
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0002-0225-2063"],
+   "dblp": "320/3988",
+   "openalex": "A5024700830",
+   "institutions": [
+    {
+     "name": "Bangladesh University of Engineering and Technology",
+     "at": 7,
+     "country": "BD",
+     "from": 2025,
+     "to": 2025
+    }
+   ]
+  },
+  {
    "orcid": ["0000-0002-8158-3070"],
    "dblp": "64/10932",
    "openalex": "A5066694525",
@@ -3625,6 +3929,10 @@
      "to": 2002
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-8257-3827"],
+   "openalex": "A5031584313"
   },
   {
    "orcid": ["0000-0003-0776-4460"],
@@ -3698,6 +4006,11 @@
    ]
   },
   {
+   "orcid": ["0000-0003-2414-8416"],
+   "dblp": "294/3866",
+   "openalex": "A5015980695"
+  },
+  {
    "orcid": ["0000-0002-1724-8358"],
    "scholar": "kD8vQsoAAAAJ",
    "dblp": "123/6233",
@@ -3711,6 +4024,9 @@
      "to": 2016
     }
    ]
+  },
+  {
+   "openalex": "A5003229507"
   },
   {
    "dblp": "02/8796",
@@ -3731,6 +4047,12 @@
      "to": 2013
     }
    ]
+  },
+  {
+   "orcid": ["0000-0003-0426-8445"],
+   "scholar": "avh7Ag4AAAAJ",
+   "dblp": "51/9440",
+   "openalex": "A5061898525"
   },
   {
    "orcid": ["0000-0001-9311-2009"],
@@ -3768,6 +4090,24 @@
    ]
   },
   {
+   "orcid": ["0000-0002-7096-2278"],
+   "openalex": "A5049404782"
+  },
+  {
+   "orcid": ["0000-0003-2205-730X"],
+   "dblp": "272/6817",
+   "openalex": "A5006996313",
+   "institutions": [
+    {
+     "name": "University of Illinois Urbana-Champaign",
+     "at": 2,
+     "country": "US",
+     "from": 2023,
+     "to": 2023
+    }
+   ]
+  },
+  {
    "orcid": ["0000-0002-8212-5215"],
    "dblp": "58/7106",
    "openalex": "A5003921430",
@@ -3796,33 +4136,21 @@
    ]
   },
   {
-   "orcid": ["0000-0001-5482-3932"],
-   "scholar": "JI6ADoMAAAAJ",
-   "dblp": "68/9445",
-   "openalex": "A5087352477",
+   "orcid": ["0000-0003-2397-7925"],
+   "openalex": "A5047169338",
    "institutions": [
     {
-     "name": "Heidelberg Institute for Theoretical Studies",
-     "at": 27,
-     "country": "DE",
-     "from": 2019,
-     "to": 2019
-    },
-    {
-     "name": "Universidade da Coruña",
-     "at": 114,
-     "country": "ES",
-     "from": 2012,
-     "to": 2012
-    },
-    {
-     "name": "University of Vigo",
-     "at": 124,
-     "country": "ES",
+     "name": "University of California, Davis",
+     "at": 13,
+     "country": "US",
      "from": 2012,
      "to": 2012
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-3570-4767"],
+   "openalex": "A5041771738"
   },
   {
    "orcid": ["0000-0001-5810-2497"],
@@ -3944,18 +4272,7 @@
    ]
   },
   {
-   "orcid": ["0000-0002-3728-0101"],
-   "dblp": "90/6653",
-   "openalex": "A5047884754",
-   "institutions": [
-    {
-     "name": "University of California, Berkeley",
-     "at": 0,
-     "country": "US",
-     "from": 1993,
-     "to": 2025
-    }
-   ]
+   "openalex": "A5110608876"
   },
   {
    "orcid": ["0000-0002-4572-6265"],
@@ -4028,27 +4345,6 @@
    ]
   },
   {
-   "orcid": ["0000-0002-8474-9507"],
-   "dblp": "01/5035",
-   "openalex": "A5024578874",
-   "institutions": [
-    {
-     "name": "Heidelberg Institute for Theoretical Studies",
-     "at": 27,
-     "country": "DE",
-     "from": 2019,
-     "to": 2019
-    },
-    {
-     "name": "University College London",
-     "at": 34,
-     "country": "GB",
-     "from": 2018,
-     "to": 2018
-    }
-   ]
-  },
-  {
    "orcid": ["0000-0001-7538-8263"],
    "scholar": "Nia2OcUAAAAJ",
    "dblp": "08/5440",
@@ -4076,6 +4372,9 @@
      "to": 2026
     }
    ]
+  },
+  {
+   "openalex": "A5076585627"
   },
   {
    "dblp": "262/0225",
@@ -4133,6 +4432,9 @@
    ]
   },
   {
+   "openalex": "A5101532298"
+  },
+  {
    "orcid": ["0009-0002-6750-1945"],
    "dblp": "96/2868",
    "openalex": "A5035583573",
@@ -4171,6 +4473,35 @@
      "country": "US",
      "from": 2020,
      "to": 2026
+    }
+   ]
+  },
+  {
+   "orcid": ["0009-0004-7792-9798"],
+   "dblp": "320/3864",
+   "openalex": "A5088616760",
+   "institutions": [
+    {
+     "name": "Bangladesh University of Engineering and Technology",
+     "at": 7,
+     "country": "BD",
+     "from": 2025,
+     "to": 2025
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0003-1533-4575"],
+   "scholar": "S2OjOvYAAAAJ",
+   "dblp": "h/DavidHaussler",
+   "openalex": "A5090849321",
+   "institutions": [
+    {
+     "name": "University of California, Santa Cruz",
+     "at": 15,
+     "country": "US",
+     "from": 1994,
+     "to": 1994
     }
    ]
   },
@@ -4274,26 +4605,10 @@
    ]
   },
   {
-   "orcid": ["0000-0003-0607-6025"],
-   "scholar": "BuHO6ssAAAAJ",
-   "dblp": "155/3638",
-   "openalex": "A5084752404",
-   "institutions": [
-    {
-     "name": "Fred Hutch Cancer Center",
-     "at": 135,
-     "country": "US",
-     "from": 2015,
-     "to": 2015
-    },
-    {
-     "name": "University of Canterbury",
-     "at": 9,
-     "country": "NZ",
-     "from": 2007,
-     "to": 2007
-    }
-   ]
+   "orcid": ["0000-0001-5386-7925"],
+   "scholar": "tQGgmM4AAAAJ",
+   "dblp": "42/2963",
+   "openalex": "A5075159561"
   },
   {
    "orcid": ["0000-0002-5192-1470"],
@@ -4385,6 +4700,9 @@
    ]
   },
   {
+   "openalex": "A5049973896"
+  },
+  {
    "orcid": ["0000-0001-8583-5362"],
    "dblp": "95/4257-3",
    "openalex": "A5016652002",
@@ -4472,6 +4790,11 @@
      "to": 2016
     }
    ]
+  },
+  {
+   "orcid": ["0000-0003-3630-3209"],
+   "dblp": "151/7076",
+   "openalex": "A5070626366"
   },
   {
    "openalex": "A5108441257",
@@ -4632,6 +4955,9 @@
    ]
   },
   {
+   "openalex": "A5086938254"
+  },
+  {
    "dblp": "262/0050",
    "openalex": "A5003176141",
    "institutions": [
@@ -4641,20 +4967,6 @@
      "country": "DE",
      "from": 2021,
      "to": 2024
-    }
-   ]
-  },
-  {
-   "orcid": ["0000-0002-1300-5631"],
-   "dblp": "136/5896",
-   "openalex": "A5069752796",
-   "institutions": [
-    {
-     "name": "Heidelberg Institute for Theoretical Studies",
-     "at": 27,
-     "country": "DE",
-     "from": 2022,
-     "to": 2022
     }
    ]
   },
@@ -4751,6 +5063,9 @@
    ]
   },
   {
+   "openalex": "A5074561782"
+  },
+  {
    "orcid": ["0000-0003-0858-586X"],
    "dblp": "49/484",
    "openalex": "A5016020455",
@@ -4827,6 +5142,13 @@
    ]
   },
   {
+   "openalex": "A5014241799"
+  },
+  {
+   "orcid": ["0000-0003-2880-6252"],
+   "openalex": "A5091503957"
+  },
+  {
    "orcid": ["0000-0003-1355-5884"],
    "scholar": "JCRspVQAAAAJ",
    "dblp": "60/8762",
@@ -4840,6 +5162,11 @@
      "to": 2022
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-9988-0866"],
+   "dblp": "261/4474",
+   "openalex": "A5088893810"
   },
   {
    "orcid": ["0000-0002-6580-7839"],
@@ -4904,26 +5231,14 @@
    ]
   },
   {
-   "orcid": ["0000-0002-3932-063X"],
-   "scholar": "sPYxhvUAAAAJ",
-   "dblp": "155/1353",
-   "openalex": "A5040525401",
-   "institutions": [
-    {
-     "name": "The University of Texas at Austin",
-     "at": 4,
-     "country": "US",
-     "from": 2015,
-     "to": 2015
-    },
-    {
-     "name": "University of Illinois Urbana-Champaign",
-     "at": 2,
-     "country": "US",
-     "from": 2015,
-     "to": 2015
-    }
-   ]
+   "orcid": ["0000-0002-6439-2694"],
+   "openalex": "A5074570080"
+  },
+  {
+   "orcid": ["0000-0001-6662-9010"],
+   "scholar": "A87iE7wAAAAJ",
+   "dblp": "34/6565",
+   "openalex": "A5060754496"
   },
   {
    "orcid": ["0000-0003-1981-1826"],
@@ -5014,6 +5329,10 @@
    ]
   },
   {
+   "orcid": ["0000-0002-6104-5750"],
+   "openalex": "A5040053145"
+  },
+  {
    "dblp": "68/3169",
    "openalex": "A5017120294",
    "institutions": [
@@ -5040,6 +5359,12 @@
      "to": 2014
     }
    ]
+  },
+  {
+   "orcid": ["0000-0003-3791-3973"],
+   "scholar": "EXkMz8gAAAAJ",
+   "dblp": "07/3055",
+   "openalex": "A5010392318"
   },
   {
    "dblp": "75/4310",
@@ -5075,6 +5400,15 @@
      "to": 2007
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-2264-5219"],
+   "dblp": "284/6060",
+   "openalex": "A5091169485"
+  },
+  {
+   "orcid": ["0000-0002-0648-4224"],
+   "openalex": "A5079963099"
   },
   {
    "orcid": ["0009-0008-2844-1031"],
@@ -5126,6 +5460,10 @@
      "to": 2015
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-3063-2098"],
+   "openalex": "A5083571585"
   },
   {
    "scholar": "4VVgg_UAAAAJ",
@@ -5271,6 +5609,21 @@
      "country": "DE",
      "from": 2022,
      "to": 2024
+    }
+   ]
+  },
+  {
+   "orcid": ["0000-0002-4656-7155"],
+   "scholar": "_dmbTJkAAAAJ",
+   "dblp": "72/3506",
+   "openalex": "A5019771245",
+   "institutions": [
+    {
+     "name": "Bielefeld University",
+     "at": 38,
+     "country": "DE",
+     "from": 1998,
+     "to": 1998
     }
    ]
   },
@@ -5437,6 +5790,11 @@
    ]
   },
   {
+   "orcid": ["0000-0001-6334-5186"],
+   "dblp": "326/3990",
+   "openalex": "A5063542140"
+  },
+  {
    "orcid": ["0000-0001-9589-6994"],
    "scholar": "RIUYP8YAAAAJ",
    "dblp": "196/7396",
@@ -5534,6 +5892,9 @@
    ]
   },
   {
+   "openalex": "A5044568003"
+  },
+  {
    "dblp": "w/MichaelSWaterman",
    "openalex": "A5105360062",
    "institutions": [
@@ -5609,6 +5970,10 @@
    ]
   },
   {
+   "orcid": ["0000-0002-7081-6748"],
+   "openalex": "A5028667558"
+  },
+  {
    "orcid": ["0000-0003-1072-0223"],
    "dblp": "93/8246",
    "openalex": "A5101579525",
@@ -5666,6 +6031,11 @@
    ]
   },
   {
+   "orcid": ["0000-0003-1080-024X"],
+   "scholar": "pR1n2NUAAAAJ",
+   "openalex": "A5076136013"
+  },
+  {
    "orcid": ["0000-0001-6212-9502"],
    "scholar": "3Lf6I5MAAAAJ",
    "dblp": "76/3216",
@@ -5700,6 +6070,10 @@
      "to": 2020
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-3568-6271"],
+   "openalex": "A5064767131"
   },
   {
    "orcid": ["0000-0002-4849-7955"],
@@ -5881,6 +6255,10 @@
    ]
   },
   {
+   "dblp": "18/3202",
+   "openalex": "A5087975584"
+  },
+  {
    "orcid": ["0000-0002-6332-3750"],
    "openalex": "A5047867016",
    "institutions": [
@@ -5892,6 +6270,11 @@
      "to": 2026
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-4086-2946"],
+   "dblp": "279/9944",
+   "openalex": "A5003260841"
   },
   {
    "orcid": ["0000-0002-5079-4684"],
@@ -5933,6 +6316,9 @@
      "to": 2015
     }
    ]
+  },
+  {
+   "openalex": "A5010048849"
   },
   {
    "dblp": "204/2300",
@@ -6055,6 +6441,10 @@
    ]
   },
   {
+   "orcid": ["0000-0002-8292-6063"],
+   "openalex": "A5033702924"
+  },
+  {
    "orcid": ["0000-0001-8334-6311"],
    "scholar": "bkKzaV8AAAAJ",
    "dblp": "324/9481",
@@ -6110,16 +6500,7 @@
    ]
   },
   {
-   "dblp": "94/8296",
-   "institutions": [
-    {
-     "name": "Heidelberg Institute for Theoretical Studies",
-     "at": 27,
-     "country": "DE",
-     "from": 2011,
-     "to": 2011
-    }
-   ]
+   "openalex": "A5012912146"
   },
   {
    "orcid": ["0000-0002-1303-0669"],
@@ -6192,17 +6573,8 @@
    ]
   },
   {
-   "orcid": ["0000-0001-5756-3988"],
-   "openalex": "A5069719340",
-   "institutions": [
-    {
-     "name": "Freie Universität Berlin",
-     "at": 221,
-     "country": "DE",
-     "from": 2026,
-     "to": 2026
-    }
-   ]
+   "orcid": ["0000-0002-4356-3837"],
+   "openalex": "A5059774624"
   },
   {
    "dblp": "60/6547",
@@ -6233,18 +6605,12 @@
    ]
   },
   {
-   "orcid": ["0000-0002-0225-2063"],
-   "dblp": "320/3988",
-   "openalex": "A5024700830",
-   "institutions": [
-    {
-     "name": "Bangladesh University of Engineering and Technology",
-     "at": 7,
-     "country": "BD",
-     "from": 2025,
-     "to": 2025
-    }
-   ]
+   "dblp": "01/7969",
+   "openalex": "A5066967353"
+  },
+  {
+   "orcid": ["0000-0002-2839-8634"],
+   "openalex": "A5052666464"
   },
   {
    "orcid": ["0000-0002-0476-3609"],
@@ -6259,6 +6625,10 @@
      "to": 2009
     }
    ]
+  },
+  {
+   "orcid": ["0000-0001-7907-064X"],
+   "openalex": "A5001066161"
   },
   {
    "orcid": ["0000-0002-7262-8978"],
@@ -6346,6 +6716,9 @@
    ]
   },
   {
+   "openalex": "A5030642967"
+  },
+  {
    "orcid": ["0000-0002-8046-1063"],
    "dblp": "04/2769",
    "openalex": "A5032741707",
@@ -6358,6 +6731,10 @@
      "to": 2009
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-8649-7390"],
+   "openalex": "A5033626926"
   },
   {
    "dblp": "85/6568",
@@ -6414,6 +6791,11 @@
    "scholar": "d9bq04sAAAAJ",
    "dblp": "b/PeterBuneman",
    "openalex": "A5087078518"
+  },
+  {
+   "orcid": ["0000-0003-4740-4056"],
+   "dblp": "31/7970",
+   "openalex": "A5016535188"
   },
   {
    "orcid": ["0000-0003-4164-5158"],
@@ -6609,6 +6991,10 @@
    ]
   },
   {
+   "dblp": "51/1208",
+   "openalex": "A5101467998"
+  },
+  {
    "orcid": ["0000-0002-8425-8775"],
    "dblp": "37/3620",
    "openalex": "A5027919534",
@@ -6698,6 +7084,10 @@
    ]
   },
   {
+   "dblp": "117/4186",
+   "openalex": "A5053640758"
+  },
+  {
    "orcid": ["0009-0004-2525-4506"],
    "dblp": "50/65",
    "openalex": "A5075573393",
@@ -6710,6 +7100,10 @@
      "to": 2012
     }
    ]
+  },
+  {
+   "dblp": "85/5901",
+   "openalex": "A5100450167"
   },
   {
    "institutions": [
@@ -6746,20 +7140,6 @@
      "country": "US",
      "from": 2018,
      "to": 2018
-    }
-   ]
-  },
-  {
-   "orcid": ["0000-0003-2205-730X"],
-   "dblp": "272/6817",
-   "openalex": "A5006996313",
-   "institutions": [
-    {
-     "name": "University of Illinois Urbana-Champaign",
-     "at": 2,
-     "country": "US",
-     "from": 2023,
-     "to": 2023
     }
    ]
   },
@@ -6867,6 +7247,11 @@
    ]
   },
   {
+   "orcid": ["0000-0002-0508-3701"],
+   "dblp": "117/4212",
+   "openalex": "A5074582058"
+  },
+  {
    "orcid": ["0000-0002-9566-3733"],
    "dblp": "373/1379",
    "openalex": "A5061597768",
@@ -6942,19 +7327,7 @@
    ]
   },
   {
-   "orcid": ["0000-0003-2397-7925"],
-   "scholar": "TE8_LDwAAAAJ",
-   "dblp": "40/2343",
-   "openalex": "A5047169338",
-   "institutions": [
-    {
-     "name": "University of California, Davis",
-     "at": 13,
-     "country": "US",
-     "from": 2012,
-     "to": 2012
-    }
-   ]
+   "openalex": "A5076986462"
   },
   {
    "orcid": ["0009-0008-4770-0297"],
@@ -7041,6 +7414,7 @@
     }
    ]
   },
+  {},
   {
    "orcid": ["0000-0003-4023-8446"],
    "dblp": "92/6288",
@@ -7120,6 +7494,9 @@
      "to": 2026
     }
    ]
+  },
+  {
+   "openalex": "A5102066460"
   },
   {
    "orcid": ["0000-0003-2978-2520"],
@@ -7246,6 +7623,10 @@
    ]
   },
   {
+   "orcid": ["0000-0003-2015-099X"],
+   "openalex": "A5032187526"
+  },
+  {
    "dblp": "70/4796",
    "openalex": "A5111472625",
    "institutions": [
@@ -7295,6 +7676,10 @@
    ]
   },
   {
+   "orcid": ["0000-0002-9130-1006"],
+   "openalex": "A5082040351"
+  },
+  {
    "orcid": ["0000-0003-2836-3463"],
    "dblp": "20/4211",
    "openalex": "A5036099891",
@@ -7337,6 +7722,10 @@
    ]
   },
   {
+   "orcid": ["0000-0001-8383-8949"],
+   "openalex": "A5036802114"
+  },
+  {
    "dblp": "147/3925",
    "openalex": "A5108567924"
   },
@@ -7351,21 +7740,6 @@
      "country": "DE",
      "from": 2008,
      "to": 2008
-    }
-   ]
-  },
-  {
-   "orcid": ["0000-0002-0159-2197"],
-   "scholar": "LrlwhwUAAAAJ",
-   "dblp": "75/6757",
-   "openalex": "A5059066311",
-   "institutions": [
-    {
-     "name": "University of California, Davis",
-     "at": 13,
-     "country": "US",
-     "from": 2012,
-     "to": 2012
     }
    ]
   },
@@ -7410,6 +7784,11 @@
      "to": 1997
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-0510-8868"],
+   "dblp": "261/4120",
+   "openalex": "A5017191314"
   },
   {
    "orcid": ["0000-0002-2331-9714"],
@@ -7460,6 +7839,10 @@
    ]
   },
   {
+   "dblp": "261/3943",
+   "openalex": "A5086230550"
+  },
+  {
    "openalex": "A5002278787",
    "institutions": [
     {
@@ -7482,6 +7865,9 @@
      "to": 2023
     }
    ]
+  },
+  {
+   "openalex": "A5059211635"
   },
   {
    "orcid": ["0000-0003-3616-7788"],
@@ -7537,6 +7923,9 @@
      "to": 2013
     }
    ]
+  },
+  {
+   "openalex": "A5090803123"
   },
   {
    "orcid": ["0000-0002-6845-9008"],
@@ -7791,6 +8180,10 @@
    ]
   },
   {
+   "orcid": ["0000-0002-5805-7195"],
+   "openalex": "A5053180525"
+  },
+  {
    "orcid": ["0000-0001-7798-427X"],
    "dblp": "301/5043",
    "openalex": "A5010061723",
@@ -7847,6 +8240,9 @@
    ]
   },
   {
+   "openalex": "A5091470163"
+  },
+  {
    "dblp": "84/2884",
    "institutions": [
     {
@@ -7857,6 +8253,10 @@
      "to": 2007
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-7086-2568"],
+   "openalex": "A5088085534"
   },
   {
    "orcid": ["0000-0002-7311-9606"],
@@ -7899,6 +8299,10 @@
      "to": 2013
     }
    ]
+  },
+  {
+   "orcid": ["0000-0001-6023-3138"],
+   "openalex": "A5017026300"
   },
   {
    "orcid": ["0000-0003-3081-9351"],
@@ -7949,6 +8353,10 @@
      "to": 2010
     }
    ]
+  },
+  {
+   "orcid": ["0000-0003-3939-2200"],
+   "openalex": "A5004603001"
   },
   {
    "orcid": ["0000-0002-3993-1510"],
@@ -8053,6 +8461,10 @@
    ]
   },
   {
+   "orcid": ["0000-0002-4557-0395"],
+   "openalex": "A5026137467"
+  },
+  {
    "dblp": "203/6154",
    "institutions": [
     {
@@ -8077,6 +8489,16 @@
      "to": 2009
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-4889-6876"],
+   "scholar": "YsgFAIUAAAAJ",
+   "dblp": "130/9056",
+   "openalex": "A5101411528"
+  },
+  {
+   "orcid": ["0000-0002-0588-3987"],
+   "openalex": "A5029243781"
   },
   {
    "orcid": ["0000-0001-6738-6786"],
@@ -8129,6 +8551,9 @@
    ]
   },
   {
+   "openalex": "A5110690090"
+  },
+  {
    "orcid": ["0000-0001-5630-2743"],
    "dblp": "134/9890",
    "openalex": "A5081436487",
@@ -8157,20 +8582,6 @@
    ]
   },
   {
-   "orcid": ["0009-0004-7792-9798"],
-   "dblp": "320/3864",
-   "openalex": "A5088616760",
-   "institutions": [
-    {
-     "name": "Bangladesh University of Engineering and Technology",
-     "at": 7,
-     "country": "BD",
-     "from": 2025,
-     "to": 2025
-    }
-   ]
-  },
-  {
    "orcid": ["0000-0002-3855-344X"],
    "scholar": "CnBvgwcAAAAJ",
    "dblp": "16/2522",
@@ -8189,21 +8600,6 @@
      "country": "IL",
      "from": 2012,
      "to": 2012
-    }
-   ]
-  },
-  {
-   "orcid": ["0000-0003-1533-4575"],
-   "scholar": "S2OjOvYAAAAJ",
-   "dblp": "h/DavidHaussler",
-   "openalex": "A5090849321",
-   "institutions": [
-    {
-     "name": "University of California, Santa Cruz",
-     "at": 15,
-     "country": "US",
-     "from": 1994,
-     "to": 1994
     }
    ]
   },
@@ -8404,6 +8800,15 @@
    ]
   },
   {
+   "openalex": "A5008533836"
+  },
+  {
+   "orcid": ["0000-0003-1736-8007"],
+   "scholar": "AEti7PsAAAAJ",
+   "dblp": "22/6771-5",
+   "openalex": "A5032228669"
+  },
+  {
    "orcid": ["0000-0003-3392-9839"],
    "dblp": "91/1548",
    "openalex": "A5060013591",
@@ -8445,6 +8850,9 @@
    ]
   },
   {
+   "openalex": "A5104274492"
+  },
+  {
    "orcid": ["0000-0001-9940-9604"],
    "openalex": "A5036102604",
    "institutions": [
@@ -8483,6 +8891,10 @@
      "to": 2002
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-8060-4335"],
+   "openalex": "A5120950993"
   },
   {
    "orcid": ["0000-0001-7224-2074"],
@@ -8533,6 +8945,10 @@
    ]
   },
   {
+   "orcid": ["0000-0001-8466-7547"],
+   "openalex": "A5078769186"
+  },
+  {
    "orcid": ["0000-0002-8269-4231"],
    "openalex": "A5101678454",
    "institutions": [
@@ -8558,6 +8974,9 @@
      "to": 2023
     }
    ]
+  },
+  {
+   "orcid": ["0000-0003-0955-0589"]
   },
   {
    "orcid": ["0000-0002-8776-5764"],
@@ -8607,6 +9026,9 @@
      "to": 2012
     }
    ]
+  },
+  {
+   "openalex": "A5066665482"
   },
   {
    "orcid": ["0000-0003-3833-4498"],
@@ -8692,6 +9114,13 @@
    ]
   },
   {
+   "openalex": "A5086222406"
+  },
+  {
+   "orcid": ["0000-0002-5850-0716"],
+   "openalex": "A5075193675"
+  },
+  {
    "orcid": ["0000-0002-4974-9659"],
    "scholar": "pcrOEs8AAAAJ",
    "dblp": "85/3641",
@@ -8741,6 +9170,10 @@
    ]
   },
   {
+   "orcid": ["0000-0002-2582-5573"],
+   "openalex": "A5062883725"
+  },
+  {
    "orcid": ["0000-0002-7460-470X"],
    "dblp": "396/5577",
    "openalex": "A5032435550",
@@ -8753,6 +9186,9 @@
      "to": 2026
     }
    ]
+  },
+  {
+   "openalex": "A5001373612"
   },
   {
    "orcid": ["0000-0003-0854-6449"],
@@ -8774,6 +9210,9 @@
      "to": 2017
     }
    ]
+  },
+  {
+   "openalex": "A5095964485"
   },
   {
    "orcid": ["0000-0001-9186-3538"],
@@ -8956,6 +9395,10 @@
    ]
   },
   {
+   "dblp": "96/8709",
+   "openalex": "A5028324165"
+  },
+  {
    "orcid": ["0000-0003-0978-8730"],
    "dblp": "302/4481",
    "openalex": "A5064299065",
@@ -8984,6 +9427,14 @@
    ]
   },
   {
+   "orcid": ["0000-0001-9337-9870"],
+   "dblp": "220/2891",
+   "openalex": "A5071335817"
+  },
+  {
+   "openalex": "A5002668669"
+  },
+  {
    "dblp": "67/8713",
    "openalex": "A5082276721",
    "institutions": [
@@ -8995,6 +9446,10 @@
      "to": 2010
     }
    ]
+  },
+  {
+   "orcid": ["0000-0003-3806-0845"],
+   "openalex": "A5029545881"
   },
   {
    "orcid": ["0000-0002-5147-6282"],
@@ -9017,6 +9472,9 @@
      "to": 1994
     }
    ]
+  },
+  {
+   "openalex": "A5055134806"
   },
   {
    "dblp": "160/6770",
@@ -9057,6 +9515,9 @@
      "to": 2008
     }
    ]
+  },
+  {
+   "openalex": "A5069360590"
   },
   {
    "orcid": ["0000-0002-5657-018X"],
@@ -9248,6 +9709,9 @@
    ]
   },
   {
+   "openalex": "A5072166600"
+  },
+  {
    "orcid": ["0000-0002-6335-7977"],
    "scholar": "dYPH0_QAAAAJ",
    "dblp": "98/5581",
@@ -9287,6 +9751,10 @@
    ]
   },
   {
+   "dblp": "166/8707",
+   "openalex": "A5041936168"
+  },
+  {
    "orcid": ["0000-0001-9852-8759"],
    "dblp": "02/30",
    "openalex": "A5103242082",
@@ -9299,6 +9767,10 @@
      "to": 1998
     }
    ]
+  },
+  {
+   "dblp": "47/4887",
+   "openalex": "A5082318113"
   },
   {
    "orcid": ["0000-0002-2157-2775"],
@@ -9369,6 +9841,9 @@
    ]
   },
   {
+   "dblp": "58/2670-21"
+  },
+  {
    "orcid": ["0000-0003-3440-9675"],
    "scholar": "qYQHl4sAAAAJ",
    "dblp": "29/3462-4",
@@ -9395,6 +9870,9 @@
      "to": 2006
     }
    ]
+  },
+  {
+   "openalex": "A5003877983"
   },
   {
    "orcid": ["0000-0002-1862-5688"],
@@ -9424,21 +9902,7 @@
     }
    ]
   },
-  {
-   "orcid": ["0000-0001-5668-5027"],
-   "scholar": "0SPfIN4AAAAJ",
-   "dblp": "232/0355",
-   "openalex": "A5072480273",
-   "institutions": [
-    {
-     "name": "Australian National University",
-     "at": 14,
-     "country": "AU",
-     "from": 2026,
-     "to": 2026
-    }
-   ]
-  },
+  {},
   {
    "dblp": "86/401",
    "openalex": "A5084872691",
@@ -9519,6 +9983,10 @@
    ]
   },
   {
+   "orcid": ["0000-0003-2733-9568"],
+   "openalex": "A5084796844"
+  },
+  {
    "orcid": ["0000-0001-8442-9709"],
    "dblp": "340/3596",
    "openalex": "A5081950816",
@@ -9559,17 +10027,8 @@
    ]
   },
   {
-   "orcid": ["0000-0002-6298-1014"],
-   "dblp": "02/6681",
-   "institutions": [
-    {
-     "name": "European Bioinformatics Institute",
-     "at": 6,
-     "country": "GB",
-     "from": 2025,
-     "to": 2025
-    }
-   ]
+   "orcid": ["0000-0003-0216-778X"],
+   "openalex": "A5088177775"
   },
   {
    "institutions": [
@@ -9626,6 +10085,13 @@
    ]
   },
   {
+   "openalex": "A5055293129"
+  },
+  {
+   "dblp": "311/9477",
+   "openalex": "A5054887616"
+  },
+  {
    "orcid": ["0000-0001-5770-6336"],
    "dblp": "83/5089",
    "openalex": "A5037518076",
@@ -9666,6 +10132,14 @@
      "to": 1990
     }
    ]
+  },
+  {
+   "orcid": ["0000-0001-6981-4916"],
+   "openalex": "A5061872645"
+  },
+  {
+   "orcid": ["0000-0001-7734-9102"],
+   "openalex": "A5000334281"
   },
   {
    "orcid": ["0000-0003-1027-135X"],
@@ -9746,6 +10220,10 @@
      "to": 1988
     }
    ]
+  },
+  {
+   "dblp": "326/4189",
+   "openalex": "A5039706518"
   },
   {
    "orcid": ["0000-0001-8637-6719"],
@@ -9884,6 +10362,11 @@
    ]
   },
   {
+   "orcid": ["0000-0002-6714-0898"],
+   "dblp": "169/3841",
+   "openalex": "A5024851427"
+  },
+  {
    "institutions": [
     {
      "name": "North Carolina State University",
@@ -9982,6 +10465,13 @@
    ]
   },
   {
+   "orcid": ["0000-0002-7986-1158"],
+   "openalex": "A5033485866"
+  },
+  {
+   "openalex": "A5007031983"
+  },
+  {
    "openalex": "A5109080286"
   },
   {
@@ -10005,6 +10495,9 @@
      "to": 2022
     }
    ]
+  },
+  {
+   "openalex": "A5022946838"
   },
   {
    "orcid": ["0000-0001-9038-878X"],
@@ -10145,6 +10638,9 @@
    ]
   },
   {
+   "openalex": "A5009080265"
+  },
+  {
    "institutions": [
     {
      "name": "Naval Postgraduate School",
@@ -10152,28 +10648,6 @@
      "country": "US",
      "from": 2020,
      "to": 2020
-    }
-   ]
-  },
-  {
-   "orcid": ["0000-0001-8084-1464"],
-   "scholar": "8DXP2RkAAAAJ",
-   "dblp": "82/1264",
-   "openalex": "A5071954558",
-   "institutions": [
-    {
-     "name": "French National Centre for Scientific Research",
-     "at": 1,
-     "country": "FR",
-     "from": 2021,
-     "to": 2021
-    },
-    {
-     "name": "Université de Montpellier",
-     "at": 3,
-     "country": "FR",
-     "from": 2021,
-     "to": 2021
     }
    ]
   },
@@ -10280,6 +10754,10 @@
    ]
   },
   {
+   "dblp": "379/1025",
+   "openalex": "A5036045086"
+  },
+  {
    "orcid": ["0000-0003-0138-0693"],
    "dblp": "01/9764",
    "openalex": "A5101699990",
@@ -10292,6 +10770,9 @@
      "to": 2013
     }
    ]
+  },
+  {
+   "openalex": "A5032195828"
   },
   {
    "orcid": ["0000-0002-4784-4169"],
@@ -10328,6 +10809,14 @@
      "to": 2004
     }
    ]
+  },
+  {
+   "dblp": "290/2221",
+   "openalex": "A5008907208"
+  },
+  {
+   "orcid": ["0000-0003-0056-8045"],
+   "openalex": "A5067569888"
   },
   {
    "orcid": ["0000-0002-0313-3357"],
@@ -10496,6 +10985,9 @@
      "to": 1999
     }
    ]
+  },
+  {
+   "openalex": "A5065820887"
   },
   {
    "orcid": ["0000-0002-4452-4872"],
@@ -10668,6 +11160,10 @@
    ]
   },
   {
+   "orcid": ["0000-0003-1548-5429"],
+   "openalex": "A5026525836"
+  },
+  {
    "orcid": ["0000-0002-8082-1225"],
    "dblp": "174/8634",
    "openalex": "A5081272194",
@@ -10680,6 +11176,10 @@
      "to": 2026
     }
    ]
+  },
+  {
+   "orcid": ["0000-0001-8025-2117"],
+   "openalex": "A5009793855"
   },
   {
    "orcid": ["0000-0003-4045-0973"],
@@ -10746,6 +11246,9 @@
      "to": 1981
     }
    ]
+  },
+  {
+   "openalex": "A5053125324"
   },
   {
    "orcid": ["0009-0009-5587-6775"],
@@ -10876,6 +11379,16 @@
    "openalex": "A5035173636"
   },
   {
+   "orcid": ["0000-0002-4453-4173"],
+   "dblp": "261/4865",
+   "openalex": "A5045578421"
+  },
+  {
+   "orcid": ["0000-0002-1930-9265"],
+   "dblp": "04/11187",
+   "openalex": "A5039871113"
+  },
+  {
    "orcid": ["0000-0003-0270-6392"],
    "dblp": "51/9825",
    "openalex": "A5089719407",
@@ -10888,6 +11401,10 @@
      "to": 2015
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-7832-1264"],
+   "dblp": "60/9800"
   },
   {
    "orcid": ["0000-0003-4680-789X"],
@@ -11164,6 +11681,9 @@
    ]
   },
   {
+   "openalex": "A5079812532"
+  },
+  {
    "dblp": "04/3237",
    "openalex": "A5010742929",
    "institutions": [
@@ -11257,21 +11777,6 @@
    ]
   },
   {
-   "orcid": ["0000-0002-4656-7155"],
-   "scholar": "_dmbTJkAAAAJ",
-   "dblp": "72/3506",
-   "openalex": "A5019771245",
-   "institutions": [
-    {
-     "name": "Bielefeld University",
-     "at": 38,
-     "country": "DE",
-     "from": 1998,
-     "to": 1998
-    }
-   ]
-  },
-  {
    "openalex": "A5081076916",
    "institutions": [
     {
@@ -11351,6 +11856,10 @@
    ]
   },
   {
+   "dblp": "50/5594",
+   "openalex": "A5014999428"
+  },
+  {
    "dblp": "23/7417",
    "openalex": "A5109080904",
    "institutions": [
@@ -11405,6 +11914,10 @@
      "to": 2011
     }
    ]
+  },
+  {
+   "orcid": ["0000-0002-1914-5950"],
+   "openalex": "A5023308641"
   },
   {
    "orcid": ["0000-0003-0043-7133"],
@@ -11615,6 +12128,10 @@
    ]
   },
   {
+   "dblp": "326/4252",
+   "openalex": "A5082345337"
+  },
+  {
    "orcid": ["0000-0002-1062-8710"],
    "dblp": "46/86",
    "openalex": "A5039252182",
@@ -11662,6 +12179,10 @@
      "to": 2014
     }
    ]
+  },
+  {
+   "orcid": ["0000-0001-8559-9427"],
+   "openalex": "A5050640033"
   },
   {
    "orcid": ["0000-0002-5978-1505"],
@@ -11838,6 +12359,9 @@
    ]
   },
   {
+   "openalex": "A5024143614"
+  },
+  {
    "orcid": ["0000-0001-8735-6816"],
    "dblp": "319/1729",
    "openalex": "A5014828539",
@@ -11862,6 +12386,9 @@
      "to": 1974
     }
    ]
+  },
+  {
+   "openalex": "A5080633519"
   },
   {
    "orcid": ["0009-0005-4525-0163"],
@@ -11903,6 +12430,9 @@
      "to": 1994
     }
    ]
+  },
+  {
+   "openalex": "A5023727941"
   },
   {
    "orcid": ["0000-0002-8842-3432"],
@@ -12077,6 +12607,9 @@
    ]
   },
   {
+   "openalex": "A5117253971"
+  },
+  {
    "orcid": ["0000-0002-2606-9562"],
    "dblp": "06/6926",
    "openalex": "A5083515047",
@@ -12118,6 +12651,9 @@
    ]
   },
   {
+   "openalex": "A5032262383"
+  },
+  {
    "orcid": ["0000-0002-1302-4445"],
    "dblp": "00/6205",
    "openalex": "A5065384282",
@@ -12130,6 +12666,10 @@
      "to": 2000
     }
    ]
+  },
+  {
+   "orcid": ["0000-0003-0670-7480"],
+   "openalex": "A5035489365"
   },
   {
    "orcid": ["0000-0002-5204-4123"],
@@ -12159,18 +12699,8 @@
    ]
   },
   {
-   "orcid": ["0000-0003-3093-4077"],
-   "dblp": "14/2654",
-   "openalex": "A5088633211",
-   "institutions": [
-    {
-     "name": "University of Virginia",
-     "at": 311,
-     "country": "US",
-     "from": 2012,
-     "to": 2012
-    }
-   ]
+   "dblp": "117/4227",
+   "openalex": "A5032759284"
   },
   {
    "openalex": "A5015874173"
@@ -12326,6 +12856,14 @@
    ]
   },
   {
+   "dblp": "75/715",
+   "openalex": "A5100741784"
+  },
+  {
+   "orcid": ["0000-0003-4724-323X"],
+   "openalex": "A5091885910"
+  },
+  {
    "orcid": ["0000-0003-4698-5653"],
    "institutions": [
     {
@@ -12409,6 +12947,9 @@
    ]
   },
   {
+   "openalex": "A5131002915"
+  },
+  {
    "orcid": ["0000-0001-6009-5273"],
    "dblp": "91/195-33",
    "openalex": "A5045272233",
@@ -12435,6 +12976,13 @@
      "to": 2018
     }
    ]
+  },
+  {
+   "dblp": "13/2999"
+  },
+  {
+   "orcid": ["0000-0003-3928-8171"],
+   "openalex": "A5100626090"
   },
   {
    "scholar": "mE11hO8AAAAJ",
@@ -12483,6 +13031,14 @@
      "to": 2008
     }
    ]
+  },
+  {
+   "orcid": ["0000-0003-1195-9607"],
+   "openalex": "A5074828414"
+  },
+  {
+   "orcid": ["0000-0002-2582-1222"],
+   "openalex": "A5077153850"
   },
   {
    "orcid": ["0000-0002-2245-7875"],
@@ -12546,6 +13102,10 @@
      "to": 2014
     }
    ]
+  },
+  {
+   "orcid": ["0000-0003-4396-817X"],
+   "openalex": "A5071697234"
   }
  ],
  "venues": [
@@ -12560,7 +13120,7 @@
     },
     {
      "name": "Computer Applications in the Biosciences",
-     "venue": 40
+     "venue": 48
     }
    ],
    "iso4": "Bioinformatics",
@@ -12598,7 +13158,25 @@
    "continues": [
     {
      "name": "Systematic Zoology",
-     "venue": 57
+     "venue": 68
+    }
+   ]
+  },
+  {
+   "issn": ["1545-5963", "1557-9964", "2374-0043"],
+   "founded": "2004",
+   "first_year": 2004,
+   "country": "US",
+   "website": "http://www.computer.org/portal/web/tcbb/home",
+   "wikipedia": "https://en.wikipedia.org/wiki/IEEE_Transactions_on_Computational_Biology_and_Bioinformatics",
+   "wikidata": "Q5970224",
+   "openalex": "S36029991",
+   "about": "journal",
+   "other_titles": ["Transactions on computational biology and bioinformatics", "Computational biology and bioinformatics", "IEEE/ACM TCBB", "Computational biology and bioinformatics, IEEE/ACM transactions on", "IEEE/ACM Transactions on Computational Biology and Bioinformatics"],
+   "continued_by": [
+    {
+     "name": "IEEE Transactions on Computational Biology and Bioinformatics",
+     "venue": 53
     }
    ]
   },
@@ -12631,72 +13209,6 @@
    ]
   },
   {
-   "issn": ["1545-5963", "1557-9964", "2374-0043"],
-   "founded": "2004",
-   "first_year": 2004,
-   "country": "US",
-   "website": "http://www.computer.org/portal/web/tcbb/home",
-   "wikipedia": "https://en.wikipedia.org/wiki/IEEE_Transactions_on_Computational_Biology_and_Bioinformatics",
-   "wikidata": "Q5970224",
-   "openalex": "S36029991",
-   "about": "journal",
-   "other_titles": ["Transactions on computational biology and bioinformatics", "Computational biology and bioinformatics", "IEEE/ACM TCBB", "Computational biology and bioinformatics, IEEE/ACM transactions on", "IEEE/ACM Transactions on Computational Biology and Bioinformatics"],
-   "continued_by": [
-    {
-     "name": "IEEE Transactions on Computational Biology and Bioinformatics",
-     "venue": 80
-    }
-   ]
-  },
-  {
-   "issn": ["0022-2844", "1432-1432"],
-   "founded": "1971",
-   "first_year": 1971,
-   "country": "US",
-   "website": "http://www.springer.com/life+sciences/cell+biology/journal/239",
-   "wikipedia": "https://en.wikipedia.org/wiki/Journal_of_Molecular_Evolution",
-   "wikidata": "Q6295595",
-   "openalex": "S144184862",
-   "about": "scientific journal",
-   "other_titles": ["Journal of molecular evolution (Print)"]
-  },
-  {
-   "issn": ["1748-7188"],
-   "first_year": 2006,
-   "country": "GB",
-   "website": "https://almob.biomedcentral.com/",
-   "wikidata": "Q15749320",
-   "openalex": "S205663195",
-   "about": "journal",
-   "other_titles": ["AMB"]
-  },
-  {
-   "issn": ["1471-2105"],
-   "founded": "2000",
-   "first_year": 2000,
-   "iso4": "BMC Bioinform.",
-   "country": "GB",
-   "website": "http://www.biomedcentral.com/bmcbioinformatics/",
-   "wikipedia": "https://en.wikipedia.org/wiki/BMC_Bioinformatics",
-   "wikidata": "Q4835939",
-   "openalex": "S19032547",
-   "about": "journal",
-   "other_titles": ["BioMed Central bioinformatics", "Bioinformatics"]
-  },
-  {
-   "issn": ["0303-6812", "1432-1416"],
-   "founded": "1974",
-   "first_year": 1974,
-   "iso4": "J Math Biol",
-   "country": "DE",
-   "website": "http://www.springer.com/mathematics/mathematical+biology/journal/285",
-   "wikipedia": "https://en.wikipedia.org/wiki/Journal_of_Mathematical_Biology",
-   "wikidata": "Q2093109",
-   "openalex": "S171842551",
-   "about": "journal",
-   "other_titles": ["Mathematical biology (Internet)", "Mathematical biology (Print)"]
-  },
-  {
    "issn": ["0305-1048", "1362-4962"],
    "founded": "1974",
    "first_year": 1974,
@@ -12723,6 +13235,67 @@
    "other_titles": ["Computational biology", "Public Library of Science computational biology"]
   },
   {
+   "issn": ["1471-2105"],
+   "founded": "2000",
+   "first_year": 2000,
+   "iso4": "BMC Bioinform.",
+   "country": "GB",
+   "website": "http://www.biomedcentral.com/bmcbioinformatics/",
+   "wikipedia": "https://en.wikipedia.org/wiki/BMC_Bioinformatics",
+   "wikidata": "Q4835939",
+   "openalex": "S19032547",
+   "about": "journal",
+   "other_titles": ["BioMed Central bioinformatics", "Bioinformatics"]
+  },
+  {
+   "issn": ["0022-2844", "1432-1432"],
+   "founded": "1971",
+   "first_year": 1971,
+   "country": "US",
+   "website": "http://www.springer.com/life+sciences/cell+biology/journal/239",
+   "wikipedia": "https://en.wikipedia.org/wiki/Journal_of_Molecular_Evolution",
+   "wikidata": "Q6295595",
+   "openalex": "S144184862",
+   "about": "scientific journal",
+   "other_titles": ["Journal of molecular evolution (Print)"]
+  },
+  {
+   "issn": ["1748-7188"],
+   "first_year": 2006,
+   "country": "GB",
+   "website": "https://almob.biomedcentral.com/",
+   "wikidata": "Q15749320",
+   "openalex": "S205663195",
+   "about": "journal",
+   "other_titles": ["AMB"]
+  },
+  {
+   "issn": ["0303-6812", "1432-1416"],
+   "founded": "1974",
+   "first_year": 1974,
+   "iso4": "J Math Biol",
+   "country": "DE",
+   "website": "http://www.springer.com/mathematics/mathematical+biology/journal/285",
+   "wikipedia": "https://en.wikipedia.org/wiki/Journal_of_Mathematical_Biology",
+   "wikidata": "Q2093109",
+   "openalex": "S171842551",
+   "about": "journal",
+   "other_titles": ["Mathematical biology (Internet)", "Mathematical biology (Print)"]
+  },
+  {
+   "issn": ["1932-6203"],
+   "founded": "2006",
+   "first_year": 2002,
+   "iso4": "PLOS ONE",
+   "country": "US",
+   "website": "http://www.plosone.org/",
+   "wikipedia": "https://en.wikipedia.org/wiki/PLOS_One",
+   "wikidata": "Q564954",
+   "openalex": "S202381698",
+   "about": "peer-reviewed open-access journal",
+   "other_titles": ["PLoS ONE", "Public Library of Science one", "PLoS 1"]
+  },
+  {
    "issn": ["1471-2164"],
    "founded": "2000",
    "first_year": 2000,
@@ -12746,19 +13319,6 @@
    "openalex": "S43092948",
    "about": "journal",
    "other_titles": ["GR"]
-  },
-  {
-   "issn": ["1932-6203"],
-   "founded": "2006",
-   "first_year": 2002,
-   "iso4": "PLOS ONE",
-   "country": "US",
-   "website": "http://www.plosone.org/",
-   "wikipedia": "https://en.wikipedia.org/wiki/PLOS_One",
-   "wikidata": "Q564954",
-   "openalex": "S202381698",
-   "about": "peer-reviewed open-access journal",
-   "other_titles": ["PLoS ONE", "Public Library of Science one", "PLoS 1"]
   },
   {},
   {
@@ -12880,6 +13440,15 @@
    "other_titles": ["ArXiv.org", "arXiv (Cornell University)"]
   },
   {
+   "issn": ["2635-0041"],
+   "first_year": 2021,
+   "country": "GB",
+   "website": "https://academic.oup.com/bioinformaticsadvances",
+   "wikidata": "Q118773318",
+   "openalex": "S4210234069",
+   "about": "journal"
+  },
+  {
    "issn": ["0025-5564"],
    "founded": "1967",
    "first_year": 1967,
@@ -12903,6 +13472,19 @@
    "openalex": "S153560523",
    "about": "journal",
    "other_titles": ["Journal on computing", "Society for Industrial and Applied Mathematics journal on computing"]
+  },
+  {
+   "issn": ["1465-6906", "1474-760X"],
+   "founded": "2000",
+   "first_year": 2000,
+   "iso4": "Genome Biol.",
+   "country": "GB",
+   "website": "https://genomebiology.biomedcentral.com/",
+   "wikipedia": "https://en.wikipedia.org/wiki/Genome_Biology",
+   "wikidata": "Q5533480",
+   "openalex": "S81160022",
+   "about": "scientific journal",
+   "other_titles": ["GenomeBiology.com", "GB. C", "GB.C (London. Print)", "GB.C (London. Online)", "Genome biology.com (Print)", "Genome biology (Online)", "Genome biology (Print)"]
   },
   {
    "issn": ["1055-7903", "1095-9513"],
@@ -12942,6 +13524,18 @@
    "other_titles": ["Discrete mathematics", "Journal on discrete mathematics", "SIAM j. discrete math.", "Society for Industrial and Applied Mathematics journal on discrete mathematics"]
   },
   {
+   "issn": ["1548-7091", "1548-7105"],
+   "founded": "2004",
+   "first_year": 2004,
+   "iso4": "Nat. Methods",
+   "country": "US",
+   "website": "https://www.nature.com/nmeth/",
+   "wikipedia": "https://en.wikipedia.org/wiki/Nature_Methods",
+   "wikidata": "Q680640",
+   "openalex": "S127827428",
+   "about": "journal"
+  },
+  {
    "issn": ["0218-0006", "0219-3094"],
    "first_year": 1997,
    "country": "SG",
@@ -12951,15 +13545,6 @@
    "openalex": "S138567582",
    "about": "journal",
    "other_titles": ["AC"]
-  },
-  {
-   "issn": ["2635-0041"],
-   "first_year": 2021,
-   "country": "GB",
-   "website": "https://academic.oup.com/bioinformaticsadvances",
-   "wikidata": "Q118773318",
-   "openalex": "S4210234069",
-   "about": "journal"
   },
   {
    "issn": ["0014-3820", "1558-5646"],
@@ -12984,6 +13569,23 @@
    "other_titles": ["Journal of classification (Print)"]
   },
   {
+   "issn": ["1755-098X", "1755-0998"],
+   "founded": "2001",
+   "first_year": 2007,
+   "continues": [
+    {
+     "name": "Molecular Ecology Notes",
+     "wikidata": "Q27714778"
+    }
+   ],
+   "country": "GB",
+   "website": "https://onlinelibrary.wiley.com/journal/17550998",
+   "wikipedia": "https://en.wikipedia.org/wiki/Molecular_Ecology_Resources",
+   "wikidata": "Q15760135",
+   "openalex": "S64961995",
+   "about": "scientific journal"
+  },
+  {
    "issn": ["1553-7390", "1553-7404"],
    "founded": "2005",
    "first_year": 2005,
@@ -12994,6 +13596,41 @@
    "openalex": "S103870658",
    "about": "scientific journal",
    "other_titles": ["Public Library of Science genetics"]
+  },
+  {
+   "issn": ["2167-8359"],
+   "founded": "2013",
+   "first_year": 2013,
+   "country": "US",
+   "website": "http://www.peerj.com/",
+   "wikipedia": "https://en.wikipedia.org/wiki/PeerJ",
+   "wikidata": "Q2000010",
+   "openalex": "S1983995261",
+   "about": "open-access scientific journal",
+   "other_titles": ["Peer j", "Peerj"]
+  },
+  {
+   "issn": ["0962-8436", "1471-2970"],
+   "founded": "1887",
+   "first_year": 1980,
+   "continues": [
+    {
+     "name": "Philosophical Transactions",
+     "wikidata": "Q913162"
+    },
+    {
+     "name": "Philosophical Transactions of the Royal Society of London. Series B, Biological Sciences",
+     "wikidata": "Q46792372"
+    }
+   ],
+   "iso4": "Phil. Trans. R. Soc. B",
+   "country": "GB",
+   "website": "http://rstb.royalsocietypublishing.org/",
+   "wikipedia": "https://en.wikipedia.org/wiki/Philosophical_Transactions_of_the_Royal_Society_B",
+   "wikidata": "Q2153239",
+   "openalex": "S91660768",
+   "about": "scientific journal",
+   "other_titles": ["Philosophical transactions of the Royal Society.", "Philosophical transactions of the Royal Society", "Philosophical transactions.", "Philosophical transactions. B"]
   },
   {},
   {},
@@ -13006,6 +13643,49 @@
    "wikidata": "Q13430281",
    "openalex": "S7571225",
    "about": "journal"
+  },
+  {
+   "issn": ["0099-2240", "1098-5336"],
+   "founded": "1953",
+   "first_year": 1960,
+   "iso4": "Appl. Environ. Microbiol.",
+   "country": "US",
+   "website": "http://aem.asm.org/",
+   "wikipedia": "https://en.wikipedia.org/wiki/Applied_and_Environmental_Microbiology",
+   "wikidata": "Q4781593",
+   "openalex": "S158228368",
+   "about": "journal",
+   "other_titles": ["AEM"]
+  },
+  {
+   "issn": ["2079-7737"],
+   "founded": "2012",
+   "first_year": 1942,
+   "iso4": "Biology",
+   "country": "CH",
+   "website": "http://www.mdpi.com/journal/biology/",
+   "wikipedia": "https://en.wikipedia.org/wiki/Biology_(journal)",
+   "wikidata": "Q17509951",
+   "openalex": "S153489431",
+   "about": "open-access scientific journal on biochemistry and molecular biology"
+  },
+  {
+   "issn": ["0006-341X", "1541-0420"],
+   "founded": "1945",
+   "first_year": 1947,
+   "continues": [
+    {
+     "name": "Biometrics Bulletin",
+     "wikidata": "Q96473318"
+    }
+   ],
+   "country": "US",
+   "website": "https://academic.oup.com/biometrics",
+   "wikipedia": "https://en.wikipedia.org/wiki/Biometrics_(journal)",
+   "wikidata": "Q2025724",
+   "openalex": "S8265502",
+   "about": "journal",
+   "societies": ["International Biometric Society"]
   },
   {
    "issn": ["0748-3007", "1096-0031"],
@@ -13081,6 +13761,20 @@
    "other_titles": ["GBE"]
   },
   {
+   "issn": ["2998-4165"],
+   "first_year": 2004,
+   "country": "US",
+   "website": "http://www.computer.org/portal/web/tcbb/home",
+   "openalex": "S36029991",
+   "other_titles": ["Transactions on computational biology and bioinformatics", "Computational biology and bioinformatics", "IEEE/ACM TCBB", "Computational biology and bioinformatics, IEEE/ACM transactions on", "IEEE/ACM Transactions on Computational Biology and Bioinformatics"],
+   "continues": [
+    {
+     "name": "IEEE/ACM Transactions on Computational Biology and Bioinformatics",
+     "venue": 3
+    }
+   ]
+  },
+  {
    "issn": ["0020-0190", "1872-6119"],
    "founded": "1971",
    "first_year": 1971,
@@ -13125,6 +13819,31 @@
    "other_titles": ["Journal of the ACM", "JACM"]
   },
   {
+   "issn": ["2041-210X"],
+   "founded": "2010",
+   "first_year": 2009,
+   "country": "US",
+   "website": "http://www.methodsinecologyandevolution.org/view/0/index.html",
+   "wikipedia": "https://en.wikipedia.org/wiki/Methods_in_Ecology_and_Evolution",
+   "wikidata": "Q15710059",
+   "openalex": "S1131227",
+   "about": "journal",
+   "societies": ["British Ecological Society"],
+   "other_titles": ["Methods in ecology & evolution"]
+  },
+  {
+   "issn": ["0028-0836", "1476-4687"],
+   "founded": "1869",
+   "first_year": 1869,
+   "iso4": "Nature",
+   "country": "GB",
+   "website": "https://www.nature.com/nature/",
+   "wikipedia": "https://en.wikipedia.org/wiki/Nature_(journal)",
+   "wikidata": "Q180445",
+   "openalex": "S137773608",
+   "about": "British scientific journal since 1869"
+  },
+  {
    "issn": ["1087-0156", "1546-1696"],
    "founded": "1983",
    "first_year": 1983,
@@ -13137,16 +13856,16 @@
    "other_titles": ["Bio/Technology", "Biotechnology"]
   },
   {
-   "issn": ["1548-7091", "1548-7105"],
-   "founded": "2004",
-   "first_year": 2004,
-   "iso4": "Nat. Methods",
+   "issn": ["1061-4036", "1546-1718"],
+   "founded": "1992",
+   "first_year": 1992,
    "country": "US",
-   "website": "https://www.nature.com/nmeth/",
-   "wikipedia": "https://en.wikipedia.org/wiki/Nature_Methods",
-   "wikidata": "Q680640",
-   "openalex": "S127827428",
-   "about": "journal"
+   "website": "https://www.nature.com/ng/",
+   "wikipedia": "https://en.wikipedia.org/wiki/Nature_Genetics",
+   "wikidata": "Q976454",
+   "openalex": "S137905309",
+   "about": "scientific journal",
+   "other_titles": ["Genetics"]
   },
   {},
   {
@@ -13191,7 +13910,7 @@
    "other_titles": ["Journal on applied algebra and geometry", "Society for Industrial and Applied Mathematics journal on applied algebra and geometry", "SIAGA"]
   },
   {
-   "issn": ["0304-4149"],
+   "issn": ["0304-4149", "1879-209X"],
    "founded": "1973",
    "first_year": 1973,
    "country": "NL",
@@ -13246,6 +13965,17 @@
    "openalex": "S119757635",
    "about": "journal",
    "other_titles": ["Ann. stat."]
+  },
+  {
+   "issn": ["2050-084X"],
+   "founded": "2011",
+   "first_year": 2012,
+   "country": "GB",
+   "website": "http://elifesciences.org/",
+   "wikipedia": "https://en.wikipedia.org/wiki/ELife",
+   "wikidata": "Q2000008",
+   "openalex": "S1336409049",
+   "about": "peer-reviewed open-access scientific journal"
   },
   {
    "issn": ["1084-6654"],
@@ -13316,22 +14046,35 @@
   },
   {},
   {
-   "issn": ["0006-341X", "1541-0420"],
-   "founded": "1945",
-   "first_year": 1947,
+   "issn": ["1741-7007"],
+   "founded": "2003",
+   "first_year": 2003,
    "continues": [
     {
-     "name": "Biometrics Bulletin",
-     "wikidata": "Q96473318"
+     "name": "Journal of Biology",
+     "wikidata": "Q6294846"
     }
    ],
-   "country": "US",
-   "website": "https://academic.oup.com/biometrics",
-   "wikipedia": "https://en.wikipedia.org/wiki/Biometrics_(journal)",
-   "wikidata": "Q2025724",
-   "openalex": "S8265502",
-   "about": "journal",
-   "societies": ["International Biometric Society"]
+   "iso4": "BMC Biol.",
+   "country": "GB",
+   "website": "http://www.biomedcentral.com/bmcbiol/",
+   "wikipedia": "https://en.wikipedia.org/wiki/BMC_Biology",
+   "wikidata": "Q2545642",
+   "openalex": "S25903957",
+   "about": "scientific journal",
+   "other_titles": ["Biology", "BioMed Central biology"]
+  },
+  {},
+  {
+   "issn": ["0006-3207"],
+   "founded": "1968",
+   "first_year": 1968,
+   "country": "GB",
+   "website": "https://www.journals.elsevier.com/biological-conservation",
+   "wikipedia": "https://en.wikipedia.org/wiki/Biological_Conservation_(journal)",
+   "wikidata": "Q2904149",
+   "openalex": "S80660208",
+   "about": "academic journal"
   },
   {
    "issn": ["0006-3444", "1464-3510"],
@@ -13355,6 +14098,15 @@
    "wikidata": "Q4967031",
    "openalex": "S91767247",
    "about": "journal"
+  },
+  {
+   "issn": ["2405-4712"],
+   "first_year": 2015,
+   "country": "NL",
+   "website": "https://www.journals.elsevier.com/cell-systems",
+   "wikidata": "Q27726426",
+   "openalex": "S2764739556",
+   "about": "scientific journal"
   },
   {
    "issn": ["0001-0782", "1557-7317"],
@@ -13422,19 +14174,6 @@
    "about": "scientific journal"
   },
   {
-   "issn": ["1465-6906", "1474-760X"],
-   "founded": "2000",
-   "first_year": 2000,
-   "iso4": "Genome Biol.",
-   "country": "GB",
-   "website": "https://genomebiology.biomedcentral.com/",
-   "wikipedia": "https://en.wikipedia.org/wiki/Genome_Biology",
-   "wikidata": "Q5533480",
-   "openalex": "S81160022",
-   "about": "scientific journal",
-   "other_titles": ["GenomeBiology.com", "GB. C", "GB.C (London. Print)", "GB.C (London. Online)", "Genome biology.com (Print)", "Genome biology (Online)", "Genome biology (Print)"]
-  },
-  {
    "issn": ["2047-217X"],
    "founded": "2012-07-12",
    "first_year": 2012,
@@ -13447,20 +14186,6 @@
    "other_titles": ["Giga Science"]
   },
   {},
-  {
-   "issn": ["2998-4165"],
-   "first_year": 2004,
-   "country": "US",
-   "website": "http://www.computer.org/portal/web/tcbb/home",
-   "openalex": "S36029991",
-   "other_titles": ["Transactions on computational biology and bioinformatics", "Computational biology and bioinformatics", "IEEE/ACM TCBB", "Computational biology and bioinformatics, IEEE/ACM transactions on", "IEEE/ACM Transactions on Computational Biology and Bioinformatics"],
-   "continues": [
-    {
-     "name": "IEEE/ACM Transactions on Computational Biology and Bioinformatics",
-     "venue": 5
-    }
-   ]
-  },
   {},
   {
    "issn": ["0019-9958"],
@@ -13517,6 +14242,36 @@
    "about": "journal",
    "other_titles": ["Journal of The London Mathematical Society-second Series"]
   },
+  {
+   "issn": ["1369-7412", "1467-9868"],
+   "first_year": 1934,
+   "continues": [
+    {
+     "name": "Journal of the Royal Statistical Society. Series B: Methodological",
+     "wikidata": "Q96330030"
+    }
+   ],
+   "country": "GB",
+   "website": "https://academic.oup.com/jrsssb",
+   "wikidata": "Q15759195",
+   "openalex": "S145009937",
+   "about": "UK scientific journal; JRSS-B (title since 1998)",
+   "societies": ["Royal Statistical Society"],
+   "other_titles": ["Statistical methodology"]
+  },
+  {
+   "issn": ["0302-9743", "1611-3349"],
+   "founded": "1973",
+   "first_year": 1973,
+   "iso4": "Lect. Notes Comput. Sci.",
+   "country": "CH",
+   "website": "http://www.springer.com/lncs",
+   "wikipedia": "https://en.wikipedia.org/wiki/Lecture_Notes_in_Computer_Science",
+   "wikidata": "Q924044",
+   "openalex": "S106296714",
+   "about": "book series by Springer publishing",
+   "other_titles": ["Information systems and applications, including internet/web, and HCI (Online)", "Image Processing, Computer Vision, Pattern Recognition, and Graphics (Online)", "Lecture  notes in computer science. Advanced research in computing and software science (Print)", "Lecture notes in computer science. Journal subline", "Lecture notes in computer science. Computer communication networks and telecommunications (Online)", "Lecture notes in computer science. Programming and software engineering (Online)", "Lecture notes in computer science. Image Processing, Computer Vision, Pattern Recognition, and Graphics (Print)", "Lecture notes in artificial intelligence (Online)", "Lecture notes in computer science. FoLLi publications on logic, language and information (Online)", "Lecture notes in computer science. Security and cryptology (Online)", "Lecture notes in computer science. FoLLI publications on logic, language and information (Print)", "Lecture notes in computer science. LNAI. Lecture notes in artificial intelligence", "Advanced research in computing and software science (Online)", "FoLLi publications on logic, language and information (Online)", "Lecture notes in computer science. Lecture notes in artificial intelligence (Online)", "Image Processing, Computer Vision, Pattern Recognition, and Graphics (Print)", "Lecture notes in artificial intelligence (Print)", "Lecture notes in computer science. Information systems and applications, including internet/web, and HCI (Print)", "Lecture notes in computer science. Advanced research in computing and software science (Online)", "Information systems and applications, including internet/web, and HCI (Print)", "LNCS. Lecture notes in computer science (Print)", "Security and cryptology (Online)", "Lecture notes in computer science. Security and cryptology (Print)", "Security and cryptology (Print)", "Lecture noes in computer science.  Image Processing, Computer Vision, Pattern Recognition, and Graphics (Online)", "Lecture notes in computer science. Lecture notes in bioinformatics (Print)", "LNCS. Lecture notes in computer science (Internet)", "Lecture notes in computer science. Information systems and applications, including internet/web, and HCI (Online)", "Advanced research in computing and software science (Print)", "FoLLI publications on logic, language and information (Print)", "Lecture notes in computer science. Lecture notes in bioinformatics (Internet)", "Programming and software engineering (Online)", "Lecture notes in computer science. Lecture notes in artificial intelligence (Print)", "Lecture notes in computer science (Print)", "Computer communication networks and telecommunications (Online)", "LNCS"]
+  },
   {},
   {
    "issn": ["0025-5610", "1436-4646"],
@@ -13556,18 +14311,6 @@
    "wikidata": "Q2261043",
    "openalex": "S200893805",
    "about": "journal"
-  },
-  {
-   "issn": ["0028-0836", "1476-4687"],
-   "founded": "1869",
-   "first_year": 1869,
-   "iso4": "Nature",
-   "country": "GB",
-   "website": "https://www.nature.com/nature/",
-   "wikipedia": "https://en.wikipedia.org/wiki/Nature_(journal)",
-   "wikidata": "Q180445",
-   "openalex": "S137773608",
-   "about": "British scientific journal since 1869"
   },
   {
    "issn": ["2041-1723"],
@@ -13625,29 +14368,7 @@
    "about": "scientific journal",
    "other_titles": ["PLoS Curr", "Public Library of Science currents", "PLoS currents."]
   },
-  {
-   "issn": ["0962-8436", "1471-2970"],
-   "founded": "1887",
-   "first_year": 1980,
-   "continues": [
-    {
-     "name": "Philosophical Transactions",
-     "wikidata": "Q913162"
-    },
-    {
-     "name": "Philosophical Transactions of the Royal Society of London. Series B, Biological Sciences",
-     "wikidata": "Q46792372"
-    }
-   ],
-   "iso4": "Phil. Trans. R. Soc. B",
-   "country": "GB",
-   "website": "http://rstb.royalsocietypublishing.org/",
-   "wikipedia": "https://en.wikipedia.org/wiki/Philosophical_Transactions_of_the_Royal_Society_B",
-   "wikidata": "Q2153239",
-   "openalex": "S91660768",
-   "about": "scientific journal",
-   "other_titles": ["Philosophical transactions of the Royal Society.", "Philosophical transactions of the Royal Society", "Philosophical transactions.", "Philosophical transactions. B"]
-  },
+  {},
   {
    "issn": ["0269-2139", "1460-213X"],
    "first_year": 1986,
@@ -13759,6 +14480,17 @@
    "openalex": "S60030702",
    "about": "journal",
    "other_titles": ["TRAN"]
-  }
+  },
+  {
+   "issn": ["2379-5077"],
+   "first_year": 2015,
+   "country": "US",
+   "website": "https://journals.asm.org/journal/msystems",
+   "wikidata": "Q27727349",
+   "openalex": "S4210181942",
+   "about": "scientific journal published by the American Society for Microbiology",
+   "other_titles": ["Microbial systems", "MSystems", "M Systems"]
+  },
+  {}
  ]
 }
