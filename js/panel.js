@@ -11,6 +11,7 @@ import {
   yearSort,
 } from "./base.js";
 import { readProfiles, readWork } from "./data.js";
+import { fieldText } from "./query.js";
 import { tagHtml } from "./lists.js";
 import { linkEntries } from "./people.js";
 
@@ -49,28 +50,33 @@ export function listSection(title, rows) {
     .join("")}</ul></div>`;
 }
 
-// the institutions an author's papers in the collection place them at, with the links to their
-// ORCID, Google Scholar, OpenAlex and Wikipedia pages
-export function authorFacts(pr, people) {
+// the institutions an author's papers in the collection place them at, each with the entries that
+// do (a search for them), and the links to their ORCID, Google Scholar, OpenAlex and Wikipedia pages
+export function authorFacts(pr, people, who) {
   if (!pr) return "";
   return `${linksRow([
-      ...(pr.orcid || []).map((o) => [`ORCID ${o}`, `https://orcid.org/${o}`]),
-      pr.scholar && [
-        "Google Scholar",
-        `https://scholar.google.com/citations?user=${pr.scholar}`,
-      ],
-      pr.openalex && ["OpenAlex", `https://openalex.org/${pr.openalex}`],
-      pr.wikipedia && ["Wikipedia", pr.wikipedia],
-    ])}
+    ...(pr.orcid || []).map((o) => [`ORCID ${o}`, `https://orcid.org/${o}`]),
+    pr.scholar && [
+      "Google Scholar",
+      `https://scholar.google.com/citations?user=${pr.scholar}`,
+    ],
+    pr.openalex && ["OpenAlex", `https://openalex.org/${pr.openalex}`],
+    pr.wikipedia && ["Wikipedia", pr.wikipedia],
+  ])}
     ${listSection(
       "Institutions",
-      (pr.institutions || []).map((r) => [
-        people && people.institutionNamed.has(r.name)
-          ? `<button type="button" class="p-up" data-go="institution:${people.institutionNamed.get(r.name).i}">${esc(r.name)}</button>`
-          : esc(r.name),
-        esc(countryName(r.country)),
-        when(String(r.from), String(r.to)),
-      ]),
+      (pr.institutions || []).map((r) => {
+        const h = people && people.institutionNamed.get(r.name);
+        const n = h && who && who.places ? (who.places.get(h) || []).length : 0;
+        const find = `${fieldText("author", who ? who.name : "")} ${fieldText("institution", r.name)}`;
+        return [
+          h
+            ? `<button type="button" class="p-up" data-go="institution:${h.i}">${esc(r.name)}</button>`
+            : esc(r.name),
+          `${esc(countryName(r.country))}${n ? ` · <button type="button" class="p-q" data-q="${esc(find)}" title="Search the entries that place them here">${n} ${n === 1 ? "entry" : "entries"}</button>` : ""}`,
+          when(String(r.from), String(r.to)),
+        ];
+      }),
     )}`;
 }
 
@@ -214,7 +220,7 @@ export function renderPanel(ui) {
         if (ui.group !== g || !el) return;
         el.innerHTML =
           g.kind === "author"
-            ? authorFacts(all && all.authors[g.i], ui.model)
+            ? authorFacts(all && all.authors[g.i], ui.model, g)
             : venueFacts(all && all.venues[g.i], g);
       });
     return;

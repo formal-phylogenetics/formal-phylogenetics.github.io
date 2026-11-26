@@ -15,20 +15,29 @@ below in blocks of their publishers: the publishers, and the venues in each, by 
 authors, the most first, and each author above the venue of most of their entries, the authors
 above one venue by their links. In both graphs a link
 is as wide as the entries behind it; pointing at an author, a venue, a publisher or a link tells
-what it is, and a click pins it in the panel; a click on what is pinned, on nothing, or Escape lets it go. Then come
-the panel of the pinned entry, author, venue, publisher or link; the search; and the list, of the
+what it is, and a click pins it in the panel; a click on what is pinned, on nothing, or Escape lets it go. A pinned
+author, venue, publisher, institution or country is marked in every view with what belongs to it (in
+the timeline its entries, in the graphs its authors and venues) and the links between two of those.
+Then come the panel of the pinned entry, author, venue, publisher or link; the search; and the list, of the
 hubs, which open to their families, of the authors, of the publishers, which open to their
 venues (a conference is a venue under Conference, a preprint server one under Preprint), or of the
 countries, which open to their institutions and these to their authors.
-Colour is the hub, shape the kind of paper (round for a method, square for theory), fill the
+A method is named by its name and year, a theory paper by its authors and year. Colour is the hub, shape the kind of paper (round for a method, square for theory), fill the
 status, and size the entry's weight in the citations: its PageRank, in which a citation counts for
 as much as the paper that makes it weighs. Pointing at an entry, in the timeline or the list, marks it in both and shows its card,
 with its authors, venue and abstract. A click pins it: the panel shows what it cites and what cites
 it, marked everywhere, with links to its formalization and its paper, and the address keeps it; a
 click on the pinned entry, on nothing, or Escape unpins it. The header switches between light and dark.
 
+The search dims what does not match, in the views and in the lists. Its words match an entry's name,
+title, authors, year, venue and the institutions of its byline; fields narrow it, each written
+`field:word` or `field:"several words"`: `author`, `institution`, `country`, `venue`, `publisher`,
+`year` (a year, or a span such as `1999-2004`, `2010-` or `-1990`), `hub`, `kind`, `status` and
+`title`. An author with an institution or a country finds the papers whose byline places that author
+there. The advanced form beside the search writes the same fields.
+
 The panel of an author gives the institutions their papers in the collection place them at, with
-the years, and their ORCID, Google Scholar, OpenAlex and Wikipedia pages; then their co-authors and venues in the collection, each with the entries behind it. The
+the years and the number of entries, which searches for them, and their ORCID, Google Scholar, OpenAlex and Wikipedia pages; then their co-authors and venues in the collection, each with the entries behind it. The
 panel of a venue gives the year it was founded, the titles it continued or that continued it, its
 abbreviation and ISSN, and its authors with their entries there; that of an institution, its
 country, its authors with their years there and its entries; that of a country, its institutions
@@ -53,11 +62,13 @@ and [Europe PMC](https://europepmc.org), or, where none gives the abstract, from
 - `js/`: the modules of `app.js`: `base.js` (the constants and small helpers), `data.js` (reading
   the catalogs and the data), `fan.js` (the tree), `timeline.js`, `card.js` (the card of an entry),
   `people.js` (the authors, venues, publishers and institutions), `network.js` (the graphs of the
-  people), `panel.js`, `lists.js` (the rows of the lists) and `page.js` (the page and its wiring);
+  people), `panel.js`, `lists.js` (the rows of the lists), `query.js` (the search) and `page.js` (the
+  page and its wiring);
 - `data/`: the data, written from the library: `catalogue.json`, the catalogs the page falls back on
   when GitHub cannot be reached; `citations.json`, the citations between the entries; `works.json`,
   the authors, venue and abstract of each entry; `people.json`, the authors, the venues with their
-  publishers, and the co-authorship with its layout; `profiles.json`, read when a panel shows one,
+  publishers, the institutions with the authors and the papers their bylines place there, and the
+  co-authorship with its layout; `profiles.json`, read when a panel shows one,
   the profiles of the authors and the venues;
 - `assets/`: `catalogue.png`, the image shown when the page is shared, the tree of the collection;
   `icon.svg` and `apple-touch-icon.png`, the icon, the tree of the collection in brief: the root, its

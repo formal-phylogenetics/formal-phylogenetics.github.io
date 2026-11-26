@@ -1,4 +1,4 @@
-import { GROUP, MOON, ORG, SUN, esc, fold } from "./base.js";
+import { GROUP, MOON, ORG, SUN, esc, fold, short } from "./base.js";
 import { card, hideCard, placeBy, showCard } from "./card.js";
 import {
   loadLive,
@@ -12,7 +12,8 @@ import { coverModel, drawFan } from "./fan.js";
 import { countryRow, hubRow, personRow, publisherRow } from "./lists.js";
 import { createNetwork } from "./network.js";
 import { paintStats, renderPanel } from "./panel.js";
-import { peopleModel, sameGroup } from "./people.js";
+import { linkEntries, peopleModel, sameGroup } from "./people.js";
+import { compileQuery, fieldText, parseQuery, yearSpan } from "./query.js";
 import { createTimeline, wireTimeline } from "./timeline.js";
 
 export function shell(app) {
@@ -68,7 +69,10 @@ export function shell(app) {
       </aside>
       </div>
       <div class="find">
-        <input id="q" type="search" placeholder="Search a method, a title or an author" aria-label="Search the catalogue" autocomplete="off" />
+        <div class="q-row">
+          <input id="q" type="search" placeholder="Search a method, a title, an author or an institution" aria-label="Search the catalogue" autocomplete="off" />
+          <button type="button" class="q-adv" id="q-adv" aria-expanded="false" aria-controls="adv">Advanced</button>
+        </div>
         <div class="lists" role="tablist" aria-label="The list">
           <button type="button" role="tab" data-list="hubs" aria-selected="true">By hub</button>
           <button type="button" role="tab" data-list="authors" aria-selected="false">By author</button>
@@ -77,6 +81,21 @@ export function shell(app) {
         </div>
         <button type="button" class="fold-all" id="fold-all"></button>
       </div>
+      <form class="adv" id="adv" hidden aria-label="Advanced search">
+        <label><span>Author</span><input name="author" list="dl-author" autocomplete="off" /></label>
+        <label><span>Institution</span><input name="institution" list="dl-institution" autocomplete="off" /></label>
+        <label><span>Country</span><input name="country" list="dl-country" autocomplete="off" /></label>
+        <label><span>Venue</span><input name="venue" list="dl-venue" autocomplete="off" /></label>
+        <label><span>From</span><input name="from" inputmode="numeric" maxlength="4" placeholder="year" autocomplete="off" /></label>
+        <label><span>To</span><input name="to" inputmode="numeric" maxlength="4" placeholder="year" autocomplete="off" /></label>
+        <label><span>Hub</span><select name="hub"><option value="">Any</option></select></label>
+        <label><span>Kind</span><select name="kind"><option value="">Any</option><option value="method">Method</option><option value="theory">Theory</option></select></label>
+        <label><span>Status</span><select name="status"><option value="">Any</option><option value="formalized">Formalized</option><option value="in-progress">In progress</option><option value="todo">To do</option></select></label>
+        <label class="adv-words"><span>Words</span><input name="words" autocomplete="off" placeholder="in the name, title, authors or venue" /></label>
+        <p class="adv-note">Each field narrows the entries. An author with an institution or a country finds the papers whose byline places that author there. The search box reads the same: <code>author:Warnow institution:Harvard year:1999-2004</code>.</p>
+        <button type="reset" class="adv-clear">Clear</button>
+        <datalist id="dl-author"></datalist><datalist id="dl-institution"></datalist><datalist id="dl-country"></datalist><datalist id="dl-venue"></datalist>
+      </form>
       <section class="hubs" id="hubs" aria-label="The hubs"></section>
       <section class="hubs people" id="authors" aria-label="The authors" hidden></section>
       <section class="hubs people" id="venues" aria-label="The venues" hidden></section>
@@ -139,7 +158,18 @@ export function makeUi(m, els) {
         marked.push([el, cls]);
       }
     };
-    els.graph.classList.toggle("focus", Boolean(e));
+    // a pinned author, venue, institution or other group: its entries, and the citations between two
+    // of them
+    const g = !e && ui.group;
+    els.graph.classList.toggle("focus", Boolean(e || g));
+    if (g) {
+      const set = new Set(g.kind === "link" ? linkEntries(g) : g.entries || []);
+      for (const x of set)
+        for (const el of [x.node, ...(x.tags || [])]) add(el, "grp");
+      for (const l of ui.links)
+        if (set.has(l.source) && set.has(l.target)) add(l.el, "grp");
+      return;
+    }
     if (!e) return;
     for (const el of [e.node, ...(e.tags || [])]) add(el, "sel");
     for (const x of ui.cites.get(e) || [])
@@ -476,7 +506,7 @@ export async function main() {
         ? "The authors, and who wrote with whom, in the years shown"
         : "The authors above, and below the venues of their entries grouped by publisher, in the years shown",
     );
-    nets[v].search(words(), false);
+    nets[v].search(query, false);
     nets[v].setWindow(lastWin.a, lastWin.b);
   };
   for (const b of document.querySelectorAll(".views [data-view]"))
@@ -567,6 +597,14 @@ export async function main() {
       els.panel.scrollIntoView({ block: "start" });
   };
   const go = (ev) => {
+    // a count that searches: an author's entries at one of their institutions
+    const s = ev.target.closest("[data-q]");
+    if (s) {
+      q.value = s.dataset.q;
+      widen();
+      filter();
+      return;
+    }
     const all = ev.target.closest("[data-all]");
     if (all) {
       all.parentElement.classList.add("all");
@@ -619,25 +657,45 @@ export async function main() {
       return;
     }
     ui.model = people;
+    // the search also reads each entry's venue and the institutions of its byline
+    for (const e of m.entries) {
+      const v = people.venueOf.get(e);
+      const at = (people.placesOf.get(e) || []).map(
+        (p) => `${p.where.own} ${p.where.land ? p.where.land.own : ""}`,
+      );
+      e.hay += ` ${v ? v.hay : ""} ${[...new Set(at)].join(" ")}`;
+    }
+    offer();
     stats();
     if (view !== "citations") show(view);
     if (list !== "hubs") showList(list);
     if (els.note.textContent === "Reading the authors…")
       els.note.textContent = "";
+    if (q.value.trim()) filter();
   });
 
-  // the search: it dims what does not match, in the views and in the lists
+  // the search (query.js): it dims what does not match, in the views and in the lists. Words
+  // match an entry's name, title, authors, year, venue and institutions; fields narrow by each
   const q = document.getElementById("q");
-  const words = () => fold(q.value).split(/\s+/).filter(Boolean);
+  const adv = document.getElementById("adv");
+  const advBtn = document.getElementById("q-adv");
   const opened = new Set();
+  let query = compileQuery("", null);
+  const goOf = (el, kind) => {
+    const b = el && el.querySelector(`[data-go^="${kind}:"]`);
+    return b ? resolve(b.dataset.go) : null;
+  };
   const filter = () => {
-    const words = fold(q.value).split(/\s+/).filter(Boolean);
-    const on = words.length > 0;
+    query = compileQuery(q.value, people);
+    const { on, plain, words } = query;
+    const test = (e) => !on || query.test(e);
+    // a row named by the words shows all its entries; fields name rows by their own kind
+    const named = (hay) => on && plain && words.every((w) => hay.includes(w));
     let any = false;
     for (const h of m.hubs) {
       let hits = 0;
       for (const e of h.entries) {
-        const ok = !on || words.every((w) => e.hay.includes(w));
+        const ok = test(e);
         hits += ok;
         if (e.tag) e.tag.hidden = !ok;
         for (const el of [e.node]) if (el) el.classList.toggle("off", !ok);
@@ -657,66 +715,74 @@ export async function main() {
       }
     }
     if (!on) opened.clear();
-    // a citation stays when one of its ends matches
-    const hit = (e) => !on || words.every((w) => e.hay.includes(w));
+    // a citation shows when both its ends match
     for (const l of ui.links)
       if (l.el)
-        l.el.classList.toggle("off", on && !hit(l.source) && !hit(l.target));
-    if (nets[view]) nets[view].search(words);
-    // a country stays when its name or one of its institutions matches, with those institutions
+        l.el.classList.toggle("off", on && !(test(l.source) && test(l.target)));
+    if (nets[view]) nets[view].search(query);
+    // a country shows with its institutions that match
     if (built.has("institutions"))
       for (const d of sections.institutions.querySelectorAll(
         ":scope > details",
       )) {
-        const named =
-          on &&
-          words.every((w) =>
-            fold(d.querySelector(".h-name").textContent).includes(w),
-          );
+        const c = goOf(d, "country");
+        const all = named(fold(d.querySelector(".h-name").textContent));
         let hits = 0;
         for (const f of d.querySelectorAll(".family")) {
+          const h = goOf(f, "institution");
           f.hidden =
-            on && !named && !words.every((w) => f.dataset.name.includes(w));
+            on &&
+            !all &&
+            !(plain
+              ? words.every((w) => f.dataset.name.includes(w))
+              : c &&
+                h &&
+                query.own(c) &&
+                query.own(h) &&
+                h.entries.some((e) => query.counts(h, e)));
           hits += !f.hidden;
         }
         d.hidden = on && !hits;
       }
+    // an author or a publisher shows with the entries that match: its own, or its venues'
     for (const which of ["authors", "venues"]) {
       if (!built.has(which)) continue;
       for (const d of sections[which].querySelectorAll(":scope > details")) {
-        const named = on && words.every((w) => d.dataset.name.includes(w));
+        const row = goOf(d, which === "authors" ? "author" : "publisher");
+        const all = named(d.dataset.name);
+        const mine = !on || !row || query.own(row);
         let hits = 0;
         for (const f of d.querySelectorAll(".family")) {
-          const fNamed =
-            named || (on && words.every((w) => f.dataset.name.includes(w)));
+          const venue = which === "venues" ? goOf(f, "venue") : null;
+          const fAll = all || named(f.dataset.name);
+          const fMine = mine && (!venue || query.own(venue));
           let fHits = 0;
           for (const t of f.querySelectorAll("a.tag")) {
             const e = ui.byKey.get(t.dataset.key);
-            const ok = !on || fNamed || words.every((w) => e.hay.includes(w));
+            const ok =
+              !on || fAll || (fMine && query.counts(venue || row || {}, e));
             t.hidden = !ok;
             fHits += ok;
           }
           f.hidden = !fHits;
           hits += fHits;
         }
-        if (!d.querySelector(".family"))
-          for (const t of d.querySelectorAll("a.tag")) {
-            const e = ui.byKey.get(t.dataset.key);
-            const ok = !on || named || words.every((w) => e.hay.includes(w));
-            t.hidden = !ok;
-            hits += ok;
-          }
         d.hidden = on && !hits;
-        if (on && hits && which === list && !d.open && (named || hits <= 6)) {
+        if (on && hits && which === list && !d.open && (all || hits <= 6)) {
           d.open = true;
           opened.add(d);
         }
         if (!on && opened.has(d)) d.open = false;
       }
     }
-    if (on && !any) els.note.textContent = "No entry matches the search.";
+    if (on && !query.ready)
+      els.note.textContent = peopleFailed
+        ? "The authors could not be read."
+        : "Reading the authors…";
+    else if (on && !any) els.note.textContent = "No entry matches the search.";
     else if (els.note.textContent === "No entry matches the search.")
       els.note.textContent = "";
+    if (adv.hidden === false && document.activeElement === q) fillForm();
   };
   // the catalogs often shorten the authors to "et al.": the full lists in works.json join what
   // the search reads, once it is first used
@@ -736,6 +802,101 @@ export async function main() {
     widen();
     filter();
   });
+
+  // the advanced search: a form whose fields write the search, and which reads it back
+  const ON_FORM = [
+    "author",
+    "institution",
+    "country",
+    "venue",
+    "hub",
+    "kind",
+    "status",
+  ];
+  function fillForm() {
+    const p = parseQuery(q.value);
+    const first = (f) => p.fields.find((x) => x.f === f);
+    for (const f of ON_FORM)
+      adv.elements[f].value = first(f) ? first(f).raw : "";
+    const y = first("year") && yearSpan(first("year").raw);
+    adv.elements.from.value = y && Number.isFinite(y[0]) ? y[0] : "";
+    adv.elements.to.value = y && Number.isFinite(y[1]) ? y[1] : "";
+    adv.elements.words.value = p.words.join(" ");
+  }
+  function fromForm() {
+    const p = parseQuery(q.value);
+    const kept = new Set([...ON_FORM, "year"]);
+    const seen = new Set();
+    // what the form does not show stays as it was written: a second author, a publisher, a title
+    const rest = p.fields.filter((x) => {
+      if (!kept.has(x.f)) return true;
+      if (seen.has(x.f)) return true;
+      seen.add(x.f);
+      return false;
+    });
+    const parts = [];
+    for (const f of ON_FORM) {
+      const v = adv.elements[f].value.trim();
+      if (v) parts.push(fieldText(f, v));
+    }
+    const a = adv.elements.from.value.trim();
+    const b = adv.elements.to.value.trim();
+    if (/^\d{4}$/.test(a) || /^\d{4}$/.test(b))
+      parts.push(`year:${a === b ? a : `${a}-${b}`}`);
+    for (const x of rest) parts.push(fieldText(x.f, x.raw));
+    const w = adv.elements.words.value.trim();
+    if (w) parts.push(w);
+    q.value = parts.join(" ");
+    widen();
+    filter();
+  }
+  adv.addEventListener("input", fromForm);
+  adv.addEventListener("change", fromForm);
+  adv.addEventListener("submit", (ev) => ev.preventDefault());
+  adv.addEventListener("reset", () => {
+    q.value = "";
+    filter();
+  });
+  advBtn.addEventListener("click", () => {
+    adv.hidden = !adv.hidden;
+    advBtn.setAttribute("aria-expanded", String(!adv.hidden));
+    if (!adv.hidden) {
+      fillForm();
+      widen();
+    }
+  });
+  for (const h of m.hubs) {
+    const o = document.createElement("option");
+    o.value = short(h.name);
+    o.textContent = `${h.depth ? "  " : ""}${h.title || short(h.name)}`;
+    adv.elements.hub.append(o);
+  }
+  // the names the form offers, once the authors are read
+  function offer() {
+    const fill = (id, names) => {
+      document.getElementById(id).innerHTML = [...new Set(names)]
+        .map((n) => `<option value="${esc(n)}"></option>`)
+        .join("");
+    };
+    fill(
+      "dl-author",
+      people.authors.map((a) => a.name),
+    );
+    fill(
+      "dl-institution",
+      people.institutions.map((h) => h.name),
+    );
+    fill(
+      "dl-country",
+      people.countries.map((c) => c.name),
+    );
+    fill(
+      "dl-venue",
+      people.venues
+        .filter((v) => v.name !== "Venue not recorded")
+        .map((v) => v.name),
+    );
+  }
 
   // a selection in the address is restored
   const key = decodeURIComponent(location.hash.slice(1));

@@ -93,7 +93,8 @@ export function model(data) {
           : null;
       const e = {
         key: `${h.name}/${p.id}`,
-        name: p.short || citeName(p),
+        // a method by its name and year, a theory paper by its authors and year
+        name: p.short ? `${p.short} ${p.year ?? ""}`.trim() : citeName(p),
         named: Boolean(p.short),
         kind: KIND[p.kind] || (p.short ? "method" : "theory"),
         title: p.title || "",

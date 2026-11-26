@@ -271,6 +271,114 @@ a:hover {
   outline: none;
   border-bottom-color: var(--ink);
 }
+.q-row {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  gap: var(--s3);
+  max-width: 520px;
+}
+.q-row #q {
+  flex: 1;
+  max-width: none;
+}
+.q-adv {
+  flex: none;
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-3);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.q-adv:hover,
+.q-adv[aria-expanded="true"] {
+  color: var(--ink);
+}
+
+/* the advanced search: the fields in a grid, each a label over an underlined input */
+.adv {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: var(--s3) var(--s4);
+  margin-top: var(--s4);
+  padding: var(--s4) 0 var(--s3);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.adv[hidden] {
+  display: none;
+}
+.adv label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.adv label > span {
+  color: var(--ink-3);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.adv input,
+.adv select {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--ink-4);
+  border-radius: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+}
+.adv select {
+  cursor: pointer;
+}
+.adv select option {
+  background: var(--paper);
+  color: var(--ink);
+}
+.adv input:focus,
+.adv select:focus {
+  outline: none;
+  border-bottom-color: var(--ink);
+}
+.adv input::placeholder {
+  color: var(--ink-4);
+}
+.adv .adv-words {
+  grid-column: span 2;
+}
+.adv-note {
+  grid-column: 1 / -1;
+  margin: var(--s1) 0 0;
+  color: var(--ink-3);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.adv-note code {
+  color: var(--ink-2);
+  font-size: 0.78rem;
+}
+.adv-clear {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-3);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.adv-clear:hover {
+  color: var(--ink);
+}
 .key {
   display: flex;
   flex-wrap: wrap;
@@ -573,6 +681,21 @@ a:hover {
   cursor: pointer;
 }
 .p-up:hover {
+  color: var(--ink);
+}
+/* a count that searches for the entries behind it */
+.p-q {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-3);
+  font: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--ink-4);
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.p-q:hover {
   color: var(--ink);
 }
 .p-sec {
@@ -997,8 +1120,18 @@ a:hover {
 }
 #graph .glyph.sel,
 #graph .glyph.out,
-#graph .glyph.in {
+#graph .glyph.in,
+#graph .glyph.grp {
   opacity: 1;
+}
+/* a pinned group: its entries, and the citations between two of them */
+#graph .glyph.grp {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+#graph .edge.grp {
+  stroke-opacity: 0.6;
+  stroke-width: 1.1;
 }
 #graph .glyph.sel {
   stroke: var(--ink);
@@ -1297,6 +1430,9 @@ a.tag:hover {
 }
 .tag.in {
   box-shadow: 0 0 0 1.5px var(--amber);
+}
+.tag.grp {
+  box-shadow: 0 0 0 1.5px color-mix(in oklab, var(--ink) 55%, transparent);
 }
 .tag.mini {
   height: 24px;
@@ -1652,8 +1788,12 @@ svg[hidden] {
   .find {
     flex-wrap: wrap;
   }
-  .find input {
+  .find .q-row {
     flex-basis: 100%;
+    max-width: none;
+  }
+  .adv .adv-words {
+    grid-column: 1 / -1;
   }
   .find .lists {
     margin-left: 0;

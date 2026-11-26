@@ -110,11 +110,10 @@ export function createNetwork(svg, canvas, ui, people, kind) {
     const y = +e.year;
     return !y || (y >= win.a && y < win.b);
   };
-  let words = [];
-  const named = (n) =>
-    words.length > 0 && words.every((w) => n.hay.includes(w));
-  const hit = (e) => words.every((w) => e.hay.includes(w));
-  const matches = (n) => !words.length || named(n) || n.entries.some(hit);
+  // the search (query.js): a node matches when it is named, or one of its entries matches
+  let query = null;
+  const searching = () => Boolean(query && query.on);
+  const matches = (n) => !searching() || query.node(n);
   let links = coLinks;
   let near = new Map();
   const linkUp = () => {
@@ -318,7 +317,7 @@ export function createNetwork(svg, canvas, ui, people, kind) {
     }
     for (const l of coLinks) {
       l.count = l.entries.filter(inWin).length;
-      l.off = Boolean(words.length) && !(matches(l.a) && matches(l.b));
+      l.off = searching() && !(matches(l.a) && matches(l.b));
       shape(l);
     }
     linkUp();
@@ -424,10 +423,7 @@ export function createNetwork(svg, canvas, ui, people, kind) {
         band.setAttribute(k, fmt(v));
       band.classList.remove("gone");
       band.classList.toggle("alt", i % 2 === 1);
-      band.classList.toggle(
-        "off",
-        Boolean(words.length) && !b.list.some(matches),
-      );
+      band.classList.toggle("off", searching() && !b.list.some(matches));
       // the publisher's name under its block, or its short name, when either fits
       const fit = [b.p.name, SHORT_HOUSE[b.p.name]].find(
         (s) => s && s.length * 6 <= x1 - x0 + 2,
@@ -477,9 +473,7 @@ export function createNetwork(svg, canvas, ui, people, kind) {
       for (const l of of.values()) {
         l.entries = [...l.set];
         l.count = l.entries.length;
-        l.off =
-          Boolean(words.length) &&
-          !(named(l.a) || named(l.b) || l.entries.some(hit));
+        l.off = searching() && !(matches(l.a) && matches(l.b));
         shape(l);
         links.push(l);
       }
@@ -519,8 +513,8 @@ export function createNetwork(svg, canvas, ui, people, kind) {
     }
   };
 
-  // pointing marks a node, a link or a publisher, with what is joined to it; the pinned one stays
-  // marked while nothing else is pointed at
+  // pointing marks a node, a link or a publisher, with what is joined to it, and the links between
+  // two of the nodes marked; the pinned one stays marked while nothing else is pointed at
   let pinned = null;
   let shown = null;
   let marked = [];
@@ -535,42 +529,60 @@ export function createNetwork(svg, canvas, ui, people, kind) {
     };
     focus = Boolean(t);
     svg.classList.toggle("focus", focus);
-    const ends = (l) => {
-      l.near = true;
-      for (const n of [l.a, l.b]) {
-        add(n.el, "near");
-        add(n.label, "near");
-      }
+    const lit = new Set();
+    const around = (n) => {
+      lit.add(n);
+      for (const l of near.get(n) || []) lit.add(l.a).add(l.b);
     };
+    let hot = null;
+    let hotLink = null;
     if (t && t.kind === "link") {
       const l = links.find((x) => x.a.d === t.a.d && x.b.d === t.b.d);
       if (l && l.count) {
-        ends(l);
-        l.hot = true;
-        // the two it joins are named, even where their names had no room
-        for (const n of [l.a, l.b]) add(n.label, "hot");
+        hotLink = l;
+        lit.add(l.a).add(l.b);
       }
     } else if (t && t.kind === "publisher") {
-      // a publisher: its block and venues, and their links; its venues' names stay as placed
+      // a publisher: its block and venues, and their authors; its venues' names stay as placed
       if (bands.has(t)) add(bands.get(t).band, "hot");
-      for (const v of t.venues.map((v) => dotOf.get(v)).filter(Boolean)) {
-        add(v.el, "near");
-        add(v.label, "near");
-        for (const l of near.get(v) || []) ends(l);
+      for (const v of t.venues.map((v) => dotOf.get(v)).filter(Boolean))
+        around(v);
+    } else if (t && (t.kind === "institution" || t.kind === "country")) {
+      // an institution or a country: the authors placed there, and the venues of its entries
+      for (const { who } of t.people)
+        if (dotOf.has(who)) lit.add(dotOf.get(who));
+      for (const e of t.entries) {
+        const v = people.venueOf.get(e);
+        if (v && dotOf.has(v)) lit.add(dotOf.get(v));
       }
     } else if (t) {
-      add(t.el, "hot");
-      add(t.label, "hot");
-      for (const l of near.get(t) || []) ends(l);
+      hot = t;
+      around(t);
+    }
+    for (const n of lit) {
+      add(n.el, "near");
+      add(n.label, "near");
+    }
+    if (hot) {
+      add(hot.el, "hot");
+      add(hot.label, "hot");
+    }
+    for (const l of links)
+      if (l.count && lit.has(l.a) && lit.has(l.b)) l.near = true;
+    if (hotLink) {
+      hotLink.hot = true;
+      // the two it joins are named, even where their names had no room
+      for (const n of [hotLink.a, hotLink.b]) add(n.label, "hot");
     }
     paint();
   };
-  // a pinned author, venue, publisher or link, as this graph has it
+  // a pinned author, venue, publisher, institution, country or link, as this graph has it
   const own = (g) => {
     if (!g) return null;
     if (g.kind === "link")
       return { kind: "link", a: { d: g.a }, b: { d: g.b } };
     if (g.kind === "publisher") return rows ? g : null;
+    if (g.kind === "institution" || g.kind === "country") return g;
     if (g === restA) return restA;
     return dotOf.get(g) || null;
   };
@@ -696,8 +708,8 @@ export function createNetwork(svg, canvas, ui, people, kind) {
       win = { a, b };
       draw();
     },
-    search(w, now = true) {
-      words = w;
+    search(q, now = true) {
+      query = q;
       if (now) draw();
     },
     pin(g) {

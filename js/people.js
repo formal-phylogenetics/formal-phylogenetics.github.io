@@ -108,11 +108,30 @@ export function peopleModel(data, ui) {
       }))
       .filter((x) => x.who),
     entries: entriesOf(h.papers),
+    own: fold(h.name),
     hay: fold(
       `${h.name} ${h.authors.map(([j]) => (authors[j] ? authors[j].hay : "")).join(" ")}`,
     ),
   }));
   const institutionNamed = new Map(institutions.map((h) => [h.name, h]));
+  // where the byline of each entry places its authors, and each author's entries at each place
+  const placesOf = new Map();
+  (data.institutions || []).forEach((h, k) => {
+    const where = institutions[k];
+    for (const [j, , , mine] of h.authors) {
+      const who = authors[j];
+      if (!who) continue;
+      for (const x of mine || []) {
+        const e = ui.byKey.get(h.papers[x]);
+        if (!e) continue;
+        if (!placesOf.has(e)) placesOf.set(e, []);
+        placesOf.get(e).push({ who, where });
+        who.places ||= new Map();
+        if (!who.places.has(where)) who.places.set(where, []);
+        who.places.get(where).push(e);
+      }
+    }
+  });
   // the countries, as their institutions are: each with its institutions, its authors (and the
   // entries their papers there make) and its entries, the most authors first
   const lands = new Map();
@@ -153,6 +172,7 @@ export function peopleModel(data, ui) {
     );
   countries.forEach((c, i) => {
     c.i = i;
+    c.own = fold(`${c.name} ${c.code}`);
     c.hay = fold(
       `${c.name} ${c.code} ${c.institutions.map((h) => h.hay).join(" ")}`,
     );
@@ -167,6 +187,7 @@ export function peopleModel(data, ui) {
     countries,
     venueOf,
     authorsOf,
+    placesOf,
     co,
   };
 }
