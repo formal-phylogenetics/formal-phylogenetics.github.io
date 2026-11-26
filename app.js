@@ -1308,8 +1308,10 @@ function hubRow(h) {
 }
 
 // ---------------------------------------------------------------------------------------------
-// The people of the collection: the authors (each person once) and the publishers, read from
-// people.json, written with the site's other data from the library of papers.
+// The people of the collection and where they published: the authors (each person once), the
+// venues and the publishers they are grouped under, read from people.json; and the profiles of
+// the authors and the venues, read from profiles.json when one is shown. Both are written with
+// the site's other data from the library of papers.
 
 let peopleFile = null;
 function readPeople() {
@@ -1319,42 +1321,377 @@ function readPeople() {
       .catch(() => null);
   return peopleFile;
 }
+let profilesFile = null;
+function readProfiles() {
+  if (!profilesFile)
+    profilesFile = fetch(HERE("profiles.json"))
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null);
+  return profilesFile;
+}
 
-// an author's or a publisher's entries, in the panel once pinned
 const yearSort = (a, b) =>
   (+a.year || 0) - (+b.year || 0) || a.name.localeCompare(b.name);
 
-function groupPanel(g) {
-  const list = [...g.entries].sort(yearSort);
-  const span = list.length
-    ? `${list[0].year}–${list[list.length - 1].year}`
+// the authors, the venues and the publishers, and what joins them: for each author the co-authors
+// and the venues, for each venue the authors, for each publisher the venues and the authors, each
+// with the number of entries behind it
+function peopleModel(data, ui) {
+  const entriesOf = (keys) => keys.map((k) => ui.byKey.get(k)).filter(Boolean);
+  const authors = data.authors.map((a, i) => {
+    const entries = entriesOf(a.papers);
+    const hubs = new Map();
+    for (const e of entries) hubs.set(e.hub, (hubs.get(e.hub) || 0) + 1);
+    const hub = [...hubs].sort((x, y) => y[1] - x[1])[0]?.[0];
+    return {
+      kind: "author",
+      i,
+      name: a.name,
+      entries,
+      hub,
+      hay: fold(a.name),
+      p: data.coauthors.pos[i],
+    };
+  });
+  const venues = data.venues.map((v, i) => ({
+    kind: "venue",
+    i,
+    name: v.name,
+    short: v.short || v.name,
+    publisher: v.publisher,
+    entries: entriesOf(v.papers),
+    hay: fold(`${v.name} ${v.short || ""} ${v.publisher}`),
+  }));
+  const houses = new Map();
+  for (const v of venues) {
+    if (!houses.has(v.publisher))
+      houses.set(v.publisher, {
+        kind: "publisher",
+        name: v.publisher,
+        venues: [],
+        entries: [],
+        hay: fold(v.publisher),
+      });
+    const p = houses.get(v.publisher);
+    p.venues.push(v);
+    p.entries.push(...v.entries);
+    v.house = p;
+  }
+  const publishers = [...houses.values()].sort(
+    (a, b) =>
+      (a.name === "Other") - (b.name === "Other") ||
+      b.entries.length - a.entries.length ||
+      a.name.localeCompare(b.name),
+  );
+  publishers.forEach((p, i) => (p.i = i));
+  const venueOf = new Map();
+  for (const v of venues) for (const e of v.entries) venueOf.set(e, v);
+  const authorsOf = new Map();
+  for (const a of authors)
+    for (const e of a.entries) {
+      if (!authorsOf.has(e)) authorsOf.set(e, []);
+      authorsOf.get(e).push(a);
+    }
+  const co = data.coauthors.edges.map(([i, j, keys]) => ({
+    kind: "link",
+    a: authors[i],
+    b: authors[j],
+    entries: entriesOf(keys),
+  }));
+  const tally = (list) =>
+    [...list.reduce((s, x) => s.set(x, (s.get(x) || 0) + 1), new Map())].map(
+      ([who, n]) => ({ who, n }),
+    );
+  const byCount = (x, y) => y.n - x.n || x.who.name.localeCompare(y.who.name);
+  for (const a of authors) a.co = [];
+  for (const l of co) {
+    l.a.co.push({ who: l.b, n: l.entries.length });
+    l.b.co.push({ who: l.a, n: l.entries.length });
+  }
+  for (const a of authors) {
+    a.co.sort(byCount);
+    a.venues = tally(a.entries.map((e) => venueOf.get(e)).filter(Boolean)).sort(
+      byCount,
+    );
+  }
+  for (const v of venues)
+    v.authors = tally(v.entries.flatMap((e) => authorsOf.get(e) || [])).sort(
+      byCount,
+    );
+  for (const p of publishers) {
+    p.counts = p.venues
+      .map((v) => ({ who: v, n: v.entries.length }))
+      .sort(byCount);
+    p.authors = tally(p.entries.flatMap((e) => authorsOf.get(e) || [])).sort(
+      byCount,
+    );
+  }
+  return { authors, venues, publishers, venueOf, authorsOf, co };
+}
+
+// the same pinned thing: the same object, or a link between the same two
+const sameGroup = (g, h) =>
+  g === h ||
+  Boolean(
+    g &&
+    h &&
+    g.kind === "link" &&
+    h.kind === "link" &&
+    g.a === h.a &&
+    g.b === h.b,
+  );
+
+// the entries of a link: those its two ends share
+const linkEntries = (g) => g.a.entries.filter((e) => g.b.entries.includes(e));
+
+// ---------------------------------------------------------------------------------------------
+// The panel of an author, a venue, a publisher or a link: what the registries say, then the
+// co-authors, venues or authors with the entries behind each, then the entries
+
+const when = (a, b) =>
+  a && b ? (a === b ? a : `${a}–${b}`) : a ? `${a}–` : b ? `–${b}` : "";
+const chipOf = (kind, x, n) =>
+  `<button type="button" class="p-chip" data-go="${kind}:${x.i}"><span>${esc(x.name)}</span>${n != null ? `<span class="c-n">${n}</span>` : ""}</button>`;
+function chipsSection(title, list, kind, note) {
+  if (!list.length) return "";
+  const more =
+    list.length > 12
+      ? `<button type="button" class="p-more" data-all>+${list.length - 12} more</button>`
+      : "";
+  return `<div class="p-sec"><h3>${title} <span>${list.length}</span></h3>${note ? `<p class="p-note">${note}</p>` : ""}<div class="p-chips">${list
+    .map(({ who, n }) => chipOf(kind, who, n))
+    .join("")}${more}</div></div>`;
+}
+function linksRow(links) {
+  const html = links
+    .filter(Boolean)
+    .map(
+      ([label, url]) =>
+        `<a class="p-id" href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a>`,
+    )
+    .join("");
+  return html ? `<div class="p-ids">${html}</div>` : "";
+}
+function listSection(title, rows) {
+  if (!rows.length) return "";
+  return `<div class="p-sec"><h3>${title}</h3><ul class="p-list">${rows
+    .map(
+      ([main, sub, at]) =>
+        `<li><span class="l-main">${main}</span>${sub ? `<span class="l-sub">${sub}</span>` : ""}${at ? `<span class="l-when">${esc(at)}</span>` : ""}</li>`,
+    )
+    .join("")}</ul></div>`;
+}
+const hostOf = (u) => {
+  try {
+    return new URL(u).host.replace(/^www\./, "");
+  } catch {
+    return u;
+  }
+};
+const num = (n) => Number(n).toLocaleString("en");
+
+function authorFacts(pr, model) {
+  if (!pr)
+    return `<p class="p-none">ORCID, OpenAlex and Wikidata have nothing on this author.</p>`;
+  const life = pr.died
+    ? `${pr.born || "?"}–${pr.died.slice(0, 4)}`
+    : pr.born
+      ? `born ${pr.born}`
+      : "";
+  const lead = [life, pr.about].filter(Boolean).map(esc).join(" · ");
+  const held = (list) =>
+    list.map((r) => {
+      const what = [r.role, r.department].filter(Boolean).join(", ");
+      return [
+        esc(what || r.org),
+        esc(what ? [r.org, r.place].filter(Boolean).join(", ") : r.place || ""),
+        when(r.start, r.end),
+      ];
+    });
+  const person = (r) =>
+    r.author != null && model.authors[r.author]
+      ? `<button type="button" class="p-chip" data-go="author:${r.author}"><span>${esc(r.name)}</span></button>`
+      : `<span class="p-plain">${esc(r.name)}</span>`;
+  const people = (title, list) =>
+    list && list.length
+      ? `<div class="p-sec"><h3>${title}</h3><div class="p-chips all">${list.map(person).join("")}</div></div>`
+      : "";
+  const counts = [
+    pr.works != null && `${num(pr.works)} works`,
+    pr.cited != null && `${num(pr.cited)} citations`,
+    pr.h_index != null && `h-index ${pr.h_index}`,
+  ].filter(Boolean);
+  return `${lead ? `<p class="p-lead">${lead}</p>` : ""}
+    ${linksRow([
+      ...(pr.orcid || []).map((o) => [`ORCID ${o}`, `https://orcid.org/${o}`]),
+      pr.scholar && [
+        "Google Scholar",
+        `https://scholar.google.com/citations?user=${pr.scholar}`,
+      ],
+      pr.dblp && ["DBLP", `https://dblp.org/pid/${pr.dblp}.html`],
+      pr.mathgenealogy && [
+        "Mathematics Genealogy",
+        `https://www.mathgenealogy.org/id.php?id=${pr.mathgenealogy}`,
+      ],
+      pr.wikipedia && ["Wikipedia", pr.wikipedia],
+      pr.wikidata && [
+        "Wikidata",
+        `https://www.wikidata.org/wiki/${pr.wikidata}`,
+      ],
+      pr.openalex && ["OpenAlex", `https://openalex.org/${pr.openalex}`],
+      ...(pr.links || []).map((l) => [l.name || hostOf(l.url), l.url]),
+    ])}
+    ${listSection("Positions", held(pr.positions || []))}
+    ${listSection("Education", held(pr.education || []))}
+    ${listSection("Service and memberships", held(pr.service || []))}
+    ${listSection(
+      "Institutions on their papers",
+      (pr.institutions || []).map((r) => [
+        esc(r.name),
+        esc(r.country || ""),
+        when(String(r.from), String(r.to)),
+      ]),
+    )}
+    ${people("Doctoral advisors", pr.advisors)}
+    ${people("Doctoral students", pr.students)}
+    ${listSection(
+      "Honours",
+      (pr.honours || []).map((r) => [
+        esc(r.name),
+        esc(r.by || ""),
+        r.year || "",
+      ]),
+    )}
+    ${counts.length || (pr.topics || []).length ? `<div class="p-sec"><h3>In OpenAlex</h3><p class="p-text">${esc(counts.join(" · "))}${(pr.topics || []).length ? `<br><span class="p-soft">${esc(pr.topics.join(" · "))}</span>` : ""}</p></div>` : ""}
+    ${(pr.keywords || []).length ? `<div class="p-sec"><h3>Keywords</h3><p class="p-text">${esc(pr.keywords.join(" · "))}</p></div>` : ""}
+    ${pr.biography ? `<details class="p-abs"><summary>Biography</summary><p class="p-abstract">${esc(pr.biography)}</p></details>` : ""}
+    <p class="p-source">From ORCID, OpenAlex and Wikidata${pr.by_name ? "; the Wikidata item is the one scholar of that name in these fields" : ""}.</p>`;
+}
+
+function venueFacts(pr, v) {
+  if (v.publisher === "Conference" || v.publisher === "Preprint" || !pr)
+    return v.publisher === "Conference"
+      ? `<p class="p-lead">A conference: its papers appear in its proceedings.</p>`
+      : v.publisher === "Preprint"
+        ? `<p class="p-lead">A preprint server.</p>`
+        : `<p class="p-none">OpenAlex and Wikidata have nothing on this venue.</p>`;
+  const since = pr.founded
+    ? `founded ${pr.founded}`
+    : pr.first_year
+      ? `publishing since ${pr.first_year}`
+      : "";
+  const lead = [
+    since,
+    pr.about && pr.about !== "scientific journal" ? pr.about : "",
+  ]
+    .filter(Boolean)
+    .map(esc)
+    .join(" · ");
+  const rows = [
+    pr.continues && ["Continues", esc(pr.continues.join("; ")), ""],
+    pr.continued_by && ["Continued by", esc(pr.continued_by.join("; ")), ""],
+    pr.iso4 && ["Abbreviation", esc(pr.iso4), ""],
+    pr.issn && ["ISSN", esc(pr.issn.join(", ")), ""],
+    pr.country && ["Country", esc(pr.country), ""],
+    (pr.open_access || pr.doaj || pr.apc_usd) && [
+      "Access",
+      esc(
+        [
+          pr.open_access ? "open access" : "",
+          pr.doaj ? "in DOAJ" : "",
+          pr.apc_usd ? `APC ${num(pr.apc_usd)} USD` : "",
+        ]
+          .filter(Boolean)
+          .join(" · "),
+      ),
+      "",
+    ],
+    (pr.works || pr.h_index) && [
+      "In OpenAlex",
+      esc(
+        [
+          pr.works && `${num(pr.works)} works`,
+          pr.cited && `${num(pr.cited)} citations`,
+          pr.h_index && `h-index ${pr.h_index}`,
+        ]
+          .filter(Boolean)
+          .join(" · "),
+      ),
+      "",
+    ],
+    (pr.societies || []).length && [
+      "Societies",
+      esc(pr.societies.join("; ")),
+      "",
+    ],
+    (pr.other_titles || []).length && [
+      "Also",
+      esc(pr.other_titles.join("; ")),
+      "",
+    ],
+  ].filter(Boolean);
+  return `${lead ? `<p class="p-lead">${lead}</p>` : ""}
+    ${linksRow([
+      pr.website && ["Website", pr.website],
+      pr.wikipedia && ["Wikipedia", pr.wikipedia],
+      pr.wikidata && [
+        "Wikidata",
+        `https://www.wikidata.org/wiki/${pr.wikidata}`,
+      ],
+      pr.openalex && ["OpenAlex", `https://openalex.org/${pr.openalex}`],
+    ])}
+    ${rows.length ? `<dl class="p-facts">${rows.map(([k, val]) => `<dt>${k}</dt><dd>${val}</dd>`).join("")}</dl>` : ""}
+    <p class="p-source">From OpenAlex and Wikidata.</p>`;
+}
+
+function groupPanel(g, model) {
+  const entries = (g.kind === "link" ? linkEntries(g) : g.entries)
+    .slice()
+    .sort(yearSort);
+  const span = entries.length
+    ? when(entries[0].year, entries[entries.length - 1].year)
     : "";
-  const venues = g.venues
-    ? g.venues
-        .map(
-          (v) =>
-            `<div class="family"><h4>${esc(v.name)}</h4><div class="tags">${v.entries.map((e) => tagHtml(e, "", true)).join("")}</div></div>`,
-        )
-        .join("")
-    : `<div class="tags">${list.map((e) => tagHtml(e, "", true)).join("")}</div>`;
-  return `<div class="p-head">
+  const count = `${entries.length} ${entries.length === 1 ? "entry" : "entries"}`;
+  const meta =
+    g.kind === "venue"
+      ? `<button type="button" class="p-up" data-go="publisher:${g.house.i}">${esc(g.publisher)}</button> · ${count}`
+      : g.kind === "author" || g.kind === "publisher"
+        ? `${g.kind} · ${count}`
+        : count;
+  const tags = `<div class="p-sec"><h3>Entries <span>${entries.length}</span></h3><div class="tags">${entries.map((e) => tagHtml(e, " mini", true)).join("")}</div></div>`;
+  let body = "";
+  if (g.kind === "author")
+    body = `<div class="p-profile" id="p-profile"><p class="p-none">Reading the profile…</p></div>
+      ${chipsSection("Co-authors", g.co, "author", "with the entries they share")}
+      ${chipsSection("Venues", g.venues, "venue", "with the entries there")}`;
+  else if (g.kind === "venue")
+    body = `<div class="p-profile" id="p-profile"><p class="p-none">Reading the profile…</p></div>
+      ${chipsSection("Authors", g.authors, "author", "with their entries there")}`;
+  else if (g.kind === "publisher")
+    body = `${chipsSection("Venues", g.counts, "venue", "with the entries there")}
+      ${chipsSection("Authors", g.authors, "author", "with their entries there")}`;
+  else if (g.kind === "link")
+    body = `<div class="p-sec"><div class="p-chips all">${[g.a, g.b]
+      .filter((x) => x.kind !== "rest")
+      .map((x) => chipOf(x.kind, x))
+      .join("")}</div></div>`;
+  return `<div class="p-head${g.hub ? " hub-c" : ""}"${g.hub ? ` style="${hubStyle(g.hub)}"` : ""}>
       <span class="p-name">${esc(g.name)}</span>
-      <span class="p-meta">${g.kind} · ${list.length} ${list.length === 1 ? "entry" : "entries"}${span ? ` · ${span}` : ""}</span>
       <button type="button" class="p-close" aria-label="Clear the selection">${CROSS}</button>
     </div>
-    <div class="p-group">${venues}</div>`;
+    <div class="p-meta">${meta}${span ? ` · ${span}` : ""}</div>
+    ${body}${tags}`;
 }
 
 // the figures under the title, from the data the page has read
-function paintStats(el, m, ui, people) {
+function paintStats(el, m, ui, model) {
   const items = [
     [m.entries.length, "papers"],
     ui.links.length && [ui.links.length, "citations"],
-    people && [people.authors.length, "authors"],
-    // a preprint server counts as a publisher, as the list of publishers has it
-    people && [
-      people.publishers.filter((p) => p.name !== "Other").length,
-      "publishers",
+    model && [model.authors.length, "authors"],
+    model && [
+      model.venues.filter((v) => v.name !== "Venue not recorded").length,
+      "venues",
     ],
   ].filter(Boolean);
   el.innerHTML = items
@@ -1365,75 +1702,120 @@ function paintStats(el, m, ui, people) {
     .join("");
 }
 
-// the graphs of the people: the co-authorship of the authors, or the authors with the publishers
-// they published with. The layout is the library's, fixed; the years the trim bar shows choose
-// which entries count: a person, a publisher or a link appears once an entry of those years makes it
-function createNetwork(svg, ui, m, people, kind) {
+// ---------------------------------------------------------------------------------------------
+// The graphs of the people, for the years the trim bar shows. The co-authorship of the authors
+// keeps the layout the library computed once: an author or a link appears once an entry of those
+// years makes it. The authors and the venues of their entries stand in two rows, the authors above
+// and the venues below, the venues grouped by publisher, in an order that keeps the links short
+// (each author near the venues of their entries, each venue and publisher near its authors),
+// computed once over all the years; the authors of fewer entries than the row has room for share a
+// node at its end. A link is as wide as the entries behind it. Pointing at a node or a link marks
+// it and tells what it is; clicking pins it in the panel, and clicking it again lets it go.
+const SHORT_HOUSE = {
+  "Oxford University Press": "OUP",
+  "Cambridge University Press": "CUP",
+  "Institute of Mathematical Statistics": "IMS",
+  "National Academy of Sciences": "NAS",
+  "Taylor & Francis": "T&F",
+  "World Scientific": "WSPC",
+  "Schloss Dagstuhl": "Dagstuhl",
+  "KIT Scientific Publishing": "KIT",
+  "SAGE Publications": "SAGE",
+  "The Royal Society": "Royal Soc.",
+  Conference: "Conf.",
+  Preprint: "Prepr.",
+};
+
+function createNetwork(svg, canvas, ui, model, kind) {
   const W0 = () => Math.max(300, Math.round(svg.parentNode.clientWidth));
-  const authors = people.authors.map((a, i) => {
-    const entries = a.papers.map((k) => ui.byKey.get(k)).filter(Boolean);
-    const hubs = new Map();
-    for (const e of entries) hubs.set(e.hub, (hubs.get(e.hub) || 0) + 1);
-    const hub = [...hubs.entries()].sort((x, y) => y[1] - x[1])[0]?.[0];
-    return { kind: "author", i, name: a.name, entries, hub, hay: fold(a.name) };
-  });
-  const pubs =
-    kind === "authorship"
-      ? people.publishers.map((p, i) => ({
-          kind: "publisher",
-          i,
-          name: p.name,
-          venues: p.venues.map((v) => ({
-            name: v.name,
-            entries: v.papers.map((k) => ui.byKey.get(k)).filter(Boolean),
-          })),
-          entries: p.venues.flatMap((v) =>
-            v.papers.map((k) => ui.byKey.get(k)).filter(Boolean),
-          ),
-          hay: fold(p.name),
-        }))
-      : [];
-  const g = kind === "authorship" ? people.authorship : people.coauthors;
-  const posA = kind === "authorship" ? g.authors : g.pos;
-  authors.forEach((a, i) => (a.p = posA[i]));
-  pubs.forEach((p, i) => (p.p = g.publishers[i]));
-  const nodes = [...authors, ...pubs];
-  const edges = g.edges.map(([i, j, keys]) => ({
-    a: authors[i],
-    b: kind === "authorship" ? pubs[j] : authors[j],
-    entries: keys.map((k) => ui.byKey.get(k)).filter(Boolean),
-  }));
-  const around = new Map(nodes.map((n) => [n, []]));
-  for (const e of edges) {
-    around.get(e.a).push(e);
-    around.get(e.b).push(e);
+  const rows = kind === "venues";
+  const { publishers } = model;
+
+  // the order of the two rows: from the publishers' own order, sweeps that put each author at the
+  // mean place of the venues of their entries, each venue at the mean place of its authors, and
+  // each publisher at the mean place of its venues
+  const rank = new Map();
+  if (rows) {
+    const at = new Map();
+    const mean = (pairs) => {
+      let s = 0;
+      let w = 0;
+      for (const { who, n } of pairs) ((s += n * at.get(who)), (w += n));
+      return w ? s / w : 1;
+    };
+    const busy = (x, y) =>
+      y.entries.length - x.entries.length || x.name.localeCompare(y.name);
+    const place = (list) =>
+      list.forEach((x, i) => at.set(x, i / Math.max(1, list.length - 1)));
+    const mid = new Map();
+    let order = publishers.flatMap((p) => [...p.venues].sort(busy));
+    let orderA = model.authors;
+    for (let s = 0; s < 10; s++) {
+      place(order);
+      for (const a of model.authors) mid.set(a, mean(a.venues));
+      orderA = [...model.authors].sort(
+        (x, y) => mid.get(x) - mid.get(y) || busy(x, y),
+      );
+      place(orderA);
+      for (const v of model.venues) mid.set(v, mean(v.authors));
+      const pm = new Map(
+        publishers.map((p) => [
+          p,
+          p.venues.reduce((t, v) => t + mid.get(v) * v.entries.length, 0) /
+            Math.max(1, p.entries.length),
+        ]),
+      );
+      order = [...publishers]
+        .sort((x, y) => pm.get(x) - pm.get(y))
+        .flatMap((p) =>
+          [...p.venues].sort((x, y) => mid.get(x) - mid.get(y) || busy(x, y)),
+        );
+    }
+    order.forEach((v, i) => rank.set(v, i));
+    orderA.forEach((a, i) => rank.set(a, i));
   }
 
-  svg.innerHTML = "";
-  const gE = svgEl("g", { class: "n-edges" }, svg);
-  const gN = svgEl("g", { class: "n-nodes" }, svg);
-  const gL = svgEl("g", { class: "n-labels" }, svg);
-  for (const e of edges)
-    e.el = svgEl(
-      "line",
-      { class: `n-edge${kind === "authorship" ? " pub" : ""}` },
-      gE,
-    );
-  for (const n of nodes) {
-    const holder = svgEl(
-      "g",
-      n.hub ? { class: "hub-c", style: hubStyle(n.hub) } : {},
-      gN,
-    );
-    n.el = svgEl(
-      n.kind === "publisher" ? "rect" : "circle",
-      { class: `n-node ${n.kind}` },
-      holder,
-    );
-    n.el.dataset.i = nodes.indexOf(n);
+  // this graph's own dots over the authors and venues it shows, which the other graph shares: a
+  // dot reads the author or venue it stands for and keeps its own place, size and elements
+  const dot = (d) => Object.assign(Object.create(d), { d, rank: rank.get(d) });
+  const authors = model.authors.map(dot);
+  const venues = rows ? model.venues.map(dot) : [];
+  const dotOf = new Map([...authors, ...venues].map((n) => [n.d, n]));
+  const restA = { kind: "rest", name: "", short: "", entries: [], hay: "" };
+  restA.d = restA;
+  const nodes = rows ? [...authors, ...venues, restA] : authors;
+  const coLinks = rows
+    ? []
+    : model.co.map((l) => ({
+        kind: "link",
+        a: dotOf.get(l.a),
+        b: dotOf.get(l.b),
+        entries: l.entries,
+      }));
+
+  const root = svgEl("g", {});
+  const gB = svgEl("g", { class: "n-bands" }, root);
+  const gN = svgEl("g", { class: "n-nodes" }, root);
+  const gL = svgEl("g", { class: "n-labels" }, root);
+  nodes.forEach((n, i) => {
+    const attrs = { class: `n-node ${n.kind}${n.hub ? " hub-c" : ""}` };
+    if (n.hub) attrs.style = hubStyle(n.hub);
+    n.el = svgEl(n.kind === "venue" ? "rect" : "circle", attrs, gN);
+    n.el.dataset.i = i;
     n.label = svgEl("text", { class: `n-label ${n.kind}` }, gL);
-    n.label.textContent = n.name.replace(/\s*\([^)]*\)\s*$/, "");
-  }
+    n.label.textContent = n.kind === "venue" ? n.short : n.name;
+  });
+  const bands = new Map();
+  if (rows)
+    for (const p of publishers) {
+      const band = svgEl("rect", { class: "n-band" }, gB);
+      const tag = svgEl("text", { class: "n-plabel" }, gB);
+      band.dataset.p = tag.dataset.p = p.i;
+      bands.set(p, { band, tag });
+    }
+
+  // the graphs share one drawing: the one drawn last is the one that answers the pointer
+  const mine = () => svg.firstChild === root;
 
   let win = { a: -Infinity, b: Infinity };
   const inWin = (e) => {
@@ -1441,172 +1823,582 @@ function createNetwork(svg, ui, m, people, kind) {
     return !y || (y >= win.a && y < win.b);
   };
   let words = [];
-  const matches = (n) =>
-    !words.length ||
-    words.every((w) => n.hay.includes(w)) ||
-    n.entries.some((e) => words.every((w) => e.hay.includes(w)));
+  const named = (n) =>
+    words.length > 0 && words.every((w) => n.hay.includes(w));
+  const hit = (e) => words.every((w) => e.hay.includes(w));
+  const matches = (n) => !words.length || named(n) || n.entries.some(hit);
+  let links = coLinks;
+  let near = new Map();
+  const linkUp = () => {
+    near = new Map(nodes.map((n) => [n, []]));
+    for (const l of links)
+      if (l.count) (near.get(l.a).push(l), near.get(l.b).push(l));
+  };
 
-  const draw = () => {
-    const W = W0();
-    const H = Math.round(Math.min(760, Math.max(420, W * 0.62)));
-    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-    svg.style.height = `${H}px`;
-    const xs = nodes.map((n) => n.p[0]);
-    const ys = nodes.map((n) => n.p[1]);
-    const [x0, x1, y0, y1] = [
-      Math.min(...xs),
-      Math.max(...xs),
-      Math.min(...ys),
-      Math.max(...ys),
-    ];
-    const pad = 28;
-    const s = Math.min(
-      (W - 2 * pad) / (x1 - x0 || 1),
-      (H - 2 * pad) / (y1 - y0 || 1),
-    );
-    const ox = (W - s * (x1 - x0)) / 2;
-    const oy = (H - s * (y1 - y0)) / 2;
-    for (const n of nodes) {
-      n.x = ox + s * (n.p[0] - x0);
-      n.y = oy + s * (n.p[1] - y0);
-    }
-    for (const n of nodes) n.count = n.entries.filter(inWin).length;
-    const top = new Set(
-      authors
-        .filter((a) => a.count >= 2)
-        .sort((a, b) => b.count - a.count)
-        .slice(0, kind === "authorship" ? 10 : 22),
-    );
-    for (const n of nodes) {
-      const on = n.count > 0;
-      const r =
-        n.kind === "publisher"
-          ? Math.min(20, 3.5 + 1.6 * Math.sqrt(n.count))
-          : Math.min(11, 1.6 + 1.25 * Math.sqrt(n.count));
-      n.el.classList.toggle("gone", !on);
-      n.el.classList.toggle("off", on && !matches(n));
-      if (n.kind === "publisher") {
+  const put = (n, r) => {
+    if (n.r !== r || n.at !== `${n.x} ${n.y}`) {
+      n.r = r;
+      n.at = `${n.x} ${n.y}`;
+      if (n.el.tagName === "rect")
         for (const [k, v] of Object.entries({
           x: n.x - r,
           y: n.y - r,
           width: 2 * r,
           height: 2 * r,
-          rx: 2.5,
+          rx: 1.5,
         }))
           n.el.setAttribute(k, fmt(v));
-      } else {
+      else {
         n.el.setAttribute("cx", fmt(n.x));
         n.el.setAttribute("cy", fmt(n.y));
         n.el.setAttribute("r", fmt(r));
       }
-      n.r = r;
-      n.wants = on && (n.kind === "publisher" ? n.count >= 3 : top.has(n));
     }
-    // the names, the busiest first, each to the right of its node or else to its left, and
-    // none over another
-    const placed = [];
-    const free = (box) =>
-      placed.every(
-        (q) => box.x1 < q.x0 || box.x0 > q.x1 || box.y1 < q.y0 || box.y0 > q.y1,
+    n.el.classList.toggle("gone", !n.count);
+    n.el.classList.toggle("off", Boolean(n.count) && !matches(n));
+  };
+  const hideLabels = () => {
+    for (const n of nodes) n.label.classList.add("gone");
+  };
+  // a link as wide as the entries behind it; its box and, for a curve, points along it, for
+  // finding the link under the pointer
+  const shape = (l) => {
+    l.w = Math.min(l.rest ? 2.4 : 5.5, 0.6 + 0.6 * Math.sqrt(l.count));
+    const pad = l.w / 2 + 4;
+    l.box = [
+      Math.min(l.a.x, l.b.x) - pad,
+      Math.min(l.a.y, l.b.y) - pad,
+      Math.max(l.a.x, l.b.x) + pad,
+      Math.max(l.a.y, l.b.y) + pad,
+    ];
+    if (!rows) return;
+    const my = (l.a.y + l.b.y) / 2;
+    l.c = [l.a.x, l.a.y, l.a.x, my, l.b.x, my, l.b.x, l.b.y];
+    const pts = [];
+    for (let i = 0; i <= 12; i++) {
+      const t = i / 12;
+      const u = 1 - t;
+      const [x0, y0, x1, y1, x2, y2, x3, y3] = l.c;
+      pts.push(
+        u * u * u * x0 +
+          3 * u * u * t * x1 +
+          3 * u * t * t * x2 +
+          t * t * t * x3,
+        u * u * u * y0 +
+          3 * u * u * t * y1 +
+          3 * u * t * t * y2 +
+          t * t * t * y3,
       );
-    for (const n of [...nodes].sort(
-      (a, b) => b.count - a.count || (a.kind === "publisher" ? -1 : 1),
-    )) {
-      let shown = false;
-      if (n.wants) {
-        const w =
-          n.label.textContent.length * (n.kind === "publisher" ? 6.4 : 5.9);
-        for (const side of [1, -1]) {
-          const x0 = side > 0 ? n.x + n.r + 3 : n.x - n.r - 3 - w;
-          const box = { x0, x1: x0 + w, y0: n.y - 6, y1: n.y + 6 };
-          if (free(box)) {
-            placed.push(box);
-            n.label.setAttribute("x", fmt(x0));
-            n.label.setAttribute("y", fmt(n.y + 3.5));
-            shown = true;
-            break;
-          }
-        }
+    }
+    l.pts = pts;
+  };
+
+  // the links, on the canvas under the drawing: each its own stroke, so that where they bundle the
+  // ink adds up; what is marked over the rest
+  let W = 0;
+  let H = 0;
+  let focus = false;
+  const size = (w, h) => {
+    W = w;
+    H = h;
+    svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+    svg.style.height = `${h}px`;
+    const r = Math.min(2, window.devicePixelRatio || 1);
+    if (
+      canvas.width !== Math.round(w * r) ||
+      canvas.height !== Math.round(h * r)
+    ) {
+      canvas.width = Math.round(w * r);
+      canvas.height = Math.round(h * r);
+    }
+    canvas.style.width = `${w}px`;
+    canvas.style.height = `${h}px`;
+  };
+  // all the links at rest are drawn once into a picture of their own; marking one draws that
+  // picture faded and the marked links over it, so that pointing costs a few strokes, not all
+  const rest = document.createElement("canvas");
+  let restOk = false;
+  let ink = "#22201b";
+  const stroke = (ctx, l, alpha) => {
+    ctx.globalAlpha = alpha;
+    ctx.lineWidth = l.w;
+    ctx.beginPath();
+    ctx.moveTo(l.a.x, l.a.y);
+    if (l.c) ctx.bezierCurveTo(l.c[2], l.c[3], l.c[4], l.c[5], l.c[6], l.c[7]);
+    else ctx.lineTo(l.b.x, l.b.y);
+    ctx.stroke();
+  };
+  const pen = (ctx, r, ink) => {
+    ctx.setTransform(r, 0, 0, r, 0, 0);
+    ctx.strokeStyle = ink;
+    ctx.lineCap = "round";
+  };
+  const paint = () => {
+    if (!mine() || !W) return;
+    const ctx = canvas.getContext("2d");
+    const r = canvas.width / W;
+    // the ink is read when the picture is redrawn, not at each mark, which would make the
+    // browser work out the styles of the whole page there and then
+    if (!restOk) {
+      ink = getComputedStyle(svg).getPropertyValue("--ink").trim() || "#22201b";
+      rest.width = canvas.width;
+      rest.height = canvas.height;
+      const b = rest.getContext("2d");
+      pen(b, r, ink);
+      b.clearRect(0, 0, W, H);
+      const base = rows ? 0.14 : 0.16;
+      for (const l of links)
+        if (l.count) stroke(b, l, (l.rest ? 0.045 : base) * (l.off ? 0.14 : 1));
+      restOk = true;
+    }
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.globalAlpha = focus ? 0.2 : 1;
+    ctx.drawImage(rest, 0, 0);
+    if (!focus) return;
+    pen(ctx, r, ink);
+    for (const l of links)
+      if (l.count && l.near && !l.hot) stroke(ctx, l, 0.55);
+    for (const l of links) if (l.count && l.hot) stroke(ctx, l, 0.85);
+  };
+  const linkAt = (x, y) => {
+    let best = null;
+    let bd = Infinity;
+    const seg = (x0, y0, x1, y1) => {
+      const dx = x1 - x0;
+      const dy = y1 - y0;
+      const t = Math.max(
+        0,
+        Math.min(1, ((x - x0) * dx + (y - y0) * dy) / (dx * dx + dy * dy || 1)),
+      );
+      return Math.hypot(x - x0 - t * dx, y - y0 - t * dy);
+    };
+    for (const l of links) {
+      if (
+        !l.count ||
+        x < l.box[0] ||
+        x > l.box[2] ||
+        y < l.box[1] ||
+        y > l.box[3]
+      )
+        continue;
+      let d = Infinity;
+      if (l.pts)
+        for (let i = 0; i + 3 < l.pts.length; i += 2)
+          d = Math.min(
+            d,
+            seg(l.pts[i], l.pts[i + 1], l.pts[i + 2], l.pts[i + 3]),
+          );
+      else d = seg(l.a.x, l.a.y, l.b.x, l.b.y);
+      if (d <= l.w / 2 + 3 && d < bd) ((bd = d), (best = l));
+    }
+    return best;
+  };
+
+  let placed = "";
+  const drawCoauthors = () => {
+    const w = W0();
+    const h = Math.round(Math.min(1040, Math.max(w * 0.8, Math.min(w, 460))));
+    const k = Math.max(0.6, Math.min(1, w / 1000));
+    // the places hold until the size changes; the years and the search change only what shows
+    size(w, h);
+    if (placed !== `${w} ${h}`) {
+      placed = `${w} ${h}`;
+      const xs = authors.map((n) => n.p[0]);
+      const ys = authors.map((n) => n.p[1]);
+      const [x0, x1, y0, y1] = [
+        Math.min(...xs),
+        Math.max(...xs),
+        Math.min(...ys),
+        Math.max(...ys),
+      ];
+      const pad = 28;
+      const s = Math.min(
+        (w - 2 * pad) / (x1 - x0 || 1),
+        (h - 2 * pad) / (y1 - y0 || 1),
+      );
+      const ox = (w - s * (x1 - x0)) / 2;
+      const oy = (h - s * (y1 - y0)) / 2;
+      for (const n of authors) {
+        n.x = ox + s * (n.p[0] - x0);
+        n.y = oy + s * (n.p[1] - y0);
       }
-      n.label.classList.toggle("gone", !shown);
     }
-    for (const e of edges) {
-      const c = e.entries.filter(inWin).length;
-      e.el.classList.toggle("gone", !c);
-      e.el.classList.toggle(
-        "off",
-        Boolean(words.length) && !(matches(e.a) && matches(e.b)),
+    for (const n of authors) {
+      n.count = n.entries.filter(inWin).length;
+      put(n, k * Math.min(11, 1.6 + 1.25 * Math.sqrt(n.count)));
+    }
+    for (const l of coLinks) {
+      l.count = l.entries.filter(inWin).length;
+      l.off = Boolean(words.length) && !(matches(l.a) && matches(l.b));
+      shape(l);
+    }
+    linkUp();
+    // the names of the busiest, each to the right of its node or else to its left, none over another
+    hideLabels();
+    const boxes = [];
+    const free = (b) =>
+      boxes.every(
+        (q) => b.x1 < q.x0 || b.x0 > q.x1 || b.y1 < q.y0 || b.y0 > q.y1,
       );
-      for (const [k, v] of Object.entries({
-        x1: e.a.x,
-        y1: e.a.y,
-        x2: e.b.x,
-        y2: e.b.y,
-      }))
-        e.el.setAttribute(k, fmt(v));
-      e.el.style.strokeWidth = `${Math.min(4, 0.5 + 0.55 * Math.sqrt(c))}px`;
+    for (const n of authors) {
+      n.label.setAttribute("x", fmt(n.x + n.r + 3));
+      n.label.setAttribute("y", fmt(n.y + 3.5));
+    }
+    const top = authors
+      .filter((a) => a.count >= 2)
+      .sort((a, b) => b.count - a.count)
+      .slice(0, Math.min(22, Math.round(w / 60)));
+    for (const n of top) {
+      const wl = n.label.textContent.length * 5.9;
+      for (const side of [1, -1]) {
+        const x0 = side > 0 ? n.x + n.r + 3 : n.x - n.r - 3 - wl;
+        const box = { x0, x1: x0 + wl, y0: n.y - 6, y1: n.y + 6 };
+        if (!free(box)) continue;
+        boxes.push(box);
+        n.label.setAttribute("x", fmt(x0));
+        n.label.classList.remove("gone");
+        break;
+      }
     }
   };
 
-  // pointing at a person or a publisher marks them, their links and the others at their ends
-  let hot = null;
-  const mark = (n) => {
-    if (hot === n) return;
-    hot = n;
-    svg.classList.toggle("focus", Boolean(n));
-    for (const x of svg.querySelectorAll(".hot, .near"))
-      x.classList.remove("hot", "near");
-    if (!n) return;
-    n.el.classList.add("hot");
-    n.label.classList.add("hot");
-    for (const e of around.get(n)) {
-      if (e.el.classList.contains("gone")) continue;
-      e.el.classList.add("near");
-      const o = e.a === n ? e.b : e.a;
-      o.el.classList.add("near");
+  const drawRows = () => {
+    const w = W0();
+    const h = Math.round(Math.min(660, Math.max(500, w * 0.6)));
+    size(w, h);
+    const pad = 16;
+    const yA = 118;
+    const yV = h - 168;
+    for (const n of [...authors, ...venues])
+      n.count = n.entries.filter(inWin).length;
+    // as many authors as the row has room for, the busiest; the fewest entries a row author has
+    const seen = authors.filter((a) => a.count);
+    let least = 2;
+    while (
+      least < 99 &&
+      seen.filter((a) => a.count >= least).length > (w - 2 * pad) / 4.2
+    )
+      least++;
+    const rowA = seen
+      .filter((a) => a.count >= least)
+      .sort((x, y) => x.rank - y.rank);
+    const fewA = seen.filter((a) => a.count < least);
+    restA.count = fewA.length;
+    restA.entries = [...new Set(fewA.flatMap((a) => a.entries.filter(inWin)))];
+    restA.name = `${fewA.length} ${fewA.length === 1 ? "author" : "authors"} of ${least === 2 ? "one entry" : `fewer than ${least} entries`}`;
+    restA.short = `${fewA.length} ${least === 2 ? "of one entry" : `of under ${least}`}`;
+    restA.hay = fold(restA.name);
+    for (const n of nodes) n.x = n.y = -99;
+    // the authors' row, the node of the others at its end a little apart
+    const allA = restA.count ? [...rowA, restA] : rowA;
+    const stepA =
+      (w - 2 * pad - (restA.count ? 14 : 0)) / Math.max(allA.length, 1);
+    allA.forEach((n, i) => {
+      n.x = pad + stepA * (i + 0.5) + (n === restA ? 14 : 0);
+      n.y = yA;
+    });
+    // the venues' row, in blocks of their publishers, a gap between two blocks
+    const rowV = venues.filter((v) => v.count).sort((x, y) => x.rank - y.rank);
+    const blocks = [];
+    for (const v of rowV) {
+      if (!blocks.length || blocks[blocks.length - 1].p !== v.house)
+        blocks.push({ p: v.house, list: [] });
+      blocks[blocks.length - 1].list.push(v);
+    }
+    const gap = 0.9;
+    const stepV =
+      (w - 2 * pad) / Math.max(1, rowV.length + gap * (blocks.length - 1));
+    let x = pad + stepV / 2;
+    blocks.forEach((b, i) => {
+      if (i) x += gap * stepV;
+      for (const v of b.list) {
+        v.x = x;
+        v.y = yV;
+        x += stepV;
+      }
+    });
+    for (const { band, tag } of bands.values()) {
+      band.classList.add("gone");
+      tag.classList.add("gone");
+    }
+    blocks.forEach((b, i) => {
+      const x0 = b.list[0].x - stepV / 2;
+      const x1 = b.list[b.list.length - 1].x + stepV / 2;
+      const { band, tag } = bands.get(b.p);
+      for (const [k, v] of Object.entries({
+        x: x0,
+        y: yV - 14,
+        width: x1 - x0,
+        height: h - yV + 12,
+        rx: 4,
+      }))
+        band.setAttribute(k, fmt(v));
+      band.classList.remove("gone");
+      band.classList.toggle("alt", i % 2 === 1);
+      band.classList.toggle(
+        "off",
+        Boolean(words.length) && !b.list.some(matches),
+      );
+      // the publisher's name under its block, or its short name, when either fits
+      const fit = [b.p.name, SHORT_HOUSE[b.p.name]].find(
+        (s) => s && s.length * 6 <= x1 - x0 + 2,
+      );
+      if (fit) {
+        tag.textContent = fit;
+        tag.setAttribute("x", fmt((x0 + x1) / 2));
+        tag.setAttribute("y", fmt(h - 9));
+        tag.classList.remove("gone");
+      }
+    });
+    const inRow = new Set([...rowA, ...rowV]);
+    for (const n of authors) {
+      const c = n.count;
+      if (!inRow.has(n)) n.count = 0;
+      put(n, Math.min(4.6, 1.3 + 0.75 * Math.sqrt(c)));
+      n.count = c;
+    }
+    for (const v of venues)
+      put(
+        v,
+        Math.min(Math.max(2, stepV / 2 - 0.5), 2.2 + 0.95 * Math.sqrt(v.count)),
+      );
+    put(restA, 4.6);
+
+    // a link for each author and venue that the entries of those years join
+    const pairs = new Map();
+    for (const a of seen)
+      for (const e of a.entries) {
+        const v = dotOf.get(model.venueOf.get(e));
+        if (!v || !inWin(e)) continue;
+        const from = inRow.has(a) ? a : restA;
+        if (!pairs.has(from)) pairs.set(from, new Map());
+        const of = pairs.get(from);
+        if (!of.has(v))
+          of.set(v, {
+            kind: "link",
+            a: from,
+            b: v,
+            rest: from === restA,
+            set: new Set(),
+          });
+        of.get(v).set.add(e);
+      }
+    links = [];
+    for (const of of pairs.values())
+      for (const l of of.values()) {
+        l.entries = [...l.set];
+        l.count = l.entries.length;
+        l.off =
+          Boolean(words.length) &&
+          !(named(l.a) || named(l.b) || l.entries.some(hit));
+        shape(l);
+        links.push(l);
+      }
+    linkUp();
+
+    // the names, upright along the rows, the busiest first and none over another: the authors'
+    // above their row, the venues' below theirs, above the publishers' names
+    hideLabels();
+    const room = { up: yA - 14, down: h - 30 - yV };
+    for (const [row, up] of [
+      [allA, true],
+      [rowV, false],
+    ]) {
+      const taken = [];
+      for (const n of [...row].sort(
+        (a, b) => (b === restA) - (a === restA) || b.count - a.count,
+      )) {
+        if (!n.count) continue;
+        let text = n.kind === "author" ? n.name : n.short;
+        const fits = (s) => s.length * 6 <= (up ? room.up : room.down) - n.r;
+        if (!fits(text) && n.kind === "author")
+          text = text.replace(/^(\S)\S*\s+(?:\S+\s+)*?(?=\S+$)/, "$1. ");
+        while (!fits(text) && text.length > 4)
+          text = `${text.slice(0, -2).trimEnd()}…`;
+        if (n.label.textContent !== text) n.label.textContent = text;
+        const lx = n.x + 3.6;
+        const ly = up ? n.y - n.r - 5 : n.y + n.r + 5;
+        n.label.setAttribute("x", fmt(lx));
+        n.label.setAttribute("y", fmt(ly));
+        n.label.setAttribute("transform", `rotate(-90 ${fmt(lx)} ${fmt(ly)})`);
+        n.label.setAttribute("text-anchor", up ? "start" : "end");
+        // a name hidden for want of room still shows while its node is pointed at
+        if (taken.some((t) => Math.abs(t - n.x) < 11.5)) continue;
+        taken.push(n.x);
+        n.label.classList.remove("gone");
+      }
     }
   };
-  const nodeAt = (ev) => {
-    const t = ev.target.closest ? ev.target.closest(".n-node") : null;
-    return t && !t.classList.contains("gone") ? nodes[+t.dataset.i] : null;
+
+  // pointing marks a node, a link or a publisher, with what is joined to it; the pinned one stays
+  // marked while nothing else is pointed at
+  let pinned = null;
+  let shown = null;
+  let marked = [];
+  const mark = (t) => {
+    shown = t;
+    for (const [el, cls] of marked) el.classList.remove(cls);
+    for (const l of links) l.near = l.hot = false;
+    marked = [];
+    const add = (el, cls) => {
+      el.classList.add(cls);
+      marked.push([el, cls]);
+    };
+    focus = Boolean(t);
+    svg.classList.toggle("focus", focus);
+    const ends = (l) => {
+      l.near = true;
+      for (const n of [l.a, l.b]) {
+        add(n.el, "near");
+        add(n.label, "near");
+      }
+    };
+    if (t && t.kind === "link") {
+      const l = links.find((x) => x.a.d === t.a.d && x.b.d === t.b.d);
+      if (l && l.count) {
+        ends(l);
+        l.hot = true;
+        // the two it joins are named, even where their names had no room
+        for (const n of [l.a, l.b]) add(n.label, "hot");
+      }
+    } else if (t && t.kind === "publisher") {
+      // a publisher: its block and venues, and their links; its venues' names stay as placed
+      if (bands.has(t)) add(bands.get(t).band, "hot");
+      for (const v of t.venues.map((v) => dotOf.get(v)).filter(Boolean)) {
+        add(v.el, "near");
+        add(v.label, "near");
+        for (const l of near.get(v) || []) ends(l);
+      }
+    } else if (t) {
+      add(t.el, "hot");
+      add(t.label, "hot");
+      for (const l of near.get(t) || []) ends(l);
+    }
+    paint();
   };
-  const cardFor = (n) => {
-    const list = n.entries.filter(inWin).sort(yearSort);
+  // a pinned author, venue, publisher or link, as this graph has it
+  const own = (g) => {
+    if (!g) return null;
+    if (g.kind === "link")
+      return { kind: "link", a: { d: g.a }, b: { d: g.b } };
+    if (g.kind === "publisher") return rows ? g : null;
+    if (g === restA) return restA;
+    return dotOf.get(g) || null;
+  };
+  const draw = () => {
+    if (!mine()) svg.replaceChildren(root);
+    restOk = false;
+    if (rows) drawRows();
+    else drawCoauthors();
+    mark(shown && shown !== pinned ? shown : own(pinned));
+  };
+  const targetAt = (ev) => {
+    const t = ev.target;
+    const node = t.closest && t.closest(".n-node");
+    if (node)
+      return node.classList.contains("gone") ? null : nodes[+node.dataset.i];
+    const b = t.closest && t.closest(".n-band, .n-plabel");
+    if (b) return publishers[+b.dataset.p];
+    const r = svg.getBoundingClientRect();
+    return linkAt(
+      ((ev.clientX - r.left) * W) / r.width,
+      ((ev.clientY - r.top) * H) / r.height,
+    );
+  };
+  const title = (t) =>
+    t.kind === "link"
+      ? rows
+        ? `${t.a.kind === "rest" ? "Authors of one entry" : t.a.name} in ${t.b.name}`
+        : `${t.a.name} and ${t.b.name}`
+      : t.name;
+  const cardFor = (t) => {
+    const list = t.entries.filter(inWin).sort(yearSort);
     const names = list
       .slice(0, 14)
       .map((e) => esc(e.name))
       .join(" · ");
+    const what =
+      t.kind === "link"
+        ? rows
+          ? "published there"
+          : "together"
+        : t.kind === "publisher"
+          ? `${t.venues.filter((v) => v.entries.some(inWin)).length} venues`
+          : t.kind === "venue"
+            ? t.publisher
+            : "";
+    const kindName =
+      t.kind === "rest"
+        ? ""
+        : t.kind === "link"
+          ? rows
+            ? "author-venue"
+            : "co-authors"
+          : t.kind;
     card.entry = null;
-    card.el.style.cssText = n.hub ? hubStyle(n.hub) : "";
-    card.el.innerHTML = `<div class="t-head"><span class="t-name">${esc(n.name)}</span><span class="t-kind">${n.kind}</span></div>
-      <div class="t-by">${list.length} ${list.length === 1 ? "entry" : "entries"} in the years shown</div>
+    card.el.style.cssText = t.hub ? hubStyle(t.hub) : "";
+    card.el.innerHTML = `<div class="t-head"><span class="t-name">${esc(title(t))}</span><span class="t-kind">${kindName}</span></div>
+      <div class="t-by">${what ? `${esc(what)} · ` : ""}${list.length} ${list.length === 1 ? "entry" : "entries"} in the years shown</div>
       <p class="t-abstract">${names}${list.length > 14 ? ` · +${list.length - 14} more` : ""}</p>
-      <div class="t-hint">Click to pin</div>`;
+      <div class="t-hint">${sameGroup(ui.group, pick(t)) ? "Click to let go" : "Click to pin"}</div>`;
     card.el.hidden = false;
   };
+  // what a click pins: the author, venue or publisher itself, or the link between two of them
+  const pick = (t) =>
+    t.kind === "link"
+      ? { kind: "link", a: t.a.d, b: t.b.d, name: title(t), entries: t.entries }
+      : t.d || t;
+  let over = null;
   svg.addEventListener("pointermove", (ev) => {
-    const n = nodeAt(ev);
-    mark(n);
-    if (n) {
-      cardFor(n);
-      placeAt(ev.clientX, ev.clientY);
-    } else card.el.hidden = true;
+    if (!mine()) return;
+    const t = targetAt(ev);
+    const want = t || own(pinned);
+    if (t !== over) {
+      over = t;
+      if (t) cardFor(t);
+      else card.el.hidden = true;
+    }
+    if (
+      want !== shown &&
+      !(
+        want &&
+        shown &&
+        want.kind === "link" &&
+        shown.kind === "link" &&
+        want.a.d === shown.a.d &&
+        want.b.d === shown.b.d
+      )
+    )
+      mark(want);
+    if (t) placeAt(ev.clientX, ev.clientY);
   });
   svg.addEventListener("pointerleave", () => {
-    mark(null);
+    if (!mine()) return;
+    over = null;
+    mark(own(pinned));
     card.el.hidden = true;
   });
   svg.addEventListener("click", (ev) => {
-    const n = nodeAt(ev);
-    if (!n) return;
+    const t = mine() && (over || targetAt(ev));
+    if (!t) return;
+    over = null;
     card.el.hidden = true;
-    ui.selectGroup({
-      kind: n.kind,
-      name: n.name,
-      entries: n.entries,
-      venues: n.venues,
-    });
+    ui.pickGroup(pick(t));
   });
+  // the colours of the links follow the theme
+  const repaint = () => {
+    restOk = false;
+    paint();
+  };
+  new MutationObserver(repaint).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener(
+    "change",
+    repaint,
+  );
 
   return {
     draw,
@@ -1614,33 +2406,31 @@ function createNetwork(svg, ui, m, people, kind) {
       win = { a, b };
       draw();
     },
-    search(w) {
+    search(w, now = true) {
       words = w;
-      draw();
+      if (now) draw();
+    },
+    pin(g) {
+      pinned = g;
+      if (mine()) mark(own(g));
     },
   };
 }
 
-// the lists of the authors and of the publishers, each a row that opens to its entries
-function personRow(a, ui) {
-  const entries = a.papers
-    .map((k) => ui.byKey.get(k))
-    .filter(Boolean)
-    .sort(yearSort);
-  return `<details class="hub grp" data-name="${esc(fold(a.name))}"><summary><span class="h-name">${esc(a.name)}</span><span class="h-count">${entries.length}</span>${CHEVRON}</summary><div class="h-body"><div class="tags">${entries.map((e) => tagHtml(e, "", true)).join("")}</div></div></details>`;
+// the lists of the authors and of the publishers with their venues, each a row that opens to its
+// entries; a button opens the author's or the venue's panel
+function personRow(a) {
+  const entries = [...a.entries].sort(yearSort);
+  return `<details class="hub grp" data-name="${esc(fold(a.name))}"><summary><span class="h-name">${esc(a.name)}</span><span class="h-count">${entries.length}</span>${CHEVRON}</summary><div class="h-body"><button type="button" class="p-open" data-go="author:${a.i}">Profile, co-authors and venues</button><div class="family" data-name="${esc(fold(a.name))}"><div class="tags">${entries.map((e) => tagHtml(e, "", true)).join("")}</div></div></div></details>`;
 }
-function publisherRow(p, ui) {
-  const n = p.venues.reduce((s, v) => s + v.papers.length, 0);
+function publisherRow(p) {
   const venues = p.venues
     .map((v) => {
-      const entries = v.papers
-        .map((k) => ui.byKey.get(k))
-        .filter(Boolean)
-        .sort(yearSort);
-      return `<div class="family" data-name="${esc(fold(v.name))}"><h4>${esc(v.name)}</h4><div class="tags">${entries.map((e) => tagHtml(e, "", true)).join("")}</div></div>`;
+      const entries = [...v.entries].sort(yearSort);
+      return `<div class="family" data-name="${esc(fold(`${v.name} ${v.short}`))}"><h4><button type="button" class="f-go" data-go="venue:${v.i}">${esc(v.name)}</button> <span class="f-n">${entries.length}</span></h4><div class="tags">${entries.map((e) => tagHtml(e, "", true)).join("")}</div></div>`;
     })
     .join("");
-  return `<details class="hub grp" data-name="${esc(fold(p.name))}"><summary><span class="h-name">${esc(p.name)}</span><span class="h-count">${n}</span>${CHEVRON}</summary><div class="h-body">${venues}</div></details>`;
+  return `<details class="hub grp" data-name="${esc(fold(p.name))}"><summary><span class="h-name">${esc(p.name)}</span><span class="h-count">${p.entries.length}</span>${CHEVRON}</summary><div class="h-body"><button type="button" class="p-open" data-go="publisher:${p.i}">Venues and authors</button>${venues}</div></details>`;
 }
 
 function shell(app) {
@@ -1667,7 +2457,7 @@ function shell(app) {
           <div class="views" role="tablist" aria-label="The view">
             <button type="button" role="tab" data-view="citations" aria-selected="true">Citations</button>
             <button type="button" role="tab" data-view="coauthors" aria-selected="false">Co-authorship</button>
-            <button type="button" role="tab" data-view="authorship" aria-selected="false">Authors × publishers</button>
+            <button type="button" role="tab" data-view="venues" aria-selected="false">Author-venue</button>
           </div>
           <span class="key" id="key-net" aria-label="Legend" hidden></span>
           <span class="key" id="key-citations" aria-label="Legend">
@@ -1686,6 +2476,7 @@ function shell(app) {
         </div>
         <div class="stage" id="stage">
           <svg id="graph" class="view" role="img" aria-label="The entries of the catalogs along time, a row for each hub, and the citations between them"></svg>
+          <canvas id="net-links" class="net-links" aria-hidden="true" hidden></canvas>
           <svg id="net" class="net" role="img" hidden></svg>
           <p class="note" id="note" aria-live="polite"></p>
         </div>
@@ -1699,13 +2490,13 @@ function shell(app) {
         <div class="lists" role="tablist" aria-label="The list">
           <button type="button" role="tab" data-list="hubs" aria-selected="true">By hub</button>
           <button type="button" role="tab" data-list="authors" aria-selected="false">By author</button>
-          <button type="button" role="tab" data-list="publishers" aria-selected="false">By publisher</button>
+          <button type="button" role="tab" data-list="venues" aria-selected="false">By venue</button>
         </div>
         <button type="button" class="fold-all" id="fold-all"></button>
       </div>
       <section class="hubs" id="hubs" aria-label="The hubs"></section>
       <section class="hubs people" id="authors" aria-label="The authors" hidden></section>
-      <section class="hubs people" id="publishers" aria-label="The publishers" hidden></section>
+      <section class="hubs people" id="venues" aria-label="The venues" hidden></section>
     </div>`;
 }
 
@@ -1743,10 +2534,21 @@ function renderPanel(ui) {
   const e = ui.selected;
   p.classList.toggle("empty", !e && !ui.group);
   if (!e && ui.group) {
-    p.innerHTML = groupPanel(ui.group);
+    const g = ui.group;
+    p.innerHTML = groupPanel(g, ui.model);
     p.querySelector(".p-close").addEventListener("click", () =>
       ui.selectGroup(null),
     );
+    p.scrollTop = 0;
+    if (g.kind === "author" || g.kind === "venue")
+      readProfiles().then((all) => {
+        const el = p.querySelector("#p-profile");
+        if (ui.group !== g || !el) return;
+        el.innerHTML =
+          g.kind === "author"
+            ? authorFacts(all && all.authors[g.i], ui.model)
+            : venueFacts(all && all.venues[g.i], g);
+      });
     return;
   }
   if (!e) {
@@ -1872,13 +2674,6 @@ function makeUi(m, els) {
     card.pinned = null;
     ui.mark(null);
     renderPanel(ui);
-    if (g)
-      els.panel.scrollIntoView({
-        block: "nearest",
-        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "auto"
-          : "smooth",
-      });
   };
   ui.select = (e, from) => {
     ui.selected = e;
@@ -2125,7 +2920,7 @@ async function main() {
     });
 
   // the figures under the title, the graphs of the people, and the lists of the authors and the
-  // publishers, once people.json is read
+  // venues, once people.json is read
   const statsEl = document.getElementById("stats");
   let people = null;
   const stats = () => paintStats(statsEl, m, ui, people);
@@ -2134,16 +2929,23 @@ async function main() {
   const nets = {};
   let view = "citations";
   const net = document.getElementById("net");
+  const netLinks = document.getElementById("net-links");
   const keyNet = document.getElementById("key-net");
   const KEYS = {
     coauthors:
-      '<span class="k-item"><svg class="k-size" viewBox="0 0 20 12" aria-hidden="true"><circle cx="3.5" cy="7" r="2.2"/><circle cx="13.5" cy="6" r="5.2"/></svg>author, by entries</span><span class="k-item"><i class="ln co"></i>co-authors</span><span class="k-item">colour: the hub of most of their entries</span>',
-    authorship:
-      '<span class="k-item"><svg class="k-size" viewBox="0 0 20 12" aria-hidden="true"><circle cx="5" cy="6" r="3.5"/></svg>author</span><span class="k-item"><svg class="k-size pub" viewBox="0 0 12 12" aria-hidden="true"><rect x="1.5" y="1.5" width="9" height="9" rx="2"/></svg>publisher</span><span class="k-item"><i class="ln co"></i>published with</span>',
+      '<span class="k-item"><svg class="k-size" viewBox="0 0 20 12" aria-hidden="true"><circle cx="3.5" cy="7" r="2.2"/><circle cx="13.5" cy="6" r="5.2"/></svg>author, by entries</span><span class="k-item"><i class="ln co"></i>co-authors, as wide as their shared entries</span><span class="k-item">colour: the hub of most of their entries</span>',
+    venues:
+      '<span class="k-item"><svg class="k-size" viewBox="0 0 20 12" aria-hidden="true"><circle cx="3.5" cy="6" r="2"/><circle cx="12" cy="6" r="4"/></svg>author, by entries</span><span class="k-item"><svg class="k-size pub" viewBox="0 0 12 12" aria-hidden="true"><rect x="1.5" y="1.5" width="9" height="9" rx="1.5"/></svg>venue</span><span class="k-item"><i class="k-band"></i>publisher</span><span class="k-item"><i class="ln co"></i>published there, as wide as the entries</span>',
   };
+  // the trim bar can move many times a frame; the graph follows once a frame
+  let frame = 0;
   els.stage.addEventListener("window", (ev) => {
     lastWin = ev.detail;
-    if (nets[view]) nets[view].setWindow(lastWin.a, lastWin.b);
+    if (frame || !nets[view]) return;
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      if (nets[view]) nets[view].setWindow(lastWin.a, lastWin.b);
+    });
   });
   const show = (v) => {
     view = v;
@@ -2156,6 +2958,7 @@ async function main() {
     document.getElementById("key-citations").hidden = !timeline;
     keyNet.hidden = timeline;
     net.toggleAttribute("hidden", timeline);
+    netLinks.hidden = timeline;
     hideCard();
     if (timeline) return;
     keyNet.innerHTML = KEYS[v];
@@ -2163,25 +2966,26 @@ async function main() {
       els.note.textContent = "Reading the authors…";
       return;
     }
-    nets[v] ||= createNetwork(net, ui, m, people, v);
+    nets[v] ||= createNetwork(net, netLinks, ui, people, v);
+    nets[v].pin(ui.group);
     net.setAttribute(
       "aria-label",
       v === "coauthors"
         ? "The authors, and who wrote with whom, in the years shown"
-        : "The authors and the publishers of their entries, in the years shown",
+        : "The authors above, and below the venues of their entries grouped by publisher, in the years shown",
     );
-    nets[v].search(words());
+    nets[v].search(words(), false);
     nets[v].setWindow(lastWin.a, lastWin.b);
   };
   for (const b of document.querySelectorAll(".views [data-view]"))
     b.addEventListener("click", () => show(b.dataset.view));
   new ResizeObserver(() => nets[view] && nets[view].draw()).observe(els.stage);
 
-  // the lists: by hub, by author, by publisher
+  // the lists: by hub, by author, by venue
   const sections = {
     hubs: els.hubs,
     authors: document.getElementById("authors"),
-    publishers: document.getElementById("publishers"),
+    venues: document.getElementById("venues"),
   };
   let list = "hubs";
   const built = new Set(["hubs"]);
@@ -2190,14 +2994,15 @@ async function main() {
     built.add(which);
     sections[which].innerHTML =
       which === "authors"
-        ? people.authors.map((a) => personRow(a, ui)).join("")
-        : people.publishers.map((x) => publisherRow(x, ui)).join("");
+        ? people.authors.map(personRow).join("")
+        : people.publishers.map(publisherRow).join("");
     for (const t of sections[which].querySelectorAll("a.tag[data-key]")) {
       const e = ui.byKey.get(t.dataset.key);
       if (e) (e.tags ||= []).push(t);
     }
     for (const d of sections[which].querySelectorAll("details"))
       d.addEventListener("toggle", paintFold);
+    markLists(ui.group);
   };
   const showList = (which) => {
     list = which;
@@ -2210,9 +3015,70 @@ async function main() {
   };
   for (const b of document.querySelectorAll(".lists [data-list]"))
     b.addEventListener("click", () => showList(b.dataset.list));
+  // an author, a venue or a publisher named in the panel or the lists opens its panel; pinning
+  // one marks it in the graphs, and clicking what is pinned lets it go
+  const resolve = (go) => {
+    const [k, i] = go.split(":");
+    const list = {
+      author: "authors",
+      venue: "venues",
+      publisher: "publishers",
+    }[k];
+    return list && people ? people[list][+i] : null;
+  };
+  const pinAll = (g) => {
+    for (const n of Object.values(nets)) n.pin(g);
+  };
+  const selectGroup = ui.selectGroup;
+  // a click pins without moving the page, wherever it is made: what is pinned shows in the panel,
+  // and is marked in the graphs and in the lists
+  const markLists = (g) => {
+    for (const b of document.querySelectorAll(".hubs.people [data-go]")) {
+      const on = resolve(b.dataset.go) === g;
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-pressed", String(on));
+    }
+  };
+  ui.selectGroup = (g) => {
+    selectGroup(g);
+    pinAll(g);
+    markLists(g);
+  };
+  ui.pickGroup = (g) => ui.selectGroup(sameGroup(ui.group, g) ? null : g);
+  const select = ui.select;
+  ui.select = (e, from) => {
+    select(e, from);
+    if (e) {
+      pinAll(null);
+      markLists(null);
+    }
+    if (from === "panel") topOfPanel();
+  };
+  // a pick inside the panel changes it in place: its top comes back into view when it was passed
+  const topOfPanel = () => {
+    if (els.panel.getBoundingClientRect().top < 0)
+      els.panel.scrollIntoView({ block: "start" });
+  };
+  const go = (ev) => {
+    const all = ev.target.closest("[data-all]");
+    if (all) {
+      all.parentElement.classList.add("all");
+      all.remove();
+      return;
+    }
+    const b = ev.target.closest("[data-go]");
+    const g = b && resolve(b.dataset.go);
+    if (!g) return;
+    ui.selectGroup(g);
+    if (ev.currentTarget === els.panel) topOfPanel();
+  };
+  els.panel.addEventListener("click", go);
+  for (const s of [sections.authors, sections.venues])
+    s.addEventListener("click", go);
   readPeople().then((data) => {
     if (!data) return;
-    people = data;
+    people = peopleModel(data, ui);
+    ui.model = people;
     stats();
     if (view !== "citations") show(view);
     if (list !== "hubs") showList(list);
@@ -2257,7 +3123,7 @@ async function main() {
       if (l.el)
         l.el.classList.toggle("off", on && !hit(l.source) && !hit(l.target));
     if (nets[view]) nets[view].search(words);
-    for (const which of ["authors", "publishers"]) {
+    for (const which of ["authors", "venues"]) {
       if (!built.has(which)) continue;
       for (const d of sections[which].querySelectorAll(":scope > details")) {
         const named = on && words.every((w) => d.dataset.name.includes(w));

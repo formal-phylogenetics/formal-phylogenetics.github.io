@@ -408,7 +408,7 @@ a:hover {
     600 1.15rem "Literata",
     Georgia,
     serif;
-  color: var(--c);
+  color: var(--c, var(--ink));
 }
 .p-meta {
   font-size: 0.72rem;
@@ -559,6 +559,231 @@ a:hover {
 }
 .p-abs .p-abstract {
   margin-top: var(--s2);
+}
+
+/* the panel of an author, a venue, a publisher or a link */
+.p-head + .p-meta {
+  margin-top: 2px;
+}
+.p-up {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-2);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--ink-4);
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.p-up:hover {
+  color: var(--ink);
+}
+.p-sec {
+  margin-top: var(--s3);
+}
+.p-sec h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin: 0 0 var(--s2);
+  font:
+    600 0.7rem "IBM Plex Sans",
+    sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.p-sec h3::before {
+  content: "";
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--ink-4);
+}
+.p-sec h3 span {
+  letter-spacing: 0;
+}
+.p-note {
+  margin: -4px 0 var(--s2);
+  font-size: 0.74rem;
+  color: var(--ink-3);
+}
+.p-lead {
+  margin: var(--s2) 0 0;
+  font-size: 0.86rem;
+  color: var(--ink-2);
+}
+.p-text {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.p-soft {
+  color: var(--ink-3);
+}
+.p-source {
+  margin: var(--s3) 0 0;
+  font-size: 0.72rem;
+  color: var(--ink-3);
+}
+.p-ids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--s2);
+}
+.p-id {
+  padding: 2px 9px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.76rem;
+  text-decoration: none;
+}
+.p-id:hover {
+  border-color: var(--ink-3);
+}
+.p-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.p-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: var(--s3);
+  padding: 4px 0;
+  border-top: 1px solid color-mix(in oklab, var(--rule) 60%, transparent);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+.p-list li:first-child {
+  border-top: 0;
+}
+.l-main {
+  color: var(--ink);
+}
+.l-sub {
+  grid-column: 1;
+  color: var(--ink-3);
+  font-size: 0.76rem;
+}
+.l-when {
+  grid-column: 2;
+  grid-row: 1;
+  color: var(--ink-3);
+  font-size: 0.76rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.p-facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3px var(--s3);
+  margin: var(--s3) 0 0;
+  font-size: 0.82rem;
+}
+.p-facts dt {
+  color: var(--ink-3);
+}
+.p-facts dd {
+  margin: 0;
+  color: var(--ink);
+}
+.p-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.p-chips:not(.all) > .p-chip:nth-child(n + 13) {
+  display: none;
+}
+.p-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 4px 0 10px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--ink);
+  font:
+    500 0.78rem "IBM Plex Sans",
+    sans-serif;
+  cursor: pointer;
+}
+.p-chip:not(:has(.c-n)) {
+  padding-right: 10px;
+}
+.p-chip:hover {
+  border-color: var(--ink-3);
+}
+.c-n {
+  min-width: 18px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: color-mix(in oklab, var(--ink) 8%, transparent);
+  color: var(--ink-2);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+.p-plain {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border: 1px dashed var(--rule);
+  border-radius: 6px;
+  color: var(--ink-2);
+  font-size: 0.78rem;
+}
+.p-open,
+.f-go {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.p-open {
+  display: block;
+  margin-bottom: var(--s2);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--ink-4);
+  text-underline-offset: 3px;
+}
+.f-go:hover,
+.p-open:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--ink-3);
+}
+.p-open.on,
+.f-go.on {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--ink);
+}
+.p-open.on::after,
+.f-go.on::after {
+  content: " · pinned";
+  font-weight: 400;
+  color: var(--ink-3);
+}
+.f-n {
+  margin-left: 4px;
+  font-weight: 400;
+  color: var(--ink-3);
 }
 
 /* Glyphs: shape is the kind, fill the status. */
@@ -1321,16 +1546,43 @@ svg[hidden] {
   display: none;
 }
 .net {
+  position: relative;
   display: block;
   width: 100%;
 }
-.net .n-edge {
-  stroke: var(--ink);
-  stroke-opacity: 0.16;
-  transition: stroke-opacity 0.2s;
+/* the links of the graphs, drawn under their nodes */
+.net-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
-.net .n-edge.pub {
-  stroke-opacity: 0.07;
+.net .n-band {
+  fill: color-mix(in oklab, var(--ink) 3%, transparent);
+  cursor: pointer;
+}
+.net .n-band.alt {
+  fill: color-mix(in oklab, var(--ink) 6%, transparent);
+}
+.net .n-band.hot,
+.net .n-band:hover {
+  fill: color-mix(in oklab, var(--ink) 10%, transparent);
+}
+.net .n-plabel {
+  font:
+    600 10px "IBM Plex Sans",
+    sans-serif;
+  letter-spacing: 0.04em;
+  fill: var(--ink-3);
+  text-anchor: middle;
+  cursor: pointer;
+}
+.k-band {
+  display: inline-block;
+  width: 16px;
+  height: 10px;
+  border-radius: 2px;
+  background: color-mix(in oklab, var(--ink) 9%, transparent);
 }
 .net .n-node.author {
   fill: var(--c);
@@ -1338,14 +1590,12 @@ svg[hidden] {
   stroke: var(--paper);
   stroke-width: 0.6;
   cursor: pointer;
-  transition: opacity 0.2s;
 }
-.net .n-node.publisher {
+.net .n-node.venue {
   fill: var(--card);
   stroke: var(--ink-2);
   stroke-width: 1.3;
   cursor: pointer;
-  transition: opacity 0.2s;
 }
 .net .n-label {
   font:
@@ -1358,32 +1608,50 @@ svg[hidden] {
   stroke-linejoin: round;
   pointer-events: none;
 }
-.net .n-label.publisher {
+.net .n-node.rest {
+  fill: var(--paper);
+  stroke: var(--ink-3);
+  stroke-width: 1.3;
+  stroke-dasharray: 2 1.6;
+}
+.net .n-label.venue {
   font-weight: 600;
   fill: var(--ink);
+}
+.net .n-label.rest {
+  font-style: italic;
+  fill: var(--ink-3);
 }
 .net .gone {
   display: none;
 }
-.net .off {
-  opacity: 0.14;
+/* what is dimmed fades by its fill and stroke, which repaints far less than opacity would */
+.net .n-band.off {
+  opacity: 0.4;
 }
-.net.focus .n-edge {
-  stroke-opacity: 0.03;
-}
-.net.focus .n-edge.near {
-  stroke-opacity: 0.55;
-}
+.net .n-node.off,
 .net.focus .n-node {
-  opacity: 0.22;
+  fill-opacity: 0.18;
+  stroke-opacity: 0.18;
 }
-.net.focus .n-node.hot,
-.net.focus .n-node.near {
-  opacity: 1;
+.net.focus .n-node:is(.hot, .near) {
+  fill-opacity: 1;
+  stroke-opacity: 1;
+}
+.net.focus .n-node.author:is(.hot, .near) {
+  fill-opacity: 0.85;
 }
 .net .n-node.hot {
   stroke: var(--ink);
   stroke-width: 1.6;
+}
+.net.focus .n-label {
+  fill-opacity: 0.3;
+  stroke-opacity: 0.3;
+}
+.net.focus .n-label:is(.hot, .near) {
+  fill-opacity: 1;
+  stroke-opacity: 1;
 }
 .net .n-label.hot,
 .net .n-label.hot.gone {
@@ -1401,9 +1669,6 @@ svg[hidden] {
 /* the lists of the authors and of the publishers, and their panel */
 .hubs.people > .grp > summary .h-name {
   color: var(--ink);
-}
-.p-group {
-  margin-top: var(--s3);
 }
 
 @media (max-width: 760px) {
